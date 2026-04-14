@@ -1,175 +1,181 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=1024, initial-scale=1.0, maximum-scale=3.0">
 
-<title>Technology Advisory | Arquitectura Tecnológica & Ciberseguridad</title>
+<title>Technology Advisory · Miguel Ángel Carriazo · vCISO</title>
 
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230077B5'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial' font-weight='700' font-size='13' fill='white'>TA</text></svg>">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1220;
+  color: #ffffff;
 }
 
-body{
-font-family: "Segoe UI", Arial, sans-serif;
-color:white;
-text-align:center;
-background:url('fondo.jpg') no-repeat center center fixed;
-background-size:cover;
-min-height:100vh;
-overflow:auto;
+/* CONTENEDOR */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
 }
 
-.overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.30);
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 
-.container{
-position:absolute;
-top:45%;
-left:50%;
-transform:translate(-50%,-50%);
-max-width:900px;
-padding:20px;
-animation:fadeIn 1.8s ease;
+.hero-text {
+  flex: 1;
 }
 
-.domain{
-font-size:20px;
-letter-spacing:7px;
-margin-bottom:40px;
-opacity:0.95;
-font-weight:500;
+.hero-text h1 {
+  font-size: 52px;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
-h1{
-font-size:56px;
-font-weight:600;
-margin-bottom:30px;
-line-height:1.3;
-text-shadow:0 0 30px rgba(255,120,0,0.55);
+.hero-text h1 span {
+  color: #3b82f6;
 }
 
-.subtitle{
-font-size:24px;
-opacity:0.92;
-line-height:1.7;
-margin-top:10px;
+.hero-text p {
+  font-size: 18px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  max-width: 500px;
 }
 
-.divider{
-width:120px;
-height:2px;
-background:rgba(255,120,0,0.8);
-margin:35px auto;
-box-shadow:0 0 15px rgba(255,120,0,0.8);
+/* BADGES */
+.badges {
+  margin-top: 30px;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #94a3b8;
 }
 
-footer{
-position:absolute;
-bottom:20px;
-width:100%;
-text-align:center;
-font-size:14px;
-opacity:0.6;
+.badges span {
+  border: 1px solid #1e293b;
+  padding: 8px 12px;
+  border-radius: 6px;
 }
 
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translate(-50%,-40%);
-}
-to{
-opacity:1;
-transform:translate(-50%,-50%);
-}
+/* IMAGEN */
+.hero-image {
+  flex: 1;
 }
 
-/* -------- RESPONSIVE -------- */
-
-@media (max-width:900px){
-
-.container{
-width:90%;
+.hero-image img {
+  width: 100%;
+  border-radius: 12px;
 }
 
-h1{
-font-size:42px;
+/* FOOTER */
+.footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.subtitle{
-font-size:20px;
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #0077B5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
 }
 
-@media (max-width:600px){
-
-.domain{
-font-size:15px;
-letter-spacing:4px;
+.author-name {
+  font-weight: bold;
 }
 
-h1{
-font-size:30px;
+.author-role {
+  font-size: 14px;
+  color: #94a3b8;
 }
 
-.subtitle{
-font-size:18px;
-}
-
+.linkedin {
+  text-decoration: none;
+  color: #3b82f6;
+  font-size: 14px;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="overlay"></div>
-
 <div class="container">
 
-<div class="domain">
-TECHNOLOGY-ADVISORY
+  <!-- HERO -->
+  <div class="hero">
+
+    <div class="hero-text">
+
+      <h1>
+        Arquitectura que protege.<br>
+        <span>Gobernanza que asegura.</span>
+      </h1>
+
+      <p>
+        Diseño, operación y protección de infraestructuras tecnológicas críticas  
+        en entornos híbridos y de alta exigencia.
+      </p>
+
+      <div class="badges">
+        <span>ENS</span>
+        <span>ISO 27001</span>
+        <span>NIS2</span>
+        <span>ISO 22301</span>
+        <span>ISO 42001</span>
+      </div>
+
+    </div>
+
+    <div class="hero-image">
+      <img src="hero-mac.png" alt="Technology Advisory">
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+
+    <div class="author">
+      <div class="avatar">MA</div>
+      <div>
+        <div class="author-name">Miguel Ángel Carriazo · vCISO</div>
+        <div class="author-role">Cybersecurity & Infrastructure Architect</div>
+      </div>
+    </div>
+
+    <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" class="linkedin">
+      Hablemos en LinkedIn →
+    </a>
+
+  </div>
+
 </div>
-
-<h1>
-Arquitectura Tecnológica<br><br>
-Ciberseguridad
-</h1>
-
-<div class="divider"></div>
-
-<div class="subtitle">
-25+ años diseñando, operando y protegiendo<br>
-infraestructuras tecnológicas reales
-</div>
-
-<div class="subtitle" style="margin-top:20px;">
-Gobernanza · Riesgo · ENS · ISO 27001 · NIS2<br>
-Entornos híbridos
-</div>
-
-</div>
-
-<footer>
-© 2026 Technology-Advisory.es
-</footer>
 
 </body>
-
 </html>
