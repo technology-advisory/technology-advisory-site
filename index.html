@@ -2,101 +2,53 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1024, initial-scale=1.0, maximum-scale=3.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Technology Advisory · Miguel Ángel Carriazo · vCISO</title>
-
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230077B5'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial' font-weight='700' font-size='13' fill='white'>TA</text></svg>">
+<title>Technology Advisory</title>
 
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   background: #0b1220;
-  color: #ffffff;
+  font-family: Arial, sans-serif;
 }
 
-/* CONTENEDOR */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-/* HERO */
+/* HERO SOLO IMAGEN */
 .hero {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.hero-text {
-  flex: 1;
-}
-
-.hero-text h1 {
-  font-size: 52px;
-  line-height: 1.1;
-  margin-bottom: 20px;
-}
-
-.hero-text h1 span {
-  color: #3b82f6;
-}
-
-.hero-text p {
-  font-size: 18px;
-  color: #cbd5e1;
-  line-height: 1.6;
-  max-width: 500px;
-}
-
-/* BADGES */
-.badges {
-  margin-top: 30px;
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-  font-size: 14px;
-  color: #94a3b8;
-}
-
-.badges span {
-  border: 1px solid #1e293b;
-  padding: 8px 12px;
-  border-radius: 6px;
-}
-
-/* IMAGEN */
-.hero-image {
-  flex: 1;
-}
-
-.hero-image img {
   width: 100%;
-  border-radius: 12px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* FOOTER */
 .footer {
-  margin-top: 60px;
-  padding-top: 20px;
-  border-top: 1px solid #1e293b;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  color: white;
 }
 
 .author {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background: #0077B5;
   border-radius: 50%;
   display: flex;
@@ -105,75 +57,33 @@ body {
   font-weight: bold;
 }
 
-.author-name {
-  font-weight: bold;
-}
-
-.author-role {
-  font-size: 14px;
-  color: #94a3b8;
-}
-
 .linkedin {
-  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   color: #3b82f6;
-  font-size: 14px;
+  text-decoration: none;
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="hero">
+  <img src="hero-mac.png" alt="">
+</div>
 
-  <!-- HERO -->
-  <div class="hero">
+<div class="footer">
 
-    <div class="hero-text">
-
-      <h1>
-        Arquitectura que protege.<br>
-        <span>Gobernanza que asegura.</span>
-      </h1>
-
-      <p>
-        Diseño, operación y protección de infraestructuras tecnológicas críticas  
-        en entornos híbridos y de alta exigencia.
-      </p>
-
-      <div class="badges">
-        <span>ENS</span>
-        <span>ISO 27001</span>
-        <span>NIS2</span>
-        <span>ISO 22301</span>
-        <span>ISO 42001</span>
-      </div>
-
-    </div>
-
-    <div class="hero-image">
-      <img src="hero-mac.png" alt="Technology Advisory">
-    </div>
-
+  <div class="author">
+    <div class="avatar">MA</div>
   </div>
 
-  <!-- FOOTER -->
-  <div class="footer">
-
-    <div class="author">
-      <div class="avatar">MA</div>
-      <div>
-        <div class="author-name">Miguel Ángel Carriazo · vCISO</div>
-        <div class="author-role">Cybersecurity & Infrastructure Architect</div>
-      </div>
-    </div>
-
-    <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" class="linkedin">
-      Hablemos en LinkedIn →
-    </a>
-
-  </div>
+  <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" class="linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="#3b82f6">
+      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+    </svg>
+  </a>
 
 </div>
 
