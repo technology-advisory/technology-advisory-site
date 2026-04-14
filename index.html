@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- 🔥 CLAVE: viewport fijo tipo desktop -->
-<meta name="viewport" content="width=1200">
+<!-- 🔥 Desktop en móvil SIN scroll -->
+<meta name="viewport" content="width=device-width, initial-scale=0.35">
 
 <title>Technology Advisory</title>
 
@@ -13,10 +13,9 @@ body {
   margin: 0;
   background: #0b1220;
   font-family: Arial, sans-serif;
-  overflow-x: auto; /* permite scroll lateral en móvil */
 }
 
-/* CONTENEDOR FIJO */
+/* CONTENEDOR */
 .wrapper {
   width: 1200px;
   margin: auto;
@@ -41,7 +40,6 @@ body {
   position: fixed;
   bottom: 0;
   width: 1200px;
-
   left: 50%;
   transform: translateX(-50%);
 
