@@ -26,7 +26,7 @@ body {
 .hero img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* 🔥 clave: NO recorta */
+  object-fit: contain;
 }
 
 /* FOOTER */
@@ -34,24 +34,30 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 15px 25px;
+  padding: 20px 30px;
   box-sizing: border-box;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+
+  background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+  backdrop-filter: blur(6px);
+}
+
+.footer-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
 }
 
-.author {
+/* AUTHOR */
+.author-block {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  color: #e5e7eb;
 }
 
-.avatar {
-  width: 34px;
-  height: 34px;
+.author-avatar {
+  width: 42px;
+  height: 42px;
   background: #0077B5;
   border-radius: 50%;
   display: flex;
@@ -60,12 +66,68 @@ body {
   font-weight: bold;
 }
 
-.linkedin {
+.author-name {
+  font-weight: 600;
+}
+
+.author-name span {
+  color: #60a5fa;
+}
+
+.author-title {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+/* LINKEDIN */
+.li-btn {
   display: flex;
   align-items: center;
-  gap: 6px;
-  color: #3b82f6;
+  gap: 10px;
   text-decoration: none;
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  color: #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.li-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.li-icon {
+  width: 20px;
+  height: 20px;
+  fill: #0a66c2;
+}
+
+.li-main {
+  display: block;
+  font-size: 13px;
+}
+
+.li-sub {
+  display: block;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .hero {
+    padding: 10px;
+  }
 }
 </style>
 </head>
@@ -77,17 +139,27 @@ body {
 </div>
 
 <div class="footer">
+  <div class="footer-inner">
 
-  <div class="author">
-    <div class="avatar">MA</div>
+    <div class="author-block">
+      <div class="author-avatar">MA</div>
+      <div>
+        <div class="author-name">Miguel Ángel Carriazo · <span>vCISO</span></div>
+        <div class="author-title">Cybersecurity & Infrastructure Architect</div>
+      </div>
+    </div>
+
+    <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" class="li-btn">
+      <svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+      </svg>
+      <div>
+        <span class="li-main">“Merece la pena la experiencia...”</span>
+        <span class="li-sub">Hablemos en LinkedIn →</span>
+      </div>
+    </a>
+
   </div>
-
-  <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" class="linkedin">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="#3b82f6">
-      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-    </svg>
-  </a>
-
 </div>
 
 </body>
