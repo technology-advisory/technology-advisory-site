@@ -2,26 +2,53 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-
-<!-- 🔥 Desktop en móvil SIN scroll -->
-<meta name="viewport" content="width=device-width, initial-scale=0.35">
-
-<title>Technology Advisory</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Technology Advisory | Miguel Ángel Carriazo</title>
 
 <style>
-body {
+/* ============================================
+   RESET Y CONFIGURACIÓN GLOBAL
+   ============================================ */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   background: #0b1220;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  overflow-x: hidden;  /* ← elimina scroll horizontal residual */
 }
 
-/* CONTENEDOR */
-.wrapper {
+/* ============================================
+   CONTENEDOR QUE FUERZA VERSIÓN DESKTOP
+   ============================================ */
+.desktop-viewport {
   width: 1200px;
-  margin: auto;
+  margin: 0 auto;
+  position: relative;
 }
 
-/* HERO */
+/* Para pantallas MÁS PEQUEÑAS que 1200px (móviles y tablets)
+   → escalamos todo proporcionalmente */
+@media (max-width: 1200px) {
+  .desktop-viewport {
+    transform: scale(calc(100vw / 1200));
+    transform-origin: top left;
+    width: 1200px;  /* mantenemos el ancho fijo para la escala */
+    margin: 0;      /* eliminamos el margin auto porque ya escalamos */
+  }
+  
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
 .hero {
   height: 100vh;
   display: flex;
@@ -35,48 +62,56 @@ body {
   object-fit: contain;
 }
 
-/* FOOTER */
+/* ============================================
+   FOOTER FIJO (se escala con el contenedor)
+   ============================================ */
 .footer {
   position: fixed;
   bottom: 0;
   width: 1200px;
-  left: 50%;
-  transform: translateX(-50%);
-
+  left: 0;
   padding: 20px 30px;
   box-sizing: border-box;
-
-  background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
-  backdrop-filter: blur(6px);
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 .footer-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-/* AUTHOR */
+/* ============================================
+   BLOQUE DE AUTOR
+   ============================================ */
 .author-block {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   color: #e5e7eb;
 }
 
 .author-avatar {
-  width: 42px;
-  height: 42px;
-  background: #0077B5;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #0077B5, #005e8c);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  font-size: 18px;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .author-name {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .author-name span {
@@ -86,75 +121,109 @@ body {
 .author-title {
   font-size: 13px;
   color: #9ca3af;
+  margin-top: 4px;
 }
 
-/* LINKEDIN */
+/* ============================================
+   BOTÓN DE LINKEDIN
+   ============================================ */
 .li-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 10px 18px;
+  border-radius: 40px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
 
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-
-  padding: 10px 14px;
-  border-radius: 10px;
-
-  color: #e5e7eb;
+.li-btn:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.25);
+  transform: translateY(-1px);
 }
 
 .li-icon {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   fill: #0a66c2;
+  background: white;
+  border-radius: 4px;
 }
 
 .li-main {
   display: block;
   font-size: 13px;
+  font-weight: 500;
+  color: #e5e7eb;
 }
 
 .li-sub {
   display: block;
-  font-size: 12px;
+  font-size: 11px;
   color: #9ca3af;
+}
+
+/* ============================================
+   RESPONSIVE: ajustes para pantallas muy pequeñas
+   (esto solo ayuda a que la escala se vea bien)
+   ============================================ */
+@media (max-width: 480px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .li-btn {
+    align-self: flex-start;
+  }
+  
+  .author-block {
+    width: 100%;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
-
+<div class="desktop-viewport">
+  
+  <!-- HERO: imagen principal -->
   <div class="hero">
-    <img src="hero-mac.png" alt="">
+    <img src="hero-mac.png" alt="Technology Advisory Hero">
   </div>
 
-</div>
+  <!-- FOOTER: información de contacto -->
+  <div class="footer">
+    <div class="footer-inner">
 
-<div class="footer">
-  <div class="footer-inner">
-
-    <div class="author-block">
-      <div class="author-avatar">MA</div>
-      <div>
-        <div class="author-name">Miguel Ángel Carriazo · <span>vCISO</span></div>
-        <div class="author-title">Cybersecurity & Infrastructure Architect</div>
+      <!-- Bloque "Quién soy" -->
+      <div class="author-block">
+        <div class="author-avatar">MA</div>
+        <div>
+          <div class="author-name">Miguel Ángel Carriazo · <span>vCISO</span></div>
+          <div class="author-title">Cybersecurity & Infrastructure Architect</div>
+        </div>
       </div>
+
+      <!-- Botón LinkedIn -->
+      <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" rel="noopener noreferrer" class="li-btn">
+        <svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+        <div>
+          <span class="li-main">"Merece la pena la experiencia..."</span>
+          <span class="li-sub">Hablemos en LinkedIn →</span>
+        </div>
+      </a>
+
     </div>
-
-    <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" class="li-btn">
-      <svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-      </svg>
-      <div>
-        <span class="li-main">“Merece la pena la experiencia...”</span>
-        <span class="li-sub">Hablemos en LinkedIn →</span>
-      </div>
-    </a>
-
   </div>
+
 </div>
 
 </body>
