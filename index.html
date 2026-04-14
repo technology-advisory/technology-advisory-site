@@ -2,7 +2,9 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- 🔥 CLAVE: viewport fijo tipo desktop -->
+<meta name="viewport" content="width=1200">
 
 <title>Technology Advisory</title>
 
@@ -11,16 +13,21 @@ body {
   margin: 0;
   background: #0b1220;
   font-family: Arial, sans-serif;
+  overflow-x: auto; /* permite scroll lateral en móvil */
+}
+
+/* CONTENEDOR FIJO */
+.wrapper {
+  width: 1200px;
+  margin: auto;
 }
 
 /* HERO */
 .hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero img {
@@ -33,7 +40,11 @@ body {
 .footer {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 1200px;
+
+  left: 50%;
+  transform: translateX(-50%);
+
   padding: 20px 30px;
   box-sizing: border-box;
 
@@ -93,11 +104,6 @@ body {
   border-radius: 10px;
 
   color: #e5e7eb;
-  transition: all 0.2s ease;
-}
-
-.li-btn:hover {
-  background: rgba(255,255,255,0.15);
 }
 
 .li-icon {
@@ -116,26 +122,17 @@ body {
   font-size: 12px;
   color: #9ca3af;
 }
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .footer-inner {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-  }
-
-  .hero {
-    padding: 10px;
-  }
-}
 </style>
 </head>
 
 <body>
 
-<div class="hero">
-  <img src="hero-mac.png" alt="">
+<div class="wrapper">
+
+  <div class="hero">
+    <img src="hero-mac.png" alt="">
+  </div>
+
 </div>
 
 <div class="footer">
