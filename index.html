@@ -7,8 +7,7 @@
 <style>
 /* ============================================
    RESET Y CONFIGURACIÓN GLOBAL
-   SIN SCROLL HORIZONTAL EN NINGÚN DISPOSITIVO
-   DISEÑO NATIVAMENTE RESPONSIVE (NO FORZADO A DESKTOP)
+   SIN SCROLL HORIZONTAL - RESPONSIVE NATIVO
    ============================================ */
 * {
   margin: 0;
@@ -17,7 +16,7 @@
 }
 
 body {
-  background: #0b1220;
+  background: #0a0f1c;
   font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, 'Roboto', Arial, sans-serif;
   overflow-x: hidden;
   width: 100%;
@@ -28,12 +27,10 @@ body {
 
 html {
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
 /* ============================================
    CONTENEDOR PRINCIPAL RESPONSIVE
-   (Nada de ancho fijo de 1200px, todo fluido)
    ============================================ */
 .container {
   width: 100%;
@@ -43,147 +40,134 @@ html {
 }
 
 /* ============================================
-   HERO SECTION - COMPLETAMENTE RESPONSIVE
+   HERO SECTION - RESPONSIVE PERFECTO
    ============================================ */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 1rem;
-  background: radial-gradient(circle at 20% 30%, rgba(0, 40, 70, 0.4), #0b1220 90%);
+  padding: 6rem 1.5rem 8rem 1.5rem;
+  background: radial-gradient(circle at 20% 30%, rgba(0, 40, 70, 0.5), #0a0f1c 90%);
 }
 
 .hero-card {
   max-width: 900px;
   width: 100%;
   margin: 0 auto;
-  background: rgba(11, 18, 32, 0.7);
+  background: rgba(10, 15, 28, 0.75);
   backdrop-filter: blur(12px);
   border-radius: 2rem;
   padding: 2.5rem 2rem;
-  border: 1px solid rgba(96, 165, 250, 0.3);
-  box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.6);
   transition: all 0.2s;
 }
 
-/* Textos completamente responsivos con clamp */
+/* Texto superior */
 .hero-eyebrow {
-  font-size: clamp(0.7rem, 4vw, 0.85rem);
+  font-size: clamp(0.7rem, 3.5vw, 0.8rem);
   letter-spacing: 3px;
   text-transform: uppercase;
   font-weight: 500;
   color: #60a5fa;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .hero-tagline {
-  font-size: clamp(0.9rem, 5vw, 1.2rem);
+  font-size: clamp(0.85rem, 4vw, 1rem);
   font-weight: 400;
   color: #cbd5e6;
   text-align: center;
   margin-bottom: 1.8rem;
-  border-bottom: 1px dashed rgba(96, 165, 250, 0.4);
-  display: inline-block;
-  width: auto;
-  padding-bottom: 0.5rem;
+  letter-spacing: 1px;
 }
 
+/* Títulos principales */
 .main-title {
-  font-size: clamp(1.6rem, 8vw, 3.2rem);
+  font-size: clamp(1.8rem, 8vw, 3.5rem);
   font-weight: 800;
   background: linear-gradient(135deg, #FFFFFF, #a0c4ff, #60a5fa);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   line-height: 1.2;
-  margin: 1rem 0 0.5rem;
+  margin: 0.5rem 0;
   text-align: center;
 }
 
 .sub-title {
-  font-size: clamp(1.1rem, 6vw, 1.8rem);
+  font-size: clamp(1.2rem, 5vw, 2rem);
   font-weight: 600;
   color: #e2e8f0;
-  margin: 0.5rem 0 1.5rem;
+  margin: 0.25rem 0 1.5rem;
   text-align: center;
 }
 
+/* Descripción */
 .description {
   font-size: clamp(0.85rem, 3.8vw, 1rem);
   line-height: 1.5;
   color: #cbd5e6;
   text-align: center;
   max-width: 90%;
-  margin: 0 auto 2rem auto;
-  background: rgba(0, 0, 0, 0.2);
+  margin: 0 auto 1.8rem auto;
+  background: rgba(0, 0, 0, 0.25);
   padding: 1rem;
   border-radius: 1rem;
   border-left: 3px solid #60a5fa;
+  border-right: 3px solid #60a5fa;
 }
 
-/* Pilares flexibles */
+/* Lista de pilares */
 .pillars {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.8rem;
-  margin: 2rem 0 1.5rem;
+  margin: 1.5rem 0 1.5rem;
 }
 
 .pillar {
   background: rgba(15, 25, 45, 0.8);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(96, 165, 250, 0.4);
-  padding: 0.5rem 1.2rem;
+  padding: 0.5rem 1.3rem;
   border-radius: 40px;
   font-weight: 600;
   font-size: clamp(0.7rem, 3.5vw, 0.85rem);
   color: #c9e0ff;
-  white-space: nowrap;
+  transition: all 0.2s;
 }
 
-/* En móviles muy pequeños, que el texto no se desborde */
-@media (max-width: 480px) {
-  .pillar {
-    white-space: normal;
-    font-size: 0.7rem;
-    padding: 0.4rem 0.9rem;
-  }
-  .hero-card {
-    padding: 1.5rem;
-  }
-  .description {
-    max-width: 100%;
-    text-align: left;
-  }
-  .container {
-    padding: 0 1rem;
-  }
+.pillar:hover {
+  background: rgba(96, 165, 250, 0.2);
+  transform: translateY(-2px);
 }
 
+/* Tech stack */
 .tech-stack {
   font-size: clamp(0.65rem, 3vw, 0.75rem);
   color: #8ba0bc;
   text-align: center;
-  margin-top: 2rem;
+  margin: 1.8rem 0 1rem;
   letter-spacing: 1.5px;
   font-weight: 500;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 1.5rem;
 }
 
+/* Copyright */
 .copyright {
   font-size: 0.7rem;
   color: #5f7f9e;
   text-align: center;
-  margin-top: 1.2rem;
   opacity: 0.7;
 }
 
 /* ============================================
-   FOOTER FIJO - RESPONSIVE Y SIN TAPAR CONTENIDO
+   FOOTER FIJO - RESPONSIVE
    ============================================ */
 .footer {
   position: fixed;
@@ -201,9 +185,9 @@ html {
   max-width: 1200px;
   margin: 0 auto;
   padding: 14px 24px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.3));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.3));
   backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   pointer-events: auto;
   box-sizing: border-box;
 }
@@ -216,6 +200,7 @@ html {
   gap: 12px;
 }
 
+/* Bloque izquierdo: avatar + datos */
 .author-block {
   display: flex;
   align-items: center;
@@ -232,7 +217,7 @@ html {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 17px;
+  font-size: 18px;
   color: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   flex-shrink: 0;
@@ -253,6 +238,37 @@ html {
   margin-top: 2px;
 }
 
+/* Enlace web */
+.website-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 6px 14px;
+  border-radius: 40px;
+  transition: all 0.2s;
+}
+
+.website-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(96, 165, 250, 0.4);
+}
+
+.web-icon {
+  width: 14px;
+  height: 14px;
+  color: #60a5fa;
+}
+
+.web-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #cbd5e6;
+}
+
+/* Botón LinkedIn */
 .li-btn {
   display: flex;
   align-items: center;
@@ -293,102 +309,116 @@ html {
   color: #9ca3af;
 }
 
-/* Footer responsivo: en móvil se apila */
-@media (max-width: 680px) {
+/* Responsive footer: en móvil se apila todo */
+@media (max-width: 750px) {
   .footer-container {
-    padding: 10px 16px;
+    padding: 12px 16px;
   }
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
   }
-  .li-btn {
+  .li-btn, .website-link {
     align-self: flex-start;
   }
   .author-avatar {
     width: 38px;
     height: 38px;
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 
 /* Espacio inferior para que el footer no tape contenido */
 body {
-  padding-bottom: 85px;
+  padding-bottom: 95px;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 750px) {
   body {
-    padding-bottom: 100px;
+    padding-bottom: 115px;
   }
 }
 
 /* ============================================
-   GARANTÍA ABSOLUTA: SIN SCROLL HORIZONTAL
+   GARANTÍA: SIN SCROLL HORIZONTAL
    ============================================ */
-img, svg, video, iframe, picture {
+img, svg, video, picture {
   max-width: 100%;
   display: block;
 }
 
-/* Forzar que ningún elemento genere overflow horizontal */
 body, html {
   overflow-x: hidden;
   width: 100%;
-  position: relative;
 }
 
-/* Aseguramos que cualquier elemento ancho se ajuste */
 * {
   max-width: 100%;
 }
 
-/* Ajuste adicional para contenedores flex */
-.footer-inner, .pillars, .hero-card {
-  max-width: 100%;
-  overflow-x: hidden;
+/* Ajuste para móviles muy pequeños */
+@media (max-width: 480px) {
+  .hero-card {
+    padding: 1.5rem;
+  }
+  .description {
+    max-width: 100%;
+  }
+  .pillar {
+    white-space: normal;
+    font-size: 0.7rem;
+    padding: 0.4rem 0.9rem;
+  }
 }
 </style>
 </head>
 <body>
 
-<!-- HERO SECTION - Diseño responsive nativo (no forzado a desktop) -->
+<!-- HERO SECTION con TODO el contenido de las imágenes -->
 <div class="hero">
   <div class="hero-card">
     
+    <!-- Primera línea: Tecnología y Arquitectura Resiliente -->
     <div class="hero-eyebrow">TECNOLOGÍA Y ARQUITECTURA RESILIENTE</div>
-    <div class="hero-tagline">DISEÑO. OPERACIÓN. PROTECCIÓN.</div>
+    <div class="hero-tagline">DISEÑO · OPERACIÓN · PROTECCIÓN</div>
     
-    <h1 class="main-title">INFRAESTRUCTURA QUE RESISTE</h1>
+    <!-- Títulos principales -->
+    <h1 class="main-title">INFRAESTRUCTURA<br>QUE RESISTE</h1>
     <h2 class="sub-title">INGENIERÍA QUE PROTEGE.</h2>
     
+    <!-- Descripción completa -->
     <div class="description">
-      ARQUITECTURAS TECNOLÓGICAS CRÍTICAS (ON-PREMISES / CLOUD). ENFOQUE OPERATIVO<br>
-      SEGURIDAD Y CONTINUIDAD DE NEGOCIO.
+      ARQUITECTURAS TECNOLÓGICAS CRÍTICAS (ON-PREMISES / CLOUD).<br>
+      ENFOQUE OPERATIVO · SEGURIDAD Y CONTINUIDAD DE NEGOCIO.
     </div>
     
+    <!-- Pilares -->
     <div class="pillars">
       <span class="pillar">🔹 SEGURIDAD</span>
       <span class="pillar">🔹 ARQUITECTURA</span>
       <span class="pillar">🔹 RESILIENCIA</span>
     </div>
     
+    <!-- Tech stack -->
     <div class="tech-stack">
       REDES · SISTEMAS · SEGURIDAD · CONTINUIDAD · NUBE
     </div>
     
+    <!-- Copyright (versión 2025 y 2026 combinadas) -->
     <div class="copyright">
-      © 2026 TECHNOLOGY ADVISORY · OPERATIONAL SECURITY
+      © 2025-2026 TECHNOLOGY ADVISORY · OPERATIONAL SECURITY
     </div>
     
   </div>
 </div>
 
-<!-- FOOTER FIJO con información de contacto -->
+<!-- FOOTER FIJO con todos los datos: avatar, nombre, web, LinkedIn -->
 <div class="footer">
   <div class="footer-container">
     <div class="footer-inner">
       
+      <!-- Bloque izquierdo: avatar + nombre y cargo -->
       <div class="author-block">
         <div class="author-avatar">MÁ</div>
         <div>
@@ -397,6 +427,15 @@ body, html {
         </div>
       </div>
       
+      <!-- Enlace web: technology-advisory.es -->
+      <a href="https://technology-advisory.es" target="_blank" rel="noopener noreferrer" class="website-link">
+        <svg class="web-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.66 0 3-4 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4-3-9s1.34-9 3-9m-9 9a9 9 0 019-9" />
+        </svg>
+        <span class="web-text">technology-advisory.es</span>
+      </a>
+      
+      <!-- Botón LinkedIn -->
       <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" rel="noopener noreferrer" class="li-btn">
         <svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -414,21 +453,17 @@ body, html {
 <!-- Script de seguridad: elimina cualquier scroll horizontal residual -->
 <script>
 (function() {
-  // Función para eliminar scroll horizontal en todos los elementos
-  function preventHorizontalScroll() {
-    // Asegurar que html y body no tengan overflow horizontal
+  function killHorizontalScroll() {
     document.documentElement.style.overflowX = 'hidden';
     document.body.style.overflowX = 'hidden';
     
-    // Buscar cualquier elemento que pueda estar causando desborde horizontal
+    // Buscar cualquier elemento que pueda estar causando desborde
     const allElements = document.querySelectorAll('*');
     for (let i = 0; i < allElements.length; i++) {
       const el = allElements[i];
       if (el.scrollWidth > el.clientWidth && el.clientWidth > 0) {
         const style = getComputedStyle(el);
-        // Si el elemento tiene overflow visible y se desborda, lo corregimos
         if (style.overflowX === 'visible' && el !== document.body && el !== document.documentElement) {
-          // Evitamos aplicar a elementos que necesitan scroll interno legítimo
           if (!el.classList.contains('pillars') && !el.classList.contains('footer-inner')) {
             el.style.maxWidth = '100%';
           }
@@ -437,18 +472,9 @@ body, html {
     }
   }
   
-  // Ejecutar al cargar y al redimensionar
-  window.addEventListener('load', preventHorizontalScroll);
-  window.addEventListener('resize', preventHorizontalScroll);
-  preventHorizontalScroll();
-  
-  // Observador para elementos dinámicos (por si acaso)
-  if (window.MutationObserver) {
-    const observer = new MutationObserver(function() {
-      preventHorizontalScroll();
-    });
-    observer.observe(document.body, { childList: true, subtree: true, attributes: true });
-  }
+  window.addEventListener('load', killHorizontalScroll);
+  window.addEventListener('resize', killHorizontalScroll);
+  killHorizontalScroll();
 })();
 </script>
 
