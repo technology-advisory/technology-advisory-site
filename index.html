@@ -2,12 +2,14 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Technology Advisory | Miguel Ángel Carriazo – vCISO</title>
+
+<!-- ✅ Viewport correcto -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Technology Advisory | Miguel Ángel Carriazo</title>
+
 <style>
-/* ============================================
-   RESET Y CONFIGURACIÓN GLOBAL
-   ============================================ */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -16,19 +18,11 @@
 
 body {
   background: #0b1220;
-  font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, 'Roboto', Arial, sans-serif;
-  overflow-x: hidden;
-  width: 100%;
-  min-height: 100vh;
-}
-
-html {
-  overflow-x: hidden;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 /* ============================================
-   CONTENEDOR QUE FUERZA VERSIÓN DESKTOP (1200px)
-   EN MÓVIL SE ESCALA PROPORCIONALMENTE SIN SCROLL
+   CONTENEDOR DESKTOP (1200px)
    ============================================ */
 .desktop-viewport {
   width: 1200px;
@@ -37,177 +31,77 @@ html {
   background: #0b1220;
 }
 
-/* Pantallas MÁS PEQUEÑAS que 1200px (móviles y tablets)
-   → Escalamos todo el contenedor de forma centrada y SIN scroll */
+/* ============================================
+   ESCALADO PARA MÓVIL (CLAVE)
+   ============================================ */
 @media (max-width: 1200px) {
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
   body {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    overflow-x: hidden;
+    justify-content: center;
+    align-items: flex-start;
   }
-  
+
   .desktop-viewport {
     transform: scale(calc(100vw / 1200));
     transform-origin: top center;
     width: 1200px;
-    margin: 0;
-    overflow: visible;
+    height: calc(100vh / (100vw / 1200));
   }
 }
 
 /* ============================================
-   HERO SECTION - ESTILO DESKTOP FIJO
+   HERO
    ============================================ */
 .hero {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at 20% 30%, rgba(0, 40, 70, 0.4), #0b1220 90%);
 }
 
-.hero-card {
-  width: 900px;
-  background: rgba(11, 18, 32, 0.75);
-  backdrop-filter: blur(12px);
-  border-radius: 2rem;
-  padding: 2.5rem 2rem;
-  border: 1px solid rgba(96, 165, 250, 0.3);
-  box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.6);
-  text-align: center;
-}
-
-.hero-eyebrow {
-  font-size: 0.85rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: #60a5fa;
-  margin-bottom: 0.75rem;
-}
-
-.hero-tagline {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #cbd5e6;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
-}
-
-.main-title {
-  font-size: 3rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #FFFFFF, #a0c4ff, #60a5fa);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  line-height: 1.2;
-  margin: 0.5rem 0;
-}
-
-.sub-title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #e2e8f0;
-  margin: 0.25rem 0 1.5rem;
-}
-
-.description {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #cbd5e6;
-  text-align: center;
-  max-width: 85%;
-  margin: 0 auto 1.5rem auto;
-  background: rgba(0, 0, 0, 0.25);
-  padding: 1rem;
-  border-radius: 1rem;
-  border-left: 3px solid #60a5fa;
-  border-right: 3px solid #60a5fa;
-}
-
-/* Pilares */
-.pillars {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  margin: 1.5rem 0 1.5rem;
-}
-
-.pillar {
-  background: rgba(15, 25, 45, 0.8);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(96, 165, 250, 0.4);
-  padding: 0.5rem 1.3rem;
-  border-radius: 40px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #c9e0ff;
-}
-
-.tech-stack {
-  font-size: 0.75rem;
-  color: #8ba0bc;
-  text-align: center;
-  margin: 1.5rem 0 1rem;
-  letter-spacing: 1.5px;
-  font-weight: 500;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 1.5rem;
-}
-
-.copyright {
-  font-size: 0.7rem;
-  color: #5f7f9e;
-  text-align: center;
-  opacity: 0.7;
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* ============================================
-   FOOTER FIJO - ESTILO DESKTOP
+   FOOTER
    ============================================ */
 .footer {
   position: fixed;
   bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  pointer-events: none;
-  z-index: 1000;
-}
-
-.footer-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px 30px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.25));
-  backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  pointer-events: auto;
+  width: 1200px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px 30px;
   box-sizing: border-box;
+
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 .footer-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
-  gap: 20px;
+  gap: 15px;
 }
 
-/* Bloque autor */
+/* AUTHOR */
 .author-block {
   display: flex;
   align-items: center;
   gap: 14px;
   color: #e5e7eb;
-  flex-shrink: 0;
 }
 
 .author-avatar {
@@ -221,13 +115,11 @@ html {
   font-weight: bold;
   font-size: 18px;
   color: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  flex-shrink: 0;
 }
 
 .author-name {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .author-name span {
@@ -235,66 +127,32 @@ html {
 }
 
 .author-title {
-  font-size: 12px;
+  font-size: 13px;
   color: #9ca3af;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
-/* Enlace web */
-.website-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 8px 18px;
-  border-radius: 40px;
-  transition: all 0.2s;
-  flex-shrink: 0;
-}
-
-.website-link:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(96, 165, 250, 0.4);
-}
-
-.web-icon {
-  width: 16px;
-  height: 16px;
-  color: #60a5fa;
-}
-
-.web-text {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: #cbd5e6;
-}
-
-/* Botón LinkedIn (opcional, no está en la imagen pero lo dejo por si acaso) */
+/* LINKEDIN */
 .li-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 8px 18px;
-  border-radius: 48px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 10px 18px;
+  border-radius: 40px;
   transition: all 0.2s ease;
-  cursor: pointer;
-  flex-shrink: 0;
 }
 
 .li-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-1px);
 }
 
 .li-icon {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   fill: #0a66c2;
   background: white;
   border-radius: 4px;
@@ -302,169 +160,54 @@ html {
 
 .li-main {
   display: block;
-  font-size: 0.75rem;
+  font-size: 13px;
   font-weight: 500;
-  color: #f1f5f9;
-  white-space: nowrap;
+  color: #e5e7eb;
 }
 
 .li-sub {
   display: block;
-  font-size: 0.65rem;
+  font-size: 11px;
   color: #9ca3af;
-  white-space: nowrap;
-}
-
-/* Ajuste para pantallas muy pequeñas: el footer se adapta pero sin romper */
-@media (max-width: 1200px) {
-  .footer-container {
-    padding: 12px 20px;
-  }
-  .footer-inner {
-    gap: 12px;
-  }
-  .author-avatar {
-    width: 42px;
-    height: 42px;
-    font-size: 16px;
-  }
-  .author-name {
-    font-size: 13px;
-  }
-  .author-title {
-    font-size: 10px;
-  }
-  .website-link {
-    padding: 6px 14px;
-  }
-  .web-text {
-    font-size: 0.7rem;
-  }
-  .li-btn {
-    padding: 6px 14px;
-  }
-  .li-main {
-    font-size: 0.65rem;
-  }
-  .li-sub {
-    font-size: 0.55rem;
-  }
-  .li-icon {
-    width: 16px;
-    height: 16px;
-  }
-}
-
-/* Eliminamos cualquier scroll horizontal */
-img, svg, video, picture {
-  max-width: 100%;
-  display: block;
-}
-
-body, html {
-  overflow-x: hidden;
-  width: 100%;
 }
 </style>
 </head>
+
 <body>
 
 <div class="desktop-viewport">
   
-  <!-- HERO SECTION con el contenido CORREGIDO de la imagen -->
+  <!-- HERO -->
   <div class="hero">
-    <div class="hero-card">
-      
-      <div class="hero-eyebrow">TECNOLOGÍA Y ARQUITECTURA RESILIENTE</div>
-      <div class="hero-tagline">DISEÑO · OPERACIÓN · PROTECCIÓN</div>
-      
-      <h1 class="main-title">INFRAESTRUCTURA QUE RESISTE</h1>
-      <h2 class="sub-title">INGENIERÍA QUE PROTEGE.</h2>
-      
-      <div class="description">
-        ARQUITECTURAS TECNOLÓGICAS CRÍTICAS (ON-PREMISES / CLOUD).<br>
-        ENFOQUE OPERATIVO · SEGURIDAD Y CONTINUIDAD DE NEGOCIO.
-      </div>
-      
-      <div class="pillars">
-        <span class="pillar">🔹 SEGURIDAD</span>
-        <span class="pillar">🔹 ARQUITECTURA</span>
-        <span class="pillar">🔹 RESILIENCIA</span>
-      </div>
-      
-      <div class="tech-stack">
-        REDES · SISTEMAS · SEGURIDAD · CONTINUIDAD · NUBE
-      </div>
-      
-      <div class="copyright">
-        © 2025-2026 TECHNOLOGY ADVISORY · OPERATIONAL SECURITY
-      </div>
-      
-    </div>
+    <img src="hero-mac.png" alt="Technology Advisory">
   </div>
 
 </div>
 
-<!-- FOOTER FIJO con los datos de la imagen -->
+<!-- FOOTER -->
 <div class="footer">
-  <div class="footer-container">
-    <div class="footer-inner">
-      
-      <div class="author-block">
-        <div class="author-avatar">MÁ</div>
-        <div>
-          <div class="author-name">Miguel Ángel Carriazo · <span>vCISO</span></div>
-          <div class="author-title">Cybersecurity & Infrastructure Architect</div>
-        </div>
+  <div class="footer-inner">
+
+    <div class="author-block">
+      <div class="author-avatar">MA</div>
+      <div>
+        <div class="author-name">Miguel Ángel Carriazo · <span>vCISO</span></div>
+        <div class="author-title">Cybersecurity & Infrastructure Architect</div>
       </div>
-      
-      <a href="https://technology-advisory.es" target="_blank" rel="noopener noreferrer" class="website-link">
-        <svg class="web-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.66 0 3-4 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4-3-9s1.34-9 3-9m-9 9a9 9 0 019-9" />
-        </svg>
-        <span class="web-text">technology-advisory.es</span>
-      </a>
-      
-      <!-- LinkedIn según la imagen (opcional, lo añado para completar) -->
-      <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" rel="noopener noreferrer" class="li-btn">
-        <svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-        </svg>
-        <div>
-          <span class="li-main">"Merece la pena la experiencia..."</span>
-          <span class="li-sub">Hablemos en LinkedIn →</span>
-        </div>
-      </a>
-      
     </div>
+
+    <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" class="li-btn">
+      <svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+      </svg>
+      <div>
+        <span class="li-main">“Merece la pena la experiencia...”</span>
+        <span class="li-sub">Hablemos en LinkedIn →</span>
+      </div>
+    </a>
+
   </div>
 </div>
-
-<!-- Script que elimina scroll horizontal residual -->
-<script>
-(function() {
-  function preventHorizontalScroll() {
-    document.documentElement.style.overflowX = 'hidden';
-    document.body.style.overflowX = 'hidden';
-    
-    // Aseguramos que ningún elemento hijo cause desborde
-    const allElements = document.querySelectorAll('*');
-    for (let i = 0; i < allElements.length; i++) {
-      const el = allElements[i];
-      if (el.scrollWidth > el.clientWidth && el.clientWidth > 0) {
-        const style = getComputedStyle(el);
-        if (style.overflowX === 'visible' && el !== document.body && el !== document.documentElement) {
-          el.style.maxWidth = '100%';
-        }
-      }
-    }
-  }
-  
-  window.addEventListener('load', preventHorizontalScroll);
-  window.addEventListener('resize', preventHorizontalScroll);
-  preventHorizontalScroll();
-})();
-</script>
 
 </body>
 </html>
