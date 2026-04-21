@@ -2,183 +2,211 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1024, initial-scale=1.0">
-<title>Metodología · GRCreal</title>
+
+<!-- ✅ Viewport correcto -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Technology Advisory | Miguel Ángel Carriazo</title>
+
 <style>
-/* ── ESTILOS BASE COHERENTES CON TU HOME ── */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    background: #f5f3f0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    padding: 32px 20px;
-    color: #1a1a1a;
+  background: #0b1220;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-.sobre-wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
-    background: #ffffff;
-    border: 1px solid #dedad4;
-    padding: 60px 50px;
+/* ============================================
+   CONTENEDOR DESKTOP (1200px)
+   ============================================ */
+.desktop-viewport {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  background: #0b1220;
 }
 
-/* NAVBAR SIMULADO PARA MANTENER FORMATO */
-.nav-sim {
+/* ============================================
+   ESCALADO PARA MÓVIL (CLAVE)
+   ============================================ */
+@media (max-width: 1200px) {
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
-}
-.nav-logo { font-weight: bold; font-size: 20px; }
-.nav-logo span { color: #0077B5; }
+    justify-content: center;
+    align-items: flex-start;
+  }
 
-/* TITULARES ESTILO "SOBRE MÍ" */
-.bio-label {
-    font-family: 'Courier New', monospace;
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: #0077B5;
-    margin-bottom: 18px;
+  .desktop-viewport {
+    transform: scale(calc(100vw / 1200));
+    transform-origin: top center;
+    width: 1200px;
+    height: calc(100vh / (100vw / 1200));
+  }
 }
 
-.hero-nombre {
-    font-size: 42px;
-    font-weight: 700;
-    color: #1a1a1a;
-    line-height: 1.1;
-    margin-bottom: 24px;
-}
-.hero-nombre span { color: #0077B5; }
-
-.hero-frase {
-    font-size: 20px;
-    font-weight: 600;
-    color: #1a1a1a;
-    line-height: 1.4;
-    border-left: 3px solid #0077B5;
-    padding-left: 18px;
-    margin-bottom: 40px;
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* TEXTO Y DIVISORES */
-.bio-texto {
-    font-size: 16px;
-    color: #444;
-    line-height: 1.9;
-}
-.bio-texto p { margin-bottom: 18px; }
-
-.seccion-divisor {
-    height: 1px;
-    background: #eae7e2;
-    margin: 48px 0;
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* GRID DE TARJETAS (Diferencial) */
-.areas-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-top: 24px;
-}
-.area-card {
-    background: #faf9f7;
-    border: 1px solid #dedad4;
-    padding: 20px;
-    border-radius: 4px;
-    border-top: 3px solid #0077B5;
-}
-.area-title {
-    font-size: 14px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 6px;
-}
-.area-desc {
-    font-size: 13px;
-    color: #666;
-    line-height: 1.6;
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 1200px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px 30px;
+  box-sizing: border-box;
+
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-/* FOOTER COHERENTE */
 .footer-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
 }
+
+/* AUTHOR */
+.author-block {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #e5e7eb;
+}
+
 .author-avatar {
-    width: 40px; height: 40px; background: #0077B5; color: white;
-    display: flex; align-items: center; justify-content: center;
-    border-radius: 4px; font-weight: bold; margin-right: 12px;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #0077B5, #005e8c);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
 }
+
+.author-name {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.author-name span {
+  color: #60a5fa;
+}
+
+.author-title {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 4px;
+}
+
+/* LINKEDIN */
 .li-btn {
-    display: flex; align-items: center; gap: 10px;
-    background: #f0f2f5; padding: 10px 16px; border-radius: 4px;
-    text-decoration: none; border: 1px solid #e0e3e8;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 10px 18px;
+  border-radius: 40px;
+  transition: all 0.2s ease;
+}
+
+.li-btn:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-1px);
+}
+
+.li-icon {
+  width: 22px;
+  height: 22px;
+  fill: #0a66c2;
+  background: white;
+  border-radius: 4px;
+}
+
+.li-main {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.li-sub {
+  display: block;
+  font-size: 11px;
+  color: #9ca3af;
 }
 </style>
 </head>
+
 <body>
 
-<div class="sobre-wrapper">
-    <div class="bio-label">Metodología Operativa</div>
-    <div class="hero-nombre">
-        La metodología en GRC:<br>
-        cuando el cumplimiento <span>no es suficiente.</span>
+<div class="desktop-viewport">
+  
+  <!-- HERO -->
+  <div class="hero">
+    <img src="hero-mac.png" alt="Technology Advisory">
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-inner">
+
+    <div class="author-block">
+      <div class="author-avatar">MA</div>
+      <div>
+        <div class="author-name">Miguel Ángel Carriazo · <span>vCISO</span></div>
+        <div class="author-title">Cybersecurity & Infrastructure Architect</div>
+      </div>
     </div>
 
-    <div class="hero-frase">
-        En Gobierno, Riesgo y Cumplimiento, la metodología suele ser una estructura formal. En <strong>GRCreal</strong>, es una herramienta para separar el "papel" de la <strong>protección real.</strong>
-    </div>
+    <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" class="li-btn">
+      <svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+      </svg>
+      <div>
+        <span class="li-main">“Merece la pena la experiencia...”</span>
+        <span class="li-sub">Hablemos en LinkedIn →</span>
+      </div>
+    </a>
 
-    <div class="bio-label">El Diagnóstico</div>
-    <div class="bio-texto">
-        <p>Durante años, el enfoque predominante ha sido descendente: se parte del marco normativo (ISO 27001, ENS, NIS2) y se intenta encajar la realidad de la empresa en esa estructura. El resultado suele ser una <strong>fotografía estática</strong> que se queda obsoleta al día siguiente de la auditoría.</p>
-        <p>El riesgo no es una celda en una matriz. Es dinámico, contextual y emergente. Mi metodología no se limita a describir procesos, sino a entender <strong>cómo evoluciona el riesgo en la operación real.</strong></p>
-    </div>
-
-    <div class="seccion-divisor"></div>
-
-    <div class="bio-label">Nuestro Diferencial</div>
-    <div class="areas-grid">
-        <div class="area-card">
-            <div class="area-title">Criterio sobre Proceso</div>
-            <div class="area-desc">Diferenciamos a quien aplica un marco de quien lo entiende. Menos checklist y más análisis crítico del entorno.</div>
-        </div>
-        <div class="area-card">
-            <div class="area-title">Visibilidad Real</div>
-            <div class="area-desc">Identificamos las rutas reales de ataque en lugar de limitarnos a inventariar activos estáticos.</div>
-        </div>
-        <div class="area-card">
-            <div class="area-title">Resiliencia Viva</div>
-            <div class="area-desc">La metodología deja de ser un fin y pasa a ser una herramienta para mantener el control constante.</div>
-        </div>
-    </div>
-
-    <div class="seccion-divisor"></div>
-
-    <div class="bio-label">El Compromiso</div>
-    <div class="bio-texto">
-        <p>Hablar de metodología en <strong>GRCreal</strong> implica una reflexión profunda sobre cómo se conecta el marco legal con los bits.</p>
-        <p>Mi compromiso es transformar una secuencia de actividades administrativas en una <strong>herramienta de control constante</strong> para contextos de incertidumbre.</p>
-    </div>
-
-    <div class="footer-inner">
-        <div style="display: flex; align-items: center;">
-            <div class="author-avatar">MA</div>
-            <div>
-                <div style="font-weight:bold; font-size:14px;">Miguel Ángel Carriazo &middot; <span style="color:#0077B5;">vCISO</span></div>
-                <div style="color:#888; font-size:12px;">Cybersecurity & Infrastructure Architect</div>
-            </div>
-        </div>
-        <a href="#" class="li-btn">
-            <span style="font-size:12px; font-weight:600; color:#1a1a1a;">Hablemos en LinkedIn &rarr;</span>
-        </a>
-    </div>
+  </div>
 </div>
 
 </body>
