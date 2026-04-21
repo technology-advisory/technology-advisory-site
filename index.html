@@ -192,10 +192,13 @@ body {
 
 <div class="desktop-viewport">
   
-  <!-- HERO: imagen principal -->
-  <div class="hero">
-    <img src="hero-mac.png" alt="Technology Advisory Hero">
-  </div>
+     <!-- HERO: imagen principal -->
+   <div class="hero">
+     <picture>
+       <source media="(max-width: 768px)" srcset="hero-mobile.png">
+       <img src="hero-mac.png" alt="Technology Advisory Hero">
+     </picture>
+   </div>
 
   <!-- FOOTER: información de contacto -->
   <div class="footer">
