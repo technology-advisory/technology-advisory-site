@@ -2,12 +2,11 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>Technology Advisory | Miguel Ángel Carriazo – vCISO</title>
 <style>
 /* ============================================
    RESET Y CONFIGURACIÓN GLOBAL
-   SIN SCROLL HORIZONTAL - RESPONSIVE NATIVO
    ============================================ */
 * {
   margin: 0;
@@ -16,13 +15,11 @@
 }
 
 body {
-  background: #0a0f1c;
+  background: #0b1220;
   font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, 'Roboto', Arial, sans-serif;
   overflow-x: hidden;
   width: 100%;
   min-height: 100vh;
-  color: #e5e7eb;
-  line-height: 1.5;
 }
 
 html {
@@ -30,63 +27,78 @@ html {
 }
 
 /* ============================================
-   CONTENEDOR PRINCIPAL RESPONSIVE
+   CONTENEDOR QUE FUERZA VERSIÓN DESKTOP (1200px)
+   EN MÓVIL SE ESCALA PROPORCIONALMENTE SIN SCROLL
    ============================================ */
-.container {
-  width: 100%;
-  max-width: 1200px;
+.desktop-viewport {
+  width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  position: relative;
+  background: #0b1220;
+}
+
+/* Pantallas MÁS PEQUEÑAS que 1200px (móviles y tablets)
+   → Escalamos todo el contenedor de forma centrada y SIN scroll */
+@media (max-width: 1200px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .desktop-viewport {
+    transform: scale(calc(100vw / 1200));
+    transform-origin: top center;
+    width: 1200px;
+    margin: 0;
+    overflow: visible;
+  }
 }
 
 /* ============================================
-   HERO SECTION - RESPONSIVE PERFECTO
+   HERO SECTION - ESTILO DESKTOP FIJO
    ============================================ */
 .hero {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem 1.5rem 8rem 1.5rem;
-  background: radial-gradient(circle at 20% 30%, rgba(0, 40, 70, 0.5), #0a0f1c 90%);
+  background: radial-gradient(circle at 20% 30%, rgba(0, 40, 70, 0.4), #0b1220 90%);
 }
 
 .hero-card {
-  max-width: 900px;
-  width: 100%;
-  margin: 0 auto;
-  background: rgba(10, 15, 28, 0.75);
+  width: 900px;
+  background: rgba(11, 18, 32, 0.75);
   backdrop-filter: blur(12px);
   border-radius: 2rem;
   padding: 2.5rem 2rem;
-  border: 1px solid rgba(96, 165, 250, 0.25);
+  border: 1px solid rgba(96, 165, 250, 0.3);
   box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.6);
-  transition: all 0.2s;
+  text-align: center;
 }
 
-/* Texto superior */
 .hero-eyebrow {
-  font-size: clamp(0.7rem, 3.5vw, 0.8rem);
+  font-size: 0.85rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   font-weight: 500;
   color: #60a5fa;
-  text-align: center;
   margin-bottom: 0.75rem;
 }
 
 .hero-tagline {
-  font-size: clamp(0.85rem, 4vw, 1rem);
+  font-size: 1rem;
   font-weight: 400;
   color: #cbd5e6;
-  text-align: center;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.5rem;
   letter-spacing: 1px;
 }
 
-/* Títulos principales */
 .main-title {
-  font-size: clamp(1.8rem, 8vw, 3.5rem);
+  font-size: 3rem;
   font-weight: 800;
   background: linear-gradient(135deg, #FFFFFF, #a0c4ff, #60a5fa);
   background-clip: text;
@@ -94,25 +106,22 @@ html {
   color: transparent;
   line-height: 1.2;
   margin: 0.5rem 0;
-  text-align: center;
 }
 
 .sub-title {
-  font-size: clamp(1.2rem, 5vw, 2rem);
+  font-size: 1.8rem;
   font-weight: 600;
   color: #e2e8f0;
   margin: 0.25rem 0 1.5rem;
-  text-align: center;
 }
 
-/* Descripción */
 .description {
-  font-size: clamp(0.85rem, 3.8vw, 1rem);
+  font-size: 1rem;
   line-height: 1.5;
   color: #cbd5e6;
   text-align: center;
-  max-width: 90%;
-  margin: 0 auto 1.8rem auto;
+  max-width: 85%;
+  margin: 0 auto 1.5rem auto;
   background: rgba(0, 0, 0, 0.25);
   padding: 1rem;
   border-radius: 1rem;
@@ -120,12 +129,11 @@ html {
   border-right: 3px solid #60a5fa;
 }
 
-/* Lista de pilares */
 .pillars {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.8rem;
+  gap: 1rem;
   margin: 1.5rem 0 1.5rem;
 }
 
@@ -136,29 +144,21 @@ html {
   padding: 0.5rem 1.3rem;
   border-radius: 40px;
   font-weight: 600;
-  font-size: clamp(0.7rem, 3.5vw, 0.85rem);
+  font-size: 0.85rem;
   color: #c9e0ff;
-  transition: all 0.2s;
 }
 
-.pillar:hover {
-  background: rgba(96, 165, 250, 0.2);
-  transform: translateY(-2px);
-}
-
-/* Tech stack */
 .tech-stack {
-  font-size: clamp(0.65rem, 3vw, 0.75rem);
+  font-size: 0.75rem;
   color: #8ba0bc;
   text-align: center;
-  margin: 1.8rem 0 1rem;
+  margin: 1.5rem 0 1rem;
   letter-spacing: 1.5px;
   font-weight: 500;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 1.5rem;
 }
 
-/* Copyright */
 .copyright {
   font-size: 0.7rem;
   color: #5f7f9e;
@@ -167,7 +167,7 @@ html {
 }
 
 /* ============================================
-   FOOTER FIJO - RESPONSIVE
+   FOOTER FIJO - ESTILO DESKTOP
    ============================================ */
 .footer {
   position: fixed;
@@ -184,8 +184,8 @@ html {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 14px 24px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.3));
+  padding: 16px 30px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.25));
   backdrop-filter: blur(16px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   pointer-events: auto;
@@ -196,21 +196,22 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
+  flex-wrap: nowrap;
+  gap: 20px;
 }
 
-/* Bloque izquierdo: avatar + datos */
+/* Bloque autor */
 .author-block {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   color: #e5e7eb;
+  flex-shrink: 0;
 }
 
 .author-avatar {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   background: linear-gradient(135deg, #0077B5, #005e8c);
   border-radius: 50%;
   display: flex;
@@ -225,7 +226,7 @@ html {
 
 .author-name {
   font-weight: 700;
-  font-size: clamp(0.8rem, 4vw, 0.95rem);
+  font-size: 15px;
 }
 
 .author-name span {
@@ -233,7 +234,7 @@ html {
 }
 
 .author-title {
-  font-size: clamp(0.65rem, 3vw, 0.75rem);
+  font-size: 12px;
   color: #9ca3af;
   margin-top: 2px;
 }
@@ -242,13 +243,14 @@ html {
 .website-link {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   text-decoration: none;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 6px 14px;
+  padding: 8px 18px;
   border-radius: 40px;
   transition: all 0.2s;
+  flex-shrink: 0;
 }
 
 .website-link:hover {
@@ -257,13 +259,13 @@ html {
 }
 
 .web-icon {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   color: #60a5fa;
 }
 
 .web-text {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: #cbd5e6;
 }
@@ -272,14 +274,15 @@ html {
 .li-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 6px 16px;
+  padding: 8px 20px;
   border-radius: 48px;
   transition: all 0.2s ease;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .li-btn:hover {
@@ -289,8 +292,8 @@ html {
 }
 
 .li-icon {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   fill: #0a66c2;
   background: white;
   border-radius: 4px;
@@ -298,51 +301,60 @@ html {
 
 .li-main {
   display: block;
-  font-size: clamp(0.7rem, 3.5vw, 0.8rem);
+  font-size: 0.8rem;
   font-weight: 500;
   color: #f1f5f9;
+  white-space: nowrap;
 }
 
 .li-sub {
   display: block;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   color: #9ca3af;
+  white-space: nowrap;
 }
 
-/* Responsive footer: en móvil se apila todo */
-@media (max-width: 750px) {
+/* Ajuste para pantallas muy pequeñas: el footer se adapta pero sin romper */
+@media (max-width: 1200px) {
   .footer-container {
-    padding: 12px 16px;
+    padding: 12px 20px;
   }
   .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  .li-btn, .website-link {
-    align-self: flex-start;
+    gap: 12px;
   }
   .author-avatar {
-    width: 38px;
-    height: 38px;
-    font-size: 15px;
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+  }
+  .author-name {
+    font-size: 13px;
+  }
+  .author-title {
+    font-size: 10px;
+  }
+  .website-link {
+    padding: 6px 14px;
+  }
+  .web-text {
+    font-size: 0.7rem;
+  }
+  .li-btn {
+    padding: 6px 14px;
+  }
+  .li-main {
+    font-size: 0.7rem;
+  }
+  .li-sub {
+    font-size: 0.6rem;
+  }
+  .li-icon {
+    width: 18px;
+    height: 18px;
   }
 }
 
-/* Espacio inferior para que el footer no tape contenido */
-body {
-  padding-bottom: 95px;
-}
-
-@media (max-width: 750px) {
-  body {
-    padding-bottom: 115px;
-  }
-}
-
-/* ============================================
-   GARANTÍA: SIN SCROLL HORIZONTAL
-   ============================================ */
+/* Eliminamos cualquier scroll horizontal */
 img, svg, video, picture {
   max-width: 100%;
   display: block;
@@ -352,73 +364,51 @@ body, html {
   overflow-x: hidden;
   width: 100%;
 }
-
-* {
-  max-width: 100%;
-}
-
-/* Ajuste para móviles muy pequeños */
-@media (max-width: 480px) {
-  .hero-card {
-    padding: 1.5rem;
-  }
-  .description {
-    max-width: 100%;
-  }
-  .pillar {
-    white-space: normal;
-    font-size: 0.7rem;
-    padding: 0.4rem 0.9rem;
-  }
-}
 </style>
 </head>
 <body>
 
-<!-- HERO SECTION con TODO el contenido de las imágenes -->
-<div class="hero">
-  <div class="hero-card">
-    
-    <!-- Primera línea: Tecnología y Arquitectura Resiliente -->
-    <div class="hero-eyebrow">TECNOLOGÍA Y ARQUITECTURA RESILIENTE</div>
-    <div class="hero-tagline">DISEÑO · OPERACIÓN · PROTECCIÓN</div>
-    
-    <!-- Títulos principales -->
-    <h1 class="main-title">INFRAESTRUCTURA<br>QUE RESISTE</h1>
-    <h2 class="sub-title">INGENIERÍA QUE PROTEGE.</h2>
-    
-    <!-- Descripción completa -->
-    <div class="description">
-      ARQUITECTURAS TECNOLÓGICAS CRÍTICAS (ON-PREMISES / CLOUD).<br>
-      ENFOQUE OPERATIVO · SEGURIDAD Y CONTINUIDAD DE NEGOCIO.
+<div class="desktop-viewport">
+  
+  <!-- HERO SECTION con todo el contenido -->
+  <div class="hero">
+    <div class="hero-card">
+      
+      <div class="hero-eyebrow">TECNOLOGÍA Y ARQUITECTURA RESILIENTE</div>
+      <div class="hero-tagline">DISEÑO · OPERACIÓN · PROTECCIÓN</div>
+      
+      <h1 class="main-title">INFRAESTRUCTURA QUE RESISTE</h1>
+      <h2 class="sub-title">INGENIERÍA QUE PROTEGE.</h2>
+      
+      <div class="description">
+        ARQUITECTURAS TECNOLÓGICAS CRÍTICAS (ON-PREMISES / CLOUD).<br>
+        ENFOQUE OPERATIVO · SEGURIDAD Y CONTINUIDAD DE NEGOCIO.
+      </div>
+      
+      <div class="pillars">
+        <span class="pillar">🔹 SEGURIDAD</span>
+        <span class="pillar">🔹 ARQUITECTURA</span>
+        <span class="pillar">🔹 RESILIENCIA</span>
+      </div>
+      
+      <div class="tech-stack">
+        REDES · SISTEMAS · SEGURIDAD · CONTINUIDAD · NUBE
+      </div>
+      
+      <div class="copyright">
+        © 2025-2026 TECHNOLOGY ADVISORY · OPERATIONAL SECURITY
+      </div>
+      
     </div>
-    
-    <!-- Pilares -->
-    <div class="pillars">
-      <span class="pillar">🔹 SEGURIDAD</span>
-      <span class="pillar">🔹 ARQUITECTURA</span>
-      <span class="pillar">🔹 RESILIENCIA</span>
-    </div>
-    
-    <!-- Tech stack -->
-    <div class="tech-stack">
-      REDES · SISTEMAS · SEGURIDAD · CONTINUIDAD · NUBE
-    </div>
-    
-    <!-- Copyright (versión 2025 y 2026 combinadas) -->
-    <div class="copyright">
-      © 2025-2026 TECHNOLOGY ADVISORY · OPERATIONAL SECURITY
-    </div>
-    
   </div>
+
 </div>
 
-<!-- FOOTER FIJO con todos los datos: avatar, nombre, web, LinkedIn -->
+<!-- FOOTER FIJO -->
 <div class="footer">
   <div class="footer-container">
     <div class="footer-inner">
       
-      <!-- Bloque izquierdo: avatar + nombre y cargo -->
       <div class="author-block">
         <div class="author-avatar">MÁ</div>
         <div>
@@ -427,7 +417,6 @@ body, html {
         </div>
       </div>
       
-      <!-- Enlace web: technology-advisory.es -->
       <a href="https://technology-advisory.es" target="_blank" rel="noopener noreferrer" class="website-link">
         <svg class="web-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.66 0 3-4 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4-3-9s1.34-9 3-9m-9 9a9 9 0 019-9" />
@@ -435,7 +424,6 @@ body, html {
         <span class="web-text">technology-advisory.es</span>
       </a>
       
-      <!-- Botón LinkedIn -->
       <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" rel="noopener noreferrer" class="li-btn">
         <svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -450,31 +438,29 @@ body, html {
   </div>
 </div>
 
-<!-- Script de seguridad: elimina cualquier scroll horizontal residual -->
+<!-- Script que elimina scroll horizontal residual -->
 <script>
 (function() {
-  function killHorizontalScroll() {
+  function preventHorizontalScroll() {
     document.documentElement.style.overflowX = 'hidden';
     document.body.style.overflowX = 'hidden';
     
-    // Buscar cualquier elemento que pueda estar causando desborde
+    // Aseguramos que ningún elemento hijo cause desborde
     const allElements = document.querySelectorAll('*');
     for (let i = 0; i < allElements.length; i++) {
       const el = allElements[i];
       if (el.scrollWidth > el.clientWidth && el.clientWidth > 0) {
         const style = getComputedStyle(el);
         if (style.overflowX === 'visible' && el !== document.body && el !== document.documentElement) {
-          if (!el.classList.contains('pillars') && !el.classList.contains('footer-inner')) {
-            el.style.maxWidth = '100%';
-          }
+          el.style.maxWidth = '100%';
         }
       }
     }
   }
   
-  window.addEventListener('load', killHorizontalScroll);
-  window.addEventListener('resize', killHorizontalScroll);
-  killHorizontalScroll();
+  window.addEventListener('load', preventHorizontalScroll);
+  window.addEventListener('resize', preventHorizontalScroll);
+  preventHorizontalScroll();
 })();
 </script>
 
