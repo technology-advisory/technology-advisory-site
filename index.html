@@ -2,12 +2,11 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Technology Advisory | Miguel Ángel Carriazo – vCISO | Infraestructura Resiliente</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Technology Advisory | Miguel Ángel Carriazo – vCISO</title>
 <style>
 /* ============================================
-   RESET + CONFIGURACIÓN GLOBAL MEJORADA
-   Sin scroll horizontal en ningún dispositivo
+   RESET TOTAL + SIN SCROLL HORIZONTAL
    ============================================ */
 * {
   margin: 0;
@@ -17,16 +16,20 @@
 
 body {
   background: #0b1220;
-  font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', Arial, sans-serif;
+  font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, 'Roboto', Arial, sans-serif;
   overflow-x: hidden;
   width: 100%;
   min-height: 100vh;
-  color: #e5e7eb;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 /* ============================================
-   CONTENEDOR PRINCIPAL: diseño base 1200px
-   Escritorio centrado, móvil escalado proporcionamente
+   CONTENEDOR QUE FUERZA VERSIÓN DESKTOP (1200px)
+   EN MÓVIL SE ESCALA PROPORCIONALMENTE
+   SIN SCROLL HORIZONTAL NI DESBORDES
    ============================================ */
 .desktop-viewport {
   width: 1200px;
@@ -35,13 +38,16 @@ body {
   background: #0b1220;
 }
 
-/* Pantallas menores a 1200px: escalado proporcional centrado */
+/* Pantallas MÁS PEQUEÑAS que 1200px (móviles y tablets)
+   → Escalamos todo el contenedor de forma centrada y SIN scroll */
 @media (max-width: 1200px) {
   body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
   
   .desktop-viewport {
@@ -49,38 +55,17 @@ body {
     transform-origin: top center;
     width: 1200px;
     margin: 0;
+    overflow: visible;
   }
 }
 
-/* Ajustes para móviles muy pequeños: mejora legibilidad del hero textual */
-@media (max-width: 600px) {
-  .hero-text-content {
-    padding: 1.5rem !important;
-  }
-  .hero-title-large {
-    font-size: 1.8rem !important;
-    letter-spacing: -0.02em !important;
-  }
-  .hero-subtitle {
-    font-size: 1rem !important;
-  }
-  .pillar-list {
-    gap: 0.7rem !important;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .pillar-item {
-    font-size: 0.7rem !important;
-    padding: 0.3rem 0.9rem !important;
-  }
-  .footer-container {
-    padding: 12px 16px !important;
-  }
+/* Aseguramos que ningún elemento interno genere scroll */
+.desktop-viewport * {
+  max-width: 100%;
 }
 
 /* ============================================
-   HERO SECTION - VERSIÓN TEXTO REAL (sustituye a la imagen)
-   Reproduce fielmente el contenido de hero-mac.png
+   HERO SECTION - CONTENIDO REAL (texto extraído de la imagen)
    ============================================ */
 .hero {
   min-height: 100vh;
@@ -88,21 +73,20 @@ body {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  position: relative;
-  background: radial-gradient(circle at 10% 20%, rgba(0, 30, 60, 0.4), #0b1220 80%);
+  background: radial-gradient(circle at 20% 30%, rgba(0, 40, 70, 0.4), #0b1220 90%);
 }
 
-.hero-text-content {
+.hero-content {
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
-  text-align: center;
-  background: rgba(11, 18, 32, 0.65);
-  backdrop-filter: blur(3px);
+  background: rgba(11, 18, 32, 0.75);
+  backdrop-filter: blur(10px);
   border-radius: 2rem;
   padding: 2.5rem 2rem;
-  border: 1px solid rgba(96, 165, 250, 0.2);
-  box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.6);
+  text-align: center;
 }
 
 .hero-eyebrow {
@@ -112,53 +96,49 @@ body {
   font-weight: 500;
   color: #60a5fa;
   margin-bottom: 1rem;
-  word-break: keep-all;
 }
 
 .hero-tagline {
   font-size: 1.1rem;
   font-weight: 400;
   color: #cbd5e6;
-  margin-bottom: 2rem;
-  border-bottom: 1px dashed rgba(96, 165, 250, 0.3);
+  margin-bottom: 1.8rem;
+  border-bottom: 1px dashed rgba(96, 165, 250, 0.4);
   display: inline-block;
   padding-bottom: 0.5rem;
 }
 
-.hero-title-large {
+.main-title {
   font-size: 3.2rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #FFFFFF, #90cdf4, #60a5fa);
+  background: linear-gradient(135deg, #FFFFFF, #a0c4ff, #60a5fa);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  margin: 1rem 0 0.5rem;
   line-height: 1.2;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  margin: 1rem 0 0.5rem;
 }
 
-.hero-subtitle {
-  font-size: 1.5rem;
+.sub-title {
+  font-size: 1.8rem;
   font-weight: 600;
   color: #e2e8f0;
-  margin: 0.75rem 0 1.5rem;
-  letter-spacing: -0.3px;
+  margin: 0.5rem 0 1.5rem;
 }
 
-.hero-description {
+.description {
   font-size: 1rem;
   line-height: 1.5;
   color: #cbd5e6;
   max-width: 85%;
   margin: 0 auto 2rem auto;
-  font-weight: 400;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 1rem;
   border-left: 3px solid #60a5fa;
-  padding-left: 1.2rem;
-  text-align: left;
 }
 
-/* PILLARES: disponibilidad, seguridad, arquitectura, resiliencia, operación */
-.pillar-list {
+.pillars {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -166,46 +146,36 @@ body {
   margin: 2rem 0 1.5rem;
 }
 
-.pillar-item {
-  background: rgba(15, 25, 45, 0.7);
+.pillar {
+  background: rgba(15, 25, 45, 0.8);
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(96, 165, 250, 0.3);
+  border: 1px solid rgba(96, 165, 250, 0.4);
   padding: 0.5rem 1.4rem;
   border-radius: 40px;
   font-weight: 600;
   font-size: 0.85rem;
-  letter-spacing: 0.5px;
-  color: #b9d0f0;
-  transition: all 0.2s;
-}
-
-.pillar-item:hover {
-  background: rgba(96, 165, 250, 0.2);
-  border-color: #60a5fa;
-  transform: translateY(-2px);
+  color: #c9e0ff;
 }
 
 .tech-stack {
   font-size: 0.75rem;
   color: #8ba0bc;
-  margin-top: 1.8rem;
-  letter-spacing: 1px;
+  margin-top: 2rem;
+  letter-spacing: 1.5px;
   font-weight: 500;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 1.5rem;
-  display: inline-block;
-  width: auto;
 }
 
-.copyright-note {
-  margin-top: 1.5rem;
+.copyright {
   font-size: 0.7rem;
   color: #5f7f9e;
+  margin-top: 1.2rem;
   opacity: 0.7;
 }
 
 /* ============================================
-   FOOTER FIJO (independiente del escalado)
+   FOOTER FIJO (se escala con el contenedor pero se mantiene visible)
    ============================================ */
 .footer {
   position: fixed;
@@ -215,7 +185,7 @@ body {
   display: flex;
   justify-content: center;
   pointer-events: none;
-  z-index: 200;
+  z-index: 1000;
 }
 
 .footer-container {
@@ -223,9 +193,9 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 18px 30px;
-  background: linear-gradient(to top, rgba(0,0,0,0.88), rgba(0,0,0,0.2));
-  backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255,255,255,0.1);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.25));
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   pointer-events: auto;
   box-sizing: border-box;
 }
@@ -238,7 +208,6 @@ body {
   gap: 15px;
 }
 
-/* Bloque autor */
 .author-block {
   display: flex;
   align-items: center;
@@ -257,8 +226,8 @@ body {
   font-weight: bold;
   font-size: 18px;
   color: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
 }
 
 .author-name {
@@ -276,23 +245,22 @@ body {
   margin-top: 4px;
 }
 
-/* Botón LinkedIn */
 .li-btn {
   display: flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 8px 18px;
   border-radius: 48px;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   cursor: pointer;
 }
 
 .li-btn:hover {
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
 }
 
@@ -317,27 +285,50 @@ body {
   color: #9ca3af;
 }
 
-/* Responsive footer */
-@media (max-width: 760px) {
+/* Ajustes para que en escritorio el footer no tenga problemas */
+@media (min-width: 1201px) {
   .footer-container {
-    padding: 12px 18px;
+    border-radius: 0;
+  }
+}
+
+/* Eliminamos cualquier posibilidad de scroll horizontal */
+img, svg, video, iframe {
+  max-width: 100%;
+  display: block;
+}
+
+/* Aseguramos que en móvil escalado el footer se vea correctamente */
+@media (max-width: 1200px) {
+  .footer-container {
+    padding: 12px 20px;
   }
   .author-avatar {
-    width: 40px;
-    height: 40px;
-    font-size: 15px;
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
   }
   .author-name {
-    font-size: 13px;
+    font-size: 14px;
   }
   .author-title {
-    font-size: 10px;
+    font-size: 11px;
   }
   .li-main {
     font-size: 11px;
   }
   .li-sub {
     font-size: 9px;
+  }
+  .li-btn {
+    padding: 6px 14px;
+  }
+}
+
+/* Para pantallas extremadamente pequeñas, ajustamos el padding del footer */
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 10px 16px;
   }
   .footer-inner {
     flex-direction: column;
@@ -347,46 +338,37 @@ body {
     align-self: flex-start;
   }
 }
-
-/* Eliminar cualquier scroll horizontal fantasma */
-html {
-  overflow-x: hidden;
-}
 </style>
 </head>
 <body>
 
 <div class="desktop-viewport">
   
-  <!-- HERO: contenido textual extraído fielmente de hero-mac.png (imagen original reemplazada por código) -->
+  <!-- HERO: contenido textual extraído de la imagen proporcionada -->
   <div class="hero">
-    <div class="hero-text-content">
+    <div class="hero-content">
       <div class="hero-eyebrow">TECNOLOGÍA Y ARQUITECTURA RESILIENTE</div>
       <div class="hero-tagline">DISEÑO. OPERACIÓN. PROTECCIÓN.</div>
       
-      <h1 class="hero-title-large"># INFRAESTRUCTURA QUE RESISTE.</h1>
-      <div class="hero-subtitle">## INGENIERÍA QUE PROTEGE.</div>
+      <h1 class="main-title">INFRAESTRUCTURA QUE RESISTE</h1>
+      <h2 class="sub-title">INGENIERÍA QUE PROTEGE.</h2>
       
-      <div class="hero-description">
-        DISEÑO Y OPERACIÓN DE ARQUITECTURAS TECNOLÓGICAS CRÍTICAS<br>
-        EN ENTORNOS HÍBRIDOS (ON-PREMISES / CLOUD). ENFOQUE OPERATIVO<br>
-        EN DISPONIBILIDAD, SEGURIDAD Y CONTINUIDAD DE NEGOCIO.
+      <div class="description">
+        ARQUITECTURAS TECNOLÓGICAS CRÍTICAS (ON-PREMISES / CLOUD). ENFOQUE OPERATIVO<br>
+        SEGURIDAD Y CONTINUIDAD DE NEGOCIO.
       </div>
       
-      <!-- Lista de pilares estratégicos -->
-      <div class="pillar-list">
-        <span class="pillar-item">🔹 DISPONIBILIDAD</span>
-        <span class="pillar-item">🔹 SEGURIDAD</span>
-        <span class="pillar-item">🔹 ARQUITECTURA</span>
-        <span class="pillar-item">🔹 RESILIENCIA</span>
-        <span class="pillar-item">🔹 OPERACIÓN</span>
+      <div class="pillars">
+        <span class="pillar">🔹 SEGURIDAD</span>
+        <span class="pillar">🔹 ARQUITECTURA</span>
+        <span class="pillar">🔹 RESILIENCIA</span>
       </div>
       
       <div class="tech-stack">
         REDES · SISTEMAS · SEGURIDAD · CONTINUIDAD · NUBE
       </div>
       
-      <div class="copyright-note">
+      <div class="copyright">
         © 2026 TECHNOLOGY ADVISORY · OPERATIONAL SECURITY
       </div>
     </div>
@@ -394,10 +376,11 @@ html {
 
 </div>
 
-<!-- FOOTER fijo con datos profesionales -->
+<!-- FOOTER FIJO (independiente pero sincronizado visualmente) -->
 <div class="footer">
   <div class="footer-container">
     <div class="footer-inner">
+      
       <div class="author-block">
         <div class="author-avatar">MÁ</div>
         <div>
@@ -405,6 +388,7 @@ html {
           <div class="author-title">Cybersecurity & Infrastructure Architect</div>
         </div>
       </div>
+      
       <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" rel="noopener noreferrer" class="li-btn">
         <svg class="li-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -414,32 +398,54 @@ html {
           <span class="li-sub">Hablemos en LinkedIn →</span>
         </div>
       </a>
+      
     </div>
   </div>
 </div>
 
-<!-- Script para garantizar que no haya scroll horizontal residual (robustez) -->
+<!-- Script de control: fuerza la eliminación de scroll horizontal y mantiene la escala -->
 <script>
 (function() {
-  // Prevenir cualquier scroll horizontal no deseado
-  const setSafeOverflow = () => {
+  // Eliminar cualquier scroll horizontal residual
+  function killHorizontalScroll() {
     document.documentElement.style.overflowX = 'hidden';
     document.body.style.overflowX = 'hidden';
-    // Verificar elementos anchos
+    
+    // Para móviles con escala, a veces algún hijo se desborda
     const allElements = document.querySelectorAll('*');
-    for (let el of allElements) {
-      const style = getComputedStyle(el);
-      if (style.overflowX === 'visible' && el.scrollWidth > el.clientWidth && el.clientWidth > 0) {
-        if (el !== document.body && el !== document.documentElement) {
+    for (let i = 0; i < allElements.length; i++) {
+      const el = allElements[i];
+      if (el.scrollWidth > el.clientWidth && el.clientWidth > 0) {
+        const style = getComputedStyle(el);
+        if (style.overflowX === 'visible' && el !== document.body && el !== document.documentElement) {
           el.style.maxWidth = '100%';
         }
       }
     }
-  };
+  }
   
-  window.addEventListener('load', setSafeOverflow);
-  window.addEventListener('resize', setSafeOverflow);
-  setSafeOverflow();
+  // Asegurar que el viewport escalado no genere scroll en body
+  window.addEventListener('load', function() {
+    killHorizontalScroll();
+    // Pequeño ajuste: en móvil el footer no debe tener scroll
+    document.body.style.overflowX = 'hidden';
+  });
+  
+  window.addEventListener('resize', function() {
+    killHorizontalScroll();
+  });
+  
+  killHorizontalScroll();
+  
+  // Forzar que en móvil el escalado sea perfecto sin bordes blancos
+  // Esto asegura que el contenedor desktop-viewport esté centrado visualmente
+  if (window.innerWidth <= 1200) {
+    const viewport = document.querySelector('.desktop-viewport');
+    if (viewport) {
+      // Aseguramos que no haya márgenes que generen desborde
+      viewport.style.margin = '0';
+    }
+  }
 })();
 </script>
 
