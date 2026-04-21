@@ -2,11 +2,13 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Technology Advisory | Miguel Ángel Carriazo – vCISO</title>
 <style>
 /* ============================================
-   RESET TOTAL + SIN SCROLL HORIZONTAL
+   RESET Y CONFIGURACIÓN GLOBAL
+   SIN SCROLL HORIZONTAL EN NINGÚN DISPOSITIVO
+   DISEÑO NATIVAMENTE RESPONSIVE (NO FORZADO A DESKTOP)
    ============================================ */
 * {
   margin: 0;
@@ -20,96 +22,76 @@ body {
   overflow-x: hidden;
   width: 100%;
   min-height: 100vh;
+  color: #e5e7eb;
+  line-height: 1.5;
 }
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* ============================================
-   CONTENEDOR QUE FUERZA VERSIÓN DESKTOP (1200px)
-   EN MÓVIL SE ESCALA PROPORCIONALMENTE
-   SIN SCROLL HORIZONTAL NI DESBORDES
+   CONTENEDOR PRINCIPAL RESPONSIVE
+   (Nada de ancho fijo de 1200px, todo fluido)
    ============================================ */
-.desktop-viewport {
-  width: 1200px;
+.container {
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  position: relative;
-  background: #0b1220;
-}
-
-/* Pantallas MÁS PEQUEÑAS que 1200px (móviles y tablets)
-   → Escalamos todo el contenedor de forma centrada y SIN scroll */
-@media (max-width: 1200px) {
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-  
-  .desktop-viewport {
-    transform: scale(calc(100vw / 1200));
-    transform-origin: top center;
-    width: 1200px;
-    margin: 0;
-    overflow: visible;
-  }
-}
-
-/* Aseguramos que ningún elemento interno genere scroll */
-.desktop-viewport * {
-  max-width: 100%;
+  padding: 0 1.5rem;
 }
 
 /* ============================================
-   HERO SECTION - CONTENIDO REAL (texto extraído de la imagen)
+   HERO SECTION - COMPLETAMENTE RESPONSIVE
    ============================================ */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 5rem 1rem;
   background: radial-gradient(circle at 20% 30%, rgba(0, 40, 70, 0.4), #0b1220 90%);
 }
 
-.hero-content {
-  max-width: 1000px;
+.hero-card {
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
-  background: rgba(11, 18, 32, 0.75);
-  backdrop-filter: blur(10px);
+  background: rgba(11, 18, 32, 0.7);
+  backdrop-filter: blur(12px);
   border-radius: 2rem;
   padding: 2.5rem 2rem;
   border: 1px solid rgba(96, 165, 250, 0.3);
-  box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.6);
-  text-align: center;
+  box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s;
 }
 
+/* Textos completamente responsivos con clamp */
 .hero-eyebrow {
-  font-size: 0.85rem;
+  font-size: clamp(0.7rem, 4vw, 0.85rem);
   letter-spacing: 3px;
   text-transform: uppercase;
   font-weight: 500;
   color: #60a5fa;
+  text-align: center;
   margin-bottom: 1rem;
 }
 
 .hero-tagline {
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 5vw, 1.2rem);
   font-weight: 400;
   color: #cbd5e6;
+  text-align: center;
   margin-bottom: 1.8rem;
   border-bottom: 1px dashed rgba(96, 165, 250, 0.4);
   display: inline-block;
+  width: auto;
   padding-bottom: 0.5rem;
 }
 
 .main-title {
-  font-size: 3.2rem;
+  font-size: clamp(1.6rem, 8vw, 3.2rem);
   font-weight: 800;
   background: linear-gradient(135deg, #FFFFFF, #a0c4ff, #60a5fa);
   background-clip: text;
@@ -117,20 +99,23 @@ html {
   color: transparent;
   line-height: 1.2;
   margin: 1rem 0 0.5rem;
+  text-align: center;
 }
 
 .sub-title {
-  font-size: 1.8rem;
+  font-size: clamp(1.1rem, 6vw, 1.8rem);
   font-weight: 600;
   color: #e2e8f0;
   margin: 0.5rem 0 1.5rem;
+  text-align: center;
 }
 
 .description {
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 3.8vw, 1rem);
   line-height: 1.5;
   color: #cbd5e6;
-  max-width: 85%;
+  text-align: center;
+  max-width: 90%;
   margin: 0 auto 2rem auto;
   background: rgba(0, 0, 0, 0.2);
   padding: 1rem;
@@ -138,11 +123,12 @@ html {
   border-left: 3px solid #60a5fa;
 }
 
+/* Pilares flexibles */
 .pillars {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.8rem;
   margin: 2rem 0 1.5rem;
 }
 
@@ -150,16 +136,37 @@ html {
   background: rgba(15, 25, 45, 0.8);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(96, 165, 250, 0.4);
-  padding: 0.5rem 1.4rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 40px;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: clamp(0.7rem, 3.5vw, 0.85rem);
   color: #c9e0ff;
+  white-space: nowrap;
+}
+
+/* En móviles muy pequeños, que el texto no se desborde */
+@media (max-width: 480px) {
+  .pillar {
+    white-space: normal;
+    font-size: 0.7rem;
+    padding: 0.4rem 0.9rem;
+  }
+  .hero-card {
+    padding: 1.5rem;
+  }
+  .description {
+    max-width: 100%;
+    text-align: left;
+  }
+  .container {
+    padding: 0 1rem;
+  }
 }
 
 .tech-stack {
-  font-size: 0.75rem;
+  font-size: clamp(0.65rem, 3vw, 0.75rem);
   color: #8ba0bc;
+  text-align: center;
   margin-top: 2rem;
   letter-spacing: 1.5px;
   font-weight: 500;
@@ -170,12 +177,13 @@ html {
 .copyright {
   font-size: 0.7rem;
   color: #5f7f9e;
+  text-align: center;
   margin-top: 1.2rem;
   opacity: 0.7;
 }
 
 /* ============================================
-   FOOTER FIJO (se escala con el contenedor pero se mantiene visible)
+   FOOTER FIJO - RESPONSIVE Y SIN TAPAR CONTENIDO
    ============================================ */
 .footer {
   position: fixed;
@@ -192,8 +200,8 @@ html {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 18px 30px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.25));
+  padding: 14px 24px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.3));
   backdrop-filter: blur(16px);
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   pointer-events: auto;
@@ -205,26 +213,26 @@ html {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 12px;
 }
 
 .author-block {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   color: #e5e7eb;
 }
 
 .author-avatar {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   background: linear-gradient(135deg, #0077B5, #005e8c);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 17px;
   color: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   flex-shrink: 0;
@@ -232,7 +240,7 @@ html {
 
 .author-name {
   font-weight: 700;
-  font-size: 16px;
+  font-size: clamp(0.8rem, 4vw, 0.95rem);
 }
 
 .author-name span {
@@ -240,19 +248,19 @@ html {
 }
 
 .author-title {
-  font-size: 13px;
+  font-size: clamp(0.65rem, 3vw, 0.75rem);
   color: #9ca3af;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .li-btn {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 8px 18px;
+  padding: 6px 16px;
   border-radius: 48px;
   transition: all 0.2s ease;
   cursor: pointer;
@@ -265,8 +273,8 @@ html {
 }
 
 .li-icon {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   fill: #0a66c2;
   background: white;
   border-radius: 4px;
@@ -274,59 +282,19 @@ html {
 
 .li-main {
   display: block;
-  font-size: 13px;
+  font-size: clamp(0.7rem, 3.5vw, 0.8rem);
   font-weight: 500;
   color: #f1f5f9;
 }
 
 .li-sub {
   display: block;
-  font-size: 11px;
+  font-size: 0.65rem;
   color: #9ca3af;
 }
 
-/* Ajustes para que en escritorio el footer no tenga problemas */
-@media (min-width: 1201px) {
-  .footer-container {
-    border-radius: 0;
-  }
-}
-
-/* Eliminamos cualquier posibilidad de scroll horizontal */
-img, svg, video, iframe {
-  max-width: 100%;
-  display: block;
-}
-
-/* Aseguramos que en móvil escalado el footer se vea correctamente */
-@media (max-width: 1200px) {
-  .footer-container {
-    padding: 12px 20px;
-  }
-  .author-avatar {
-    width: 42px;
-    height: 42px;
-    font-size: 16px;
-  }
-  .author-name {
-    font-size: 14px;
-  }
-  .author-title {
-    font-size: 11px;
-  }
-  .li-main {
-    font-size: 11px;
-  }
-  .li-sub {
-    font-size: 9px;
-  }
-  .li-btn {
-    padding: 6px 14px;
-  }
-}
-
-/* Para pantallas extremadamente pequeñas, ajustamos el padding del footer */
-@media (max-width: 480px) {
+/* Footer responsivo: en móvil se apila */
+@media (max-width: 680px) {
   .footer-container {
     padding: 10px 16px;
   }
@@ -337,46 +305,86 @@ img, svg, video, iframe {
   .li-btn {
     align-self: flex-start;
   }
+  .author-avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+}
+
+/* Espacio inferior para que el footer no tape contenido */
+body {
+  padding-bottom: 85px;
+}
+
+@media (max-width: 680px) {
+  body {
+    padding-bottom: 100px;
+  }
+}
+
+/* ============================================
+   GARANTÍA ABSOLUTA: SIN SCROLL HORIZONTAL
+   ============================================ */
+img, svg, video, iframe, picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Forzar que ningún elemento genere overflow horizontal */
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Aseguramos que cualquier elemento ancho se ajuste */
+* {
+  max-width: 100%;
+}
+
+/* Ajuste adicional para contenedores flex */
+.footer-inner, .pillars, .hero-card {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 </style>
 </head>
 <body>
 
-<div class="desktop-viewport">
-  
-  <!-- HERO: contenido textual extraído de la imagen proporcionada -->
-  <div class="hero">
-    <div class="hero-content">
-      <div class="hero-eyebrow">TECNOLOGÍA Y ARQUITECTURA RESILIENTE</div>
-      <div class="hero-tagline">DISEÑO. OPERACIÓN. PROTECCIÓN.</div>
-      
-      <h1 class="main-title">INFRAESTRUCTURA QUE RESISTE</h1>
-      <h2 class="sub-title">INGENIERÍA QUE PROTEGE.</h2>
-      
-      <div class="description">
-        ARQUITECTURAS TECNOLÓGICAS CRÍTICAS (ON-PREMISES / CLOUD). ENFOQUE OPERATIVO<br>
-        SEGURIDAD Y CONTINUIDAD DE NEGOCIO.
-      </div>
-      
-      <div class="pillars">
-        <span class="pillar">🔹 SEGURIDAD</span>
-        <span class="pillar">🔹 ARQUITECTURA</span>
-        <span class="pillar">🔹 RESILIENCIA</span>
-      </div>
-      
-      <div class="tech-stack">
-        REDES · SISTEMAS · SEGURIDAD · CONTINUIDAD · NUBE
-      </div>
-      
-      <div class="copyright">
-        © 2026 TECHNOLOGY ADVISORY · OPERATIONAL SECURITY
-      </div>
+<!-- HERO SECTION - Diseño responsive nativo (no forzado a desktop) -->
+<div class="hero">
+  <div class="hero-card">
+    
+    <div class="hero-eyebrow">TECNOLOGÍA Y ARQUITECTURA RESILIENTE</div>
+    <div class="hero-tagline">DISEÑO. OPERACIÓN. PROTECCIÓN.</div>
+    
+    <h1 class="main-title">INFRAESTRUCTURA QUE RESISTE</h1>
+    <h2 class="sub-title">INGENIERÍA QUE PROTEGE.</h2>
+    
+    <div class="description">
+      ARQUITECTURAS TECNOLÓGICAS CRÍTICAS (ON-PREMISES / CLOUD). ENFOQUE OPERATIVO<br>
+      SEGURIDAD Y CONTINUIDAD DE NEGOCIO.
     </div>
+    
+    <div class="pillars">
+      <span class="pillar">🔹 SEGURIDAD</span>
+      <span class="pillar">🔹 ARQUITECTURA</span>
+      <span class="pillar">🔹 RESILIENCIA</span>
+    </div>
+    
+    <div class="tech-stack">
+      REDES · SISTEMAS · SEGURIDAD · CONTINUIDAD · NUBE
+    </div>
+    
+    <div class="copyright">
+      © 2026 TECHNOLOGY ADVISORY · OPERATIONAL SECURITY
+    </div>
+    
   </div>
-
 </div>
 
-<!-- FOOTER FIJO (independiente pero sincronizado visualmente) -->
+<!-- FOOTER FIJO con información de contacto -->
 <div class="footer">
   <div class="footer-container">
     <div class="footer-inner">
@@ -403,48 +411,43 @@ img, svg, video, iframe {
   </div>
 </div>
 
-<!-- Script de control: fuerza la eliminación de scroll horizontal y mantiene la escala -->
+<!-- Script de seguridad: elimina cualquier scroll horizontal residual -->
 <script>
 (function() {
-  // Eliminar cualquier scroll horizontal residual
-  function killHorizontalScroll() {
+  // Función para eliminar scroll horizontal en todos los elementos
+  function preventHorizontalScroll() {
+    // Asegurar que html y body no tengan overflow horizontal
     document.documentElement.style.overflowX = 'hidden';
     document.body.style.overflowX = 'hidden';
     
-    // Para móviles con escala, a veces algún hijo se desborda
+    // Buscar cualquier elemento que pueda estar causando desborde horizontal
     const allElements = document.querySelectorAll('*');
     for (let i = 0; i < allElements.length; i++) {
       const el = allElements[i];
       if (el.scrollWidth > el.clientWidth && el.clientWidth > 0) {
         const style = getComputedStyle(el);
+        // Si el elemento tiene overflow visible y se desborda, lo corregimos
         if (style.overflowX === 'visible' && el !== document.body && el !== document.documentElement) {
-          el.style.maxWidth = '100%';
+          // Evitamos aplicar a elementos que necesitan scroll interno legítimo
+          if (!el.classList.contains('pillars') && !el.classList.contains('footer-inner')) {
+            el.style.maxWidth = '100%';
+          }
         }
       }
     }
   }
   
-  // Asegurar que el viewport escalado no genere scroll en body
-  window.addEventListener('load', function() {
-    killHorizontalScroll();
-    // Pequeño ajuste: en móvil el footer no debe tener scroll
-    document.body.style.overflowX = 'hidden';
-  });
+  // Ejecutar al cargar y al redimensionar
+  window.addEventListener('load', preventHorizontalScroll);
+  window.addEventListener('resize', preventHorizontalScroll);
+  preventHorizontalScroll();
   
-  window.addEventListener('resize', function() {
-    killHorizontalScroll();
-  });
-  
-  killHorizontalScroll();
-  
-  // Forzar que en móvil el escalado sea perfecto sin bordes blancos
-  // Esto asegura que el contenedor desktop-viewport esté centrado visualmente
-  if (window.innerWidth <= 1200) {
-    const viewport = document.querySelector('.desktop-viewport');
-    if (viewport) {
-      // Aseguramos que no haya márgenes que generen desborde
-      viewport.style.margin = '0';
-    }
+  // Observador para elementos dinámicos (por si acaso)
+  if (window.MutationObserver) {
+    const observer = new MutationObserver(function() {
+      preventHorizontalScroll();
+    });
+    observer.observe(document.body, { childList: true, subtree: true, attributes: true });
   }
 })();
 </script>
