@@ -1,5 +1,75 @@
 /* Menu.js - Technology Advisory */
 
+// Definir funciones GLOBALES primero
+window.showDevModal = function() {
+    console.log('showDevModal called');
+    const modal = document.getElementById('dev-modal-custom');
+    if (modal) {
+        modal.classList.add('active');
+        console.log('Modal abierto');
+    } else {
+        console.log('Modal no encontrado, creando...');
+        createDevModal();
+        setTimeout(function() {
+            const newModal = document.getElementById('dev-modal-custom');
+            if (newModal) {
+                newModal.classList.add('active');
+                console.log('Modal creado y abierto');
+            }
+        }, 100);
+    }
+};
+
+window.closeDevModal = function() {
+    console.log('closeDevModal called');
+    const modal = document.getElementById('dev-modal-custom');
+    if (modal) {
+        modal.classList.remove('active');
+        console.log('Modal cerrado');
+    } else {
+        console.log('Modal no encontrado');
+    }
+};
+
+function createDevModal() {
+    // Eliminar modal existente si hay
+    const existingModal = document.getElementById('dev-modal-custom');
+    if (existingModal) {
+        existingModal.remove();
+    }
+
+    const modal = document.createElement('div');
+    modal.id = 'dev-modal-custom';
+    modal.className = 'modal-overlay-custom';
+    modal.innerHTML = `
+        <div class="modal-content-custom">
+            <h3>⚙️ En Desarrollo</h3>
+            <p>Esta sección está siendo preparada. Vuelve pronto.</p>
+            <button class="modal-btn-custom" id="close-modal-btn">Cerrar</button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    // Cerrar al hacer click en el botón
+    const closeBtn = document.getElementById('close-modal-btn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.closeDevModal();
+        });
+    }
+
+    // Cerrar al hacer click fuera
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            window.closeDevModal();
+        }
+    });
+
+    console.log('Modal creado correctamente');
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const menuContainer = document.getElementById("menu-container");
     if (!menuContainer) return;
@@ -38,6 +108,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 white-space: nowrap;
             }
 
+            .logo-link svg {
+                width: 26px;
+                height: 26px;
+                stroke: #059669;
+                stroke-width: 2.5;
+                fill: none;
+            }
+
             .nav-list {
                 display: flex;
                 gap: 2rem;
@@ -59,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 display: flex;
                 align-items: center;
                 gap: 6px;
+                cursor: pointer;
             }
 
             .nav-list a:hover {
@@ -77,7 +156,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 background: #047857;
             }
 
-            /* Iconos del menú - visibles en desktop */
             .nav-list a svg {
                 width: 16px;
                 height: 16px;
@@ -109,6 +187,65 @@ document.addEventListener("DOMContentLoaded", function() {
                 stroke-linecap: round;
                 stroke-linejoin: round;
                 fill: none;
+            }
+
+            /* Estilos del modal */
+            .modal-overlay-custom {
+                display: none !important;
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                background: rgba(15, 23, 42, 0.8) !important;
+                z-index: 99999 !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            .modal-overlay-custom.active {
+                display: flex !important;
+            }
+
+            .modal-content-custom {
+                background: white !important;
+                padding: 2.5rem !important;
+                border-radius: 12px !important;
+                max-width: 400px !important;
+                width: 90% !important;
+                text-align: center !important;
+                box-shadow: 0 20px 60px rgba(15, 23, 42, 0.3) !important;
+                margin: 20px !important;
+            }
+
+            .modal-content-custom h3 {
+                color: #059669 !important;
+                font-size: 1.5rem !important;
+                margin-bottom: 1rem !important;
+                font-weight: 700 !important;
+            }
+
+            .modal-content-custom p {
+                color: #64748b !important;
+                margin-bottom: 1.5rem !important;
+                font-size: 1rem !important;
+                line-height: 1.5 !important;
+            }
+
+            .modal-btn-custom {
+                background: #059669 !important;
+                color: white !important;
+                padding: 0.75rem 2rem !important;
+                border: none !important;
+                border-radius: 8px !important;
+                cursor: pointer !important;
+                font-weight: 700 !important;
+                font-size: 1rem !important;
+                transition: background 0.2s !important;
+            }
+
+            .modal-btn-custom:hover {
+                background: #047857 !important;
             }
 
             @media (max-width: 768px) {
@@ -200,12 +337,29 @@ document.addEventListener("DOMContentLoaded", function() {
                     font-size: 0.85rem;
                     padding: 10px 1rem;
                 }
+
+                .modal-content-custom {
+                    padding: 1.5rem !important;
+                }
             }
         </style>
 
         <nav class="site-nav">
             <div class="nav-container">
-                <a href="${basePath}index.html" class="logo-link">📱 Tech Advisory</a>
+                <a href="${basePath}index.html" class="logo-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="2" y1="20" x2="22" y2="20"></line>
+                        <line x1="6" y1="17" x2="6" y2="20"></line>
+                        <line x1="18" y1="17" x2="18" y2="20"></line>
+                        <circle cx="8" cy="8" r="1.5" fill="currentColor"></circle>
+                        <circle cx="12" cy="8" r="1.5" fill="currentColor"></circle>
+                        <circle cx="16" cy="8" r="1.5" fill="currentColor"></circle>
+                        <circle cx="8" cy="12" r="1.5" fill="currentColor"></circle>
+                        <circle cx="12" cy="12" r="1.5" fill="currentColor"></circle>
+                    </svg>
+                    Technology Advisory
+                </a>
                 <button class="hamburger" id="hamburger">
                     <svg viewBox="0 0 24 24">
                         <line x1="3" y1="6" x2="21" y2="6" />
@@ -221,25 +375,25 @@ document.addEventListener("DOMContentLoaded", function() {
                         </a>
                     </li>
                     <li>
-                        <a href="#" onclick="event.preventDefault(); showDevModal();">
+                        <a href="#" data-dev="true">
                             <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
                             Arquitectura
                         </a>
                     </li>
                     <li>
-                        <a href="#" onclick="event.preventDefault(); showDevModal();">
+                        <a href="#" data-dev="true">
                             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                             Operaciones
                         </a>
                     </li>
                     <li>
-                        <a href="#" onclick="event.preventDefault(); showDevModal();">
+                        <a href="#" data-dev="true">
                             <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
                             Seguridad
                         </a>
                     </li>
                     <li>
-                        <a href="#" onclick="event.preventDefault(); showDevModal();">
+                        <a href="#" data-dev="true">
                             <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                             Gobernanza
                         </a>
@@ -261,7 +415,10 @@ document.addEventListener("DOMContentLoaded", function() {
         </nav>
     `;
 
-    // Toggle hamburger menu
+    // --- CREAR MODAL ---
+    createDevModal();
+
+    // --- MENÚ HAMBURGUESA ---
     const hamburger = document.getElementById('hamburger');
     const navList = document.getElementById('nav-list');
     
@@ -271,15 +428,22 @@ document.addEventListener("DOMContentLoaded", function() {
             navList.classList.toggle('open');
         });
 
-        // Close menu when clicking a link
-        const links = navList.querySelectorAll('a');
-        links.forEach(link => {
-            link.addEventListener('click', function() {
-                navList.classList.remove('open');
+        const allLinks = navList.querySelectorAll('a');
+        allLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('data-dev') === 'true') {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    navList.classList.remove('open');
+                    setTimeout(function() {
+                        window.showDevModal();
+                    }, 300);
+                } else {
+                    navList.classList.remove('open');
+                }
             });
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.site-nav')) {
                 navList.classList.remove('open');
@@ -287,17 +451,3 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
-
-function showDevModal() {
-    const modal = document.getElementById('dev-modal');
-    if (modal) {
-        modal.classList.add('active');
-    }
-}
-
-function closeDevModal() {
-    const modal = document.getElementById('dev-modal');
-    if (modal) {
-        modal.classList.remove('active');
-    }
-} 
