@@ -2,135 +2,205 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sobre mí · Technology Advisory</title>
-<meta name="description" content="Arquitecto de infraestructura y seguridad con más de 25 años de experiencia diseñando y operando sistemas críticos.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Sobre mí · Miguel Ángel Carriazo · vCISO · Technology Advisory</title>
+<meta name="description" content="Arquitecto de Infraestructura y Seguridad con más de 25 años de experiencia. ISO 27001, ISO 42001, ENS, NIS2. Diseño operativo de sistemas críticos.">
+<meta name="keywords" content="Miguel Ángel Carriazo, vCISO, arquitecto infraestructura, ISO 27001, ISO 42001, ENS, NIS2, GRC, governance">
 <meta name="robots" content="index, follow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/dossier-core.css">
+<link rel="stylesheet" href="../css/sobre-mi.css">
+
+<meta name="author" content="Miguel Ángel Carriazo">
+<meta name="theme-color" content="#059669">
+<meta http-equiv="Content-Language" content="es">
 <link rel="canonical" href="https://technology-advisory.es/sobre-mi/sobre-mi.html">
 
-<link rel="stylesheet" href="../css/global.css">
-<link rel="stylesheet" href="../css/sobre-mi.css">
+<!-- OPEN GRAPH -->
+<meta property="og:site_name" content="Technology Advisory">
+<meta property="og:locale" content="es_ES">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Sobre mí · Miguel Ángel Carriazo · vCISO · Technology Advisory">
+<meta property="og:description" content="Arquitecto de Infraestructura y Seguridad con más de 25 años de experiencia.">
+<meta property="og:url" content="https://technology-advisory.es/sobre-mi/sobre-mi.html">
+<meta property="og:image" content="https://technology-advisory.es/img/og-sobre-mi.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sobre mí · Miguel Ángel Carriazo · vCISO · Technology Advisory">
+<meta name="twitter:description" content="Arquitecto de Infraestructura y Seguridad con más de 25 años de experiencia.">
+<meta name="twitter:image" content="https://technology-advisory.es/img/og-sobre-mi.png">
+
+<!-- FAVICONS -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<!-- BREADCRUMB JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://technology-advisory.es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Sobre mí",
+      "item": "https://technology-advisory.es/sobre-mi/sobre-mi.html"
+    }
+  ]
+}
+</script>
+
+<!-- PERSON JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Miguel Ángel Carriazo Álvarez",
+  "givenName": "Miguel Ángel",
+  "familyName": "Carriazo Álvarez",
+  "url": "https://technology-advisory.es/sobre-mi/sobre-mi.html",
+  "image": "https://technology-advisory.es/img/image-perfil.jpg",
+  "jobTitle": "Arquitecto de Infraestructura y Seguridad",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Technology Advisory"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/macarriazo/"
+  ],
+  "knowsAbout": [
+    "Infraestructura",
+    "Ciberseguridad",
+    "ISO 27001",
+    "ISO 42001",
+    "ENS",
+    "NIS2",
+    "DORA"
+  ],
+  "nationality": "ES"
+}
+</script>
+
 </head>
+<body>
 
-<body class="ta-light-page ta-sobremi-page">
+<div class="card-wrapper ds-page">
+<div class="card">
 
-<div class="sobremi-wrapper">
+    <div id="menu-container"></div>
 
-  <div class="sobremi-tag">Sobre mí</div>
-  <h1 class="sobremi-headline">Arquitectura, <em>resiliencia</em><br>y operación real.</h1>
-  <p class="sobremi-subline">
-    Diseñar un sistema y mantenerlo en pie cuando falla son dos disciplinas distintas. He pasado mi carrera en la intersección de ambas.
-  </p>
+    <div class="accent-bar"></div>
 
-  <div class="sobremi-exp">
-    <div class="sobremi-exp-num">+25</div>
-    <div class="sobremi-exp-label">años de experiencia<br>en infraestructura y ciberseguridad</div>
-  </div>
-
-  <!-- BIO -->
-  <div class="sobremi-block">
-    <div class="sobremi-block-label">Quién soy</div>
-    <div class="sobremi-block-text">
-      Soy <strong>Arquitecto de Soluciones de Infraestructura y Seguridad</strong>. Más de 25 años diseñando y operando infraestructura, no solo dibujándola en una pizarra.
-      <br><br>
-      Durante más de dos décadas fui el responsable único de ciberseguridad e infraestructura, progresando desde la gestión de operaciones IT hasta <strong>Infrastructure Architect & Security Manager</strong>: gobierno de arquitecturas híbridas, implantación y supervisión de ENS e ISO/IEC 27001, gestión de riesgos tecnológicos, continuidad de negocio y coordinación directa con el SOC del grupo. Ahí se aprende lo que de verdad falla en una arquitectura cuando nadie más la sostiene.
-      <br><br>
-      Actualmente asesoro como <strong>Arquitecto de Soluciones de Infraestructura y Ciberseguridad</strong> en proyectos bajo exigencias críticas: documentación técnica de alto y bajo nivel (HLD/LLD), análisis y gestión de riesgos, definición de controles de seguridad y evaluación de cumplimiento normativo.
-      <br><br>
-      Combino esa base técnica —desde el rack hasta la nube— con criterio para tomar decisiones de arquitectura que se sostienen en el tiempo, no solo en el papel. Mantengo actualización constante en resiliencia de sistemas, gobierno técnico y el impacto de la inteligencia artificial en la infraestructura y la seguridad.
+    <div class="ds-meta">
+      <span><span class="dot"></span>Technology Advisory // expediente: sobre mí</span>
+      <span>estado: <strong>25 años activos</strong></span>
     </div>
-  </div>
 
-  <div class="sobremi-divider"></div>
+    <!-- EYEBROW -->
+    <div style="padding: 16px 48px; border-bottom: 1px solid #e2e8f0; font-size: 11px; font-family: monospace; text-transform: uppercase; letter-spacing: 0.1em; color: #059669;">
+      Arquitectura · Infraestructura · Seguridad
+    </div>
 
-  <!-- ÁREAS -->
-  <div class="sobremi-block">
-    <div class="sobremi-block-label">Áreas de especialización</div>
-    <div class="sobremi-areas-grid">
-      <div class="sobremi-area-card">
-        <h3 class="sobremi-area-title">Arquitectura Híbrida</h3>
-        <div class="sobremi-area-desc">Diseño de arquitecturas resilientes on-premises / cloud. Zero Trust, Security by Design y evolución de plataformas críticas.</div>
-      </div>
-      <div class="sobremi-area-card">
-        <h3 class="sobremi-area-title">Cloud (Azure &amp; GCP)</h3>
-        <div class="sobremi-area-desc">Arquitectura y gobierno en Microsoft Azure y Google Cloud. Landing zones, seguridad nativa y optimización de costes.</div>
-      </div>
-      <div class="sobremi-area-card">
-        <h3 class="sobremi-area-title">Firewalling &amp; Perímetro</h3>
-        <div class="sobremi-area-desc">Fortinet, SonicWall, ZTNA/SASE. Hardening, segmentación perimetral, VPN/IPSec y control de acceso seguro.</div>
-      </div>
-      <div class="sobremi-area-card">
-        <h3 class="sobremi-area-title">Red &amp; Segmentación</h3>
-        <div class="sobremi-area-desc">Diseño de redes seguras: VLANs, routing, microsegmentación y aislamiento de entornos críticos (Tier 0).</div>
-      </div>
-      <div class="sobremi-area-card">
-        <h3 class="sobremi-area-title">Continuidad de Negocio</h3>
-        <div class="sobremi-area-desc">Diseño y validación de BCP/DRP en entornos críticos. Backups inmutables y estrategias de recuperación real.</div>
-      </div>
-      <div class="sobremi-area-card">
-        <h3 class="sobremi-area-title">IA &amp; Infraestructura</h3>
-        <div class="sobremi-area-desc">Gobierno del riesgo en arquitecturas con componentes de IA. Seguridad en entornos AI-driven.</div>
+    <!-- HERO BLOCK -->
+    <div style="padding: 40px 48px; border-bottom: 1px solid #e2e8f0;">
+      <div class="hero-block">
+        <div class="hero-foto">
+          <img src="../img/image-perfil.jpg" alt="Miguel Ángel Carriazo">
+        </div>
+        <div class="hero-texto">
+          <h1 style="font-size: 48px; font-weight: 800; margin: 0; line-height: 1.1; color: #0f172a;">Miguel Ángel <span style="color: #059669;">Carriazo</span> <span style="color: #94a3b8; font-weight: 400;">Álvarez</span></h1>
+          <p style="font-size: 16px; color: #475569; margin: 8px 0 0; line-height: 1.5;">Arquitectura, resiliencia<br>y operación real.</p>
+          <div class="hero-exp">
+            <span class="hero-exp-num">+25</span>
+            <span class="hero-exp-label">años de experiencia<br>en infraestructura y seguridad</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="sobremi-divider"></div>
-
-  <!-- RESPONSABILIDADES -->
-  <div class="sobremi-block">
-    <div class="sobremi-block-label">Responsabilidades directas</div>
-    <div class="sobremi-resp-grid">
-      <div class="sobremi-resp-item"><div class="sobremi-resp-dot"></div>Gobierno y evolución de arquitecturas híbridas corporativas</div>
-      <div class="sobremi-resp-item"><div class="sobremi-resp-dot"></div>Diseño y validación de BCP y DRP en infraestructuras críticas</div>
-      <div class="sobremi-resp-item"><div class="sobremi-resp-dot"></div>Definición de estrategias de seguridad alineadas con la operación</div>
-      <div class="sobremi-resp-item"><div class="sobremi-resp-dot"></div>Coordinación con SOC, fabricantes y proveedores estratégicos</div>
-      <div class="sobremi-resp-item"><div class="sobremi-resp-dot"></div>Dirección técnica en auditorías y revisiones de arquitectura</div>
-      <div class="sobremi-resp-item"><div class="sobremi-resp-dot"></div>Participación en decisiones ejecutivas sobre arquitectura y riesgo</div>
-    </div>
-  </div>
-
-  <div class="sobremi-divider"></div>
-
-  <!-- CERTIFICACIONES -->
-  <div class="sobremi-block">
-    <div class="sobremi-block-label">Certificaciones &amp; formación</div>
-    <div class="sobremi-cert-groups">
-      <div>
-        <h3 class="sobremi-cert-group-title">Cloud &amp; Redes</h3>
-        <ul class="sobremi-cert-list">
-          <li><strong>Google Cloud</strong> – Associate Cloud Engineer</li>
-          <li><strong>Multicloud Network Associate</strong> (Aviatrix)</li>
-          <li><strong>Fortinet</strong> Certified Associate in Cybersecurity</li>
-          <li><strong>SonicWall</strong> CSE Advanced Accreditation</li>
-          <li><strong>Microsoft</strong> – Azure · Copilot · SQL · App Modernization</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="sobremi-cert-group-title">Gobierno, IA &amp; Liderazgo</h3>
-        <ul class="sobremi-cert-list">
-          <li><strong>ISO/IEC 42001</strong> – Gestión de IA · Lead Auditor</li>
-          <li><strong>AI Governance Professional</strong> (AIGPC™)</li>
-          <li><strong>AI Risk Manager Professional</strong> (AIRMPC™)</li>
-          <li><strong>DevOps</strong> Advanced Professional</li>
-          <li><strong>Agile Leader</strong> Professional</li>
-        </ul>
+    <!-- QUIÉN SOY -->
+    <div style="padding: 40px 48px; border-bottom: 1px solid #e2e8f0;">
+      <div class="cert-grupo-title" style="color: #059669; margin-bottom: 16px;">Quién soy</div>
+      <div style="font-size: 16px; line-height: 1.75; color: #334155;">
+        <p>Diseñar un sistema y mantenerlo en pie cuando falla son dos disciplinas distintas. <strong>He pasado mi carrera en la intersección de ambas.</strong></p>
+        <p>Soy <strong>Arquitecto de Soluciones de Infraestructura y Seguridad</strong>. Más de 25 años diseñando y operando infraestructura, no solo dibujándola en una pizarra. Durante más de dos décadas fui el responsable único de ciberseguridad e infraestructura, progresando desde IT operations hasta Infrastructure Architect &amp; Security Manager.</p>
+        <p>Trabajo en la intersección de <strong>arquitectura, cumplimiento normativo y riesgo</strong>. Los tres tienen que hablar el mismo idioma.</p>
       </div>
     </div>
-  </div>
 
-  <!-- CTA -->
-  <div class="sobremi-cta">
-    <h2 class="sobremi-cta-headline">¿Hablamos?</h2>
-    <div class="sobremi-cta-sub">
-      Conectar arquitectura, seguridad y operación con la realidad del negocio es donde se marcan las diferencias.
+    <!-- CERTIFICACIONES -->
+    <div style="padding: 40px 48px; border-bottom: 1px solid #e2e8f0;">
+      <div class="cert-grupo-title" style="color: #059669; margin-bottom: 24px;">Certificaciones &amp; formación</div>
+      <div class="cert-grupos">
+
+        <div>
+          <div class="cert-grupo-title" style="color: #059669;">Estándares &amp; Cumplimiento</div>
+          <ul class="cert-list">
+            <li><strong>ISO/IEC 27001</strong> Lead Auditor Professional</li>
+            <li><strong>ISO/IEC 27001</strong> Lead Implementer</li>
+            <li><strong>ISO/IEC 22301</strong> – Continuidad de Negocio · Internal Auditor</li>
+            <li><strong>ISO/IEC 42001</strong> – Gestión de IA · Internal Auditor</li>
+            <li><strong>ISO/IEC 42001</strong> – Gestión de IA · Lead Auditor Professional</li>
+            <li><strong>ENS (RD 311/2022)</strong> – CCN-CERT · Auditorías · Riesgos · Incidentes</li>
+            <li><strong>Lead Cybersecurity Professional</strong></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="cert-grupo-title" style="color: #059669;">Seguridad &amp; IA</div>
+          <ul class="cert-list">
+            <li><strong>Ethical Hacking Professional</strong></li>
+            <li><strong>Certified Red Team Operations Management</strong></li>
+            <li><strong>Certified Ransomware Protection Officer</strong></li>
+            <li><strong>AI Governance Professional</strong> (AIGPC™)</li>
+            <li><strong>AI Risk Manager Professional</strong> (AIRMPC™)</li>
+            <li><strong>Generative AI Professional</strong> (GAIPC™)</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="cert-grupo-title" style="color: #059669;">Cloud &amp; Infraestructura</div>
+          <ul class="cert-list">
+            <li><strong>Google Cloud</strong> Associate Cloud Engineer</li>
+            <li><strong>Google Cloud</strong> Cybersecurity Certificate</li>
+            <li><strong>Multicloud Network Associate</strong></li>
+            <li><strong>Fortinet</strong> Certified Associate in Cybersecurity</li>
+            <li><strong>SonicWall</strong> CSE Advanced Accreditation</li>
+            <li><strong>Microsoft</strong> – Azure, Copilot, SQL</li>
+          </ul>
+        </div>
+
+      </div>
     </div>
-    <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" class="sobremi-cta-pill">
-      Contactar en LinkedIn →
-    </a>
-  </div>
+
+    <!-- CTA -->
+    <div style="padding: 40px; text-align: center; background: #f8fafc; border-top: 1px solid #e2e8f0;">
+      <h2 style="font-size: 24px; font-weight: 700; color: #0f172a; margin: 0 0 8px;">¿Hablamos?</h2>
+      <p style="font-size: 14px; color: #64748b; margin: 0 0 20px;">Conectar arquitectura, seguridad y operación con la realidad es donde se marcan las diferencias.</p>
+      <a href="https://www.linkedin.com/in/macarriazo/" target="_blank" rel="noopener" style="display: inline-block; background: #059669; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 14px;">Contactar en LinkedIn →</a>
+    </div>
+
+    <!-- FOOTER DINÁMICO -->
+    <div id="footer-container"></div>
 
 </div>
+</div>
 
-<script src="../js/global.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/footer.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

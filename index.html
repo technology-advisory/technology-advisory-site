@@ -1,31 +1,156 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology Advisory | Arquitectura e Infraestructura Crítica</title>
+    <meta name="description" content="Diseño, operación e implementación de arquitecturas tecnológicas críticas en entornos híbridos on-premises y cloud.">
+    <meta name="author" content="Miguel Ángel Carriazo">
+    <meta name="theme-color" content="#059669">
+    <meta name="robots" content="index, follow">
 
-<title>Technology Advisory | Miguel Ángel Carriazo</title>
-<link rel="canonical" href="https://technology-advisory.es/index.html">
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Technology Advisory">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Technology Advisory | Arquitectura e Infraestructura Crítica">
+    <meta property="og:description" content="Diseño, operación e implementación de arquitecturas tecnológicas críticas.">
+    <meta property="og:url" content="https://technology-advisory.es/">
 
-<link rel="stylesheet" href="css/global.css">
-<link rel="stylesheet" href="css/home.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dossier-core.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+<body>
 
-<body class="ta-home ta-light-page">
+<div class="card-wrapper ds-page">
+<div class="card">
 
-<div class="wrapper">
-  <div class="container">
-    
-    <div class="hero">
-      <picture>
-        <source media="(max-width: 768px)" srcset="img/hero-mac-mobile.png">
-        <img src="img/hero-mac.png" alt="Technology Advisory · Infraestructura que resiste. Ingeniería que protege. Diseño y operación de arquitecturas tecnológicas críticas en entornos híbridos on-premises y cloud.">
-      </picture>
+    <!-- Menú dinámico -->
+    <div id="menu-container"></div>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-tagline">TECNOLOGÍA Y ARQUITECTURA RESILIENTE</div>
+        <div class="hero-subtagline">DISEÑO. OPERACIÓN. PROTECCIÓN.</div>
+        
+        <h1>INFRAESTRUCTURA QUE RESISTE.<br><span class="hero-accent">INGENIERÍA QUE PROTEGE.</span></h1>
+        
+        <p>Diseño y operación de arquitecturas tecnológicas críticas en entornos híbridos (on-premises / cloud).</p>
+
+        <div class="hero-divider"></div>
+
+        <!-- Pilares con SVGs -->
+        <div class="pillars-grid">
+            <div class="pillar">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 64 64">
+                        <!-- Disponibilidad: Monitor -->
+                        <rect x="8" y="12" width="48" height="32" rx="2"/>
+                        <path d="M20 44h24M24 44v4M40 44v4"/>
+                        <line x1="16" y1="20" x2="48" y2="20"/>
+                        <line x1="16" y1="28" x2="48" y2="28"/>
+                    </svg>
+                </div>
+                <div class="pillar-label">Disponibilidad</div>
+            </div>
+
+            <div class="pillar">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 64 64">
+                        <!-- Seguridad: Shield -->
+                        <path d="M32 8L52 16V32C52 48 32 56 32 56C32 56 12 48 12 32V16L32 8Z"/>
+                        <path d="M24 32L30 38L40 28"/>
+                    </svg>
+                </div>
+                <div class="pillar-label">Seguridad</div>
+            </div>
+
+            <div class="pillar">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 64 64">
+                        <!-- Arquitectura: Network -->
+                        <circle cx="20" cy="20" r="4"/>
+                        <circle cx="44" cy="20" r="4"/>
+                        <circle cx="20" cy="44" r="4"/>
+                        <circle cx="44" cy="44" r="4"/>
+                        <circle cx="32" cy="32" r="4"/>
+                        <line x1="20" y1="24" x2="20" y2="40"/>
+                        <line x1="44" y1="24" x2="44" y2="40"/>
+                        <line x1="24" y1="20" x2="40" y2="20"/>
+                        <line x1="24" y1="44" x2="40" y2="44"/>
+                        <line x1="22" y1="22" x2="30" y2="30"/>
+                        <line x1="42" y1="22" x2="34" y2="30"/>
+                        <line x1="22" y1="42" x2="30" y2="34"/>
+                        <line x1="42" y1="42" x2="34" y2="34"/>
+                    </svg>
+                </div>
+                <div class="pillar-label">Arquitectura</div>
+            </div>
+
+            <div class="pillar">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 64 64">
+                        <!-- Resiliencia: Cycle -->
+                        <path d="M32 12C21.5 12 13 20.5 13 31"/>
+                        <path d="M13 31L8 26M13 31L18 36"/>
+                        <path d="M32 52C42.5 52 51 43.5 51 32"/>
+                        <path d="M51 32L56 37M51 32L46 27"/>
+                    </svg>
+                </div>
+                <div class="pillar-label">Resiliencia</div>
+            </div>
+
+            <div class="pillar">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 64 64">
+                        <!-- Operación: Gear -->
+                        <circle cx="32" cy="32" r="12"/>
+                        <circle cx="20" cy="20" r="5"/>
+                        <circle cx="44" cy="44" r="5"/>
+                        <line x1="25" y1="23" x2="28" y2="28"/>
+                        <line x1="39" y1="39" x2="36" y2="36"/>
+                    </svg>
+                </div>
+                <div class="pillar-label">Operación</div>
+            </div>
+        </div>
+
+        <!-- Keywords -->
+        <div class="keywords">
+            <span class="keyword">REDES</span>
+            <span class="keyword">SISTEMAS</span>
+            <span class="keyword">SEGURIDAD</span>
+            <span class="keyword">CONTINUIDAD</span>
+            <span class="keyword">NUBE</span>
+        </div>
+
+        <div class="hero-footer">
+            © 2026 TECHNOLOGY ADVISORY · OPERATIONAL SECURITY
+        </div>
+    </header>
+
+    <!-- Modal de desarrollo -->
+    <div id="dev-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h3>⚙️ En Desarrollo</h3>
+            <p>Esta sección está siendo preparada. Vuelve pronto.</p>
+            <button class="modal-btn" onclick="closeDevModal()">Cerrar</button>
+        </div>
     </div>
 
-  </div>
+    <!-- Footer dinámico -->
+    <div id="footer-container"></div>
+
+</div>
 </div>
 
-<script src="js/global.js"></script>
+<!-- Scripts -->
+<script src="js/menu.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 </html>
