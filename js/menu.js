@@ -300,4 +300,4 @@ function closeDevModal() {
     if (modal) {
         modal.classList.remove('active');
     }
-}
+} 
