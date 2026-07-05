@@ -1,6 +1,6 @@
 /* ============================================
    MENU.JS — Technology Advisory
-   Menú dinámico estilo FraudeDigital, colores verdes
+   Menú dinámico con hamburguesa responsive
    ============================================ */
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 justify-content: space-between;
                 align-items: center;
                 gap: 2rem;
-                flex-wrap: wrap;
             }
 
             .logo-link {
@@ -67,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 list-style: none;
                 padding: 0;
                 margin: 0;
-                flex-wrap: wrap;
                 flex: 1;
                 justify-content: flex-end;
             }
@@ -112,23 +110,93 @@ document.addEventListener("DOMContentLoaded", function() {
                 color: white;
             }
 
+            .menu-toggle {
+                display: none;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 8px;
+                color: var(--primary);
+            }
+
+            .menu-toggle svg {
+                width: 28px;
+                height: 28px;
+                stroke: currentColor;
+                fill: none;
+                stroke-width: 2;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+            }
+
             @media (max-width: 768px) {
-                .nav-container {
-                    gap: 1rem;
+                .menu-toggle {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
 
                 .nav-list {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background: var(--bg);
+                    flex-direction: column;
+                    gap: 0;
                     width: 100%;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.3s ease;
+                    justify-content: flex-start;
+                    padding: 0;
+                    margin: 0;
+                    border-bottom: 1px solid var(--border);
+                }
+
+                .nav-list.active {
+                    max-height: 600px;
+                    padding: 12px 0;
+                }
+
+                .nav-list li {
+                    width: 100%;
+                }
+
+                .nav-list a {
+                    padding: 12px 2rem;
+                    border-bottom: 1px solid #f1f5f9;
+                    justify-content: flex-start;
+                    width: 100%;
+                    gap: 8px;
+                }
+
+                .nav-list a svg {
+                    display: block;
+                }
+
+                .nav-list li:last-child a {
+                    border-bottom: none;
+                }
+
+                .nav-container {
+                    flex-wrap: wrap;
                     gap: 1rem;
-                    order: 3;
+                }
+
+                .logo-link {
+                    flex: 1;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .logo-link {
+                    font-size: 1.1rem;
                 }
 
                 .nav-list a {
                     font-size: 0.75rem;
-                }
-
-                .nav-list a svg {
-                    display: none;
+                    padding: 10px 1rem;
                 }
             }
         </style>
@@ -140,7 +208,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     Technology Advisory
                 </a>
 
-                <ul class="nav-list">
+                <button class="menu-toggle" id="menu-toggle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+
+                <ul class="nav-list" id="nav-list">
                     ${links.map(l => {
                         const isCta = l.key === 'legal';
                         const style = isCta ? 'menu-link-cta' : '';
@@ -160,6 +232,24 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         </nav>
     `;
+
+    // Toggle menú hamburguesa
+    const toggle = document.getElementById("menu-toggle");
+    const navList = document.getElementById("nav-list");
+    
+    if (toggle) {
+        toggle.addEventListener("click", function() {
+            navList.classList.toggle("active");
+        });
+    }
+
+    // Cerrar menú al hacer click en un enlace
+    const navLinks = document.querySelectorAll(".nav-list a");
+    navLinks.forEach(link => {
+        link.addEventListener("click", function() {
+            navList.classList.remove("active");
+        });
+    });
 });
 
 function showDevModal() {

@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div>
                     <h4 style="color: #ffffff; margin-bottom: 1.2rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">Enlaces</h4>
                     <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
-                        <li><a href="/" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;">Sobre mí</a></li>
-                        <li><a href="/" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;">Legal</a></li>
+                        <li><a href="/sobre-mi/sobre-mi.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;">Sobre mí</a></li>
+                        <li><a href="/legal/legal.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;">Legal</a></li>
                         <li><a href="https://grcreal.com" target="_blank" rel="noopener" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;">GRCreal</a></li>
                         <li><a href="https://linkedin.com/in/macarriazo" target="_blank" rel="noopener" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;">LinkedIn</a></li>
                     </ul>

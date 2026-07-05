@@ -189,46 +189,194 @@
    RESPONSIVE
    ================================================ */
 
-/* Tablet (≤ 1024px) */
+/* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
-    .hero { padding: 3.5rem 1.5rem 2.5rem; }
-    .hero h1 { font-size: 2.1rem; }
-    .hero p { font-size: 1.05rem; }
-}
-
-/* Móvil (≤ 768px) */
-@media (max-width: 768px) {
-    .hero { padding: 2.5rem 1rem 2rem; }
-    .hero h1 { font-size: 1.75rem; letter-spacing: -0.01em; }
-    .hero p { font-size: 1rem; margin-bottom: 1.75rem; }
+    .hero { 
+        padding: 3.5rem 1.5rem 2.5rem; 
+    }
+    .hero h1 { 
+        font-size: 2.1rem; 
+    }
+    .hero p { 
+        font-size: 1.05rem; 
+    }
     
     .pillars-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Tablet pequeño (640px - 768px) */
+@media (max-width: 768px) {
+    .hero { 
+        padding: 2.5rem 1.2rem 2rem; 
+    }
+    .hero h1 { 
+        font-size: 1.8rem; 
+        letter-spacing: -0.01em; 
+    }
+    .hero p { 
+        font-size: 1rem; 
+        margin-bottom: 2rem;
+    }
+    
+    .hero-tagline {
+        font-size: 0.78rem;
+    }
+
+    .hero-subtagline {
+        font-size: 0.85rem;
+    }
+    
+    .pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        margin-bottom: 2.5rem;
     }
 
     .pillar-icon {
-        width: 50px;
-        height: 50px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .pillar-label {
+        font-size: 0.8rem;
     }
 
     .keywords {
         gap: 1rem;
         padding: 1.5rem 0;
+        gap: 0.8rem;
     }
 
     .keyword {
-        font-size: 0.8rem;
+        font-size: 0.78rem;
     }
 
     .keyword::after {
-        margin-left: 1rem;
+        margin-left: 0.8rem;
+    }
+
+    .hero-divider {
+        width: 70px;
+        margin: 1.5rem auto 2.5rem;
     }
 }
 
-/* Móvil pequeño (≤ 480px) */
+/* Móvil grande (480px - 640px) */
+@media (max-width: 640px) {
+    .hero { 
+        padding: 2rem 1rem 1.75rem; 
+    }
+    .hero h1 { 
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+    }
+    .hero p { 
+        font-size: 0.95rem; 
+        margin-bottom: 1.75rem;
+    }
+    
+    .hero-tagline {
+        font-size: 0.72rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .hero-subtagline {
+        font-size: 0.8rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .pillar-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .pillar-label {
+        font-size: 0.75rem;
+    }
+
+    .keywords {
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+    }
+
+    .keyword {
+        font-size: 0.75rem;
+        text-align: center;
+    }
+
+    .keyword::after {
+        content: '';
+        margin-left: 0;
+    }
+
+    .hero-divider {
+        width: 60px;
+        margin: 1.25rem auto 2rem;
+    }
+}
+
+/* Móvil pequeño (< 480px) */
 @media (max-width: 480px) {
-    .hero h1 { font-size: 1.5rem; }
-    .hero p { font-size: 0.95rem; }
-    .hero-tagline { font-size: 0.75rem; }
+    .hero { 
+        padding: 1.75rem 0.75rem 1.5rem; 
+    }
+    .hero h1 { 
+        font-size: 1.4rem;
+        margin-bottom: 0.4rem;
+    }
+    .hero p { 
+        font-size: 0.9rem; 
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-tagline {
+        font-size: 0.68rem;
+    }
+
+    .hero-subtagline {
+        font-size: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin-bottom: 1.75rem;
+    }
+
+    .pillar-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .pillar-label {
+        font-size: 0.7rem;
+    }
+
+    .keywords {
+        padding: 0.75rem 0;
+    }
+
+    .keyword {
+        font-size: 0.7rem;
+    }
+
+    .hero-divider {
+        width: 50px;
+        margin: 1rem auto 1.5rem;
+    }
+
+    .hero-footer {
+        font-size: 0.75rem;
+    }
 }
