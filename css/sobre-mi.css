@@ -1,0 +1,257 @@
+/* ============================================
+   TECHNOLOGY ADVISORY — SOBRE-MI.CSS
+   Misma base documental que legal.css/contacto.css,
+   más un grid de áreas de especialización y lista
+   de responsabilidades — sin vitrina de badges.
+   ============================================ */
+
+body.ta-sobremi-page {
+  background: var(--ta-bg);
+}
+
+.sobremi-wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 140px 56px 60px;
+}
+
+/* HEADER */
+.sobremi-tag {
+  font-family: var(--ta-font-mono);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ta-amber);
+  margin-bottom: 18px;
+}
+
+.sobremi-headline {
+  font-family: var(--ta-font-display);
+  font-size: 42px;
+  line-height: 1.15;
+  color: var(--ta-text);
+  margin-bottom: 18px;
+}
+
+.sobremi-headline em {
+  color: var(--ta-amber);
+  font-style: italic;
+  font-size: 0.88em;
+}
+
+.sobremi-subline {
+  font-family: var(--ta-font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ta-text-secondary);
+  margin-bottom: 24px;
+  max-width: 600px;
+}
+
+.sobremi-exp {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 56px;
+}
+
+.sobremi-exp-num {
+  font-family: var(--ta-font-display);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--ta-amber);
+}
+
+.sobremi-exp-label {
+  font-family: var(--ta-font-body);
+  font-size: 14px;
+  color: var(--ta-text-secondary);
+  line-height: 1.4;
+}
+
+/* BLOQUES */
+.sobremi-block {
+  margin-bottom: 40px;
+}
+
+.sobremi-block-label {
+  font-family: var(--ta-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--ta-amber);
+  margin-bottom: 16px;
+}
+
+.sobremi-block-title {
+  font-family: var(--ta-font-display);
+  font-size: 24px;
+  color: var(--ta-text);
+  margin-bottom: 14px;
+}
+
+.sobremi-block-text {
+  font-family: var(--ta-font-body);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--ta-text);
+}
+
+.sobremi-block-text strong {
+  font-weight: 600;
+  color: var(--ta-text);
+}
+
+.sobremi-divider {
+  height: 1px;
+  background: var(--ta-line);
+  margin: 40px 0;
+}
+
+/* GRID DE ÁREAS */
+.sobremi-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.sobremi-area-card {
+  border: 1px solid var(--ta-line);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.sobremi-area-title {
+  font-family: var(--ta-font-display);
+  font-size: 16px;
+  color: var(--ta-text);
+  margin-bottom: 8px;
+}
+
+.sobremi-area-desc {
+  font-family: var(--ta-font-body);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ta-text-secondary);
+}
+
+/* RESPONSABILIDADES */
+.sobremi-resp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.sobremi-resp-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--ta-font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ta-text);
+}
+
+.sobremi-resp-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ta-amber);
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+
+/* CERTIFICACIONES (texto, sin badges) */
+.sobremi-cert-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.sobremi-cert-group-title {
+  font-family: var(--ta-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--ta-text-secondary);
+  margin-bottom: 10px;
+}
+
+.sobremi-cert-list {
+  list-style: none;
+  font-family: var(--ta-font-body);
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--ta-text);
+}
+
+.sobremi-cert-list strong {
+  font-weight: 600;
+}
+
+/* CTA FINAL */
+.sobremi-cta {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid var(--ta-line);
+}
+
+.sobremi-cta-headline {
+  font-family: var(--ta-font-display);
+  font-size: 28px;
+  color: var(--ta-text);
+  margin-bottom: 10px;
+}
+
+.sobremi-cta-sub {
+  font-family: var(--ta-font-body);
+  font-size: 14px;
+  color: var(--ta-text-secondary);
+  margin-bottom: 24px;
+}
+
+.sobremi-cta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--ta-font-mono);
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: var(--ta-amber);
+  border: 1px solid var(--ta-amber);
+  padding: 12px 24px;
+  border-radius: 30px;
+  transition: all 0.2s ease;
+}
+
+.sobremi-cta-pill:hover {
+  background: var(--ta-amber-dark);
+  border-color: var(--ta-amber-dark);
+}
+
+@media (max-width: 900px) {
+  .sobremi-areas-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sobremi-cert-groups {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .sobremi-wrapper {
+    padding: 110px 22px 40px;
+  }
+  .sobremi-headline {
+    font-size: 32px;
+  }
+  .sobremi-areas-grid,
+  .sobremi-resp-grid {
+    grid-template-columns: 1fr;
+  }
+  .sobremi-block-title {
+    font-size: 20px;
+  }
+}
