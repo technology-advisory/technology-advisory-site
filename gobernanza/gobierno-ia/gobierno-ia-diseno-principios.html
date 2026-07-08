@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Principios de diseño: el algoritmo de scoring de hace 5 años también es IA bajo el AI Act | Gobierno de IA | Technology Advisory</title><meta name="description" content="Muchas organizaciones no consideran "IA" a los modelos de ML que llevan años en producción. Si el sistema influye en decisiones sobre personas, probablemen"><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
+<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // gobernanza</span><span>categoría: <strong>Gobierno de IA</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Gobierno de IA</div><h1 class="article-title">Principios de diseño: el algoritmo de scoring de hace 5 años también es IA bajo el AI Act</h1><p class="article-lead">Muchas organizaciones no consideran "IA" a los modelos de ML que llevan años en producción. Si el sistema influye en decisiones sobre personas, probablemente es alto riesgo bajo el AI Act, aunque internamente se llame "el algoritmo de siempre".</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Gobierno de IA"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="900" height="410" rx="14" fill="#fafaf8"/>
+<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Clasificación de riesgo del EU AI Act</text>
+<text x="40" y="66" font-size="12" fill="#77776f">cuatro niveles, con obligaciones muy distintas</text>
+<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Inaceptable</text>
+<text x="58" y="163" font-size="11" fill="#77776f">Prohibido: social scoring, biometría masiva</text>
+<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Alto riesgo</text>
+<text x="488" y="163" font-size="11" fill="#77776f">Contratación, crédito, salud, infraestructura</text>
+<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Riesgo limitado</text>
+<text x="58" y="283" font-size="11" fill="#77776f">Transparencia: chatbots, deepfakes</text>
+<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Riesgo mínimo</text>
+<text x="488" y="283" font-size="11" fill="#77776f">Libre: filtros de spam, videojuegos</text>
+<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Las sanciones del AI Act llegan hasta 35M€ o 7% de facturación — por encima de GDPR</text>
+</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 420" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="330" height="420" rx="12" fill="#fafaf8"/>
+<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Clasificación de riesgo del EU AI Act</text>
+<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="89" r="13" fill="#059669"/>
+<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Inaceptable</text>
+<text x="64" y="102" font-size="11" fill="#77776f">Prohibido: social scoring,</text>
+<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="159" r="13" fill="#059669"/>
+<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Alto riesgo</text>
+<text x="64" y="172" font-size="11" fill="#77776f">Contratación, crédito, salud,</text>
+<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="229" r="13" fill="#059669"/>
+<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Riesgo limitado</text>
+<text x="64" y="242" font-size="11" fill="#77776f">Transparencia: chatbots,</text>
+<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="299" r="13" fill="#059669"/>
+<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Riesgo mínimo</text>
+<text x="64" y="312" font-size="11" fill="#77776f">Libre: filtros de spam,</text>
+<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+<rect x="18" y="340" width="294" height="60" rx="10" fill="url(#gm)"/>
+<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Las sanciones del AI Act llegan hasta 35M€</text>
+<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">o 7% de facturación — por encima de GDPR</text>
+</svg></div></figure><div class="toc-mini"><a href="#contexto">1. El algoritmo de siempre que resulta ser IA regulada</a><a href="#arquitectura">2. Los cuatro niveles de riesgo del AI Act</a><a href="#seguridad">3. Inventario de IA, incluido el SaaS con IA embebida</a><a href="#operacion">4. ISO 42001 como framework operativo</a><a href="#roadmap">5. Clasificar antes de que lo haga un regulador</a></div><h2 id="contexto">1. El algoritmo de siempre que resulta ser IA regulada bajo el AI Act</h2><div class="body-text"><p><strong>Muchas organizaciones no consideran "IA" a los modelos de machine learning que llevan años en producción —detección de fraude, scoring de crédito, recomendación de productos.</strong> Si el sistema toma o influye en decisiones sobre personas, probablemente es alto riesgo bajo el EU AI Act, aunque internamente se le llame simplemente "el algoritmo de siempre".</p></div><h2 id="arquitectura">2. Los cuatro niveles de riesgo que determinan las obligaciones reales</h2><div class="body-text"><p>El AI Act clasifica los sistemas en inaceptable (prohibido), alto riesgo (regulado con obligaciones estrictas: contratación automatizada, scoring crediticio, diagnóstico médico), riesgo limitado (transparencia: chatbots, deepfakes) y riesgo mínimo (libre: filtros de spam). La clasificación determina qué obligaciones legales aplican — no es un ejercicio teórico.</p></div><h2 id="seguridad">3. Inventario completo de IA, incluido el SaaS con IA embebida que nadie clasificó</h2><div class="body-text"><p>El ejercicio práctico exige inventariar todos los sistemas que usan IA —incluidos los SaaS con IA embebida como Copilot o funciones de scoring dentro de un CRM— y clasificarlos según el Anexo III del AI Act, documentando propósito, datos de entrenamiento y mecanismo de supervisión humana para cada uno de alto riesgo.</p></div><h2 id="operacion">4. ISO 42001 como framework operativo que da el "cómo" que el AI Act no detalla</h2><div class="body-text"><p>ISO/IEC 42001 define cómo implementar un sistema de gestión de IA siguiendo la estructura de alto nivel común a otros estándares ISO. Si ya se certifica ISO 27001, integrar un AIMS es relativamente natural — misma estructura de procesos, misma disciplina de auditoría interna.</p></div><h2 id="roadmap">5. Clasificar antes de que lo haga un regulador o un incidente por ti</h2><div class="body-text"><p>Esperar a que un regulador, un cliente en debida diligencia, o un incidente revele que un sistema no clasificado correctamente era de alto riesgo es la peor forma de descubrirlo. El inventario y clasificación proactivos son mucho más baratos que la remediación reactiva bajo presión regulatoria.</p></div><a class="back" href="../index.html?cat=gobierno-ia">← Volver a Gobierno de IA</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. El algoritmo de siempre que resulta ser IA regulada</a><a href="#arquitectura">2. Los cuatro niveles de riesgo del AI Act</a><a href="#seguridad">3. Inventario de IA, incluido el SaaS con IA embebida</a><a href="#operacion">4. ISO 42001 como framework operativo</a><a href="#roadmap">5. Clasificar antes de que lo haga un regulador</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>

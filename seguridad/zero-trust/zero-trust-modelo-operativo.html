@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Modelo operativo: Conditional Access sin romper la vida a todo el mundo | Zero Trust | Technology Advisory</title><meta name="description" content="Desplegar políticas de acceso condicional sin fase de report-only es desplegar a ciegas. El equipo de soporte lo va a notar antes que tú."><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
+<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // seguridad</span><span>categoría: <strong>Zero Trust</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Zero Trust</div><h1 class="article-title">Modelo operativo: Conditional Access sin romper la vida a todo el mundo</h1><p class="article-lead">Desplegar políticas de acceso condicional sin fase de report-only es desplegar a ciegas. El equipo de soporte lo va a notar antes que tú.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Zero Trust"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="900" height="410" rx="14" fill="#fafaf8"/>
+<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Ciclo de despliegue de Conditional Access</text>
+<text x="40" y="66" font-size="12" fill="#77776f">de report-only a enforcement, con datos de por medio</text>
+<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Report-only</text>
+<text x="58" y="163" font-size="11" fill="#77776f">2 semanas mínimo, medir impacto</text>
+<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Análisis de impacto</text>
+<text x="488" y="163" font-size="11" fill="#77776f">¿A quién bloquearía esta política?</text>
+<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Enforcement gradual</text>
+<text x="58" y="283" font-size="11" fill="#77776f">Grupo piloto antes que todos</text>
+<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Monitorización continua</text>
+<text x="488" y="283" font-size="11" fill="#77776f">Ajustar, no desplegar y olvidar</text>
+<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Sin report-only, cada política nueva es una apuesta con los usuarios como conejillos de indias</text>
+</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="330" height="438" rx="12" fill="#fafaf8"/>
+<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Ciclo de despliegue de Conditional Access</text>
+<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="89" r="13" fill="#059669"/>
+<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Report-only</text>
+<text x="64" y="102" font-size="11" fill="#77776f">2 semanas mínimo, medir</text>
+<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="159" r="13" fill="#059669"/>
+<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Análisis de impacto</text>
+<text x="64" y="172" font-size="11" fill="#77776f">¿A quién bloquearía esta</text>
+<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="229" r="13" fill="#059669"/>
+<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Enforcement gradual</text>
+<text x="64" y="242" font-size="11" fill="#77776f">Grupo piloto antes que todos</text>
+<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="299" r="13" fill="#059669"/>
+<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Monitorización continua</text>
+<text x="64" y="312" font-size="11" fill="#77776f">Ajustar, no desplegar y</text>
+<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
+<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Sin report-only, cada política nueva es</text>
+<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">una apuesta con los usuarios como</text>
+<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">conejillos de indias</text>
+</svg></div></figure><div class="toc-mini"><a href="#contexto">1. La política que bloqueó al CEO</a><a href="#arquitectura">2. Report-only: la fase que se salta</a><a href="#seguridad">3. Legacy auth: el bypass favorito</a><a href="#operacion">4. Enforcement gradual, no big bang</a><a href="#roadmap">5. Políticas como configuración viva</a></div><h2 id="contexto">1. La política que bloqueó al CEO en un aeropuerto</h2><div class="body-text"><p><strong>Toda organización con Conditional Access tiene una historia de una política mal calibrada que bloqueó a alguien importante en el peor momento posible.</strong> El problema casi nunca es la política en sí — es haberla activado directamente en modo enforcement sin medir antes su impacto real.</p></div><h2 id="arquitectura">2. Report-only: la fase que casi todos se saltan por prisa</h2><div class="body-text"><p>El modo report-only de Conditional Access evalúa la política contra el tráfico real sin bloquear nada, generando un log de qué habría pasado. Dos semanas en este modo, revisando los resultados, revela exactamente a quién afectaría la política antes de que afecte a nadie de verdad.</p></div><h2 id="seguridad">3. Legacy auth: el bypass favorito de cualquier atacante</h2><div class="body-text"><p>Los protocolos de autenticación legacy (SMTP básico, IMAP, POP3) no pasan por Conditional Access a menos que se bloqueen explícitamente. Son el camino que un atacante prueba primero, precisamente porque las organizaciones despliegan políticas modernas sofisticadas sin cerrar antes esta puerta trasera obvia.</p><div class="callout warn"><strong>Verificación obligatoria antes de cualquier otra política:</strong> ¿está bloqueada la autenticación legacy? Si no, cualquier otra política de Conditional Access tiene un agujero conocido.</div></div><h2 id="operacion">4. Enforcement gradual, no big bang para toda la organización</h2><div class="body-text"><p>Activar una política nueva para el 100% de usuarios el mismo día es innecesariamente arriesgado. Un grupo piloto (el propio equipo de IT primero, luego un departamento representativo) durante una semana revela problemas de configuración antes de que afecten a toda la plantilla.</p></div><h2 id="roadmap">5. Políticas como configuración viva, revisada periódicamente</h2><div class="body-text"><p>Las políticas de Conditional Access no se despliegan una vez y se olvidan — la organización cambia (nuevas aplicaciones, nuevos patrones de trabajo remoto) y las políticas necesitan revisión periódica para seguir siendo efectivas sin generar fricción innecesaria.</p></div><a class="back" href="../index.html?cat=zero-trust">← Volver a Zero Trust</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. La política que bloqueó al CEO</a><a href="#arquitectura">2. Report-only: la fase que se salta</a><a href="#seguridad">3. Legacy auth: el bypass favorito</a><a href="#operacion">4. Enforcement gradual, no big bang</a><a href="#roadmap">5. Políticas como configuración viva</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>

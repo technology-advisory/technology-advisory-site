@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Madurez y roadmap: del script heredado a la orquestación con self-service seguro | Automatización y Orquestación | Technology Advisory</title><meta name="description" content="Los cuatro niveles reales de madurez en automatización, desde scripts individuales sin gobierno hasta plataformas de orquestación con self-service controla"><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
+<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // operaciones</span><span>categoría: <strong>Automatización y Orquestación</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Automatización y Orquestación</div><h1 class="article-title">Madurez y roadmap: del script heredado a la orquestación con self-service seguro</h1><p class="article-lead">Los cuatro niveles reales de madurez en automatización, desde scripts individuales sin gobierno hasta plataformas de orquestación con self-service controlado.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Automatización y Orquestación"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="900" height="410" rx="14" fill="#fafaf8"/>
+<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Cuatro niveles de madurez en automatización</text>
+<text x="40" y="66" font-size="12" fill="#77776f">de scripts sueltos a self-service orquestado y seguro</text>
+<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Nivel 1 · Scripts sueltos</text>
+<text x="58" y="163" font-size="11" fill="#77776f">Sin inventario ni ownership</text>
+<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Nivel 2 · Gestionados</text>
+<text x="488" y="163" font-size="11" fill="#77776f">Repositorio, versionado, propietario</text>
+<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Nivel 3 · Orquestados</text>
+<text x="58" y="283" font-size="11" fill="#77776f">Plataforma central, credenciales en vault</text>
+<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Nivel 4 · Self-service seguro</text>
+<text x="488" y="283" font-size="11" fill="#77776f">Usuarios ejecutan sin acceso directo a credenciales</text>
+<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">El Nivel 4 permite autoservicio sin dar a nadie acceso directo a las credenciales privilegiadas</text>
+</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="330" height="438" rx="12" fill="#fafaf8"/>
+<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Cuatro niveles de madurez en automatización</text>
+<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="89" r="13" fill="#059669"/>
+<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Nivel 1 · Scripts sueltos</text>
+<text x="64" y="102" font-size="11" fill="#77776f">Sin inventario ni ownership</text>
+<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="159" r="13" fill="#059669"/>
+<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Nivel 2 · Gestionados</text>
+<text x="64" y="172" font-size="11" fill="#77776f">Repositorio, versionado,</text>
+<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="229" r="13" fill="#059669"/>
+<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Nivel 3 · Orquestados</text>
+<text x="64" y="242" font-size="11" fill="#77776f">Plataforma central,</text>
+<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="299" r="13" fill="#059669"/>
+<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Nivel 4 · Self-service</text>
+<text x="64" y="312" font-size="11" fill="#77776f">Usuarios ejecutan sin acceso</text>
+<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
+<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">El Nivel 4 permite autoservicio sin dar a</text>
+<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">nadie acceso directo a las credenciales</text>
+<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">privilegiadas</text>
+</svg></div></figure><div class="toc-mini"><a href="#contexto">1. El zoo de scripts sin catalogar</a><a href="#arquitectura">2. Nivel 1 y 2: sueltos y gestionados</a><a href="#seguridad">3. Nivel 3: orquestados con credenciales seguras</a><a href="#operacion">4. Nivel 4: self-service sin exponer privilegios</a><a href="#roadmap">5. La madurez que reduce el trabajo repetitivo de IT</a></div><h2 id="contexto">1. El zoo de scripts sin catalogar que nadie audita completo</h2><div class="body-text"><p><strong>La mayoría de organizaciones acumulan, con el tiempo, un "zoo" de scripts individuales escritos por distintas personas, en distintos momentos, sin inventario central ni convención común.</strong> El primer paso de madurez es simplemente saber qué existe.</p></div><h2 id="arquitectura">2. Nivel 1 y 2: scripts sueltos y scripts gestionados</h2><div class="body-text"><p>El <strong>Nivel 1 (Scripts sueltos)</strong> tiene automatizaciones dispersas sin inventario ni ownership claro. El <strong>Nivel 2 (Gestionados)</strong> introduce repositorio central, versionado y propietario asignado — un avance real en trazabilidad, aunque la ejecución sigue siendo manual o programada de forma independiente.</p></div><h2 id="seguridad">3. Nivel 3: orquestados con credenciales gestionadas de forma segura</h2><div class="body-text"><p>El <strong>Nivel 3 (Orquestados)</strong> centraliza la ejecución en una plataforma de orquestación (Ansible Automation Platform, Rundeck, o similar) con credenciales obtenidas de un vault en tiempo de ejecución — nadie tiene las credenciales hardcodeadas ni acceso directo a ellas.</p></div><h2 id="operacion">4. Nivel 4: self-service seguro sin exponer privilegios directamente</h2><div class="body-text"><p>El <strong>Nivel 4 (Self-service seguro)</strong> permite que usuarios no técnicos ejecuten automatizaciones aprobadas a través de una interfaz controlada, sin necesidad de acceso directo a sistemas ni a credenciales privilegiadas — la plataforma actúa como intermediario seguro entre la necesidad del usuario y el sistema subyacente.</p></div><h2 id="roadmap">5. La madurez que libera tiempo real de IT para trabajo de mayor valor</h2><div class="body-text"><p>El objetivo final de la madurez en automatización no es tecnológico por sí mismo — es liberar al equipo de IT de tareas repetitivas y de bajo valor añadido, de forma segura, para que pueda dedicar su tiempo a trabajo que realmente requiere criterio humano.</p></div><a class="back" href="../index.html?cat=automatizacion-orquestacion">← Volver a Automatización y Orquestación</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. El zoo de scripts sin catalogar</a><a href="#arquitectura">2. Nivel 1 y 2: sueltos y gestionados</a><a href="#seguridad">3. Nivel 3: orquestados con credenciales seguras</a><a href="#operacion">4. Nivel 4: self-service sin exponer privilegios</a><a href="#roadmap">5. La madurez que reduce el trabajo repetitivo de IT</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>

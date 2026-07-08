@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+
+<title>Operaciones TI · Technology Advisory</title>
+
+<meta name="description" content="Artículos sobre automatización avanzada, continuidad de negocio y gestión de identidades (IAM).">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Miguel Ángel Carriazo">
+<meta name="theme-color" content="#059669">
+
+<link rel="canonical" href="https://technology-advisory.es/operaciones/">
+
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/dossier-core.css">
+<link rel="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../css/articulos-index.css">
+</head>
+<body>
+
+<div class="card-wrapper ds-page">
+<div class="card">
+
+    <div id="menu-container"></div>
+    <div class="accent-bar" style="background: #059669;"></div>
+
+    <div class="ds-meta">
+        <span><span class="dot" style="background:#059669;"></span>Technology Advisory // operaciones</span>
+        <span>archivo: <strong id="total-articulos">Cargando...</strong></span>
+    </div>
+
+    <header class="header" style="padding: 40px 48px 20px; border-bottom: 1px solid #ededea;">
+        <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.1em; font-weight:700; margin-bottom:8px;">Dimensión 03 · Operaciones TI</div>
+        <h1 class="headline" style="font-size: clamp(32px, 5vw, 44px); font-weight: 800; color: #151915; margin: 0 0 12px; letter-spacing: -0.02em;">
+            Operaciones <span class="accent" style="color:#059669;">que sostienen</span>
+        </h1>
+        <p class="subline" style="font-size: 18px; color: #4a4a44; max-width: 750px; line-height: 1.6; margin: 0;">
+            Automatización SRE, continuidad de negocio y gobernanza de identidades para entornos críticos.
+        </p>
+    </header>
+
+    <div class="articulos-body">
+
+        <div id="filters">
+            <button class="filter-btn active" data-filter="all" onclick="filterArticles('all', this)">Todo</button>
+            <button class="filter-btn" data-filter="automatizacion-orquestacion" onclick="filterArticles('automatizacion-orquestacion', this)">Automatización y Orquestación</button>
+            <button class="filter-btn" data-filter="continuidad-negocio" onclick="filterArticles('continuidad-negocio', this)">Continuidad de Negocio</button>
+            <button class="filter-btn" data-filter="gobierno-identidades" onclick="filterArticles('gobierno-identidades', this)">Gobierno de Identidades</button>
+            <button class="filter-btn" data-filter="monitorizacion-observabilidad" onclick="filterArticles('monitorizacion-observabilidad', this)">Monitorización y Observabilidad</button>
+            <button class="filter-btn" data-filter="gestion-cambios" onclick="filterArticles('gestion-cambios', this)">Gestión de Cambios</button>
+            <button class="filter-btn" data-filter="backup-recuperacion" onclick="filterArticles('backup-recuperacion', this)">Backup y Recuperación</button>
+            <button class="filter-btn" data-filter="patch-management" onclick="filterArticles('patch-management', this)">Patch Management</button>
+            <button class="filter-btn" data-filter="gestion-incidencias" onclick="filterArticles('gestion-incidencias', this)">Gestión de Incidencias</button>
+
+            <div style="width:100%; height:0; margin:0; padding:0;"></div>
+
+            <div style="display:flex; gap:6px; align-items:center;">
+                <span style="font-family:monospace; font-size:10px;">Más filtros:</span>
+                <select id="monthFilter" class="ctrl-btn" onchange="applyFilters()">
+                    <option value="all">Mes</option>
+                </select>
+                <button class="ctrl-btn" id="sortBtn" onclick="toggleSort()">↓ Nuevos</button>
+            </div>
+        </div>
+
+        <div class="articles-grid" id="articlesGrid">
+            <div class="no-results show" id="noResults">
+                No hay artículos en esta categoría todavía.
+            </div>
+        </div>
+
+        <nav class="articles-pagination" id="articlesPagination"></nav>
+
+    </div>
+
+    <div id="footer-container"></div>
+
+</div>
+</div>
+
+<script src="../js/menu.js"></script>
+<script src="../js/footer.js"></script>
+<script src="../js/articulos.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    initArticulos('../data/operaciones.json');
+});
+</script>
+
+</body>
+</html>

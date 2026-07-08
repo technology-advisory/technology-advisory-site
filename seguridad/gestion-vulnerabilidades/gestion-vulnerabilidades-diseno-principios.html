@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Principios de diseño: el CVSS 9.8 en un servidor de test importa menos que el 7.5 expuesto | Gestión de Vulnerabilidades | Technology Advisory</title><meta name="description" content="Tratar todas las vulnerabilidades como iguales según su puntuación técnica, sin contexto de negocio, es la razón por la que la mayoría de programas de gest"><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
+<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // seguridad</span><span>categoría: <strong>Gestión de Vulnerabilidades</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Gestión de Vulnerabilidades</div><h1 class="article-title">Principios de diseño: el CVSS 9.8 en un servidor de test importa menos que el 7.5 expuesto</h1><p class="article-lead">Tratar todas las vulnerabilidades como iguales según su puntuación técnica, sin contexto de negocio, es la razón por la que la mayoría de programas de gestión de vulnerabilidades acaban en un Excel olvidado.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Gestión de Vulnerabilidades"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="900" height="410" rx="14" fill="#fafaf8"/>
+<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Priorización real, no solo CVSS</text>
+<text x="40" y="66" font-size="12" fill="#77776f">tres variables cruzadas, no una sola cifra</text>
+<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Severidad técnica</text>
+<text x="58" y="163" font-size="11" fill="#77776f">CVSS del fabricante</text>
+<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Contexto del activo</text>
+<text x="488" y="163" font-size="11" fill="#77776f">Criticidad, exposición, datos</text>
+<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Explotabilidad</text>
+<text x="58" y="283" font-size="11" fill="#77776f">¿Exploit público? ¿KEV de CISA?</text>
+<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Prioridad real</text>
+<text x="488" y="283" font-size="11" fill="#77776f">Cruce de las tres, no una sola</text>
+<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">CVSS 7.0 expuesto a internet con exploit activo > CVSS 10.0 aislado sin exploit conocido</text>
+</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="330" height="438" rx="12" fill="#fafaf8"/>
+<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Priorización real, no solo CVSS</text>
+<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="89" r="13" fill="#059669"/>
+<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Severidad técnica</text>
+<text x="64" y="102" font-size="11" fill="#77776f">CVSS del fabricante</text>
+<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="159" r="13" fill="#059669"/>
+<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Contexto del activo</text>
+<text x="64" y="172" font-size="11" fill="#77776f">Criticidad, exposición, datos</text>
+<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="229" r="13" fill="#059669"/>
+<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Explotabilidad</text>
+<text x="64" y="242" font-size="11" fill="#77776f">¿Exploit público? ¿KEV de</text>
+<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="299" r="13" fill="#059669"/>
+<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Prioridad real</text>
+<text x="64" y="312" font-size="11" fill="#77776f">Cruce de las tres, no una sola</text>
+<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
+<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">CVSS 7.0 expuesto a internet con exploit</text>
+<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">activo > CVSS 10.0 aislado sin exploit</text>
+<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">conocido</text>
+</svg></div></figure><div class="toc-mini"><a href="#contexto">1. Por qué el Excel no funciona</a><a href="#arquitectura">2. Priorización por riesgo real, no por CVSS solo</a><a href="#seguridad">3. El catálogo KEV de CISA</a><a href="#operacion">4. SLA de remediación con aprobación de dirección</a><a href="#roadmap">5. De la lista infinita a lo que importa</a></div><h2 id="contexto">1. Por qué el Excel no funciona</h2><div class="body-text"><p><strong>El ciclo típico: escaneas, generas un informe de 400 páginas, se lo mandas a sistemas, y nadie hace nada porque hay 3.000 vulnerabilidades y no se sabe por dónde empezar.</strong> Tres meses después, vuelves a escanear y hay 3.500. Eso no es gestión de vulnerabilidades — es arqueología sin excavar.</p></div><h2 id="arquitectura">2. Priorización por riesgo real, no por CVSS aislado</h2><div class="body-text"><p>CVSS es un score técnico que no tiene en cuenta tu contexto. Un CVSS 9.8 en un servidor de test aislado es menos urgente que un CVSS 7.5 en tu controlador de dominio expuesto a internet. La priorización efectiva cruza severidad técnica, contexto del activo (criticidad, exposición) y explotabilidad real.</p><table class="matrix"><thead><tr><th>Escenario</th><th>CVSS</th><th>Prioridad real</th></tr></thead><tbody><tr><td>Servidor test, aislado, sin exploit</td><td>10.0</td><td>Media</td></tr><tr><td>Servidor correo expuesto, exploit activo</td><td>7.0</td><td>Crítica</td></tr></tbody></table></div><h2 id="seguridad">3. El catálogo KEV de CISA como filtro de realidad</h2><div class="body-text"><p>El catálogo Known Exploited Vulnerabilities de CISA lista vulnerabilidades con explotación activa confirmada en el mundo real — no teórica. Cruzar tu inventario contra este catálogo identifica de forma objetiva qué vulnerabilidades están siendo explotadas de verdad, más allá de cualquier puntuación técnica aislada.</p></div><h2 id="operacion">4. SLA de remediación con aprobación de dirección, no impuesto unilateralmente</h2><div class="body-text"><p>Un modelo que funciona: críticas (CVSS≥9 + exploit activo + expuesto) en 72 horas, altas en 2 semanas, medias en 30 días, bajas en 90. Los SLAs deben aprobarse por dirección, no imponerse unilateralmente por seguridad — sin ese respaldo, compiten con todo lo demás y pierden sistemáticamente.</p></div><h2 id="roadmap">5. De la lista infinita a lo que realmente importa</h2><div class="body-text"><p>El objetivo del programa no es llegar a cero vulnerabilidades —imposible en cualquier sistema real— es asegurar que las que importan de verdad (críticas, explotadas activamente, en activos expuestos) se remedien dentro del SLA acordado, de forma consistente y medible.</p></div><a class="back" href="../index.html?cat=gestion-vulnerabilidades">← Volver a Gestión de Vulnerabilidades</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. Por qué el Excel no funciona</a><a href="#arquitectura">2. Priorización por riesgo real, no por CVSS solo</a><a href="#seguridad">3. El catálogo KEV de CISA</a><a href="#operacion">4. SLA de remediación con aprobación de dirección</a><a href="#roadmap">5. De la lista infinita a lo que importa</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>

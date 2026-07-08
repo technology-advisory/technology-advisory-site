@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Modelo operativo: quién declara "esto es un incidente", y con qué autoridad | Respuesta a Incidentes | Technology Advisory</title><meta name="description" content="Sin un criterio claro de activación, un incidente real puede tratarse como ruido durante horas críticas, o un falso positivo puede movilizar a toda la orga"><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
+<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // seguridad</span><span>categoría: <strong>Respuesta a Incidentes</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Respuesta a Incidentes</div><h1 class="article-title">Modelo operativo: quién declara "esto es un incidente", y con qué autoridad</h1><p class="article-lead">Sin un criterio claro de activación, un incidente real puede tratarse como ruido durante horas críticas, o un falso positivo puede movilizar a toda la organización innecesariamente.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Respuesta a Incidentes"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="900" height="410" rx="14" fill="#fafaf8"/>
+<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Cadena de decisión en un incidente</text>
+<text x="40" y="66" font-size="12" fill="#77776f">de la señal a la activación formal del playbook</text>
+<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Señal inicial</text>
+<text x="58" y="163" font-size="11" fill="#77776f">Alerta, reporte, o hallazgo</text>
+<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Criterio de activación</text>
+<text x="488" y="163" font-size="11" fill="#77776f">¿Cumple el umbral de incidente?</text>
+<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Declaración formal</text>
+<text x="58" y="283" font-size="11" fill="#77776f">Con autoridad explícita para hacerlo</text>
+<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Activación del playbook</text>
+<text x="488" y="283" font-size="11" fill="#77776f">Roles asignados, no improvisados</text>
+<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Sin criterio explícito, cada incidente empieza con la discusión de si es un incidente</text>
+</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="330" height="438" rx="12" fill="#fafaf8"/>
+<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Cadena de decisión en un incidente</text>
+<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="89" r="13" fill="#059669"/>
+<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Señal inicial</text>
+<text x="64" y="102" font-size="11" fill="#77776f">Alerta, reporte, o hallazgo</text>
+<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="159" r="13" fill="#059669"/>
+<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Criterio de activación</text>
+<text x="64" y="172" font-size="11" fill="#77776f">¿Cumple el umbral de</text>
+<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="229" r="13" fill="#059669"/>
+<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Declaración formal</text>
+<text x="64" y="242" font-size="11" fill="#77776f">Con autoridad explícita para</text>
+<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="299" r="13" fill="#059669"/>
+<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Activación del playbook</text>
+<text x="64" y="312" font-size="11" fill="#77776f">Roles asignados, no</text>
+<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
+<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Sin criterio explícito, cada incidente</text>
+<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">empieza con la discusión de si es un</text>
+<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">incidente</text>
+</svg></div></figure><div class="toc-mini"><a href="#contexto">1. La discusión de si es o no un incidente</a><a href="#arquitectura">2. Criterio de activación explícito</a><a href="#seguridad">3. Autoridad de declaración, sin ambigüedad</a><a href="#operacion">4. Roles del playbook, no improvisación</a><a href="#roadmap">5. Simulacros para probar la cadena completa</a></div><h2 id="contexto">1. La discusión de si es o no un incidente, mientras el reloj corre</h2><div class="body-text"><p><strong>Sin un criterio explícito, los primeros minutos de un incidente real se consumen discutiendo si realmente es un incidente o solo ruido.</strong> Esos minutos, en escenarios como ransomware con cifrado en curso, son exactamente los que más importan para contener el impacto.</p></div><h2 id="arquitectura">2. Criterio de activación explícito, documentado de antemano</h2><div class="body-text"><p>Definir con antelación qué señales activan automáticamente el playbook de incidentes —ejecución de ransomware conocido detectada por EDR, exfiltración de datos confirmada, compromiso de cuenta de administrador de dominio— elimina la ambigüedad del momento crítico.</p></div><h2 id="seguridad">3. Autoridad de declaración sin ambigüedad sobre quién decide</h2><div class="body-text"><p>Debe existir claridad absoluta sobre quién tiene autoridad para declarar formalmente un incidente y activar el playbook completo — no depender de que "alguien" tome la iniciativa mientras varias personas asumen que otro ya lo ha hecho.</p></div><h2 id="operacion">4. Roles del playbook asignados de antemano, no improvisados en el momento</h2><div class="body-text"><p>Cada playbook debería asignar roles claros —Incident Commander, responsable técnico de contención, responsable de comunicación— con suplentes definidos, de forma que la ausencia de una persona concreta no paralice la respuesta completa.</p></div><h2 id="roadmap">5. Simulacros que prueban la cadena completa, no solo la parte técnica</h2><div class="body-text"><p>Los simulacros de incidente (tabletop exercises) que prueban tanto la parte técnica como la cadena de decisión y comunicación revelan huecos que un ejercicio puramente técnico nunca detectaría — como la ambigüedad sobre quién tiene autoridad real para declarar el incidente.</p></div><a class="back" href="../index.html?cat=respuesta-incidentes">← Volver a Respuesta a Incidentes</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. La discusión de si es o no un incidente</a><a href="#arquitectura">2. Criterio de activación explícito</a><a href="#seguridad">3. Autoridad de declaración, sin ambigüedad</a><a href="#operacion">4. Roles del playbook, no improvisación</a><a href="#roadmap">5. Simulacros para probar la cadena completa</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>

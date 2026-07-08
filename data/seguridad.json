@@ -1,0 +1,322 @@
+[
+  {
+    "id": 1,
+    "cat": "zero-trust",
+    "meta": "Zero Trust · Seguridad",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "01 Enero 2026",
+    "desc": "Zero Trust no es un producto que se compra — es un principio arquitectónico definido en NIST SP 800-207.",
+    "url": "zero-trust/zero-trust-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 2,
+    "cat": "zero-trust",
+    "meta": "Zero Trust · Seguridad",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "02 Febrero 2026",
+    "desc": "Desplegar Conditional Access sin fase de report-only es desplegar a ciegas, con los usuarios como conejillos de indias.",
+    "url": "zero-trust/zero-trust-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 3,
+    "cat": "zero-trust",
+    "meta": "Zero Trust · Seguridad",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "03 Marzo 2026",
+    "desc": "MFA activado no significa MFA resistente a phishing. SMS y push simple no protegen igual que FIDO2.",
+    "url": "zero-trust/zero-trust-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 4,
+    "cat": "zero-trust",
+    "meta": "Zero Trust · Seguridad",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "04 Abril 2026",
+    "desc": "Los 4 niveles reales de madurez Zero Trust — decir \"somos Zero Trust\" sin evaluación continua es marketing.",
+    "url": "zero-trust/zero-trust-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 5,
+    "cat": "security-design",
+    "meta": "Security by Design · Seguridad",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "05 Febrero 2026",
+    "desc": "Añadir seguridad después del diseño es parchear, no diseñar. El coste de corregir crece exponencialmente con el tiempo.",
+    "url": "security-design/security-design-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 6,
+    "cat": "security-design",
+    "meta": "Security by Design · Seguridad",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "06 Marzo 2026",
+    "desc": "Sin checkpoints tempranos, la revisión de seguridad se vuelve un obstáculo de última hora que todos esquivan.",
+    "url": "security-design/security-design-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 7,
+    "cat": "security-design",
+    "meta": "Security by Design · Seguridad",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "07 Abril 2026",
+    "desc": "Un servidor endurecido una vez se desvía silenciosamente del baseline con cada cambio posterior.",
+    "url": "security-design/security-design-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 8,
+    "cat": "security-design",
+    "meta": "Security by Design · Seguridad",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "08 Mayo 2026",
+    "desc": "Los 4 niveles de madurez en Security by Design: de parchear al final a seguridad como requisito de aceptación.",
+    "url": "security-design/security-design-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 9,
+    "cat": "iso-compliance",
+    "meta": "Auditoría y Cumplimiento · Seguridad",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "09 Marzo 2026",
+    "desc": "ISO 27001 certifica un proceso de gestión de riesgo, no la ausencia de vulnerabilidades o incidentes.",
+    "url": "iso-compliance/iso-compliance-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 10,
+    "cat": "iso-compliance",
+    "meta": "Auditoría y Cumplimiento · Seguridad",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "10 Abril 2026",
+    "desc": "Un control sin propietario asignado se degrada en silencio entre auditorías externas.",
+    "url": "iso-compliance/iso-compliance-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 11,
+    "cat": "iso-compliance",
+    "meta": "Auditoría y Cumplimiento · Seguridad",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "11 Mayo 2026",
+    "desc": "Si preparar la evidencia de un control lleva semanas, el sistema de gestión no está realmente vivo.",
+    "url": "iso-compliance/iso-compliance-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 12,
+    "cat": "iso-compliance",
+    "meta": "Auditoría y Cumplimiento · Seguridad",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "12 Junio 2026",
+    "desc": "Los 4 niveles de madurez del SGSI: el certificado en la pared no dice nada sobre si mejora de verdad.",
+    "url": "iso-compliance/iso-compliance-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 13,
+    "cat": "firewalls-perimetro",
+    "meta": "Firewalls y Perímetro · Seguridad",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "13 Abril 2026",
+    "desc": "Un NGFW mal configurado es un switch caro con luces bonitas. El diseño empieza por zonas, no por la marca.",
+    "url": "firewalls-perimetro/firewalls-perimetro-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 14,
+    "cat": "firewalls-perimetro",
+    "meta": "Firewalls y Perímetro · Seguridad",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "14 Mayo 2026",
+    "desc": "El proceso de gestión de reglas determina si tu perímetro protege de verdad o es un colador con buena reputación.",
+    "url": "firewalls-perimetro/firewalls-perimetro-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 15,
+    "cat": "firewalls-perimetro",
+    "meta": "Firewalls y Perímetro · Seguridad",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "15 Junio 2026",
+    "desc": "Contar las reglas any-any activas es el primer test honesto de madurez de tu perímetro.",
+    "url": "firewalls-perimetro/firewalls-perimetro-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 16,
+    "cat": "firewalls-perimetro",
+    "meta": "Firewalls y Perímetro · Seguridad",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "16 Julio 2026",
+    "desc": "Los 4 niveles de madurez de perímetro: del any-any olvidado al firewalling este-oeste distribuido.",
+    "url": "firewalls-perimetro/firewalls-perimetro-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 17,
+    "cat": "siem-deteccion",
+    "meta": "SIEM y Detección · Seguridad",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "17 Mayo 2026",
+    "desc": "Un SIEM que ingesta 500GB/día y detecta cero incidentes reales no es un SIEM efectivo, es un cementerio de logs.",
+    "url": "siem-deteccion/siem-deteccion-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 18,
+    "cat": "siem-deteccion",
+    "meta": "SIEM y Detección · Seguridad",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "18 Junio 2026",
+    "desc": "Una alerta que nadie responde es peor que no tener alerta: da falsa sensación de vigilancia.",
+    "url": "siem-deteccion/siem-deteccion-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 19,
+    "cat": "siem-deteccion",
+    "meta": "SIEM y Detección · Seguridad",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "19 Julio 2026",
+    "desc": "Una regla que nunca disparó puede ser buena o mala señal — sin pruebas periódicas no lo sabrás.",
+    "url": "siem-deteccion/siem-deteccion-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 20,
+    "cat": "siem-deteccion",
+    "meta": "SIEM y Detección · Seguridad",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "20 Agosto 2026",
+    "desc": "Los 4 niveles de madurez en detección: de acumular logs sin analizar al threat hunting proactivo.",
+    "url": "siem-deteccion/siem-deteccion-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 21,
+    "cat": "gestion-vulnerabilidades",
+    "meta": "Gestión de Vulnerabilidades · Seguridad",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "21 Junio 2026",
+    "desc": "CVSS 9.8 aislado importa menos que CVSS 7.5 expuesto con exploit activo. La priorización cruza tres variables, no una.",
+    "url": "gestion-vulnerabilidades/gestion-vulnerabilidades-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 22,
+    "cat": "gestion-vulnerabilidades",
+    "meta": "Gestión de Vulnerabilidades · Seguridad",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "22 Julio 2026",
+    "desc": "Seguridad detecta, pero sistemas remedia. Sin ownership claro por activo, el hallazgo se queda documentado sin resolver.",
+    "url": "gestion-vulnerabilidades/gestion-vulnerabilidades-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 23,
+    "cat": "gestion-vulnerabilidades",
+    "meta": "Gestión de Vulnerabilidades · Seguridad",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "23 Agosto 2026",
+    "desc": "El recuento total de vulnerabilidades es una métrica de vanidad. El MTTR por severidad es el indicador real.",
+    "url": "gestion-vulnerabilidades/gestion-vulnerabilidades-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 24,
+    "cat": "gestion-vulnerabilidades",
+    "meta": "Gestión de Vulnerabilidades · Seguridad",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "24 Septiembre 2026",
+    "desc": "Los 4 niveles de madurez: de saber que existe una vulnerabilidad a remediarla dentro de un SLA medido.",
+    "url": "gestion-vulnerabilidades/gestion-vulnerabilidades-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 25,
+    "cat": "respuesta-incidentes",
+    "meta": "Respuesta a Incidentes · Seguridad",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "25 Julio 2026",
+    "desc": "Improvisar la respuesta durante el incidente es la peor combinación de estrés y falta de criterio. El playbook se escribe en calma.",
+    "url": "respuesta-incidentes/respuesta-incidentes-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 26,
+    "cat": "respuesta-incidentes",
+    "meta": "Respuesta a Incidentes · Seguridad",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "26 Agosto 2026",
+    "desc": "Sin criterio explícito de activación, un incidente real puede tratarse como ruido durante horas críticas.",
+    "url": "respuesta-incidentes/respuesta-incidentes-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 27,
+    "cat": "respuesta-incidentes",
+    "meta": "Respuesta a Incidentes · Seguridad",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "27 Septiembre 2026",
+    "desc": "Un playbook nunca probado en simulacro es una hipótesis, no una capacidad de respuesta verificada.",
+    "url": "respuesta-incidentes/respuesta-incidentes-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 28,
+    "cat": "respuesta-incidentes",
+    "meta": "Respuesta a Incidentes · Seguridad",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "28 Octubre 2026",
+    "desc": "Los 4 niveles de madurez en respuesta: de apagar el servidor por instinto a la orquestación con SOAR.",
+    "url": "respuesta-incidentes/respuesta-incidentes-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 29,
+    "cat": "cifrado-identidad-digital",
+    "meta": "Cifrado e Identidad Digital · Seguridad",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "29 Agosto 2026",
+    "desc": "El cifrado es tan fuerte como la protección de sus claves. Un algoritmo perfecto con clave descuidada es seguridad de fachada.",
+    "url": "cifrado-identidad-digital/cifrado-identidad-digital-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 30,
+    "cat": "cifrado-identidad-digital",
+    "meta": "Cifrado e Identidad Digital · Seguridad",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "30 Septiembre 2026",
+    "desc": "Un certificado caducado sin previo aviso puede tumbar un servicio completo — es un incidente totalmente evitable.",
+    "url": "cifrado-identidad-digital/cifrado-identidad-digital-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 31,
+    "cat": "cifrado-identidad-digital",
+    "meta": "Cifrado e Identidad Digital · Seguridad",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "31 Octubre 2026",
+    "desc": "TLS 1.0 sigue activo como fallback en más organizaciones de las que admitirían. Hay que verificar, no confiar en la documentación.",
+    "url": "cifrado-identidad-digital/cifrado-identidad-digital-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 32,
+    "cat": "cifrado-identidad-digital",
+    "meta": "Cifrado e Identidad Digital · Seguridad",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "32 Noviembre 2026",
+    "desc": "Los 4 niveles de madurez en cifrado: activar HTTPS es el mínimo de 2010, la madurez real está en la gestión de claves.",
+    "url": "cifrado-identidad-digital/cifrado-identidad-digital-madurez-roadmap.html",
+    "published": true
+  }
+]

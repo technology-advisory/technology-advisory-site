@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Estrategia y Gestión de Servicios TI | Technology Advisory</title>
+<meta name="description" content="Alineación estratégica de infraestructuras críticas mediante la implementación avanzada de marcos ITIL v4 y COBIT.">
+<meta name="author" content="Miguel Ángel Carriazo">
+<meta name="theme-color" content="#059669">
+
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<link rel="stylesheet" href="../../css/index.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  .defensa-meta { border-top: none !important; border-bottom: none !important; padding: 10px 0 0 0 !important; margin: 5px 0 0 0 !important; }
+  .defensa-layout { display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: start; padding: 0 48px 40px; }
+  .defensa-main { min-width: 0; }
+  .defensa-toc { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 40px; min-width: 0; }
+  .defensa-control { background: #fafaf8; border: 1px solid #ededea; border-radius: 8px; padding: 24px; }
+  .defensa-control .title { font-family: monospace; font-size: 11px; text-transform: uppercase; color: #151915; border-bottom: 2px solid #ededea; padding-bottom: 6px; margin-bottom: 16px; font-weight: 700; letter-spacing: 0.05em; }
+  .defensa-control table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 13px; }
+  .defensa-control td { padding: 10px 0; border-bottom: 1px solid #ededea; vertical-align: middle; overflow-wrap: break-word; }
+  .defensa-control tr:last-child td { border-bottom: none; }
+  .defensa-control td.label { color: #77776f; font-weight: 700; text-align: left; }
+  .defensa-control td.value { color: #151915; font-weight: 600; text-align: right; }
+  .defensa-control td.value.highlight { color: #059669; font-weight: 700; }
+  
+  .defensa-toc-label { font-family: monospace; font-size: 11px; text-transform: uppercase; color: #77776f; letter-spacing: 0.1em; margin-bottom: 14px; font-weight: 700; }
+  .defensa-toc-nav { display: flex; flex-direction: column; gap: 12px; border-left: 2px solid #ededea; padding-left: 14px; }
+  .defensa-toc-nav a { text-decoration: none; color: #77776f; font-size: 14px; font-weight: 600; transition: all 0.2s; border-left: 2px solid transparent; margin-left: -16px; padding-left: 14px; }
+  .defensa-toc-nav a.active { color: #059669 !important; border-left: 2px solid #059669 !important; font-weight: 700; }
+  
+  .defensa-badge-all { display: inline-block; background: #059669; color: #fff; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 2px 10px; border-radius: 12px; margin-left: 8px; vertical-align: middle; }
+  .defensa-badge-tech { display: inline-block; background: #22221e; color: #fafaf8; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 2px 10px; border-radius: 12px; margin-left: 8px; vertical-align: middle; }
+  .defensa-btn-back { display: inline-block; background: #059669; color: #ffffff !important; font-weight: 700; font-size: 14px; padding: 8px 20px; border-radius: 30px; text-decoration: none; transition: background 0.2s ease; border: none; }
+  .defensa-btn-back:hover { background: #047857; color: #ffffff !important; }
+  
+  .defensa-divider { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 45px 0; color: #9a9a91; }
+  .defensa-divider::before, .defensa-divider::after { content: ""; flex: 1; height: 2px; background: linear-gradient(90deg, transparent, #9a9a91, transparent); }
+  .defensa-divider .label { font-family: monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #4a4a44; background: #ffffff; padding: 0 16px; white-space: nowrap; font-weight: 700; }
+  .defensa-divider .label .gear { color: #059669; }
+  
+  .defensa-main .block { margin-bottom: 55px; }
+  .defensa-main .block .block-meta { font-family: monospace; font-size: 11px; text-transform: uppercase; color: #77776f; margin-bottom: 10px; }
+  .defensa-main .block h2 { font-size: 25px; font-weight: 800; color: #151915; margin: 0 0 18px; padding-bottom: 10px; border-bottom: 1px solid #ededea; }
+  .defensa-main .block .body-text { font-size: 16px; line-height: 1.85; color: #3f3f3a; text-align: justify; }
+  .defensa-main .block .body-text p { margin-top: 0; margin-bottom: 20px; }
+  .defensa-main .block .body-text ul, .defensa-main .block .body-text ol { margin-bottom: 20px; }
+  .defensa-main .block .body-text li { margin-bottom: 8px; }
+  
+  .defensa-box-warning { background: #fffbeb; border-left: 4px solid #d97706; padding: 22px; margin: 26px 0; border-radius: 4px; }
+  .defensa-box-warning strong { color: #b45309; font-size: 16px; display: block; margin-bottom: 6px; }
+  .defensa-box-warning p { margin: 0 !important; font-size: 15px !important; color: #78350f; line-height: 1.6; }
+  
+  .defensa-box-success { background: #f0fdf4; border-left: 4px solid #059669; padding: 22px; margin: 26px 0; border-radius: 4px; }
+  .defensa-box-success strong { color: #14532d; font-size: 16px; display: block; margin-bottom: 6px; }
+  .defensa-box-success p { margin: 0 !important; font-size: 15px !important; color: #14532d; line-height: 1.6; }
+
+  .defensa-box-tech { background: #f2f1ec; padding: 26px; border-radius: 8px; margin: 26px 0; font-size: 14.5px; border: 1px solid #ededea; line-height: 1.7; }
+  
+  .defensa-foot { display: flex; gap: 48px; max-width: 1320px; padding: 40px 0 0; border-top: 1px solid #ededea; flex-wrap: wrap; align-items: flex-start; margin-top: 40px; }
+  .defensa-author { flex: 1 1 0%; min-width: 0; }
+  .defensa-foot-label { font-family: monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #7c8790; margin-bottom: 8px; }
+  .defensa-author-name { font-size: 18px; font-weight: 800; color: #151915; margin-bottom: 6px; }
+  .defensa-author-name span { color: #059669; font-weight: 600; }
+  .defensa-author-bio { font-size: 14px; color: #5b6670; line-height: 1.6; max-width: none; white-space: normal; margin: 0; }
+
+  .defensa-meta { display: flex !important; flex-wrap: wrap !important; align-items: center !important; gap: 8px 24px !important; padding: 14px 0 !important; border-top: 1px solid #ededea !important; border-bottom: 1px solid #ededea !important; margin: 8px 0 0 0 !important; }
+  .defensa-meta-item { display: inline-flex !important; align-items: center !important; gap: 7px !important; font-size: 13px !important; color: #5b6670 !important; white-space: nowrap !important; }
+  .defensa-meta-item svg { width: 15px !important; height: 15px !important; color: #059669 !important; flex-shrink: 0 !important; stroke: #059669 !important; stroke-width: 1.6 !important; fill: none !important; }
+  .defensa-meta-item strong { color: #151915 !important; font-weight: 600 !important; }
+  
+  @media (max-width: 1024px) {
+    .defensa-layout { grid-template-columns: 1fr; gap: 32px; padding: 0 24px 32px; }
+    .defensa-toc { position: static; width: 100%; }
+    .defensa-foot { padding: 24px 24px 0; gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card-wrapper ds-page">
+<div class="card">
+
+  <div id="menu-container"></div>
+  <div class="accent-bar" style="background: #059669;"></div>
+
+  <div class="ds-meta">
+    <span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: gobernanza</span>
+    <span>nivel: <strong>Consultoría e Infraestructura Corporativa</strong></span>
+  </div>
+
+  <div style="padding: 40px 48px 24px; border-bottom: 1px solid #ededea;">
+    <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Especialidad · IT Service Management</div>
+    <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Gobernanza TI Enterprise: <span style="color:#059669;">Entrega de Valor</span></h1>
+    <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">
+      Optimización estratégica de procesos informáticos operativos, diseño de catálogos de servicios críticos y matrices de control bajo ITIL v4.
+    </p>
+
+    <div class="defensa-meta">
+      <span class="defensa-meta-item">
+        <svg viewBox="0 0 18 18" fill="none" stroke="currentColor"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg>
+        <strong>Miguel Ángel Carriazo</strong>
+      </span>
+      <span class="defensa-meta-item">
+        <svg viewBox="0 0 18 18" fill="none" stroke="currentColor"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>
+        ITIL v4 & COBIT 2019
+      </span>
+      <span class="defensa-meta-item">
+        <svg viewBox="0 0 18 18" fill="none" stroke="currentColor"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>
+        Lectura Avanzada (12 min)
+      </span>
+    </div>
+  </div>
+
+  <div style="padding: 24px 48px 24px;">
+    <a href="../index.html" class="defensa-btn-back">← Volver al Panel de Gobernanza</a>
+  </div>
+
+  <div class="defensa-layout">
+    
+    <div class="defensa-main">
+      
+      <div class="block" id="s1">
+        <div class="block-meta">01 // Optimización del Servicio TI <span class="defensa-badge-all">ITIL v4 Framework</span></div>
+        <h2>Alineación de Procesos con las Directivas de Negocio</h2>
+        <div class="body-text">
+          <p>Estructurar el catálogo de servicios de sistemas corporativos bajo metodologías ITIL v4 permite desvincular la operación de dependencias caóticas e individuales. El establecimiento formal de flujos de gestión de cambios (*Change Management*), control de incidentes mayores y gestión de la capacidad dota a la dirección tecnológica de visibilidad matemática real sobre el rendimiento e impacto empresarial de cada componente de hardware o nube aprovisionado.</p>
+          
+          <p>La transformación digital ha elevado la complejidad de los entornos TI, con arquitecturas híbridas que combinan infraestructura on-premise, nubes públicas y soluciones SaaS. En este contexto, la gestión de servicios ITIL v4 proporciona un lenguaje común y un conjunto de prácticas probadas que permiten a las organizaciones gestionar el ciclo de vida completo de los servicios digitales, desde la estrategia hasta la mejora continua, garantizando la alineación con los objetivos del negocio.</p>
+          
+          <div class="defensa-box-warning">
+            <strong>⚠️ Riesgo Crítico: Operación TI Desorganizada</strong>
+            <p>La ausencia de un marco formal de gestión de servicios conduce a equipos TI reactivos, que pasan la mayor parte del tiempo apagando incendios en lugar de innovar. Esta operativa improvisada genera insatisfacción en los usuarios, incrementa los costes operativos y expone a la organización a riesgos de seguridad y cumplimiento.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="defensa-divider">
+        <span class="label"><span class="gear">⚙️</span> PLANO TÉCNICO · INGENIERÍA DE SERVICIOS <span class="gear">⚙️</span></span>
+      </div>
+
+      <div class="block" id="s2">
+        <div class="block-meta">02 // Componentes Clave de ITIL v4 <span class="defensa-badge-tech">SERVICE VALUE SYSTEM · PRÁCTICAS</span></div>
+        <h2>Arquitectura del Sistema de Valor del Servicio</h2>
+        <div class="body-text">
+          <p>ITIL v4 se estructura en torno al Sistema de Valor del Servicio (Service Value System - SVS), que proporciona un modelo operativo para la creación y entrega de valor a través de servicios digitales. Los componentes clave del SVS son:</p>
+          
+          <div class="defensa-box-tech">
+            <div style="margin-bottom: 22px;">
+              <strong style="color: #151915; font-size: 15.5px;">🔹 Cadena de Valor del Servicio (Service Value Chain)</strong>
+              <p style="margin: 6px 0 0 0; color: #3f3f3a;">Conjunto de seis actividades interconectadas (Planificar, Mejorar, Involucrar, Diseñar y Transicionar, Obtener/Construir, Entregar y Soportar) que representan los pasos clave que una organización sigue para responder a la demanda de servicios y crear valor. La cadena de valor es el corazón operativo del SVS.</p>
+            </div>
+
+            <div style="margin-bottom: 22px;">
+              <strong style="color: #151915; font-size: 15.5px;">🔹 Prácticas de Gestión de Servicios</strong>
+              <p style="margin: 6px 0 0 0; color: #3f3f3a;">ITIL v4 define 34 prácticas de gestión de servicios, que son conjuntos de recursos y capacidades organizativas diseñados para realizar un trabajo o cumplir un objetivo. Las prácticas se dividen en tres categorías: prácticas generales de gestión (ej. Gestión de Riesgos, Gestión de Proyectos), prácticas de gestión de servicios (ej. Gestión de Cambios, Gestión de Incidentes) y prácticas de gestión técnica (ej. Gestión de la Nube, Gestión de la Seguridad de la Información).</p>
+            </div>
+
+            <div>
+              <strong style="color: #151915; font-size: 15.5px;">🔹 Principios Rectores de ITIL</strong>
+              <p style="margin: 6px 0 0 0; color: #3f3f3a;">Siete principios universales que guían la toma de decisiones en la gestión de servicios: Enfocarse en el valor, Empezar donde se está, Progresar de forma iterativa con retroalimentación, Colaborar y promover la visibilidad, Pensar y trabajar de forma holística, Mantener la simplicidad y la practicidad, Optimizar y automatizar. Estos principios son aplicables a cualquier iniciativa de mejora de servicios.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block" id="s3">
+        <div class="block-meta">03 // Implementación y Mejora Continua <span class="defensa-badge-tech">SIAM · DEVSECOPS · CONTINUOUS IMPROVEMENT</span></div>
+        <h2>Integración con Modelos Ágiles y DevOps</h2>
+        <div class="body-text">
+          <p>La gestión de servicios moderna reconoce que los marcos tradicionales de ITIL deben evolucionar e integrarse con metodologías ágiles, DevOps y prácticas de entrega continua para responder a la velocidad que exige el negocio digital. La integración con DevSecOps es particularmente relevante:</p>
+          
+          <div class="defensa-box-tech">
+            <p style="margin: 0 0 14px 0; color: #3f3f3a;"><strong>DevSecOps y Gestión de Cambios:</strong> ITIL v4 abraza los principios de agilidad y entrega continua. La práctica de Gestión de Cambios se adapta para manejar cambios de alta frecuencia y bajo riesgo (cambios estándar) mediante automatización y pipelines de CI/CD, mientras que los cambios de mayor impacto se gestionan con flujos de aprobación tradicionales.</p>
+            <p style="margin: 0 0 14px 0; color: #3f3f3a;"><strong>SIAM (Service Integration and Management):</strong> En entornos con múltiples proveedores de servicios (cloud, SaaS, outsourcing), SIAM proporciona un marco de gobernanza para integrar y gestionar la entrega de servicios de forma coordinada, asegurando que todos los proveedores trabajen alineados con los objetivos de negocio y los acuerdos de nivel de servicio (SLAs).</p>
+            <p style="margin: 0 0 14px 0; color: #3f3f3a;"><strong>Mejora Continua (CSI - Continual Service Improvement):</strong> ITIL v4 sitúa la mejora continua en el centro del SVS. La organización debe establecer un modelo de mejora continua (el modelo de 7 pasos de ITIL es un ejemplo) que identifique oportunidades de mejora, mida el rendimiento actual, implemente cambios y evalúe los resultados de forma cíclica.</p>
+            <p style="margin: 0; color: #3f3f3a;"><strong>Gestión de la Capacidad y la Disponibilidad:</strong> Prácticas críticas para garantizar que los servicios digitales cumplan con los requisitos de rendimiento y disponibilidad de los usuarios, especialmente en entornos de alta demanda transaccional. La gestión de la capacidad implica el dimensionamiento de recursos (cómputo, almacenamiento, red) basado en proyecciones de demanda, mientras que la gestión de la disponibilidad asegura que los servicios estén accesibles según los SLAs definidos.</p>
+          </div>
+          
+          <div class="defensa-box-success">
+            <strong>✅ Beneficio Organizativo: Ti Transformada en Habilitador de Negocio</strong>
+            <p>La implementación de ITIL v4, integrada con prácticas ágiles y DevSecOps, transforma el departamento TI de un centro de coste tradicional a un socio estratégico del negocio. La orientación a valor, la mejora continua y la automatización permiten a TI innovar y responder rápidamente a las cambiantes demandas del mercado.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="block" id="s4">
+        <div class="block-meta">04 // Medición del Rendimiento y SLAs <span class="defensa-badge-all">KPIs · SLAs · OLAs</span></div>
+        <h2>Gobernanza del Servicio y Acuerdos de Nivel</h2>
+        <div class="body-text">
+          <p>La gestión de servicios efectiva requiere un sistema de medición robusto que permita evaluar el rendimiento de los servicios, la satisfacción de los usuarios y la eficiencia de los procesos. Los acuerdos de nivel de servicio (SLAs) y los indicadores clave de rendimiento (KPIs) son las herramientas fundamentales para esta gobernanza:</p>
+          
+          <div class="defensa-box-tech">
+            <p style="margin: 0 0 14px 0; color: #3f3f3a;"><strong>Acuerdos de Nivel de Servicio (SLAs):</strong> Contratos formales o informales entre el proveedor del servicio (TI) y el cliente (el negocio) que definen los niveles de servicio esperados, incluyendo disponibilidad, rendimiento, tiempos de respuesta ante incidentes y resolución de problemas. Los SLAs deben ser medibles, alcanzables y revisados periódicamente.</p>
+            <p style="margin: 0 0 14px 0; color: #3f3f3a;"><strong>Acuerdos de Nivel Operativo (OLAs):</strong> Acuerdos internos entre diferentes equipos o departamentos de TI que soportan la entrega de un servicio. Por ejemplo, un OLA entre el equipo de infraestructura y el equipo de aplicaciones puede definir los tiempos de respuesta para la resolución de problemas de servidores que afectan a una aplicación crítica.</p>
+            <p style="margin: 0 0 14px 0; color: #3f3f3a;"><strong>Indicadores Clave de Rendimiento (KPIs):</strong> Métricas cuantitativas que permiten evaluar el rendimiento de los procesos y servicios. Ejemplos de KPIs en la gestión de servicios: tiempo medio de resolución de incidentes (MTTR), tiempo medio entre fallos (MTBF), porcentaje de cambios exitosos, tasa de cumplimiento de SLAs, y satisfacción del usuario (CSAT).</p>
+            <p style="margin: 0; color: #3f3f3a;"><strong>Paneles de Control (Dashboards) y Reporting:</strong> Herramientas de visualización que presentan los KPIs y el estado de los SLAs de forma clara y accesible para los diferentes niveles de la organización, desde los equipos operativos hasta la dirección. Los dashboards facilitan la toma de decisiones basada en datos y la identificación temprana de tendencias problemáticas.</p>
+          </div>
+          
+          <p>La adopción de un marco de gestión de servicios basado en ITIL v4, complementado con las prácticas de gobernanza de COBIT, proporciona a la organización un sistema integral para gestionar la tecnología de la información como un activo estratégico. Esta gobernanza asegura que las inversiones en TI generen el máximo valor para el negocio, minimizando los riesgos y optimizando los costes operativos.</p>
+        </div>
+      </div>
+
+      <div class="defensa-foot">
+        <div class="defensa-author">
+          <div class="defensa-foot-label">Autor del Dossier</div>
+          <div class="defensa-author-name">Miguel Ángel Carriazo <span>· Infrastructure & Cybersecurity Architect</span></div>
+          <p class="defensa-author-bio">Especialista con más de 25 años en el sector IT corporativo. Experto en la implementación de marcos de gestión de servicios ITIL v4, gobernanza TI con COBIT y en la integración de prácticas DevSecOps en entornos empresariales complejos.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="defensa-toc">
+      <div class="defensa-control">
+        <div class="title">Ficha de Gestión de Servicios</div>
+        <table>
+            <tr><td class="label">Framework</td><td class="value">ITIL v4 / COBIT 2019</td></tr>
+            <tr><td class="label">Objetivo</td><td class="value highlight">Gobernanza Operativa</td></tr>
+            <tr><td class="label">Enfoque</td><td class="value">Service Value System</td></tr>
+            <tr><td class="label">Prácticas</td><td class="value">34 (ITIL v4)</td></tr>
+            <tr><td class="label">Medición</td><td class="value">KPIs / SLAs / OLAs</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="defensa-toc-label">Secciones</div>
+        <nav class="defensa-toc-nav" id="artTocNav">
+          <a href="#s1" class="active">01. Optimización del Servicio</a>
+          <a href="#s2">02. ITIL v4 SVS</a>
+          <a href="#s3">03. Implementación y Mejora</a>
+          <a href="#s4">04. Medición y SLAs</a>
+        </nav>
+      </div>
+    </aside>
+
+  </div>
+
+  <div id="footer-container"></div>
+
+</div>
+</div>
+
+<script src="../../js/menu.js"></script>
+<script src="../../js/footer.js"></script>
+
+<script>
+  var tocLinks = Array.from(document.querySelectorAll('.defensa-toc-nav a'));
+  var sections = tocLinks.map(a => document.querySelector(a.getAttribute('href')));
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          var id = '#' + entry.target.id;
+          tocLinks.forEach(a => {
+            if (a.getAttribute('href') === id) {
+              a.classList.add('active');
+            } else {
+              a.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    sections.forEach(function(s){ if (s) observer.observe(s); });
+  }
+</script>
+</body>
+</html>

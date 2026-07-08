@@ -1,0 +1,322 @@
+[
+  {
+    "id": 1,
+    "cat": "automatizacion-orquestacion",
+    "meta": "Automatización y Orquestación · Operaciones",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "01 Enero 2026",
+    "desc": "Automatizar un proceso confuso no lo arregla — lo convierte en un script que falla de forma más rápida.",
+    "url": "automatizacion-orquestacion/automatizacion-orquestacion-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 2,
+    "cat": "automatizacion-orquestacion",
+    "meta": "Automatización y Orquestación · Operaciones",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "02 Febrero 2026",
+    "desc": "Un script que solo entiende quien lo escribió es automatización frágil, no automatización madura.",
+    "url": "automatizacion-orquestacion/automatizacion-orquestacion-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 3,
+    "cat": "automatizacion-orquestacion",
+    "meta": "Automatización y Orquestación · Operaciones",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "03 Marzo 2026",
+    "desc": "Un script con credenciales hardcodeadas es tan sensible como una cuenta admin, pero mucho menos auditado.",
+    "url": "automatizacion-orquestacion/automatizacion-orquestacion-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 4,
+    "cat": "automatizacion-orquestacion",
+    "meta": "Automatización y Orquestación · Operaciones",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "04 Abril 2026",
+    "desc": "Los 4 niveles de madurez en automatización: del zoo de scripts sueltos al self-service seguro orquestado.",
+    "url": "automatizacion-orquestacion/automatizacion-orquestacion-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 5,
+    "cat": "continuidad-negocio",
+    "meta": "Continuidad de Negocio · Operaciones",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "05 Febrero 2026",
+    "desc": "RTO y RPO no son términos técnicos, son decisiones de negocio que IT no debería tomar en solitario.",
+    "url": "continuidad-negocio/continuidad-negocio-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 6,
+    "cat": "continuidad-negocio",
+    "meta": "Continuidad de Negocio · Operaciones",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "06 Marzo 2026",
+    "desc": "Un DRP sin ejercicio periódico es un documento de buenas intenciones, no una capacidad probada.",
+    "url": "continuidad-negocio/continuidad-negocio-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 7,
+    "cat": "continuidad-negocio",
+    "meta": "Continuidad de Negocio · Operaciones",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "07 Abril 2026",
+    "desc": "Un RTO prometido de 4 horas que en la prueba real tardó 14 revela lo que un diseño sin probar esconde.",
+    "url": "continuidad-negocio/continuidad-negocio-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 8,
+    "cat": "continuidad-negocio",
+    "meta": "Continuidad de Negocio · Operaciones",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "08 Mayo 2026",
+    "desc": "Los 4 niveles de madurez en continuidad: del plan en un cajón a la resiliencia probada continuamente.",
+    "url": "continuidad-negocio/continuidad-negocio-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 9,
+    "cat": "gobierno-identidades",
+    "meta": "Gobierno de Identidades · Operaciones",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "09 Marzo 2026",
+    "desc": "El ciclo de vida de una identidad es donde más riesgo silencioso se acumula. No es un trámite de RRHH, es un control de seguridad.",
+    "url": "gobierno-identidades/gobierno-identidades-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 10,
+    "cat": "gobierno-identidades",
+    "meta": "Gobierno de Identidades · Operaciones",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "10 Abril 2026",
+    "desc": "Un proceso de aprobación de acceso demasiado lento empuja a la gente a compartir credenciales como atajo.",
+    "url": "gobierno-identidades/gobierno-identidades-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 11,
+    "cat": "gobierno-identidades",
+    "meta": "Gobierno de Identidades · Operaciones",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "11 Mayo 2026",
+    "desc": "Una recertificación de accesos con 0% de revocaciones probablemente no se está revisando de verdad.",
+    "url": "gobierno-identidades/gobierno-identidades-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 12,
+    "cat": "gobierno-identidades",
+    "meta": "Gobierno de Identidades · Operaciones",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "12 Junio 2026",
+    "desc": "Los 4 niveles de madurez: del Excel de accesos al gobierno automatizado conectado directamente a RRHH.",
+    "url": "gobierno-identidades/gobierno-identidades-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 13,
+    "cat": "monitorizacion-observabilidad",
+    "meta": "Monitorización y Observabilidad · Operaciones",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "13 Abril 2026",
+    "desc": "Si te enteras del problema porque llama un usuario, no estás monitorizando — estás rezando.",
+    "url": "monitorizacion-observabilidad/monitorizacion-observabilidad-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 14,
+    "cat": "monitorizacion-observabilidad",
+    "meta": "Monitorización y Observabilidad · Operaciones",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "14 Mayo 2026",
+    "desc": "Una alerta crítica por email a las 3 AM es, en la práctica, casi lo mismo que no enviarla.",
+    "url": "monitorizacion-observabilidad/monitorizacion-observabilidad-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 15,
+    "cat": "monitorizacion-observabilidad",
+    "meta": "Monitorización y Observabilidad · Operaciones",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "15 Junio 2026",
+    "desc": "Un dashboard con 47 paneles que nadie mira no es observabilidad, es decoración con gráficas.",
+    "url": "monitorizacion-observabilidad/monitorizacion-observabilidad-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 16,
+    "cat": "monitorizacion-observabilidad",
+    "meta": "Monitorización y Observabilidad · Operaciones",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "16 Julio 2026",
+    "desc": "Los 4 niveles de madurez: de reaccionar a la queja de un usuario a la detección predictiva de anomalías.",
+    "url": "monitorizacion-observabilidad/monitorizacion-observabilidad-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 17,
+    "cat": "gestion-cambios",
+    "meta": "Gestión de Cambios · Operaciones",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "17 Mayo 2026",
+    "desc": "Un CAB que aprueba 40 cambios en 30 minutos no está evaluando riesgo, es un sello de goma.",
+    "url": "gestion-cambios/gestion-cambios-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 18,
+    "cat": "gestion-cambios",
+    "meta": "Gestión de Cambios · Operaciones",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "18 Junio 2026",
+    "desc": "El camino de emergencia sin control se convierte fácilmente en la ruta habitual para saltarse el proceso.",
+    "url": "gestion-cambios/gestion-cambios-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 19,
+    "cat": "gestion-cambios",
+    "meta": "Gestión de Cambios · Operaciones",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "19 Julio 2026",
+    "desc": "Sin registro trazable de cambios, correlacionar un incidente con su causa real es arqueología manual.",
+    "url": "gestion-cambios/gestion-cambios-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 20,
+    "cat": "gestion-cambios",
+    "meta": "Gestión de Cambios · Operaciones",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "20 Agosto 2026",
+    "desc": "Los 4 niveles de madurez: del cambio de viernes sin avisar al despliegue continuo con control automatizado.",
+    "url": "gestion-cambios/gestion-cambios-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 21,
+    "cat": "backup-recuperacion",
+    "meta": "Backup y Recuperación · Operaciones",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "21 Junio 2026",
+    "desc": "El ransomware moderno busca y destruye los backups antes de cifrar el resto. La regla 3-2-1 clásica ya no basta sola.",
+    "url": "backup-recuperacion/backup-recuperacion-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 22,
+    "cat": "backup-recuperacion",
+    "meta": "Backup y Recuperación · Operaciones",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "22 Julio 2026",
+    "desc": "Un backup nunca restaurado en un entorno de prueba es una esperanza, no una capacidad verificada.",
+    "url": "backup-recuperacion/backup-recuperacion-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 23,
+    "cat": "backup-recuperacion",
+    "meta": "Backup y Recuperación · Operaciones",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "23 Agosto 2026",
+    "desc": "\"Creo que funciona\" no es una evidencia de backup. Se necesita fecha, resultado y tiempo real medido.",
+    "url": "backup-recuperacion/backup-recuperacion-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 24,
+    "cat": "backup-recuperacion",
+    "meta": "Backup y Recuperación · Operaciones",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "24 Septiembre 2026",
+    "desc": "Los 4 niveles de madurez en backup: de copiar archivos sin verificar a resiliencia diseñada contra ransomware.",
+    "url": "backup-recuperacion/backup-recuperacion-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 25,
+    "cat": "patch-management",
+    "meta": "Patch Management · Operaciones",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "25 Julio 2026",
+    "desc": "Parchear sin ventana de prueba cambia un riesgo teórico de seguridad por un riesgo real de disponibilidad.",
+    "url": "patch-management/patch-management-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 26,
+    "cat": "patch-management",
+    "meta": "Patch Management · Operaciones",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "26 Agosto 2026",
+    "desc": "Posponer un parche crítico puede ser correcto — pero necesita justificación documentada, no silencio indefinido.",
+    "url": "patch-management/patch-management-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 27,
+    "cat": "patch-management",
+    "meta": "Patch Management · Operaciones",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "27 Septiembre 2026",
+    "desc": "\"95% parcheado\" suena bien hasta que preguntas qué hay exactamente en ese 5% restante.",
+    "url": "patch-management/patch-management-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 28,
+    "cat": "patch-management",
+    "meta": "Patch Management · Operaciones",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "28 Octubre 2026",
+    "desc": "Los 4 niveles de madurez: del parcheo esporádico al despliegue continuo con rollback automatizado.",
+    "url": "patch-management/patch-management-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 29,
+    "cat": "gestion-incidencias",
+    "meta": "Gestión de Incidencias · Operaciones",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "29 Agosto 2026",
+    "desc": "Cerrar una incidencia sin causa raíz no la resuelve — la pospone hasta que vuelva disfrazada de caso nuevo.",
+    "url": "gestion-incidencias/gestion-incidencias-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 30,
+    "cat": "gestion-incidencias",
+    "meta": "Gestión de Incidencias · Operaciones",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "30 Septiembre 2026",
+    "desc": "Un escalado más lento que resolverlo uno mismo empuja a atajos sin visibilidad ni aprendizaje compartido.",
+    "url": "gestion-incidencias/gestion-incidencias-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 31,
+    "cat": "gestion-incidencias",
+    "meta": "Gestión de Incidencias · Operaciones",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "31 Octubre 2026",
+    "desc": "Un post-mortem sin acciones de seguimiento verificadas es documentación, no mejora real.",
+    "url": "gestion-incidencias/gestion-incidencias-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 32,
+    "cat": "gestion-incidencias",
+    "meta": "Gestión de Incidencias · Operaciones",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "32 Noviembre 2026",
+    "desc": "Los 4 niveles de madurez: de apagar fuegos aislados a la gestión proactiva que anticipa problemas.",
+    "url": "gestion-incidencias/gestion-incidencias-madurez-roadmap.html",
+    "published": true
+  }
+]

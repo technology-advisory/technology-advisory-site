@@ -1,0 +1,299 @@
+/* ==============================
+   ARTÍCULOS INDEX - ESTILOS
+   ============================== */
+
+.articulos-body {
+    padding: 24px 48px 40px;
+}
+
+/* FILTROS */
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ededea;
+}
+
+.filter-btn {
+    background: #f2f1ec;
+    border: 1px solid #ededea;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4a4a44;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+}
+
+.filter-btn:hover {
+    background: #ededea;
+    color: #151915;
+}
+
+.filter-btn.active {
+    background: #059669;
+    border-color: #059669;
+    color: #ffffff;
+}
+
+.ctrl-btn {
+    background: #f2f1ec;
+    border: 1px solid #ededea;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4a4a44;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+}
+
+.ctrl-btn:hover {
+    background: #ededea;
+    color: #151915;
+}
+
+/* GRID DE ARTÍCULOS */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 12px 0 8px;
+}
+
+@media (max-width: 1024px) {
+    .articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+    .articulos-body {
+        padding: 24px 24px 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    .articulos-body {
+        padding: 16px 16px 24px;
+    }
+    #filters {
+        gap: 6px;
+    }
+    .filter-btn, .ctrl-btn {
+        font-size: 11px;
+        padding: 4px 12px;
+    }
+}
+
+.article-card {
+    background-color: #fafaf8;
+    border: 1px solid #ededea;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
+    border-color: #059669;
+}
+
+.article-meta {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #9a9a91;
+}
+
+.article-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #151915;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.article-badge {
+    background: #059669;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 2px 10px;
+    border-radius: 12px;
+    letter-spacing: 0.05em;
+}
+
+.article-date {
+    font-size: 12px;
+    color: #9a9a91;
+    font-weight: 500;
+}
+
+.article-desc {
+    font-size: 0.92rem;
+    color: #77776f;
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+}
+
+.article-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #059669;
+    text-decoration: none;
+    margin-top: 4px;
+    transition: color 0.2s;
+}
+
+.article-link:hover {
+    color: #047857;
+}
+
+.no-results {
+    display: none;
+    text-align: center;
+    padding: 40px 0;
+    color: #9a9a91;
+    font-size: 16px;
+    grid-column: 1 / -1;
+}
+
+.no-results.show {
+    display: block;
+}
+
+/* PAGINACIÓN */
+.articles-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid #ededea;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    background: #f2f1ec;
+    border: 1px solid #ededea;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a4a44;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+    min-width: 38px;
+}
+
+.page-btn:hover {
+    background: #ededea;
+    color: #151915;
+}
+
+.page-btn.active {
+    background: #059669;
+    border-color: #059669;
+    color: #ffffff;
+}
+
+.page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.page-arrow {
+    font-size: 16px;
+    padding: 6px 12px;
+}
+/* === Ajustes Dossier técnico === */
+.filter-btn, .ctrl-btn, .page-btn { font-family: var(--font-mono); }
+.filter-btn, .ctrl-btn {
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+    font-size: 11px;
+}
+.page-btn { border-radius: 6px; }
+.article-card { background: #ffffff; }
+.article-card:hover { box-shadow: 0 10px 24px rgba(21,25,21,0.06); }
+.article-meta { color: var(--accent-deep); font-family: var(--font-mono); }
+.article-link { font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
+
+/* ============================================
+   LISTADO COMO ÍNDICE DE EXPEDIENTE (sin recuadros)
+   Diferenciado de las tarjetas de GRCreal / FraudeDigital
+   ============================================ */
+.articles-grid {
+    display: block;
+    margin: 8px 0 0;
+}
+.article-card {
+    background: transparent;
+    border: none;
+    border-top: 1px solid var(--border);
+    border-radius: 0;
+    padding: 1.6rem 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+        "meta date"
+        "title title"
+        "desc desc"
+        "link link";
+    gap: 0.55rem 1rem;
+    cursor: pointer;
+    box-shadow: none;
+    transform: none;
+    transition: padding-left 0.2s ease, border-color 0.2s ease;
+}
+.article-card:hover {
+    transform: none;
+    box-shadow: none;
+    padding-left: 0.5rem;
+    border-color: var(--accent);
+}
+.article-card:last-child { border-bottom: 1px solid var(--border); }
+
+.article-meta { grid-area: meta; align-self: center; margin: 0; }
+.article-date { grid-area: date; align-self: center; text-align: right; font-family: var(--font-mono); }
+.article-title { grid-area: title; font-size: 1.35rem; transition: color 0.2s ease; }
+.article-card:hover .article-title { color: var(--accent-deep); }
+.article-desc { grid-area: desc; max-width: 760px; }
+.article-link { grid-area: link; justify-self: start; }
+.no-results { grid-column: auto; }
+
+@media (min-width: 1025px) {
+    .articles-grid { max-width: 880px; }
+}
+@media (max-width: 480px) {
+    .article-card {
+        grid-template-columns: 1fr;
+        grid-template-areas: "meta" "title" "date" "desc" "link";
+    }
+    .article-date { text-align: left; }
+    .article-title { font-size: 1.15rem; }
+}

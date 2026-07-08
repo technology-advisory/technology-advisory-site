@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Principios de diseño: tiers, RAID y el mito de "cuanto más rápido, mejor" | Almacenamiento y Datos | Technology Advisory</title>
+<meta name="description" content="El almacenamiento no se diseña por velocidad máxima, se diseña por perfil de acceso. Poner todo en NVMe no es diseño, es gasto sin criterio — y poner todo en HDD barato tampoco es ahorro si el negocio depende de la latencia.">
+<meta name="author" content="Miguel Ángel Carriazo">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#059669">
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<link rel="stylesheet" href="../../css/articulo-tecnico.css">
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/articulo-diagramas.css">
+
+    <!-- Parche automático de optimización móvil para Technology Advisory -->
+    <style>
+        @media (max-width: 1024px) {
+            .defensa-layout {
+                display: block !important;
+                padding: 0 4% 40px !important;
+            }
+            div[style*="padding: 16px 48px 0"], 
+            div[style*="padding: 16px 48px 0;"] {
+                padding: 16px 4% 0 !important;
+            }
+            div[style*="padding: 40px 48px 24px"], 
+            div[style*="padding: 40px 48px 24px;"] {
+                padding: 40px 4% 24px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card-wrapper ds-page">
+<div class="card">
+
+<div id="menu-container"></div>
+<div class="accent-bar" style="background:#059669;"></div>
+
+<div class="ds-meta">
+    <span><span class="dot" style="background:#059669;"></span>Technology Advisory // arquitectura</span>
+    <span>categoría: <strong>Almacenamiento y Datos</strong></span>
+</div>
+
+<div style="padding: 16px 48px 0;">
+    <a href="../index.html?cat=almacenamiento-datos" class="defensa-btn-back" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Almacenamiento y Datos</a>
+</div>
+
+<div style="padding: 40px 48px 24px; border-bottom: 1px solid #ededea;">
+    <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Especialidad · Almacenamiento y Datos</div>
+    <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Principios de diseño: <span style="color:#059669;">tiers, RAID y el mito de "cuanto más rápido, mejor"</span></h1>
+    <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">El almacenamiento no se diseña por velocidad máxima, se diseña por perfil de acceso. Poner todo en NVMe no es diseño, es gasto sin criterio — y poner todo en HDD barato tampoco es ahorro si el negocio depende de la latencia.</p>
+
+    <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>Principios de Diseño</span>
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>Lectura Avanzada (12 min)</span>
+    </div>
+</div>
+
+<div class="defensa-layout" style="display:grid; grid-template-columns:1fr 340px; gap:48px; align-items:start; padding:0 48px 40px;">
+    <div class="defensa-main" style="min-width:0;">
+
+        <!-- GRÁFICO 1: PERFILES DE ACCESO -->
+        <figure class="article-diagram" aria-label="Perfiles de acceso" onclick="toggleZoom(this)">
+            <div class="diagram-desktop">
+                <svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <rect width="900" height="430" rx="14" fill="#fafaf8"/>
+                    <text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Perfiles de acceso, no velocidad máxima</text>
+                    <text x="40" y="66" font-size="12" fill="#77776f">qué tier según cómo se lee y escribe el dato</text>
+                    <defs>
+                        <marker id="arrow-pa" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#77776f"/>
+                        </marker>
+                    </defs>
+                    <rect x="40" y="100" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="70" cy="147" r="18" fill="#059669"/>
+                    <text x="70" y="153" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+                    <text x="100" y="135" font-size="15" font-weight="800" fill="#151915">Hot / Transaccional</text>
+                    <text x="100" y="158" font-size="12" fill="#77776f">NVMe, latencia &lt;1ms</text>
+                    <text x="100" y="176" font-size="11" fill="#94a3b8">Bases de datos / Caché</text>
+                    <line x1="430" y1="147" x2="468" y2="147" stroke="#77776f" stroke-width="2" marker-end="url(#arrow-pa)"/>
+                    <rect x="470" y="100" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="500" cy="147" r="18" fill="#059669"/>
+                    <text x="500" y="153" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+                    <text x="530" y="135" font-size="15" font-weight="800" fill="#151915">Warm / Aplicación</text>
+                    <text x="530" y="158" font-size="12" fill="#77776f">SSD SAS, uso frecuente</text>
+                    <text x="530" y="176" font-size="11" fill="#94a3b8">Ficheros de aplicación</text>
+                    <line x1="430" y1="212" x2="468" y2="212" stroke="#77776f" stroke-width="2" marker-end="url(#arrow-pa)"/>
+                    <rect x="40" y="230" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="70" cy="277" r="18" fill="#059669"/>
+                    <text x="70" y="283" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+                    <text x="100" y="265" font-size="15" font-weight="800" fill="#151915">Cold / Archivo</text>
+                    <text x="100" y="288" font-size="12" fill="#77776f">HDD o object storage</text>
+                    <text x="100" y="306" font-size="11" fill="#94a3b8">Histórico, legal</text>
+                    <line x1="430" y1="277" x2="468" y2="277" stroke="#77776f" stroke-width="2" marker-end="url(#arrow-pa)"/>
+                    <rect x="470" y="230" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="500" cy="277" r="18" fill="#059669"/>
+                    <text x="500" y="283" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+                    <text x="530" y="265" font-size="15" font-weight="800" fill="#151915">Backup / Inmutable</text>
+                    <text x="530" y="288" font-size="12" fill="#77776f">Air-gap o WORM</text>
+                    <text x="530" y="306" font-size="11" fill="#94a3b8">Recuperación ante desastres</text>
+                    <defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+                    <rect x="40" y="360" width="820" height="46" rx="14" fill="url(#gbar)" opacity=".95"/>
+                    <text x="68" y="388" font-size="13" font-weight="700" fill="#fff">El error caro es diseñar por IOPS máximos en vez de por patrón de acceso real</text>
+                </svg>
+            </div>
+            <div class="diagram-mobile">
+                <svg viewBox="0 0 330 480" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <rect width="330" height="480" rx="12" fill="#fafaf8"/>
+                    <text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Perfiles de acceso</text>
+                    <rect x="18" y="60" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="44" cy="94" r="14" fill="#059669"/>
+                    <text x="44" y="99" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+                    <text x="68" y="85" font-size="14" font-weight="800" fill="#151915">Hot / Transaccional</text>
+                    <text x="68" y="104" font-size="11" fill="#77776f">NVMe, latencia &lt;1ms</text>
+                    <text x="68" y="120" font-size="10" fill="#94a3b8">Bases de datos</text>
+                    <line x1="165" y1="128" x2="165" y2="148" stroke="#77776f" stroke-width="2"/>
+                    <polygon points="160,146 165,156 170,146" fill="#77776f"/>
+                    <rect x="18" y="158" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="44" cy="192" r="14" fill="#059669"/>
+                    <text x="44" y="197" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+                    <text x="68" y="183" font-size="14" font-weight="800" fill="#151915">Warm / Aplicación</text>
+                    <text x="68" y="202" font-size="11" fill="#77776f">SSD SAS, uso frecuente</text>
+                    <text x="68" y="218" font-size="10" fill="#94a3b8">Ficheros de aplicación</text>
+                    <line x1="165" y1="226" x2="165" y2="246" stroke="#77776f" stroke-width="2"/>
+                    <polygon points="160,244 165,254 170,244" fill="#77776f"/>
+                    <rect x="18" y="256" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="44" cy="290" r="14" fill="#059669"/>
+                    <text x="44" y="295" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+                    <text x="68" y="281" font-size="14" font-weight="800" fill="#151915">Cold / Archivo</text>
+                    <text x="68" y="300" font-size="11" fill="#77776f">HDD o object storage</text>
+                    <text x="68" y="316" font-size="10" fill="#94a3b8">Histórico, legal</text>
+                    <line x1="165" y1="324" x2="165" y2="344" stroke="#77776f" stroke-width="2"/>
+                    <polygon points="160,342 165,352 170,342" fill="#77776f"/>
+                    <rect x="18" y="354" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="44" cy="388" r="14" fill="#059669"/>
+                    <text x="44" y="393" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+                    <text x="68" y="379" font-size="14" font-weight="800" fill="#151915">Backup / Inmutable</text>
+                    <text x="68" y="398" font-size="11" fill="#77776f">Air-gap o WORM</text>
+                    <text x="68" y="414" font-size="10" fill="#94a3b8">Recuperación</text>
+                    <defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+                    <rect x="18" y="435" width="294" height="32" rx="10" fill="url(#gm)"/>
+                    <text x="32" y="455" font-size="11" font-weight="700" fill="#fff">Diseñar por IOPS máximos es un error caro</text>
+                </svg>
+            </div>
+            <figcaption class="diagram-caption">Figura 1: Los cuatro perfiles de acceso y su tecnología adecuada.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- GRÁFICO 2: COMPARATIVA DE TECNOLOGÍAS -->
+        <figure class="article-diagram" aria-label="Comparativa de tecnologías" onclick="toggleZoom(this)">
+            <svg viewBox="0 0 820 280" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect width="820" height="280" rx="14" fill="#fafaf8"/>
+                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Comparativa de tecnologías de almacenamiento</text>
+                <rect x="40" y="60" width="160" height="30" rx="4" fill="#059669"/>
+                <text x="120" y="80" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Tecnología</text>
+                <rect x="200" y="60" width="140" height="30" rx="4" fill="#059669"/>
+                <text x="270" y="80" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Latencia</text>
+                <rect x="340" y="60" width="140" height="30" rx="4" fill="#059669"/>
+                <text x="410" y="80" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">IOPS</text>
+                <rect x="480" y="60" width="140" height="30" rx="4" fill="#059669"/>
+                <text x="550" y="80" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Coste relativo</text>
+                <rect x="620" y="60" width="160" height="30" rx="4" fill="#059669"/>
+                <text x="700" y="80" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Cuándo usarlo</text>
+                <rect x="40" y="90" width="160" height="40" rx="4" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="120" y="110" font-size="12" font-weight="700" fill="#059669" text-anchor="middle">NVMe</text>
+                <rect x="200" y="90" width="140" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="270" y="110" font-size="12" fill="#151915" text-anchor="middle">&lt; 0.1 ms</text>
+                <rect x="340" y="90" width="140" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="410" y="110" font-size="12" fill="#151915" text-anchor="middle">1M+</text>
+                <rect x="480" y="90" width="140" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="550" y="110" font-size="12" fill="#f59e0b" text-anchor="middle">Alto</text>
+                <rect x="620" y="90" width="160" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="700" y="110" font-size="11" fill="#151915" text-anchor="middle">Transaccional</text>
+                <rect x="40" y="130" width="160" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                <text x="120" y="150" font-size="12" fill="#151915" text-anchor="middle">SSD SAS</text>
+                <rect x="200" y="130" width="140" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="270" y="150" font-size="12" fill="#151915" text-anchor="middle">0.5-2 ms</text>
+                <rect x="340" y="130" width="140" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="410" y="150" font-size="12" fill="#151915" text-anchor="middle">100K</text>
+                <rect x="480" y="130" width="140" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="550" y="150" font-size="12" fill="#94a3b8" text-anchor="middle">Medio</text>
+                <rect x="620" y="130" width="160" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="700" y="150" font-size="11" fill="#151915" text-anchor="middle">Aplicaciones</text>
+                <rect x="40" y="170" width="160" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                <text x="120" y="190" font-size="12" fill="#151915" text-anchor="middle">HDD</text>
+                <rect x="200" y="170" width="140" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="270" y="190" font-size="12" fill="#151915" text-anchor="middle">5-15 ms</text>
+                <rect x="340" y="170" width="140" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="410" y="190" font-size="12" fill="#151915" text-anchor="middle">5K</text>
+                <rect x="480" y="170" width="140" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="550" y="190" font-size="12" fill="#94a3b8" text-anchor="middle">Bajo</text>
+                <rect x="620" y="170" width="160" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="700" y="190" font-size="11" fill="#151915" text-anchor="middle">Archivo</text>
+                <rect x="40" y="210" width="740" height="30" rx="4" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                <text x="410" y="230" font-size="10" fill="#94a3b8" text-anchor="middle">Los datos en caliente justifican NVMe. Los datos fríos no.</text>
+            </svg>
+            <figcaption class="diagram-caption">Figura 2: Comparativa de tecnologías por latencia, IOPS y coste.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- GRÁFICO 3: RAID Y SUS LIMITACIONES -->
+        <figure class="article-diagram" aria-label="RAID y sus limitaciones" onclick="toggleZoom(this)">
+            <svg viewBox="0 0 820 240" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect width="820" height="240" rx="14" fill="#fafaf8"/>
+                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">RAID: lo que protege y lo que no</text>
+                <text x="40" y="58" font-size="12" fill="#77776f">protege contra fallo físico, no contra error humano</text>
+                <rect x="40" y="80" width="340" height="80" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="210" y="105" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">✅ Protege contra</text>
+                <text x="60" y="125" font-size="11" fill="#151915">• Fallo de disco físico</text>
+                <text x="60" y="142" font-size="11" fill="#151915">• Tiempo de reconstrucción</text>
+                <rect x="440" y="80" width="340" height="80" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="610" y="105" font-size="13" font-weight="700" fill="#b45309" text-anchor="middle">❌ NO protege contra</text>
+                <text x="460" y="125" font-size="11" fill="#78350f">• Borrado accidental</text>
+                <text x="460" y="142" font-size="11" fill="#78350f">• Corrupción lógica</text>
+                <text x="460" y="159" font-size="11" fill="#78350f">• Ransomware</text>
+                <rect x="40" y="185" width="740" height="30" rx="4" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                <text x="410" y="205" font-size="10" fill="#94a3b8" text-anchor="middle">RAID no es backup. RAID protege continuidad. Backup protege datos.</text>
+            </svg>
+            <figcaption class="diagram-caption">Figura 3: Lo que RAID protege y lo que no protege.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- GRÁFICO 4: IOPS REALES VS MARKETING -->
+        <figure class="article-diagram" aria-label="IOPS reales vs marketing" onclick="toggleZoom(this)">
+            <svg viewBox="0 0 820 240" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect width="820" height="240" rx="14" fill="#fafaf8"/>
+                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">IOPS reales vs IOPS de marketing</text>
+                <text x="40" y="58" font-size="12" fill="#77776f">la cifra de la hoja de especificaciones vs la carga real</text>
+                <rect x="40" y="80" width="350" height="50" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="215" y="100" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">IOPS de marketing</text>
+                <text x="215" y="118" font-size="11" fill="#77776f" text-anchor="middle">Lectura secuencial, bloque óptimo, laboratorio</text>
+                <rect x="430" y="80" width="350" height="50" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="605" y="100" font-size="13" font-weight="700" fill="#b45309" text-anchor="middle">IOPS reales</text>
+                <text x="605" y="118" font-size="11" fill="#78350f" text-anchor="middle">Mezcla lectura/escritura, aleatorio, producción</text>
+                <rect x="40" y="155" width="740" height="50" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                <text x="60" y="178" font-size="11" font-weight="600" fill="#151915">Regla práctica: diseña con margen del 40-50% sobre tu pico medido real</text>
+                <text x="60" y="195" font-size="10" fill="#94a3b8">Mide con iostat, Perfmon, o el monitor nativo de tu array</text>
+            </svg>
+            <figcaption class="diagram-caption">Figura 4: La diferencia entre las IOPS de marketing y las IOPS reales en producción.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- CONTENIDO: SECCIÓN 1 -->
+        <div class="block" id="s1">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El mito de la velocidad máxima</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p><strong>Comprar todo en NVMe no es una estrategia de almacenamiento, es evitar tomar una decisión.</strong> El coste por GB de NVMe empresarial puede ser 8-10 veces el de HDD de alta capacidad — pagar esa diferencia para datos que se leen una vez al mes es dinero que no vuelve.</p>
+                <p>El diseño correcto empieza por clasificar los datos según cómo se accede a ellos, no según lo importantes que "suenan". Un log de auditoría es crítico para compliance pero casi nunca se lee — es candidato perfecto para almacenamiento frío. Una base de datos transaccional se lee y escribe constantemente — ahí sí se justifica el NVMe.</p>
+                <div class="callout">
+                    <strong>Pregunta de diseño real:</strong> no "¿qué tan rápido puede ir esto?", sino "¿con qué frecuencia y patrón se accede a este dato concreto?".
+                </div>
+                <p>He visto organizaciones gastar decenas de miles de euros en arrays all-flash para almacenar logs de auditoría de hace cinco años, cuando una cabina HDD con tiering automático habría costado una fracción y el rendimiento habría sido indistinguible para el caso de uso real.</p>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+
+        <div class="block" id="s2">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Tiering por patrón de acceso, no por antigüedad</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>El tiering automático mal configurado mueve datos por antigüedad ("todo lo de más de 90 días baja a frío") sin mirar el patrón de acceso real. Un informe financiero de cierre de año de hace dos años puede consultarse intensamente durante la auditoría anual — moverlo a cinta por "antigüedad" lo hace inaccesible justo cuando se necesita.</p>
+                <p>El tiering inteligente se basa en el patrón de acceso real, no en la fecha de creación del dato. Los sistemas modernos de almacenamiento permiten políticas basadas en frecuencia de acceso, no solo en antigüedad, y esa es la diferencia entre un tiering útil y uno que genera tickets de soporte.</p>
+
+                <h3>Criterios de tiering defendibles</h3>
+                <ul>
+                    <li><strong>Frecuencia de acceso real</strong> (medida, no estimada) en los últimos 90 días.</li>
+                    <li><strong>Patrón de lectura</strong>: secuencial (tolera HDD) vs aleatorio (exige SSD/NVMe).</li>
+                    <li><strong>Sensibilidad a latencia</strong> de la aplicación que consume el dato, no del dato en sí.</li>
+                    <li><strong>Coste de recuperación</strong> si el dato en frío se necesita con urgencia inesperada.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+
+        <div class="block" id="s3">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">RAID: lo que protege y lo que no protege</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>RAID protege contra el fallo físico de un disco. No protege contra borrado accidental, corrupción lógica, ransomware o un administrador que ejecuta el comando equivocado — todos esos escenarios se replican con la misma velocidad que los datos legítimos, porque RAID no distingue una escritura buena de una mala.</p>
+                <p>El nivel de RAID importa menos de lo que se cree para la disponibilidad real: RAID 5 con discos grandes (&gt;4TB) tiene un riesgo real de fallo durante la reconstrucción (rebuild) porque el tiempo de rebuild es tan largo que la probabilidad de un segundo fallo durante ese proceso deja de ser despreciable. RAID 6 o RAID 10 son las opciones defendibles para discos de gran capacidad en 2026.</p>
+                <div class="callout warn">
+                    <strong>No confundas RAID con backup:</strong> RAID protege continuidad ante fallo de hardware. Backup protege ante error humano, corrupción y ransomware. Necesitas los dos — uno no sustituye al otro.
+                </div>
+                <p>Una buena práctica es mantener una copia inmutable (WORM) o air-gap de los backups críticos, para protegerlos de ransomware. RAID no te protege de un ataque que cifra tus datos — solo te protege si un disco se rompe físicamente.</p>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+
+        <div class="block" id="s4">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">IOPS reales vs IOPS de marketing</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>Las cifras de IOPS que aparecen en la hoja de especificaciones de una cabina son medidas en condiciones de laboratorio: bloque de I/O óptimo, cola de profundidad ideal, 100% lecturas secuenciales. Tu carga de trabajo real —mezcla de lecturas y escrituras aleatorias, bloques de tamaño variable— rinde muy por debajo de esa cifra.</p>
+                <p>El dimensionamiento correcto se hace con IOPS medidos de tu carga real (herramientas como <code>iostat</code>, Perfmon, o el monitor nativo de tu array), no con la cifra de la ficha técnica. Sobredimensionar por desconfianza cuesta dinero; infradimensionar por optimismo cuesta un incidente de rendimiento en producción.</p>
+                <div class="callout">
+                    <strong>Regla práctica:</strong> diseña con margen del 40-50% sobre tu pico medido de IOPS reales, no sobre la cifra de marketing del fabricante.
+                </div>
+                <p>La mayoría de los incidentes de rendimiento en almacenamiento no son por un array que no puede rendir — son por un array que se dimensionó basándose en la hoja de especificaciones en lugar de en la carga real. Mide antes de comprar, o pide al fabricante una prueba de concepto con tu carga real antes de firmar el pedido.</p>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+
+        <div class="block" id="s5">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Diseñar por SLA, no por moda tecnológica</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>El roadmap de almacenamiento maduro no persigue la tecnología más nueva — persigue el SLA que el negocio realmente necesita, al coste más razonable. Migrar todo a NVMe-oF porque es lo último no es progreso si tu carga de trabajo nunca notó el cuello de botella que esa tecnología resuelve.</p>
+                <p>La disciplina que sostiene esto es simple: cada decisión de almacenamiento debe justificarse con datos de acceso reales y un SLA de negocio explícito, no con la sensación de que "más rápido siempre es mejor". El almacenamiento con mejor relación coste-beneficio es el que coincide exactamente con el patrón de acceso real de cada dato — ni más rápido ni más lento de lo necesario.</p>
+                <p>Una buena práctica es revisar la estrategia de tiering cada 12-18 meses, porque los patrones de acceso de los datos cambian con el tiempo. Lo que era caliente hace un año puede ser frío ahora, y viceversa. La revisión periódica evita que el almacenamiento se convierta en un gasto fijo sin optimización.</p>
+            </div>
+        </div>
+
+        <!-- PIE DE AUTOR -->
+        <div class="defensa-foot">
+            <div class="defensa-author">
+                <div class="defensa-foot-label">Autor</div>
+                <div class="defensa-author-name">Miguel Ángel Carriazo</div>
+                <p class="defensa-author-bio">vCISO &amp; Arquitecto de Infraestructura con más de 25 años diseñando, asegurando y operando sistemas críticos. ISO 27001 &amp; 42001 Lead Auditor.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+        <div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+            <div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+            <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Perfiles</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Hot / Warm / Cold</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">RAID recomendado</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">RAID 6 / RAID 10</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">IOPS reales</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Medir, no estimar</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Margen diseño</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">40-50%</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Revisión tiering</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">12-18 meses</td></tr>
+            </table>
+        </div>
+        <div>
+            <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+            <nav class="defensa-toc-nav" id="artTocNav2" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+                <a href="#s1" class="active" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px; color:#059669; border-left:2px solid #059669; font-weight:700;">01. Mito velocidad</a>
+                <a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Tiering</a>
+                <a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. RAID</a>
+                <a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. IOPS reales</a>
+                <a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Diseñar por SLA</a>
+            </nav>
+        </div>
+    </aside>
+
+</div>
+
+<!-- ARTÍCULOS RELACIONADOS -->
+<div class="related-section">
+    <div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+    <div class="related-grid">
+        <a class="related-card" href="almacenamiento-datos-controles-evidencias.html">
+            <div class="r-meta">Almacenamiento · Controles</div>
+            <div class="r-title">Controles y evidencias: cifrado en reposo y la prueba de restauración</div>
+            <div class="r-desc">Cifrado en reposo activado no es lo mismo que cifrado en reposo verificado.</div>
+            <span class="r-link">Leer artículo →</span>
+        </a>
+        <a class="related-card" href="almacenamiento-datos-madurez-roadmap.html">
+            <div class="r-meta">Almacenamiento · Madurez</div>
+            <div class="r-title">Madurez y roadmap: de discos sueltos a gobierno del dato automatizado</div>
+            <div class="r-desc">Los cuatro niveles reales de madurez en almacenamiento.</div>
+            <span class="r-link">Leer artículo →</span>
+        </a>
+        <a class="related-card" href="almacenamiento-datos-modelo-operativo.html">
+            <div class="r-meta">Almacenamiento · Modelo Operativo</div>
+            <div class="r-title">Modelo operativo: capacidad, snapshots y la alerta que llega tarde</div>
+            <div class="r-desc">El 90% de las crisis de almacenamiento no son técnicas — son de planificación de capacidad.</div>
+            <span class="r-link">Leer artículo →</span>
+        </a>
+    </div>
+</div>
+
+<div id="footer-container"></div>
+
+</div>
+</div>
+
+<script src="../../js/menu.js"></script>
+<script src="../../js/footer.js"></script>
+<script src="../../js/main.js"></script>
+
+<script>
+function toggleZoom(element) {
+    if (element.classList.contains('zoomed')) {
+        element.classList.remove('zoomed');
+        document.querySelector('.zoom-overlay')?.classList.remove('active');
+    } else {
+        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+        element.classList.add('zoomed');
+        let overlay = document.querySelector('.zoom-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'zoom-overlay';
+            overlay.onclick = function() {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                overlay.classList.remove('active');
+            };
+            document.body.appendChild(overlay);
+        }
+        overlay.classList.add('active');
+    }
+}
+</script>
+
+</body>
+</html>

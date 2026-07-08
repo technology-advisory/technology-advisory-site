@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Controles y evidencias: el playbook que nunca se ha probado en un simulacro | Respuesta a Incidentes | Technology Advisory</title><meta name="description" content="Un playbook sin ejecutar es una hipótesis con formato de documento. Qué evidencias de preparación reunir para saber si tu respuesta funcionaría de verdad."><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
+<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // seguridad</span><span>categoría: <strong>Respuesta a Incidentes</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Respuesta a Incidentes</div><h1 class="article-title">Controles y evidencias: el playbook que nunca se ha probado en un simulacro</h1><p class="article-lead">Un playbook sin ejecutar es una hipótesis con formato de documento. Qué evidencias de preparación reunir para saber si tu respuesta funcionaría de verdad.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Respuesta a Incidentes"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="900" height="410" rx="14" fill="#fafaf8"/>
+<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Evidencias de preparación real</text>
+<text x="40" y="66" font-size="12" fill="#77776f">del playbook escrito al simulacro ejecutado</text>
+<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Playbooks por escenario</text>
+<text x="58" y="163" font-size="11" fill="#77776f">Ransomware, exfiltración, DDoS</text>
+<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Simulacro ejecutado</text>
+<text x="488" y="163" font-size="11" fill="#77776f">Con fecha, resultado, y ajustes</text>
+<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Contactos de emergencia</text>
+<text x="58" y="283" font-size="11" fill="#77776f">Verificados, no desactualizados</text>
+<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Retención de logs</text>
+<text x="488" y="283" font-size="11" fill="#77776f">Suficiente para la investigación</text>
+<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Un playbook nunca ejecutado en simulacro es un documento, no una capacidad probada</text>
+</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 420" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="330" height="420" rx="12" fill="#fafaf8"/>
+<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Evidencias de preparación real</text>
+<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="89" r="13" fill="#059669"/>
+<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Playbooks por escenario</text>
+<text x="64" y="102" font-size="11" fill="#77776f">Ransomware, exfiltración, DDoS</text>
+<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="159" r="13" fill="#059669"/>
+<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Simulacro ejecutado</text>
+<text x="64" y="172" font-size="11" fill="#77776f">Con fecha, resultado, y</text>
+<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="229" r="13" fill="#059669"/>
+<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Contactos de emergencia</text>
+<text x="64" y="242" font-size="11" fill="#77776f">Verificados, no</text>
+<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="299" r="13" fill="#059669"/>
+<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Retención de logs</text>
+<text x="64" y="312" font-size="11" fill="#77776f">Suficiente para la</text>
+<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+<rect x="18" y="340" width="294" height="60" rx="10" fill="url(#gm)"/>
+<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Un playbook nunca ejecutado en simulacro</text>
+<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">es un documento, no una capacidad probada</text>
+</svg></div></figure><div class="toc-mini"><a href="#contexto">1. El playbook que solo existe en el papel</a><a href="#arquitectura">2. Simulacros documentados, no teóricos</a><a href="#seguridad">3. Contactos de emergencia verificados</a><a href="#operacion">4. Retención de logs suficiente para investigar</a><a href="#roadmap">5. La evidencia que un seguro de ciberriesgo exige</a></div><h2 id="contexto">1. El playbook que solo existe en el papel</h2><div class="body-text"><p><strong>Un playbook de respuesta a ransomware que nunca se ha probado en un simulacro es, en la práctica, una hipótesis sobre cómo debería funcionar la respuesta — no una capacidad verificada.</strong> La primera vez que se ejecuta de verdad no debería ser durante un incidente real.</p></div><h2 id="arquitectura">2. Simulacros documentados con fecha, resultado y ajustes posteriores</h2><div class="body-text"><p>La evidencia de preparación real incluye el registro de simulacros ejecutados —tabletop exercises al menos— con fecha, escenario simulado, tiempo real de respuesta frente al esperado, y los ajustes al playbook derivados de lo aprendido.</p></div><h2 id="seguridad">3. Contactos de emergencia verificados, no una lista desactualizada</h2><div class="body-text"><p>Una lista de contactos de emergencia (proveedor forense externo, asesoría legal, seguro de ciberriesgo, autoridades si aplica) que no se ha verificado en meses puede fallar exactamente cuando más se necesita — un teléfono desactualizado en medio de un incidente real es un obstáculo evitable.</p></div><h2 id="operacion">4. Retención de logs suficiente para investigar el incidente completo</h2><div class="body-text"><p>Si la retención de logs es de 30 días y un atacante llevaba 90 días dentro antes de ser detectado (tiempo de permanencia habitual en compromisos sofisticados), la investigación forense tendrá un hueco de 60 días sin evidencia disponible. La política de retención debe alinearse con el tiempo de detección realista, no con el mínimo que ocupa menos almacenamiento.</p></div><h2 id="roadmap">5. La evidencia que un seguro de ciberriesgo exige antes de cubrir un incidente</h2><div class="body-text"><p>Las aseguradoras de ciberriesgo cada vez exigen más evidencia de preparación —playbooks documentados, simulacros ejecutados, retención de logs adecuada— como condición para la cobertura. Prepararse para un incidente real y prepararse para cumplir los requisitos de la póliza acaban siendo, en la práctica, el mismo ejercicio.</p></div><a class="back" href="../index.html?cat=respuesta-incidentes">← Volver a Respuesta a Incidentes</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. El playbook que solo existe en el papel</a><a href="#arquitectura">2. Simulacros documentados, no teóricos</a><a href="#seguridad">3. Contactos de emergencia verificados</a><a href="#operacion">4. Retención de logs suficiente para investigar</a><a href="#roadmap">5. La evidencia que un seguro de ciberriesgo exige</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>

@@ -8,140 +8,88 @@
     <meta name="author" content="Miguel Ángel Carriazo">
     <meta name="theme-color" content="#059669">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://technology-advisory.es/">
 
-    <!-- Open Graph -->
     <meta property="og:site_name" content="Technology Advisory">
     <meta property="og:locale" content="es_ES">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Technology Advisory | Arquitectura e Infraestructura Crítica">
     <meta property="og:description" content="Diseño, operación e implementación de arquitecturas tecnológicas críticas.">
     <meta property="og:url" content="https://technology-advisory.es/">
+    <meta property="og:image" content="https://technology-advisory.es/img/og-home.png">
 
-    <!-- CSS -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/dossier-core.css">
     <link rel="stylesheet" href="css/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="card-wrapper ds-page">
 <div class="card">
 
-    <!-- Menú dinámico -->
+    <!-- Cabecera dinámica -->
     <div id="menu-container"></div>
 
+    <div class="accent-bar" style="background: #059669;"></div>
+
+    <div class="ds-meta">
+        <span><span class="dot" style="background:#059669;"></span>Technology Advisory // inicio</span>
+        <span>Miguel Ángel Carriazo · vCISO &amp; Arquitecto de Infraestructura</span>
+    </div>
+
     <!-- Hero -->
-    <header class="hero">
-        <div class="hero-tagline">TECNOLOGÍA Y ARQUITECTURA RESILIENTE</div>
-        <div class="hero-subtagline">DISEÑO. OPERACIÓN. PROTECCIÓN.</div>
-        
-        <h1>INFRAESTRUCTURA QUE RESISTE.<br><span class="hero-accent">INGENIERÍA QUE PROTEGE.</span></h1>
-        
-        <p>Diseño y operación de arquitecturas tecnológicas críticas en entornos híbridos (on-premises / cloud).</p>
+    <section class="hero">
+        <div class="hero-inner">
 
-        <div class="hero-divider"></div>
-
-        <!-- Pilares con SVGs -->
-        <div class="pillars-grid">
-            <div class="pillar">
-                <div class="pillar-icon">
-                    <svg viewBox="0 0 64 64">
-                        <!-- Disponibilidad: Monitor -->
-                        <rect x="8" y="12" width="48" height="32" rx="2"/>
-                        <path d="M20 44h24M24 44v4M40 44v4"/>
-                        <line x1="16" y1="20" x2="48" y2="20"/>
-                        <line x1="16" y1="28" x2="48" y2="28"/>
-                    </svg>
+            <div class="hero-lead">
+                <p class="kicker">// infraestructura crítica</p>
+                <h1 class="hero-title">Sistemas críticos, diseñados para <span class="u">no caerse</span>.</h1>
+                <p class="hero-sub">Diseño, aseguro y opero la infraestructura de la que depende tu negocio. Sin humo: 25 años de redes, sistemas y cloud detrás de cada decisión.</p>
+                <div class="hero-cta">
+                    <a class="btn btn-solid" href="arquitectura/index.html">Ver capacidades</a>
+                    <a class="btn btn-ghost" href="sobre-mi/sobre-mi.html">Contactar</a>
                 </div>
-                <div class="pillar-label">Disponibilidad</div>
             </div>
 
-            <div class="pillar">
-                <div class="pillar-icon">
-                    <svg viewBox="0 0 64 64">
-                        <!-- Seguridad: Shield -->
-                        <path d="M32 8L52 16V32C52 48 32 56 32 56C32 56 12 48 12 32V16L32 8Z"/>
-                        <path d="M24 32L30 38L40 28"/>
-                    </svg>
-                </div>
-                <div class="pillar-label">Security</div>
-            </div>
+            <aside class="hero-index">
+                <p class="index-label">Áreas</p>
+                <a class="index-item" href="arquitectura/index.html">
+                    <span class="idx-num">01</span><span class="idx-name">Arquitectura</span><span class="idx-arrow">→</span>
+                </a>
+                <a class="index-item" href="seguridad/index.html">
+                    <span class="idx-num">02</span><span class="idx-name">Seguridad</span><span class="idx-arrow">→</span>
+                </a>
+                <a class="index-item" href="operaciones/index.html">
+                    <span class="idx-num">03</span><span class="idx-name">Operaciones</span><span class="idx-arrow">→</span>
+                </a>
+                <a class="index-item" href="gobernanza/index.html">
+                    <span class="idx-num">04</span><span class="idx-name">Gobernanza</span><span class="idx-arrow">→</span>
+                </a>
+            </aside>
 
-            <div class="pillar">
-                <div class="pillar-icon">
-                    <svg viewBox="0 0 64 64">
-                        <!-- Arquitectura: Network -->
-                        <circle cx="20" cy="20" r="4"/>
-                        <circle cx="44" cy="20" r="4"/>
-                        <circle cx="20" cy="44" r="4"/>
-                        <circle cx="44" cy="44" r="4"/>
-                        <circle cx="32" cy="32" r="4"/>
-                        <line x1="20" y1="24" x2="20" y2="40"/>
-                        <line x1="44" y1="24" x2="44" y2="40"/>
-                        <line x1="24" y1="20" x2="40" y2="20"/>
-                        <line x1="24" y1="44" x2="40" y2="44"/>
-                        <line x1="22" y1="22" x2="30" y2="30"/>
-                        <line x1="42" y1="22" x2="34" y2="30"/>
-                        <line x1="22" y1="42" x2="30" y2="34"/>
-                        <line x1="42" y1="42" x2="34" y2="34"/>
-                    </svg>
-                </div>
-                <div class="pillar-label">Arquitectura</div>
-            </div>
-
-            <div class="pillar">
-                <div class="pillar-icon">
-                    <svg viewBox="0 0 64 64">
-                        <!-- Resiliencia: Cycle -->
-                        <path d="M32 12C21.5 12 13 20.5 13 31"/>
-                        <path d="M13 31L8 26M13 31L18 36"/>
-                        <path d="M32 52C42.5 52 51 43.5 51 32"/>
-                        <path d="M51 32L56 37M51 32L46 27"/>
-                    </svg>
-                </div>
-                <div class="pillar-label">Resiliencia</div>
-            </div>
-
-            <div class="pillar">
-                <div class="pillar-icon">
-                    <svg viewBox="0 0 64 64">
-                        <!-- Operación: Gear -->
-                        <circle cx="32" cy="32" r="12"/>
-                        <circle cx="20" cy="20" r="5"/>
-                        <circle cx="44" cy="44" r="5"/>
-                        <line x1="25" y1="23" x2="28" y2="28"/>
-                        <line x1="39" y1="39" x2="36" y2="36"/>
-                    </svg>
-                </div>
-                <div class="pillar-label">Operación</div>
-            </div>
         </div>
 
-        <!-- Keywords -->
-        <div class="keywords">
-            <span class="keyword">REDES</span>
-            <span class="keyword">SISTEMAS</span>
-            <span class="keyword">SEGURIDAD</span>
-            <span class="keyword">CONTINUIDAD</span>
-            <span class="keyword">NUBE</span>
-        </div>
+        <div class="hero-strip">25 años · redes · sistemas · cloud · GRC · ISO 27001 / 42001</div>
+    </section>
 
-        <div class="hero-footer">
-            © 2026 TECHNOLOGY ADVISORY · OPERATIONAL SECURITY
-        </div>
-    </header>
-
-    <!-- Footer dinámico --> 
+    <!-- Footer dinámico -->
     <div id="footer-container"></div>
 
 </div>
 </div>
 
-<!-- Scripts -->
-<script src="js/menu.js"></script>
-<script src="js/footer.js"></script>
-<script src="js/main.js"></script>
-
+    <script src="js/menu.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

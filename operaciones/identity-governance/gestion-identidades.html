@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Gestión del Ciclo de Vida e Identidades (IAM) Enterprise | Technology Advisory</title>
+<meta name="description" content="Análisis avanzado de ingeniería de sistemas sobre gobernanza de identidades. Bastionado de Microsoft Active Directory y aseguramiento de plataformas SQL Server críticos.">
+<meta name="keywords" content="iam, active directory, gobernanza de identidades, sql server bastionado, minimo privilegio, security by design, operaciones ti">
+<meta name="author" content="Miguel Ángel Carriazo">
+<meta name="theme-color" content="#059669">
+<meta name="robots" content="index, follow">
+
+<!-- CSS Nativos (Subiendo DOS niveles a la raíz /css/) -->
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<link rel="stylesheet" href="../../css/index.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  .defensa-meta { border-top: none !important; border-bottom: none !important; padding: 10px 0 0 0 !important; margin: 5px 0 0 0 !important; }
+  .defensa-layout { display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: start; padding: 0 48px 40px; }
+  .defensa-main { min-width: 0; }
+  .defensa-toc { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 40px; min-width: 0; }
+  .defensa-control { background: #fafaf8; border: 1px solid #ededea; border-radius: 8px; padding: 24px; }
+  .defensa-control .title { font-family: monospace; font-size: 11px; text-transform: uppercase; color: #151915; border-bottom: 2px solid #ededea; padding-bottom: 6px; margin-bottom: 16px; font-weight: 700; letter-spacing: 0.05em; }
+  .defensa-control table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 13px; }
+  .defensa-control td { padding: 10px 0; border-bottom: 1px solid #ededea; vertical-align: middle; overflow-wrap: break-word; }
+  .defensa-control tr:last-child td { border-bottom: none; }
+  .defensa-control td.label { color: #77776f; font-weight: 700; text-align: left; }
+  .defensa-control td.value { color: #151915; font-weight: 600; text-align: right; }
+  .defensa-control td.value.highlight { color: #059669; font-weight: 700; }
+  
+  .defensa-toc-label { font-family: monospace; font-size: 11px; text-transform: uppercase; color: #77776f; letter-spacing: 0.1em; margin-bottom: 14px; font-weight: 700; }
+  .defensa-toc-nav { display: flex; flex-direction: column; gap: 12px; border-left: 2px solid #ededea; padding-left: 14px; }
+  .defensa-toc-nav a { text-decoration: none; color: #77776f; font-size: 14px; font-weight: 600; transition: all 0.2s; border-left: 2px solid transparent; margin-left: -16px; padding-left: 14px; }
+  .defensa-toc-nav a.active { color: #059669 !important; border-left: 2px solid #059669 !important; font-weight: 700; }
+  
+  .defensa-badge-all { display: inline-block; background: #059669; color: #fff; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 2px 10px; border-radius: 12px; margin-left: 8px; vertical-align: middle; }
+  .defensa-badge-tech { display: inline-block; background: #22221e; color: #fafaf8; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 2px 10px; border-radius: 12px; margin-left: 8px; vertical-align: middle; }
+  .defensa-btn-back { display: inline-block; background: #059669; color: #ffffff !important; font-weight: 700; font-size: 14px; padding: 8px 20px; border-radius: 30px; text-decoration: none; transition: background 0.2s ease; border: none; }
+  .defensa-btn-back:hover { background: #047857; color: #ffffff !important; }
+  
+  .defensa-meta { display: flex !important; flex-wrap: wrap !important; align-items: center !important; gap: 8px 24px !important; padding: 14px 0 !important; border-top: 1px solid #ededea !important; border-bottom: 1px solid #ededea !important; margin: 8px 0 0 0 !important; }
+  .defensa-meta-item { display: inline-flex !important; align-items: center !important; gap: 7px !important; font-size: 13px !important; color: #5b6670 !important; white-space: nowrap !important; }
+  .defensa-meta-item svg { width: 15px !important; height: 15px !important; color: #059669 !important; flex-shrink: 0 !important; stroke: #059669 !important; stroke-width: 1.6 !important; fill: none !important; }
+  .defensa-meta-item strong { color: #151915 !important; font-weight: 600 !important; }
+  
+  .defensa-divider { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 45px 0; color: #9a9a91; }
+  .defensa-divider::before, .defensa-divider::after { content: ""; flex: 1; height: 2px; background: linear-gradient(90deg, transparent, #9a9a91, transparent); }
+  .defensa-divider .label { font-family: monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #4a4a44; background: #ffffff; padding: 0 16px; white-space: nowrap; font-weight: 700; }
+  .defensa-divider .label .gear { color: #059669; }
+  
+  .defensa-main .block { margin-bottom: 55px; }
+  .defensa-main .block .block-meta { font-family: monospace; font-size: 11px; text-transform: uppercase; color: #77776f; margin-bottom: 10px; }
+  .defensa-main .block h2 { font-size: 25px; font-weight: 800; color: #151915; margin: 0 0 18px; padding-bottom: 10px; border-bottom: 1px solid #ededea; }
+  .defensa-main .block .body-text { font-size: 16px; line-height: 1.85; color: #3f3f3a; text-align: justify; }
+  .defensa-main .block .body-text p { margin-top: 0; margin-bottom: 20px; }
+  .defensa-main .block .body-text ul, .defensa-main .block .body-text ol { margin-bottom: 20px; }
+  .defensa-main .block .body-text li { margin-bottom: 8px; }
+  
+  .defensa-box-warning { background: #fffbeb; border-left: 4px solid #d97706; padding: 22px; margin: 26px 0; border-radius: 4px; }
+  .defensa-box-warning strong { color: #b45309; font-size: 16px; display: block; margin-bottom: 6px; }
+  .defensa-box-warning p { margin: 0 !important; font-size: 15px !important; color: #78350f; line-height: 1.6; }
+  
+  .defensa-box-success { background: #f0fdf4; border-left: 4px solid #059669; padding: 22px; margin: 26px 0; border-radius: 4px; }
+  .defensa-box-success strong { color: #14532d; font-size: 16px; display: block; margin-bottom: 6px; }
+  .defensa-box-success p { margin: 0 !important; font-size: 15px !important; color: #14532d; line-height: 1.6; }
+
+  .defensa-box-tech { background: #f2f1ec; padding: 26px; border-radius: 8px; margin: 26px 0; font-size: 14.5px; border: 1px solid #ededea; line-height: 1.7; }
+  
+  .defensa-foot { display: flex; gap: 48px; max-width: 1320px; padding: 40px 0 0; border-top: 1px solid #ededea; flex-wrap: wrap; align-items: flex-start; margin-top: 40px; }
+  .defensa-author { flex: 1 1 0%; min-width: 0; }
+  .defensa-foot-label { font-family: monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #7c8790; margin-bottom: 8px; }
+  .defensa-author-name { font-size: 18px; font-weight: 800; color: #151915; margin-bottom: 6px; }
+  .defensa-author-name span { color: #059669; font-weight: 600; }
+  .defensa-author-bio { font-size: 14px; color: #5b6670; line-height: 1.6; max-width: none; white-space: normal; margin: 0; }
+  
+  @media (max-width: 1024px) {
+    .defensa-layout { grid-template-columns: 1fr; gap: 32px; padding: 0 24px 32px; }
+    .defensa-toc { position: static; width: 100%; }
+    .defensa-foot { padding: 24px 24px 0; gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card-wrapper ds-page">
+<div class="card">
+
+  <!-- Menú dinámico corporativo -->
+  <div id="menu-container"></div>
+  <div class="accent-bar" style="background: #059669;"></div>
+
+  <div class="ds-meta">
+    <span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: operaciones</span>
+    <span>nivel: <strong>Gobernanza de Accesos e Identidades (IAM)</strong></span>
+  </div>
+
+  <div style="padding: 40px 48px 24px; border-bottom: 1px solid #ededea;">
+    <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Especialidad de Control Técnico · Identity Governance</div>
+    <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Gobernanza de Identidades y Bastionado Enterprise</h1>
+    <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">
+      Directivas avanzadas de sistemas para el control del ciclo de vida de los accesos. Bastionado de infraestructuras Microsoft Active Directory y aseguramiento crítico de motores de bases de datos relacionales SQL Server.
+    </p>
+
+    <div class="defensa-meta">
+      <span class="defensa-meta-item">
+        <svg viewBox="0 0 18 18" fill="none" stroke="currentColor"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg>
+        <strong>Miguel Ángel Carriazo</strong>
+      </span>
+      <span class="defensa-meta-item">
+        <svg viewBox="0 0 18 18" fill="none" stroke="currentColor"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>
+        Active Directory & SQL Server
+      </span>
+      <span class="defensa-meta-item">
+        <svg viewBox="0 0 18 18" fill="none" stroke="currentColor"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>
+        Lectura Avanzada (10 min)
+      </span>
+    </div>
+  </div>
+
+  <div style="padding: 24px 48px 24px;">
+    <a href="../index.html" class="defensa-btn-back">← Volver al Panel de Operaciones</a>
+  </div>
+
+  <div class="defensa-layout">
+    
+    <div class="defensa-main">
+      
+      <div class="block" id="s1">
+        <div class="block-meta">01 // Control de Accesos e Identidades <span class="defensa-badge-all">IAM</span></div>
+        <h2>La Identidad como Nuevo Perímetro Operativo</h2>
+        <div class="body-text">
+          <p>En las redes corporativas distribuidas contemporáneas, el concepto tradicional de seguridad basado en firewalls perimetrales físicos ha perdido eficacia por completo. La proliferación de entornos híbridos y el teletrabajo determinan que la <strong>Gestión de Identidades y Accesos (IAM)</strong> sea el verdadero y único perímetro de control efectivo sobre el cual consolidar las operaciones de sistemas.</p>
+          
+          <p>Gobernar el ciclo de vida de una identidad —desde su provisión automatizada según el rol de recursos humanos hasta su revocación inmediata en caso de baja— evita la acumulación progresiva de privilegios innecesarios (*Privilege Creep*). La aplicación matemática del principio de <strong>Mínimo Privilegio</strong> asegura que los ingenieros, administradores y aplicaciones dispongan únicamente de los accesos mínimos contextuales necesarios para cumplir su función, reduciendo la superficie interna ante amenazas avanzadas.</p>
+          
+          <div class="defensa-box-warning">
+            <strong>⚠️ Riesgo Crítico: Cuentas Privilegiadas Huérfanas y Accesos Heredados</strong>
+            <p>Mantener cuentas de administrador de dominio compartidas o permitir que los técnicos retengan permisos elevados de proyectos antiguos introduce vulnerabilidades severas en la infraestructura. Un único vector comprometido sobre una cuenta con privilegios mal acotados otorga visibilidad total al atacante para realizar movimientos laterales destructivos sobre los servidores centrales de producción.</p>
+          </div>
+          
+          <p>La centralización estricta del plano de control bajo directivas modernas de autenticación multifactor (MFA) obligatoria blinda las operaciones diarias, aislando los recursos sensibles de accesos no validados y facilitando trazas de auditoría forense continuas.</p>
+        </div>
+      </div>
+
+      <div class="block" id="s2">
+        <div class="block-meta">02 // Bastionado del Directorio <span class="defensa-badge-all">Active Directory</span></div>
+        <h2>Directivas de Endurecimiento para Microsoft Active Directory</h2>
+        <div class="body-text">
+          <p>El núcleo de identidades de la infraestructura local requiere un proceso constante de endurecimiento (*Hardening*) para neutralizar ataques dirigidos a las bases de seguridad distribuidas:</p>
+          
+          <ul>
+            <li><strong>Arquitectura Administrativa en Niveles (Tiering Model):</strong> Segmentación estricta de las credenciales de administración. Los administradores del Nivel 0 (Domain Admins) tienen prohibido iniciar sesión en estaciones de trabajo comunes o servidores de aplicaciones de niveles inferiores, bloqueando el robo de hashes de memoria (*Mimikatz*).</li>
+            <li><strong>Despliegue de LAPS (Local Administrator Password Solution):</strong> Automatización de la rotación aleatoria y cifrada de las contraseñas de las cuentas de administrador local de todos los servidores y equipos de la organización, almacenándolas de forma segura en atributos protegidos del propio directorio.</li>
+            <li><strong>Desactivación de Protocolos Heredados Inseguros:</strong> Inhabilitación definitiva de firmas SMB v1, autenticaciones NTLM débiles y resolución de nombres propensas a suplantación (*LLMNR / NetBIOS*), forzando el uso exclusivo de Kerberos securizado.</li>
+          </ul>
+          
+          <div class="defensa-box-success">
+            <strong>✅ Beneficio para las Operaciones Enterprise:</strong>
+            <p>Un Active Directory correctamente estructurado bajo el modelo de niveles reduce a valores mínimos la probabilidad de un compromiso total del dominio y estabiliza el comportamiento lógico de las directivas de grupo corporativas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="defensa-divider">
+        <span class="label"><span class="gear">⚙️</span> PLANO TÉCNICO · BASTIONADO DE MOTORES DE BASES DE DATOS <span class="gear">⚙️</span></span>
+      </div>
+
+      <div class="block" id="s3">
+        <div class="block-meta">03 // Aseguramiento de Datos Relacionales <span class="defensa-badge-tech">SQL SERVER · AUDIT · ENCRYPTION</span></div>
+        <h2>Aseguramiento Crítico y Gobierno en Microsoft SQL Server</h2>
+        <div class="body-text">
+          <p>El plano de control de accesos se extiende de forma nativa hacia las capas de datos, aplicando directivas estrictas sobre los motores relacionales de <strong>Microsoft SQL Server</strong> de producción:</p>
+          
+          <div class="defensa-box-tech">
+            <div style="margin-bottom: 22px;">
+              <strong style="color: #151915; font-size: 15.5px;">🔹 Aislamiento de Servicios y Cuentas de Servicio Administradas (gMSA)</strong>
+              <p style="margin: 6px 0 0 0; color: #3f3f3a;">Configuración de los motores de bases de datos e instancias de SQL Server haciendo uso de Cuentas de Servicio Administradas por Grupos (*gMSA*). Esto elimina la necesidad de gestionar contraseñas manuales para los servicios, delegando al Active Directory la rotación automática de claves criptográficas de 256 bits y quitando privilegios locales innecesarios en el servidor anfitrión.</p>
+            </div>
+
+            <div style="margin-bottom: 22px;">
+              <strong style="color: #151915; font-size: 15.5px;">🔹 Cifrado de Datos Transparente (TDE) y Auditoría Activa</strong>
+              <p style="margin: 6px 0 0 0; color: #3f3f3a;">Habilitación de *Transparent Data Encryption (TDE)* a nivel de base de datos para garantizar el cifrado en reposo de los archivos físicos (.mdf / .ldf) y copias de seguridad contra robos o accesos externos al sistema de archivos. En paralelo, se configuran especificaciones de *SQL Server Audit* para registrar de forma inalterable cualquier modificación en los esquemas o accesos a tablas reguladas críticas.</p>
+            </div>
+          </div>
+          
+          <p>La consolidación unificada de identidades corporativas federadas y el bastionado proactivo de repositorios de datos relacionales conforman la base de una infraestructura operativa segura. Este enfoque estratégico blinda la información crítica de la organización frente a incidentes internos y asegura la conformidad absoluta ante los marcos regulatorios internacionales de auditoría más estrictos.</p>
+        </div>
+      </div>
+
+      <!-- PIE DE AUTOR CORPORATIVO -->
+      <div class="defensa-foot">
+        <div class="defensa-author">
+          <div class="defensa-foot-label">Autor e Ingeniero del Dossier</div>
+          <div class="defensa-author-name">Miguel Ángel Carriazo <span>· Infrastructure & Cybersecurity Architect</span></div>
+          <p class="defensa-author-bio">Especialista senior con más de 25 años de trayectoria en el sector IT corporativo. Dedicado al diseño, optimización y gobierno de operaciones críticas automatizadas bajo estándares DevOps y marcos de trabajo internacionales de continuidad.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- COLUMNA DERECHA: FICHA DE CONTROL DIRECTIVA Y NAVEGACIÓN -->
+    <aside class="defensa-toc">
+      <div class="defensa-control">
+        <div class="title">Ficha de Identidades</div>
+        <table>
+            <tr><td class="label">Dimensión</td><td class="value">Identity Governance</td></tr>
+            <tr><td class="label">Core Identidades</td><td class="value">Active Directory</td></tr>
+            <tr><td class="label">Core Motores</td><td class="value highlight">SQL Server Enterprise</td></tr>
+            <tr><td class="label">Modelo Seguridad</td><td class="value">Tiering (Niveles 0/1/2)</td></tr>
+            <tr><td class="label">Cifrado Datos</td><td class="value">TDE Enabled</td></tr>
+            <tr><td class="label">Rotación Claves</td><td class="value">gMSA / LAPS Active</td></tr>
+        </table>
+      </div>
+
+      <div>
+        <div class="defensa-toc-label">Secciones de Consulta</div>
+        <nav class="defensa-toc-nav" id="artTocNav">
+          <a href="#s1" class="active">01. Identidad como Perímetro</a>
+          <a href="#s2">02. Bastionado de AD</a>
+          <a href="#s3">03. Gobierno SQL Server</a>
+        </nav>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Footer dinámico corporativo -->
+  <div id="footer-container"></div>
+
+</div>
+</div>
+
+<script src="../../js/menu.js"></script>
+<script src="../../js/footer.js"></script>
+
+<script>
+  var tocLinks = Array.from(document.querySelectorAll('.defensa-toc-nav a'));
+  var sections = tocLinks.map(a => document.querySelector(a.getAttribute('href')));
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          var id = '#' + entry.target.id;
+          tocLinks.forEach(a => {
+            if (a.getAttribute('href') === id) {
+              a.classList.add('active');
+            } else {
+              a.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    sections.forEach(function(s){ if (s) observer.observe(s); });
+  }
+</script>
+</body>
+</html>

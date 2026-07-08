@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Principios de diseño: Tier III no es un adjetivo, es una certificación | Arquitectura de CPD | Technology Advisory</title>
+<meta name="description" content="Decir que tu CPD es Tier III sin auditoría del Uptime Institute es marketing, no un hecho verificable. Qué define realmente cada nivel de disponibilidad.">
+<meta name="author" content="Miguel Ángel Carriazo">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#059669">
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<link rel="stylesheet" href="../../css/articulo-tecnico.css">
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/articulo-diagramas.css">
+
+    <!-- Parche automático de optimización móvil para Technology Advisory -->
+    <style>
+        @media (max-width: 1024px) {
+            .defensa-layout {
+                display: block !important;
+                padding: 0 4% 40px !important;
+            }
+            div[style*="padding: 16px 48px 0"], 
+            div[style*="padding: 16px 48px 0;"] {
+                padding: 16px 4% 0 !important;
+            }
+            div[style*="padding: 40px 48px 24px"], 
+            div[style*="padding: 40px 48px 24px;"] {
+                padding: 40px 4% 24px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card-wrapper ds-page">
+<div class="card">
+
+<div id="menu-container"></div>
+<div class="accent-bar" style="background:#059669;"></div>
+
+<div class="ds-meta">
+    <span><span class="dot" style="background:#059669;"></span>Technology Advisory // arquitectura</span>
+    <span>categoría: <strong>Arquitectura de CPD</strong></span>
+</div>
+
+<div style="padding: 16px 48px 0;">
+    <a href="../index.html?cat=arquitectura-cpd" class="defensa-btn-back" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Arquitectura de CPD</a>
+</div>
+
+<div style="padding: 40px 48px 24px; border-bottom: 1px solid #ededea;">
+    <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Especialidad · Arquitectura de CPD</div>
+    <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Principios de diseño: <span style="color:#059669;">Tier III no es un adjetivo, es una certificación</span></h1>
+    <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Decir que tu CPD es "Tier III" sin auditoría del Uptime Institute es marketing, no un hecho verificable. Qué define realmente cada nivel de disponibilidad, y por qué el eslabón más débil casi nunca es el que crees.</p>
+
+    <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>Principios CPD</span>
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>Lectura Avanzada (18 min)</span>
+    </div>
+</div>
+
+<div class="defensa-layout" style="display:grid; grid-template-columns:1fr 340px; gap:48px; align-items:start; padding:0 48px 40px;">
+    <div class="defensa-main" style="min-width:0;">
+
+        <!-- GRÁFICO 1: NIVELES TIER -->
+        <figure class="article-diagram" aria-label="Niveles Tier del Uptime Institute" onclick="toggleZoom(this)">
+            <div class="diagram-desktop">
+                <svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <rect width="900" height="430" rx="14" fill="#fafaf8"/>
+                    <text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Los 4 niveles Tier del Uptime Institute</text>
+                    <text x="40" y="66" font-size="12" fill="#77776f">disponibilidad certificada, no autodeclarada</text>
+                    <defs>
+                        <marker id="arrow-t" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#77776f"/>
+                        </marker>
+                    </defs>
+                    <rect x="40" y="100" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="70" cy="147" r="18" fill="#059669"/>
+                    <text x="70" y="153" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+                    <text x="100" y="135" font-size="15" font-weight="800" fill="#151915">Tier I</text>
+                    <text x="100" y="158" font-size="12" fill="#77776f">Sin redundancia, 99,67%</text>
+                    <text x="100" y="176" font-size="11" fill="#94a3b8">22h caída/año</text>
+                    <line x1="430" y1="147" x2="468" y2="147" stroke="#77776f" stroke-width="2" marker-end="url(#arrow-t)"/>
+                    <rect x="470" y="100" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="500" cy="147" r="18" fill="#059669"/>
+                    <text x="500" y="153" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+                    <text x="530" y="135" font-size="15" font-weight="800" fill="#151915">Tier II</text>
+                    <text x="530" y="158" font-size="12" fill="#77776f">Redundancia parcial, 99,74%</text>
+                    <text x="530" y="176" font-size="11" fill="#94a3b8">23h caída/año</text>
+                    <line x1="430" y1="212" x2="468" y2="212" stroke="#77776f" stroke-width="2" marker-end="url(#arrow-t)"/>
+                    <rect x="40" y="230" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="70" cy="277" r="18" fill="#059669"/>
+                    <text x="70" y="283" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+                    <text x="100" y="265" font-size="15" font-weight="800" fill="#151915">Tier III</text>
+                    <text x="100" y="288" font-size="12" fill="#77776f">Concurrentemente mantenible, 99,98%</text>
+                    <text x="100" y="306" font-size="11" fill="#94a3b8">1,6h caída/año</text>
+                    <line x1="430" y1="277" x2="468" y2="277" stroke="#77776f" stroke-width="2" marker-end="url(#arrow-t)"/>
+                    <rect x="470" y="230" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="500" cy="277" r="18" fill="#059669"/>
+                    <text x="500" y="283" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+                    <text x="530" y="265" font-size="15" font-weight="800" fill="#151915">Tier IV</text>
+                    <text x="530" y="288" font-size="12" fill="#77776f">Tolerante a fallo, 99,99%</text>
+                    <text x="530" y="306" font-size="11" fill="#94a3b8">0,8h caída/año</text>
+                    <defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+                    <rect x="40" y="360" width="820" height="46" rx="14" fill="url(#gbar)" opacity=".95"/>
+                    <text x="68" y="388" font-size="13" font-weight="700" fill="#fff">Cada Tier exige certificación real del Uptime Institute, no autoevaluación</text>
+                </svg>
+            </div>
+            <div class="diagram-mobile">
+                <svg viewBox="0 0 330 480" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <rect width="330" height="480" rx="12" fill="#fafaf8"/>
+                    <text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Los 4 niveles Tier</text>
+                    <rect x="18" y="60" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="44" cy="94" r="14" fill="#059669"/>
+                    <text x="44" y="99" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+                    <text x="68" y="85" font-size="14" font-weight="800" fill="#151915">Tier I</text>
+                    <text x="68" y="104" font-size="11" fill="#77776f">Sin redundancia, 99,67%</text>
+                    <text x="68" y="120" font-size="10" fill="#94a3b8">22h/año</text>
+                    <line x1="165" y1="128" x2="165" y2="148" stroke="#77776f" stroke-width="2"/>
+                    <polygon points="160,146 165,156 170,146" fill="#77776f"/>
+                    <rect x="18" y="158" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="44" cy="192" r="14" fill="#059669"/>
+                    <text x="44" y="197" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+                    <text x="68" y="183" font-size="14" font-weight="800" fill="#151915">Tier II</text>
+                    <text x="68" y="202" font-size="11" fill="#77776f">Redundancia parcial</text>
+                    <text x="68" y="218" font-size="10" fill="#94a3b8">23h/año</text>
+                    <line x1="165" y1="226" x2="165" y2="246" stroke="#77776f" stroke-width="2"/>
+                    <polygon points="160,244 165,254 170,244" fill="#77776f"/>
+                    <rect x="18" y="256" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="44" cy="290" r="14" fill="#059669"/>
+                    <text x="44" y="295" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+                    <text x="68" y="281" font-size="14" font-weight="800" fill="#151915">Tier III</text>
+                    <text x="68" y="300" font-size="11" fill="#77776f">Mantenible concurrente</text>
+                    <text x="68" y="316" font-size="10" fill="#94a3b8">1,6h/año</text>
+                    <line x1="165" y1="324" x2="165" y2="344" stroke="#77776f" stroke-width="2"/>
+                    <polygon points="160,342 165,352 170,342" fill="#77776f"/>
+                    <rect x="18" y="354" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="44" cy="388" r="14" fill="#059669"/>
+                    <text x="44" y="393" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+                    <text x="68" y="379" font-size="14" font-weight="800" fill="#151915">Tier IV</text>
+                    <text x="68" y="398" font-size="11" fill="#77776f">Tolerante a fallo</text>
+                    <text x="68" y="414" font-size="10" fill="#94a3b8">0,8h/año</text>
+                    <defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+                    <rect x="18" y="435" width="294" height="32" rx="10" fill="url(#gm)"/>
+                    <text x="32" y="455" font-size="11" font-weight="700" fill="#fff">Cada Tier exige certificación Uptime Institute</text>
+                </svg>
+            </div>
+            <figcaption class="diagram-caption">Figura 1: Los cuatro niveles Tier del Uptime Institute y su disponibilidad asociada.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- GRÁFICO 2: REDUNDANCIA N, N+1, 2N -->
+        <figure class="article-diagram" aria-label="Redundancia N, N+1, 2N" onclick="toggleZoom(this)">
+            <svg viewBox="0 0 820 280" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect width="820" height="280" rx="14" fill="#fafaf8"/>
+                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Redundancia: N, N+1, 2N</text>
+                <text x="40" y="58" font-size="12" fill="#77776f">el matiz que separa diseño de marketing</text>
+                <rect x="40" y="80" width="220" height="60" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="150" y="102" font-size="13" font-weight="700" fill="#b45309" text-anchor="middle">N</text>
+                <text x="150" y="120" font-size="11" fill="#78350f" text-anchor="middle">Capacidad mínima, sin margen</text>
+                <text x="150" y="135" font-size="10" fill="#94a3b8" text-anchor="middle">No tolera fallos</text>
+                <rect x="300" y="80" width="220" height="60" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="410" y="102" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">N+1</text>
+                <text x="410" y="120" font-size="11" fill="#151915" text-anchor="middle">Capacidad + un componente de reserva</text>
+                <text x="410" y="135" font-size="10" fill="#94a3b8" text-anchor="middle">Tolera 1 fallo</text>
+                <rect x="560" y="80" width="220" height="60" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="670" y="102" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">2N</text>
+                <text x="670" y="120" font-size="11" fill="#151915" text-anchor="middle">Dos caminos completos</text>
+                <text x="670" y="135" font-size="10" fill="#94a3b8" text-anchor="middle">Cada uno soporta la carga</text>
+                <rect x="40" y="170" width="740" height="60" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                <text x="60" y="192" font-size="11" font-weight="600" fill="#151915">La diferencia entre N+1 y 2N es crítica para el mantenimiento concurrente</text>
+                <text x="60" y="210" font-size="10" fill="#94a3b8">Tier III exige N+1 como mínimo. Tier IV exige 2N.</text>
+            </svg>
+            <figcaption class="diagram-caption">Figura 2: Los tres niveles de redundancia en infraestructura de CPD.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- GRÁFICO 3: CADENA DE REFRIGERACIÓN -->
+        <figure class="article-diagram" aria-label="Cadena de refrigeración" onclick="toggleZoom(this)">
+            <svg viewBox="0 0 820 240" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect width="820" height="240" rx="14" fill="#fafaf8"/>
+                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Cadena de refrigeración: el eslabón olvidado</text>
+                <text x="40" y="58" font-size="12" fill="#77776f">un fallo de climatización puede apagar equipos en minutos</text>
+                <rect x="40" y="80" width="170" height="50" rx="6" fill="#059669"/>
+                <text x="125" y="100" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Climatización</text>
+                <text x="125" y="118" font-size="10" fill="#fff" text-anchor="middle">N+1 redundante</text>
+                <line x1="210" y1="105" x2="240" y2="105" stroke="#77776f" stroke-width="2"/>
+                <rect x="242" y="80" width="170" height="50" rx="6" fill="#059669"/>
+                <text x="327" y="100" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Pasillos</text>
+                <text x="327" y="118" font-size="10" fill="#fff" text-anchor="middle">Caliente/Frío sellado</text>
+                <line x1="412" y1="105" x2="442" y2="105" stroke="#77776f" stroke-width="2"/>
+                <rect x="444" y="80" width="170" height="50" rx="6" fill="#059669"/>
+                <text x="529" y="100" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Monitorización</text>
+                <text x="529" y="118" font-size="10" fill="#fff" text-anchor="middle">Sensores por pasillo</text>
+                <line x1="614" y1="105" x2="644" y2="105" stroke="#77776f" stroke-width="2"/>
+                <rect x="646" y="80" width="140" height="50" rx="6" fill="#059669"/>
+                <text x="716" y="100" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Contingencia</text>
+                <text x="716" y="118" font-size="10" fill="#fff" text-anchor="middle">Plan documentado</text>
+                <rect x="40" y="160" width="740" height="40" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="60" y="180" font-size="12" font-weight="700" fill="#b45309">⚠️ Pasillos mal sellados generan puntos calientes locales que ningún sensor central detecta</text>
+            </svg>
+            <figcaption class="diagram-caption">Figura 3: La cadena completa de refrigeración — cada eslabón es necesario.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- GRÁFICO 4: ESLABÓN MÁS DÉBIL -->
+        <figure class="article-diagram" aria-label="Eslabón más débil" onclick="toggleZoom(this)">
+            <svg viewBox="0 0 820 220" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect width="820" height="220" rx="14" fill="#fafaf8"/>
+                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">El eslabón más débil casi nunca es el que crees</text>
+                <text x="40" y="58" font-size="12" fill="#77776f">los puntos de fallo más comunes en CPD</text>
+                <rect x="40" y="80" width="170" height="40" rx="6" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="125" y="100" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Generador</text>
+                <text x="125" y="114" font-size="10" fill="#94a3b8" text-anchor="middle">Bien diseñado</text>
+                <rect x="230" y="80" width="170" height="40" rx="6" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="315" y="100" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">SAI</text>
+                <text x="315" y="114" font-size="10" fill="#94a3b8" text-anchor="middle">Bien diseñado</text>
+                <rect x="420" y="80" width="170" height="40" rx="6" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="505" y="100" font-size="12" font-weight="600" fill="#059669" text-anchor="middle">Refrigeración</text>
+                <text x="505" y="114" font-size="10" fill="#94a3b8" text-anchor="middle">A menudo olvidado</text>
+                <rect x="610" y="80" width="170" height="40" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="695" y="100" font-size="12" font-weight="700" fill="#b45309" text-anchor="middle">Conectividad</text>
+                <text x="695" y="114" font-size="10" fill="#78350f" text-anchor="middle">ESLABÓN MÁS DÉBIL</text>
+                <rect x="40" y="145" width="740" height="40" rx="6" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                <text x="60" y="165" font-size="11" fill="#151915">El eslabón más débil real suele ser el único proveedor de conectividad o el operario</text>
+                <text x="60" y="180" font-size="10" fill="#94a3b8">Mapea cada dependencia — no solo las obvias (energía, refrigeración) — también las humanas</text>
+            </svg>
+            <figcaption class="diagram-caption">Figura 4: El eslabón más débil casi nunca es el que crees.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- CONTENIDO -->
+        <div class="block" id="s1">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Tier III de marketing vs Tier III certificado</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p><strong>El Uptime Institute certifica CPDs, no autodeclaraciones.</strong> Cuando un proveedor dice "nuestro CPD es Tier III" sin mencionar un certificado con número de referencia, está usando el término como adjetivo de marketing, no como el estándar técnico específico que define exactamente qué redundancia, qué caminos de distribución y qué capacidad de mantenimiento concurrente exige.</p>
+                <p>La certificación Tier no es un logro que se obtiene una vez y se olvida. Requiere renovación periódica y verificación de que el CPD sigue cumpliendo los criterios. Un Tier III certificado hace 5 años sin renovación puede no serlo hoy, especialmente si se han hecho cambios en la infraestructura.</p>
+                <div class="callout"><strong>Pregunta que separa el marketing de la realidad:</strong> ¿puedes mostrarme el certificado del Uptime Institute con su número de referencia, o es una autoevaluación interna?</div>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+
+        <div class="block" id="s2">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Redundancia N, N+1, 2N: el matiz que importa de verdad</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>N es la capacidad mínima necesaria, sin margen. N+1 añade un componente de reserva sobre la necesidad mínima — tolera un fallo, pero no mantenimiento simultáneo a un fallo. 2N duplica completamente la infraestructura crítica — dos caminos independientes de principio a fin, cada uno capaz de soportar la carga completa por sí solo.</p>
+                <p>La diferencia entre N+1 y 2N es crítica para el mantenimiento concurrente. Con N+1, no puedes hacer mantenimiento de un componente mientras otro está fallando. Con 2N, puedes perder un camino completo sin perder servicio.</p>
+                <table class="matrix">
+                    <thead><tr><th>Nivel de redundancia</th><th>Tolera</th><th>No tolera</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>N</strong></td><td>Operación normal</td><td>Cualquier fallo o mantenimiento</td></tr>
+                        <tr><td><strong>N+1</strong></td><td>Un fallo de componente</td><td>Fallo durante mantenimiento planificado</td></tr>
+                        <tr><td><strong>2N</strong></td><td>Fallo completo de un camino</td><td>—prácticamente todo, a mayor coste</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+
+        <div class="block" id="s3">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Refrigeración: el sistema que nadie mira hasta que falla</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>La energía se diseña con generadores, SAIs y redundancia de acometidas — recibe atención de sobra. La refrigeración, en cambio, se subestima con frecuencia: un fallo de climatización en un CPD con densidad de potencia alta puede provocar apagado térmico de equipos en minutos, no horas.</p>
+                <p>El diseño de refrigeración defendible incluye redundancia N+1 mínima en las unidades de climatización, monitorización de temperatura por pasillo (no solo un sensor central), y un plan de contingencia documentado para el escenario de pérdida parcial de refrigeración.</p>
+                <div class="callout warn"><strong>Riesgo subestimado:</strong> pasillos calientes/fríos mal sellados pueden generar puntos calientes locales que ningún sensor central detecta hasta que un equipo concreto empieza a fallar por temperatura.</div>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+
+        <div class="block" id="s4">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El eslabón más débil casi nunca es el que crees</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>Un CPD con generadores 2N, SAIs redundantes y refrigeración N+1 puede seguir teniendo un único punto de fallo en el sitio menos esperado: un único circuito de red hacia el exterior, un único proveedor de conectividad, o un único operario con la llave física de la sala eléctrica.</p>
+                <p>El ejercicio de identificar el eslabón más débil real exige mapear cada dependencia, no solo las obvias (energía, refrigeración) — también las administrativas y humanas: ¿quién tiene autoridad para actuar en una emergencia a las 3 de la madrugada, y está esa persona realmente disponible?</p>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+
+        <div class="block" id="s5">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Certificar o no certificar: una decisión de negocio</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>La certificación formal del Uptime Institute tiene un coste significativo en tiempo y dinero, y no siempre se justifica — depende de si tus clientes o reguladores la exigen contractualmente, o si el diferencial de disponibilidad entre Tier II bien operado y Tier III certificado realmente mueve tu negocio.</p>
+                <p>Lo que sí es defendible siempre, con o sin certificación formal, es diseñar y documentar tu arquitectura según los criterios técnicos de cada Tier — de forma que sepas honestamente en qué nivel estás, sin necesidad de usar el término como eslogan comercial sin respaldo verificable.</p>
+            </div>
+        </div>
+
+        <!-- PIE DE AUTOR -->
+        <div class="defensa-foot">
+            <div class="defensa-author">
+                <div class="defensa-foot-label">Autor</div>
+                <div class="defensa-author-name">Miguel Ángel Carriazo</div>
+                <p class="defensa-author-bio">vCISO &amp; Arquitecto de Infraestructura con más de 25 años diseñando, asegurando y operando sistemas críticos. ISO 27001 &amp; 42001 Lead Auditor.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+        <div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+            <div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+            <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Tier I</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">99,67%</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Tier II</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">99,74%</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Tier III</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">99,98%</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Tier IV</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">99,99%</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Redundancia</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">N / N+1 / 2N</td></tr>
+            </table>
+        </div>
+        <div>
+            <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+            <nav class="defensa-toc-nav" id="artTocNav2" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+                <a href="#s1" class="active" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px; color:#059669; border-left:2px solid #059669; font-weight:700;">01. Tier real</a>
+                <a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Redundancia</a>
+                <a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Refrigeración</a>
+                <a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Eslabón débil</a>
+                <a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Certificar</a>
+            </nav>
+        </div>
+    </aside>
+
+</div>
+
+<!-- ARTÍCULOS RELACIONADOS -->
+<div class="related-section">
+    <div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+    <div class="related-grid">
+        <a class="related-card" href="arquitectura-cpd-controles-evidencias.html">
+            <div class="r-meta">Arquitectura de CPD · Controles</div>
+            <div class="r-title">Controles y evidencias: el generador que arranca pero no asume carga</div>
+            <div class="r-desc">La evidencia de resiliencia física no es que el generador exista — es que se ha probado bajo carga real.</div>
+            <span class="r-link">Leer artículo →</span>
+        </a>
+        <a class="related-card" href="arquitectura-cpd-madurez-roadmap.html">
+            <div class="r-meta">Arquitectura de CPD · Madurez</div>
+            <div class="r-title">Madurez y roadmap: del armario con un servidor al CPD Tier III operado</div>
+            <div class="r-desc">Los cuatro niveles reales de madurez en infraestructura física de CPD.</div>
+            <span class="r-link">Leer artículo →</span>
+        </a>
+        <a class="related-card" href="arquitectura-cpd-modelo-operativo.html">
+            <div class="r-meta">Arquitectura de CPD · Modelo Operativo</div>
+            <div class="r-title">Modelo operativo: quién entra, quién toca, y quién responde a las 3 AM</div>
+            <div class="r-desc">Un CPD con excelente diseño físico puede seguir siendo vulnerable si el control de acceso físico es una lista en Excel.</div>
+            <span class="r-link">Leer artículo →</span>
+        </a>
+    </div>
+</div>
+
+<div id="footer-container"></div>
+
+</div>
+</div>
+
+<script src="../../js/menu.js"></script>
+<script src="../../js/footer.js"></script>
+<script src="../../js/main.js"></script>
+
+<script>
+function toggleZoom(element) {
+    if (element.classList.contains('zoomed')) {
+        element.classList.remove('zoomed');
+        document.querySelector('.zoom-overlay')?.classList.remove('active');
+    } else {
+        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+        element.classList.add('zoomed');
+        let overlay = document.querySelector('.zoom-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'zoom-overlay';
+            overlay.onclick = function() {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                overlay.classList.remove('active');
+            };
+            document.body.appendChild(overlay);
+        }
+        overlay.classList.add('active');
+    }
+}
+</script>
+
+</body>
+</html>

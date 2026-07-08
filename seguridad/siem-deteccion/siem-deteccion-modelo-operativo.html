@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Modelo operativo: triaje de alertas antes de que se acumulen sin revisar | SIEM y Detección | Technology Advisory</title><meta name="description" content="Una alerta que nadie responde es peor que no tener alerta: da la falsa sensación de que alguien vigila. El proceso de triaje es lo que convierte una alerta"><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
+<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // seguridad</span><span>categoría: <strong>SIEM y Detección</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · SIEM y Detección</div><h1 class="article-title">Modelo operativo: triaje de alertas antes de que se acumulen sin revisar</h1><p class="article-lead">Una alerta que nadie responde es peor que no tener alerta: da la falsa sensación de que alguien vigila. El proceso de triaje es lo que convierte una alerta en una decisión.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de SIEM y Detección"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="900" height="410" rx="14" fill="#fafaf8"/>
+<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Proceso de triaje de alertas</text>
+<text x="40" y="66" font-size="12" fill="#77776f">de la señal a la decisión, en minutos, no días</text>
+<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Enriquecimiento automático</text>
+<text x="58" y="163" font-size="11" fill="#77776f">Contexto del usuario y activo</text>
+<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Clasificación</text>
+<text x="488" y="163" font-size="11" fill="#77776f">Falso positivo, sospechoso, confirmado</text>
+<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Escalado</text>
+<text x="58" y="283" font-size="11" fill="#77776f">Al analista o al playbook correcto</text>
+<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Cierre documentado</text>
+<text x="488" y="283" font-size="11" fill="#77776f">Con motivo, no solo "resuelto"</text>
+<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Si el equipo no puede hacer triaje de todas las alertas en el turno, hay demasiado ruido</text>
+</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="330" height="438" rx="12" fill="#fafaf8"/>
+<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Proceso de triaje de alertas</text>
+<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="89" r="13" fill="#059669"/>
+<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Enriquecimiento automático</text>
+<text x="64" y="102" font-size="11" fill="#77776f">Contexto del usuario y activo</text>
+<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="159" r="13" fill="#059669"/>
+<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Clasificación</text>
+<text x="64" y="172" font-size="11" fill="#77776f">Falso positivo, sospechoso,</text>
+<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="229" r="13" fill="#059669"/>
+<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Escalado</text>
+<text x="64" y="242" font-size="11" fill="#77776f">Al analista o al playbook</text>
+<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="299" r="13" fill="#059669"/>
+<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Cierre documentado</text>
+<text x="64" y="312" font-size="11" fill="#77776f">Con motivo, no solo "resuelto"</text>
+<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
+<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Si el equipo no puede hacer triaje de</text>
+<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">todas las alertas en el turno, hay</text>
+<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">demasiado ruido</text>
+</svg></div></figure><div class="toc-mini"><a href="#contexto">1. La alerta que nadie respondió</a><a href="#arquitectura">2. Enriquecimiento automático de contexto</a><a href="#seguridad">3. Clasificación con criterio, no a ciegas</a><a href="#operacion">4. Escalado según severidad real</a><a href="#roadmap">5. Medir el triaje, no solo hacerlo</a></div><h2 id="contexto">1. La alerta que nadie respondió</h2><div class="body-text"><p><strong>Una alerta que se genera y se acumula en la consola sin que nadie la revise es peor que no tener detección — da la falsa sensación de vigilancia mientras el riesgo real sigue sin gestionar.</strong> Sin un proceso de triaje definido, cualquier cantidad de alertas es equivalente a ninguna.</p></div><h2 id="arquitectura">2. Enriquecimiento automático de contexto antes de que lo vea un humano</h2><div class="body-text"><p>El enriquecimiento automático (quién es el usuario, qué hace normalmente, está en una lista de cuentas de servicio, el IP está en una lista de reputación) ahorra al analista el tiempo de buscar ese contexto manualmente en cinco consolas distintas, acelerando el triaje real.</p></div><h2 id="seguridad">3. Clasificación con criterio explícito, no a ciegas por intuición</h2><div class="body-text"><p>Cada alerta debería clasificarse en categorías claras —falso positivo, evento benigno, sospechoso, confirmado— con criterios documentados para cada categoría, de forma que distintos analistas lleguen a conclusiones consistentes ante la misma señal.</p></div><h2 id="operacion">4. Escalado según severidad real, no según quién esté disponible</h2><div class="body-text"><p>Un evento sospechoso va al analista de nivel apropiado según su severidad definida, no según quién esté conectado en ese momento. El escalado sin criterio de severidad genera tanto sobrecarga en momentos de poco personal como subutilización cuando hay equipo de sobra.</p></div><h2 id="roadmap">5. Medir el triaje, no solo hacerlo</h2><div class="body-text"><p>Si el equipo no puede completar el triaje de todas las alertas generadas en un turno, hay demasiadas alertas mal calibradas o insuficiente equipo — no hay otra explicación. Medir el porcentaje de alertas triadas dentro del turno revela objetivamente si el sistema es sostenible.</p></div><a class="back" href="../index.html?cat=siem-deteccion">← Volver a SIEM y Detección</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. La alerta que nadie respondió</a><a href="#arquitectura">2. Enriquecimiento automático de contexto</a><a href="#seguridad">3. Clasificación con criterio, no a ciegas</a><a href="#operacion">4. Escalado según severidad real</a><a href="#roadmap">5. Medir el triaje, no solo hacerlo</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>

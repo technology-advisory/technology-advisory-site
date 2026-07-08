@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Principios de diseño: RTO y RPO no son términos técnicos, son decisiones de negocio | Continuidad de Negocio | Technology Advisory</title><meta name="description" content="Definir RTO y RPO sin involucrar a negocio es que IT decida cuánto puede permitirse perder la empresa — una decisión que no le corresponde a IT tomar en so"><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
+<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // operaciones</span><span>categoría: <strong>Continuidad de Negocio</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Continuidad de Negocio</div><h1 class="article-title">Principios de diseño: RTO y RPO no son términos técnicos, son decisiones de negocio</h1><p class="article-lead">Definir RTO y RPO sin involucrar a negocio es que IT decida cuánto puede permitirse perder la empresa — una decisión que no le corresponde a IT tomar en solitario.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Continuidad de Negocio"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="900" height="410" rx="14" fill="#fafaf8"/>
+<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">RTO y RPO: dos preguntas de negocio</text>
+<text x="40" y="66" font-size="12" fill="#77776f">no las decide IT solo, las decide junto al negocio</text>
+<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">RTO</text>
+<text x="58" y="163" font-size="11" fill="#77776f">¿Cuánto tiempo sin servicio es tolerable?</text>
+<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">RPO</text>
+<text x="488" y="163" font-size="11" fill="#77776f">¿Cuánto dato reciente puedo permitirme perder?</text>
+<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Coste de cumplir el objetivo</text>
+<text x="58" y="283" font-size="11" fill="#77776f">Cuanto más bajo, más caro</text>
+<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Decisión conjunta</text>
+<text x="488" y="283" font-size="11" fill="#77776f">IT propone, negocio decide y paga</text>
+<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Un RTO de 15 minutos sin presupuesto para sostenerlo es una promesa que no se puede cumplir</text>
+</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="330" height="438" rx="12" fill="#fafaf8"/>
+<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">RTO y RPO: dos preguntas de negocio</text>
+<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="89" r="13" fill="#059669"/>
+<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">RTO</text>
+<text x="64" y="102" font-size="11" fill="#77776f">¿Cuánto tiempo sin servicio es</text>
+<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="159" r="13" fill="#059669"/>
+<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">RPO</text>
+<text x="64" y="172" font-size="11" fill="#77776f">¿Cuánto dato reciente puedo</text>
+<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="229" r="13" fill="#059669"/>
+<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Coste de cumplir el</text>
+<text x="64" y="242" font-size="11" fill="#77776f">Cuanto más bajo, más caro</text>
+<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="299" r="13" fill="#059669"/>
+<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Decisión conjunta</text>
+<text x="64" y="312" font-size="11" fill="#77776f">IT propone, negocio decide y</text>
+<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
+<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Un RTO de 15 minutos sin presupuesto para</text>
+<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">sostenerlo es una promesa que no se puede</text>
+<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">cumplir</text>
+</svg></div></figure><div class="toc-mini"><a href="#contexto">1. RTO decidido solo por IT</a><a href="#arquitectura">2. RTO: cuánto tiempo sin servicio</a><a href="#seguridad">3. RPO: cuánto dato se puede perder</a><a href="#operacion">4. El coste crece exponencialmente al bajar los objetivos</a><a href="#roadmap">5. BIA como ejercicio conjunto, no solo técnico</a></div><h2 id="contexto">1. RTO decidido solo por IT, sin que negocio sepa el coste real</h2><div class="body-text"><p><strong>Cuando IT define unilateralmente que el RTO de un sistema es de 4 horas, sin involucrar a quien realmente conoce el impacto de negocio de esa indisponibilidad, está tomando una decisión que no le corresponde en solitario — y probablemente sin el presupuesto necesario para sostenerla.</strong></p></div><h2 id="arquitectura">2. RTO: cuánto tiempo de indisponibilidad es realmente tolerable</h2><div class="body-text"><p>El Recovery Time Objective responde a la pregunta "¿cuánto tiempo puede estar caído este sistema antes de que el impacto sea inaceptable?" — y esa respuesta depende del negocio (ventas perdidas, incumplimiento contractual, impacto reputacional), no de la dificultad técnica de recuperarlo rápido.</p></div><h2 id="seguridad">3. RPO: cuánto dato reciente se puede permitir perder</h2><div class="body-text"><p>El Recovery Point Objective define cuánta pérdida de datos recientes es aceptable en una recuperación — si el RPO es de 4 horas, significa que en el peor escenario se pueden perder hasta 4 horas de transacciones desde el último punto de recuperación válido. Para un sistema transaccional financiero, esa cifra puede ser inaceptable; para un sistema de reporting interno, puede ser perfectamente razonable.</p></div><h2 id="operacion">4. El coste crece exponencialmente cuanto más bajos son los objetivos</h2><div class="body-text"><p>Un RTO de 4 horas es alcanzable con backup tradicional y restauración manual. Un RTO de 15 minutos exige replicación activa, failover automatizado y pruebas constantes — un salto de coste e complejidad operativa mucho mayor que la simple diferencia numérica entre los dos objetivos sugiere.</p></div><h2 id="roadmap">5. El BIA como ejercicio conjunto entre IT y negocio, no solo técnico</h2><div class="body-text"><p>El Business Impact Analysis debería ejecutarse con participación real de las áreas de negocio, no como un cuestionario técnico que IT rellena en solitario. Solo así los RTO/RPO resultantes reflejan el impacto real, y el presupuesto asociado se aprueba con conocimiento genuino de lo que se está comprando.</p></div><a class="back" href="../index.html?cat=continuidad-negocio">← Volver a Continuidad de Negocio</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. RTO decidido solo por IT</a><a href="#arquitectura">2. RTO: cuánto tiempo sin servicio</a><a href="#seguridad">3. RPO: cuánto dato se puede perder</a><a href="#operacion">4. El coste crece exponencialmente al bajar los objetivos</a><a href="#roadmap">5. BIA como ejercicio conjunto, no solo técnico</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>

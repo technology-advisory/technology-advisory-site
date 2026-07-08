@@ -1,311 +1,412 @@
-/* Menu.js - Technology Advisory */
+/* Menu.js - Technology Advisory - Dossier técnico + submenús por área */
 
 document.addEventListener("DOMContentLoaded", function() {
     const menuContainer = document.getElementById("menu-container");
     if (!menuContainer) return;
 
-    // Detectar la profundidad de directorios para ajustar las rutas relativas de forma automática
-    const basePath = window.location.pathname.includes('/sobre-mi/') || 
-                     window.location.pathname.includes('/legal/') ? '../' : '';
+    const currentPath = window.location.pathname;
+    const pathSegments = currentPath.split('/').filter(seg => seg.length > 0 && !seg.includes('.html'));
+    const depth = pathSegments.length;
+    let basePath = '';
+    if (depth > 0) { basePath = '../'.repeat(depth); }
+
+    /* --- Sección activa --- */
+    let active = 'inicio';
+    if (/\/arquitectura(\/|$)/.test(currentPath)) active = 'arquitectura';
+    else if (/\/seguridad(\/|$)/.test(currentPath)) active = 'seguridad';
+    else if (/\/operaciones(\/|$)/.test(currentPath)) active = 'operaciones';
+    else if (/\/gobernanza(\/|$)/.test(currentPath)) active = 'gobernanza';
+    else if (/\/sobre-mi(\/|$)/.test(currentPath)) active = 'sobre-mi';
+    else if (/\/legal(\/|$)/.test(currentPath)) active = 'legal';
+    const A = (k) => (active === k ? ' active' : '');
+
+    /* --- Subcategorías por área --- */
+    const subs = {
+        arquitectura: [
+            { num: '1.1', name: 'Alta Disponibilidad', slug: 'alta-disponibilidad' },
+            { num: '1.2', name: 'Cloud Híbrido', slug: 'cloud-hibrido' },
+            { num: '1.3', name: 'Infraestructura como Código', slug: 'infraestructura-codigo' },
+            { num: '1.4', name: 'Diseño de Red', slug: 'diseno-red' },
+            { num: '1.5', name: 'Almacenamiento y Datos', slug: 'almacenamiento-datos' },
+            { num: '1.6', name: 'Virtualización y Contenedores', slug: 'virtualizacion-contenedores' },
+            { num: '1.7', name: 'Capacidad y Rendimiento', slug: 'capacidad-rendimiento' },
+            { num: '1.8', name: 'Arquitectura de CPD', slug: 'arquitectura-cpd' }
+        ],
+        seguridad: [
+            { num: '2.1', name: 'Zero Trust', slug: 'zero-trust' },
+            { num: '2.2', name: 'Security by Design', slug: 'security-design' },
+            { num: '2.3', name: 'Auditoría y Cumplimiento', slug: 'iso-compliance' },
+            { num: '2.4', name: 'Firewalls y Perímetro', slug: 'firewalls-perimetro' },
+            { num: '2.5', name: 'SIEM y Detección', slug: 'siem-deteccion' },
+            { num: '2.6', name: 'Gestión de Vulnerabilidades', slug: 'gestion-vulnerabilidades' },
+            { num: '2.7', name: 'Respuesta a Incidentes', slug: 'respuesta-incidentes' },
+            { num: '2.8', name: 'Cifrado e Identidad Digital', slug: 'cifrado-identidad-digital' }
+        ],
+        operaciones: [
+            { num: '3.1', name: 'Automatización y Orquestación', slug: 'automatizacion-orquestacion' },
+            { num: '3.2', name: 'Continuidad de Negocio', slug: 'continuidad-negocio' },
+            { num: '3.3', name: 'Gobierno de Identidades', slug: 'gobierno-identidades' },
+            { num: '3.4', name: 'Monitorización y Observabilidad', slug: 'monitorizacion-observabilidad' },
+            { num: '3.5', name: 'Gestión de Cambios', slug: 'gestion-cambios' },
+            { num: '3.6', name: 'Backup y Recuperación', slug: 'backup-recuperacion' },
+            { num: '3.7', name: 'Patch Management', slug: 'patch-management' },
+            { num: '3.8', name: 'Gestión de Incidencias', slug: 'gestion-incidencias' }
+        ],
+        gobernanza: [
+            { num: '4.1', name: 'Riesgo Tecnológico', slug: 'riesgo-tecnologico' },
+            { num: '4.2', name: 'Gobierno TI', slug: 'gobierno-ti' },
+            { num: '4.3', name: 'Gobierno de IA', slug: 'gobierno-ia' },
+            { num: '4.4', name: 'Marcos Regulatorios', slug: 'marcos-regulatorios' },
+            { num: '4.5', name: 'Gestión de Terceros', slug: 'gestion-terceros' },
+            { num: '4.6', name: 'Políticas y Normativa Interna', slug: 'politicas-normativa' },
+            { num: '4.7', name: 'Auditoría y Control Interno', slug: 'auditoria-control-interno' },
+            { num: '4.8', name: 'Gobierno del Dato', slug: 'gobierno-dato' }
+        ]
+    };
+
+    function buildSubItems(area) {
+        return subs[area].map(s =>
+            `<a class="sub-item" href="${basePath}${area}/index.html?cat=${s.slug}">
+                <span class="sub-num">${s.num}</span>
+                <span class="sub-name">${s.name}</span>
+            </a>`
+        ).join('');
+    }
+
+    function areaItem(key, label, svgPath, devFlag) {
+        const dev = devFlag ? ' data-dev="true"' : '';
+        return `
+            <li class="has-sub">
+                <a href="${basePath}${key}/index.html" class="nav-link${A(key)}"${dev}>
+                    <svg viewBox="0 0 24 24">${svgPath}</svg>
+                    ${label}
+                    <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </a>
+                <div class="sub-panel">
+                    <div class="sub-header">
+                        <span class="sub-area-label">${label}</span>
+                        <a href="${basePath}${key}/index.html" class="sub-see-all">Ver todos →</a>
+                    </div>
+                    <div class="sub-grid">${buildSubItems(key)}</div>
+                </div>
+            </li>`;
+    }
 
     menuContainer.innerHTML = `
         <style>
             .site-nav {
-                border-bottom: 1px solid #e2e8f0;
-                padding: 0.8rem 2rem;
+                border-bottom: 1px solid var(--border);
+                padding: 0;
                 background: #ffffff;
                 position: sticky;
                 top: 0;
                 z-index: 100;
             }
-
             .nav-container {
-                max-width: 1200px;
+                max-width: 1120px;
                 margin: 0 auto;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 gap: 1rem;
+                padding: 0.85rem 2rem;
             }
-
             .logo-link {
-                font-size: 1.2rem;
+                font-family: var(--font-display);
+                font-size: 1.05rem;
                 font-weight: 700;
-                color: #0f172a;
+                color: var(--ink);
                 text-decoration: none;
                 display: flex;
                 align-items: center;
-                gap: 0.6rem;
+                gap: 0.5rem;
                 white-space: nowrap;
+                letter-spacing: -0.01em;
             }
-
             .logo-link svg {
-                width: 26px;
-                height: 26px;
-                stroke: #059669;
-                stroke-width: 2.5;
-                fill: none;
+                width: 24px; height: 24px;
+                stroke: var(--accent); stroke-width: 2.2; fill: none;
+                stroke-linecap: round; stroke-linejoin: round;
             }
-
             .nav-list {
-                display: flex;
-                gap: 2rem;
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-
-            .nav-list li {
-                white-space: nowrap;
-            }
-
-            .nav-list a {
-                text-decoration: none;
-                color: #334155;
-                font-weight: 600;
-                font-size: 0.85rem;
-                transition: color 0.2s;
-                display: flex;
+                display: flex; gap: 1.3rem;
+                list-style: none; padding: 0; margin: 0;
                 align-items: center;
-                gap: 6px;
+            }
+            .nav-list > li { position: relative; white-space: nowrap; }
+            .nav-link {
+                font-family: var(--font-mono);
+                text-decoration: none;
+                color: var(--text-muted);
+                font-weight: 400;
+                font-size: 0.72rem;
+                letter-spacing: 0.03em;
+                text-transform: uppercase;
+                transition: color 0.2s;
                 cursor: pointer;
+                display: flex; align-items: center; gap: 6px;
+                padding: 6px 0;
             }
-
-            .nav-list a:hover {
-                color: #059669;
+            .nav-link svg:not(.chevron) {
+                width: 15px; height: 15px;
+                stroke: currentColor; fill: none; stroke-width: 2;
+                stroke-linecap: round; stroke-linejoin: round;
+                flex-shrink: 0;
             }
+            .chevron {
+                width: 11px !important; height: 11px !important;
+                stroke: currentColor; fill: none; stroke-width: 2.5;
+                stroke-linecap: round; stroke-linejoin: round;
+                transition: transform 0.2s;
+                margin-left: -2px;
+            }
+            .nav-link:hover, .has-sub:hover > .nav-link { color: var(--accent); }
+            .nav-link.active:not(.btn-legal) { color: var(--accent); font-weight: 500; }
 
-            .nav-list a.btn-legal {
-                background: #059669;
-                color: white !important;
-                padding: 6px 14px;
-                border-radius: 16px;
+            /* Legal: macizo verde */
+            .nav-link.btn-legal {
+                color: #ffffff;
+                background: var(--accent);
+                border: 1px solid var(--accent);
+                padding: 6px 13px;
+                border-radius: 6px;
+                font-weight: 500;
+            }
+            .nav-link.btn-legal:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+            .nav-link.btn-legal.active { background: var(--accent-deep); border-color: var(--accent-deep); }
+
+            /* ---- SUBMENÚ DESPLEGABLE (escritorio) ---- */
+            .sub-panel {
+                position: absolute;
+                top: calc(100% + 14px);
+                left: 50%;
+                transform: translateX(-50%);
+                width: 340px;
+                background: #ffffff;
+                border: 1px solid var(--border);
+                border-top: 3px solid var(--accent);
+                border-radius: 0 0 10px 10px;
+                box-shadow: 0 16px 40px rgba(20,19,15,0.12);
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transition: opacity 0.18s, visibility 0.18s, transform 0.18s;
+                z-index: 300;
+                padding: 0;
+            }
+            .sub-panel::before {
+                content: '';
+                position: absolute;
+                top: -17px;
+                left: 0;
+                right: 0;
+                height: 17px;
+            }
+            .has-sub:hover > .sub-panel {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+            }
+            .has-sub:hover > .nav-link .chevron { transform: rotate(180deg); }
+
+            .sub-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px 18px 8px;
+                border-bottom: 1px solid var(--border);
+            }
+            .sub-area-label {
+                font-family: var(--font-display);
+                font-size: 0.88rem;
                 font-weight: 700;
+                color: var(--ink);
             }
-
-            .nav-list a.btn-legal:hover {
-                background: #047857;
+            .sub-see-all {
+                font-family: var(--font-mono);
+                font-size: 0.62rem;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                color: var(--accent);
+                text-decoration: none;
             }
+            .sub-see-all:hover { color: var(--accent-deep); }
 
-            .nav-list a svg {
-                width: 16px;
-                height: 16px;
-                stroke: currentColor;
-                fill: none;
-                stroke-width: 2;
-                stroke-linecap: round;
-                stroke-linejoin: round;
+            .sub-grid { padding: 6px 0; }
+
+            .sub-item {
+                display: flex;
+                align-items: baseline;
+                gap: 10px;
+                padding: 9px 18px;
+                text-decoration: none;
+                transition: background 0.15s, padding-left 0.15s;
+            }
+            .sub-item:hover {
+                background: var(--accent-wash, #f0fdf4);
+                padding-left: 22px;
+            }
+            .sub-num {
+                font-family: var(--font-mono);
+                font-size: 0.74rem;
+                color: var(--accent);
+                min-width: 26px;
                 flex-shrink: 0;
             }
+            .sub-name {
+                font-family: var(--font-display);
+                font-size: 0.85rem;
+                font-weight: 500;
+                color: var(--ink);
+            }
+            .sub-item:hover .sub-name { color: var(--accent-deep); }
 
+            /* ---- HAMBURGER ---- */
             .hamburger {
-                display: none;
-                background: none;
-                border: none;
-                cursor: pointer;
-                padding: 8px;
-                color: #0f172a;
-                flex-shrink: 0;
-                width: 40px;
-                height: 40px;
+                display: none; background: none; border: none; cursor: pointer;
+                padding: 8px; color: var(--ink); flex-shrink: 0; width: 40px; height: 40px;
             }
-
             .hamburger svg {
-                width: 100%;
-                height: 100%;
-                stroke: #0f172a;
-                stroke-width: 2;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                fill: none;
+                width: 100%; height: 100%; stroke: var(--ink); stroke-width: 2;
+                stroke-linecap: round; stroke-linejoin: round; fill: none;
             }
 
-            @media (max-width: 768px) {
-                .hamburger {
-                    display: block;
-                }
-
-                .logo-link {
-                    flex: 1;
-                }
-
+            /* ---- RESPONSIVE ---- */
+            @media (max-width: 960px) {
+                .hamburger { display: block; }
+                .logo-link { flex: 1; }
                 .nav-list {
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    right: 0;
-                    background: white;
-                    flex-direction: column;
-                    gap: 0;
-                    width: 100%;
-                    max-height: 0;
-                    overflow: hidden;
-                    transition: max-height 0.3s ease;
-                    padding: 0;
-                    margin: 0;
-                    border: 1px solid #e2e8f0;
-                    border-top: none;
-                    z-index: 200;
+                    position: absolute; top: 100%; left: 0; right: 0;
+                    background: #ffffff; flex-direction: column; align-items: stretch;
+                    gap: 0; width: 100%; max-height: 0; overflow-y: auto;
+                    transition: max-height 0.35s ease; padding: 0; margin: 0;
+                    border: 1px solid var(--border); border-top: none; z-index: 200;
                     display: flex !important;
                 }
-
-                .nav-list.open {
-                    max-height: 500px;
-                    padding: 10px 0;
+                .nav-list.open { max-height: 85vh; padding: 4px 0; }
+                .nav-list > li { width: 100%; border-bottom: 1px solid var(--border); }
+                .nav-list > li:last-child { border-bottom: none; }
+                .nav-link {
+                    padding: 14px 1.7rem; width: 100%; box-sizing: border-box;
+                    font-size: 0.82rem; gap: 10px;
                 }
+                .nav-link svg:not(.chevron) { width: 18px; height: 18px; stroke: var(--accent); }
+                .nav-link.active:not(.btn-legal) {
+                    color: var(--accent);
+                    box-shadow: inset 3px 0 0 var(--accent);
+                    background: var(--accent-wash);
+                }
+                .nav-link.btn-legal {
+                    margin: 10px 1.7rem; width: auto; display: inline-flex;
+                }
+                .nav-link.btn-legal svg { stroke: currentColor; }
 
-                .nav-list li {
-                    white-space: normal;
+                /* Submenú móvil: colapsa en acordeón */
+                .sub-panel {
+                    position: static;
+                    transform: none;
                     width: 100%;
-                    border-bottom: 1px solid #f1f5f9;
+                    border: none;
+                    border-top: 1px solid var(--border);
+                    border-radius: 0;
+                    box-shadow: none;
+                    max-height: 0;
+                    overflow: hidden;
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: auto;
+                    transition: max-height 0.3s ease;
+                    background: #fafaf8;
                 }
-
-                .nav-list li:last-child {
-                    border-bottom: none;
-                }
-
-                .nav-list a {
-                    display: flex;
-                    padding: 12px 1.5rem;
-                    width: 100%;
-                    box-sizing: border-box;
-                    align-items: center;
-                    gap: 10px;
-                    font-size: 0.95rem;
-                }
-
-                .nav-list a.btn-legal {
-                    background: #059669;
-                    color: white !important;
-                    margin: 8px 1.5rem;
-                    width: auto;
-                    display: inline-block;
-                    border-bottom: none;
-                    padding: 8px 20px;
-                }
-
-                .nav-list a svg {
-                    width: 20px;
-                    height: 20px;
-                    stroke: #059669;
-                }
-
-                .nav-list a.btn-legal svg {
-                    stroke: white;
-                }
+                .sub-panel::before { display: none; }
+                .sub-panel.mob-open { max-height: 600px; }
+                .has-sub:hover > .sub-panel { opacity: 1; visibility: visible; pointer-events: auto; }
+                .chevron { transition: transform 0.25s; }
+                .mob-open-trigger .chevron { transform: rotate(180deg); }
+                .sub-header { padding: 10px 1.7rem 6px; }
+                .sub-item { padding: 10px 1.7rem 10px 2.5rem; }
+                .sub-item:hover { padding-left: 2.8rem; }
             }
-
             @media (max-width: 480px) {
-                .logo-link {
-                    font-size: 1rem;
-                }
-
-                .hamburger {
-                    width: 36px;
-                    height: 36px;
-                }
-
-                .nav-list a {
-                    font-size: 0.85rem;
-                    padding: 10px 1rem;
-                }
+                .nav-container { padding: 0.8rem 1.1rem; }
+                .logo-link { font-size: 0.98rem; }
             }
         </style>
 
         <nav class="site-nav">
             <div class="nav-container">
                 <a href="${basePath}index.html" class="logo-link">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2"></rect>
                         <line x1="2" y1="20" x2="22" y2="20"></line>
                         <line x1="6" y1="17" x2="6" y2="20"></line>
                         <line x1="18" y1="17" x2="18" y2="20"></line>
-                        <circle cx="8" cy="8" r="1.5" fill="currentColor"></circle>
-                        <circle cx="12" cy="8" r="1.5" fill="currentColor"></circle>
-                        <circle cx="16" cy="8" r="1.5" fill="currentColor"></circle>
-                        <circle cx="8" cy="12" r="1.5" fill="currentColor"></circle>
-                        <circle cx="12" cy="12" r="1.5" fill="currentColor"></circle>
+                        <circle cx="8" cy="8" r="1.4" fill="var(--accent)" stroke="none"></circle>
+                        <circle cx="12" cy="8" r="1.4" fill="var(--accent)" stroke="none"></circle>
+                        <circle cx="16" cy="8" r="1.4" fill="var(--accent)" stroke="none"></circle>
+                        <circle cx="8" cy="12" r="1.4" fill="var(--accent)" stroke="none"></circle>
+                        <circle cx="12" cy="12" r="1.4" fill="var(--accent)" stroke="none"></circle>
                     </svg>
                     Technology Advisory
                 </a>
-                <button class="hamburger" id="hamburger">
-                    <svg viewBox="0 0 24 24">
-                        <line x1="3" y1="6" x2="21" y2="6" />
-                        <line x1="3" y1="12" x2="21" y2="12" />
-                        <line x1="3" y1="18" x2="21" y2="18" />
-                    </svg>
+                <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+                    <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
                 </button>
                 <ul class="nav-list" id="nav-list">
-                    <li>
-                        <a href="${basePath}index.html">
-                            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                            Inicio
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${basePath}desarrollo.html" data-dev="true">
-                            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
-                            Arquitectura
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${basePath}desarrollo.html" data-dev="true">
-                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            Operaciones
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${basePath}desarrollo.html" data-dev="true">
-                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-                            Seguridad
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${basePath}desarrollo.html" data-dev="true">
-                            <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                            Gobernanza
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${basePath}sobre-mi/sobre-mi.html">
-                            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                            Sobre Mí
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${basePath}legal/legal.html" class="btn-legal">
-                            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                            Legal
-                        </a>
-                    </li>
+                    <li><a href="${basePath}index.html" class="nav-link${A('inicio')}">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        Inicio</a></li>
+                    ${areaItem('arquitectura', 'Arquitectura', '<rect x="2" y="3" width="20" height="14" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/>', false)}
+                    ${areaItem('seguridad', 'Seguridad', '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>', true)}
+                    ${areaItem('operaciones', 'Operaciones', '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>', true)}
+                    ${areaItem('gobernanza', 'Gobernanza', '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>', true)}
+                    <li><a href="${basePath}sobre-mi/sobre-mi.html" class="nav-link${A('sobre-mi')}">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        Sobre mí</a></li>
+                    <li><a href="${basePath}legal/legal.html" class="nav-link btn-legal${A('legal')}">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        Legal</a></li>
                 </ul>
             </div>
         </nav>
     `;
 
-    // --- MANEJO DEL MENÚ DESPLEGABLE (MÓVIL) ---
+    /* --- Hamburger --- */
     const hamburger = document.getElementById('hamburger');
     const navList = document.getElementById('nav-list');
-    
     if (hamburger && navList) {
         hamburger.addEventListener('click', function(e) {
             e.stopPropagation();
             navList.classList.toggle('open');
         });
-
-        // Asegurar el cierre del menú al hacer clic en enlaces normales o de desarrollo
-        const allLinks = navList.querySelectorAll('a');
-        allLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navList.classList.remove('open');
-            });
-        });
-
-        // Cerrar menú si se hace clic fuera del área de navegación
         document.addEventListener('click', function(e) {
-            if (!e.target.closest('.site-nav')) {
-                navList.classList.remove('open');
-            }
+            if (!e.target.closest('.site-nav')) navList.classList.remove('open');
         });
     }
+
+    /* --- Móvil: acordeón para submenús --- */
+    document.querySelectorAll('.has-sub > .nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (window.innerWidth <= 960) {
+                e.preventDefault();
+                e.stopPropagation();
+                const panel = this.nextElementSibling;
+                const wasOpen = panel.classList.contains('mob-open');
+                // Cerrar todos
+                document.querySelectorAll('.sub-panel.mob-open').forEach(p => p.classList.remove('mob-open'));
+                document.querySelectorAll('.mob-open-trigger').forEach(l => l.classList.remove('mob-open-trigger'));
+                if (!wasOpen) {
+                    panel.classList.add('mob-open');
+                    this.classList.add('mob-open-trigger');
+                }
+            }
+        });
+    });
+
+    /* Cerrar submenús al clicar un enlace de subcategoría */
+    document.querySelectorAll('.sub-item').forEach(item => {
+        item.addEventListener('click', () => {
+            if (navList) navList.classList.remove('open');
+        });
+    });
 });

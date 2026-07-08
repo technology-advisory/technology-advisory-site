@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Modelo operativo: quién es dueño del script cuando su autor ya no está | Automatización y Orquestación | Technology Advisory</title><meta name="description" content="El script que solo entiende quien lo escribió es una automatización frágil, no una automatización madura. El ownership y la documentación son parte del dis"><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
+<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // operaciones</span><span>categoría: <strong>Automatización y Orquestación</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Automatización y Orquestación</div><h1 class="article-title">Modelo operativo: quién es dueño del script cuando su autor ya no está</h1><p class="article-lead">El script que solo entiende quien lo escribió es una automatización frágil, no una automatización madura. El ownership y la documentación son parte del diseño, no un extra.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Automatización y Orquestación"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="900" height="410" rx="14" fill="#fafaf8"/>
+<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Ciclo de vida de un script de producción</text>
+<text x="40" y="66" font-size="12" fill="#77776f">de la promoción a producción al mantenimiento continuo</text>
+<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Promoción a producción</text>
+<text x="58" y="163" font-size="11" fill="#77776f">Revisado, documentado, versionado</text>
+<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Propietario asignado</text>
+<text x="488" y="163" font-size="11" fill="#77776f">No "quien lo escribió originalmente"</text>
+<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Documentación del propósito</text>
+<text x="58" y="283" font-size="11" fill="#77776f">Por qué existe, no solo qué hace</text>
+<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Revisión periódica</text>
+<text x="488" y="283" font-size="11" fill="#77776f">¿Sigue siendo necesario y correcto?</text>
+<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Si solo una persona entiende un script crítico, no está en producción de forma segura</text>
+</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="330" height="438" rx="12" fill="#fafaf8"/>
+<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Ciclo de vida de un script de producción</text>
+<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="89" r="13" fill="#059669"/>
+<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Promoción a producción</text>
+<text x="64" y="102" font-size="11" fill="#77776f">Revisado, documentado,</text>
+<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="159" r="13" fill="#059669"/>
+<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Propietario asignado</text>
+<text x="64" y="172" font-size="11" fill="#77776f">No "quien lo escribió</text>
+<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="229" r="13" fill="#059669"/>
+<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Documentación del</text>
+<text x="64" y="242" font-size="11" fill="#77776f">Por qué existe, no solo qué</text>
+<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="299" r="13" fill="#059669"/>
+<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Revisión periódica</text>
+<text x="64" y="312" font-size="11" fill="#77776f">¿Sigue siendo necesario y</text>
+<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
+<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Si solo una persona entiende un script</text>
+<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">crítico, no está en producción de forma</text>
+<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">segura</text>
+</svg></div></figure><div class="toc-mini"><a href="#contexto">1. El script que solo su autor entiende</a><a href="#arquitectura">2. Promoción formal a producción</a><a href="#seguridad">3. Documentación del porqué, no solo del qué</a><a href="#operacion">4. Propietario asignado, no heredado por accidente</a><a href="#roadmap">5. Revisión periódica del catálogo de automatizaciones</a></div><h2 id="contexto">1. El script que solo su autor entiende, y su autor ya no está</h2><div class="body-text"><p><strong>Un script de automatización crítico que solo una persona entiende completamente es una automatización frágil, por sofisticada que sea su lógica interna.</strong> Cuando esa persona cambia de equipo, se va de vacaciones, o deja la empresa, el conocimiento operativo se va con ella.</p></div><h2 id="arquitectura">2. Promoción formal de "funciona" a "está en producción"</h2><div class="body-text"><p>Un script que funciona en las pruebas de su autor no está automáticamente listo para producción. La promoción formal incluye revisión por otra persona, documentación mínima, y versionado en un repositorio compartido — el mismo rigor que cualquier otro código que sostiene la operación.</p></div><h2 id="seguridad">3. Documentación del porqué, no solo del qué hace el código</h2><div class="body-text"><p>El código dice qué hace un script; la documentación debería explicar por qué se diseñó así, qué problema resuelve, y qué pasa si falla. Sin ese contexto, cualquier persona que herede el mantenimiento del script tiene que hacer arqueología de código antes de poder modificarlo con confianza.</p></div><h2 id="operacion">4. Propietario asignado explícitamente, no heredado por accidente organizativo</h2><div class="body-text"><p>Cada script de producción debería tener un propietario designado —un equipo o rol, no necesariamente la persona original— responsable de mantenerlo actualizado y de responder si algo falla. Sin esa asignación explícita, el ownership recae por defecto en "quien lo encuentre primero cuando falle".</p></div><h2 id="roadmap">5. Revisión periódica del catálogo completo de automatizaciones existentes</h2><div class="body-text"><p>Con el tiempo, las organizaciones acumulan decenas o cientos de scripts de automatización, algunos de los cuales dejaron de ser necesarios hace tiempo pero nadie los ha retirado. Una revisión periódica del catálogo completo —qué sigue siendo necesario, qué tiene propietario activo— evita que la automatización se convierta en deuda técnica silenciosa.</p></div><a class="back" href="../index.html?cat=automatizacion-orquestacion">← Volver a Automatización y Orquestación</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. El script que solo su autor entiende</a><a href="#arquitectura">2. Promoción formal a producción</a><a href="#seguridad">3. Documentación del porqué, no solo del qué</a><a href="#operacion">4. Propietario asignado, no heredado por accidente</a><a href="#roadmap">5. Revisión periódica del catálogo de automatizaciones</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>

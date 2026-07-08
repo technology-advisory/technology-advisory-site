@@ -1,0 +1,382 @@
+[
+  {
+    "id": 1,
+    "cat": "alta-disponibilidad",
+    "meta": "Alta Disponibilidad · Arquitectura",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "01 Enero 2026",
+    "desc": "Dominios de fallo, quorum y split-brain: por qué duplicar un componente sin entender el quorum puede dejarte peor que sin redundancia.",
+    "url": "alta-disponibilidad/alta-disponibilidad-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 2,
+    "cat": "alta-disponibilidad",
+    "meta": "Alta Disponibilidad · Arquitectura",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "02 Febrero 2026",
+    "desc": "Quién puede iniciar un failover, cómo se prueba sin asustar a nadie, y por qué el runbook nunca ejecutado es papel mojado.",
+    "url": "alta-disponibilidad/alta-disponibilidad-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 3,
+    "cat": "alta-disponibilidad",
+    "meta": "Alta Disponibilidad · Arquitectura",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "03 Marzo 2026",
+    "desc": "Qué evidencias reales debe mostrar un clúster HA ante una auditoría: por qué el diagrama de arquitectura no es una prueba.",
+    "url": "alta-disponibilidad/alta-disponibilidad-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 4,
+    "cat": "alta-disponibilidad",
+    "meta": "Alta Disponibilidad · Arquitectura",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "04 Abril 2026",
+    "desc": "Los cuatro niveles reales de madurez en HA, de reinicio manual a chaos engineering, y por qué saltarse un nivel sale caro.",
+    "url": "alta-disponibilidad/alta-disponibilidad-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 5,
+    "cat": "cloud-hibrido",
+    "meta": "Cloud Híbrido · Arquitectura",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "05 Febrero 2026",
+    "desc": "Por qué el cloud híbrido no es \"un poco de cada\" sino una decisión deliberada, carga por carga, de qué vive dónde.",
+    "url": "cloud-hibrido/cloud-hibrido-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 6,
+    "cat": "cloud-hibrido",
+    "meta": "Cloud Híbrido · Arquitectura",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "06 Marzo 2026",
+    "desc": "Quién opera qué en un entorno híbrido: por qué el ownership difuso entre equipos es la causa nº1 de incidentes lentos.",
+    "url": "cloud-hibrido/cloud-hibrido-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 7,
+    "cat": "cloud-hibrido",
+    "meta": "Cloud Híbrido · Arquitectura",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "07 Abril 2026",
+    "desc": "Qué evidencias exigir sobre conectividad, identidad y datos en la frontera entre tu CPD y el cloud.",
+    "url": "cloud-hibrido/cloud-hibrido-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 8,
+    "cat": "cloud-hibrido",
+    "meta": "Cloud Híbrido · Arquitectura",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "08 Mayo 2026",
+    "desc": "Los 4 niveles reales de madurez híbrida, de la VPN improvisada al gobierno multinube con Landing Zones.",
+    "url": "cloud-hibrido/cloud-hibrido-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 9,
+    "cat": "infraestructura-codigo",
+    "meta": "Infraestructura como Código · Arquitectura",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "09 Marzo 2026",
+    "desc": "Cada clic manual en una consola cloud es un cambio que nadie puede versionar, revisar ni reproducir con confianza.",
+    "url": "infraestructura-codigo/infraestructura-codigo-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 10,
+    "cat": "infraestructura-codigo",
+    "meta": "Infraestructura como Código · Arquitectura",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "10 Abril 2026",
+    "desc": "Si aplicar el código de infraestructura depende de que alguien ejecute un comando a mano, tienes IaC de nombre, no de práctica.",
+    "url": "infraestructura-codigo/infraestructura-codigo-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 11,
+    "cat": "infraestructura-codigo",
+    "meta": "Infraestructura como Código · Arquitectura",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "11 Mayo 2026",
+    "desc": "El drift entre lo que el código dice y lo que realmente existe puede pasar meses sin detectarse.",
+    "url": "infraestructura-codigo/infraestructura-codigo-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 12,
+    "cat": "infraestructura-codigo",
+    "meta": "Infraestructura como Código · Arquitectura",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "12 Junio 2026",
+    "desc": "Los 4 niveles de madurez IaC: del script suelto sin versionar a las políticas como código automatizadas.",
+    "url": "infraestructura-codigo/infraestructura-codigo-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 13,
+    "cat": "diseno-red",
+    "meta": "Diseño de Red · Arquitectura",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "13 Abril 2026",
+    "desc": "La red plana es el paraíso del atacante: segmentación por capas desde el diseño, no como añadido posterior.",
+    "url": "diseno-red/diseno-red-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 14,
+    "cat": "diseno-red",
+    "meta": "Diseño de Red · Arquitectura",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "14 Mayo 2026",
+    "desc": "Cada regla de firewall \"temporal\" que nunca se cierra es deuda técnica de seguridad acumulándose en silencio.",
+    "url": "diseno-red/diseno-red-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 15,
+    "cat": "diseno-red",
+    "meta": "Diseño de Red · Arquitectura",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "15 Junio 2026",
+    "desc": "Contar las reglas any-any activas es el test más rápido para saber si tu segmentación es real o de papel.",
+    "url": "diseno-red/diseno-red-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 16,
+    "cat": "diseno-red",
+    "meta": "Diseño de Red · Arquitectura",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "16 Julio 2026",
+    "desc": "Los 4 niveles de madurez de red, y por qué saltar a microsegmentación sin la base resuelta suele fracasar.",
+    "url": "diseno-red/diseno-red-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 17,
+    "cat": "almacenamiento-datos",
+    "meta": "Almacenamiento y Datos · Arquitectura",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "17 Mayo 2026",
+    "desc": "El almacenamiento no se diseña por velocidad máxima, se diseña por perfil de acceso real de cada dato.",
+    "url": "almacenamiento-datos/almacenamiento-datos-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 18,
+    "cat": "almacenamiento-datos",
+    "meta": "Almacenamiento y Datos · Arquitectura",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "18 Junio 2026",
+    "desc": "El 90% de las crisis de almacenamiento son de planificación de capacidad, no técnicas.",
+    "url": "almacenamiento-datos/almacenamiento-datos-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 19,
+    "cat": "almacenamiento-datos",
+    "meta": "Almacenamiento y Datos · Arquitectura",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "19 Julio 2026",
+    "desc": "Cifrado en reposo activado no es cifrado verificado: qué evidencias reunir de verdad.",
+    "url": "almacenamiento-datos/almacenamiento-datos-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 20,
+    "cat": "almacenamiento-datos",
+    "meta": "Almacenamiento y Datos · Arquitectura",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "20 Agosto 2026",
+    "desc": "Los 4 niveles reales de madurez de almacenamiento, del disco suelto al gobierno del dato como código.",
+    "url": "almacenamiento-datos/almacenamiento-datos-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 21,
+    "cat": "virtualizacion-contenedores",
+    "meta": "Virtualización y Contenedores · Arquitectura",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "21 Junio 2026",
+    "desc": "Un contenedor no es una VM ligera — comparten kernel con el host, el aislamiento es de proceso, no de hardware.",
+    "url": "virtualizacion-contenedores/virtualizacion-contenedores-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 22,
+    "cat": "virtualizacion-contenedores",
+    "meta": "Virtualización y Contenedores · Arquitectura",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "22 Julio 2026",
+    "desc": "Una imagen construida hace un año acumula CVEs en silencio, aunque tu aplicación no haya cambiado una línea.",
+    "url": "virtualizacion-contenedores/virtualizacion-contenedores-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 23,
+    "cat": "virtualizacion-contenedores",
+    "meta": "Virtualización y Contenedores · Arquitectura",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "23 Agosto 2026",
+    "desc": "Tener una política de seguridad de contenedores escrita no significa que se aplique técnicamente.",
+    "url": "virtualizacion-contenedores/virtualizacion-contenedores-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 24,
+    "cat": "virtualizacion-contenedores",
+    "meta": "Virtualización y Contenedores · Arquitectura",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "24 Septiembre 2026",
+    "desc": "Los 4 niveles de madurez en contenedores: Kubernetes no da seguridad de fábrica, depende de las políticas encima.",
+    "url": "virtualizacion-contenedores/virtualizacion-contenedores-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 25,
+    "cat": "capacidad-rendimiento",
+    "meta": "Capacidad y Rendimiento · Arquitectura",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "25 Julio 2026",
+    "desc": "Dimensionar por promedio garantiza el fallo justo en el pico. El percentil 95 es la métrica que importa.",
+    "url": "capacidad-rendimiento/capacidad-rendimiento-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 26,
+    "cat": "capacidad-rendimiento",
+    "meta": "Capacidad y Rendimiento · Arquitectura",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "26 Agosto 2026",
+    "desc": "Sin propietario explícito de la capacidad, la revisión de tendencias casi nunca llega a tiempo.",
+    "url": "capacidad-rendimiento/capacidad-rendimiento-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 27,
+    "cat": "capacidad-rendimiento",
+    "meta": "Capacidad y Rendimiento · Arquitectura",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "27 Septiembre 2026",
+    "desc": "Un benchmark de hace dos años no es evidencia de la capacidad actual: caduca con cada cambio.",
+    "url": "capacidad-rendimiento/capacidad-rendimiento-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 28,
+    "cat": "capacidad-rendimiento",
+    "meta": "Capacidad y Rendimiento · Arquitectura",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "28 Octubre 2026",
+    "desc": "Los 4 niveles de madurez en capacidad, de la percepción subjetiva al modelado predictivo con datos.",
+    "url": "capacidad-rendimiento/capacidad-rendimiento-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 29,
+    "cat": "arquitectura-cpd",
+    "meta": "Arquitectura de CPD · Arquitectura",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "29 Agosto 2026",
+    "desc": "Tier III no es un adjetivo de marketing, es una certificación del Uptime Institute con criterios específicos.",
+    "url": "arquitectura-cpd/arquitectura-cpd-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 30,
+    "cat": "arquitectura-cpd",
+    "meta": "Arquitectura de CPD · Arquitectura",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "30 Septiembre 2026",
+    "desc": "Un buen diseño físico no basta si el control de acceso es un Excel y nadie sabe quién decide a las 3 AM.",
+    "url": "arquitectura-cpd/arquitectura-cpd-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 31,
+    "cat": "arquitectura-cpd",
+    "meta": "Arquitectura de CPD · Arquitectura",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "31 Octubre 2026",
+    "desc": "El generador que arranca pero nunca se probó bajo carga real es una evidencia incompleta.",
+    "url": "arquitectura-cpd/arquitectura-cpd-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 32,
+    "cat": "arquitectura-cpd",
+    "meta": "Arquitectura de CPD · Arquitectura",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "32 Noviembre 2026",
+    "desc": "Los 4 niveles reales de madurez física: el hardware no define el nivel, la disciplina operativa sí.",
+    "url": "arquitectura-cpd/arquitectura-cpd-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 33,
+    "cat": "alta-disponibilidad",
+    "meta": "Alta Disponibilidad · VMware",
+    "title": "vSphere HA y DRS: clústeres que se curan solos",
+    "date": "15 Enero 2026",
+    "desc": "Admission Control, reglas de afinidad y el heartbeat real de vSphere HA: diseño de clústeres VMware para producción.",
+    "url": "alta-disponibilidad/vsphere-ha-drs.html",
+    "published": true
+  },
+  {
+    "id": 34,
+    "cat": "alta-disponibilidad",
+    "meta": "Alta Disponibilidad · Windows Server",
+    "title": "Windows Failover Clustering: quorum, CSV y el detalle que nadie revisa",
+    "date": "22 Enero 2026",
+    "desc": "Configuración real de Failover Clustering en Windows Server: modelos de quorum, Cluster Shared Volumes y validación previa al despliegue.",
+    "url": "alta-disponibilidad/windows-failover-clustering.html",
+    "published": true
+  },
+  {
+    "id": 35,
+    "cat": "alta-disponibilidad",
+    "meta": "Alta Disponibilidad · Kubernetes",
+    "title": "HA en Kubernetes: PodDisruptionBudgets y el mito de la autocuración",
+    "date": "29 Enero 2026",
+    "desc": "Por qué Kubernetes no da HA gratis: PodDisruptionBudgets, anti-affinity, topology spread constraints y multi-zona real.",
+    "url": "alta-disponibilidad/ha-kubernetes.html",
+    "published": true
+  },
+  {
+    "id": 36,
+    "cat": "alta-disponibilidad",
+    "meta": "Alta Disponibilidad · Multi-Cloud",
+    "title": "Multi-AZ en AWS, Azure y GCP: lo que cada proveedor no te cuenta",
+    "date": "5 Febrero 2026",
+    "desc": "Comparativa práctica de alta disponibilidad multi-zona en los tres grandes clouds: qué es automático, qué hay que diseñar tú.",
+    "url": "alta-disponibilidad/multi-az-cloud.html",
+    "published": true
+  },
+  {
+    "id": 37,
+    "cat": "cloud-hibrido",
+    "meta": "Cloud Híbrido · Azure Arc",
+    "title": "Azure Arc: Un Plano de Control para Todo",
+    "date": "12 Febrero 2026",
+    "desc": "Estrategia de onboarding de recursos on-prem en Azure Arc. Landing Zones y compliance cross-cloud.",
+    "url": "cloud-hibrido/azure-arc-landing-zones.html",
+    "published": true
+  },
+  {
+    "id": 38,
+    "cat": "cloud-hibrido",
+    "meta": "Cloud Híbrido · Conectividad",
+    "title": "ExpressRoute vs VPN: La Decisión Correcta",
+    "date": "19 Febrero 2026",
+    "desc": "Comparativa técnica entre VPN site-to-site, ExpressRoute y Direct Connect: latencia, coste y resiliencia real.",
+    "url": "cloud-hibrido/expressroute-vpn.html",
+    "published": true
+  }
+]

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Madurez y roadmap: de discos sueltos a gobierno del dato automatizado | Almacenamiento y Datos | Technology Advisory</title>
+<meta name="description" content="Los cuatro niveles reales de madurez en almacenamiento, del disco local sin gestionar al tiering automatizado con políticas como código — y la señal honesta que revela en cuál estás.">
+<meta name="author" content="Miguel Ángel Carriazo">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#059669">
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<link rel="stylesheet" href="../../css/articulo-tecnico.css">
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/articulo-diagramas.css">
+
+    <!-- Parche automático de optimización móvil para Technology Advisory -->
+    <style>
+        @media (max-width: 1024px) {
+            .defensa-layout {
+                display: block !important;
+                padding: 0 4% 40px !important;
+            }
+            div[style*="padding: 16px 48px 0"], 
+            div[style*="padding: 16px 48px 0;"] {
+                padding: 16px 4% 0 !important;
+            }
+            div[style*="padding: 40px 48px 24px"], 
+            div[style*="padding: 40px 48px 24px;"] {
+                padding: 40px 4% 24px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card-wrapper ds-page">
+<div class="card">
+
+<div id="menu-container"></div>
+<div class="accent-bar" style="background:#059669;"></div>
+
+<div class="ds-meta">
+    <span><span class="dot" style="background:#059669;"></span>Technology Advisory // arquitectura</span>
+    <span>categoría: <strong>Almacenamiento y Datos</strong></span>
+</div>
+
+<div style="padding: 16px 48px 0;">
+    <a href="../index.html?cat=almacenamiento-datos" class="defensa-btn-back" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Almacenamiento y Datos</a>
+</div>
+
+<div style="padding: 40px 48px 24px; border-bottom: 1px solid #ededea;">
+    <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Especialidad · Almacenamiento y Datos</div>
+    <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Madurez y roadmap: <span style="color:#059669;">de discos sueltos a gobierno del dato automatizado</span></h1>
+    <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Los cuatro niveles reales de madurez en almacenamiento, del disco local sin gestionar al tiering automatizado con políticas como código — y la señal honesta que revela en cuál estás.</p>
+
+    <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>Madurez Almacenamiento</span>
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>Lectura Avanzada (12 min)</span>
+    </div>
+</div>
+
+<div class="defensa-layout" style="display:grid; grid-template-columns:1fr 340px; gap:48px; align-items:start; padding:0 48px 40px;">
+    <div class="defensa-main" style="min-width:0;">
+
+        <!-- GRÁFICO 1: NIVELES DE MADUREZ -->
+        <figure class="article-diagram" aria-label="Niveles de madurez de almacenamiento" onclick="toggleZoom(this)">
+            <div class="diagram-desktop">
+                <svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <rect width="900" height="430" rx="14" fill="#fafaf8"/>
+                    <text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Cuatro niveles de madurez de almacenamiento</text>
+                    <text x="40" y="66" font-size="12" fill="#77776f">cada nivel exige el anterior resuelto y verificado</text>
+                    <defs>
+                        <marker id="arrow-ma" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#77776f"/>
+                        </marker>
+                    </defs>
+                    <rect x="40" y="100" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="70" cy="147" r="18" fill="#059669"/>
+                    <text x="70" y="153" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+                    <text x="100" y="135" font-size="15" font-weight="800" fill="#151915">Nivel 1 · Local</text>
+                    <text x="100" y="158" font-size="12" fill="#77776f">Discos sin gestión centralizada</text>
+                    <text x="100" y="176" font-size="11" fill="#94a3b8">Cada servidor es una isla</text>
+                    <line x1="430" y1="147" x2="468" y2="147" stroke="#77776f" stroke-width="2" marker-end="url(#arrow-ma)"/>
+                    <rect x="470" y="100" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="500" cy="147" r="18" fill="#059669"/>
+                    <text x="500" y="153" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+                    <text x="530" y="135" font-size="15" font-weight="800" fill="#151915">Nivel 2 · Centralizado</text>
+                    <text x="530" y="158" font-size="12" fill="#77776f">SAN/NAS, RAID, backup regular</text>
+                    <text x="530" y="176" font-size="11" fill="#94a3b8">La mayoría cree estar aquí</text>
+                    <line x1="430" y1="212" x2="468" y2="212" stroke="#77776f" stroke-width="2" marker-end="url(#arrow-ma)"/>
+                    <rect x="40" y="230" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="70" cy="277" r="18" fill="#059669"/>
+                    <text x="70" y="283" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+                    <text x="100" y="265" font-size="15" font-weight="800" fill="#151915">Nivel 3 · Automatizado</text>
+                    <text x="100" y="288" font-size="12" fill="#77776f">Tiering, snapshots con política</text>
+                    <text x="100" y="306" font-size="11" fill="#94a3b8">Políticas ejecutadas por el sistema</text>
+                    <line x1="430" y1="277" x2="468" y2="277" stroke="#77776f" stroke-width="2" marker-end="url(#arrow-ma)"/>
+                    <rect x="470" y="230" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="500" cy="277" r="18" fill="#059669"/>
+                    <text x="500" y="283" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+                    <text x="530" y="265" font-size="15" font-weight="800" fill="#151915">Nivel 4 · Gobernado</text>
+                    <text x="530" y="288" font-size="12" fill="#77776f">Políticas como código, auditado</text>
+                    <text x="530" y="306" font-size="11" fill="#94a3b8">Gobierno continuo del dato</text>
+                    <defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+                    <rect x="40" y="360" width="820" height="46" rx="14" fill="url(#gbar)" opacity=".95"/>
+                    <text x="68" y="388" font-size="13" font-weight="700" fill="#fff">La mayoría cree estar en el Nivel 3 y no tiene ni política de snapshot documentada</text>
+                </svg>
+            </div>
+            <div class="diagram-mobile">
+                <svg viewBox="0 0 330 480" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <rect width="330" height="480" rx="12" fill="#fafaf8"/>
+                    <text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Cuatro niveles de madurez</text>
+                    <rect x="18" y="60" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="44" cy="94" r="14" fill="#059669"/>
+                    <text x="44" y="99" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+                    <text x="68" y="85" font-size="14" font-weight="800" fill="#151915">Nivel 1 · Local</text>
+                    <text x="68" y="104" font-size="11" fill="#77776f">Discos sin gestión</text>
+                    <text x="68" y="120" font-size="10" fill="#94a3b8">Islas</text>
+                    <line x1="165" y1="128" x2="165" y2="148" stroke="#77776f" stroke-width="2"/>
+                    <polygon points="160,146 165,156 170,146" fill="#77776f"/>
+                    <rect x="18" y="158" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="44" cy="192" r="14" fill="#059669"/>
+                    <text x="44" y="197" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+                    <text x="68" y="183" font-size="14" font-weight="800" fill="#151915">Nivel 2 · Centralizado</text>
+                    <text x="68" y="202" font-size="11" fill="#77776f">SAN/NAS, RAID</text>
+                    <text x="68" y="218" font-size="10" fill="#94a3b8">La mayoría cree estar aquí</text>
+                    <line x1="165" y1="226" x2="165" y2="246" stroke="#77776f" stroke-width="2"/>
+                    <polygon points="160,244 165,254 170,244" fill="#77776f"/>
+                    <rect x="18" y="256" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="44" cy="290" r="14" fill="#059669"/>
+                    <text x="44" y="295" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+                    <text x="68" y="281" font-size="14" font-weight="800" fill="#151915">Nivel 3 · Automatizado</text>
+                    <text x="68" y="300" font-size="11" fill="#77776f">Tiering, snapshots</text>
+                    <text x="68" y="316" font-size="10" fill="#94a3b8">Políticas ejecutadas</text>
+                    <line x1="165" y1="324" x2="165" y2="344" stroke="#77776f" stroke-width="2"/>
+                    <polygon points="160,342 165,352 170,342" fill="#77776f"/>
+                    <rect x="18" y="354" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="44" cy="388" r="14" fill="#059669"/>
+                    <text x="44" y="393" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+                    <text x="68" y="379" font-size="14" font-weight="800" fill="#151915">Nivel 4 · Gobernado</text>
+                    <text x="68" y="398" font-size="11" fill="#77776f">Políticas como código</text>
+                    <text x="68" y="414" font-size="10" fill="#94a3b8">Gobierno continuo</text>
+                    <defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+                    <rect x="18" y="435" width="294" height="32" rx="10" fill="url(#gm)"/>
+                    <text x="32" y="455" font-size="11" font-weight="700" fill="#fff">La mayoría cree estar en N3 y no tiene política</text>
+                </svg>
+            </div>
+            <figcaption class="diagram-caption">Figura 1: Los cuatro niveles de madurez en almacenamiento.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- GRÁFICO 2: SEÑALES DE CADA NIVEL -->
+        <figure class="article-diagram" aria-label="Señales de cada nivel" onclick="toggleZoom(this)">
+            <svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect width="820" height="260" rx="14" fill="#fafaf8"/>
+                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Señales de cada nivel de madurez</text>
+                <rect x="40" y="55" width="170" height="40" rx="4" fill="#059669"/>
+                <text x="125" y="80" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Señal</text>
+                <rect x="210" y="55" width="180" height="40" rx="4" fill="#059669"/>
+                <text x="300" y="80" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Nivel 1</text>
+                <rect x="390" y="55" width="180" height="40" rx="4" fill="#059669"/>
+                <text x="480" y="80" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Nivel 2</text>
+                <rect x="570" y="55" width="210" height="40" rx="4" fill="#059669"/>
+                <text x="675" y="80" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Nivel 3 / 4</text>
+                <rect x="40" y="95" width="170" height="36" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="125" y="110" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Política</text>
+                <text x="125" y="124" font-size="10" fill="#94a3b8" text-anchor="middle">de backups</text>
+                <rect x="210" y="95" width="180" height="36" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+                <text x="300" y="110" font-size="11" fill="#b45309" text-anchor="middle">❌ No existe</text>
+                <text x="300" y="124" font-size="10" fill="#94a3b8" text-anchor="middle">Cada uno hace lo que puede</text>
+                <rect x="390" y="95" width="180" height="36" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+                <text x="480" y="110" font-size="11" fill="#b45309" text-anchor="middle">❌ Existe en papel</text>
+                <text x="480" y="124" font-size="10" fill="#94a3b8" text-anchor="middle">No se aplica</text>
+                <rect x="570" y="95" width="210" height="36" rx="4" fill="#f0fdf4" stroke="#059669" stroke-width="1"/>
+                <text x="675" y="110" font-size="11" fill="#059669" text-anchor="middle">✅ Documentada y aplicada</text>
+                <text x="675" y="124" font-size="10" fill="#94a3b8" text-anchor="middle">Evidencia de ejecución</text>
+                <rect x="40" y="131" width="170" height="36" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="125" y="146" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Restauración</text>
+                <text x="125" y="160" font-size="10" fill="#94a3b8" text-anchor="middle">probada</text>
+                <rect x="210" y="131" width="180" height="36" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+                <text x="300" y="146" font-size="11" fill="#b45309" text-anchor="middle">❌ Nunca</text>
+                <text x="300" y="160" font-size="10" fill="#94a3b8" text-anchor="middle">No se ha probado</text>
+                <rect x="390" y="131" width="180" height="36" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+                <text x="480" y="146" font-size="11" fill="#b45309" text-anchor="middle">❌ Raramente</text>
+                <text x="480" y="160" font-size="10" fill="#94a3b8" text-anchor="middle">Sin documentación</text>
+                <rect x="570" y="131" width="210" height="36" rx="4" fill="#f0fdf4" stroke="#059669" stroke-width="1"/>
+                <text x="675" y="146" font-size="11" fill="#059669" text-anchor="middle">✅ Trimestral</text>
+                <text x="675" y="160" font-size="10" fill="#94a3b8" text-anchor="middle">Con acta de resultado</text>
+                <rect x="40" y="167" width="170" height="36" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="125" y="182" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Gestión</text>
+                <text x="125" y="196" font-size="10" fill="#94a3b8" text-anchor="middle">de capacidad</text>
+                <rect x="210" y="167" width="180" height="36" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+                <text x="300" y="182" font-size="11" fill="#b45309" text-anchor="middle">❌ Manual</text>
+                <text x="300" y="196" font-size="10" fill="#94a3b8" text-anchor="middle">Se llena y se descubre</text>
+                <rect x="390" y="167" width="180" height="36" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+                <text x="480" y="182" font-size="11" fill="#b45309" text-anchor="middle">❌ Alertas básicas</text>
+                <text x="480" y="196" font-size="10" fill="#94a3b8" text-anchor="middle">Sin tendencia</text>
+                <rect x="570" y="167" width="210" height="36" rx="4" fill="#f0fdf4" stroke="#059669" stroke-width="1"/>
+                <text x="675" y="182" font-size="11" fill="#059669" text-anchor="middle">✅ Tendencia medida</text>
+                <text x="675" y="196" font-size="10" fill="#94a3b8" text-anchor="middle">Ampliación planificada</text>
+                <rect x="40" y="203" width="170" height="36" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="125" y="218" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Automatización</text>
+                <text x="125" y="232" font-size="10" fill="#94a3b8" text-anchor="middle">de políticas</text>
+                <rect x="210" y="203" width="180" height="36" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+                <text x="300" y="218" font-size="11" fill="#b45309" text-anchor="middle">❌ Nada</text>
+                <text x="300" y="232" font-size="10" fill="#94a3b8" text-anchor="middle">Ejecución manual</text>
+                <rect x="390" y="203" width="180" height="36" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+                <text x="480" y="218" font-size="11" fill="#b45309" text-anchor="middle">❌ Parcial</text>
+                <text x="480" y="232" font-size="10" fill="#94a3b8" text-anchor="middle">Scripts aislados</text>
+                <rect x="570" y="203" width="210" height="36" rx="4" fill="#f0fdf4" stroke="#059669" stroke-width="1"/>
+                <text x="675" y="218" font-size="11" fill="#059669" text-anchor="middle">✅ Políticas como código</text>
+                <text x="675" y="232" font-size="10" fill="#94a3b8" text-anchor="middle">Tiering automático</text>
+            </svg>
+            <figcaption class="diagram-caption">Figura 2: Señales que distinguen cada nivel de madurez.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- GRÁFICO 3: CHECKLIST POR NIVEL -->
+        <figure class="article-diagram" aria-label="Checklist por nivel" onclick="toggleZoom(this)">
+            <svg viewBox="0 0 820 240" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect width="820" height="240" rx="14" fill="#fafaf8"/>
+                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Checklist de salida de cada nivel</text>
+                <text x="40" y="58" font-size="12" fill="#77776f">cómo saber cuándo estás listo para el siguiente</text>
+                <rect x="40" y="80" width="170" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="125" y="100" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Nivel 1 → 2</text>
+                <text x="125" y="114" font-size="10" fill="#94a3b8" text-anchor="middle">Almacenamiento centralizado</text>
+                <rect x="230" y="80" width="170" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="315" y="100" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Nivel 2 → 3</text>
+                <text x="315" y="114" font-size="10" fill="#94a3b8" text-anchor="middle">Políticas documentadas</text>
+                <rect x="420" y="80" width="170" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="505" y="100" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Nivel 3 → 4</text>
+                <text x="505" y="114" font-size="10" fill="#94a3b8" text-anchor="middle">Políticas como código</text>
+                <rect x="610" y="80" width="170" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="695" y="100" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Todos los niveles</text>
+                <text x="695" y="114" font-size="10" fill="#94a3b8" text-anchor="middle">Evidencia de ejecución</text>
+                <rect x="40" y="140" width="740" height="60" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="60" y="162" font-size="12" font-weight="700" fill="#b45309">⚠️ No compres la tecnología del nivel siguiente</text>
+                <text x="60" y="182" font-size="11" fill="#78350f">Consolida con evidencia el nivel actual antes de dar el salto</text>
+                <text x="60" y="198" font-size="11" fill="#78350f">Una SAN cara no te sitúa automáticamente en un nivel alto de madurez</text>
+            </svg>
+            <figcaption class="diagram-caption">Figura 3: Checklist de salida de cada nivel de madurez.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- CONTENIDO: SECCIÓN 1 -->
+        <div class="block" id="s1">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Por qué la mayoría sobreestima su nivel</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p><strong>Tener una SAN cara no te sitúa automáticamente en un nivel alto de madurez.</strong> La madurez de almacenamiento no se mide por el hardware que tienes, sino por la disciplina de gestión que aplicas sobre él: políticas documentadas, ejecutadas y verificadas, no solo la posibilidad técnica de aplicarlas.</p>
+                <p>He visto organizaciones con arrays all-flash de última generación que no tenían ni una política de retención de snapshots documentada. La tecnología no sustituye a la gobernanza. El hardware de alto rendimiento sin políticas de gestión es como una autopista sin señales de tráfico — rápido hasta que ocurre un accidente.</p>
+                <p>La sobreestimación del nivel de madurez es común porque las organizaciones confunden "tener la capacidad técnica" con "estar aplicando la disciplina de gestión". La diferencia se revela en el primer incidente o en la primera auditoría externa.</p>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+
+        <div class="block" id="s2">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Nivel 1 y 2: la base que casi todos alcanzan</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>El <strong>Nivel 1 (Local)</strong> es discos directamente conectados a servidores individuales, sin gestión centralizada — cada máquina es una isla, con su propio riesgo de fallo y sin visibilidad consolidada de capacidad o rendimiento.</p>
+                <p>El <strong>Nivel 2 (Centralizado)</strong> introduce almacenamiento compartido (SAN o NAS), RAID para tolerancia a fallo físico, y un proceso de backup regular. Es donde la mayoría de organizaciones con cierta madurez técnica se sitúan — con la salvedad de que "backup regular" a menudo significa "se ejecuta" sin que nadie haya verificado que "se puede restaurar".</p>
+                <p>La diferencia entre el Nivel 1 y el Nivel 2 es el paso de la gestión descentralizada a la centralizada. Es el primer salto importante, y el que más valor aporta en términos de visibilidad y control. Sin embargo, muchos se quedan aquí porque el salto al Nivel 3 requiere disciplina, no solo inversión.</p>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+
+        <div class="block" id="s3">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Nivel 3: automatización con criterio, no automatización ciega</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>El <strong>Nivel 3 (Automatizado)</strong> introduce tiering automático basado en patrones de acceso reales (no solo antigüedad), políticas de snapshot con expiración explícita, y alertas de capacidad basadas en tendencia, no en umbrales fijos sin contexto.</p>
+                <div class="callout">
+                    <strong>Diferencia clave con el Nivel 2:</strong> en el Nivel 2 las políticas existen en la cabeza de un administrador. En el Nivel 3 están configuradas en el sistema y se ejecutan automáticamente, sin depender de que alguien se acuerde.
+                </div>
+                <p>El Nivel 3 también incluye la automatización de la gestión de snapshots. Los snapshots automáticos sin expiración son un problema común en el Nivel 2. En el Nivel 3, cada snapshot tiene una fecha de expiración y se elimina automáticamente cuando ya no es necesario, liberando espacio sin intervención manual.</p>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+
+        <div class="block" id="s4">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Nivel 4: gobierno del dato como código</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>El <strong>Nivel 4 (Gobernado)</strong> extiende la automatización del Nivel 3 con políticas versionadas como código (Infrastructure as Code aplicado a storage), clasificación automática de datos por sensibilidad, y auditoría continua de cumplimiento — no revisiones puntuales antes de una auditoría externa.</p>
+                <p>Este nivel solo tiene sentido cuando el Nivel 3 está sólidamente resuelto y verificado. Intentar implementar gobierno automatizado sobre una base de Nivel 2 sin políticas claras solo automatiza el caos existente, haciéndolo más rápido pero no más correcto.</p>
+                <p>El Nivel 4 también incluye la integración con los procesos de gobierno de la organización: políticas de retención alineadas con los requisitos legales, clasificación automática de datos según sensibilidad (RGPD, datos personales, etc.), y generación de informes de cumplimiento automatizados.</p>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+
+        <div class="block" id="s5">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La pregunta que revela tu nivel real</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>Más allá de cualquier checklist teórico: si preguntas ahora mismo cuál es la política de retención de snapshots de tu sistema más crítico, y nadie puede responder con un documento concreto (no de memoria), no estás en el Nivel 3 aunque tengas la tecnología de tiering automático instalada y activa.</p>
+                <p>El roadmap honesto no es comprar la tecnología del nivel siguiente — es consolidar con evidencia el nivel actual antes de dar el salto, exactamente igual que en cualquier otra disciplina de infraestructura madura.</p>
+                <p>La pregunta que revela la verdadera madurez no es "¿qué tecnología tienes?" sino "¿qué evidencia puedes mostrar de que la estás gestionando correctamente?". Un dashboard de capacidad no es evidencia de gestión — es solo un dashboard. La evidencia real es un documento que muestra que el snapshot del mes pasado se restauró con éxito en tiempo récord.</p>
+            </div>
+        </div>
+
+        <!-- PIE DE AUTOR -->
+        <div class="defensa-foot">
+            <div class="defensa-author">
+                <div class="defensa-foot-label">Autor</div>
+                <div class="defensa-author-name">Miguel Ángel Carriazo</div>
+                <p class="defensa-author-bio">vCISO &amp; Arquitecto de Infraestructura con más de 25 años diseñando, asegurando y operando sistemas críticos. ISO 27001 &amp; 42001 Lead Auditor.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+        <div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+            <div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+            <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Nivel 1</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Local</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Nivel 2</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Centralizado</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Nivel 3</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Automatizado</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Nivel 4</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Gobernado</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Clave</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Evidencia de ejecución</td></tr>
+            </table>
+        </div>
+        <div>
+            <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+            <nav class="defensa-toc-nav" id="artTocNav3" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+                <a href="#s1" class="active" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px; color:#059669; border-left:2px solid #059669; font-weight:700;">01. Sobreestimación</a>
+                <a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Niveles 1 y 2</a>
+                <a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Nivel 3</a>
+                <a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Nivel 4</a>
+                <a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Pregunta clave</a>
+            </nav>
+        </div>
+    </aside>
+
+</div>
+
+<!-- ARTÍCULOS RELACIONADOS -->
+<div class="related-section">
+    <div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+    <div class="related-grid">
+        <a class="related-card" href="almacenamiento-datos-controles-evidencias.html">
+            <div class="r-meta">Almacenamiento · Controles</div>
+            <div class="r-title">Controles y evidencias: cifrado en reposo y la prueba de restauración</div>
+            <div class="r-desc">Cifrado en reposo activado no es lo mismo que cifrado en reposo verificado.</div>
+            <span class="r-link">Leer artículo →</span>
+        </a>
+        <a class="related-card" href="almacenamiento-datos-diseno-principios.html">
+            <div class="r-meta">Almacenamiento · Principios de Diseño</div>
+            <div class="r-title">Principios de diseño: tiers, RAID y el mito de "cuanto más rápido, mejor"</div>
+            <div class="r-desc">El almacenamiento no se diseña por velocidad máxima, se diseña por perfil de acceso.</div>
+            <span class="r-link">Leer artículo →</span>
+        </a>
+        <a class="related-card" href="almacenamiento-datos-modelo-operativo.html">
+            <div class="r-meta">Almacenamiento · Modelo Operativo</div>
+            <div class="r-title">Modelo operativo: capacidad, snapshots y la alerta que llega tarde</div>
+            <div class="r-desc">El 90% de las crisis de almacenamiento no son técnicas — son de planificación de capacidad.</div>
+            <span class="r-link">Leer artículo →</span>
+        </a>
+    </div>
+</div>
+
+<div id="footer-container"></div>
+
+</div>
+</div>
+
+<script src="../../js/menu.js"></script>
+<script src="../../js/footer.js"></script>
+<script src="../../js/main.js"></script>
+
+<script>
+function toggleZoom(element) {
+    if (element.classList.contains('zoomed')) {
+        element.classList.remove('zoomed');
+        document.querySelector('.zoom-overlay')?.classList.remove('active');
+    } else {
+        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+        element.classList.add('zoomed');
+        let overlay = document.querySelector('.zoom-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'zoom-overlay';
+            overlay.onclick = function() {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                overlay.classList.remove('active');
+            };
+            document.body.appendChild(overlay);
+        }
+        overlay.classList.add('active');
+    }
+}
+</script>
+
+</body>
+</html>

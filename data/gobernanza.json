@@ -1,0 +1,322 @@
+[
+  {
+    "id": 1,
+    "cat": "riesgo-tecnologico",
+    "meta": "Riesgo Tecnológico · Gobernanza",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "01 Enero 2026",
+    "desc": "Una matriz de riesgo con colores no convence a ningún CFO. El riesgo cuantificado en euros es el idioma que dirección entiende.",
+    "url": "riesgo-tecnologico/riesgo-tecnologico-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 2,
+    "cat": "riesgo-tecnologico",
+    "meta": "Riesgo Tecnológico · Gobernanza",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "02 Febrero 2026",
+    "desc": "Un registro de riesgos que se actualiza una vez al año no refleja una organización que cambia constantemente.",
+    "url": "riesgo-tecnologico/riesgo-tecnologico-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 3,
+    "cat": "riesgo-tecnologico",
+    "meta": "Riesgo Tecnológico · Gobernanza",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "03 Marzo 2026",
+    "desc": "Un riesgo aceptado sin aprobación formal documentada es indistinguible de simplemente ignorarlo.",
+    "url": "riesgo-tecnologico/riesgo-tecnologico-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 4,
+    "cat": "riesgo-tecnologico",
+    "meta": "Riesgo Tecnológico · Gobernanza",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "04 Abril 2026",
+    "desc": "Los 4 niveles de madurez: de la lista de miedos sin cuantificar a decisiones de inversión basadas en ALE.",
+    "url": "riesgo-tecnologico/riesgo-tecnologico-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 5,
+    "cat": "gobierno-ti",
+    "meta": "Gobierno TI · Gobernanza",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "05 Febrero 2026",
+    "desc": "La forma en que se gobierna IT revela si se percibe como coste a minimizar o como valor que potencia el negocio.",
+    "url": "gobierno-ti/gobierno-ti-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 6,
+    "cat": "gobierno-ti",
+    "meta": "Gobierno TI · Gobernanza",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "06 Marzo 2026",
+    "desc": "Un comité de gobierno que se reúne cada mes y no decide nada concreto es tiempo institucional invertido en apariencia de gestión.",
+    "url": "gobierno-ti/gobierno-ti-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 7,
+    "cat": "gobierno-ti",
+    "meta": "Gobierno TI · Gobernanza",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "07 Abril 2026",
+    "desc": "Reportar 99.9% de disponibilidad sin traducirlo a impacto de negocio es hablar un idioma que dirección no entiende.",
+    "url": "gobierno-ti/gobierno-ti-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 8,
+    "cat": "gobierno-ti",
+    "meta": "Gobierno TI · Gobernanza",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "08 Mayo 2026",
+    "desc": "Los 4 niveles de madurez: de IT como soporte reactivo a IT participando en decisiones estratégicas de negocio.",
+    "url": "gobierno-ti/gobierno-ti-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 9,
+    "cat": "gobierno-ia",
+    "meta": "Gobierno de IA · Gobernanza",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "09 Marzo 2026",
+    "desc": "El algoritmo de scoring que lleva 5 años en producción también es IA regulada bajo el AI Act, aunque nadie lo llame así.",
+    "url": "gobierno-ia/gobierno-ia-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 10,
+    "cat": "gobierno-ia",
+    "meta": "Gobierno de IA · Gobernanza",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "10 Abril 2026",
+    "desc": "\"Hay un humano en el proceso\" no basta si ese humano aprueba el 99% sin revisar críticamente.",
+    "url": "gobierno-ia/gobierno-ia-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 11,
+    "cat": "gobierno-ia",
+    "meta": "Gobierno de IA · Gobernanza",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "11 Mayo 2026",
+    "desc": "Los sistemas de IA de alto riesgo deben registrarse en la base de datos pública de la UE — muchos no lo están.",
+    "url": "gobierno-ia/gobierno-ia-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 12,
+    "cat": "gobierno-ia",
+    "meta": "Gobierno de IA · Gobernanza",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "12 Junio 2026",
+    "desc": "Los 4 niveles de madurez: de \"usamos IA en algún sitio\" al sistema de gestión certificado con ISO 42001.",
+    "url": "gobierno-ia/gobierno-ia-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 13,
+    "cat": "marcos-regulatorios",
+    "meta": "Marcos Regulatorios · Gobernanza",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "13 Abril 2026",
+    "desc": "NIS2 amplió su alcance drásticamente. Si tienes más de 50 empleados en un sector ampliado, probablemente estás dentro.",
+    "url": "marcos-regulatorios/marcos-regulatorios-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 14,
+    "cat": "marcos-regulatorios",
+    "meta": "Marcos Regulatorios · Gobernanza",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "14 Mayo 2026",
+    "desc": "Sin criterio claro de notificación, las 24 horas que exige NIS2 se consumen decidiendo si hay que notificar.",
+    "url": "marcos-regulatorios/marcos-regulatorios-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 15,
+    "cat": "marcos-regulatorios",
+    "meta": "Marcos Regulatorios · Gobernanza",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "15 Junio 2026",
+    "desc": "Si ya certificas ISO 27001 con alcance amplio, probablemente ya cubres el 60-70% de NIS2 sin saberlo.",
+    "url": "marcos-regulatorios/marcos-regulatorios-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 16,
+    "cat": "marcos-regulatorios",
+    "meta": "Marcos Regulatorios · Gobernanza",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "16 Julio 2026",
+    "desc": "Los 4 niveles de madurez regulatoria: de no saber si aplica al cumplimiento integrado en la operación diaria.",
+    "url": "marcos-regulatorios/marcos-regulatorios-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 17,
+    "cat": "gestion-terceros",
+    "meta": "Gestión de Terceros · Gobernanza",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "17 Mayo 2026",
+    "desc": "SolarWinds, Kaseya, MOVEit: los ataques a la cadena de suministro son la norma. El riesgo de tu proveedor es tu riesgo.",
+    "url": "gestion-terceros/gestion-terceros-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 18,
+    "cat": "gestion-terceros",
+    "meta": "Gestión de Terceros · Gobernanza",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "18 Junio 2026",
+    "desc": "Un contrato con un proveedor crítico sin cláusulas de seguridad es una relación de confianza sin respaldo legal.",
+    "url": "gestion-terceros/gestion-terceros-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 19,
+    "cat": "gestion-terceros",
+    "meta": "Gestión de Terceros · Gobernanza",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "19 Julio 2026",
+    "desc": "SOC 2 Type I no es lo mismo que Type II, aunque algunos proveedores esperen que nadie note la diferencia.",
+    "url": "gestion-terceros/gestion-terceros-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 20,
+    "cat": "gestion-terceros",
+    "meta": "Gestión de Terceros · Gobernanza",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "20 Agosto 2026",
+    "desc": "Los 4 niveles de madurez: de confiar en el proveedor sin verificar a la monitorización continua de su riesgo.",
+    "url": "gestion-terceros/gestion-terceros-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 21,
+    "cat": "politicas-normativa",
+    "meta": "Políticas y Normativa Interna · Gobernanza",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "21 Junio 2026",
+    "desc": "Una política que nadie ha leído nunca no protege nada — existe para pasar auditorías, no para cambiar comportamiento.",
+    "url": "politicas-normativa/politicas-normativa-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 22,
+    "cat": "politicas-normativa",
+    "meta": "Políticas y Normativa Interna · Gobernanza",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "22 Julio 2026",
+    "desc": "Sin propietario ni fecha de revisión, una política se convierte en un artefacto histórico que nadie se atreve a tocar.",
+    "url": "politicas-normativa/politicas-normativa-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 23,
+    "cat": "politicas-normativa",
+    "meta": "Políticas y Normativa Interna · Gobernanza",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "23 Agosto 2026",
+    "desc": "Una política que exige 14 caracteres mientras el sistema solo obliga a 8 es la discrepancia que cualquier auditor detecta.",
+    "url": "politicas-normativa/politicas-normativa-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 24,
+    "cat": "politicas-normativa",
+    "meta": "Políticas y Normativa Interna · Gobernanza",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "24 Septiembre 2026",
+    "desc": "Los 4 niveles de madurez: del documento legal que nadie lee a la política convertida en cultura operativa real.",
+    "url": "politicas-normativa/politicas-normativa-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 25,
+    "cat": "auditoria-control-interno",
+    "meta": "Auditoría y Control Interno · Gobernanza",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "25 Julio 2026",
+    "desc": "Una auditoría interna que siempre concluye \"todo correcto\" no está auditando con rigor, está confirmando lo esperado.",
+    "url": "auditoria-control-interno/auditoria-control-interno-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 26,
+    "cat": "auditoria-control-interno",
+    "meta": "Auditoría y Control Interno · Gobernanza",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "26 Agosto 2026",
+    "desc": "Auditar todo con la misma frecuencia desperdicia esfuerzo limitado en lo que menos importa.",
+    "url": "auditoria-control-interno/auditoria-control-interno-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 27,
+    "cat": "auditoria-control-interno",
+    "meta": "Auditoría y Control Interno · Gobernanza",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "27 Septiembre 2026",
+    "desc": "Un hallazgo marcado como \"cerrado\" sin verificación real puede ser exactamente el mismo problema, solo invisible.",
+    "url": "auditoria-control-interno/auditoria-control-interno-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 28,
+    "cat": "auditoria-control-interno",
+    "meta": "Auditoría y Control Interno · Gobernanza",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "28 Octubre 2026",
+    "desc": "Los 4 niveles de madurez: del cumplimiento anual de auditoría a la garantía continua integrada en la operación.",
+    "url": "auditoria-control-interno/auditoria-control-interno-madurez-roadmap.html",
+    "published": true
+  },
+  {
+    "id": 29,
+    "cat": "gobierno-dato",
+    "meta": "Gobierno del Dato · Gobernanza",
+    "title": "Principios de diseño y criterios de arquitectura",
+    "date": "29 Agosto 2026",
+    "desc": "Sin propietario claro del dato, la responsabilidad de todos se convierte, en la práctica, en responsabilidad de nadie.",
+    "url": "gobierno-dato/gobierno-dato-diseno-principios.html",
+    "published": true
+  },
+  {
+    "id": 30,
+    "cat": "gobierno-dato",
+    "meta": "Gobierno del Dato · Gobernanza",
+    "title": "Modelo operativo, roles y gobierno técnico",
+    "date": "30 Septiembre 2026",
+    "desc": "Compartir datos con un tercero sin proceso de aprobación explícito es cómo los datos confidenciales acaban donde nadie planeó.",
+    "url": "gobierno-dato/gobierno-dato-modelo-operativo.html",
+    "published": true
+  },
+  {
+    "id": 31,
+    "cat": "gobierno-dato",
+    "meta": "Gobierno del Dato · Gobernanza",
+    "title": "Controles, evidencias y trazabilidad",
+    "date": "31 Octubre 2026",
+    "desc": "Un mapa de flujo de datos de hace tres años da una falsa sensación de control sobre datos que ya no fluyen así.",
+    "url": "gobierno-dato/gobierno-dato-controles-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 32,
+    "cat": "gobierno-dato",
+    "meta": "Gobierno del Dato · Gobernanza",
+    "title": "Madurez, roadmap y mejora continua",
+    "date": "32 Noviembre 2026",
+    "desc": "Los 4 niveles de madurez: de datos dispersos sin dueño al gobierno del dato como ventaja competitiva real.",
+    "url": "gobierno-dato/gobierno-dato-madurez-roadmap.html",
+    "published": true
+  }
+]

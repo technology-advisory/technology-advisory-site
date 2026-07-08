@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Principios de diseño: si el ransomware cifra tus backups, no tienes backups | Backup y Recuperación | Technology Advisory</title><meta name="description" content="El ransomware moderno busca y destruye los backups antes de cifrar los datos de producción. La regla clásica 3-2-1 ya no basta — necesitas inmutabilidad y "><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
+<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // operaciones</span><span>categoría: <strong>Backup y Recuperación</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Backup y Recuperación</div><h1 class="article-title">Principios de diseño: si el ransomware cifra tus backups, no tienes backups</h1><p class="article-lead">El ransomware moderno busca y destruye los backups antes de cifrar los datos de producción. La regla clásica 3-2-1 ya no basta — necesitas inmutabilidad y aislamiento real.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Backup y Recuperación"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="900" height="410" rx="14" fill="#fafaf8"/>
+<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">La regla 3-2-1-1-0</text>
+<text x="40" y="66" font-size="12" fill="#77776f">la evolución del 3-2-1 clásico frente al ransomware moderno</text>
+<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">3 copias</text>
+<text x="58" y="163" font-size="11" fill="#77776f">Producción + 2 backups</text>
+<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">2 medios distintos</text>
+<text x="488" y="163" font-size="11" fill="#77776f">No todo en el mismo tipo de storage</text>
+<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">1 fuera del site</text>
+<text x="58" y="283" font-size="11" fill="#77776f">Físicamente o lógicamente separado</text>
+<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">1 inmutable + 0 errores</text>
+<text x="488" y="283" font-size="11" fill="#77776f">Air-gap y verificación automática</text>
+<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Si un atacante con Domain Admin puede borrar tus backups, no tienes backup — tienes una copia temporal</text>
+</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="330" height="438" rx="12" fill="#fafaf8"/>
+<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">La regla 3-2-1-1-0</text>
+<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="89" r="13" fill="#059669"/>
+<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">3 copias</text>
+<text x="64" y="102" font-size="11" fill="#77776f">Producción + 2 backups</text>
+<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="159" r="13" fill="#059669"/>
+<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">2 medios distintos</text>
+<text x="64" y="172" font-size="11" fill="#77776f">No todo en el mismo tipo de</text>
+<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="229" r="13" fill="#059669"/>
+<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">1 fuera del site</text>
+<text x="64" y="242" font-size="11" fill="#77776f">Físicamente o lógicamente</text>
+<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="299" r="13" fill="#059669"/>
+<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">1 inmutable + 0 errores</text>
+<text x="64" y="312" font-size="11" fill="#77776f">Air-gap y verificación</text>
+<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
+<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Si un atacante con Domain Admin puede</text>
+<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">borrar tus backups, no tienes backup —</text>
+<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">tienes una copia temporal</text>
+</svg></div></figure><div class="toc-mini"><a href="#contexto">1. El backup que el ransomware cifró también</a><a href="#arquitectura">2. La regla 3-2-1-1-0</a><a href="#seguridad">3. Inmutable vs air-gapped: no son lo mismo</a><a href="#operacion">4. La cuenta que gestiona backup, separada del resto</a><a href="#roadmap">5. Diseñar asumiendo que atacarán el backup primero</a></div><h2 id="contexto">1. El backup que el ransomware cifró también</h2><div class="body-text"><p><strong>El ransomware moderno no cifra a ciegas — busca activamente el servidor de backup, escala privilegios, y lo elimina o cifra antes de lanzar el cifrado del resto del entorno.</strong> Los atacantes saben que si la víctima puede restaurar, no pagará, así que el backup es un objetivo prioritario, no un daño colateral.</p></div><h2 id="arquitectura">2. La regla 3-2-1-1-0: la evolución necesaria del 3-2-1 clásico</h2><div class="body-text"><p>3 copias, 2 medios distintos, 1 fuera del site — la regla clásica ya no basta sola frente a ransomware dirigido. La evolución añade 1 copia inmutable o air-gapped, y 0 errores de verificación (cada backup se valida automáticamente, no se asume que funciona).</p></div><h2 id="seguridad">3. Inmutable vs air-gapped: no son lo mismo, aunque se confundan a menudo</h2><div class="body-text"><p>Inmutable significa que nadie puede modificar o borrar la copia durante un período definido, ni siquiera con credenciales de administrador. Air-gapped significa que la copia está físicamente desconectada de la red. Son propiedades distintas y complementarias — lo ideal es tener ambas, no una sola.</p></div><h2 id="operacion">4. La cuenta que gestiona backup debe estar separada del resto del entorno</h2><div class="body-text"><p>Si el servidor de backup está en el mismo dominio de Active Directory que el resto de la infraestructura, comprometer AD compromete también el backup. La cuenta y, cuando sea posible, la infraestructura que gestiona backup debería vivir fuera del blast radius del compromiso de dominio principal.</p></div><h2 id="roadmap">5. Diseñar asumiendo que un atacante irá primero por el backup</h2><div class="body-text"><p>El diseño defendible parte de la premisa de que, si un atacante compromete el entorno, intentará específicamente destruir la capacidad de recuperación antes de proceder. Esa premisa cambia decisiones de arquitectura: separación de credenciales, inmutabilidad, y aislamiento real, no solo una copia adicional en otro disco del mismo entorno.</p></div><a class="back" href="../index.html?cat=backup-recuperacion">← Volver a Backup y Recuperación</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. El backup que el ransomware cifró también</a><a href="#arquitectura">2. La regla 3-2-1-1-0</a><a href="#seguridad">3. Inmutable vs air-gapped: no son lo mismo</a><a href="#operacion">4. La cuenta que gestiona backup, separada del resto</a><a href="#roadmap">5. Diseñar asumiendo que atacarán el backup primero</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>
