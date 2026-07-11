@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Controles y evidencias: cifrado en reposo y la prueba de restauración que nunca se hizo | Almacenamiento y Datos | Technology Advisory</title>
+<meta name="description" content="Cifrado en reposo activado no es lo mismo que cifrado en reposo verificado. Qué evidencias reunir sobre tus datos en descanso, y por qué la prueba de restauración es la que más se posterga.">
+<meta name="author" content="Miguel Ángel Carriazo">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#059669">
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<link rel="stylesheet" href="../../css/articulo-tecnico.css">
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/articulo-diagramas.css">
+
+    <!-- Parche automático de optimización móvil para Technology Advisory -->
+    <style>
+        @media (max-width: 1024px) {
+            .defensa-layout {
+                display: block !important;
+                padding: 0 4% 40px !important;
+            }
+            div[style*="padding: 16px 48px 0"], 
+            div[style*="padding: 16px 48px 0;"] {
+                padding: 16px 4% 0 !important;
+            }
+            div[style*="padding: 40px 48px 24px"], 
+            div[style*="padding: 40px 48px 24px;"] {
+                padding: 40px 4% 24px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card-wrapper ds-page">
+<div class="card">
+
+<div id="menu-container"></div>
+<div class="accent-bar" style="background:#059669;"></div>
+
+<div class="ds-meta">
+    <span><span class="dot" style="background:#059669;"></span>Technology Advisory // arquitectura</span>
+    <span>categoría: <strong>Almacenamiento y Datos</strong></span>
+</div>
+
+<div style="padding: 16px 48px 0;">
+    <a href="../index.html?cat=almacenamiento-datos" class="defensa-btn-back" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Almacenamiento y Datos</a>
+</div>
+
+<div style="padding: 40px 48px 24px; border-bottom: 1px solid #ededea;">
+    <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Especialidad · Almacenamiento y Datos</div>
+    <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Controles y evidencias: <span style="color:#059669;">cifrado en reposo y la prueba de restauración</span></h1>
+    <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Cifrado en reposo activado no es lo mismo que cifrado en reposo verificado. Qué evidencias reunir sobre tus datos en descanso, y por qué la prueba de restauración es la que más se posterga.</p>
+
+    <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>Almacenamiento & Evidencias</span>
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>Lectura Avanzada (12 min)</span>
+    </div>
+</div>
+
+<div class="defensa-layout" style="display:grid; grid-template-columns:1fr 340px; gap:48px; align-items:start; padding:0 48px 40px;">
+    <div class="defensa-main" style="min-width:0;">
+
+        <!-- GRÁFICO 1: EVIDENCIAS DE ALMACENAMIENTO -->
+        <figure class="article-diagram" aria-label="Evidencias de almacenamiento auditable" onclick="toggleZoom(this)">
+            <div class="diagram-desktop">
+                <svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <rect width="900" height="430" rx="14" fill="#fafaf8"/>
+                    <text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Evidencias de almacenamiento auditable</text>
+                    <text x="40" y="66" font-size="12" fill="#77776f">lo que un auditor de ISO 27001 pide primero</text>
+                    <defs>
+                        <marker id="arrow-ev" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#77776f"/>
+                        </marker>
+                    </defs>
+                    <rect x="40" y="100" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="70" cy="147" r="18" fill="#059669"/>
+                    <text x="70" y="153" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+                    <text x="100" y="135" font-size="15" font-weight="800" fill="#151915">Cifrado en reposo</text>
+                    <text x="100" y="158" font-size="12" fill="#77776f">Algoritmo y gestión de claves</text>
+                    <text x="100" y="176" font-size="11" fill="#94a3b8">AES-256 / KMS</text>
+                    <line x1="430" y1="147" x2="468" y2="147" stroke="#77776f" stroke-width="2" marker-end="url(#arrow-ev)"/>
+                    <rect x="470" y="100" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="500" cy="147" r="18" fill="#059669"/>
+                    <text x="500" y="153" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+                    <text x="530" y="135" font-size="15" font-weight="800" fill="#151915">Control de acceso</text>
+                    <text x="530" y="158" font-size="12" fill="#77776f">Quién puede leer, quién escribir</text>
+                    <text x="530" y="176" font-size="11" fill="#94a3b8">ACL / IAM / RBAC</text>
+                    <line x1="430" y1="212" x2="468" y2="212" stroke="#77776f" stroke-width="2" marker-end="url(#arrow-ev)"/>
+                    <rect x="40" y="230" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="70" cy="277" r="18" fill="#059669"/>
+                    <text x="70" y="283" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+                    <text x="100" y="265" font-size="15" font-weight="800" fill="#151915">Prueba de restauración</text>
+                    <text x="100" y="288" font-size="12" fill="#77776f">Fecha, resultado, tiempo real</text>
+                    <text x="100" y="306" font-size="11" fill="#94a3b8">RTO / RPO verificados</text>
+                    <line x1="430" y1="277" x2="468" y2="277" stroke="#77776f" stroke-width="2" marker-end="url(#arrow-ev)"/>
+                    <rect x="470" y="230" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="500" cy="277" r="18" fill="#059669"/>
+                    <text x="500" y="283" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+                    <text x="530" y="265" font-size="15" font-weight="800" fill="#151915">Retención y borrado</text>
+                    <text x="530" y="288" font-size="12" fill="#77776f">Política aplicada, no solo escrita</text>
+                    <text x="530" y="306" font-size="11" fill="#94a3b8">RGPD / LOPD</text>
+                    <defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+                    <rect x="40" y="360" width="820" height="46" rx="14" fill="url(#gbar)" opacity=".95"/>
+                    <text x="68" y="388" font-size="13" font-weight="700" fill="#fff">El cifrado sin gestión de claves auditada es una casilla marcada, no un control real</text>
+                </svg>
+            </div>
+            <div class="diagram-mobile">
+                <svg viewBox="0 0 330 480" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <rect width="330" height="480" rx="12" fill="#fafaf8"/>
+                    <text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Evidencias de almacenamiento</text>
+                    <rect x="18" y="60" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="44" cy="94" r="14" fill="#059669"/>
+                    <text x="44" y="99" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+                    <text x="68" y="85" font-size="14" font-weight="800" fill="#151915">Cifrado en reposo</text>
+                    <text x="68" y="104" font-size="11" fill="#77776f">Algoritmo y gestión de claves</text>
+                    <text x="68" y="120" font-size="10" fill="#94a3b8">AES-256 / KMS</text>
+                    <line x1="165" y1="128" x2="165" y2="148" stroke="#77776f" stroke-width="2"/>
+                    <polygon points="160,146 165,156 170,146" fill="#77776f"/>
+                    <rect x="18" y="158" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="44" cy="192" r="14" fill="#059669"/>
+                    <text x="44" y="197" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+                    <text x="68" y="183" font-size="14" font-weight="800" fill="#151915">Control de acceso</text>
+                    <text x="68" y="202" font-size="11" fill="#77776f">Quién puede leer o escribir</text>
+                    <text x="68" y="218" font-size="10" fill="#94a3b8">ACL / IAM / RBAC</text>
+                    <line x1="165" y1="226" x2="165" y2="246" stroke="#77776f" stroke-width="2"/>
+                    <polygon points="160,244 165,254 170,244" fill="#77776f"/>
+                    <rect x="18" y="256" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="44" cy="290" r="14" fill="#059669"/>
+                    <text x="44" y="295" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+                    <text x="68" y="281" font-size="14" font-weight="800" fill="#151915">Prueba de restauración</text>
+                    <text x="68" y="300" font-size="11" fill="#77776f">Fecha, resultado, tiempo</text>
+                    <text x="68" y="316" font-size="10" fill="#94a3b8">RTO / RPO verificados</text>
+                    <line x1="165" y1="324" x2="165" y2="344" stroke="#77776f" stroke-width="2"/>
+                    <polygon points="160,342 165,352 170,342" fill="#77776f"/>
+                    <rect x="18" y="354" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                    <circle cx="44" cy="388" r="14" fill="#059669"/>
+                    <text x="44" y="393" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+                    <text x="68" y="379" font-size="14" font-weight="800" fill="#151915">Retención y borrado</text>
+                    <text x="68" y="398" font-size="11" fill="#77776f">Política aplicada, no escrita</text>
+                    <text x="68" y="414" font-size="10" fill="#94a3b8">RGPD / LOPD</text>
+                    <defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+                    <rect x="18" y="435" width="294" height="32" rx="10" fill="url(#gm)"/>
+                    <text x="32" y="455" font-size="11" font-weight="700" fill="#fff">Cifrado sin gestión de claves = casilla marcada</text>
+                </svg>
+            </div>
+            <figcaption class="diagram-caption">Figura 1: Las cuatro evidencias clave para auditar almacenamiento.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- GRÁFICO 2: GESTIÓN DE CLAVES -->
+        <figure class="article-diagram" aria-label="Gestión de claves" onclick="toggleZoom(this)">
+            <svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect width="820" height="260" rx="14" fill="#fafaf8"/>
+                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Gestión de claves: el punto ciego</text>
+                <text x="40" y="58" font-size="12" fill="#77776f">lo que debe tener un sistema de gestión de claves</text>
+                <rect x="40" y="80" width="170" height="50" rx="6" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="125" y="100" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">HSM / KMS</text>
+                <text x="125" y="118" font-size="11" fill="#77776f" text-anchor="middle">Hardware dedicado</text>
+                <rect x="230" y="80" width="170" height="50" rx="6" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="315" y="100" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">Rotación</text>
+                <text x="315" y="118" font-size="11" fill="#77776f" text-anchor="middle">Periódica documentada</text>
+                <rect x="420" y="80" width="170" height="50" rx="6" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="505" y="100" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">Revocación</text>
+                <text x="505" y="118" font-size="11" fill="#77776f" text-anchor="middle">Procedimiento probado</text>
+                <rect x="610" y="80" width="170" height="50" rx="6" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="695" y="100" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">Segregación</text>
+                <text x="695" y="118" font-size="11" fill="#77776f" text-anchor="middle">Funciones separadas</text>
+                <rect x="40" y="160" width="740" height="60" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="60" y="182" font-size="12" font-weight="700" fill="#b45309">⚠️ Si las claves están en el mismo servidor que los datos, no hay cifrado real</text>
+                <text x="60" y="202" font-size="11" fill="#78350f">El cifrado es tan fuerte como la protección de sus claves</text>
+            </svg>
+            <figcaption class="diagram-caption">Figura 2: Los cuatro pilares de una gestión de claves defendible.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- GRÁFICO 3: MATRIZ DE EVIDENCIAS -->
+        <figure class="article-diagram" aria-label="Matriz de evidencias" onclick="toggleZoom(this)">
+            <svg viewBox="0 0 820 280" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect width="820" height="280" rx="14" fill="#fafaf8"/>
+                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Matriz de evidencias de almacenamiento</text>
+                <rect x="40" y="55" width="180" height="30" rx="4" fill="#059669"/>
+                <text x="130" y="75" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Evidencia</text>
+                <rect x="220" y="55" width="200" height="30" rx="4" fill="#059669"/>
+                <text x="320" y="75" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Fuente real</text>
+                <rect x="420" y="55" width="160" height="30" rx="4" fill="#059669"/>
+                <text x="500" y="75" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Frecuencia</text>
+                <rect x="580" y="55" width="200" height="30" rx="4" fill="#059669"/>
+                <text x="680" y="75" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Auditable por</text>
+                <rect x="40" y="85" width="180" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="130" y="100" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Cifrado en reposo</text>
+                <text x="130" y="116" font-size="10" fill="#94a3b8" text-anchor="middle">AES-256 + KMS</text>
+                <rect x="220" y="85" width="200" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="320" y="100" font-size="11" fill="#151915" text-anchor="middle">Configuración array</text>
+                <text x="320" y="116" font-size="10" fill="#94a3b8" text-anchor="middle">+ logs de gestión</text>
+                <rect x="420" y="85" width="160" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="500" y="100" font-size="11" fill="#151915" text-anchor="middle">Continuo</text>
+                <text x="500" y="116" font-size="10" fill="#94a3b8" text-anchor="middle">Configuración fija</text>
+                <rect x="580" y="85" width="200" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="680" y="100" font-size="11" fill="#151915" text-anchor="middle">Auditor técnico</text>
+                <text x="680" y="116" font-size="10" fill="#94a3b8" text-anchor="middle">Validación algoritmo</text>
+                <rect x="40" y="125" width="180" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="130" y="140" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Control de acceso</text>
+                <text x="130" y="156" font-size="10" fill="#94a3b8" text-anchor="middle">RBAC / ACL</text>
+                <rect x="220" y="125" width="200" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="320" y="140" font-size="11" fill="#151915" text-anchor="middle">IAM / AD / LDAP</text>
+                <text x="320" y="156" font-size="10" fill="#94a3b8" text-anchor="middle">+ logs de acceso</text>
+                <rect x="420" y="125" width="160" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="500" y="140" font-size="11" fill="#151915" text-anchor="middle">Continuo</text>
+                <text x="500" y="156" font-size="10" fill="#94a3b8" text-anchor="middle">Revisión trimestral</text>
+                <rect x="580" y="125" width="200" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="680" y="140" font-size="11" fill="#151915" text-anchor="middle">Auditor de identidad</text>
+                <text x="680" y="156" font-size="10" fill="#94a3b8" text-anchor="middle">Principio mínimo</text>
+                <rect x="40" y="165" width="180" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="130" y="180" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Prueba restauración</text>
+                <text x="130" y="196" font-size="10" fill="#94a3b8" text-anchor="middle">RTO / RPO real</text>
+                <rect x="220" y="165" width="200" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="320" y="180" font-size="11" fill="#151915" text-anchor="middle">Runbook + logs</text>
+                <text x="320" y="196" font-size="10" fill="#94a3b8" text-anchor="middle">Entorno aislado</text>
+                <rect x="420" y="165" width="160" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="500" y="180" font-size="11" fill="#151915" text-anchor="middle">Trimestral</text>
+                <text x="500" y="196" font-size="10" fill="#94a3b8" text-anchor="middle">Mínimo anual</text>
+                <rect x="580" y="165" width="200" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="680" y="180" font-size="11" fill="#151915" text-anchor="middle">Auditor de continuidad</text>
+                <text x="680" y="196" font-size="10" fill="#94a3b8" text-anchor="middle">Verificación numérica</text>
+                <rect x="40" y="205" width="180" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="130" y="220" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Retención y borrado</text>
+                <text x="130" y="236" font-size="10" fill="#94a3b8" text-anchor="middle">Cumplimiento RGPD</text>
+                <rect x="220" y="205" width="200" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="320" y="220" font-size="11" fill="#151915" text-anchor="middle">Política + logs</text>
+                <text x="320" y="236" font-size="10" fill="#94a3b8" text-anchor="middle">Borrado verificado</text>
+                <rect x="420" y="205" width="160" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="500" y="220" font-size="11" fill="#151915" text-anchor="middle">Semestral</text>
+                <text x="500" y="236" font-size="10" fill="#94a3b8" text-anchor="middle">Revisión de política</text>
+                <rect x="580" y="205" width="200" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                <text x="680" y="220" font-size="11" fill="#151915" text-anchor="middle">Auditor de compliance</text>
+                <text x="680" y="236" font-size="10" fill="#94a3b8" text-anchor="middle">Evidencia de ejecución</text>
+            </svg>
+            <figcaption class="diagram-caption">Figura 3: Matriz completa de evidencias para auditoría de almacenamiento.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- GRÁFICO 4: CICLO DE VIDA DE LOS DATOS -->
+        <figure class="article-diagram" aria-label="Ciclo de vida de los datos" onclick="toggleZoom(this)">
+            <svg viewBox="0 0 820 240" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect width="820" height="240" rx="14" fill="#fafaf8"/>
+                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Ciclo de vida de los datos</text>
+                <text x="40" y="58" font-size="12" fill="#77776f">cada fase requiere controles y evidencias distintas</text>
+                <rect x="40" y="80" width="140" height="50" rx="6" fill="#059669"/>
+                <text x="110" y="100" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Creación</text>
+                <text x="110" y="118" font-size="10" fill="#fff" text-anchor="middle">Clasificación</text>
+                <line x1="180" y1="105" x2="200" y2="105" stroke="#77776f" stroke-width="2"/>
+                <rect x="202" y="80" width="140" height="50" rx="6" fill="#059669"/>
+                <text x="272" y="100" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Almacenamiento</text>
+                <text x="272" y="118" font-size="10" fill="#fff" text-anchor="middle">Cifrado + acceso</text>
+                <line x1="342" y1="105" x2="362" y2="105" stroke="#77776f" stroke-width="2"/>
+                <rect x="364" y="80" width="140" height="50" rx="6" fill="#f59e0b"/>
+                <text x="434" y="100" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Uso</text>
+                <text x="434" y="118" font-size="10" fill="#fff" text-anchor="middle">Auditoría</text>
+                <line x1="504" y1="105" x2="524" y2="105" stroke="#77776f" stroke-width="2"/>
+                <rect x="526" y="80" width="140" height="50" rx="6" fill="#059669"/>
+                <text x="596" y="100" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Retención</text>
+                <text x="596" y="118" font-size="10" fill="#fff" text-anchor="middle">Política</text>
+                <line x1="666" y1="105" x2="686" y2="105" stroke="#77776f" stroke-width="2"/>
+                <rect x="688" y="80" width="100" height="50" rx="6" fill="#059669"/>
+                <text x="738" y="100" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Borrado</text>
+                <text x="738" y="118" font-size="10" fill="#fff" text-anchor="middle">Seguro</text>
+                <rect x="40" y="155" width="740" height="50" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="60" y="178" font-size="12" font-weight="700" fill="#b45309">⚠️ El borrado seguro al final del ciclo es tan importante como el cifrado al principio</text>
+                <text x="60" y="195" font-size="11" fill="#78350f">Eliminar la referencia lógica no es borrado. El dato debe ser irrecuperable.</text>
+            </svg>
+            <figcaption class="diagram-caption">Figura 4: El ciclo de vida completo de los datos en el almacenamiento.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- CONTENIDO: SECCIÓN 1 -->
+        <div class="block" id="s1">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Cifrado activado ≠ cifrado verificado</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p><strong>"Tenemos cifrado en reposo" es una frase que un auditor competente no acepta sin más preguntas.</strong> ¿Qué algoritmo? ¿Dónde se gestionan las claves? ¿Quién tiene acceso a ellas? ¿Se rotan periódicamente? Sin respuestas concretas, "tenemos cifrado" es una afirmación, no un control verificado.</p>
+                <p>La diferencia entre "cifrado activado" y "cifrado verificado" es la diferencia entre una casilla marcada en un checklist y un control real que protege datos. Un auditor técnico no se conforma con la captura de pantalla de la configuración — pedirá ver la cadena de custodia de las claves, la segregación de funciones, y los logs de acceso a las claves.</p>
+
+                <div class="callout">
+                    <strong>Pregunta que revela la madurez real:</strong> si tuvieras que rotar todas las claves de cifrado mañana por sospecha de compromiso, ¿sabrías exactamente qué sistemas tocar y en qué orden?
+                </div>
+                <p>En mi experiencia auditando entornos de almacenamiento, menos del 20% de las organizaciones que afirman tener cifrado en reposo tienen una respuesta satisfactoria a esta pregunta. La mayoría tiene las claves almacenadas en el mismo sistema que los datos, o gestionadas por el mismo administrador que tiene acceso a todo.</p>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+
+        <div class="block" id="s2">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Gestión de claves: el punto ciego habitual</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>El cifrado en reposo es tan fuerte como la protección de sus claves. Un array con cifrado AES-256 activado pero con las claves almacenadas en un fichero de texto en el mismo servidor, o gestionadas por el mismo administrador que tiene acceso a los datos, tiene una seguridad efectiva mucho menor de lo que el algoritmo sugiere.</p>
+                <p>La gestión de claves es el punto ciego más común en auditorías de almacenamiento. Los administradores confían en el cifrado del array sin verificar que las claves están protegidas con el mismo nivel de rigor que los datos.</p>
+
+                <h3>Buenas prácticas de gestión de claves</h3>
+                <ul>
+                    <li><strong>Separación de funciones</strong>: quien gestiona las claves no debería ser la misma persona con acceso administrativo a los datos cifrados.</li>
+                    <li><strong>HSM o KMS dedicado</strong> para almacenamiento de claves, no un fichero de configuración.</li>
+                    <li><strong>Rotación periódica</strong> documentada, no "las claves llevan tres años sin tocarse".</li>
+                    <li><strong>Procedimiento de revocación</strong> de emergencia probado, no solo teórico.</li>
+                </ul>
+                <p>La rotación de claves es uno de los controles más descuidados. Una clave que no se rota nunca es una clave que, si se compromete, compromete todos los datos cifrados con ella. El estándar de la industria recomienda rotación anual como mínimo, y trimestral para entornos de alto riesgo.</p>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+
+        <div class="block" id="s3">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Control de acceso a nivel de dato</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>Restringir el acceso a nivel de red (quién puede llegar al array) no sustituye al control de acceso a nivel de dato (qué usuario o servicio puede leer o escribir un fichero o volumen concreto). Un atacante que compromete una cuenta con acceso de red legítimo, pero sin restricciones granulares dentro del propio storage, puede leer todo lo que ese sistema alcanza.</p>
+
+                <table class="matrix">
+                    <thead>
+                        <tr>
+                            <th>Capa</th>
+                            <th>Qué controla</th>
+                            <th>Qué NO controla</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Red (firewall/VLAN)</strong></td>
+                            <td>Quién puede llegar al array</td>
+                            <td>Qué puede leer una vez dentro</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ACL de volumen/share</strong></td>
+                            <td>Qué usuarios acceden a qué recurso</td>
+                            <td>Qué hace ese usuario con el dato</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cifrado + gestión de claves</strong></td>
+                            <td>Confidencialidad si el medio se roba</td>
+                            <td>Acceso de un usuario autorizado comprometido</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>El control de acceso efectivo combina las tres capas: red (quién llega), ACL (qué puede tocar), y cifrado (qué pasa si el medio se sustrae). Una sola capa no es suficiente.</p>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+
+        <div class="block" id="s4">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La restauración que nunca se probó</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>Tener snapshots o copias no es tener capacidad de restauración verificada. La evidencia que un auditor — y tú mismo — deberíais exigir es un registro de pruebas de restauración reales: se cogió una copia de hace X días, se restauró en un entorno aislado, se verificó la integridad, y se documentó cuánto tardó realmente frente a lo estimado.</p>
+                <p>El hallazgo más común en auditorías de almacenamiento es el registro de pruebas de restauración incompleto o inexistente. Las organizaciones confían en que sus backups funcionan porque "nunca han fallado" — pero eso no es evidencia, es suerte.</p>
+
+                <div class="callout warn">
+                    <strong>Hallazgo típico en auditoría:</strong> snapshots diarios durante dos años, ni una sola restauración de prueba documentada. Nadie sabe si esos snapshots son realmente recuperables hasta el día que se necesitan de verdad.
+                </div>
+                <p>La frecuencia recomendada para pruebas de restauración es trimestral para sistemas críticos, y al menos anual para el resto. Cada prueba debe documentar: qué se restauró, desde qué backup/snapshot, cuánto tardó, y si la integridad de los datos se verificó correctamente.</p>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+
+        <div class="block" id="s5">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Retención y borrado defendibles</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>La política de retención debe estar tan documentada como ejecutada — no basta con tenerla escrita si en la práctica los datos se conservan indefinidamente "por si acaso" o se borran antes de tiempo por error de configuración. Ambos escenarios son hallazgos de auditoría, y el segundo puede ser directamente un incumplimiento legal.</p>
+                <p>El borrado seguro de datos sensibles al final de su ciclo de vida (no solo eliminar la referencia lógica, sino garantizar que el dato no es recuperable) es un control que muchas organizaciones dan por hecho sin haberlo verificado nunca en la práctica.</p>
+                <p>El RGPD y otras regulaciones de protección de datos exigen no solo que los datos se borren cuando ya no son necesarios, sino que se pueda demostrar que se ha hecho. Un simple "delete" no es suficiente si los datos pueden recuperarse con herramientas forenses. Para datos especialmente sensibles, el borrado criptográfico (sobrescritura) o la destrucción física del medio son las únicas opciones defendibles.</p>
+            </div>
+        </div>
+
+        <!-- PIE DE AUTOR -->
+        <div class="defensa-foot">
+            <div class="defensa-author">
+                <div class="defensa-foot-label">Autor</div>
+                <div class="defensa-author-name">Miguel Ángel Carriazo</div>
+                <p class="defensa-author-bio">vCISO &amp; Arquitecto de Infraestructura con más de 25 años diseñando, asegurando y operando sistemas críticos. ISO 27001 &amp; 42001 Lead Auditor.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+        <div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+            <div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+            <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Cifrado</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">AES-256 / KMS</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Control acceso</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">RBAC + ACL</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Prueba restauración</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Trimestral</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Retención</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Política documentada</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Estándar</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">ISO 27001 · RGPD</td></tr>
+            </table>
+        </div>
+        <div>
+            <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+            <nav class="defensa-toc-nav" id="artTocNav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+                <a href="#s1" class="active" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px; color:#059669; border-left:2px solid #059669; font-weight:700;">01. Cifrado verificado</a>
+                <a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Gestión de claves</a>
+                <a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Control de acceso</a>
+                <a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Restauración probada</a>
+                <a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Retención y borrado</a>
+            </nav>
+        </div>
+    </aside>
+
+</div>
+
+<!-- ARTÍCULOS RELACIONADOS -->
+<div class="related-section">
+    <div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+    <div class="related-grid">
+        <a class="related-card" href="almacenamiento-datos-diseno-principios.html">
+            <div class="r-meta">Almacenamiento · Principios de Diseño</div>
+            <div class="r-title">Principios de diseño: tiers, RAID y el mito de "cuanto más rápido, mejor"</div>
+            <div class="r-desc">El almacenamiento no se diseña por velocidad máxima, se diseña por perfil de acceso.</div>
+            <span class="r-link">Leer artículo →</span>
+        </a>
+        <a class="related-card" href="almacenamiento-datos-madurez-roadmap.html">
+            <div class="r-meta">Almacenamiento · Madurez</div>
+            <div class="r-title">Madurez y roadmap: de discos sueltos a gobierno del dato automatizado</div>
+            <div class="r-desc">Los cuatro niveles reales de madurez en almacenamiento.</div>
+            <span class="r-link">Leer artículo →</span>
+        </a>
+        <a class="related-card" href="almacenamiento-datos-modelo-operativo.html">
+            <div class="r-meta">Almacenamiento · Modelo Operativo</div>
+            <div class="r-title">Modelo operativo: capacidad, snapshots y la alerta que llega tarde</div>
+            <div class="r-desc">El 90% de las crisis de almacenamiento no son técnicas — son de planificación de capacidad.</div>
+            <span class="r-link">Leer artículo →</span>
+        </a>
+    </div>
+</div>
+
+<div id="footer-container"></div>
+
+</div>
+</div>
+
+<script src="../../js/menu.js"></script>
+<script src="../../js/footer.js"></script>
+<script src="../../js/main.js"></script>
+
+<script>
+function toggleZoom(element) {
+    if (element.classList.contains('zoomed')) {
+        element.classList.remove('zoomed');
+        document.querySelector('.zoom-overlay')?.classList.remove('active');
+    } else {
+        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+        element.classList.add('zoomed');
+        let overlay = document.querySelector('.zoom-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'zoom-overlay';
+            overlay.onclick = function() {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                overlay.classList.remove('active');
+            };
+            document.body.appendChild(overlay);
+        }
+        overlay.classList.add('active');
+    }
+}
+</script>
+
+</body>
+</html>

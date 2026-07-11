@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+    <title>Controles y evidencias: qué evidencia real exige un auditor NIS2 sobre gestión de riesgo | Riesgo Tecnológico | Technology Advisory</title>
+    <meta name="description" content="Un auditor NIS2 o DORA no valida la política de gestión de riesgo — valida las evidencias de que se aplica. Cinco categorías de evidencia auditable, qué las diferencia del papel decorativo y cómo se construye la trazabilidad que sobrevive a un requerimiento formal.">
+    <meta name="author" content="Miguel Ángel Carriazo">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#059669">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/dossier-core.css">
+    <link rel="stylesheet" href="../../css/articulo.css">
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/articulo-diagramas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @media (max-width: 1024px) {
+            .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
+            div[style*="padding: 16px 48px 0"], div[style*="padding: 16px 48px 0;"] { padding: 16px 4% 0 !important; }
+            div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding: 40px 4% 24px !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-wrapper ds-page">
+        <div class="card">
+
+            <div id="menu-container"></div>
+            <div class="accent-bar" style="background:#059669;"></div>
+
+            <div class="ds-meta">
+                <span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: gobernanza</span>
+                <span>categoría: <strong>Riesgo Tecnológico</strong></span>
+            </div>
+
+            <div style="padding: 16px 4% 0;">
+                <a href="../index.html?cat=riesgo-tecnologico" class="defensa-btn-back" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Riesgo Tecnológico</a>
+            </div>
+
+            <div style="padding: 40px 4% 24px; border-bottom: 1px solid #ededea;">
+                <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Controles · Riesgo Tecnológico</div>
+                <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Controles y evidencias: <span style="color:#059669;">qué evidencia real exige un auditor NIS2 sobre gestión de riesgo</span></h1>
+                <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Un auditor NIS2 o DORA no valida la política de gestión de riesgo — valida las evidencias de que se aplica. Cinco categorías de evidencia auditable, qué las diferencia del papel decorativo y cómo se construye la trazabilidad que sobrevive a un requerimiento formal.</p>
+                <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>Riesgo Tecnológico</span>
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>Lectura Avanzada (16-20 min)</span>
+                </div>
+            </div>
+
+            <div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+                <div class="defensa-main" style="min-width:0;">
+
+                    <!-- GRÁFICO 1: LAS CINCO CATEGORÍAS DE EVIDENCIA -->
+                    <figure class="article-diagram" aria-label="Las cinco categorías de evidencia auditable en gestión de riesgo" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="430" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Las cinco categorías de evidencia auditable</text>
+                                <text x="40" y="66" font-size="12" fill="#77776f">lo que un auditor NIS2 o DORA pide realmente cuando examina gestión de riesgo</text>
+                                <!-- 5 columnas horizontales -->
+                                <rect x="40" y="105" width="820" height="60" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <circle cx="72" cy="135" r="18" fill="#3b82f6"/>
+                                <text x="72" y="141" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">1</text>
+                                <text x="105" y="130" font-size="14" font-weight="800" fill="#151915">Existencia y aprobación</text>
+                                <text x="105" y="150" font-size="12" fill="#334155">Política aprobada por órgano competente · versionada · fecha · firma</text>
+                                <rect x="40" y="170" width="820" height="60" rx="10" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+                                <circle cx="72" cy="200" r="18" fill="#4f46e5"/>
+                                <text x="72" y="206" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">2</text>
+                                <text x="105" y="195" font-size="14" font-weight="800" fill="#151915">Aplicación operativa</text>
+                                <text x="105" y="215" font-size="12" fill="#334155">Registro vivo · actas de comité · tickets vinculados · trazas de sistema</text>
+                                <rect x="40" y="235" width="820" height="60" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <circle cx="72" cy="265" r="18" fill="#059669"/>
+                                <text x="72" y="271" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">3</text>
+                                <text x="105" y="260" font-size="14" font-weight="800" fill="#151915">Trazabilidad del razonamiento</text>
+                                <text x="105" y="280" font-size="12" fill="#334155">Cálculo FAIR con supuestos · fuentes de datos · versión del modelo aplicado</text>
+                                <rect x="40" y="300" width="820" height="60" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+                                <circle cx="72" cy="330" r="18" fill="#d97706"/>
+                                <text x="72" y="336" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">4</text>
+                                <text x="105" y="325" font-size="14" font-weight="800" fill="#151915">Autoridad y firma de aceptación</text>
+                                <text x="105" y="345" font-size="12" fill="#334155">Aceptación con nombre, fecha, umbral aplicado, escalado documentado</text>
+                                <rect x="40" y="365" width="820" height="55" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+                                <circle cx="72" cy="393" r="18" fill="#dc2626"/>
+                                <text x="72" y="399" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">5</text>
+                                <text x="105" y="388" font-size="14" font-weight="800" fill="#151915">Retroalimentación de incidentes</text>
+                                <text x="105" y="407" font-size="12" fill="#334155">Post-mortem que actualiza el modelo · calibración con datos reales</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 480" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="480" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">Cinco categorías de evidencia</text>
+                                <rect x="18" y="45" width="294" height="80" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <circle cx="40" cy="72" r="13" fill="#3b82f6"/>
+                                <text x="40" y="77" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">1</text>
+                                <text x="62" y="70" font-size="12" font-weight="800" fill="#151915">Existencia y aprobación</text>
+                                <text x="62" y="90" font-size="10" fill="#334155">Política aprobada, firmada,</text>
+                                <text x="62" y="105" font-size="10" fill="#334155">versionada, fecha visible.</text>
+                                <rect x="18" y="132" width="294" height="80" rx="8" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+                                <circle cx="40" cy="159" r="13" fill="#4f46e5"/>
+                                <text x="40" y="164" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">2</text>
+                                <text x="62" y="157" font-size="12" font-weight="800" fill="#151915">Aplicación operativa</text>
+                                <text x="62" y="177" font-size="10" fill="#334155">Registro vivo, actas,</text>
+                                <text x="62" y="192" font-size="10" fill="#334155">tickets, trazas de sistema.</text>
+                                <rect x="18" y="219" width="294" height="80" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <circle cx="40" cy="246" r="13" fill="#059669"/>
+                                <text x="40" y="251" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">3</text>
+                                <text x="62" y="244" font-size="12" font-weight="800" fill="#151915">Trazabilidad razonamiento</text>
+                                <text x="62" y="264" font-size="10" fill="#334155">Cálculo FAIR, supuestos,</text>
+                                <text x="62" y="279" font-size="10" fill="#334155">fuentes de datos, versión.</text>
+                                <rect x="18" y="306" width="294" height="80" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+                                <circle cx="40" cy="333" r="13" fill="#d97706"/>
+                                <text x="40" y="338" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">4</text>
+                                <text x="62" y="331" font-size="12" font-weight="800" fill="#151915">Firma de aceptación</text>
+                                <text x="62" y="351" font-size="10" fill="#334155">Nombre, fecha, umbral,</text>
+                                <text x="62" y="366" font-size="10" fill="#334155">escalado documentado.</text>
+                                <rect x="18" y="393" width="294" height="80" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+                                <circle cx="40" cy="420" r="13" fill="#dc2626"/>
+                                <text x="40" y="425" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">5</text>
+                                <text x="62" y="418" font-size="12" font-weight="800" fill="#151915">Retroalim. de incidentes</text>
+                                <text x="62" y="438" font-size="10" fill="#334155">Post-mortem que actualiza</text>
+                                <text x="62" y="453" font-size="10" fill="#334155">el modelo. Calibración real.</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 1: Las cinco categorías de evidencia que un auditor NIS2/DORA examina en gestión de riesgo tecnológico.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- SECCIÓN 1 -->
+                    <div class="block" id="s1">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — Qué NO es evidencia</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La política escrita no es evidencia de gestión de riesgo</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>El primer aprendizaje ante una auditoría NIS2 seria, o ante un examen DORA de las autoridades competentes, es reconocer qué no cuenta como evidencia.</strong> No cuenta la política de gestión de riesgo escrita, aunque esté bien redactada. No cuenta el organigrama del área de seguridad. No cuenta la presentación en PowerPoint que el CISO enseñó al comité el año pasado. No cuenta el correo diciendo que "se ha implantado ISO 27005". Todo eso son documentos de intención, no de aplicación.</p>
+                            <p>Lo que cuenta como evidencia es aquello que permite reconstruir, sin ambigüedad, que un proceso ocurrió: quién lo hizo, cuándo, con qué información, con qué autoridad, y con qué resultado. Es la diferencia entre decir "revisamos los riesgos trimestralmente" y mostrar las cuatro actas de comité de riesgo del año en curso con fechas, asistentes, decisiones adoptadas y firmas. Es la diferencia entre "aplicamos FAIR a los TOP 10 riesgos" y exportar del sistema los TOP 10 con su distribución LEF/LM, sus fuentes de estimación, la versión del modelo aplicada y el timestamp del último recálculo.</p>
+                            <div class="defensa-box-warning"><strong>⚠️ La prueba de fuego:</strong> si el auditor pide "muéstrame la última reunión donde se decidió aceptar un riesgo por encima del umbral operativo" y la respuesta requiere reconstruir la reunión de memoria, no hay evidencia. Hay narrativa. La distinción es la que separa una organización que gestiona riesgo de una que dice hacerlo.</p></div>
+                            <p>Este criterio no es una interpretación estricta de mi parte. Es lo que efectivamente aplican los auditores en las revisiones que se están produciendo desde la entrada en vigor de NIS2 (octubre de 2024) y desde el arranque efectivo de DORA (enero de 2025). El artículo 21 de NIS2 exige medidas "adecuadas y proporcionadas" con revisión, y "adecuada" en lenguaje regulatorio significa <em>demostrable con evidencia</em>. Los servicios de supervisión —CNMV, Banco de España, INCIBE-CERT en el caso español— piden precisamente eso: no la política, la evidencia de que la política se ejecuta.</p>
+                        </div>
+                    </div>
+
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+
+                    <!-- SECCIÓN 2 -->
+                    <div class="block" id="s2">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Existencia y aprobación</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Categoría 1: la política sí importa, pero como puerta de entrada</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>La política de gestión de riesgo no es evidencia de aplicación, pero sí es evidencia de existencia de marco. Un auditor la revisa por lo mismo que revisa cualquier documento normativo: para verificar que hay una intención formalmente aprobada por la autoridad correcta y que esa intención está viva en el sistema documental.</p>
+                            <p>Los cuatro elementos mínimos que un auditor comprueba en la política: aprobación formal por el órgano competente (típicamente comité de dirección o consejo, según el tamaño), fecha de aprobación con periodicidad de revisión definida (anual o cada cambio material), versionado explícito con historial de cambios, y comunicación documentada a los responsables de aplicación (registro de acuse en intranet corporativa, plataforma de e-learning con evidencia de lectura, o equivalente).</p>
+                            <p>El error habitual —lo he visto varias veces en auditorías internas antes de que llegase la externa— es tener la política del 2019 sin actualización, aprobada por un director general que ya no está, colgada en un SharePoint al que nadie tiene acceso desde el nuevo Entra ID, sin historial de versiones. Todo eso, individualmente, ya es un hallazgo. Los cuatro juntos son un hallazgo mayor con recomendación de rediseño del marco.</p>
+                            <div class="defensa-box-tech"><strong>Práctica de contenido:</strong> la política debe declarar explícitamente el marco de referencia adoptado (ISO 27005:2022, NIST RMF, FAIR o combinación), la definición de apetito de riesgo con métricas cuantitativas donde aplique, los umbrales de aceptación por nivel de autoridad, y la periodicidad mínima de revisión del registro. La ambigüedad en cualquiera de estos puntos es lo que un auditor levanta como observación.</p></div>
+                        </div>
+                    </div>
+
+                    <!-- GRÁFICO 3: LOS CUATRO ELEMENTOS DE LA POLÍTICA -->
+                    <figure class="article-diagram" aria-label="Los cuatro elementos mínimos que un auditor comprueba en la política" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="260" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">Los cuatro elementos mínimos de la política</text>
+                                <text x="40" y="58" font-size="12" fill="#77776f">lo primero que un auditor comprueba antes de mirar nada más</text>
+                                <rect x="40" y="85" width="195" height="130" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="60" y="112" font-size="13" font-weight="800" fill="#151915">Aprobación</text>
+                                <text x="60" y="135" font-size="11" fill="#334155">Órgano competente</text>
+                                <text x="60" y="152" font-size="11" fill="#334155">(dirección o consejo)</text>
+                                <rect x="245" y="85" width="195" height="130" rx="10" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+                                <text x="265" y="112" font-size="13" font-weight="800" fill="#151915">Fecha y revisión</text>
+                                <text x="265" y="135" font-size="11" fill="#334155">Periodicidad definida</text>
+                                <text x="265" y="152" font-size="11" fill="#334155">(anual o por cambio)</text>
+                                <rect x="450" y="85" width="195" height="130" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="470" y="112" font-size="13" font-weight="800" fill="#151915">Versionado</text>
+                                <text x="470" y="135" font-size="11" fill="#334155">Historial explícito</text>
+                                <text x="470" y="152" font-size="11" fill="#334155">de cambios</text>
+                                <rect x="655" y="85" width="205" height="130" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+                                <text x="675" y="112" font-size="13" font-weight="800" fill="#151915">Comunicación</text>
+                                <text x="675" y="135" font-size="11" fill="#334155">Acuse documentado,</text>
+                                <text x="675" y="152" font-size="11" fill="#334155">no solo publicación</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 320" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="320" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">Los cuatro elementos mínimos</text>
+                                <rect x="18" y="45" width="294" height="60" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="30" y="68" font-size="12" font-weight="800" fill="#151915">Aprobación</text>
+                                <text x="30" y="86" font-size="10" fill="#334155">Órgano competente</text>
+                                <rect x="18" y="115" width="294" height="60" rx="8" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+                                <text x="30" y="138" font-size="12" font-weight="800" fill="#151915">Fecha y revisión</text>
+                                <text x="30" y="156" font-size="10" fill="#334155">Periodicidad definida</text>
+                                <rect x="18" y="185" width="294" height="60" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="30" y="208" font-size="12" font-weight="800" fill="#151915">Versionado</text>
+                                <text x="30" y="226" font-size="10" fill="#334155">Historial de cambios</text>
+                                <rect x="18" y="255" width="294" height="55" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+                                <text x="30" y="278" font-size="12" font-weight="800" fill="#151915">Comunicación</text>
+                                <text x="30" y="296" font-size="10" fill="#334155">Acuse documentado</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 3: Los cuatro elementos mínimos que un auditor comprueba en la política de gestión de riesgo.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+
+                    <!-- SECCIÓN 3 -->
+                    <div class="block" id="s3">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Aplicación operativa</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Categoría 2: el registro vivo y su rastro operativo</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>Aquí es donde la mayoría de organizaciones fallan. La evidencia de aplicación operativa es el conjunto de artefactos que demuestran que la política no vive solo en el documento, sino en el sistema. Se compone de cuatro subcategorías, cada una con formato esperado.</p>
+                            <p><strong>El registro de riesgos exportable con timestamps.</strong> Un auditor pide una exportación del registro con fecha de última modificación por entrada, y esa fecha debe ser reciente para riesgos activos. Un registro donde el 80% de las entradas tiene "última modificación" hace más de un año no es un registro vivo; es un documento archivado. La herramienta usada (Excel, GRC, Jira, lo que sea) debe permitir esa exportación sin trucos.</p>
+                            <p><strong>Actas de comité de riesgo.</strong> Al menos cuatro por año, con fechas coherentes con la cadencia declarada en la política, con lista de asistentes reales, con decisiones concretas, con firmas o su equivalente digital. Un acta que dice "se revisó el estado del registro" sin detalle no es un acta útil como evidencia. Una acta que dice "se aprobó la aceptación del riesgo R-2025-047 (ALE 340k€ mediana) por 12 meses hasta reevaluación en Q3 2026, propuesta por el CISO, aprobada por el comité con voto favorable de 4/5 miembros" es una evidencia sólida.</p>
+                            <p><strong>Tickets vinculados en el sistema operativo.</strong> Si el registro dice que el riesgo R-2025-014 tiene tratamiento en curso ("mitigar mediante WAF gestionado"), debe existir un proyecto o ticket vinculado en el sistema de gestión del trabajo (ServiceNow, Jira, o el que sea) con avance registrado y fecha esperada de cierre. La ausencia de este vínculo revela un registro que enumera pero no ejecuta.</p>
+                            <p><strong>Trazas del sistema.</strong> Si la política declara que se hace análisis de riesgo antes de todo cambio significativo, el sistema de gestión de cambios debe tener un campo obligatorio de análisis de riesgo, y un porcentaje razonable de cambios en el histórico debe tener ese campo cumplimentado. Si el campo existe pero está vacío en la mayoría de cambios, es peor que si no existiera —revela que la política se diseñó, no se aplicó y nadie corrigió el hueco—.</p>
+                        </div>
+                    </div>
+
+                    <!-- GRÁFICO 2: FLUJO DE EVIDENCIA -->
+                    <figure class="article-diagram" aria-label="Flujo desde la decisión de riesgo hasta la evidencia auditable" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="340" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">De la decisión de riesgo a la evidencia auditable</text>
+                                <text x="40" y="58" font-size="12" fill="#77776f">cada decisión genera artefactos que dejan traza sin trabajo adicional</text>
+                                <!-- Etapa 1 -->
+                                <rect x="40" y="100" width="180" height="90" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="130" y="125" font-size="12" font-weight="800" fill="#3b82f6" text-anchor="middle">1. Identificación</text>
+                                <text x="130" y="150" font-size="11" fill="#334155" text-anchor="middle">Ticket + campo</text>
+                                <text x="130" y="167" font-size="11" fill="#334155" text-anchor="middle">"análisis riesgo"</text>
+                                <text x="130" y="184" font-size="11" font-weight="700" fill="#3b82f6" text-anchor="middle">→ Traza automática</text>
+                                <path d="M 225 145 L 265 145" stroke="#94a3b8" stroke-width="2" marker-end="url(#hd-a)"/>
+                                <defs><marker id="hd-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/></marker></defs>
+                                <!-- Etapa 2 -->
+                                <rect x="270" y="100" width="180" height="90" rx="10" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+                                <text x="360" y="125" font-size="12" font-weight="800" fill="#4f46e5" text-anchor="middle">2. Cuantificación</text>
+                                <text x="360" y="150" font-size="11" fill="#334155" text-anchor="middle">FAIR + supuestos</text>
+                                <text x="360" y="167" font-size="11" fill="#334155" text-anchor="middle">versionados</text>
+                                <text x="360" y="184" font-size="11" font-weight="700" fill="#4f46e5" text-anchor="middle">→ Anexo firmado</text>
+                                <path d="M 455 145 L 495 145" stroke="#94a3b8" stroke-width="2" marker-end="url(#hd-a)"/>
+                                <!-- Etapa 3 -->
+                                <rect x="500" y="100" width="180" height="90" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="590" y="125" font-size="12" font-weight="800" fill="#059669" text-anchor="middle">3. Decisión</text>
+                                <text x="590" y="150" font-size="11" fill="#334155" text-anchor="middle">Acta comité +</text>
+                                <text x="590" y="167" font-size="11" fill="#334155" text-anchor="middle">umbral aplicado</text>
+                                <text x="590" y="184" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">→ Firma en acta</text>
+                                <path d="M 685 145 L 725 145" stroke="#94a3b8" stroke-width="2" marker-end="url(#hd-a)"/>
+                                <!-- Etapa 4 -->
+                                <rect x="730" y="100" width="130" height="90" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+                                <text x="795" y="125" font-size="12" font-weight="800" fill="#d97706" text-anchor="middle">4. Ejecución</text>
+                                <text x="795" y="150" font-size="11" fill="#334155" text-anchor="middle">Ticket con</text>
+                                <text x="795" y="167" font-size="11" fill="#334155" text-anchor="middle">avance real</text>
+                                <text x="795" y="184" font-size="11" font-weight="700" fill="#d97706" text-anchor="middle">→ Auditable</text>
+                                <!-- barra -->
+                                <rect x="40" y="220" width="820" height="45" rx="10" fill="#0f172a"/>
+                                <text x="450" y="243" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">La evidencia auditable emerge del proceso, no se produce en paralelo</text>
+                                <text x="450" y="260" font-size="11" fill="#d1fae5" text-anchor="middle">si el modelo operativo obliga a los artefactos, la evidencia existe por construcción</text>
+                                <text x="450" y="295" font-size="11" font-style="italic" fill="#64748b" text-anchor="middle">Cuando la evidencia se genera "por demanda del auditor", ya se ha perdido la trazabilidad temporal</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 400" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="400" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">Decisión → Evidencia</text>
+                                <rect x="18" y="45" width="294" height="60" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="30" y="65" font-size="11" font-weight="800" fill="#3b82f6">1. Identificación</text>
+                                <text x="30" y="82" font-size="10" fill="#334155">Ticket + campo obligatorio</text>
+                                <text x="30" y="97" font-size="10" font-weight="700" fill="#3b82f6">→ Traza automática</text>
+                                <rect x="18" y="115" width="294" height="60" rx="8" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+                                <text x="30" y="135" font-size="11" font-weight="800" fill="#4f46e5">2. Cuantificación</text>
+                                <text x="30" y="152" font-size="10" fill="#334155">FAIR + supuestos versionados</text>
+                                <text x="30" y="167" font-size="10" font-weight="700" fill="#4f46e5">→ Anexo firmado</text>
+                                <rect x="18" y="185" width="294" height="60" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="30" y="205" font-size="11" font-weight="800" fill="#059669">3. Decisión</text>
+                                <text x="30" y="222" font-size="10" fill="#334155">Acta de comité + umbral</text>
+                                <text x="30" y="237" font-size="10" font-weight="700" fill="#059669">→ Firma en acta</text>
+                                <rect x="18" y="255" width="294" height="60" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+                                <text x="30" y="275" font-size="11" font-weight="800" fill="#d97706">4. Ejecución</text>
+                                <text x="30" y="292" font-size="10" fill="#334155">Ticket con avance real</text>
+                                <text x="30" y="307" font-size="10" font-weight="700" fill="#d97706">→ Auditable</text>
+                                <rect x="18" y="330" width="294" height="60" rx="8" fill="#0f172a"/>
+                                <text x="165" y="352" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">La evidencia emerge del proceso,</text>
+                                <text x="165" y="368" font-size="10" fill="#d1fae5" text-anchor="middle">no se produce en paralelo</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 2: La evidencia auditable se genera automáticamente si el modelo operativo obliga a los artefactos correctos.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+
+                    <!-- SECCIÓN 4 -->
+                    <div class="block" id="s4">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Trazabilidad del razonamiento</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Categoría 3: el número flota sin la memoria del cálculo</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>La cuantificación de riesgo produce números —un ALE mediano de 380k, un IC 90% entre 90k y 1,5M—. Esos números por sí solos no son evidencia. Son resultados. La evidencia es la memoria del cálculo que los produce: qué supuestos entraron, qué fuentes de datos se usaron, qué versión del modelo se aplicó, y quién firmó ese análisis.</p>
+                            <p>Un anexo de trazabilidad defendible por cada riesgo cuantificado contiene, como mínimo: la distribución LEF estimada con su justificación (histórico interno de N eventos en M años, benchmark sectorial ENISA/Verizon DBIR, opinión experta calibrada, o combinación); la distribución LM con la misma justificación por componente de pérdida (respuesta a incidente, sanción regulatoria, daño reputacional, coste operativo, pérdida de negocio); los factores de reducción aplicados por controles existentes con su justificación; la versión del modelo FAIR aplicada; el nombre de la persona que hizo el análisis; y la fecha.</p>
+                            <p>Sin ese anexo, un ALE de 380k€ ante un auditor es una afirmación no falseable. Con el anexo, el auditor puede cuestionar los supuestos —lo cual es su trabajo— pero no puede impugnar la trazabilidad del método. La diferencia entre "no me gusta cómo estimasteis la frecuencia" y "no puedo verificar cómo estimasteis la frecuencia" es la diferencia entre una recomendación y un hallazgo.</p>
+                            <div class="defensa-box-success"><strong>✔ Práctica de robustez:</strong> guardar los datos de entrada del análisis (histórico interno, benchmarks externos consultados, opinión experta con nombre) durante al menos cinco años. Si el modelo se recalibra con datos nuevos, versionar la iteración anterior. La trazabilidad histórica es lo que permite defender por qué se decidió lo que se decidió en el momento en que se decidió, y no con la información actual.</p></div>
+                        </div>
+                    </div>
+
+                    <!-- GRÁFICO 4: ANEXO DE TRAZABILIDAD DE UN ALE -->
+                    <figure class="article-diagram" aria-label="Contenido mínimo del anexo de trazabilidad de un ALE cuantificado" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="250" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">El anexo que convierte un número en evidencia</text>
+                                <text x="40" y="58" font-size="12" fill="#77776f">sin esto, un ALE de 380k€ es una afirmación no falseable</text>
+                                <rect x="40" y="80" width="820" height="140" rx="10" fill="#ffffff" stroke="#ededea" stroke-width="1.5"/>
+                                <rect x="60" y="100" width="240" height="30" rx="5" fill="#059669"/>
+                                <text x="180" y="120" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Distribución LEF + fuente</text>
+                                <rect x="310" y="100" width="240" height="30" rx="5" fill="#059669"/>
+                                <text x="430" y="120" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Distribución LM + fuente</text>
+                                <rect x="560" y="100" width="280" height="30" rx="5" fill="#059669"/>
+                                <text x="700" y="120" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Factores de reducción aplicados</text>
+                                <rect x="60" y="140" width="240" height="30" rx="5" fill="#f0fdf4" stroke="#059669" stroke-width="1"/>
+                                <text x="180" y="160" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">Versión del modelo FAIR</text>
+                                <rect x="310" y="140" width="240" height="30" rx="5" fill="#f0fdf4" stroke="#059669" stroke-width="1"/>
+                                <text x="430" y="160" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">Nombre del analista</text>
+                                <rect x="560" y="140" width="280" height="30" rx="5" fill="#f0fdf4" stroke="#059669" stroke-width="1"/>
+                                <text x="700" y="160" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">Fecha del análisis</text>
+                                <text x="450" y="195" font-size="11" font-weight="700" fill="#151915" text-anchor="middle">Con esto: el auditor puede discutir supuestos, no impugnar el método</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 320" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="320" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">El anexo de trazabilidad</text>
+                                <rect x="18" y="45" width="294" height="30" rx="5" fill="#059669"/>
+                                <text x="165" y="65" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Distribución LEF + fuente</text>
+                                <rect x="18" y="80" width="294" height="30" rx="5" fill="#059669"/>
+                                <text x="165" y="100" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Distribución LM + fuente</text>
+                                <rect x="18" y="115" width="294" height="30" rx="5" fill="#059669"/>
+                                <text x="165" y="135" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Factores de reducción</text>
+                                <rect x="18" y="150" width="294" height="30" rx="5" fill="#f0fdf4" stroke="#059669" stroke-width="1"/>
+                                <text x="165" y="170" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Versión del modelo FAIR</text>
+                                <rect x="18" y="185" width="294" height="30" rx="5" fill="#f0fdf4" stroke="#059669" stroke-width="1"/>
+                                <text x="165" y="205" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Nombre del analista</text>
+                                <rect x="18" y="220" width="294" height="30" rx="5" fill="#f0fdf4" stroke="#059669" stroke-width="1"/>
+                                <text x="165" y="240" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Fecha del análisis</text>
+                                <text x="165" y="275" font-size="9" font-weight="700" fill="#151915" text-anchor="middle">El auditor discute supuestos,</text>
+                                <text x="165" y="292" font-size="9" font-weight="700" fill="#151915" text-anchor="middle">no impugna el método</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 4: Contenido mínimo del anexo de trazabilidad de un ALE cuantificado.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+
+                    <!-- SECCIÓN 5 -->
+                    <div class="block" id="s5">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Autoridad y firma</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Categorías 4 y 5: aceptación firmada y aprendizaje de incidentes</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>La cuarta categoría de evidencia es la más específica de gestión de riesgo: la aceptación formal. Toda aceptación de riesgo por encima del umbral operativo debe generar un artefacto firmado que contiene: identificador del riesgo, cuantificación aplicada, umbral que dispara la autoridad requerida, nombre y cargo de la persona que acepta, fecha de aceptación, fecha de caducidad de la aceptación, condiciones de revisión anticipada (por ejemplo, "si el ALE recalculado sube por encima del 20% del original"), y firma —electrónica cualificada, firma en acta con evidencia digital, o el mecanismo que la organización use consistentemente—.</p>
+                            <p>Sin este artefacto, la organización no puede demostrar quién asumió el riesgo residual. Y sin poder demostrarlo, tras un incidente material, la responsabilidad se difumina —lo cual es un problema legal y reputacional serio, especialmente bajo NIS2 que introduce responsabilidad personal de la alta dirección por deficiencias en gestión de riesgo—.</p>
+                            <p>La quinta categoría cierra el ciclo: la evidencia de retroalimentación. Cada incidente material cerrado debe producir traza documental de dos cosas: primero, qué riesgo del registro se materializó (o si no estaba, cuál se añadió como resultado); segundo, qué recalibración del modelo se aplicó a partir del incidente (si el impacto real fue distinto del modelado, actualización de los parámetros LM; si la frecuencia observada difiere de la estimada, actualización de LEF). Esta traza es la que demuestra que el modelo aprende. Un modelo estático durante años, tras varios incidentes materiales, revela que el proceso de gestión de riesgo no incorpora la experiencia, y por tanto no es un proceso vivo.</p>
+                            <div class="defensa-box-tech"><strong>Detalle sobre firma electrónica:</strong> en el contexto español y europeo, para operadores esenciales bajo NIS2 y entidades financieras bajo DORA, la firma electrónica cualificada eIDAS es el mecanismo más defendible. Herramientas como SaveTheProof, Signaturit o similares producen evidencia con integridad criptográfica y sello de tiempo cualificado que es aceptable ante regulador, auditoría externa y, si llegase el caso, tribunal.</p></div>
+                            <p><strong>Los cinco anti-patrones que un auditor detecta en menos de una hora.</strong> Estos son los patrones que un auditor experimentado identifica en la primera reunión de recopilación de evidencia. Cualquiera de ellos por separado ya deja abierta la posibilidad de hallazgo mayor. Combinados, son garantía.</p>
+                            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:20px; margin:20px 0;">
+                                <table style="width:100%; border-collapse:collapse; font-size:14px;">
+                                    <thead>
+                                        <tr style="border-bottom:2px solid #e2e8f0;">
+                                            <th style="padding:12px 0; text-align:left; font-weight:800; color:#0f172a; width:45%;">Anti-patrón observado</th>
+                                            <th style="padding:12px 0; text-align:left; font-weight:800; color:#0f172a;">Qué revela al auditor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom:1px solid #e2e8f0;">
+                                            <td style="padding:14px 20px 14px 0; font-weight:600; color:#334155;">Fechas de "última modificación" concentradas en las semanas previas a la auditoría</td>
+                                            <td style="padding:14px 0; color:#64748b;">El registro no se gestiona continuamente; se maquilla para la revisión.</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid #e2e8f0;">
+                                            <td style="padding:14px 20px 14px 0; font-weight:600; color:#334155;">Actas de comité idénticas en formato, sin decisiones concretas</td>
+                                            <td style="padding:14px 0; color:#64748b;">El comité se convoca formalmente pero no delibera; es teatro procedimental.</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid #e2e8f0;">
+                                            <td style="padding:14px 20px 14px 0; font-weight:600; color:#334155;">Aceptaciones sin firma o firmadas por el mismo autor del análisis</td>
+                                            <td style="padding:14px 0; color:#64748b;">No hay separación de funciones ni autoridad efectiva.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:14px 20px 14px 0; font-weight:600; color:#334155;">Incidentes materiales cerrados sin traza de actualización del registro</td>
+                                            <td style="padding:14px 0; color:#64748b;">El modelo no aprende. Falla la retroalimentación completa.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 06</span></div>
+
+                    <!-- SECCIÓN 6 -->
+                    <div class="block" id="s6">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 06 — Checklist de evidencia</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Checklist de evidencia: ¿tu gestión de riesgo sobreviviría a un auditor NIS2 mañana?</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>Este checklist permite evaluar si la organización tiene evidencia real de gestión de riesgo o solo la apariencia de tenerla. Responde honestamente a cada pregunta.</p>
+                            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:20px; margin:16px 0;">
+                                <table style="width:100%; border-collapse:collapse; font-size:14px;">
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669; width:30px;">1.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Política aprobada</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Está aprobada por el órgano competente, versionada y con fecha visible?</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">2.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Registro exportable</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Puedes exportar el registro con fechas de última modificación recientes?</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">3.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Actas con decisiones</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Las actas de comité registran decisiones concretas, no solo asistencia?</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">4.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Trazabilidad del cálculo</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Cada ALE cuantificado lleva anexo de supuestos y fuentes con nombre?</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">5.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Firma de aceptación</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Toda aceptación por encima del umbral tiene firma, fecha y caducidad?</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">6.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Retroalimentación</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Los incidentes materiales dejan traza de actualización del modelo?</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p><strong>Resultado:</strong> si no puedes responder "sí" con evidencia exportable a las seis preguntas, la gestión de riesgo tiene brechas que un auditor va a encontrar. La diferencia entre defendible y aparente no es la calidad del análisis — es la calidad de la trazabilidad.</p>
+                            <div class="defensa-box-tech"><strong>Práctica recomendada:</strong> revisa este checklist antes de cada auditoría externa, y también fuera de temporada de auditoría. Si la respuesta cambia según cuándo lo revisas, el problema ya está identificado.</div>
+                        </div>
+                    </div>
+
+                    <div class="defensa-foot">
+                        <div class="defensa-author">
+                            <div class="defensa-foot-label">Autor</div>
+                            <div class="defensa-author-name">Miguel Ángel Carriazo</div>
+                            <p class="defensa-author-bio">vCISO y Arquitecto de Infraestructura con más de 25 años diseñando, asegurando y operando sistemas críticos. ISO 27001 &amp; 42001 Lead Auditor.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+                    <div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+                        <div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+                        <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Área</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#0f172a; font-weight:600; text-align:right;">Riesgo Tecnológico</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Enfoque</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#059669; font-weight:700; text-align:right;">Controles y Evidencias</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Marcos</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#059669; font-weight:700; text-align:right;">NIS2, DORA, eIDAS</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Nivel</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#0f172a; font-weight:600; text-align:right;">Avanzado</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Lectura</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#0f172a; font-weight:600; text-align:right;">16-20 min</td></tr>
+                            <tr><td style="padding:10px 0; color:#64748b; font-weight:700;">Etiquetas</td><td style="padding:10px 0; color:#0f172a; font-weight:600; text-align:right;">#evidencia #NIS2 #DORA #trazabilidad</td></tr>
+                        </table>
+                    </div>
+                    <div>
+                        <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+                        <nav class="defensa-toc-nav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+                            <a href="#s1" style="text-decoration:none; color:#059669; font-size:14px; font-weight:700; border-left:2px solid #059669; margin-left:-16px; padding-left:14px;">01. Qué NO es evidencia</a>
+                            <a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Existencia y aprobación</a>
+                            <a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Aplicación operativa</a>
+                            <a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Traza del razonamiento</a>
+                            <a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Firma y aprendizaje</a>
+                            <a href="#s6" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">06. Anti-patrones</a>
+                        </nav>
+                    </div>
+                </aside>
+
+            </div>
+
+            <div class="related-section">
+                <div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+                <div class="related-grid">
+                    <a class="related-card" href="riesgo-tecnologico-diseno-principios.html">
+                        <div class="r-meta">Riesgo Tecnológico · Principios</div>
+                        <div class="r-title">Principios de diseño: el mapa de calor de riesgos oculta más de lo que muestra</div>
+                        <div class="r-desc">Un heatmap 5x5 comprime tres decisiones distintas en una celda de color. Por qué la gestión de riesgo defendible no cabe en una escala ordinal.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                    <a class="related-card" href="riesgo-tecnologico-modelo-operativo.html">
+                        <div class="r-meta">Riesgo Tecnológico · Operaciones</div>
+                        <div class="r-title">Modelo operativo: el registro de riesgos que solo existe cuando se acerca la auditoría</div>
+                        <div class="r-desc">La gestión operativa real no es un stream separado — se enchufa a los procesos que ya operan: cambios, incidentes, vulnerabilidades.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                    <a class="related-card" href="riesgo-tecnologico-madurez-roadmap.html">
+                        <div class="r-meta">Riesgo Tecnológico · Madurez</div>
+                        <div class="r-title">Madurez y roadmap: los cuatro niveles de una gestión de riesgo que sobrevive al CISO</div>
+                        <div class="r-desc">Los niveles reales de madurez cuando la gestión pasa de ejercicio anual a proceso integrado — y cómo saber en cuál está la organización.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                </div>
+            </div>
+
+            <div id="footer-container"></div>
+
+        </div>
+    </div>
+
+    <script src="../../js/menu.js"></script>
+    <script src="../../js/footer.js"></script>
+    <script>
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
+            } else {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function() {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+    <title>Principios de diseño: el mapa de calor de riesgos oculta más de lo que muestra | Riesgo Tecnológico | Technology Advisory</title>
+    <meta name="description" content="Un heatmap 5x5 comprime tres decisiones distintas en una celda de color. Por qué la gestión de riesgo tecnológico defendible ante regulador y auditor no cabe en una escala ordinal.">
+    <meta name="author" content="Miguel Ángel Carriazo">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#059669">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/dossier-core.css">
+    <link rel="stylesheet" href="../../css/articulo.css">
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/articulo-diagramas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        @media (max-width: 1024px) {
+            .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
+            div[style*="padding: 16px 48px 0"], div[style*="padding: 16px 48px 0;"] { padding: 16px 4% 0 !important; }
+            div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding: 40px 4% 24px !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-wrapper ds-page">
+        <div class="card">
+
+            <div id="menu-container"></div>
+            <div class="accent-bar" style="background:#059669;"></div>
+
+            <div class="ds-meta">
+                <span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: gobernanza</span>
+                <span>categoría: <strong>Riesgo Tecnológico</strong></span>
+            </div>
+
+            <div style="padding: 16px 4% 0;">
+                <a href="../index.html?cat=riesgo-tecnologico" class="defensa-btn-back" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Riesgo Tecnológico</a>
+            </div>
+
+            <div style="padding: 40px 4% 24px; border-bottom: 1px solid #ededea;">
+                <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Principios · Riesgo Tecnológico</div>
+                <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Principios de diseño: <span style="color:#059669;">el mapa de calor de riesgos oculta más de lo que muestra</span></h1>
+                <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Un heatmap 5x5 comprime tres decisiones distintas en una celda de color. Por qué la gestión de riesgo tecnológico defendible ante regulador y auditor no cabe en una escala ordinal, y qué principios de diseño hacen que un modelo de riesgo sea realmente comparable.</p>
+                <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>Riesgo Tecnológico</span>
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>Lectura Avanzada (18-22 min)</span>
+                </div>
+            </div>
+
+            <div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+                <div class="defensa-main" style="min-width:0;">
+
+                    <!-- GRÁFICO 1: SEIS PRINCIPIOS DE GESTIÓN DE RIESGO TECNOLÓGICO -->
+                    <figure class="article-diagram" aria-label="Seis principios de gestión de riesgo tecnológico" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="450" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Seis principios de gestión de riesgo tecnológico</text>
+                                <text x="40" y="66" font-size="12" fill="#77776f">lo que separa una gestión defendible de una lista de preocupaciones</text>
+                                
+                                <defs>
+                                    <linearGradient id="grad-riesgo" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#0f172a"/></linearGradient>
+                                </defs>
+                                
+                                <!-- Principio 1 -->
+                                <rect x="40" y="105" width="260" height="80" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <circle cx="72" cy="145" r="16" fill="#3b82f6"/>
+                                <text x="72" y="151" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">1</text>
+                                <text x="100" y="136" font-size="13" font-weight="800" fill="#151915">Cuantificar en euros</text>
+                                <text x="100" y="156" font-size="10.5" fill="#334155">ALE, no colores ni</text>
+                                <text x="100" y="172" font-size="10.5" fill="#334155">escalas ordinales</text>
+                                
+                                <!-- Principio 2 -->
+                                <rect x="40" y="195" width="260" height="80" rx="10" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+                                <circle cx="72" cy="235" r="16" fill="#4f46e5"/>
+                                <text x="72" y="241" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">2</text>
+                                <text x="100" y="226" font-size="13" font-weight="800" fill="#151915">Propietario nominal</text>
+                                <text x="100" y="246" font-size="10.5" fill="#334155">Persona responsable</text>
+                                <text x="100" y="262" font-size="10.5" fill="#334155">no un departamento</text>
+                                
+                                <!-- Principio 3 -->
+                                <rect x="40" y="285" width="260" height="80" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <circle cx="72" cy="325" r="16" fill="#059669"/>
+                                <text x="72" y="331" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">3</text>
+                                <text x="100" y="316" font-size="13" font-weight="800" fill="#151915">Tratamiento definido</text>
+                                <text x="100" y="336" font-size="10.5" fill="#334155">Mitigar, transferir,</text>
+                                <text x="100" y="352" font-size="10.5" fill="#334155">aceptar o evitar</text>
+                                
+                                <!-- Principio 4 -->
+                                <rect x="320" y="105" width="260" height="80" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+                                <circle cx="352" cy="145" r="16" fill="#d97706"/>
+                                <text x="352" y="151" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">4</text>
+                                <text x="380" y="136" font-size="13" font-weight="800" fill="#151915">Aceptación formal</text>
+                                <text x="380" y="156" font-size="10.5" fill="#334155">Con firma, nivel de</text>
+                                <text x="380" y="172" font-size="10.5" fill="#334155">autoridad y fecha</text>
+                                
+                                <!-- Principio 5 -->
+                                <rect x="320" y="195" width="260" height="80" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+                                <circle cx="352" cy="235" r="16" fill="#dc2626"/>
+                                <text x="352" y="241" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">5</text>
+                                <text x="380" y="226" font-size="13" font-weight="800" fill="#151915">Caducidad programada</text>
+                                <text x="380" y="246" font-size="10.5" fill="#334155">Toda aceptación tiene</text>
+                                <text x="380" y="262" font-size="10.5" fill="#334155">fecha de revisión</text>
+                                
+                                <!-- Principio 6 -->
+                                <rect x="320" y="285" width="260" height="80" rx="10" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+                                <circle cx="352" cy="325" r="16" fill="#0f172a"/>
+                                <text x="352" y="331" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">6</text>
+                                <text x="380" y="316" font-size="13" font-weight="800" fill="#151915">Retroalimentación</text>
+                                <text x="380" y="336" font-size="10.5" fill="#334155">Incidentes recalibran</text>
+                                <text x="380" y="352" font-size="10.5" fill="#334155">el modelo de riesgo</text>
+                                
+                                <!-- Barra lateral -->
+                                <rect x="610" y="105" width="250" height="260" rx="14" fill="url(#grad-riesgo)" opacity=".92"/>
+                                <text x="735" y="145" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">Realidad</text>
+                                <text x="735" y="180" font-size="11.5" fill="#d1fae5" text-anchor="middle">El 80% de los</text>
+                                <text x="735" y="200" font-size="11.5" fill="#d1fae5" text-anchor="middle">registros de</text>
+                                <text x="735" y="220" font-size="11.5" fill="#d1fae5" text-anchor="middle">riesgo tecnológico</text>
+                                <text x="735" y="240" font-size="11.5" fill="#d1fae5" text-anchor="middle">usan heatmap</text>
+                                <text x="735" y="260" font-size="11.5" fill="#d1fae5" text-anchor="middle">5x5.</text>
+                                <text x="735" y="295" font-size="11.5" fill="#ffffff" font-weight="700" text-anchor="middle">El heatmap es</text>
+                                <text x="735" y="315" font-size="11.5" fill="#ffffff" font-weight="700" text-anchor="middle">herramienta de</text>
+                                <text x="735" y="335" font-size="11.5" fill="#ffffff" font-weight="700" text-anchor="middle">comunicación,</text>
+                                <text x="735" y="355" font-size="11.5" fill="#ffffff" font-weight="700" text-anchor="middle">no de decisión.</text>
+                                
+                                <!-- Barra inferior -->
+                                <rect x="40" y="395" width="820" height="40" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="450" y="420" font-size="11.5" font-weight="700" fill="#64748b" text-anchor="middle">La gestión de riesgo tecnológico defendible se mide en euros, no en colores.</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 520" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="520" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">Seis principios de gestión de riesgo tecnológico</text>
+                                
+                                <rect x="18" y="45" width="294" height="45" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+                                <circle cx="36" cy="68" r="10" fill="#3b82f6"/>
+                                <text x="36" y="72" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">1</text>
+                                <text x="54" y="62" font-size="10" font-weight="700" fill="#151915">Cuantificar en euros</text>
+                                <text x="54" y="77" font-size="8" fill="#334155">ALE, no colores</text>
+                                
+                                <rect x="18" y="97" width="294" height="45" rx="6" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1"/>
+                                <circle cx="36" cy="120" r="10" fill="#4f46e5"/>
+                                <text x="36" y="124" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">2</text>
+                                <text x="54" y="114" font-size="10" font-weight="700" fill="#151915">Propietario nominal</text>
+                                <text x="54" y="129" font-size="8" fill="#334155">Persona, no depto.</text>
+                                
+                                <rect x="18" y="149" width="294" height="45" rx="6" fill="#d1fae5" stroke="#059669" stroke-width="1"/>
+                                <circle cx="36" cy="172" r="10" fill="#059669"/>
+                                <text x="36" y="176" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">3</text>
+                                <text x="54" y="166" font-size="10" font-weight="700" fill="#151915">Tratamiento definido</text>
+                                <text x="54" y="181" font-size="8" fill="#334155">Mitigar, transferir, aceptar</text>
+                                
+                                <rect x="18" y="201" width="294" height="45" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+                                <circle cx="36" cy="224" r="10" fill="#d97706"/>
+                                <text x="36" y="228" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">4</text>
+                                <text x="54" y="218" font-size="10" font-weight="700" fill="#151915">Aceptación formal</text>
+                                <text x="54" y="233" font-size="8" fill="#334155">Firma + nivel autoridad</text>
+                                
+                                <rect x="18" y="253" width="294" height="45" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+                                <circle cx="36" cy="276" r="10" fill="#dc2626"/>
+                                <text x="36" y="280" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">5</text>
+                                <text x="54" y="270" font-size="10" font-weight="700" fill="#151915">Caducidad programada</text>
+                                <text x="54" y="285" font-size="8" fill="#334155">Fecha de revisión</text>
+                                
+                                <rect x="18" y="305" width="294" height="45" rx="6" fill="#f8fafc" stroke="#0f172a" stroke-width="1"/>
+                                <circle cx="36" cy="328" r="10" fill="#0f172a"/>
+                                <text x="36" y="332" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">6</text>
+                                <text x="54" y="322" font-size="10" font-weight="700" fill="#151915">Retroalimentación</text>
+                                <text x="54" y="337" font-size="8" fill="#334155">Incidentes recalibran</text>
+                                
+                                <rect x="18" y="365" width="294" height="45" rx="8" fill="url(#grad-riesgo)" opacity=".92"/>
+                                <text x="165" y="385" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">80% usan heatmap</text>
+                                <text x="165" y="402" font-size="8" fill="#d1fae5" text-anchor="middle">Es comunicación, no decisión</text>
+                                
+                                <rect x="18" y="420" width="294" height="40" rx="8" fill="#059669" opacity=".08"/>
+                                <text x="165" y="440" font-size="9" font-weight="700" fill="#151915" text-anchor="middle">Riesgo defendible</text>
+                                <text x="165" y="453" font-size="8" fill="#77776f" text-anchor="middle">se mide en euros, no en colores</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 1: Los seis principios de una gestión de riesgo tecnológico defendible.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- MÓDULO 1 -->
+                    <div class="block" id="s1">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — El problema de fondo</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El heatmap 5x5 no es una herramienta de decisión</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>El primer principio de diseño de una gestión de riesgo tecnológico defendible es reconocer qué es cada instrumento.</strong> El heatmap 5x5 —la matriz cualitativa de colores que aparece en el 90% de los registros de riesgo en organizaciones españolas medianas— es una herramienta de comunicación. Sirve para explicar en una reunión de dirección qué riesgos preocupan. No sirve para decidir en cuál invertir un euro.</p>
+                            <p>La razón es matemática, no de opinión. Las escalas ordinales (1 a 5, bajo-medio-alto) no admiten operaciones aritméticas válidas. La distancia entre "medio" e "alto" no es equivalente a la distancia entre "bajo" y "medio", y por tanto la multiplicación <code>probabilidad × impacto</code> —que aparece impresa en tantos frameworks— produce un número que se ve bien pero no significa nada. El riesgo con un score de 20 no es el doble de peligroso que uno con score de 10.</p>
+                            <div class="defensa-box-warning"><strong>⚠️ La consecuencia práctica:</strong> con un heatmap 5x5 no se puede responder a la pregunta que un CFO va a hacer: <em>"¿cuánto reducimos el riesgo, en euros, si aprobamos esta inversión de 80.000?"</em> Y si no se puede responder a esa pregunta, la reunión de aprobación de presupuesto de seguridad se decide por elocuencia, no por análisis.</div>
+                            <p>El sesgo al centro agrava el problema. La psicología experimental lleva décadas documentando que los evaluadores en escalas Likert de 5 puntos tienden a agruparse en el 3, sobre todo cuando el tema es incierto y hay presión reputacional por no parecer alarmista ni ingenuo. El resultado en un registro de riesgos típico es que la mayoría de las entradas acaban en la casilla "3-3" (probabilidad media, impacto medio), coloreada de naranja.</p>
+                            <p>La solución no es abandonar el heatmap, sino usarlo como complemento de una cuantificación real en euros. El heatmap comunica; el ALE (Annualized Loss Expectancy) decide.</p>
+                        </div>
+                    </div>
+
+                    <!-- GRÁFICO 2: CUANTIFICACIÓN FAIR EN LA PRÁCTICA -->
+                    <figure class="article-diagram" aria-label="Cuantificación FAIR en la práctica" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="320" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">Cuantificación FAIR en la práctica</text>
+                                <text x="40" y="58" font-size="12" fill="#77776f">de la frecuencia y magnitud al ALE en euros</text>
+                                
+                                <defs>
+                                    <marker id="arrow-riesgo" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+                                    </marker>
+                                </defs>
+                                
+                                <rect x="40" y="80" width="250" height="150" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="165" y="108" font-size="14" font-weight="800" fill="#2563eb" text-anchor="middle">🔵 Frecuencia (LEF)</text>
+                                <text x="165" y="130" font-size="11" fill="#77776f" text-anchor="middle">¿Cuántas veces al año?</text>
+                                <text x="165" y="148" font-size="11" fill="#77776f" text-anchor="middle">Rango: 0.1 - 1 vez/año</text>
+                                <text x="165" y="166" font-size="11" fill="#77776f" text-anchor="middle">Estimación de expertos</text>
+                                <text x="165" y="184" font-size="11" fill="#77776f" text-anchor="middle">Calibración con datos</text>
+                                <text x="165" y="202" font-size="11" fill="#77776f" text-anchor="middle">históricos internos</text>
+                                <text x="165" y="220" font-size="10" fill="#94a3b8" text-anchor="middle">Distribución de frecuencia</text>
+                                
+                                <line x1="290" y1="155" x2="320" y2="155" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-riesgo)"/>
+                                
+                                <rect x="330" y="80" width="250" height="150" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+                                <text x="455" y="108" font-size="14" font-weight="800" fill="#d97706" text-anchor="middle">🟠 Magnitud (LM)</text>
+                                <text x="455" y="130" font-size="11" fill="#77776f" text-anchor="middle">¿Cuánto se pierde?</text>
+                                <text x="455" y="148" font-size="11" fill="#77776f" text-anchor="middle">Rango: 150k - 400k €</text>
+                                <text x="455" y="166" font-size="11" fill="#77776f" text-anchor="middle">Costes directos +</text>
+                                <text x="455" y="184" font-size="11" fill="#77776f" text-anchor="middle">costes indirectos</text>
+                                <text x="455" y="202" font-size="11" fill="#77776f" text-anchor="middle">(reputación, clientes)</text>
+                                <text x="455" y="220" font-size="10" fill="#94a3b8" text-anchor="middle">Distribución de magnitud</text>
+                                
+                                <line x1="580" y1="155" x2="610" y2="155" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-riesgo)"/>
+                                
+                                <rect x="620" y="80" width="240" height="150" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="740" y="108" font-size="14" font-weight="800" fill="#059669" text-anchor="middle">✅ ALE resultante</text>
+                                <text x="740" y="130" font-size="11" fill="#77776f" text-anchor="middle">Simulación Monte Carlo</text>
+                                <text x="740" y="148" font-size="11" fill="#77776f" text-anchor="middle">Distribución de pérdida</text>
+                                <text x="740" y="166" font-size="11" fill="#77776f" text-anchor="middle">Percentiles: P5, P50, P95</text>
+                                <text x="740" y="184" font-size="11" fill="#77776f" text-anchor="middle">Ej: ALE mediana = 185k €</text>
+                                <text x="740" y="202" font-size="11" fill="#77776f" text-anchor="middle">IC 90%: 90k - 1,5M</text>
+                                <text x="740" y="220" font-size="10" fill="#94a3b8" text-anchor="middle">Comparable y defendible</text>
+                                
+                                <!-- Barra inferior -->
+                                <rect x="40" y="260" width="820" height="40" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="450" y="285" font-size="12" font-weight="700" fill="#151915" text-anchor="middle">"185.000€/año de pérdida esperada" es más accionable que "riesgo alto"</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 460" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="460" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">FAIR en práctica</text>
+                                
+                                <rect x="18" y="45" width="92" height="105" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="64" y="65" font-size="10" font-weight="800" fill="#2563eb" text-anchor="middle">Frecuencia</text>
+                                <text x="64" y="80" font-size="8" fill="#77776f" text-anchor="middle">Veces/año</text>
+                                <text x="64" y="95" font-size="8" fill="#77776f" text-anchor="middle">0.1-1</text>
+                                <text x="64" y="110" font-size="8" fill="#77776f" text-anchor="middle">Expertos</text>
+                                <text x="64" y="125" font-size="8" fill="#77776f" text-anchor="middle">Histórico</text>
+                                <text x="64" y="140" font-size="8" fill="#94a3b8" text-anchor="middle">Distribución</text>
+                                
+                                <rect x="120" y="45" width="92" height="105" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+                                <text x="166" y="65" font-size="10" font-weight="800" fill="#d97706" text-anchor="middle">Magnitud</text>
+                                <text x="166" y="80" font-size="8" fill="#77776f" text-anchor="middle">€/evento</text>
+                                <text x="166" y="95" font-size="8" fill="#77776f" text-anchor="middle">150-400k</text>
+                                <text x="166" y="110" font-size="8" fill="#77776f" text-anchor="middle">Costes</text>
+                                <text x="166" y="125" font-size="8" fill="#77776f" text-anchor="middle">Directos+ind.</text>
+                                <text x="166" y="140" font-size="8" fill="#94a3b8" text-anchor="middle">Distribución</text>
+                                
+                                <rect x="222" y="45" width="92" height="105" rx="6" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="268" y="65" font-size="10" font-weight="800" fill="#059669" text-anchor="middle">ALE</text>
+                                <text x="268" y="80" font-size="8" fill="#77776f" text-anchor="middle">Simulación</text>
+                                <text x="268" y="95" font-size="8" fill="#77776f" text-anchor="middle">Monte Carlo</text>
+                                <text x="268" y="110" font-size="8" fill="#77776f" text-anchor="middle">185k €</text>
+                                <text x="268" y="125" font-size="8" fill="#77776f" text-anchor="middle">IC 90%</text>
+                                <text x="268" y="140" font-size="8" fill="#94a3b8" text-anchor="middle">Defendible</text>
+                                
+                                <rect x="18" y="170" width="294" height="50" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="165" y="192" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">"185k€/año" > "riesgo alto"</text>
+                                <text x="165" y="210" font-size="9" fill="#77776f" text-anchor="middle">Comparable y accionable</text>
+                                
+                                <rect x="18" y="240" width="294" height="55" rx="8" fill="#059669" opacity=".08"/>
+                                <text x="165" y="263" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">FAIR = dos variables</text>
+                                <text x="165" y="281" font-size="9" fill="#77776f" text-anchor="middle">No una escala arbitraria</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 2: Cuantificación FAIR — de la frecuencia y magnitud al ALE en euros.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- MÓDULO 2 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+
+                    <div class="block" id="s2">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Cuantificar en euros</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Cuantificar en euros, no en colores ni escalas ordinales</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>El principio inverso al heatmap es sencillo: expresar el riesgo en la misma unidad que expresa el coste de mitigarlo.</strong> Si la decisión es "invertir 80.000 en un WAF nuevo o no", el número que se necesita es cuánta pérdida esperada anual se reduce con esa inversión. Esa pérdida esperada anual tiene nombre: ALE (Annualized Loss Expectancy), y es una cifra en euros con incertidumbre asociada.</p>
+                            <p>La forma más rigurosa de calcularlo en riesgo tecnológico es la metodología FAIR (Factor Analysis of Information Risk), estandarizada por The Open Group. FAIR descompone el riesgo en dos variables medibles: frecuencia esperada de eventos de pérdida (LEF) y magnitud probable de la pérdida (LM). Cada una se estima como una distribución, no como un número puntual, porque la incertidumbre es honesta.</p>
+                            <div class="defensa-box-tech"><strong>Práctica recomendada:</strong> aplica FAIR a los TOP 10-15 riesgos que concentran el 80% de la exposición estimada. Cuantificar los 200 riesgos del registro es un proyecto que no termina.</div>
+                            <p>La objeción habitual —"no tenemos los datos para estimar esas distribuciones con precisión"— confunde precisión con exactitud. FAIR no exige precisión; exige rangos honestos con la incertidumbre que hay. Un rango amplio bien razonado ("entre 100k y 2M con 90% de confianza") es más útil que un punto falsamente preciso ("estimamos 450k"), porque el rango transmite el estado real del conocimiento.</p>
+                            <p>El resultado de FAIR es una distribución de pérdida anual —no un punto, una curva— que produce afirmaciones del tipo <em>"90% de confianza en que la pérdida anual esté entre 40.000 y 320.000 euros, con mediana 110.000"</em>. Ese enunciado sí es comparable con una inversión de 80.000. Ese enunciado sí es defendible ante un auditor DORA o NIS2.</p>
+                        </div>
+                    </div>
+
+                    <!-- GRÁFICO 3: COMPARATIVA HEATMAP VS ALE -->
+                    <figure class="article-diagram" aria-label="Heatmap vs ALE" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="300" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">Heatmap vs ALE: la diferencia</text>
+                                <text x="40" y="58" font-size="12" fill="#77776f">lo que dirección entiende en cada caso</text>
+                                
+                                <defs>
+                                    <marker id="arrow-riesgo2" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+                                    </marker>
+                                </defs>
+                                
+                                <rect x="40" y="80" width="400" height="140" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+                                <text x="240" y="108" font-size="15" font-weight="800" fill="#dc2626" text-anchor="middle">❌ Heatmap cualitativo</text>
+                                <text x="240" y="130" font-size="12" fill="#77776f" text-anchor="middle">Riesgo: 🔴 ALTO</text>
+                                <text x="240" y="148" font-size="12" fill="#77776f" text-anchor="middle">Probabilidad: Alta</text>
+                                <text x="240" y="166" font-size="12" fill="#77776f" text-anchor="middle">Impacto: Alto</text>
+                                <text x="240" y="184" font-size="12" fill="#77776f" text-anchor="middle">Score: 5 × 5 = 25</text>
+                                <text x="240" y="202" font-size="12" fill="#77776f" text-anchor="middle">CFO: "¿Alto cuánto?"</text>
+                                <text x="240" y="220" font-size="10" fill="#94a3b8" text-anchor="middle">No se puede comparar con coste</text>
+                                
+                                <line x1="440" y1="150" x2="480" y2="150" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-riesgo2)"/>
+                                
+                                <rect x="490" y="80" width="370" height="140" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="675" y="108" font-size="15" font-weight="800" fill="#059669" text-anchor="middle">✅ ALE cuantificado</text>
+                                <text x="675" y="130" font-size="12" fill="#77776f" text-anchor="middle">ALE: 185.000 €/año</text>
+                                <text x="675" y="148" font-size="12" fill="#77776f" text-anchor="middle">Frecuencia: 0.5 veces/año</text>
+                                <text x="675" y="166" font-size="12" fill="#77776f" text-anchor="middle">Magnitud: 370.000 €/evento</text>
+                                <text x="675" y="184" font-size="12" fill="#77776f" text-anchor="middle">IC 90%: 90k - 1,5M</text>
+                                <text x="675" y="202" font-size="12" fill="#77776f" text-anchor="middle">CFO: "¿Cuánto cuesta mitigar?"</text>
+                                <text x="675" y="220" font-size="10" fill="#94a3b8" text-anchor="middle">Comparable y accionable</text>
+                                
+                                <!-- Barra inferior -->
+                                <rect x="40" y="250" width="820" height="30" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="450" y="270" font-size="11" font-weight="700" fill="#151915" text-anchor="middle">La cuantificación es el idioma de dirección — los colores son el idioma de la intuición</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 460" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="460" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">Heatmap vs ALE</text>
+                                
+                                <rect x="18" y="45" width="140" height="140" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+                                <text x="88" y="68" font-size="11" font-weight="800" fill="#dc2626" text-anchor="middle">Cualitativo</text>
+                                <text x="88" y="85" font-size="9" fill="#77776f" text-anchor="middle">🔴 ALTO</text>
+                                <text x="88" y="100" font-size="9" fill="#77776f" text-anchor="middle">Prob: Alta</text>
+                                <text x="88" y="115" font-size="9" fill="#77776f" text-anchor="middle">Impacto: Alto</text>
+                                <text x="88" y="130" font-size="9" fill="#77776f" text-anchor="middle">Score: 25</text>
+                                <text x="88" y="145" font-size="9" fill="#77776f" text-anchor="middle">CFO: "¿Alto cuánto?"</text>
+                                <text x="88" y="160" font-size="8" fill="#94a3b8" text-anchor="middle">No comparable</text>
+                                
+                                <rect x="172" y="45" width="140" height="140" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="242" y="68" font-size="11" font-weight="800" fill="#059669" text-anchor="middle">Cuantitativo</text>
+                                <text x="242" y="85" font-size="9" fill="#77776f" text-anchor="middle">ALE: 185k €</text>
+                                <text x="242" y="100" font-size="9" fill="#77776f" text-anchor="middle">Frec: 0.5/año</text>
+                                <text x="242" y="115" font-size="9" fill="#77776f" text-anchor="middle">Magnitud: 370k</text>
+                                <text x="242" y="130" font-size="9" fill="#77776f" text-anchor="middle">IC 90%</text>
+                                <text x="242" y="145" font-size="9" fill="#77776f" text-anchor="middle">CFO: "¿Coste mitigar?"</text>
+                                <text x="242" y="160" font-size="8" fill="#94a3b8" text-anchor="middle">Accionable</text>
+                                
+                                <rect x="18" y="205" width="294" height="50" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="165" y="227" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Cuantificación = idioma dirección</text>
+                                <text x="165" y="245" font-size="9" fill="#77776f" text-anchor="middle">Colores = idioma intuición</text>
+                                
+                                <rect x="18" y="275" width="294" height="55" rx="8" fill="#059669" opacity=".08"/>
+                                <text x="165" y="298" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Dirección entiende euros</text>
+                                <text x="165" y="316" font-size="9" fill="#77776f" text-anchor="middle">Para justificar inversión</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 3: Heatmap vs ALE — lo que dirección entiende en cada caso.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- MÓDULO 3 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+
+                    <div class="block" id="s3">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Propietario y tratamiento</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Propietario nominal y tratamiento definido para cada riesgo</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>Cada riesgo debe tener un propietario nominal —una persona, no un departamento— responsable de gestionarlo.</strong> Y cada riesgo debe tener un tratamiento definido: mitigar (reducir probabilidad o impacto), transferir (seguro, contrato), aceptar (formalmente, con aprobación), o evitar (dejar de hacer la actividad que genera el riesgo).</p>
+                            <p>El propietario no es un rol decorativo. Es la persona que entiende el dominio del riesgo, que puede evaluar si las mitigaciones son adecuadas, y que tiene la autoridad para implementarlas o escalar la decisión. Sin un propietario, el riesgo no se gestiona.</p>
+                            <div class="defensa-box-warning"><strong>⚠️ Un riesgo sin propietario es un riesgo que no se gestiona.</strong> El registro puede tener muchos riesgos listados, pero si no hay una persona responsable de cada uno, la lista es solo un catálogo de preocupaciones, no un sistema de gestión.</div>
+                            <p>Las cuatro respuestas al riesgo son mutuamente excluyentes. Un riesgo no puede estar "en análisis" durante meses. Debe tener una decisión clara. "Aceptar" no es "no hacer nada" — es una decisión activa de no mitigar, basada en un análisis de que el coste de mitigación supera el beneficio o que el riesgo está dentro del apetito de la organización.</p>
+                            <p>La elección del tratamiento debe ser documentada y justificada. Si se acepta un riesgo, debe quedar claro por qué se acepta y quién lo acepta. Si se mitiga, debe quedar claro qué controles se van a implementar y en qué plazo.</p>
+                        </div>
+                    </div>
+
+                    <!-- GRÁFICO 4: ANTI-PATRONES EN GESTIÓN DE RIESGO -->
+                    <figure class="article-diagram" aria-label="Anti-patrones en gestión de riesgo" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="400" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">Anti-patrones en gestión de riesgo tecnológico</text>
+                                <text x="40" y="58" font-size="12" fill="#77776f">prácticas que convierten la gestión en un ejercicio decorativo</text>
+                                
+                                <rect x="40" y="80" width="410" height="30" rx="4" fill="#0f172a"/>
+                                <text x="245" y="100" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Anti-patrón observado</text>
+                                <rect x="450" y="80" width="410" height="30" rx="4" fill="#0f172a"/>
+                                <text x="655" y="100" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Lo que revela y cómo corregirlo</text>
+                                
+                                <rect x="40" y="110" width="410" height="45" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+                                <text x="50" y="130" font-size="10" font-weight="700" fill="#151915">Heatmap 5x5 sin ALE</text>
+                                <text x="50" y="146" font-size="9" fill="#dc2626">"Riesgo medio-alto"</text>
+                                <rect x="450" y="110" width="410" height="45" rx="4" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="460" y="130" font-size="10" fill="#334155">Revela que el riesgo no está cuantificado en euros.</text>
+                                <text x="460" y="146" font-size="9" fill="#334155">🔧 Corregir: calcular ALE para riesgos críticos.</text>
+                                
+                                <rect x="40" y="155" width="410" height="45" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+                                <text x="50" y="175" font-size="10" font-weight="700" fill="#151915">Sin propietario nominal</text>
+                                <text x="50" y="191" font-size="9" fill="#dc2626">"Es responsabilidad de sistemas"</text>
+                                <rect x="450" y="155" width="410" height="45" rx="4" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="460" y="175" font-size="10" fill="#334155">Revela que nadie es responsable del riesgo.</text>
+                                <text x="460" y="191" font-size="9" fill="#334155">🔧 Corregir: asignar propietario nominal.</text>
+                                
+                                <rect x="40" y="200" width="410" height="45" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+                                <text x="50" y="220" font-size="10" font-weight="700" fill="#151915">Aceptación sin firma</text>
+                                <text x="50" y="236" font-size="9" fill="#dc2626">"Se aceptó en una reunión"</text>
+                                <rect x="450" y="200" width="410" height="45" rx="4" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="460" y="220" font-size="10" fill="#334155">Revela que la aceptación no es formal.</text>
+                                <text x="460" y="236" font-size="9" fill="#334155">🔧 Corregir: documentar con firma y fecha.</text>
+                                
+                                <rect x="40" y="245" width="410" height="45" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+                                <text x="50" y="265" font-size="10" font-weight="700" fill="#151915">Sin fecha de caducidad</text>
+                                <text x="50" y="281" font-size="9" fill="#dc2626">"Aceptado indefinidamente"</text>
+                                <rect x="450" y="245" width="410" height="45" rx="4" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="460" y="265" font-size="10" fill="#334155">Revela que la aceptación es permanente.</text>
+                                <text x="460" y="281" font-size="9" fill="#334155">🔧 Corregir: fecha de revisión programada.</text>
+                                
+                                <rect x="40" y="290" width="410" height="45" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+                                <text x="50" y="310" font-size="10" font-weight="700" fill="#151915">Incidentes no retroalimentan</text>
+                                <text x="50" y="326" font-size="9" fill="#dc2626">"El modelo no se actualiza"</text>
+                                <rect x="450" y="290" width="410" height="45" rx="4" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="460" y="310" font-size="10" fill="#334155">Revela que el modelo no aprende.</text>
+                                <text x="460" y="326" font-size="9" fill="#334155">🔧 Corregir: incidentes recalibran el modelo.</text>
+                                
+                                <rect x="40" y="355" width="820" height="25" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="450" y="373" font-size="10" font-weight="700" fill="#64748b" text-anchor="middle">Si ves más de dos de estos anti-patrones, la gestión de riesgo es decorativa, no defendible.</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 550" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="550" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">Anti-patrones riesgo</text>
+                                
+                                <rect x="18" y="45" width="294" height="55" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+                                <text x="28" y="62" font-size="9" font-weight="700" fill="#151915">Heatmap sin ALE</text>
+                                <text x="28" y="78" font-size="8" fill="#334155">"Riesgo medio-alto"</text>
+                                <text x="28" y="94" font-size="8" fill="#dc2626">→ Sin cuantificación</text>
+                                
+                                <rect x="18" y="110" width="294" height="55" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+                                <text x="28" y="127" font-size="9" font-weight="700" fill="#151915">Sin propietario nominal</text>
+                                <text x="28" y="143" font-size="8" fill="#334155">"Responsabilidad de sistemas"</text>
+                                <text x="28" y="159" font-size="8" fill="#dc2626">→ Nadie responsable</text>
+                                
+                                <rect x="18" y="175" width="294" height="55" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+                                <text x="28" y="192" font-size="9" font-weight="700" fill="#151915">Aceptación sin firma</text>
+                                <text x="28" y="208" font-size="8" fill="#334155">"Se aceptó en reunión"</text>
+                                <text x="28" y="224" font-size="8" fill="#dc2626">→ Sin formalidad</text>
+                                
+                                <rect x="18" y="240" width="294" height="55" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+                                <text x="28" y="257" font-size="9" font-weight="700" fill="#151915">Sin fecha de caducidad</text>
+                                <text x="28" y="273" font-size="8" fill="#334155">"Aceptado indefinidamente"</text>
+                                <text x="28" y="289" font-size="8" fill="#dc2626">→ Sin revisión</text>
+                                
+                                <rect x="18" y="305" width="294" height="55" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+                                <text x="28" y="322" font-size="9" font-weight="700" fill="#151915">Incidentes no retroalimentan</text>
+                                <text x="28" y="338" font-size="8" fill="#334155">"El modelo no se actualiza"</text>
+                                <text x="28" y="354" font-size="8" fill="#dc2626">→ Sin aprendizaje</text>
+                                
+                                <rect x="18" y="380" width="294" height="50" rx="8" fill="#059669" opacity=".08"/>
+                                <text x="165" y="400" font-size="9" font-weight="700" fill="#151915" text-anchor="middle">≥2 anti-patrones:</text>
+                                <text x="165" y="416" font-size="9" fill="#151915" text-anchor="middle">gestión decorativa, no defendible</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 4: Anti-patrones en gestión de riesgo tecnológico y cómo corregirlos.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- MÓDULO 4 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+
+                    <div class="block" id="s4">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Aceptación formal y caducidad</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Aceptación formal con firma y caducidad programada</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>Toda aceptación de riesgo por encima del umbral operativo debe generar un artefacto firmado que contiene: identificador del riesgo, cuantificación aplicada, umbral que dispara la autoridad requerida, nombre y cargo de la persona que acepta, fecha de aceptación, fecha de caducidad de la aceptación, condiciones de revisión anticipada, y firma —electrónica cualificada, firma en acta con evidencia digital, o el mecanismo que la organización use consistentemente.</strong></p>
+                            <p>Sin este artefacto, la organización no puede demostrar quién asumió el riesgo residual. Y sin poder demostrarlo, tras un incidente material, la responsabilidad se difumina —lo cual es un problema legal y reputacional serio, especialmente bajo NIS2 que introduce responsabilidad personal de la alta dirección por deficiencias en gestión de riesgo.</p>
+                            <div class="defensa-box-success"><strong>✔ La caducidad programada es lo que diferencia una aceptación de un olvido.</strong> Un riesgo aceptado en 2024 no se reacepta automáticamente en 2026. Sin fecha de caducidad, "aceptar" es un eufemismo para "olvidar formalmente".</div>
+                            <p>El nivel de autoridad para la aceptación debe ser proporcional al riesgo. Un riesgo de 20k€ no debe subir al consejo de administración. Un riesgo de 3M€ no debe aceptarlo un jefe de proyecto. La autoridad de aceptación debe estar reglada en umbrales económicos explícitos, y ser conocida por toda la organización antes de que el riesgo aparezca, no negociada cuando aparece.</p>
+                            <p>La firma puede ser electrónica cualificada (eIDAS), firma en acta con evidencia digital, o el mecanismo que la organización use consistentemente. Lo importante es que sea verificable y que tenga trazabilidad.</p>
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 5 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+
+                    <div class="block" id="s5">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Retroalimentación de incidentes</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Incidentes recalibran el modelo de riesgo, no se archivan sin impacto</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>Cada incidente material cerrado debe producir traza documental de dos cosas: primero, qué riesgo del registro se materializó (o si no estaba, cuál se añadió como resultado); segundo, qué recalibración del modelo se aplicó a partir del incidente</strong> (si el impacto real fue distinto del modelado, actualización de los parámetros LM; si la frecuencia observada difiere de la estimada, actualización de LEF).</p>
+                            <p>Esta traza es la que demuestra que el modelo aprende. Un modelo estático durante años, tras varios incidentes materiales, revela que el proceso de gestión de riesgo no incorpora la experiencia, y por tanto no es un proceso vivo.</p>
+                            <div class="defensa-box-tech"><strong>Práctica recomendada:</strong> cada post-mortem de incidente debe incluir una sección específica de "impacto en el modelo de riesgo". El incidente debe ser mapeado a un riesgo del registro, y los parámetros de ese riesgo deben ser revisados y actualizados si es necesario.</div>
+                            <p>La retroalimentación de incidentes también es la evidencia de que la gestión de riesgo no es un ejercicio teórico. Cuando un incidente ocurre y el modelo se actualiza, se demuestra que el modelo está vivo. Cuando un incidente ocurre y el modelo no cambia, se demuestra que el modelo era decorativo.</p>
+                            <p>La recalibración del modelo no es un castigo al modelo — es una mejora. Un modelo que se actualiza con datos reales es un modelo que se vuelve más preciso con el tiempo. Un modelo que no se actualiza es un modelo que se vuelve menos relevante.</p>
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 6 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 06</span></div>
+
+                    <div class="block" id="s6">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 06 — Checklist de gestión de riesgo</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Checklist de gestión de riesgo tecnológico: ¿tu organización gestiona riesgos o solo los enumera?</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>Este checklist permite evaluar si la organización gestiona riesgos activamente o si solo mantiene una lista de preocupaciones. Responde honestamente a cada pregunta.</p>
+                            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:20px; margin:16px 0;">
+                                <table style="width:100%; border-collapse:collapse; font-size:14px;">
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669; width:30px;">1.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">ALE cuantificado</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Los riesgos principales tienen ALE en euros?</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">2.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Propietario asignado</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Cada riesgo tiene un propietario nominal?</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">3.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Tratamiento definido</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Cada riesgo tiene mitigar, transferir, aceptar o evitar?</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">4.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Aceptación formal</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Las aceptaciones tienen firma y nivel de autoridad?</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">5.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Caducidad programada</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Todas las aceptaciones tienen fecha de revisión?</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">6.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Retroalimentación de incidentes</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Los incidentes recalibran el modelo de riesgo?</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p><strong>Resultado:</strong> Si no puedes responder "sí" a todas las preguntas, hay brechas en la gestión de riesgo que deben cubrirse. La gestión de riesgo no es un ejercicio anual — es un proceso continuo.</p>
+                            <div class="defensa-box-tech"><strong>Práctica recomendada:</strong> revisa este checklist trimestralmente para evaluar el estado de la gestión de riesgo. La gestión de riesgo madura requiere seguimiento continuo, no solo revisión anual.</div>
+                            <p><strong>Cierre:</strong> la gestión de riesgo tecnológico no es un lujo — es una necesidad operativa en un entorno donde los riesgos cambian constantemente. Los seis principios descritos aquí —cuantificar en euros, propietario nominal, tratamiento definido, aceptación formal, caducidad programada, y retroalimentación de incidentes— son el diseño mínimo defendible para cualquier organización que quiera gestionar sus riesgos tecnológicos de forma creíble.</p>
+                        </div>
+                    </div>
+
+                    <!-- PIE DE AUTOR -->
+                    <div class="defensa-foot">
+                        <div class="defensa-author">
+                            <div class="defensa-foot-label">Autor</div>
+                            <div class="defensa-author-name">Miguel Ángel Carriazo</div>
+                            <p class="defensa-author-bio">Arquitecto de infraestructura y seguridad con más de 25 años de experiencia diseñando, asegurando y operando sistemas críticos. Especializado en gobernanza, gestión de riesgos y cumplimiento normativo.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SIDEBAR -->
+                <aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+                    <div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+                        <div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+                        <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Área</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Riesgo Tecnológico</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Enfoque</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Principios de Diseño</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Metodología</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">FAIR, ALE</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Nivel</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Avanzado</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Lectura</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">18-22 min</td></tr>
+                            <tr><td style="padding:10px 0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Etiquetas</td><td style="padding:10px 0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">#riesgo #FAIR #ALE #heatmap #cuantificación</td></tr>
+                        </table>
+                    </div>
+
+                    <div>
+                        <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+                        <nav class="defensa-toc-nav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+                            <a href="#s1" style="text-decoration:none; color:#059669; font-size:14px; font-weight:700; border-left:2px solid #059669; margin-left:-16px; padding-left:14px;">01. El problema del heatmap</a>
+                            <a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Cuantificar en euros</a>
+                            <a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Propietario y tratamiento</a>
+                            <a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Aceptación formal y caducidad</a>
+                            <a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Retroalimentación de incidentes</a>
+                            <a href="#s6" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">06. Checklist de gestión</a>
+                        </nav>
+                    </div>
+                </aside>
+
+            </div>
+
+            <!-- ARTÍCULOS RELACIONADOS -->
+            <div class="related-section">
+                <div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+                <div class="related-grid">
+                    <a class="related-card" href="riesgo-tecnologico-modelo-operativo.html">
+                        <div class="r-meta">Riesgo Tecnológico · Operaciones</div>
+                        <div class="r-title">Modelo operativo: el registro de riesgos que solo existe cuando se acerca la auditoría</div>
+                        <div class="r-desc">La gestión operativa real de riesgo requiere cadencia, herramienta e integración con incidentes.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                    <a class="related-card" href="riesgo-tecnologico-controles-evidencias.html">
+                        <div class="r-meta">Riesgo Tecnológico · Controles</div>
+                        <div class="r-title">Controles y evidencias: qué evidencia real exige un auditor NIS2 sobre gestión de riesgo</div>
+                        <div class="r-desc">Del acta de comité a la trazabilidad completa del razonamiento. Qué evidencias diferencian una gestión defendible de una aparente.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                    <a class="related-card" href="riesgo-tecnologico-madurez-roadmap.html">
+                        <div class="r-meta">Riesgo Tecnológico · Madurez</div>
+                        <div class="r-title">Madurez y roadmap: los cuatro niveles de una gestión de riesgo que sobrevive al CISO</div>
+                        <div class="r-desc">Los niveles reales de madurez cuando la gestión de riesgo pasa de ejercicio anual a proceso integrado.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                </div>
+            </div>
+
+            <div id="footer-container"></div>
+
+        </div>
+    </div>
+
+    <script src="../../js/menu.js"></script>
+    <script src="../../js/footer.js"></script>
+    <script>
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
+            } else {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function() {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>

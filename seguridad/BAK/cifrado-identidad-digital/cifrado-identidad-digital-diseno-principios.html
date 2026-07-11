@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Principios de diseño: la clave privada en el mismo servidor que protege es un candado con la llave puesta | Cifrado e Identidad Digital | Technology Advisory</title><meta name="description" content="El cifrado es tan fuerte como la protección de sus claves. Un algoritmo perfecto con gestión de claves descuidada es seguridad de fachada."><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
+<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // seguridad</span><span>categoría: <strong>Cifrado e Identidad Digital</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Cifrado e Identidad Digital</div><h1 class="article-title">Principios de diseño: la clave privada en el mismo servidor que protege es un candado con la llave puesta</h1><p class="article-lead">El cifrado es tan fuerte como la protección de sus claves. Un algoritmo perfecto con gestión de claves descuidada es seguridad de fachada.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Cifrado e Identidad Digital"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="900" height="410" rx="14" fill="#fafaf8"/>
+<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Cifrado sin gestión de claves no protege</text>
+<text x="40" y="66" font-size="12" fill="#77776f">el algoritmo es la parte fácil, las claves son la parte que importa</text>
+<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Algoritmo robusto</text>
+<text x="58" y="163" font-size="11" fill="#77776f">AES-256, la parte fácil</text>
+<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">HSM o KMS dedicado</text>
+<text x="488" y="163" font-size="11" fill="#77776f">Claves fuera del sistema que protegen</text>
+<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Separación de funciones</text>
+<text x="58" y="283" font-size="11" fill="#77776f">Quien gestiona ≠ quien accede</text>
+<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Rotación documentada</text>
+<text x="488" y="283" font-size="11" fill="#77776f">No "las claves llevan años igual"</text>
+<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Un algoritmo perfecto con clave en un fichero de texto es seguridad de fachada</text>
+</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 420" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="330" height="420" rx="12" fill="#fafaf8"/>
+<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Cifrado sin gestión de claves no protege</text>
+<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="89" r="13" fill="#059669"/>
+<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Algoritmo robusto</text>
+<text x="64" y="102" font-size="11" fill="#77776f">AES-256, la parte fácil</text>
+<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="159" r="13" fill="#059669"/>
+<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">HSM o KMS dedicado</text>
+<text x="64" y="172" font-size="11" fill="#77776f">Claves fuera del sistema que</text>
+<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="229" r="13" fill="#059669"/>
+<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Separación de funciones</text>
+<text x="64" y="242" font-size="11" fill="#77776f">Quien gestiona ≠ quien accede</text>
+<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="299" r="13" fill="#059669"/>
+<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Rotación documentada</text>
+<text x="64" y="312" font-size="11" fill="#77776f">No "las claves llevan años</text>
+<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+<rect x="18" y="340" width="294" height="60" rx="10" fill="url(#gm)"/>
+<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Un algoritmo perfecto con clave en un</text>
+<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">fichero de texto es seguridad de fachada</text>
+</svg></div></figure><div class="toc-mini"><a href="#contexto">1. El candado con la llave puesta</a><a href="#arquitectura">2. HSM y KMS: separar clave y dato</a><a href="#seguridad">3. PKI: la base de la confianza digital</a><a href="#operacion">4. Rotación de claves y certificados</a><a href="#roadmap">5. Cifrado como decisión de arquitectura</a></div><h2 id="contexto">1. El candado con la llave puesta al lado</h2><div class="body-text"><p><strong>Un array con cifrado AES-256 activado pero con la clave almacenada en un fichero de configuración en el mismo servidor tiene una seguridad efectiva mucho menor de lo que el algoritmo sugiere.</strong> Es un candado robusto con la llave colgando al lado, visible para cualquiera que llegue hasta ahí.</p></div><h2 id="arquitectura">2. HSM y KMS: separar la clave del dato que protege</h2><div class="body-text"><p>Un Hardware Security Module o un Key Management Service dedicado almacena las claves de forma separada del sistema que las usa, con controles de acceso propios y auditoría independiente. Comprometer el sistema de datos no debería dar automáticamente acceso a las claves que los protegen.</p></div><h2 id="seguridad">3. PKI: la base de la confianza digital que pocos entienden del todo</h2><div class="body-text"><p>La infraestructura de clave pública (certificados, autoridades certificadoras, cadenas de confianza) sostiene TLS, la firma de código y buena parte de la autenticación moderna. Una CA interna mal gestionada —certificados sin caducidad realista, sin proceso de revocación probado— socava la confianza en toda la cadena que depende de ella.</p></div><h2 id="operacion">4. Rotación de claves y certificados como proceso, no como excepción</h2><div class="body-text"><p>Claves y certificados que llevan años sin rotar acumulan riesgo silenciosamente — si se comprometen en algún momento no detectado, el atacante mantiene acceso indefinidamente. La rotación periódica programada limita la ventana de exposición incluso ante un compromiso no detectado.</p><div class="callout warn"><strong>Riesgo habitual:</strong> certificados internos con validez de 10 años "para no tener que gestionarlos", que eliminan cualquier ventana de renovación forzada que permitiría detectar problemas.</div></div><h2 id="roadmap">5. Cifrado como decisión de arquitectura desde el diseño, no como checkbox final</h2><div class="body-text"><p>Decidir qué se cifra, con qué algoritmo, dónde viven las claves y quién las gestiona debería ser parte del diseño inicial de cualquier sistema que maneje datos sensibles — no una casilla que se marca al final del proyecto sin haber pensado en el modelo de gestión de claves.</p></div><a class="back" href="../index.html?cat=cifrado-identidad-digital">← Volver a Cifrado e Identidad Digital</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. El candado con la llave puesta</a><a href="#arquitectura">2. HSM y KMS: separar clave y dato</a><a href="#seguridad">3. PKI: la base de la confianza digital</a><a href="#operacion">4. Rotación de claves y certificados</a><a href="#roadmap">5. Cifrado como decisión de arquitectura</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>

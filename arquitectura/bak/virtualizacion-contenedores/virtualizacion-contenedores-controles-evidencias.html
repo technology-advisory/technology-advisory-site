@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+    <title>Controles y evidencias: el Pod Security Standard que existe pero no se aplica | Virtualización y Contenedores | Technology Advisory</title>
+    <meta name="description" content="Tener una política de seguridad de contenedores definida no es lo mismo que tenerla aplicada. Qué evidencias verificar para saber si la política es real o decorativa.">
+    <meta name="author" content="Miguel Ángel Carriazo">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#059669">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/dossier-core.css">
+    <link rel="stylesheet" href="../../css/articulo.css">
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/articulo-diagramas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="card-wrapper ds-page">
+        <div class="card">
+
+            <div id="menu-container"></div>
+            <div class="accent-bar" style="background:#059669;"></div>
+
+            <div class="ds-meta">
+                <span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: arquitectura</span>
+                <span>categoría: <strong>Virtualización y Contenedores</strong></span>
+            </div>
+
+            <div style="padding: 16px 4% 0;">
+                <a href="../index.html?cat=virtualizacion-contenedores" class="defensa-btn-back" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Virtualización y Contenedores</a>
+            </div>
+
+            <div style="padding: 40px 4% 24px; border-bottom: 1px solid #ededea;">
+                <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Controles · Virtualización y Contenedores</div>
+                <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Controles y evidencias: <span style="color:#059669;">el Pod Security Standard que existe pero no se aplica</span></h1>
+                <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Tener una política de seguridad de contenedores definida no es lo mismo que tenerla aplicada. Qué evidencias verificar para saber si la política es real o decorativa.</p>
+                <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>Virtualización y Contenedores</span>
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>Lectura Avanzada (16-20 min)</span>
+                </div>
+            </div>
+
+            <div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+                <div class="defensa-main" style="min-width:0;">
+
+                    <!-- GRÁFICO 1: EVIDENCIAS DE SEGURIDAD DE CONTENEDORES -->
+                    <figure class="article-diagram" aria-label="Evidencias de seguridad de contenedores" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="410" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Evidencias de seguridad de contenedores</text>
+                                <text x="40" y="66" font-size="12" fill="#77776f">de la política escrita a la aplicación verificada</text>
+                                <rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Pod Security Standard</text>
+                                <text x="58" y="163" font-size="11" fill="#77776f">Definido y aplicado, no solo escrito</text>
+                                <rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Resultado de escaneo</text>
+                                <text x="488" y="163" font-size="11" fill="#77776f">Por imagen, con fecha</text>
+                                <rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <text x="58" y="260" font-size="14" font-weight="800" fill="#151915">RBAC de Kubernetes</text>
+                                <text x="58" y="283" font-size="11" fill="#77776f">Quién puede desplegar qué</text>
+                                <rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Registro de imágenes permitidas</text>
+                                <text x="488" y="283" font-size="11" fill="#77776f">Solo fuentes confiables</text>
+                                <defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+                                <rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+                                <text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Una política sin enforcement técnico es una recomendación, no un control</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 420" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="420" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Evidencias de seguridad de contenedores</text>
+                                <rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <circle cx="40" cy="89" r="13" fill="#059669"/>
+                                <text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+                                <text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Pod Security Standard</text>
+                                <text x="64" y="102" font-size="11" fill="#77776f">Definido y aplicado, no solo</text>
+                                <rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <circle cx="40" cy="159" r="13" fill="#059669"/>
+                                <text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+                                <text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Resultado de escaneo</text>
+                                <text x="64" y="172" font-size="11" fill="#77776f">Por imagen, con fecha</text>
+                                <rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <circle cx="40" cy="229" r="13" fill="#059669"/>
+                                <text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+                                <text x="64" y="224" font-size="13" font-weight="800" fill="#151915">RBAC de Kubernetes</text>
+                                <text x="64" y="242" font-size="11" fill="#77776f">Quién puede desplegar qué</text>
+                                <rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <circle cx="40" cy="299" r="13" fill="#059669"/>
+                                <text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+                                <text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Registro de imágenes</text>
+                                <text x="64" y="312" font-size="11" fill="#77776f">Solo fuentes confiables</text>
+                                <defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+                                <rect x="18" y="340" width="294" height="60" rx="10" fill="url(#gm)"/>
+                                <text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Una política sin enforcement técnico es</text>
+                                <text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">una recomendación, no un control</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 1: Las cuatro evidencias clave para auditar seguridad de contenedores.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- GRÁFICO 2: POD SECURITY STANDARDS EN ACCIÓN -->
+                    <figure class="article-diagram" aria-label="Pod Security Standards en acción" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="300" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">Pod Security Standards en acción</text>
+                                <text x="40" y="58" font-size="12" fill="#77776f">cómo un namespace aplica el estándar y bloquea pods no conformes</text>
+                                <rect x="40" y="80" width="250" height="110" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="165" y="108" font-size="14" font-weight="800" fill="#059669" text-anchor="middle">✅ Namespace seguro</text>
+                                <text x="165" y="130" font-size="11" fill="#77776f" text-anchor="middle">Label: pod-security.kubernetes.io/enforce=baseline</text>
+                                <text x="165" y="150" font-size="11" fill="#77776f" text-anchor="middle">Todos los pods nuevos</text>
+                                <text x="165" y="170" font-size="11" fill="#77776f" text-anchor="middle">deben cumplir el estándar</text>
+                                <text x="165" y="188" font-size="10" fill="#94a3b8" text-anchor="middle">Bloquea privilegios excesivos</text>
+                                <line x1="290" y1="135" x2="320" y2="135" stroke="#059669" stroke-width="2"/>
+                                <polygon points="318,130 328,135 318,140" fill="#059669"/>
+                                <rect x="330" y="80" width="250" height="110" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="455" y="108" font-size="14" font-weight="800" fill="#d97706" text-anchor="middle">⚠️ Namespace permisivo</text>
+                                <text x="455" y="130" font-size="11" fill="#77776f" text-anchor="middle">Sin label de enforce</text>
+                                <text x="455" y="150" font-size="11" fill="#77776f" text-anchor="middle">Cualquier pod puede desplegarse</text>
+                                <text x="455" y="170" font-size="11" fill="#77776f" text-anchor="middle">Sin restricciones de seguridad</text>
+                                <text x="455" y="188" font-size="10" fill="#94a3b8" text-anchor="middle">Riesgo: contenedores privilegiados</text>
+                                <line x1="580" y1="135" x2="610" y2="135" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                                <rect x="620" y="80" width="240" height="110" rx="10" fill="#fde8e8" stroke="#ef4444" stroke-width="1.5"/>
+                                <text x="740" y="108" font-size="14" font-weight="800" fill="#dc2626" text-anchor="middle">❌ Riesgo real</text>
+                                <text x="740" y="130" font-size="11" fill="#77776f" text-anchor="middle">Pod privilegiado desplegado</text>
+                                <text x="740" y="150" font-size="11" fill="#77776f" text-anchor="middle">Sin que el cluster lo impida</text>
+                                <text x="740" y="170" font-size="11" fill="#77776f" text-anchor="middle">La política existe, pero</text>
+                                <text x="740" y="188" font-size="10" fill="#94a3b8" text-anchor="middle">no se aplica técnicamente</text>
+                                <rect x="40" y="215" width="820" height="65" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="450" y="240" font-size="12" font-weight="700" fill="#151915" text-anchor="middle">Un namespace sin enforce label es una política no aplicada</text>
+                                <text x="450" y="260" font-size="11" fill="#77776f" text-anchor="middle">La diferencia entre una recomendación y un control es la aplicación técnica</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 400" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="400" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">Pod Security Standards</text>
+                                <rect x="18" y="45" width="92" height="85" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="64" y="65" font-size="10" font-weight="800" fill="#059669" text-anchor="middle">✅ Seguro</text>
+                                <text x="64" y="80" font-size="8" fill="#77776f" text-anchor="middle">Enforce</text>
+                                <text x="64" y="95" font-size="8" fill="#77776f" text-anchor="middle">baseline</text>
+                                <text x="64" y="112" font-size="7" fill="#94a3b8" text-anchor="middle">Bloquea pods</text>
+                                <text x="64" y="124" font-size="7" fill="#94a3b8" text-anchor="middle">inseguros</text>
+                                <rect x="120" y="45" width="92" height="85" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="166" y="65" font-size="10" font-weight="800" fill="#d97706" text-anchor="middle">⚠️ Permisivo</text>
+                                <text x="166" y="80" font-size="8" fill="#77776f" text-anchor="middle">Sin label</text>
+                                <text x="166" y="95" font-size="8" fill="#77776f" text-anchor="middle">Sin enforce</text>
+                                <text x="166" y="112" font-size="7" fill="#94a3b8" text-anchor="middle">Cualquier</text>
+                                <text x="166" y="124" font-size="7" fill="#94a3b8" text-anchor="middle">pod permitido</text>
+                                <rect x="222" y="45" width="92" height="85" rx="8" fill="#fde8e8" stroke="#ef4444" stroke-width="1.5"/>
+                                <text x="268" y="65" font-size="10" font-weight="800" fill="#dc2626" text-anchor="middle">❌ Riesgo</text>
+                                <text x="268" y="80" font-size="8" fill="#77776f" text-anchor="middle">Pod</text>
+                                <text x="268" y="95" font-size="8" fill="#77776f" text-anchor="middle">privilegiado</text>
+                                <text x="268" y="112" font-size="7" fill="#94a3b8" text-anchor="middle">Sin bloqueo</text>
+                                <text x="268" y="124" font-size="7" fill="#94a3b8" text-anchor="middle">técnico</text>
+                                <rect x="18" y="150" width="294" height="50" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="165" y="172" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Política sin enforce = recomendación</text>
+                                <text x="165" y="190" font-size="9" fill="#77776f" text-anchor="middle">No un control real</text>
+                                <rect x="18" y="220" width="294" height="55" rx="8" fill="#059669" opacity=".08"/>
+                                <text x="165" y="243" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">La aplicación técnica</text>
+                                <text x="165" y="261" font-size="9" fill="#77776f" text-anchor="middle">es la diferencia clave</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 2: Pod Security Standards aplicados vs no aplicados en namespaces de Kubernetes.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- SECCIÓN 1 -->
+                    <div class="block" id="s1">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — El Problema de Fondo</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La política que existe solo en el documento</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>Tener un documento de "Política de Seguridad de Contenedores" no significa que ningún Pod pueda desplegarse con privilegios excesivos.</strong> Sin enforcement técnico (admission controllers, Pod Security Standards activados a nivel de namespace), la política es una recomendación que cualquiera puede ignorar sin que nada lo impida.</p>
+                            <p>He visto organizaciones con políticas de seguridad de contenedores de 20 páginas, perfectamente escritas, pero con clústeres de Kubernetes donde cualquier desarrollador puede desplegar pods privilegiados sin ninguna restricción. La política existe en el documento, pero no en el clúster. Y el clúster es lo que importa.</p>
+                            <p>La diferencia entre una política documentada y una política aplicada es el enforcement técnico. Un admission controller que bloquea la creación de pods que violan el estándar. Un webhook que verifica que las imágenes vienen de un registro autorizado. Un RBAC que limita quién puede crear recursos en namespaces sensibles. Sin enforcement, la política es decorativa.</p>
+                            <div class="defensa-box-warning"><strong>⚠️ Una política sin enforcement técnico es una recomendación, no un control.</strong> El documento describe la intención; el admission controller describe la realidad. Si la intención no coincide con la realidad, la política es decorativa.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECCIÓN 2 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+
+                    <div class="block" id="s2">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — El Estándar Nativo</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Pod Security Standards: definir y aplicar, no solo documentar</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>Kubernetes ofrece Pod Security Standards nativos (Privileged, Baseline, Restricted) que pueden aplicarse a nivel de namespace mediante labels, bloqueando automáticamente el despliegue de Pods que violen el estándar configurado. La evidencia real es la configuración activa del namespace, no un documento aparte que describe la intención.</p>
+                            <p>Los tres estándares que ofrece Kubernetes son:</p>
+                            <ul style="list-style-type:disc; padding-left:24px; margin:12px 0 16px;">
+                                <li><strong>Privileged:</strong> sin restricciones — el estándar menos restrictivo, equivalente a no tener política</li>
+                                <li><strong>Baseline:</strong> bloquea las prácticas más comunes de escalada de privilegios (hostPID, hostNetwork, etc.)</li>
+                                <li><strong>Restricted:</strong> el más restrictivo — exige usuario no-root, sistema de ficheros de solo lectura, capabilities mínimas</li>
+                            </ul>
+                            <p>La práctica recomendada es aplicar <code>Baseline</code> por defecto en todos los namespaces, y <code>Restricted</code> en namespaces de alta sensibilidad. <code>Privileged</code> solo debería usarse en namespaces específicos con justificación documentada.</p>
+                            <div class="defensa-box-tech"><strong>Configuración clave:</strong> <code>pod-security.kubernetes.io/enforce=baseline</code> en el namespace. Esto bloquea la creación de pods que no cumplan el estándar Baseline. La evidencia es la etiqueta, no el documento.</div>
+                        </div>
+                    </div>
+
+                    <!-- GRÁFICO 3: RBAC EN KUBERNETES -->
+                    <figure class="article-diagram" aria-label="RBAC en Kubernetes" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="280" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">RBAC en Kubernetes: quién puede hacer qué</text>
+                                <text x="40" y="58" font-size="12" fill="#77776f">privilegios mínimos por defecto, no administrador para todos</text>
+                                <rect x="40" y="80" width="250" height="110" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="165" y="108" font-size="14" font-weight="800" fill="#059669" text-anchor="middle">✅ RBAC bien configurado</text>
+                                <text x="165" y="130" font-size="11" fill="#77776f" text-anchor="middle">Roles específicos por namespace</text>
+                                <text x="165" y="148" font-size="11" fill="#77776f" text-anchor="middle">ClusterRoles solo para administradores</text>
+                                <text x="165" y="166" font-size="11" fill="#77776f" text-anchor="middle">ServiceAccounts con permisos limitados</text>
+                                <text x="165" y="184" font-size="10" fill="#94a3b8" text-anchor="middle">"view", "edit", "admin" granular</text>
+                                <line x1="290" y1="135" x2="320" y2="135" stroke="#059669" stroke-width="2"/>
+                                <polygon points="318,130 328,135 318,140" fill="#059669"/>
+                                <rect x="330" y="80" width="250" height="110" rx="10" fill="#fde8e8" stroke="#ef4444" stroke-width="1.5"/>
+                                <text x="455" y="108" font-size="14" font-weight="800" fill="#dc2626" text-anchor="middle">❌ RBAC mal configurado</text>
+                                <text x="455" y="130" font-size="11" fill="#77776f" text-anchor="middle">ClusterRole admin para todos</text>
+                                <text x="455" y="148" font-size="11" fill="#77776f" text-anchor="middle">ServiceAccounts con permisos</text>
+                                <text x="455" y="166" font-size="11" fill="#77776f" text-anchor="middle">excesivos "para simplificar"</text>
+                                <text x="455" y="184" font-size="10" fill="#94a3b8" text-anchor="middle">Cualquiera puede desplegar</text>
+                                <line x1="580" y1="135" x2="610" y2="135" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+                                <rect x="620" y="80" width="240" height="110" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="740" y="108" font-size="14" font-weight="800" fill="#d97706" text-anchor="middle">⚠️ Riesgo real</text>
+                                <text x="740" y="130" font-size="11" fill="#77776f" text-anchor="middle">Despliegues no autorizados</text>
+                                <text x="740" y="148" font-size="11" fill="#77776f" text-anchor="middle">Contenedores inseguros</text>
+                                <text x="740" y="166" font-size="11" fill="#77776f" text-anchor="middle">en producción</text>
+                                <text x="740" y="184" font-size="10" fill="#94a3b8" text-anchor="middle">Sin trazabilidad de cambios</text>
+                                <rect x="40" y="215" width="820" height="45" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="450" y="238" font-size="12" font-weight="700" fill="#151915" text-anchor="middle">Un ClusterRole con permisos de administrador asignado ampliamente es un hallazgo de auditoría</text>
+                                <text x="450" y="253" font-size="10" fill="#77776f" text-anchor="middle">Privilegios mínimos por defecto — excepciones justificadas y documentadas</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 400" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="400" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">RBAC en Kubernetes</text>
+                                <rect x="18" y="45" width="92" height="85" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="64" y="65" font-size="10" font-weight="800" fill="#059669" text-anchor="middle">✅ Correcto</text>
+                                <text x="64" y="80" font-size="8" fill="#77776f" text-anchor="middle">Roles por</text>
+                                <text x="64" y="95" font-size="8" fill="#77776f" text-anchor="middle">namespace</text>
+                                <text x="64" y="112" font-size="7" fill="#94a3b8" text-anchor="middle">Granular</text>
+                                <text x="64" y="124" font-size="7" fill="#94a3b8" text-anchor="middle">Mínimo</text>
+                                <rect x="120" y="45" width="92" height="85" rx="8" fill="#fde8e8" stroke="#ef4444" stroke-width="1.5"/>
+                                <text x="166" y="65" font-size="10" font-weight="800" fill="#dc2626" text-anchor="middle">❌ Incorrecto</text>
+                                <text x="166" y="80" font-size="8" fill="#77776f" text-anchor="middle">Admin para</text>
+                                <text x="166" y="95" font-size="8" fill="#77776f" text-anchor="middle">todos</text>
+                                <text x="166" y="112" font-size="7" fill="#94a3b8" text-anchor="middle">Permisos</text>
+                                <text x="166" y="124" font-size="7" fill="#94a3b8" text-anchor="middle">excesivos</text>
+                                <rect x="222" y="45" width="92" height="85" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="268" y="65" font-size="10" font-weight="800" fill="#d97706" text-anchor="middle">⚠️ Riesgo</text>
+                                <text x="268" y="80" font-size="8" fill="#77776f" text-anchor="middle">Despliegues</text>
+                                <text x="268" y="95" font-size="8" fill="#77776f" text-anchor="middle">no autorizados</text>
+                                <text x="268" y="112" font-size="7" fill="#94a3b8" text-anchor="middle">Sin control</text>
+                                <text x="268" y="124" font-size="7" fill="#94a3b8" text-anchor="middle">de cambios</text>
+                                <rect x="18" y="150" width="294" height="50" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="165" y="172" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">ClusterRole admin amplio = hallazgo</text>
+                                <text x="165" y="190" font-size="9" fill="#77776f" text-anchor="middle">Privilegios mínimos por defecto</text>
+                                <rect x="18" y="220" width="294" height="55" rx="8" fill="#059669" opacity=".08"/>
+                                <text x="165" y="243" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">RBAC granular</text>
+                                <text x="165" y="261" font-size="9" fill="#77776f" text-anchor="middle">Control de qué puede hacer quién</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 3: RBAC en Kubernetes — correcto vs incorrecto.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- SECCIÓN 3 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+
+                    <div class="block" id="s3">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Control de Acceso</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">RBAC: quién puede desplegar qué en el clúster</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>El control de acceso basado en roles de Kubernetes debería limitar quién puede crear, modificar o eliminar recursos en cada namespace, con privilegios mínimos por defecto. Un ClusterRole con permisos de administrador asignado ampliamente "para simplificar" es un hallazgo de auditoría, no una configuración operativa razonable.</p>
+                            <p>El RBAC en Kubernetes es la puerta de entrada del clúster. Si la puerta está abierta para todos, el resto de los controles de seguridad son menos efectivos. Un atacante que obtiene credenciales con permisos de administrador puede deshabilitar Pod Security Standards, modificar políticas de red, o desplegar contenedores maliciosos.</p>
+                            <p>Las prácticas recomendadas de RBAC en Kubernetes son:</p>
+                            <ul style="list-style-type:disc; padding-left:24px; margin:12px 0 16px;">
+                                <li>Usar <strong>Roles</strong> (namespaced) en lugar de <strong>ClusterRoles</strong> siempre que sea posible</li>
+                                <li>Limitar los ClusterRoles a un conjunto pequeño de administradores del clúster</li>
+                                <li>Asignar ServiceAccounts específicas para cada aplicación o componente</li>
+                                <li>Revisar periódicamente los permisos concedidos y eliminar los innecesarios</li>
+                                <li>Usar <strong>audit logging</strong> para detectar intentos de acceso no autorizados</li>
+                            </ul>
+                            <div class="defensa-box-warning"><strong>⚠️ Un ClusterRole con permisos de administrador asignado ampliamente "para simplificar" es un hallazgo de auditoría, no una configuración operativa razonable.</strong> Los privilegios excesivos son el vector de ataque más común en clústeres comprometidos.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECCIÓN 4 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+
+                    <div class="block" id="s4">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Origen de las Imágenes</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Solo imágenes de fuentes confiables, verificado técnicamente</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>Restringir qué registros de imágenes puede usar el clúster (mediante admission controllers como Kyverno o OPA Gatekeeper) impide que alguien despliegue accidental o deliberadamente una imagen de una fuente no verificada, no confiable o directamente maliciosa.</p>
+                            <p>El riesgo de las imágenes no verificadas es real. Un desarrollador puede, por error o por negligencia, desplegar una imagen pública que contiene vulnerabilidades conocidas. O, en un escenario de ataque más sofisticado, un atacante puede crear una imagen con código malicioso y convencer a alguien de que la despliegue.</p>
+                            <p>La solución técnica es un admission controller que verifica que la imagen proviene de un registro autorizado (ej. el registro corporativo) y que ha pasado un escaneo de seguridad exitoso. Las herramientas para esto son:</p>
+                            <ul style="list-style-type:disc; padding-left:24px; margin:12px 0 16px;">
+                                <li><strong>Kyverno:</strong> policy engine nativo de Kubernetes que puede verificar la procedencia de imágenes</li>
+                                <li><strong>OPA Gatekeeper:</strong> más flexible, permite políticas complejas con Rego</li>
+                                <li><strong>Notary/Sigstore:</strong> para verificar la firma de las imágenes</li>
+                            </ul>
+                            <div class="defensa-box-tech"><strong>Control verificable:</strong> una política que bloquea técnicamente cualquier imagen que no provenga del registro corporativo autorizado, no una lista de "buenas prácticas" que depende de la disciplina individual.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECCIÓN 5 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+
+                    <div class="block" id="s5">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Verificación Continua</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Verificar, no asumir, que la política se cumple</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>La evidencia de madurez no es la existencia de las políticas — es la verificación periódica activa de que se cumplen: auditorías del clúster que confirman que ningún Pod corre con privilegios innecesarios, que el RBAC no tiene permisos excesivos olvidados, y que el registro de imágenes permitidas se respeta técnicamente, no solo en la documentación.</p>
+                            <p>Una auditoría de contenedores eficaz incluye:</p>
+                            <ul style="list-style-type:disc; padding-left:24px; margin:12px 0 16px;">
+                                <li><strong>Escaneo automático</strong> del clúster en busca de pods que violen el Pod Security Standard</li>
+                                <li><strong>Revisión de RBAC</strong> para detectar permisos excesivos o no utilizados</li>
+                                <li><strong>Verificación del registro</strong> de imágenes que cada pod utiliza</li>
+                                <li><strong>Generación de reportes</strong> con los hallazgos y su resolución</li>
+                            </ul>
+                            <p>La verificación periódica no es opcional — es la única forma de saber que las políticas se cumplen. Una política configurada correctamente hoy puede ser deshabilitada mañana por un cambio en el clúster. La verificación continua es el seguro de que la política sigue activa.</p>
+                            <div class="defensa-box-success"><strong>✔ Las tres evidencias de madurez en contenedores:</strong> Pod Security Standards aplicados + RBAC granular + registro de imágenes autorizado. Sin estas tres, la seguridad de contenedores es más documentada que real.</div>
+                        </div>
+                    </div>
+
+                    <!-- PIE DE AUTOR -->
+                    <div class="defensa-foot">
+                        <div class="defensa-author">
+                            <div class="defensa-foot-label">Autor</div>
+                            <div class="defensa-author-name">Miguel Ángel Carriazo</div>
+                            <p class="defensa-author-bio">Arquitecto de infraestructura y seguridad con más de 15 años de experiencia diseñando entornos críticos. Especializado en virtualización, contenedores y seguridad de plataformas. En Technology Advisory ayuda a organizaciones a adoptar contenedores sin comprometer la seguridad.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SIDEBAR -->
+                <aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+                    <div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+                        <div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+                        <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Área</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Virtualización y Contenedores</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Enfoque</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Controles y Evidencias</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Herramientas clave</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">PSS, RBAC, Kyverno</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Nivel</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Avanzado</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Lectura</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">16-20 min</td></tr>
+                            <tr><td style="padding:10px 0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Etiquetas</td><td style="padding:10px 0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">#contenedores #kubernetes #PSS #RBAC #seguridad</td></tr>
+                        </table>
+                    </div>
+
+                    <div>
+                        <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+                        <nav class="defensa-toc-nav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+                            <a href="#s1" class="active" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px; color:#059669; border-left:2px solid #059669; font-weight:700;">01. Política sin Enforcement</a>
+                            <a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Pod Security Standards</a>
+                            <a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. RBAC</a>
+                            <a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Registro de Imágenes</a>
+                            <a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Verificación Continua</a>
+                        </nav>
+                    </div>
+                </aside>
+
+            </div>
+
+            <!-- ARTÍCULOS RELACIONADOS -->
+            <div class="related-section">
+                <div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+                <div class="related-grid">
+                    <a class="related-card" href="virtualizacion-contenedores-diseno-principios.html">
+                        <div class="r-meta">Virtualización y Contenedores · Principios</div>
+                        <div class="r-title">Principios de diseño: un contenedor no es una VM ligera, es otro modelo de seguridad</div>
+                        <div class="r-desc">Tratar los contenedores como "VMs pequeñas" es el error conceptual que produce despliegues inseguros.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                    <a class="related-card" href="virtualizacion-contenedores-madurez-roadmap.html">
+                        <div class="r-meta">Virtualización y Contenedores · Madurez</div>
+                        <div class="r-title">Madurez y roadmap: de "funciona en mi Docker" a plataforma gobernada</div>
+                        <div class="r-desc">Los cuatro niveles reales de madurez en contenedores, desde el desarrollo local sin gobierno hasta la plataforma con políticas.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                    <a class="related-card" href="virtualizacion-contenedores-modelo-operativo.html">
+                        <div class="r-meta">Virtualización y Contenedores · Operaciones</div>
+                        <div class="r-title">Modelo operativo: quién actualiza la imagen base, y con qué frecuencia</div>
+                        <div class="r-desc">Una imagen construida hace un año acumula vulnerabilidades conocidas silenciosamente, aunque la aplicación no haya cambiado.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                </div>
+            </div>
+
+            <div id="footer-container"></div>
+
+        </div>
+    </div>
+
+    <script src="../../js/menu.js"></script>
+    <script src="../../js/footer.js"></script>
+    <script>
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
+            } else {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function() {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>

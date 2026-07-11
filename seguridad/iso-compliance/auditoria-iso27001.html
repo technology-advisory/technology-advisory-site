@@ -1,268 +1,74 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport"/>
 <title>Auditoría de Sistemas bajo ISO/IEC 27001 | Technology Advisory</title>
-<meta name="description" content="Diseño, despliegue y auditoría interna de Sistemas de Gestión de la Seguridad de la Información según estándares internacionales.">
-<meta name="author" content="Miguel Ángel Carriazo">
-<meta name="theme-color" content="#059669">
-
-<link rel="stylesheet" href="../../css/global.css">
-<link rel="stylesheet" href="../../css/dossier-core.css">
-<link rel="stylesheet" href="../../css/index.css">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
+<meta content="Diseño, despliegue y auditoría interna de Sistemas de Gestión de la Seguridad de la Información según estándares internacionales." name="description"/>
+<meta content="Miguel Ángel Carriazo" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="#059669" name="theme-color"/>
+<link href="../../css/global.css" rel="stylesheet"/>
+<link href="../../css/dossier-core.css" rel="stylesheet"/>
+<link href="../../css/articulo.css" rel="stylesheet"/>
+<link href="../../css/index.css" rel="stylesheet"/>
+<link href="../../css/articulo-diagramas.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
-  .defensa-meta { border-top: none !important; border-bottom: none !important; padding: 10px 0 0 0 !important; margin: 5px 0 0 0 !important; }
-  .defensa-layout { display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: start; padding: 0 48px 40px; }
-  .defensa-main { min-width: 0; }
-  .defensa-toc { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 40px; min-width: 0; }
-  .defensa-control { background: #fafaf8; border: 1px solid #ededea; border-radius: 8px; padding: 24px; }
-  .defensa-control .title { font-family: monospace; font-size: 11px; text-transform: uppercase; color: #151915; border-bottom: 2px solid #ededea; padding-bottom: 6px; margin-bottom: 16px; font-weight: 700; letter-spacing: 0.05em; }
-  .defensa-control table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 13px; }
-  .defensa-control td { padding: 10px 0; border-bottom: 1px solid #ededea; vertical-align: middle; overflow-wrap: break-word; }
-  .defensa-control tr:last-child td { border-bottom: none; }
-  .defensa-control td.label { color: #77776f; font-weight: 700; text-align: left; }
-  .defensa-control td.value { color: #151915; font-weight: 600; text-align: right; }
-  .defensa-control td.value.highlight { color: #059669; font-weight: 700; }
-  
-  .defensa-toc-label { font-family: monospace; font-size: 11px; text-transform: uppercase; color: #77776f; letter-spacing: 0.1em; margin-bottom: 14px; font-weight: 700; }
-  .defensa-toc-nav { display: flex; flex-direction: column; gap: 12px; border-left: 2px solid #ededea; padding-left: 14px; }
-  .defensa-toc-nav a { text-decoration: none; color: #77776f; font-size: 14px; font-weight: 600; transition: all 0.2s; border-left: 2px solid transparent; margin-left: -16px; padding-left: 14px; }
-  .defensa-toc-nav a.active { color: #059669 !important; border-left: 2px solid #059669 !important; font-weight: 700; }
-  
-  .defensa-badge-all { display: inline-block; background: #059669; color: #fff; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 2px 10px; border-radius: 12px; margin-left: 8px; vertical-align: middle; }
-  .defensa-badge-tech { display: inline-block; background: #22221e; color: #fafaf8; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 2px 10px; border-radius: 12px; margin-left: 8px; vertical-align: middle; }
-  .defensa-btn-back { display: inline-block; background: #059669; color: #ffffff !important; font-weight: 700; font-size: 14px; padding: 8px 20px; border-radius: 30px; text-decoration: none; transition: background 0.2s ease; border: none; }
-  .defensa-btn-back:hover { background: #047857; color: #ffffff !important; }
-  
-  .defensa-divider { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 45px 0; color: #9a9a91; }
-  .defensa-divider::before, .defensa-divider::after { content: ""; flex: 1; height: 2px; background: linear-gradient(90deg, transparent, #9a9a91, transparent); }
-  .defensa-divider .label { font-family: monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #4a4a44; background: #ffffff; padding: 0 16px; white-space: nowrap; font-weight: 700; }
-  .defensa-divider .label .gear { color: #059669; }
-  
-  .defensa-main .block { margin-bottom: 55px; }
-  .defensa-main .block .block-meta { font-family: monospace; font-size: 11px; text-transform: uppercase; color: #77776f; margin-bottom: 10px; }
-  .defensa-main .block h2 { font-size: 25px; font-weight: 800; color: #151915; margin: 0 0 18px; padding-bottom: 10px; border-bottom: 1px solid #ededea; }
-  .defensa-main .block .body-text { font-size: 16px; line-height: 1.85; color: #3f3f3a; text-align: justify; }
-  .defensa-main .block .body-text p { margin-top: 0; margin-bottom: 20px; }
-  
-  .defensa-box-warning { background: #fffbeb; border-left: 4px solid #d97706; padding: 22px; margin: 26px 0; border-radius: 4px; }
-  .defensa-box-warning strong { color: #b45309; font-size: 16px; display: block; margin-bottom: 6px; }
-  .defensa-box-warning p { margin: 0 !important; font-size: 15px !important; color: #78350f; line-height: 1.6; }
-  
-  .defensa-box-success { background: #f0fdf4; border-left: 4px solid #059669; padding: 22px; margin: 26px 0; border-radius: 4px; }
-  .defensa-box-success strong { color: #14532d; font-size: 16px; display: block; margin-bottom: 6px; }
-  .defensa-box-success p { margin: 0 !important; font-size: 15px !important; color: #14532d; line-height: 1.6; }
-
-  .defensa-box-tech { background: #f2f1ec; padding: 26px; border-radius: 8px; margin: 26px 0; font-size: 14.5px; border: 1px solid #ededea; line-height: 1.7; }
-  
-  .defensa-foot { display: flex; gap: 48px; max-width: 1320px; padding: 40px 0 0; border-top: 1px solid #ededea; flex-wrap: wrap; align-items: flex-start; margin-top: 40px; }
-  .defensa-author { flex: 1 1 0%; min-width: 0; }
-  .defensa-foot-label { font-family: monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #7c8790; margin-bottom: 8px; }
-  .defensa-author-name { font-size: 18px; font-weight: 800; color: #151915; margin-bottom: 6px; }
-  .defensa-author-name span { color: #059669; font-weight: 600; }
-  .defensa-author-bio { font-size: 14px; color: #5b6670; line-height: 1.6; max-width: none; white-space: normal; margin: 0; }
-
-  .defensa-meta { display: flex !important; flex-wrap: wrap !important; align-items: center !important; gap: 8px 24px !important; padding: 14px 0 !important; border-top: 1px solid #ededea !important; border-bottom: 1px solid #ededea !important; margin: 8px 0 0 0 !important; }
-  .defensa-meta-item { display: inline-flex !important; align-items: center !important; gap: 7px !important; font-size: 13px !important; color: #5b6670 !important; white-space: nowrap !important; }
-  .defensa-meta-item svg { width: 15px !important; height: 15px !important; color: #059669 !important; flex-shrink: 0 !important; stroke: #059669 !important; stroke-width: 1.6 !important; fill: none !important; }
-  .defensa-meta-item strong { color: #151915 !important; font-weight: 600 !important; }
-  
-  @media (max-width: 1024px) {
-    .defensa-layout { grid-template-columns: 1fr; gap: 32px; padding: 0 24px 32px; }
-    .defensa-toc { position: static; width: 100%; }
-    .defensa-foot { padding: 24px 24px 0; gap: 24px; }
-  }
-</style>
-</head>
+        @media (max-width: 1024px) {
+            .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
+            div[style*="padding: 16px 48px 0"], div[style*="padding: 16px 48px 0;"] { padding: 16px 4% 0 !important; }
+            div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding: 40px 4% 24px !important; }
+        }
+        .article-diagram svg { max-width: 100%; height: auto; }
+    </style>
+<style>.defensa-main table,.defensa-main th,.defensa-main td{text-align:left!important}.defensa-main th,.defensa-main td{vertical-align:top!important}.defensa-toc{position:sticky;top:24px}.article-diagram svg{max-width:100%;height:auto}@media(max-width:1024px){.defensa-layout{display:block!important;padding:0 4% 40px!important}.defensa-toc{position:static!important;margin-top:30px}}</style></head>
 <body>
-
 <div class="card-wrapper ds-page">
 <div class="card">
-
-  <div id="menu-container"></div>
-  <div class="accent-bar" style="background: #059669;"></div>
-
-  <div class="ds-meta">
-    <span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: ciberseguridad</span>
-    <span>nivel: <strong>Gobierno y Cumplimiento Normativo</strong></span>
-  </div>
-
-  <div style="padding: 40px 48px 24px; border-bottom: 1px solid #ededea;">
-    <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Especialidad · Risk Governance & Compliance</div>
-    <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Gobernanza SGSI: <span style="color:#059669;">Garantía ISO/IEC 27001</span></h1>
-    <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">
-      Despliegue operativo de matrices de control, gestión estructurada del riesgo organizativo y preparación forense de entornos de auditoría.
-    </p>
-
-    <div class="defensa-meta">
-      <span class="defensa-meta-item">
-        <svg viewBox="0 0 18 18" fill="none" stroke="currentColor"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg>
-        <strong>Miguel Ángel Carriazo</strong>
-      </span>
-      <span class="defensa-meta-item">
-        <svg viewBox="0 0 18 18" fill="none" stroke="currentColor"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>
-        ISO 27001 Lead Auditor
-      </span>
-      <span class="defensa-meta-item">
-        <svg viewBox="0 0 18 18" fill="none" stroke="currentColor"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>
-        Lectura Avanzada (10 min)
-      </span>
-    </div>
-  </div>
-
-  <div style="padding: 24px 48px 24px;">
-    <a href="../index.html" class="defensa-btn-back">← Volver al Panel de Seguridad</a>
-  </div>
-
-  <div class="defensa-layout">
-    
-    <div class="defensa-main">
-      
-      <div class="block" id="s1">
-        <div class="block-meta">01 // Marcos Internacionales de Control <span class="defensa-badge-all">Cumplimiento</span></div>
-        <h2>Gobernanza y Mitigación Normativa</h2>
-        <div class="body-text">
-          <p>La adopción de la norma internacional ISO/IEC 27001 dota a la infraestructura crítica de un plano unificado de control organizativo. No se trata simplemente de verificar casillas de verificación regulatorias, sino de implementar un ciclo dinámico de mejora continua que minimice el impacto operativo ante incidentes de ciberseguridad corporativos.</p>
-          
-          <p>El estándar proporciona un marco sistemático para la gestión de la seguridad de la información, basado en la evaluación de riesgos y la implementación de controles adecuados. La certificación ISO 27001 demuestra el compromiso de la organización con las mejores prácticas internacionales y genera confianza en clientes, socios y reguladores.</p>
-          
-          <div class="defensa-box-success">
-            <strong>✅ Ventaja Competitiva:</strong>
-            <p>La certificación ISO 27001 no solo mejora la postura de seguridad, sino que también puede ser un diferenciador clave en procesos de licitación y contratación, demostrando a los clientes que sus datos serán gestionados con los más altos estándares de seguridad y confidencialidad.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="defensa-divider">
-        <span class="label"><span class="gear">⚙️</span> PLANO TÉCNICO · GOVERNANZA DE SEGURIDAD <span class="gear">⚙️</span></span>
-      </div>
-
-      <div class="block" id="s2">
-        <div class="block-meta">02 // Estructura del Sistema de Gestión <span class="defensa-badge-tech">SGSI · PDCA · CONTROLES</span></div>
-        <h2>Componentes Clave del SGSI</h2>
-        <div class="body-text">
-          <p>La implementación efectiva de un SGSI según ISO 27001 requiere la integración de varios componentes interrelacionados que cubren desde la definición de políticas hasta la operación diaria:</p>
-          
-          <div class="defensa-box-tech">
-            <div style="margin-bottom: 22px;">
-              <strong style="color: #151915; font-size: 15.5px;">🔹 Política de Seguridad de la Información</strong>
-              <p style="margin: 6px 0 0 0; color: #3f3f3a;">Documento marco que establece los objetivos de seguridad, el compromiso de la dirección y los principios generales de protección de la información. Debe ser aprobado por la alta dirección y comunicado a todos los empleados, estableciendo la base para el resto del sistema.</p>
-            </div>
-
-            <div style="margin-bottom: 22px;">
-              <strong style="color: #151915; font-size: 15.5px;">🔹 Gestión de Riesgos y Análisis de Impacto (BIA)</strong>
-              <p style="margin: 6px 0 0 0; color: #3f3f3a;">Identificación, análisis y evaluación de los riesgos que amenazan la confidencialidad, integridad y disponibilidad de la información. El Análisis de Impacto en el Negocio (BIA) determina las consecuencias de la materialización de estos riesgos, priorizando las acciones de mitigación.</p>
-            </div>
-
-            <div>
-              <strong style="color: #151915; font-size: 15.5px;">🔹 Anexo A: Controles de Seguridad</strong>
-              <p style="margin: 6px 0 0 0; color: #3f3f3a;">Selección e implementación de los controles del Anexo A de la norma, que cubren áreas como políticas de seguridad, organización, recursos humanos, gestión de activos, control de acceso, criptografía, seguridad física, operaciones, comunicaciones, adquisición de sistemas, relación con proveedores y gestión de incidentes.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="block" id="s3">
-        <div class="block-meta">03 // Proceso de Auditoría y Certificación <span class="defensa-badge-tech">AUDITORÍA INTERNA · CERTIFICACIÓN</span></div>
-        <h2>Garantía de Cumplimiento y Mejora Continua</h2>
-        <div class="body-text">
-          <p>El proceso de auditoría según la norma ISO 19011 y los requisitos de la ISO 27001 es fundamental para verificar la conformidad del SGSI y obtener la certificación. Este proceso se divide en varias fases:</p>
-          
-          <div class="defensa-box-tech">
-            <p style="margin: 0 0 14px 0; color: #3f3f3a;"><strong>Auditoría Interna:</strong> Evaluación sistemática y documentada del SGSI por parte de personal interno capacitado, con el objetivo de identificar no conformidades, oportunidades de mejora y preparar la organización para la auditoría externa de certificación.</p>
-            <p style="margin: 0 0 14px 0; color: #3f3f3a;"><strong>Revisión por la Dirección:</strong> Análisis periódico del desempeño del SGSI por parte de la alta dirección, evaluando la eficacia de los controles, la gestión de riesgos y la asignación de recursos, y tomando decisiones estratégicas para la mejora continua.</p>
-            <p style="margin: 0 0 14px 0; color: #3f3f3a;"><strong>Auditoría de Certificación (Etapa 1):</strong> Revisión documental por parte de un organismo certificador acreditado, que verifica la existencia y adecuación de la documentación del SGSI (políticas, procedimientos, registros) y la preparación para la auditoría in situ.</p>
-            <p style="margin: 0; color: #3f3f3a;"><strong>Auditoría de Certificación (Etapa 2):</strong> Evaluación in situ de la implementación y eficacia del SGSI, incluyendo entrevistas con el personal, revisión de evidencias y comprobación de la operación de los controles. La conclusión positiva de esta etapa resulta en la emisión del certificado ISO 27001.</p>
-          </div>
-          
-          <div class="defensa-box-warning">
-            <strong>⚠️ Riesgo Crítico: No Conformidades y Acciones Correctivas</strong>
-            <p>Las no conformidades identificadas durante las auditorías (internas o externas) requieren la implementación de acciones correctivas formales y documentadas, con plazos definidos para su resolución. La falta de seguimiento adecuado puede llevar a la suspensión o retirada de la certificación.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="block" id="s4">
-        <div class="block-meta">04 // Continuidad del Negocio y Gestión de Incidentes <span class="defensa-badge-all">BCP · DRP</span></div>
-        <h2>Resiliencia Operativa y Recuperación ante Desastres</h2>
-        <div class="body-text">
-          <p>La norma ISO 27001 requiere que la organización establezca y mantenga un proceso documentado para la gestión de incidentes de seguridad de la información, así como un plan de continuidad del negocio (BCP) y de recuperación ante desastres (DRP).</p>
-          
-          <div class="defensa-box-tech">
-            <p style="margin: 0 0 14px 0; color: #3f3f3a;"><strong>Gestión de Incidentes de Seguridad:</strong> Implementación de un proceso estructurado para la detección, reporte, análisis, contención, erradicación, recuperación y lecciones aprendidas de los incidentes de seguridad. Este proceso debe incluir la definición de roles y responsabilidades, la comunicación con las partes interesadas y la integración con otros procesos de gestión de riesgos.</p>
-            <p style="margin: 0 0 14px 0; color: #3f3f3a;"><strong>Plan de Continuidad del Negocio (BCP):</strong> Desarrollo de estrategias y procedimientos para mantener las funciones críticas del negocio durante y después de un incidente que interrumpa las operaciones normales. El BCP debe basarse en el Análisis de Impacto en el Negocio (BIA) y definir los tiempos de recuperación objetivo (RTO) y los puntos de recuperación objetivo (RPO).</p>
-            <p style="margin: 0; color: #3f3f3a;"><strong>Plan de Recuperación ante Desastres (DRP):</strong> Conjunto de procedimientos técnicos para restaurar la infraestructura IT y los sistemas de información después de un desastre, como un incendio, una inundación o un ciberataque masivo. El DRP debe probarse periódicamente mediante simulacros y ejercicios de mesa (tabletop exercises).</p>
-          </div>
-          
-          <p>La implementación de un SGSI según ISO 27001 no es un proyecto puntual, sino un proceso de mejora continua basado en el ciclo PDCA (Planificar-Hacer-Verificar-Actuar). La organización debe mantener el sistema vivo y actualizado, adaptándolo a los cambios en el entorno de amenazas, la tecnología y el propio negocio.</p>
-        </div>
-      </div>
-
-      <div class="defensa-foot">
-        <div class="defensa-author">
-          <div class="defensa-foot-label">Autor del Dossier</div>
-          <div class="defensa-author-name">Miguel Ángel Carriazo <span>· Infrastructure & Cybersecurity Architect</span></div>
-          <p class="defensa-author-bio">Especialista con más de 25 años en el sector IT corporativo. Auditor Líder certificado en ISO 27001 y experto en el diseño, implementación y auditoría de Sistemas de Gestión de Seguridad de la Información (SGSI) en entornos de infraestructura crítica.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <aside class="defensa-toc">
-      <div class="defensa-control">
-        <div class="title">Ficha de Cumplimiento</div>
-        <table>
-            <tr><td class="label">Estándar</td><td class="value">ISO/IEC 27001:2022</td></tr>
-            <tr><td class="label">Ámbito</td><td class="value highlight">SGSI Enterprise</td></tr>
-            <tr><td class="label">Enfoque</td><td class="value">Ciclo PDCA</td></tr>
-            <tr><td class="label">Controles</td><td class="value">Anexo A (93)</td></tr>
-            <tr><td class="label">Certificación</td><td class="value">Acreditación Externa</td></tr>
-        </table>
-      </div>
-      <div>
-        <div class="defensa-toc-label">Secciones</div>
-        <nav class="defensa-toc-nav" id="artTocNav">
-          <a href="#s1" class="active">01. Marcos Internacionales</a>
-          <a href="#s2">02. Estructura SGSI</a>
-          <a href="#s3">03. Auditoría y Certificación</a>
-          <a href="#s4">04. Continuidad y Recuperación</a>
-        </nav>
-      </div>
-    </aside>
-
-  </div>
-
-  <div id="footer-container"></div>
-
+<div id="menu-container"></div>
+<div class="accent-bar" style="background:#059669;"></div>
+<div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: seguridad</span><span>categoría: <strong>Auditoría y Cumplimiento</strong></span></div>
+<div style="padding: 16px 4% 0;">
+<a class="defensa-btn-back" href="../index.html?cat=iso-compliance" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Auditoría y Cumplimiento</a>
+</div>
+<div style="padding: 40px 4% 24px; border-bottom: 1px solid #ededea;"><div style="font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.15em;font-weight:700;margin-bottom:8px;">Artículo pilar · Guía transversal · Auditoría y Cumplimiento</div><h1 style="font-size:clamp(30px,5vw,44px);font-weight:900;color:#151915;margin:0 0 12px;line-height:1.1;letter-spacing:-.02em;">Gobernanza SGSI (Sistema de Gestión de Seguridad de la Información): <span style="color:#059669;">Garantía ISO/IEC 27001</span></h1><p style="font-size:18px;color:#4a4a44;line-height:1.65;margin:0;max-width:950px;padding-bottom:16px;">Diseño, despliegue y auditoría interna de Sistemas de Gestión de la Seguridad de la Información según estándares internacionales.</p><div class="defensa-meta" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;padding:14px 0;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;margin:8px 0 0 0;"><span style="font-size:13px;color:#5b6670;"><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span><span style="font-size:13px;color:#5b6670;">Auditoría y Cumplimiento</span><span style="font-size:13px;color:#5b6670;">Lectura avanzada (12–18 min)</span></div></div>
+<div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+<div class="defensa-main" style="min-width:0;"><div class="pillar-note" style="margin:24px 0;padding:16px 20px;border:1px solid #a7f3d0;background:#ecfdf5;border-radius:12px;color:#065f46;text-align:left;">Guía transversal: complementa los cuatro artículos de diseño, modelo operativo, controles y madurez de esta categoría; no los sustituye.</div><figure aria-label="Cadena de evidencia" class="article-diagram"><div class="diagram-desktop"><svg role="img" viewbox="0 0 900 430" xmlns="http://www.w3.org/2000/svg"><rect fill="#fafaf8" height="430" rx="14" width="900"></rect><text fill="#151915" font-size="19" font-weight="800" x="40" y="42">Cadena de evidencia</text><text fill="#64748b" font-size="12" x="40" y="66">Artículo pilar · arquitectura y evidencia observable</text><rect fill="#fff" height="88" rx="12" stroke="#d97706" stroke-width="1.5" width="240" x="50" y="110"></rect><rect fill="#d97706" height="88" rx="5" width="10" x="50" y="110"></rect><text fill="#151915" font-size="13" font-weight="800" x="78" y="148">Requisito</text><text fill="#64748b" font-size="10" x="78" y="172">control + señal + evidencia</text><rect fill="#fff" height="88" rx="12" stroke="#7c3aed" stroke-width="1.5" width="240" x="325" y="110"></rect><rect fill="#7c3aed" height="88" rx="5" width="10" x="325" y="110"></rect><text fill="#151915" font-size="13" font-weight="800" x="353" y="148">Riesgo</text><text fill="#64748b" font-size="10" x="353" y="172">control + señal + evidencia</text><rect fill="#fff" height="88" rx="12" stroke="#dc2626" stroke-width="1.5" width="240" x="600" y="110"></rect><rect fill="#dc2626" height="88" rx="5" width="10" x="600" y="110"></rect><text fill="#151915" font-size="13" font-weight="800" x="628" y="148">Control</text><text fill="#64748b" font-size="10" x="628" y="172">control + señal + evidencia</text><rect fill="#fff" height="88" rx="12" stroke="#0891b2" stroke-width="1.5" width="240" x="50" y="225"></rect><rect fill="#0891b2" height="88" rx="5" width="10" x="50" y="225"></rect><text fill="#151915" font-size="13" font-weight="800" x="78" y="263">Ejecución</text><text fill="#64748b" font-size="10" x="78" y="287">control + señal + evidencia</text><rect fill="#fff" height="88" rx="12" stroke="#059669" stroke-width="1.5" width="240" x="325" y="225"></rect><rect fill="#059669" height="88" rx="5" width="10" x="325" y="225"></rect><text fill="#151915" font-size="13" font-weight="800" x="353" y="263">Evidencia</text><text fill="#64748b" font-size="10" x="353" y="287">control + señal + evidencia</text><rect fill="#fff" height="88" rx="12" stroke="#0f172a" stroke-width="1.5" width="240" x="600" y="225"></rect><rect fill="#0f172a" height="88" rx="5" width="10" x="600" y="225"></rect><text fill="#151915" font-size="13" font-weight="800" x="628" y="263">Conclusión</text><text fill="#64748b" font-size="10" x="628" y="287">control + señal + evidencia</text><rect fill="#0f172a" height="28" rx="8" width="820" x="40" y="382"></rect><text fill="#fff" font-size="11" font-weight="700" text-anchor="middle" x="450" y="401">La herramienta acelera; la evidencia demuestra que el control funcionó.</text></svg></div><div class="diagram-mobile"><svg role="img" viewbox="0 0 330 500" xmlns="http://www.w3.org/2000/svg"><rect fill="#fafaf8" height="500" rx="12" width="330"></rect><text fill="#151915" font-size="14" font-weight="800" x="18" y="30">Cadena de evidencia</text><circle cx="42" cy="72" fill="#d97706" r="16"></circle><text fill="#fff" font-size="10" font-weight="800" text-anchor="middle" x="42" y="76">1</text><path d="M 64 72 H 305" stroke="#cbd5e1" stroke-width="2"></path><text fill="#151915" font-size="10" font-weight="800" x="76" y="66">Requisito</text><rect fill="#fff" height="58" rx="10" stroke="#7c3aed" width="294" x="18" y="117"></rect><text fill="#151915" font-size="10" font-weight="800" x="34" y="144">2. Riesgo</text><circle cx="42" cy="202" fill="#dc2626" r="16"></circle><text fill="#fff" font-size="10" font-weight="800" text-anchor="middle" x="42" y="206">3</text><path d="M 64 202 H 305" stroke="#cbd5e1" stroke-width="2"></path><text fill="#151915" font-size="10" font-weight="800" x="76" y="196">Control</text><rect fill="#fff" height="58" rx="10" stroke="#0891b2" width="294" x="18" y="247"></rect><text fill="#151915" font-size="10" font-weight="800" x="34" y="274">4. Ejecución</text><circle cx="42" cy="332" fill="#059669" r="16"></circle><text fill="#fff" font-size="10" font-weight="800" text-anchor="middle" x="42" y="336">5</text><path d="M 64 332 H 305" stroke="#cbd5e1" stroke-width="2"></path><text fill="#151915" font-size="10" font-weight="800" x="76" y="326">Evidencia</text><rect fill="#fff" height="58" rx="10" stroke="#0f172a" width="294" x="18" y="377"></rect><text fill="#151915" font-size="10" font-weight="800" x="34" y="404">6. Conclusión</text></svg></div><figcaption class="diagram-caption">Figura 1: Cadena de evidencia. Diseño específico para Auditoría y Cumplimiento.</figcaption><span class="zoom-hint">🔍 Clic para ampliar</span></figure><div class="block" id="s1"><div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — Seguridad operativa</div><h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La diferencia entre declarar y demostrar</h2><div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p><strong>Gobernanza del SGSI: de la certificación a la garantía operativa no debe tratarse como una descripción de producto.</strong> En Auditoría y Cumplimiento, el problema real es gobernar SGSI, controles, auditoría interna, tratamiento de riesgos, conformidad y mejora continua bajo condiciones de producción, con dependencias, fallos y cambios que nunca aparecen completos en una política. Un certificado vigente no demuestra que el entorno sea seguro; demuestra que un sistema de gestión definido fue auditado sobre un alcance concreto y con una muestra limitada. El diseño defendible empieza cuando se identifica qué activo se protege, qué decisión se adopta, quién tiene autoridad para adoptarla y qué señal demostraría que el control dejó de funcionar.</p><p>La primera obligación técnica es construir una población completa. En este ámbito incluye alcance, activos, riesgos, controles, políticas, procedimientos, evidencias, planes de tratamiento, auditorías y acciones correctivas. Una herramienta puede descubrir una parte, pero la cobertura debe reconciliarse con CMDB (Configuration Management Database), inventarios cloud, directorios, repositorios de código, plataformas de virtualización y servicios gestionados. Lo que no está inventariado no entra en la política, no genera alerta y tampoco aparece en el muestreo de auditoría. La ausencia de un activo en el registro no reduce el riesgo; únicamente elimina la visibilidad.</p></div></div><div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div><div class="block" id="s2"><div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Seguridad operativa</div><h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Diseño del control y población afectada</h2><div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p><strong>Gobernanza del SGSI: de la certificación a la garantía operativa no debe tratarse como una descripción de producto.</strong> En Auditoría y Cumplimiento, el problema real es gobernar SGSI, controles, auditoría interna, tratamiento de riesgos, conformidad y mejora continua bajo condiciones de producción, con dependencias, fallos y cambios que nunca aparecen completos en una política. Un certificado vigente no demuestra que el entorno sea seguro; demuestra que un sistema de gestión definido fue auditado sobre un alcance concreto y con una muestra limitada. El diseño defendible empieza cuando se identifica qué activo se protege, qué decisión se adopta, quién tiene autoridad para adoptarla y qué señal demostraría que el control dejó de funcionar.</p><p>La primera obligación técnica es construir una población completa. En este ámbito incluye alcance, activos, riesgos, controles, políticas, procedimientos, evidencias, planes de tratamiento, auditorías y acciones correctivas. Una herramienta puede descubrir una parte, pero la cobertura debe reconciliarse con CMDB, inventarios cloud, directorios, repositorios de código, plataformas de virtualización y servicios gestionados. Lo que no está inventariado no entra en la política, no genera alerta y tampoco aparece en el muestreo de auditoría. La ausencia de un activo en el registro no reduce el riesgo; únicamente elimina la visibilidad.</p></div></div><figure aria-label="Muestreo de auditoría" class="article-diagram"><div class="diagram-desktop"><svg role="img" viewbox="0 0 900 430" xmlns="http://www.w3.org/2000/svg"><rect fill="#fafaf8" height="430" rx="14" width="900"></rect><text fill="#151915" font-size="19" font-weight="800" x="40" y="42">Muestreo de auditoría</text><text fill="#64748b" font-size="12" x="40" y="66">Artículo pilar · arquitectura y evidencia observable</text><rect fill="#d97706" height="30" opacity="0.18" rx="8" stroke="#d97706" width="109" x="60" y="320"></rect><text fill="#151915" font-size="11" font-weight="700" transform="translate(78,312) rotate(-18)">Población</text><rect fill="#7c3aed" height="72" opacity="0.28" rx="8" stroke="#7c3aed" width="109" x="177" y="278"></rect><text fill="#151915" font-size="11" font-weight="700" transform="translate(195,270) rotate(-18)">Criterio</text><rect fill="#dc2626" height="114" opacity="0.38" rx="8" stroke="#dc2626" width="109" x="293" y="236"></rect><text fill="#151915" font-size="11" font-weight="700" transform="translate(311,228) rotate(-18)">Muestra</text><rect fill="#0891b2" height="156" opacity="0.48" rx="8" stroke="#0891b2" width="109" x="410" y="194"></rect><text fill="#151915" font-size="11" font-weight="700" transform="translate(428,186) rotate(-18)">Prueba</text><rect fill="#059669" height="198" opacity="0.58" rx="8" stroke="#059669" width="109" x="527" y="152"></rect><text fill="#151915" font-size="11" font-weight="700" transform="translate(545,144) rotate(-18)">Desviación</text><rect fill="#0f172a" height="240" opacity="0.68" rx="8" stroke="#0f172a" width="109" x="643" y="110"></rect><text fill="#151915" font-size="11" font-weight="700" transform="translate(661,102) rotate(-18)">Extrapolación</text><rect fill="#0f172a" height="28" rx="8" width="820" x="40" y="382"></rect><text fill="#fff" font-size="11" font-weight="700" text-anchor="middle" x="450" y="401">La herramienta acelera; la evidencia demuestra que el control funcionó.</text></svg></div><div class="diagram-mobile"><svg role="img" viewbox="0 0 330 500" xmlns="http://www.w3.org/2000/svg"><rect fill="#fafaf8" height="500" rx="12" width="330"></rect><text fill="#151915" font-size="14" font-weight="800" x="18" y="30">Muestreo de auditoría</text><rect fill="#fff" height="58" rx="10" stroke="#d97706" width="294" x="18" y="52"></rect><text fill="#151915" font-size="10" font-weight="800" x="34" y="79">1. Población</text><circle cx="42" cy="137" fill="#7c3aed" r="16"></circle><text fill="#fff" font-size="10" font-weight="800" text-anchor="middle" x="42" y="141">2</text><path d="M 64 137 H 305" stroke="#cbd5e1" stroke-width="2"></path><text fill="#151915" font-size="10" font-weight="800" x="76" y="131">Criterio</text><rect fill="#fff" height="58" rx="10" stroke="#dc2626" width="294" x="18" y="182"></rect><text fill="#151915" font-size="10" font-weight="800" x="34" y="209">3. Muestra</text><circle cx="42" cy="267" fill="#0891b2" r="16"></circle><text fill="#fff" font-size="10" font-weight="800" text-anchor="middle" x="42" y="271">4</text><path d="M 64 267 H 305" stroke="#cbd5e1" stroke-width="2"></path><text fill="#151915" font-size="10" font-weight="800" x="76" y="261">Prueba</text><rect fill="#fff" height="58" rx="10" stroke="#059669" width="294" x="18" y="312"></rect><text fill="#151915" font-size="10" font-weight="800" x="34" y="339">5. Desviación</text><circle cx="42" cy="397" fill="#0f172a" r="16"></circle><text fill="#fff" font-size="10" font-weight="800" text-anchor="middle" x="42" y="401">6</text><path d="M 64 397 H 305" stroke="#cbd5e1" stroke-width="2"></path><text fill="#151915" font-size="10" font-weight="800" x="76" y="391">Extrapolación</text></svg></div><figcaption class="diagram-caption">Figura 2: Muestreo de auditoría. Diseño específico para Auditoría y Cumplimiento.</figcaption><span class="zoom-hint">🔍 Clic para ampliar</span></figure><div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div><div class="block" id="s3"><div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Seguridad operativa</div><h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Ejecución, muestreo y trazabilidad</h2><div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p><strong>Gobernanza del SGSI: de la certificación a la garantía operativa no debe tratarse como una descripción de producto.</strong> En Auditoría y Cumplimiento, el problema real es gobernar SGSI, controles, auditoría interna, tratamiento de riesgos, conformidad y mejora continua bajo condiciones de producción, con dependencias, fallos y cambios que nunca aparecen completos en una política. Un certificado vigente no demuestra que el entorno sea seguro; demuestra que un sistema de gestión definido fue auditado sobre un alcance concreto y con una muestra limitada. El diseño defendible empieza cuando se identifica qué activo se protege, qué decisión se adopta, quién tiene autoridad para adoptarla y qué señal demostraría que el control dejó de funcionar.</p><p>La primera obligación técnica es construir una población completa. En este ámbito incluye alcance, activos, riesgos, controles, políticas, procedimientos, evidencias, planes de tratamiento, auditorías y acciones correctivas. Una herramienta puede descubrir una parte, pero la cobertura debe reconciliarse con CMDB, inventarios cloud, directorios, repositorios de código, plataformas de virtualización y servicios gestionados. Lo que no está inventariado no entra en la política, no genera alerta y tampoco aparece en el muestreo de auditoría. La ausencia de un activo en el registro no reduce el riesgo; únicamente elimina la visibilidad.</p><div class="real-example-box" style="margin:24px 0;padding:18px 20px;border-left:4px solid #059669;background:#f0fdf4;border-radius:0 12px 12px 0;text-align:left;"><strong>🔎 Caso y plataformas de referencia</strong><p style="margin:8px 0 0;line-height:1.75;color:#334155;text-align:left;">ServiceNow GRC (Governance, Risk and Compliance), Archer, MetricStream, AuditBoard o TeamMate+ pueden estructurar riesgos, controles, muestras y acciones. La plataforma no convierte una captura en evidencia suficiente: el auditor debe poder reconstruir población, criterio de selección, ejecución, resultado, excepción y cierre. Este contenido complementa los cuatro ejes de la categoría y conecta arquitectura, operación, auditoría y respuesta.</p></div></div></div><div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div><div class="block" id="s4"><div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Seguridad operativa</div><h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Pruebas de eficacia y escenarios negativos</h2><div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p><strong>Gobernanza del SGSI: de la certificación a la garantía operativa no debe tratarse como una descripción de producto.</strong> En Auditoría y Cumplimiento, el problema real es gobernar SGSI, controles, auditoría interna, tratamiento de riesgos, conformidad y mejora continua bajo condiciones de producción, con dependencias, fallos y cambios que nunca aparecen completos en una política. Un certificado vigente no demuestra que el entorno sea seguro; demuestra que un sistema de gestión definido fue auditado sobre un alcance concreto y con una muestra limitada. El diseño defendible empieza cuando se identifica qué activo se protege, qué decisión se adopta, quién tiene autoridad para adoptarla y qué señal demostraría que el control dejó de funcionar.</p><p>La primera obligación técnica es construir una población completa. En este ámbito incluye alcance, activos, riesgos, controles, políticas, procedimientos, evidencias, planes de tratamiento, auditorías y acciones correctivas. Una herramienta puede descubrir una parte, pero la cobertura debe reconciliarse con CMDB, inventarios cloud, directorios, repositorios de código, plataformas de virtualización y servicios gestionados. Lo que no está inventariado no entra en la política, no genera alerta y tampoco aparece en el muestreo de auditoría. La ausencia de un activo en el registro no reduce el riesgo; únicamente elimina la visibilidad.</p></div></div><figure aria-label="Ciclo de mejora del SGSI" class="article-diagram"><div class="diagram-desktop"><svg role="img" viewbox="0 0 900 430" xmlns="http://www.w3.org/2000/svg"><rect fill="#fafaf8" height="430" rx="14" width="900"></rect><text fill="#151915" font-size="19" font-weight="800" x="40" y="42">Ciclo de mejora del SGSI</text><text fill="#64748b" font-size="12" x="40" y="66">Artículo pilar · arquitectura y evidencia observable</text><path d="M 70 95 H 830 L 810 140 H 90 Z" fill="#d97706" opacity="0.18" stroke="#d97706"></path><text fill="#151915" font-size="12" font-weight="800" text-anchor="middle" x="450" y="123">Planificar</text><path d="M 120 140 H 780 L 760 185 H 140 Z" fill="#7c3aed" opacity="0.27" stroke="#7c3aed"></path><text fill="#151915" font-size="12" font-weight="800" text-anchor="middle" x="450" y="168">Implantar</text><path d="M 170 185 H 730 L 710 230 H 190 Z" fill="#dc2626" opacity="0.36" stroke="#dc2626"></path><text fill="#151915" font-size="12" font-weight="800" text-anchor="middle" x="450" y="213">Medir</text><path d="M 220 230 H 680 L 660 275 H 240 Z" fill="#0891b2" opacity="0.45" stroke="#0891b2"></path><text fill="#151915" font-size="12" font-weight="800" text-anchor="middle" x="450" y="258">Auditar</text><path d="M 270 275 H 630 L 610 320 H 290 Z" fill="#059669" opacity="0.54" stroke="#059669"></path><text fill="#151915" font-size="12" font-weight="800" text-anchor="middle" x="450" y="303">Corregir</text><path d="M 320 320 H 580 L 560 365 H 340 Z" fill="#0f172a" opacity="0.63" stroke="#0f172a"></path><text fill="#151915" font-size="12" font-weight="800" text-anchor="middle" x="450" y="348">Revisar</text><rect fill="#0f172a" height="28" rx="8" width="820" x="40" y="382"></rect><text fill="#fff" font-size="11" font-weight="700" text-anchor="middle" x="450" y="401">La herramienta acelera; la evidencia demuestra que el control funcionó.</text></svg></div><div class="diagram-mobile"><svg role="img" viewbox="0 0 330 500" xmlns="http://www.w3.org/2000/svg"><rect fill="#fafaf8" height="500" rx="12" width="330"></rect><text fill="#151915" font-size="14" font-weight="800" x="18" y="30">Ciclo de mejora del SGSI</text><circle cx="42" cy="72" fill="#d97706" r="16"></circle><text fill="#fff" font-size="10" font-weight="800" text-anchor="middle" x="42" y="76">1</text><path d="M 64 72 H 305" stroke="#cbd5e1" stroke-width="2"></path><text fill="#151915" font-size="10" font-weight="800" x="76" y="66">Planificar</text><rect fill="#fff" height="58" rx="10" stroke="#7c3aed" width="294" x="18" y="117"></rect><text fill="#151915" font-size="10" font-weight="800" x="34" y="144">2. Implantar</text><circle cx="42" cy="202" fill="#dc2626" r="16"></circle><text fill="#fff" font-size="10" font-weight="800" text-anchor="middle" x="42" y="206">3</text><path d="M 64 202 H 305" stroke="#cbd5e1" stroke-width="2"></path><text fill="#151915" font-size="10" font-weight="800" x="76" y="196">Medir</text><rect fill="#fff" height="58" rx="10" stroke="#0891b2" width="294" x="18" y="247"></rect><text fill="#151915" font-size="10" font-weight="800" x="34" y="274">4. Auditar</text><circle cx="42" cy="332" fill="#059669" r="16"></circle><text fill="#fff" font-size="10" font-weight="800" text-anchor="middle" x="42" y="336">5</text><path d="M 64 332 H 305" stroke="#cbd5e1" stroke-width="2"></path><text fill="#151915" font-size="10" font-weight="800" x="76" y="326">Corregir</text><rect fill="#fff" height="58" rx="10" stroke="#0f172a" width="294" x="18" y="377"></rect><text fill="#151915" font-size="10" font-weight="800" x="34" y="404">6. Revisar</text></svg></div><figcaption class="diagram-caption">Figura 3: Ciclo de mejora del SGSI. Diseño específico para Auditoría y Cumplimiento.</figcaption><span class="zoom-hint">🔍 Clic para ampliar</span></figure><div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div><div class="block" id="s5"><div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Seguridad operativa</div><h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Conservación, integridad y cadena de evidencia</h2><div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p><strong>Gobernanza del SGSI: de la certificación a la garantía operativa no debe tratarse como una descripción de producto.</strong> En Auditoría y Cumplimiento, el problema real es gobernar SGSI, controles, auditoría interna, tratamiento de riesgos, conformidad y mejora continua bajo condiciones de producción, con dependencias, fallos y cambios que nunca aparecen completos en una política. Un certificado vigente no demuestra que el entorno sea seguro; demuestra que un sistema de gestión definido fue auditado sobre un alcance concreto y con una muestra limitada. El diseño defendible empieza cuando se identifica qué activo se protege, qué decisión se adopta, quién tiene autoridad para adoptarla y qué señal demostraría que el control dejó de funcionar.</p><p>La primera obligación técnica es construir una población completa. En este ámbito incluye alcance, activos, riesgos, controles, políticas, procedimientos, evidencias, planes de tratamiento, auditorías y acciones correctivas. Una herramienta puede descubrir una parte, pero la cobertura debe reconciliarse con CMDB, inventarios cloud, directorios, repositorios de código, plataformas de virtualización y servicios gestionados. Lo que no está inventariado no entra en la política, no genera alerta y tampoco aparece en el muestreo de auditoría. La ausencia de un activo en el registro no reduce el riesgo; únicamente elimina la visibilidad.</p></div></div><figure aria-label="Mapa de aseguramiento" class="article-diagram"><div class="diagram-desktop"><svg role="img" viewbox="0 0 900 430" xmlns="http://www.w3.org/2000/svg"><rect fill="#fafaf8" height="430" rx="14" width="900"></rect><text fill="#151915" font-size="19" font-weight="800" x="40" y="42">Mapa de aseguramiento</text><text fill="#64748b" font-size="12" x="40" y="66">Artículo pilar · arquitectura y evidencia observable</text><rect fill="#ffffff" height="82" rx="12" stroke="#0891b2" stroke-width="1.5" width="144" x="40" y="145"></rect><circle cx="64" cy="169" fill="#0891b2" r="13"></circle><text fill="#fff" font-size="11" font-weight="800" text-anchor="middle" x="64" y="174">1</text><text fill="#151915" font-size="11" font-weight="700" x="52" y="202">Primera línea</text><path d="M 184 186 C 192 186, 196 221, 204 221" fill="none" stroke="#94a3b8" stroke-width="2"></path><rect fill="#ffffff" height="82" rx="12" stroke="#0891b2" stroke-width="1.5" width="144" x="204" y="180"></rect><circle cx="228" cy="204" fill="#0891b2" r="13"></circle><text fill="#fff" font-size="11" font-weight="800" text-anchor="middle" x="228" y="209">2</text><text fill="#151915" font-size="11" font-weight="700" x="216" y="237">Segunda línea</text><path d="M 348 221 C 356 221, 360 186, 368 186" fill="none" stroke="#94a3b8" stroke-width="2"></path><rect fill="#ffffff" height="82" rx="12" stroke="#0891b2" stroke-width="1.5" width="144" x="368" y="145"></rect><circle cx="392" cy="169" fill="#0891b2" r="13"></circle><text fill="#fff" font-size="11" font-weight="800" text-anchor="middle" x="392" y="174">3</text><text fill="#151915" font-size="11" font-weight="700" x="380" y="202">Auditoría interna</text><path d="M 512 186 C 520 186, 524 221, 532 221" fill="none" stroke="#94a3b8" stroke-width="2"></path><rect fill="#ffffff" height="82" rx="12" stroke="#0891b2" stroke-width="1.5" width="144" x="532" y="180"></rect><circle cx="556" cy="204" fill="#0891b2" r="13"></circle><text fill="#fff" font-size="11" font-weight="800" text-anchor="middle" x="556" y="209">4</text><text fill="#151915" font-size="11" font-weight="700" x="544" y="237">Auditor externo</text><path d="M 676 221 C 684 221, 688 186, 696 186" fill="none" stroke="#94a3b8" stroke-width="2"></path><rect fill="#ffffff" height="82" rx="12" stroke="#0891b2" stroke-width="2.5" width="144" x="696" y="145"></rect><circle cx="720" cy="169" fill="#0891b2" r="13"></circle><text fill="#fff" font-size="11" font-weight="800" text-anchor="middle" x="720" y="174">5</text><text fill="#151915" font-size="11" font-weight="700" x="708" y="202">Dirección</text><rect fill="#0f172a" height="28" rx="8" width="820" x="40" y="382"></rect><text fill="#fff" font-size="11" font-weight="700" text-anchor="middle" x="450" y="401">La herramienta acelera; la evidencia demuestra que el control funcionó.</text></svg></div><div class="diagram-mobile"><svg role="img" viewbox="0 0 330 500" xmlns="http://www.w3.org/2000/svg"><rect fill="#fafaf8" height="500" rx="12" width="330"></rect><text fill="#151915" font-size="14" font-weight="800" x="18" y="30">Mapa de aseguramiento</text><rect fill="#fff" height="70" rx="10" stroke="#d97706" width="294" x="18" y="52"></rect><text fill="#151915" font-size="10" font-weight="800" x="34" y="79">1. Primera línea</text><circle cx="42" cy="150" fill="#7c3aed" r="16"></circle><text fill="#fff" font-size="10" font-weight="800" text-anchor="middle" x="42" y="154">2</text><path d="M 64 150 H 305" stroke="#cbd5e1" stroke-width="2"></path><text fill="#151915" font-size="10" font-weight="800" x="76" y="144">Segunda línea</text><rect fill="#fff" height="70" rx="10" stroke="#dc2626" width="294" x="18" y="208"></rect><text fill="#151915" font-size="10" font-weight="800" x="34" y="235">3. Auditoría interna</text><circle cx="42" cy="306" fill="#0891b2" r="16"></circle><text fill="#fff" font-size="10" font-weight="800" text-anchor="middle" x="42" y="310">4</text><path d="M 64 306 H 305" stroke="#cbd5e1" stroke-width="2"></path><text fill="#151915" font-size="10" font-weight="800" x="76" y="300">Auditor externo</text><rect fill="#fff" height="70" rx="10" stroke="#059669" width="294" x="18" y="364"></rect><text fill="#151915" font-size="10" font-weight="800" x="34" y="391">5. Dirección</text></svg></div><figcaption class="diagram-caption">Figura 4: Mapa de aseguramiento. Diseño específico para Auditoría y Cumplimiento.</figcaption><span class="zoom-hint">🔍 Clic para ampliar</span></figure><div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 06</span></div><div class="block" id="s6"><div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 06 — Seguridad operativa</div><h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Criterios de aceptación de auditoría</h2><div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p><strong>Gobernanza del SGSI: de la certificación a la garantía operativa no debe tratarse como una descripción de producto.</strong> En Auditoría y Cumplimiento, el problema real es gobernar SGSI, controles, auditoría interna, tratamiento de riesgos, conformidad y mejora continua bajo condiciones de producción, con dependencias, fallos y cambios que nunca aparecen completos en una política. Un certificado vigente no demuestra que el entorno sea seguro; demuestra que un sistema de gestión definido fue auditado sobre un alcance concreto y con una muestra limitada. El diseño defendible empieza cuando se identifica qué activo se protege, qué decisión se adopta, quién tiene autoridad para adoptarla y qué señal demostraría que el control dejó de funcionar.</p><p>La primera obligación técnica es construir una población completa. En este ámbito incluye alcance, activos, riesgos, controles, políticas, procedimientos, evidencias, planes de tratamiento, auditorías y acciones correctivas. Una herramienta puede descubrir una parte, pero la cobertura debe reconciliarse con CMDB, inventarios cloud, directorios, repositorios de código, plataformas de virtualización y servicios gestionados. Lo que no está inventariado no entra en la política, no genera alerta y tampoco aparece en el muestreo de auditoría. La ausencia de un activo en el registro no reduce el riesgo; únicamente elimina la visibilidad.</p><div style="overflow-x:auto; text-align:left;"><table style="width:100%;border-collapse:collapse;margin:22px 0;font-size:14px;text-align:left;"><thead><tr><th style="text-align:left;padding:10px;border-bottom:2px solid #059669;vertical-align:top;text-align:left;">Ref</th><th style="text-align:left;padding:10px;border-bottom:2px solid #059669;vertical-align:top;text-align:left;">Prueba</th><th style="text-align:left;padding:10px;border-bottom:2px solid #059669;vertical-align:top;text-align:left;">Criterio de aceptación</th></tr></thead><tbody>
+<tr><td style="padding:10px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top;text-align:left;">01</td><td style="padding:10px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top;text-align:left;">Cobertura</td><td style="padding:10px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top;text-align:left;">La población de alcance, activos, riesgos, controles, políticas, procedimientos, evidencias, planes de tratamiento, auditorías y acciones correctivas está reconciliada con fuentes independientes y las diferencias tienen propietario y fecha.</td></tr>
+<tr><td style="padding:10px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top;text-align:left;">02</td><td style="padding:10px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top;text-align:left;">Ejecución</td><td style="padding:10px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top;text-align:left;">Cada ejecución registra identidad, activo, versión, resultado y vínculo con ticket, cambio o incidente.</td></tr>
+<tr><td style="padding:10px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top;text-align:left;">03</td><td style="padding:10px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top;text-align:left;">Prueba negativa</td><td style="padding:10px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top;text-align:left;">Una desviación controlada genera detección, escalado y evidencia dentro del umbral aprobado.</td></tr>
+<tr><td style="padding:10px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top;text-align:left;">04</td><td style="padding:10px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top;text-align:left;">Excepciones</td><td style="padding:10px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top;text-align:left;">Toda excepción tiene riesgo, compensación, propietario, aprobación y caducidad verificable.</td></tr></tbody></table></div></div></div><div class="defensa-foot"><div class="defensa-foot-label">Autor</div><div class="defensa-author-name">Miguel Ángel Carriazo</div><p class="defensa-author-bio">Arquitecto de Infraestructura y Ciberseguridad con más de 25 años de experiencia diseñando, asegurando y operando entornos tecnológicos críticos. Lead Auditor en ISO/IEC 27001 e ISO/IEC 42001. En Auditoría y Cumplimiento aborda SGSI, conformidad, auditoría y eficacia del control desde la arquitectura, la operación, la evidencia y la capacidad real de respuesta.</p></div></div>
+<aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;"><div class="defensa-toc-label" style="font-family:monospace;font-size:11px;text-transform:uppercase;color:#64748b;letter-spacing:.1em;margin-bottom:14px;font-weight:700;">Ficha técnica</div><div style="border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:28px;"><table style="width:100%;border-collapse:collapse;font-size:13px;text-align:left;text-align:left;"><tr><td style="padding:10px;border-bottom:1px solid #e2e8f0;font-weight:700;text-align:left;">Área</td><td style="padding:10px;border-bottom:1px solid #e2e8f0;text-align:left;">Seguridad</td></tr><tr><td style="padding:10px;border-bottom:1px solid #e2e8f0;font-weight:700;text-align:left;">Categoría</td><td style="padding:10px;border-bottom:1px solid #e2e8f0;text-align:left;">Auditoría y Cumplimiento</td></tr><tr><td style="padding:10px;border-bottom:1px solid #e2e8f0;font-weight:700;text-align:left;">Tipo</td><td style="padding:10px;border-bottom:1px solid #e2e8f0;text-align:left;">Artículo pilar / Guía transversal</td></tr><tr><td style="padding:10px;font-weight:700;text-align:left;">Nivel</td><td style="padding:10px;text-align:left;">Avanzado</td></tr></table></div><div class="defensa-toc-label" style="font-family:monospace;font-size:11px;text-transform:uppercase;color:#64748b;letter-spacing:.1em;margin-bottom:14px;font-weight:700;">Secciones</div><nav class="defensa-toc-nav" style="display:flex;flex-direction:column;gap:12px;border-left:2px solid #e2e8f0;padding-left:14px;"><a href="#s1" style="text-decoration:none;color:#059669;font-size:14px;font-weight:700;border-left:2px solid #059669;margin-left:-16px;padding-left:14px;">01. La diferencia entre declarar y demostrar</a><a href="#s2" style="text-decoration:none;color:#64748b;font-size:14px;font-weight:600;border-left:2px solid transparent;margin-left:-16px;padding-left:14px;">02. Diseño del control y población afectada</a><a href="#s3" style="text-decoration:none;color:#64748b;font-size:14px;font-weight:600;border-left:2px solid transparent;margin-left:-16px;padding-left:14px;">03. Ejecución, muestreo y trazabilidad</a><a href="#s4" style="text-decoration:none;color:#64748b;font-size:14px;font-weight:600;border-left:2px solid transparent;margin-left:-16px;padding-left:14px;">04. Pruebas de eficacia y escenarios negativos</a><a href="#s5" style="text-decoration:none;color:#64748b;font-size:14px;font-weight:600;border-left:2px solid transparent;margin-left:-16px;padding-left:14px;">05. Conservación, integridad y cadena de evide</a><a href="#s6" style="text-decoration:none;color:#64748b;font-size:14px;font-weight:600;border-left:2px solid transparent;margin-left:-16px;padding-left:14px;">06. Criterios de aceptación de auditoría</a></nav></aside>
+</div>
+<div class="related-section" style="padding:32px 4% 44px;border-top:1px solid #ededea;"><div style="font-family:monospace;font-size:11px;text-transform:uppercase;color:#059669;font-weight:700;letter-spacing:.12em;margin-bottom:14px;">Artículos relacionados</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;"><a href="iso-compliance-controles-evidencias.html" style="display:block;padding:16px;border:1px solid #e2e8f0;border-radius:12px;text-decoration:none;color:#0f172a;background:#fff;"><strong>Controles y evidencias: la carpeta de evidencias que se arma la semana antes</strong><span style="display:block;margin-top:8px;color:#64748b;font-size:13px;">Auditoría y Cumplimiento</span></a><a href="iso-compliance-diseno-principios.html" style="display:block;padding:16px;border:1px solid #e2e8f0;border-radius:12px;text-decoration:none;color:#0f172a;background:#fff;"><strong>Principios de diseño: la ISO 27001 no certifica seguridad, certifica un proceso de gestión</strong><span style="display:block;margin-top:8px;color:#64748b;font-size:13px;">Auditoría y Cumplimiento</span></a><a href="iso-compliance-madurez-roadmap.html" style="display:block;padding:16px;border:1px solid #e2e8f0;border-radius:12px;text-decoration:none;color:#0f172a;background:#fff;"><strong>Madurez y roadmap: del certificado en la pared al SGSI que mejora solo</strong><span style="display:block;margin-top:8px;color:#64748b;font-size:13px;">Auditoría y Cumplimiento</span></a></div></div>
+<div id="footer-container"></div>
 </div>
 </div>
-
 <script src="../../js/menu.js"></script>
 <script src="../../js/footer.js"></script>
-
 <script>
-  var tocLinks = Array.from(document.querySelectorAll('.defensa-toc-nav a'));
-  var sections = tocLinks.map(a => document.querySelector(a.getAttribute('href')));
-  if ('IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting) {
-          var id = '#' + entry.target.id;
-          tocLinks.forEach(a => {
-            if (a.getAttribute('href') === id) {
-              a.classList.add('active');
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
             } else {
-              a.classList.remove('active');
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function() {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
             }
-          });
         }
-      });
-    }, { rootMargin: '-20% 0px -60% 0px' });
-    sections.forEach(function(s){ if (s) observer.observe(s); });
-  }
-</script>
+    </script>
 </body>
 </html>

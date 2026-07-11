@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+    <title>Controles y evidencias: la política que dice una cosa y el sistema hace otra | Políticas y Normativa Interna | Technology Advisory</title>
+    <meta name="description" content="Una política de contraseñas que exige 14 caracteres mientras el sistema técnico solo obliga a 8 es una discrepancia que cualquier auditor detecta en minutos.">
+    <meta name="author" content="Miguel Ángel Carriazo">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#059669">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/dossier-core.css">
+    <link rel="stylesheet" href="../../css/articulo.css">
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/articulo-diagramas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        @media (max-width: 1024px) {
+            .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
+            div[style*="padding: 16px 48px 0"], div[style*="padding: 16px 48px 0;"] { padding: 16px 4% 0 !important; }
+            div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding: 40px 4% 24px !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-wrapper ds-page">
+        <div class="card">
+
+            <div id="menu-container"></div>
+            <div class="accent-bar" style="background:#059669;"></div>
+
+            <div class="ds-meta">
+                <span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: gobernanza</span>
+                <span>categoría: <strong>Políticas y Normativa Interna</strong></span>
+            </div>
+
+            <div style="padding: 16px 4% 0;">
+                <a href="../index.html?cat=politicas-normativa" class="defensa-btn-back" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Políticas y Normativa Interna</a>
+            </div>
+
+            <div style="padding: 40px 4% 24px; border-bottom: 1px solid #ededea;">
+                <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Controles · Políticas y Normativa Interna</div>
+                <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Controles y evidencias: <span style="color:#059669;">la política que dice una cosa y el sistema hace otra</span></h1>
+                <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Una política de contraseñas que exige 14 caracteres mientras el sistema técnico solo obliga a 8 es una discrepancia que cualquier auditor detecta en minutos.</p>
+                <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>Políticas y Normativa Interna</span>
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>Lectura Avanzada (18-22 min)</span>
+                </div>
+            </div>
+
+            <div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+                <div class="defensa-main" style="min-width:0;">
+
+                    <!-- GRÁFICO 1: EVIDENCIA DE COHERENCIA POLÍTICA - REALIDAD TÉCNICA -->
+                    <figure class="article-diagram" aria-label="Evidencia de coherencia entre política y realidad técnica" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="440" rx="16" fill="#f8fafc"/>
+                                <defs>
+                                    <linearGradient id="g-ev-pol-main" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0%" stop-color="#059669"/><stop offset="1%" stop-color="#047857"/>
+                                    </linearGradient>
+                                    <filter id="shadow-ev" x="-5%" y="-5%" width="110%" height="110%">
+                                        <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.04"/>
+                                    </filter>
+                                </defs>
+                                <text x="40" y="45" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" fill="#0f172a">Evidencia de coherencia entre política y realidad técnica</text>
+                                <text x="40" y="68" font-family="'Inter', sans-serif" font-size="13" fill="#64748b">lo que la política dice debe coincidir con lo que el sistema aplica</text>
+                                
+                                <g transform="translate(0, 10)">
+                                    <!-- Quadrant 1 -->
+                                    <rect x="40" y="85" width="395" height="110" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow-ev)"/>
+                                    <path d="M40 97 c0 -6.6 5.4 -12 12 -12 h8 v110 h-8 c-6.6 0 -12 -5.4 -12 -12 z" fill="#3b82f6"/>
+                                    <circle cx="85" cy="140" r="16" fill="#eff6ff"/>
+                                    <text x="85" y="145" font-family="'IBM Plex Mono', monospace" font-size="14" font-weight="700" fill="#3b82f6" text-anchor="middle">1</text>
+                                    <text x="120" y="120" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#1e3a8a">Política documentada</text>
+                                    <text x="120" y="142" font-family="'Inter', sans-serif" font-size="12" font-weight="500" fill="#475569">Requisito declarado</text>
+                                    <text x="120" y="160" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8">explícitamente en la política</text>
+
+                                    <!-- Quadrant 2 -->
+                                    <rect x="465" y="85" width="395" height="110" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow-ev)"/>
+                                    <path d="M465 97 c0 -6.6 5.4 -12 12 -12 h8 v110 h-8 c-6.6 0 -12 -5.4 -12 -12 z" fill="#d97706"/>
+                                    <circle cx="510" cy="140" r="16" fill="#fef3c7"/>
+                                    <text x="510" y="145" font-family="'IBM Plex Mono', monospace" font-size="14" font-weight="700" fill="#d97706" text-anchor="middle">2</text>
+                                    <text x="545" y="120" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#78350f">Configuración técnica real</text>
+                                    <text x="545" y="142" font-family="'Inter', sans-serif" font-size="12" font-weight="500" fill="#475569">¿Coincide con lo que</text>
+                                    <text x="545" y="160" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8">la política exige?</text>
+
+                                    <!-- Quadrant 3 -->
+                                    <rect x="40" y="215" width="395" height="110" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow-ev)"/>
+                                    <path d="M40 227 c0 -6.6 5.4 -12 12 -12 h8 v110 h-8 c-6.6 0 -12 -5.4 -12 -12 z" fill="#059669"/>
+                                    <circle cx="85" cy="270" r="16" fill="#e6f4ea"/>
+                                    <text x="85" y="275" font-family="'IBM Plex Mono', monospace" font-size="14" font-weight="700" fill="#059669" text-anchor="middle">3</text>
+                                    <text x="120" y="250" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#065f46">Evidencia de formación</text>
+                                    <text x="120" y="272" font-family="'Inter', sans-serif" font-size="12" font-weight="500" fill="#475569">Con fecha, no genérica</text>
+                                    <text x="120" y="290" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8">Comprensión verificada</text>
+
+                                    <!-- Quadrant 4 -->
+                                    <rect x="465" y="215" width="395" height="110" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow-ev)"/>
+                                    <path d="M465 227 c0 -6.6 5.4 -12 12 -12 h8 v110 h-8 c-6.6 0 -12 -5.4 -12 -12 z" fill="#dc2626"/>
+                                    <circle cx="510" cy="270" r="16" fill="#fde8e8"/>
+                                    <text x="510" y="275" font-family="'IBM Plex Mono', monospace" font-size="14" font-weight="700" fill="#dc2626" text-anchor="middle">4</text>
+                                    <text x="545" y="250" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#991b1b">Registro de excepciones</text>
+                                    <text x="545" y="272" font-family="'Inter', sans-serif" font-size="12" font-weight="500" fill="#475569">Aprobadas formalmente,</text>
+                                    <text x="545" y="290" font-family="'Inter', sans-serif" font-size="12" fill="#94a3b8">con fecha de revisión</text>
+                                </g>
+
+                                <rect x="40" y="360" width="820" height="54" rx="10" fill="url(#g-ev-pol-main)"/>
+                                <text x="65" y="382" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#ffffff">Una discrepancia entre política escrita y configuración técnica real es de los hallazgos más comunes</text>
+                                <text x="65" y="400" font-family="'Inter', sans-serif" font-size="11" fill="#a7f3d0">La coherencia es la evidencia más fácil de verificar y la más comúnmente fallida</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 340 470" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="340" height="470" rx="12" fill="#f8fafc"/>
+                                <text x="20" y="35" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#0f172a">Evidencia de coherencia política-técnica</text>
+                                
+                                <g transform="translate(0, -5)">
+                                    <rect x="20" y="55" width="300" height="65" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <path d="M20 63 c0 -4.4 3.6 -8 8 -8 h6 v65 h-6 c-4.4 0 -8 -3.6 -8 -8 z" fill="#3b82f6"/>
+                                    <text x="50" y="93" font-family="'IBM Plex Mono', monospace" font-size="14" font-weight="700" fill="#3b82f6">1</text>
+                                    <text x="75" y="80" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#1e3a8a">Política documentada</text>
+                                    <text x="75" y="96" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Requisito declarado en el documento</text>
+
+                                    <rect x="20" y="135" width="300" height="65" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <path d="M20 143 c0 -4.4 3.6 -8 8 -8 h6 v65 h-6 c-4.4 0 -8 -3.6 -8 -8 z" fill="#d97706"/>
+                                    <text x="50" y="173" font-family="'IBM Plex Mono', monospace" font-size="14" font-weight="700" fill="#d97706">2</text>
+                                    <text x="75" y="160" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#78350f">Configuración técnica real</text>
+                                    <text x="75" y="176" font-family="'Inter', sans-serif" font-size="11" fill="#475569">¿Coincide con las exigencias de la norma?</text>
+
+                                    <rect x="20" y="215" width="300" height="65" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <path d="M20 223 c0 -4.4 3.6 -8 8 -8 h6 v65 h-6 c-4.4 0 -8 -3.6 -8 -8 z" fill="#059669"/>
+                                    <text x="50" y="253" font-family="'IBM Plex Mono', monospace" font-size="14" font-weight="700" fill="#059669">3</text>
+                                    <text x="75" y="240" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#065f46">Evidencia de formación</text>
+                                    <text x="75" y="256" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Con fecha exacta y comprensión validada</text>
+
+                                    <rect x="20" y="295" width="300" height="65" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <path d="M20 303 c0 -4.4 3.6 -8 8 -8 h6 v65 h-6 c-4.4 0 -8 -3.6 -8 -8 z" fill="#dc2626"/>
+                                    <text x="50" y="333" font-family="'IBM Plex Mono', monospace" font-size="14" font-weight="700" fill="#dc2626">4</text>
+                                    <text x="75" y="320" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#991b1b">Registro de excepciones</text>
+                                    <text x="75" y="336" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Formalizadas y con fecha de revisión</text>
+                                </g>
+
+                                <rect x="20" y="390" width="300" height="60" rx="8" fill="#059669"/>
+                                <text x="170" y="414" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#ffffff" text-anchor="middle">Discrepancia = hallazgo común</text>
+                                <text x="170" y="432" font-family="'Inter', sans-serif" font-size="10" fill="#a7f3d0" text-anchor="middle">Coherencia = evidencia clave y fundamental</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 1: Evidencia de coherencia entre política y realidad técnica.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- MÓDULO 1 -->
+                    <div class="block" id="s1">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — El problema de fondo</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La discrepancia que cualquier auditor competente detecta en minutos</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>Una política de contraseñas que exige un mínimo de 14 caracteres, mientras la configuración técnica real de Active Directory solo obliga a 8, es exactamente el tipo de discrepancia que revela que la política y la realidad técnica viven en mundos separados.</strong></p>
+                            <p>Este es uno de los hallazgos más comunes en auditorías de seguridad. La política se redacta con buenas intenciones, se aprueba formalmente, y luego se queda en un documento que no se traduce en la configuración real de los sistemas. El auditor lo detecta en minutos comparando la política con la configuración técnica.</p>
+                            <p>La causa raíz suele ser la falta de un process de revisión que verifique la coherencia entre políticas y sistemas. El departamento de seguridad redacta la política, pero el equipo de infraestructura no la implementa, o no la implementa correctamente. La falta de comunicación entre equipos es el origen de la mayoría de estas discrepancias.</p>
+                            <div class="defensa-box-warning"><strong>⚠️ Una discrepancia entre política y configuración técnica real es uno de los hallazgos más comunes en auditorías.</strong> El auditor no necesita herramientas avanzadas — solo comparar el documento con la configuración que ve en los sistemas.</div>
+                            <p>La remediación de estas discrepancias suele ser sencilla: ajustar la configuración técnica para alinearla con la política, o revisar la política para que refleje la realidad técnica. El problema no es la dificultad de la remediación, sino la falta de un proceso que evite que ocurra.</p>
+                            <p>La coherencia entre política y realidad técnica no es un lujo — es la evidencia de que la política no es un documento abstracto, sino una instrucción que se aplica en la realidad.</p>
+                        </div>
+                    </div>
+
+                    <!-- GRÁFICO 2: DISCREPANCIAS COMUNES -->
+                    <figure class="article-diagram" aria-label="Discrepancias comunes entre política y configuración técnica" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="320" rx="16" fill="#f8fafc"/>
+                                <defs>
+                                    <filter id="shadow-disc" x="-5%" y="-5%" width="110%" height="110%">
+                                        <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.03"/>
+                                    </filter>
+                                </defs>
+                                <text x="40" y="42" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700" fill="#0f172a">Discrepancias comunes entre política y configuración técnica</text>
+                                <text x="40" y="62" font-family="'Inter', sans-serif" font-size="13" fill="#64748b">hallazgos típicos que un auditor encuentra en minutos</text>
+                                
+                                <g transform="translate(0, 15)">
+                                    <!-- Card 1 -->
+                                    <rect x="40" y="75" width="250" height="155" rx="12" fill="#ffffff" stroke="#fca5a5" stroke-width="1" filter="url(#shadow-disc)"/>
+                                    <rect x="40" y="75" width="250" height="36" rx="12" fill="#fee2e2" stroke="#fca5a5" stroke-width="1"/>
+                                    <rect x="40" y="95" width="250" height="16" fill="#fee2e2"/>
+                                    <text x="165" y="98" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#991b1b" text-anchor="middle">🔴 Contraseñas</text>
+                                    
+                                    <text x="55" y="132" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#475569">Política:</text>
+                                    <text x="110" y="132" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">14 caracteres</text>
+                                    <text x="55" y="150" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#475569">Sistema:</text>
+                                    <text x="110" y="150" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">8 caracteres</text>
+                                    <text x="55" y="172" font-family="'Inter', sans-serif" font-size="11" fill="#475569">MFA: doc vs parcial</text>
+                                    <text x="55" y="190" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Caducidad: 90d vs 180d</text>
+                                    <text x="165" y="215" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="500" fill="#94a3b8" text-anchor="middle">Brecha de seguridad</text>
+                                    
+                                    <!-- Arrow 1-2 -->
+                                    <path d="M 305 152 L 320 152" stroke="#cbd5e1" stroke-width="2" fill="none"/>
+                                    <polygon points="320,149 326,152 320,155" fill="#cbd5e1"/>
+
+                                    <!-- Card 2 -->
+                                    <rect x="340" y="75" width="250" height="155" rx="12" fill="#ffffff" stroke="#fde68a" stroke-width="1" filter="url(#shadow-disc)"/>
+                                    <rect x="340" y="75" width="250" height="36" rx="12" fill="#fef3c7" stroke="#fde68a" stroke-width="1"/>
+                                    <rect x="340" y="95" width="250" height="16" fill="#fef3c7"/>
+                                    <text x="465" y="98" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#92400e" text-anchor="middle">🟠 Cifrado</text>
+                                    
+                                    <text x="355" y="132" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#475569">Política:</text>
+                                    <text x="410" y="132" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">en reposo</text>
+                                    <text x="355" y="150" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#475569">Sistema:</text>
+                                    <text x="410" y="150" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">solo en tránsito</text>
+                                    <text x="355" y="172" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Algoritmos antiguos activos</text>
+                                    <text x="355" y="190" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Claves: longitud vs real</text>
+                                    <text x="465" y="215" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="500" fill="#94a3b8" text-anchor="middle">Riesgo de datos</text>
+
+                                    <!-- Arrow 2-3 -->
+                                    <path d="M 605 152 L 620 152" stroke="#cbd5e1" stroke-width="2" fill="none"/>
+                                    <polygon points="620,149 626,152 620,155" fill="#cbd5e1"/>
+
+                                    <!-- Card 3 -->
+                                    <rect x="640" y="75" width="220" height="155" rx="12" fill="#ffffff" stroke="#93c5fd" stroke-width="1" filter="url(#shadow-disc)"/>
+                                    <rect x="640" y="75" width="220" height="36" rx="12" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>
+                                    <rect x="640" y="95" width="220" height="16" fill="#dbeafe"/>
+                                    <text x="750" y="98" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">🔵 Registro</text>
+                                    
+                                    <text x="655" y="132" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#475569">Política:</text>
+                                    <text x="710" y="132" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">retención 1 año</text>
+                                    <text x="655" y="150" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#475569">Sistema:</text>
+                                    <text x="710" y="150" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">retención 30d</text>
+                                    <text x="655" y="172" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Logs: campos faltantes</text>
+                                    <text x="655" y="190" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Integridad sin protección</text>
+                                    <text x="750" y="215" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="500" fill="#94a3b8" text-anchor="middle">Auditoría comprometida</text>
+                                </g>
+
+                                <rect x="40" y="265" width="820" height="35" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+                                <text x="450" y="287" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#0f172a" text-anchor="middle">Cada discrepancia es un hallazgo de auditoría con remediación inmediata</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 340 450" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="340" height="450" rx="12" fill="#f8fafc"/>
+                                <text x="20" y="30" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#0f172a">Discrepancias comunes detectadas</text>
+                                
+                                <g transform="translate(0, -5)">
+                                    <rect x="20" y="50" width="300" height="95" rx="8" fill="#ffffff" stroke="#fca5a5"/>
+                                    <text x="35" y="73" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#991b1b">🔴 Contraseñas</text>
+                                    <text x="35" y="93" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Norma: 14 car. | Sistema: 8 car.</text>
+                                    <text x="35" y="110" font-family="'Inter', sans-serif" font-size="11" fill="#475569">MFA parcial | Caducidad 90d vs 180d</text>
+                                    <text x="35" y="128" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#94a3b8">Brecha de seguridad</text>
+
+                                    <rect x="20" y="160" width="300" height="95" rx="8" fill="#ffffff" stroke="#fde68a"/>
+                                    <text x="35" y="183" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#92400e"> Rog Cifrado</text>
+                                    <text x="35" y="203" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Norma: en reposo | Sistema: solo tránsito</text>
+                                    <text x="35" y="220" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Algoritmos antiguos | Claves no válidas</text>
+                                    <text x="35" y="238" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#94a3b8">Riesgo de exposición de datos</text>
+
+                                    <rect x="20" y="270" width="300" height="95" rx="8" fill="#ffffff" stroke="#93c5fd"/>
+                                    <text x="35" y="293" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#1e40af">🔵 Registro (Logs)</text>
+                                    <text x="35" y="313" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Norma: retención 1 año | Sistema: 30 días</text>
+                                    <text x="35" y="330" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Campos faltantes | Integridad desprotegida</text>
+                                    <text x="35" y="348" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#94a3b8">Auditoría y trazabilidad comprometidas</text>
+                                </g>
+
+                                <rect x="20" y="385" width="300" height="45" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+                                <text x="170" y="411" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Cada discrepancia requiere remediación inmediata</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 2: Discrepancias comunes entre política escrita y configuración técnica.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- MÓDULO 2 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+
+                    <div class="block" id="s2">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Verificación de coherencia</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Verificar activamente la coherencia entre lo que la política declara y lo que el sistema aplica técnicamente</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>Para cada requisito técnico que una política establece —longitud de contraseña, tiempo de bloqueo de sesión, requisitos de cifrado— debería existir una verificación periódica de que la configuración real de los sistemas coincide con lo declarado, no solo confianza en que "debería estar así".</strong></p>
+                            <p>La verificación de coherencia es un proceso que puede automatizarse en gran medida. Herramientas de escaneo de configuración pueden comparar las políticas de seguridad con la configuración real de los sistemas y generar informes de cumplimiento automáticos.</p>
+                            <div class="defensa-box-tech"><strong>Práctica recomendada:</strong> establece un proceso trimestral de verificación de coherencia para las políticas técnicas clave. Asigna un responsable por área (contraseñas, cifrado, logs, etc.) que revise la configuración real y la compare con lo que declara la política.</div>
+                            <p>La verificación de coherencia no es solo para auditorías. Es una herramienta de gestión que permite identificar desviaciones tempranas y corregirlas antes de que se conviertan en hallazgos de auditoría. Es mucho más barato corregir una configuración incorrecta que explicar a un auditor por qué la política y la realidad no coinciden.</p>
+                            <p>La verificación de coherencia debe ser documentada. Cada verificación debe generar un informe que identifique las discrepancias y las acciones correctivas tomadas. Este informe es la evidencia de que la organización gestiona activamente la coherencia entre política y realidad.</p>
+                        </div>
+                    </div>
+
+                    <!-- GRÁFICO 3: EVIDENCIA DE FORMACIÓN -->
+                    <figure class="article-diagram" aria-label="Evidencia de formación con fecha" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="280" rx="16" fill="#f8fafc"/>
+                                <text x="40" y="42" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700" fill="#0f172a">Evidencia de formación con fecha</text>
+                                <text x="40" y="64" font-family="'Inter', sans-serif" font-size="13" fill="#64748b">registro de quién, cuándo, y qué se verificó</text>
+                                
+                                <g transform="translate(40, 95)">
+                                    <!-- Column Headers -->
+                                    <rect x="0" y="0" width="180" height="34" rx="6" fill="#059669"/>
+                                    <text x="25" y="21" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#ffffff">Campo</text>
+                                    
+                                    <rect x="195" y="0" width="625" height="34" rx="6" fill="#0f172a"/>
+                                    <text x="220" y="21" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#ffffff">Contenido</text>
+                                    
+                                    <!-- Row 1 -->
+                                    <rect x="0" y="44" width="180" height="32" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="20" y="64" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#059669">Empleado</text>
+                                    <rect x="195" y="44" width="625" height="32" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="215" y="64" font-family="'Inter', sans-serif" font-size="12" fill="#334155">Nombre, departamento, rol dentro de la empresa</text>
+                                    
+                                    <!-- Row 2 -->
+                                    <rect x="0" y="86" width="180" height="32" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="20" y="106" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#059669">Formación</text>
+                                    <rect x="195" y="86" width="625" height="32" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="215" y="106" font-family="'Inter', sans-serif" font-size="12" fill="#334155">Título completo y versión exacta de la política de seguridad</text>
+                                    
+                                    <!-- Row 3 -->
+                                    <rect x="0" y="128" width="180" height="32" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="20" y="148" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#059669">Fecha</text>
+                                    <rect x="195" y="128" width="625" height="32" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="215" y="148" font-family="'Inter', sans-serif" font-size="12" fill="#334155">Fecha precisa de realización e hitos temporales</text>
+                                    
+                                    <!-- Row 4 -->
+                                    <rect x="0" y="170" width="180" height="32" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="20" y="190" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#059669">Verificación</text>
+                                    <rect x="195" y="170" width="625" height="32" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="215" y="190" font-family="'Inter', sans-serif" font-size="12" fill="#334155">Resultado del test cuantitativo o escenario práctico resuelto</text>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 340 330" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="340" height="330" rx="12" fill="#f8fafc"/>
+                                <text x="20" y="30" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#0f172a">Evidencia de formación estructurada</text>
+                                
+                                <g transform="translate(20, 50)">
+                                    <rect x="0" y="0" width="300" height="50" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="15" y="22" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#059669">Empleado</text>
+                                    <text x="15" y="38" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Nombre, departamento, rol</text>
+
+                                    <rect x="0" y="60" width="300" height="50" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="15" y="82" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#059669">Formación</text>
+                                    <text x="15" y="98" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Título, versión de la política</text>
+
+                                    <rect x="0" y="120" width="300" height="50" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="15" y="142" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#059669">Fecha</text>
+                                    <text x="15" y="158" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Fecha exacta de realización</text>
+
+                                    <rect x="0" y="180" width="300" height="50" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="15" y="202" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#059669">Verificación</text>
+                                    <text x="15" y="218" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Resultado del test o caso práctico</text>
+                                </g>
+                                <text x="170" y="305" font-family="'Inter', sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">"He leído" no basta, se exige verificar comprensión</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 3: Evidencia de formación con fecha y verificación de comprensión.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- MÓDULO 3 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+
+                    <div class="block" id="s3">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Evidencia de formación</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Evidencia de formación con fecha concreta, no una afirmación genérica de "se forma al personal"</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>La evidencia defendible de formación en políticas incluye registro de quién completó qué formación, cuándo, y con qué resultado de comprensión verificado — no la afirmación genérica de que "existe un programa de formación" sin datos concretos que la respalden.</strong></p>
+                            <p>Un auditor no acepta "se forma al personal" como evidencia. Pide ver los registros: quién, cuándo, qué formación, con qué resultado. Sin estos datos, la afirmación es solo una declaración sin soporte.</p>
+                            <div class="defensa-box-warning"><strong>⚠️ "He leído y entendido" sin verificación de comprensión no es evidencia defendible.</strong> Un checkbox de lectura no garantiza que el contenido se haya comprendido realmente. La verificación de comprensión es el estándar que un auditor espera.</div>
+                            <p>La formación no debería ser un evento único. Debería ser periódica (anual como mínimo) y actualizada cuando cambian las políticas. Un empleado que recibió formación hace 3 años probablemente no recuerda los detalles de políticas que han cambiado desde entonces.</p>
+                            <p>La evidencia de formación debe ser accesible para auditoría. Un auditor debe poder verificar que un empleado específico recibió formación sobre una política específica en una fecha determinada.</p>
+                        </div>
+                    </div>
+
+                    <!-- GRÁFICO 4: REGISTRO DE EXCEPCIONES -->
+                    <figure class="article-diagram" aria-label="Registro de excepciones formalmente aprobadas" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="320" rx="16" fill="#f8fafc"/>
+                                <text x="40" y="42" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700" fill="#0f172a">Registro de excepciones formalmente aprobadas</text>
+                                <text x="40" y="64" font-family="'Inter', sans-serif" font-size="13" fill="#64748b">cada excepción debe ser visible, justificada y con fecha de revisión</text>
+                                
+                                <g transform="translate(40, 95)">
+                                    <!-- Table Header -->
+                                    <rect x="0" y="0" width="180" height="32" rx="6" fill="#059669"/>
+                                    <text x="25" y="20" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#ffffff">Elemento</text>
+                                    <rect x="195" y="0" width="625" height="32" rx="6" fill="#0f172a"/>
+                                    <text x="220" y="20" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#ffffff">Descripción</text>
+                                    
+                                    <!-- Row 1 -->
+                                    <rect x="0" y="42" width="180" height="30" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="20" y="61" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#334155">Excepción</text>
+                                    <rect x="195" y="42" width="625" height="30" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="215" y="61" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Qué requisito no se cumple y por qué</text>
+                                    
+                                    <!-- Row 2 -->
+                                    <rect x="0" y="82" width="180" height="30" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="20" y="101" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#334155">Aprobación</text>
+                                    <rect x="195" y="82" width="625" height="30" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="215" y="101" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Quién aprobó y con qué nivel de autoridad</text>
+                                    
+                                    <!-- Row 3 -->
+                                    <rect x="0" y="122" width="180" height="30" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="20" y="141" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#334155">Fecha revisión</text>
+                                    <rect x="195" y="122" width="625" height="30" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="215" y="141" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Cuándo se revisa la excepción (no indefinida)</text>
+                                    
+                                    <!-- Row 4 -->
+                                    <rect x="0" y="162" width="180" height="30" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="20" y="181" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#334155">Plan de mitigación</text>
+                                    <rect x="195" y="162" width="625" height="30" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="215" y="181" font-family="'Inter', sans-serif" font-size="11" fill="#475569">¿Qué se está haciendo para eliminar la excepción?</text>
+                                    
+                                    <!-- Row 5 -->
+                                    <rect x="0" y="202" width="180" height="30" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="20" y="221" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#334155">Impacto</text>
+                                    <rect x="195" y="202" width="625" height="30" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="215" y="221" font-family="'Inter', sans-serif" font-size="11" fill="#475569">Evaluación del riesgo de la excepción</text>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 340 370" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="340" height="370" rx="12" fill="#f8fafc"/>
+                                <text x="20" y="30" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#0f172a">Registro de excepciones</text>
+                                
+                                <g transform="translate(20, 50)">
+                                    <rect x="0" y="0" width="300" height="42" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="15" y="18" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#475569">Excepción</text>
+                                    <text x="15" y="32" font-family="'Inter', sans-serif" font-size="10" fill="#64748b">Qué requisito no se cumple y por qué</text>
+
+                                    <rect x="0" y="52" width="300" height="42" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="15" y="70" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#475569">Aprobación</text>
+                                    <text x="15" y="84" font-family="'Inter', sans-serif" font-size="10" fill="#64748b">Quién aprobó y con qué nivel de autoridad</text>
+
+                                    <rect x="0" y="104" width="300" height="42" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="15" y="122" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#475569">Fecha revisión</text>
+                                    <text x="15" y="136" font-family="'Inter', sans-serif" font-size="10" fill="#64748b">Cuándo se revisa la excepción (no indefinida)</text>
+
+                                    <rect x="0" y="156" width="300" height="42" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="15" y="174" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#475569">Plan de mitigación</text>
+                                    <text x="15" y="188" font-family="'Inter', sans-serif" font-size="10" fill="#64748b">Acciones tomadas para mitigar el riesgo</text>
+
+                                    <rect x="0" y="208" width="300" height="42" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="15" y="226" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#475569">Impacto</text>
+                                    <text x="15" y="240" font-family="'Inter', sans-serif" font-size="10" fill="#64748b">Evaluación de los riesgos remanentes</text>
+                                </g>
+                                <text x="170" y="340" font-family="'Inter', sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Sin fecha de revisión = incumplimiento silencioso</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 4: Registro de excepciones formalmente aprobadas.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- MÓDULO 4 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+
+                    <div class="block" id="s4">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Registro de excepciones</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Registro de excepciones formalmente aprobadas, exportable para auditoría</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>Cada excepción a una política debería quedar registrada con su justificación, aprobación y fecha de revisión —de forma exportable— permitiendo a un auditor distinguir entre excepciones formalmente gestionadas e incumplimientos no autorizados.</strong></p>
+                            <p>Las excepciones son inevitables en cualquier organización real. Hay sistemas legacy que no pueden cumplir ciertos requisitos, o casos de negocio donde el coste de cumplir supera el beneficio. Lo que distingue a una organización madura es que estas excepciones se gestionan formalmente, no se ignoran.</p>
+                            <div class="defensa-box-tech"><strong>Práctica recomendada:</strong> establece un proceso de solicitud de excepciones con un formulario estándar, niveles de aprobación según el impacto, y una fecha de revisión obligatoria. El registro debe ser centralizado y accesible para auditoría.</div>
+                            <p>Una excepción sin fecha de revisión es, en la práctica, un incumplimiento permanente. La fecha de revisión obliga a reconsiderar la excepción periódicamente y a evaluar si sigue siendo necesaria o si ya se puede cumplir el requisito.</p>
+                            <p>El registro de excepciones también debe incluir un plan de mitigación. La excepción no es una excusa para no hacer nada — es un reconocimiento de que no se cumple el requisito, pero se toman medidas para reducir el riesgo mientras la excepción está activa.</p>
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 5 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+
+                    <div class="block" id="s5">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Auditoría de coherencia</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La auditoría de coherencia entre política y realidad como ejercicio periódico específico</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>Más allá de revisar si las políticas existen y están aprobadas, una auditoría madura verifica activamente la coherencia entre cada requisito declarado y la configuración técnica real correspondiente — es donde aparecen la mayoría de los hallazgos genuinamente útiles.</strong></p>
+                            <p>La auditoría de coherencia no es una auditoría de cumplimiento tradicional. No pregunta "¿tiene la política?" sino "¿la configuración técnica real coincide con lo que la política exige?" Es una auditoría de verificación, no solo de documentación.</p>
+                            <div class="defensa-box-success"><strong>✔ La auditoría de coherencia es donde se encuentran los hallazgos más útiles.</strong> No es una auditoría de "papeles" sino de "realidad". Identifica brechas que pueden corregirse y que tienen un impacto real en la seguridad.</div>
+                            <p>El resultado de la auditoría de coherencia es una lista de discrepancias con su nivel de criticidad. Cada discrepancia debe tener un plan de remediación con responsable y fecha. La auditoría debe repetirse periódicamente (anualmente como mínimo) para asegurar que las correcciones se han implementado y no han aparecido nuevas discrepancias.</p>
+                            <p>La auditoría de coherencia también puede incluir la verificación de que las excepciones se gestionan correctamente. Cada excepción debe tener una fecha de revisión y un plan de mitigación, y la auditoría debe verificar que estos elementos están presentes.</p>
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 6 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 06</span></div>
+
+                    <div class="block" id="s6">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 06 — Checklist de coherencia</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Checklist de coherencia: ¿tu política y tu configuración técnica coinciden?</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>Este checklist permite evaluar la coherencia entre las políticas documentadas y la configuración técnica real de los sistemas. Responde honestamente a cada pregunta para identificar discrepancias.</p>
+                            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:20px; margin:16px 0;">
+                                <table style="width:100%; border-collapse:collapse; font-size:14px;">
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669; width:30px;">1.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Política de contraseñas</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿La longitud y complejidad exigidas coinciden con la configuración real?</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">2.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Política de cifrado</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Los algoritmos declarados están habilitados en los sistemas?</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">3.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Política de logs</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿La retención y campos declarados coinciden con la configuración real?</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">4.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Política de acceso</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿MFA, timeout, y control de acceso coinciden con la configuración?</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">5.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Formación documentada</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Existe registro con fecha y verificación de comprensión?</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">6.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Excepciones registradas</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Cada excepción tiene aprobación, justificación y fecha de revisión?</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p><strong>Resultado:</strong> Si no puedes responder "sí" a todas las preguntas, hay discrepancias que deben corregirse. La coherencia entre política y realidad es la base de un programa de cumplimiento defendible.</p>
+                            <div class="defensa-box-tech"><strong>Práctica recomendada:</strong> revisa este checklist trimestralmente y corrige cualquier discrepancia identificada. La coherencia no es un destino, es un proceso de verificación continua.</div>
+                            <p><strong>Cierre:</strong> la coherencia entre política y realidad técnica no es un lujo — es la evidencia de que la política no es un documento abstracto. Las cuatro categorías de evidencia descritas aquí —política documentada, configuración técnica real, evidencia de formación, y registro de excepciones— son el mínimo defendible para cualquier organización que quiera demostrar que sus políticas se aplican realmente.</p>
+                        </div>
+                    </div>
+
+                    <!-- PIE DE AUTOR -->
+                    <div class="defensa-foot">
+                        <div class="defensa-author">
+                            <div class="defensa-foot-label">Autor</div>
+                            <div class="defensa-author-name">Miguel Ángel Carriazo</div>
+                            <p class="defensa-author-bio">Arquitecto de infraestructura y seguridad con más de 25 años de experiencia diseñando, asegurando y operando sistemas críticos. Especializado en gobernanza, políticas internas y cumplimiento normativo.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SIDEBAR -->
+                <aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+                    <div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+                        <div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+                        <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Área</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Políticas y Normativa Interna</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Enfoque</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Controles y Evidencias</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Temas clave</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Coherencia, Formación, Excepciones</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Nivel</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Avanzado</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Lectura</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">18-22 min</td></tr>
+                            <tr><td style="padding:10px 0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Etiquetas</td><td style="padding:10px 0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">#políticas #coherencia #evidencias #formación #excepciones</td></tr>
+                        </table>
+                    </div>
+
+                    <div>
+                        <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+                        <nav class="defensa-toc-nav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+                            <a href="#s1" style="text-decoration:none; color:#059669; font-size:14px; font-weight:700; border-left:2px solid #059669; margin-left:-16px; padding-left:14px;">01. La discrepancia</a>
+                            <a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Verificación de coherencia</a>
+                            <a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Evidencia de formación</a>
+                            <a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Registro de excepciones</a>
+                            <a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Auditoría de coherencia</a>
+                            <a href="#s6" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">06. Checklist de coherencia</a>
+                        </nav>
+                    </div>
+                </aside>
+
+            </div>
+
+            <!-- ARTÍCULOS RELACIONADOS -->
+            <div class="related-section">
+                <div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+                <div class="related-grid">
+                    <a class="related-card" href="politicas-normativa-diseno-principios.html">
+                        <div class="r-meta">Políticas y Normativa · Principios</div>
+                        <div class="r-title">Principios de diseño: la política de seguridad que nadie ha leído nunca</div>
+                        <div class="r-desc">Una política aprobada por dirección, publicada en la intranet, y jamás leída por quienes deberían seguirla, no protege nada.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                    <a class="related-card" href="politicas-normativa-madurez-roadmap.html">
+                        <div class="r-meta">Políticas y Normativa · Madurez</div>
+                        <div class="r-title">Madurez y roadmap: del documento legal que nadie lee a la política como cultura operativa</div>
+                        <div class="r-desc">Los cuatro niveles reales de madurez en políticas internas.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                    <a class="related-card" href="politicas-normativa-modelo-operativo.html">
+                        <div class="r-meta">Políticas y Normativa · Operaciones</div>
+                        <div class="r-title">Modelo operativo: quién es dueño de cada política, y cuándo caduca</div>
+                        <div class="r-desc">Sin propietario y sin fecha de revisión, una política se convierte en un artefacto histórico.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                </div>
+            </div>
+
+            <div id="footer-container"></div>
+
+        </div>
+    </div>
+
+    <div class="zoom-overlay"></div>
+    <script src="../../js/menu.js"></script>
+    <script src="../../js/footer.js"></script>
+    <script>
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
+            } else {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function() {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>

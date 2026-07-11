@@ -1,50 +1,543 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Principios de diseño: la política de seguridad que nadie ha leído nunca | Políticas y Normativa Interna | Technology Advisory</title><meta name="description" content="Una política aprobada por dirección, publicada en la intranet, y jamás leída por quienes deberían seguirla, no protege nada — es un documento que existe pa"><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
-<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // gobernanza</span><span>categoría: <strong>Políticas y Normativa Interna</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Políticas y Normativa Interna</div><h1 class="article-title">Principios de diseño: la política de seguridad que nadie ha leído nunca</h1><p class="article-lead">Una política aprobada por dirección, publicada en la intranet, y jamás leída por quienes deberían seguirla, no protege nada — es un documento que existe para pasar auditorías, no para cambiar comportamiento.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Políticas y Normativa Interna"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
-<rect width="900" height="410" rx="14" fill="#fafaf8"/>
-<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">De la política ignorada a la política que se sigue</text>
-<text x="40" y="66" font-size="12" fill="#77776f">claridad, difusión real, y verificación de comprensión</text>
-<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Redactada en lenguaje claro</text>
-<text x="58" y="163" font-size="11" fill="#77776f">No jerga legal que nadie entiende</text>
-<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Difundida activamente</text>
-<text x="488" y="163" font-size="11" fill="#77776f">No solo publicada, comunicada</text>
-<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Comprensión verificada</text>
-<text x="58" y="283" font-size="11" fill="#77776f">Test o confirmación, no solo "lo leí"</text>
-<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Revisada periódicamente</text>
-<text x="488" y="283" font-size="11" fill="#77776f">No aprobada una vez y olvidada</text>
-<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
-<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
-<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Una política que nadie entiende ni recuerda no cambia ningún comportamiento real</text>
-</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
-<rect width="330" height="438" rx="12" fill="#fafaf8"/>
-<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">De la política ignorada a la política que se sigue</text>
-<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="89" r="13" fill="#059669"/>
-<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
-<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Redactada en lenguaje</text>
-<text x="64" y="102" font-size="11" fill="#77776f">No jerga legal que nadie</text>
-<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="159" r="13" fill="#059669"/>
-<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
-<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Difundida activamente</text>
-<text x="64" y="172" font-size="11" fill="#77776f">No solo publicada, comunicada</text>
-<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="229" r="13" fill="#059669"/>
-<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
-<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Comprensión verificada</text>
-<text x="64" y="242" font-size="11" fill="#77776f">Test o confirmación, no solo</text>
-<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="299" r="13" fill="#059669"/>
-<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
-<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Revisada periódicamente</text>
-<text x="64" y="312" font-size="11" fill="#77776f">No aprobada una vez y olvidada</text>
-<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
-<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
-<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Una política que nadie entiende ni</text>
-<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">recuerda no cambia ningún comportamiento</text>
-<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">real</text>
-</svg></div></figure><div class="toc-mini"><a href="#contexto">1. El documento que existe para la auditoría, no para el comportamiento</a><a href="#arquitectura">2. Lenguaje claro, no jerga legal incomprensible</a><a href="#seguridad">3. Difusión activa, no solo publicación pasiva</a><a href="#operacion">4. Verificar comprensión, no solo confirmar lectura</a><a href="#roadmap">5. Revisión periódica, no aprobación única</a></div><h2 id="contexto">1. El documento que existe para pasar la auditoría, no para cambiar comportamiento</h2><div class="body-text"><p><strong>Una política de seguridad de 40 páginas, redactada en lenguaje legal denso, aprobada formalmente y nunca comunicada de forma comprensible al personal, cumple el requisito de auditoría de "tener una política" sin cumplir su propósito real: influir en cómo se comporta la gente.</strong></p></div><h2 id="arquitectura">2. Lenguaje claro y accesible, no jerga legal que solo el departamento jurídico entiende</h2><div class="body-text"><p>Una política de seguridad efectiva se escribe pensando en quien debe seguirla —empleados sin formación técnica, en muchos casos— con ejemplos concretos y lenguaje directo, no como un documento legal defensivo diseñado principalmente para proteger a la organización en caso de litigio.</p></div><h2 id="seguridad">3. Difusión activa, no solo publicación pasiva en una intranet que nadie visita</h2><div class="body-text"><p>Publicar una política en la intranet corporativa y asumir que el personal la leerá por iniciativa propia rara vez funciona. La difusión efectiva incluye comunicación activa —sesiones informativas, resúmenes ejecutivos, recordatorios periódicos— no solo la disponibilidad pasiva del documento.</p></div><h2 id="operacion">4. Verificar comprensión real, no solo confirmar que alguien marcó "lo he leído"</h2><div class="body-text"><p>Un checkbox de "he leído y entendido la política" sin ninguna verificación de comprensión real es una formalidad que no garantiza nada. Un test breve, o preguntas de escenario práctico, ofrecen evidencia mucho más honesta de que el contenido realmente se entendió.</p></div><h2 id="roadmap">5. Revisión periódica, no aprobación única que se mantiene años sin tocar</h2><div class="body-text"><p>Las políticas deberían revisarse periódicamente (anual como mínimo) para reflejar cambios en la organización, la tecnología y el panorama de amenazas. Una política aprobada hace cinco años, sin revisar desde entonces, probablemente ya no describe con precisión los riesgos ni las prácticas actuales de la organización.</p></div><a class="back" href="../index.html?cat=politicas-normativa">← Volver a Políticas y Normativa Interna</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. El documento que existe para la auditoría, no para el comportamiento</a><a href="#arquitectura">2. Lenguaje claro, no jerga legal incomprensible</a><a href="#seguridad">3. Difusión activa, no solo publicación pasiva</a><a href="#operacion">4. Verificar comprensión, no solo confirmar lectura</a><a href="#roadmap">5. Revisión periódica, no aprobación única</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport"/>
+<title>Principios de diseño: la política de seguridad que nadie ha leído nunca | Políticas y Normativa Interna | Technology Advisory</title>
+<meta content="Una política aprobada por dirección, publicada en la intranet, y jamás leída por quienes deberían seguirla, no protege nada — es un documento que existe para pasar auditorías, no para cambiar comportamiento." name="description"/>
+<meta content="Miguel Ángel Carriazo" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="#059669" name="theme-color"/>
+<link href="../../css/global.css" rel="stylesheet"/>
+<link href="../../css/dossier-core.css" rel="stylesheet"/>
+<link href="../../css/articulo.css" rel="stylesheet"/>
+<link href="../../css/index.css" rel="stylesheet"/>
+<link href="../../css/articulo-diagramas.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        @media (max-width: 1024px) {
+            .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
+            div[style*="padding: 16px 48px 0"], div[style*="padding: 16px 48px 0;"] { padding: 16px 4% 0 !important; }
+            div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding: 40px 4% 24px !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="card-wrapper ds-page">
+<div class="card">
+<div id="menu-container"></div>
+<div class="accent-bar" style="background:#059669;"></div>
+<div class="ds-meta">
+<span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: gobernanza</span>
+<span>categoría: <strong>Políticas y Normativa Interna</strong></span>
+</div>
+<div style="padding: 16px 4% 0;">
+<a class="defensa-btn-back" href="../index.html?cat=politicas-normativa" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Políticas y Normativa Interna</a>
+</div>
+<div style="padding: 40px 4% 24px; border-bottom: 1px solid #ededea;">
+<div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Principios · Políticas y Normativa Interna</div>
+<h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Principios de diseño: <span style="color:#059669;">la política de seguridad que nadie ha leído nunca</span></h1>
+<p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Una política aprobada por dirección, publicada en la intranet, y jamás leída por quienes deberían seguirla, no protege nada — es un documento que existe para pasar auditorías, no para cambiar comportamiento.</p>
+<div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="6" r="2.6"></circle><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"></path></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><rect height="12.5" rx="1.3" width="13" x="2.5" y="3"></rect><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"></path></svg>Políticas y Normativa Interna</span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="9" r="6.8"></circle><path d="M9 5.3V9l2.8 1.7"></path></svg>Lectura Avanzada (18-22 min)</span>
+</div>
+</div>
+<div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+<div class="defensa-main" style="min-width:0;">
+<!-- GRÁFICO 1: SEIS PRINCIPIOS DE POLÍTICA EFECTIVA -->
+<figure aria-label="Seis principios de política efectiva" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 450" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#f8fafc" height="450" rx="16" width="900"></rect>
+<defs>
+<lineargradient id="g-sidebar" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#0f172a"></stop><stop offset="1%" stop-color="#1e293b"></stop>
+</lineargradient>
+<filter id="f-drop">
+<fedropshadow dx="0" dy="3" flood-color="#0f172a" flood-opacity="0.04" stddeviation="4"></fedropshadow>
+</filter>
+</defs>
+<text fill="#0f172a" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" x="40" y="45">Seis principios de política efectiva</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="13" x="40" y="68">lo que separa una política que se sigue de una política que se ignora</text>
+<g transform="translate(0, 15)">
+<!-- Grid Item 1 -->
+<rect fill="#ffffff" filter="url(#f-drop)" height="85" rx="12" stroke="#e2e8f0" stroke-width="1" width="260" x="40" y="80"></rect>
+<circle cx="75" cy="122" fill="#eff6ff" r="15"></circle>
+<text fill="#3b82f6" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="700" text-anchor="middle" x="75" y="126">1</text>
+<text fill="#1e3a8a" font-family="'Inter', sans-serif" font-size="13" font-weight="700" x="105" y="115">Lenguaje claro</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" x="105" y="133">No jerga legal compleja</text>
+<!-- Grid Item 2 -->
+<rect fill="#ffffff" filter="url(#f-drop)" height="85" rx="12" stroke="#e2e8f0" stroke-width="1" width="260" x="40" y="180"></rect>
+<circle cx="75" cy="222" fill="#e0e7ff" r="15"></circle>
+<text fill="#4f46e5" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="700" text-anchor="middle" x="75" y="226">2</text>
+<text fill="#312e81" font-family="'Inter', sans-serif" font-size="13" font-weight="700" x="105" y="215">Propietario asignado</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" x="105" y="233">Persona responsable</text>
+<!-- Grid Item 3 -->
+<rect fill="#ffffff" filter="url(#f-drop)" height="85" rx="12" stroke="#e2e8f0" stroke-width="1" width="260" x="40" y="280"></rect>
+<circle cx="75" cy="322" fill="#e6f4ea" r="15"></circle>
+<text fill="#059669" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="700" text-anchor="middle" x="75" y="326">3</text>
+<text fill="#065f46" font-family="'Inter', sans-serif" font-size="13" font-weight="700" x="105" y="315">Difusión activa</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" x="105" y="333">No solo publicación pasiva</text>
+<!-- Grid Item 4 -->
+<rect fill="#ffffff" filter="url(#f-drop)" height="85" rx="12" stroke="#e2e8f0" stroke-width="1" width="260" x="320" y="80"></rect>
+<circle cx="355" cy="122" fill="#fef3c7" r="15"></circle>
+<text fill="#d97706" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="700" text-anchor="middle" x="355" y="126">4</text>
+<text fill="#78350f" font-family="'Inter', sans-serif" font-size="13" font-weight="700" x="385" y="115">Comprensión verificada</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" x="385" y="133">Test, no un mero "lo leí"</text>
+<!-- Grid Item 5 -->
+<rect fill="#ffffff" filter="url(#f-drop)" height="85" rx="12" stroke="#e2e8f0" stroke-width="1" width="260" x="320" y="180"></rect>
+<circle cx="355" cy="222" fill="#fde8e8" r="15"></circle>
+<text fill="#dc2626" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="700" text-anchor="middle" x="355" y="226">5</text>
+<text fill="#991b1b" font-family="'Inter', sans-serif" font-size="13" font-weight="700" x="385" y="215">Coherencia técnica</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" x="385" y="233">Configuración alineada real</text>
+<!-- Grid Item 6 -->
+<rect fill="#ffffff" filter="url(#f-drop)" height="85" rx="12" stroke="#e2e8f0" stroke-width="1" width="260" x="320" y="280"></rect>
+<circle cx="355" cy="322" fill="#f1f5f9" r="15"></circle>
+<text fill="#475569" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="700" text-anchor="middle" x="355" y="326">6</text>
+<text fill="#1e293b" font-family="'Inter', sans-serif" font-size="13" font-weight="700" x="385" y="315">Revisión periódica</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" x="385" y="333">Actualización programada</text>
+<!-- Accent Operational Realism Card -->
+<rect fill="url(#g-sidebar)" filter="url(#f-drop)" height="285" rx="14" width="260" x="600" y="80"></rect>
+<text fill="#ffffff" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700" text-anchor="middle" x="730" y="120">Realidad</text>
+<text fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="12" text-anchor="middle" x="730" y="155">Una política que nadie</text>
+<text fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="12" text-anchor="middle" x="730" y="175">entiende ni recuerda</text>
+<text fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="12" text-anchor="middle" x="730" y="195">no cambia ningún</text>
+<text fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="12" text-anchor="middle" x="730" y="215">comportamiento real.</text>
+<text fill="#a7f3d0" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="730" y="260">Existe para pasar</text>
+<text fill="#a7f3d0" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="730" y="280">la auditoría,</text>
+<text fill="#a7f3d0" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="730" y="300">no para proteger</text>
+<text fill="#a7f3d0" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="730" y="320">la organización.</text>
+</g>
+<rect fill="#ffffff" height="32" rx="6" stroke="#e2e8f0" width="820" x="40" y="398"></rect>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="450" y="419">Una política efectiva cambia comportamiento. Una política ignorada es un documento inútil.</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 340 450" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#f8fafc" height="450" rx="12" width="340"></rect>
+<text fill="#0f172a" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" x="20" y="30">Seis principios fundamentales</text>
+<g transform="translate(20, 45)">
+<rect fill="#ffffff" height="75" rx="8" stroke="#e2e8f0" width="145" x="0" y="0"></rect>
+<text fill="#1e3a8a" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="25">1. Lenguaje claro</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="10" x="15" y="45">Evitar densa jerga</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="10" x="15" y="58">jurídica y técnica</text>
+<rect fill="#ffffff" height="75" rx="8" stroke="#e2e8f0" width="145" x="155" y="0"></rect>
+<text fill="#312e81" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="170" y="25">2. Dueño nominal</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="10" x="170" y="45">Responsabilidad</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="10" x="170" y="58">única de gestión</text>
+<rect fill="#ffffff" height="75" rx="8" stroke="#e2e8f0" width="145" x="0" y="85"></rect>
+<text fill="#065f46" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="110">3. Difusión activa</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="10" x="15" y="130">Garantizar acceso</text>
+<rect fill="#ffffff" height="75" rx="8" stroke="#e2e8f0" width="145" x="155" y="85"></rect>
+<text fill="#78350f" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="170" y="110">4. Comprensión</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="10" x="170" y="130">Evaluaciones y tests</text>
+<rect fill="#ffffff" height="75" rx="8" stroke="#e2e8f0" width="145" x="0" y="170"></rect>
+<text fill="#991b1b" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="195">5. Coherencia</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="10" x="15" y="215">Alineación con</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="10" x="15" y="228">sistemas reales</text>
+<rect fill="#ffffff" height="75" rx="8" stroke="#e2e8f0" width="145" x="155" y="170"></rect>
+<text fill="#1e293b" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="170" y="195">6. Revisión</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="10" x="170" y="215">Control periódico</text>
+</g>
+<rect fill="#0f172a" height="95" rx="10" width="300" x="20" y="280"></rect>
+<text fill="#ffffff" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="170" y="310">Política ignorada = documento inútil</text>
+<text fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle" x="170" y="332">El fin último de legislar internamente es lograr</text>
+<text fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle" x="170" y="348">un impacto y cambio de comportamiento real</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 1: Los seis principios de una política efectiva — de la redacción al cambio de comportamiento.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- MÓDULO 1 -->
+<div class="block" id="s1">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — El problema de fondo</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El documento que existe para pasar la auditoría, no para cambiar comportamiento</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>Una política de seguridad de 40 páginas, redactada en lenguaje legal denso, aprobada formalmente y nunca comunicada de forma comprensible al personal, cumple el requisito de auditoría de "tener una política" sin cumplir su propósito real: influir en cómo se comporta la gente.</strong></p>
+<p>El problema de las políticas que nadie lee no es técnico, es de diseño. Se redactan pensando en el abogado que las revisa y en el auditor que las evalúa, no en el empleado que debe seguirles. Y cuando una política no está diseñada para el usuario final, el usuario final no la sigue.</p>
+<p>La consecuencia de tener políticas que nadie lee es doble: no se reduce el riesgo porque el comportamiento no cambia, y se genera una falsa sensación de seguridad porque "la política existe". La auditoría puede pasar, pero el riesgo real sigue ahí.</p>
+<div class="defensa-box-warning"><strong>⚠️ Una política que nadie entiende ni recuerda no cambia ningún comportamiento real.</strong> Existe para pasar la auditoría, pero no para proteger la organización. El propósito de una política es influir en el comportamiento, no llenar un requisito documental.</div>
+<p>La solución no es eliminar las políticas, sino rediseñarlas desde la perspectiva del usuario. Lenguaje claro, ejemplos concretos, difusión activa, y verificación de comprensión. La política efectiva es la que el empleado recuerda y aplica, no la que está en un PDF (Portable Document Format) de 40 páginas que nadie ha abierto.</p>
+<p>La política efectiva también debe ser revisada periódicamente. Una política aprobada hace cinco años, sin revisar desde entonces, probablemente ya no describe con precisión los riesgos ni las prácticas actuales de la organización.</p>
+</div>
+</div>
+<!-- GRÁFICO 2: LENGUAJE CLARO VS JERGA LEGAL -->
+<figure aria-label="Lenguaje claro vs jerga legal" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#f8fafc" height="300" rx="16" width="900"></rect>
+<text fill="#0f172a" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700" x="40" y="42">Lenguaje claro vs jerga legal</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="13" x="40" y="64">lo que la política dice vs lo que el empleado entiende</text>
+<g transform="translate(0, 10)">
+<!-- Left bad card -->
+<rect fill="#ffffff" height="150" rx="12" stroke="#fca5a5" stroke-width="1" width="390" x="40" y="75"></rect>
+<path d="M40 87 c0 -6.6 5.4 -12 12 -12 h366 v30 h-378 z" fill="#fee2e2"></path>
+<text fill="#991b1b" font-family="'Inter', sans-serif" font-size="12" font-weight="700" x="60" y="95">❌ Jerga legal</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" x="60" y="130">"El usuario deberá implementar mecanismos de autenticación</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" x="60" y="148">multifactor de conformidad con los estándares de seguridad</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" x="60" y="166">establecidos en el Anexo A, Sección 4.2.1"</text>
+<text fill="#94a3b8" font-family="'Inter', sans-serif" font-size="11" font-style="italic" x="60" y="190">+ 3 párrafos de redacción críptica</text>
+<text fill="#b91c1c" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="600" x="60" y="212">Resultado: No se comprende</text>
+<!-- Middle Arrow -->
+<path d="M 445 150 L 455 150" stroke="#cbd5e1" stroke-width="2"></path>
+<!-- Right good card -->
+<rect fill="#ffffff" height="150" rx="12" stroke="#a7f3d0" stroke-width="1" width="390" x="470" y="75"></rect>
+<path d="M470 87 c0 -6.6 5.4 -12 12 -12 h366 v30 h-378 z" fill="#e6f4ea"></path>
+<text fill="#047857" font-family="'Inter', sans-serif" font-size="12" font-weight="700" x="490" y="95">✅ Lenguaje claro</text>
+<text fill="#334155" font-family="'Inter', sans-serif" font-size="11" x="490" y="130">"Para acceder a cualquier sistema corporativo debes usar</text>
+<text fill="#334155" font-family="'Inter', sans-serif" font-size="11" x="490" y="148">doble autenticación: tu contraseña habitual más un código</text>
+<text fill="#334155" font-family="'Inter', sans-serif" font-size="11" x="490" y="166">de 6 dígitos generado en tu aplicación móvil."</text>
+<text fill="#059669" font-family="'Inter', sans-serif" font-size="11" font-style="italic" x="490" y="190">+ Ejemplos visuales interactivos</text>
+<text fill="#047857" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="600" x="490" y="212">Resultado: Aplicación inmediata</text>
+</g>
+<rect fill="#ffffff" height="28" rx="4" stroke="#e2e8f0" width="820" x="40" y="255"></rect>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="450" y="273">El lenguaje claro es el primer paso para que una política cambie comportamiento real</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 340 370" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#f8fafc" height="370" rx="12" width="340"></rect>
+<text fill="#0f172a" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" x="20" y="30">Claridad compositiva vs Jerga</text>
+<g transform="translate(20, 45)">
+<rect fill="#ffffff" height="120" rx="8" stroke="#fca5a5" width="300" x="0" y="0"></rect>
+<text fill="#991b1b" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="22">❌ Jerga compleja</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="10" x="15" y="45">"Deberá implementar autenticación multifactor</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="10" x="15" y="60">en cumplimiento de las directrices del anexo A"</text>
+<text fill="#94a3b8" font-family="'IBM Plex Mono', monospace" font-size="10" x="15" y="85">Baja retención operativa</text>
+<rect fill="#ffffff" height="120" rx="8" stroke="#a7f3d0" width="300" x="0" y="135"></rect>
+<text fill="#047857" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="157">✅ Lenguaje accesible</text>
+<text fill="#334155" font-family="'Inter', sans-serif" font-size="10" x="15" y="180">"Usa tu clave normal + el código de 6 números</text>
+<text fill="#334155" font-family="'Inter', sans-serif" font-size="10" x="15" y="195">que llegará directo a tu celular corporativo."</text>
+<text fill="#059669" font-family="'IBM Plex Mono', monospace" font-size="10" x="15" y="220">Comprensión completa asegurada</text>
+</g>
+<rect fill="#059669" height="35" opacity="0.1" rx="6" width="300" x="20" y="315"></rect>
+<text fill="#151915" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="170" y="336">El empleado ejecuta aquello que comprende</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 2: Lenguaje claro vs jerga legal en políticas internas.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- MÓDULO 2 -->
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+<div class="block" id="s2">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Lenguaje claro</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Lenguaje claro y accesible, no jerga legal que solo el departamento jurídico entiende</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>Una política de seguridad efectiva se escribe pensando en quien debe seguirla —empleados sin formación técnica, en muchos casos— con ejemplos concretos y lenguaje directo, no como un documento legal defensivo diseñado principalmente para proteger a la organización en caso de litigio.</strong></p>
+<p>El lenguaje claro no significa simplificar el contenido hasta perder precisión. Significa expresar el mismo contenido con palabras que el público objetivo pueda entender sin necesidad de un diccionario jurídico o técnico. Un empleado debe poder leer una política y saber exactamente qué tiene que hacer (y qué no).</p>
+<div class="defensa-box-tech"><strong>Práctica recomendada:</strong> prueba la política con empleados reales antes de aprobarla. Pregunta: "¿Qué tienes que hacer?" and "¿Qué está prohibido?" Si no pueden responder correctamente, la política necesita ser reescrita en lenguaje más claro.</div>
+<p>El departamento jurídico tiene un papel importante en la redacción de políticas, pero no debería ser el único redactor. El usuario final debería poder entender la política sin consultar a un abogado. Si un empleado necesita un abogado para entender la política, la política está mal diseñada.</p>
+<p>El lenguaje claro también incluye el formato. Una política de 40 páginas no es legible, independientemente del lenguaje. Una política de 4 páginas con ejemplos concretos es mucho más efectiva.</p>
+</div>
+</div>
+<!-- GRÁFICO 3: DIFUSIÓN ACTIVA VS PUBLICACIÓN PASIVA -->
+<figure aria-label="Difusión activa vs publicación pasiva" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#f8fafc" height="280" rx="16" width="900"></rect>
+<text fill="#0f172a" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700" x="40" y="42">Difusión activa vs publicación pasiva</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="13" x="40" y="64">cómo la política llega realmente al empleado</text>
+<g transform="translate(0, 15)">
+<!-- Passive Column -->
+<rect fill="#ffffff" height="120" rx="10" stroke="#fca5a5" width="250" x="40" y="70"></rect>
+<text fill="#b91c1c" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="165" y="95">❌ Publicación pasiva</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" x="60" y="125">• Subir el archivo a la intranet</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" x="60" y="145">• Esperar la búsqueda del usuario</text>
+<text fill="#94a3b8" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle" x="165" y="175">Tasa de lectura: Baja</text>
+<path d="M 305 130 L 325 130" stroke="#cbd5e1" stroke-width="2"></path>
+<!-- Active Column -->
+<rect fill="#ffffff" height="120" rx="10" stroke="#a7f3d0" width="250" x="340" y="70"></rect>
+<text fill="#047857" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="465" y="95">✅ Difusión activa</text>
+<text fill="#334155" font-family="'Inter', sans-serif" font-size="11" x="360" y="125">• Envío directo y segmentado</text>
+<text fill="#334155" font-family="'Inter', sans-serif" font-size="11" x="360" y="145">• Talleres prácticos guiados</text>
+<text fill="#059669" font-family="'IBM Plex Mono', monospace" font-size="10" text-anchor="middle" x="465" y="175">Tasa de lectura: Alta</text>
+<path d="M 605 130 L 625 130" stroke="#cbd5e1" stroke-width="2"></path>
+<!-- Outcome Column -->
+<rect fill="#fffbeb" height="120" rx="10" stroke="#fcd34d" width="220" x="640" y="70"></rect>
+<text fill="#b45309" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="750" y="95">⚠️ Resultado</text>
+<text fill="#78350f" font-family="'Inter', sans-serif" font-size="11" x="655" y="125">Pasiva: Desconocimiento</text>
+<text fill="#78350f" font-family="'Inter', sans-serif" font-size="11" x="655" y="145">Activa: Cumplimiento</text>
+</g>
+<rect fill="#ffffff" height="28" rx="4" stroke="#e2e8f0" width="820" x="40" y="225"></rect>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="450" y="243">La difusión activa no es opcional si se quiere que la política tenga efecto real</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 340 380" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#f8fafc" height="380" rx="12" width="340"></rect>
+<text fill="#0f172a" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" x="20" y="30">Estrategia de difusión interna</text>
+<g transform="translate(20, 50)">
+<rect fill="#ffffff" height="60" rx="6" stroke="#fca5a5" width="300" x="0" y="0"></rect>
+<text fill="#991b1b" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="25">❌ Enfoque pasivo</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="10" x="15" y="45">Archivar en repositorios oscuros de la Intranet</text>
+<rect fill="#ffffff" height="60" rx="6" stroke="#a7f3d0" width="300" x="0" y="80"></rect>
+<text fill="#047857" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="105">✅ Enfoque activo</text>
+<text fill="#334155" font-family="'Inter', sans-serif" font-size="10" x="15" y="125">Notificaciones dinámicas y sesiones cortas</text>
+<rect fill="#fffbeb" height="60" rx="6" stroke="#fcd34d" width="300" x="0" y="160"></rect>
+<text fill="#b45309" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="185">Impacto real</text>
+<text fill="#78350f" font-family="'Inter', sans-serif" font-size="10" x="15" y="205">De la ignorancia total a la cultura operativa</text>
+</g>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 3: Difusión activa vs publicación pasiva de políticas.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- MÓDULO 3 -->
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+<div class="block" id="s3">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Propietario y difusión</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Propietario asignado y difusión activa, no publicación pasiva en una intranet que nadie visita</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>Cada política debería tener un propietario nombrado —normalmente el responsable del área a la que aplica— con la responsabilidad explícita de revisarla periódicamente y proponer actualizaciones cuando el contexto cambie.</strong> Y publicar una política en la intranet corporativa y asumir que el personal la leerá por iniciativa propia rara vez funciona.</p>
+<p>El propietario de una política no es necesariamente su autor. Es la persona que entiende el dominio de la política, que puede evaluar si sigue siendo relevante, y que tiene la autoridad para proponer cambios. En organizaciones grandes, el propietario puede delegar la redacción, pero no la responsabilidad de mantener la política vigente.</p>
+<p>La difusión activa reconoce que los empleados están ocupados. No van a buscar la política en la intranet. Hay que llevársela a ellos: correo electrónico, comunicaciones internas, sesiones de formación, integración en el onboarding, y recordatorios periódicos.</p>
+<div class="defensa-box-tech"><strong>Práctica recomendada:</strong> nombra un propietario por política y documenta su nombramiento. El propietario debe ser responsable de revisar la política al menos anualmente y de proponer actualizaciones cuando sea necesario.</div>
+<p>La difusión activa no es un evento único. Las políticas deben ser recordadas periódicamente (al menos anuales) y siempre que se actualicen. Un empleado que recibió la política hace dos años probablemente no recuerda sus detalles.</p>
+<p>Publicar en la intranet no es difundir. Es poner el documento a disposición, no asegurar que llegue a quien debe seguirlo. La difusión activa es la que garantiza que la política sea vista por su audiencia objetivo.</p>
+</div>
+</div>
+<!-- GRÁFICO 4: ANTI-PATRONES EN POLÍTICAS -->
+<figure aria-label="Anti-patrones en políticas internas" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 400" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#f8fafc" height="400" rx="16" width="900"></rect>
+<text fill="#0f172a" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700" x="40" y="42">Anti-patrones en políticas internas</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="13" x="40" y="64">prácticas que convierten las políticas en documentos inútiles</text>
+<g transform="translate(40, 95)">
+<!-- Table Header -->
+<rect fill="#0f172a" height="34" rx="6" width="390" x="0" y="0"></rect>
+<text fill="#ffffff" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="20" y="21">Anti-patrón observado</text>
+<rect fill="#059669" height="34" rx="6" width="410" x="410" y="0"></rect>
+<text fill="#ffffff" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="430" y="21">Lo que revela y cómo corregirlo</text>
+<!-- Row 1 -->
+<rect fill="#ffffff" height="42" rx="6" stroke="#fca5a5" width="390" x="0" y="46"></rect>
+<text fill="#1e293b" font-family="'Inter', sans-serif" font-size="11" font-weight="600" x="15" y="64">Política de 40 págs en lenguaje críptico</text>
+<text fill="#ef4444" font-family="'Inter', sans-serif" font-size="10" x="15" y="78">Nadie la lee completa</text>
+<rect fill="#ffffff" height="42" rx="6" stroke="#e2e8f0" width="410" x="410" y="46"></rect>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" x="425" y="64">Diseñada para proteger legalmente, no operativa.</text>
+<text fill="#059669" font-family="'Inter', sans-serif" font-size="10" font-weight="600" x="425" y="78">Ajustar: Resúmenes en lenguaje claro + casos prácticos.</text>
+<!-- Row 2 -->
+<rect fill="#ffffff" height="42" rx="6" stroke="#fca5a5" width="390" x="0" y="100"></rect>
+<text fill="#1e293b" font-family="'Inter', sans-serif" font-size="11" font-weight="600" x="15" y="118">Sin propietario asignado formalmente</text>
+<text fill="#ef4444" font-family="'Inter', sans-serif" font-size="10" x="15" y="132">"Es responsabilidad de todos en general"</text>
+<rect fill="#ffffff" height="42" rx="6" stroke="#e2e8f0" width="410" x="410" y="100"></rect>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" x="425" y="118">Responsabilidad difusa = Abandono del documento.</text>
+<text fill="#059669" font-family="'Inter', sans-serif" font-size="10" font-weight="600" x="425" y="132">Ajustar: Asignar un propietario nominal directo.</text>
+<!-- Row 3 -->
+<rect fill="#ffffff" height="42" rx="6" stroke="#fca5a5" width="390" x="0" y="154"></rect>
+<text fill="#1e293b" font-family="'Inter', sans-serif" font-size="11" font-weight="600" x="15" y="172">Publicada de forma pasiva en Intranet</text>
+<text fill="#ef4444" font-family="'Inter', sans-serif" font-size="10" x="15" y="186">"El archivo ya está subido"</text>
+<rect fill="#ffffff" height="42" rx="6" stroke="#e2e8f0" width="410" x="410" y="154"></rect>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" x="425" y="172">Falta de canales proactivos de concienciación.</text>
+<text fill="#059669" font-family="'Inter', sans-serif" font-size="10" font-weight="600" x="425" y="186">Ajustar: Campañas internas obligatorias periódicas.</text>
+<!-- Row 4 -->
+<rect fill="#ffffff" height="42" rx="6" stroke="#fca5a5" width="390" x="0" y="208"></rect>
+<text fill="#1e293b" font-family="'Inter', sans-serif" font-size="11" font-weight="600" x="15" y="226">Sin validación cuantitativa de comprensión</text>
+<text fill="#ef4444" font-family="'Inter', sans-serif" font-size="10" x="15" y="240">Checkbox genérico de "lo leí"</text>
+<rect fill="#ffffff" height="42" rx="6" stroke="#e2e8f0" width="410" x="410" y="208"></rect>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" x="425" y="226">No se comprueba si el mensaje caló en el equipo.</text>
+<text fill="#059669" font-family="'Inter', sans-serif" font-size="10" font-weight="600" x="425" y="240">Ajustar: Pequeños tests basados en escenarios reales.</text>
+<!-- Row 5 -->
+<rect fill="#ffffff" height="42" rx="6" stroke="#fca5a5" width="390" x="0" y="262"></rect>
+<text fill="#1e293b" font-family="'Inter', sans-serif" font-size="11" font-weight="600" x="15" y="280">Documento obsoleto acumulando años</text>
+<text fill="#ef4444" font-family="'Inter', sans-serif" font-size="10" x="15" y="294">Sin control ni cambios desde su aprobación</text>
+<rect fill="#ffffff" height="42" rx="6" stroke="#e2e8f0" width="410" x="410" y="262"></rect>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="11" x="425" y="280">Inexistencia de ciclos continuos de vigencia.</text>
+<text fill="#059669" font-family="'Inter', sans-serif" font-size="10" font-weight="600" x="425" y="294">Ajustar: Forzar una fecha estricta de revisión anual.</text>
+</g>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 340 430" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#f8fafc" height="430" rx="12" width="340"></rect>
+<text fill="#0f172a" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" x="20" y="30">Catálogo de Anti-patrones</text>
+<g transform="translate(20, 50)">
+<rect fill="#ffffff" height="55" rx="6" stroke="#e2e8f0" width="300" x="0" y="0"></rect>
+<text fill="#991b1b" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="22">1. Extensión masiva y compleja</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="10" x="15" y="40">Nadie la lee -&gt; Solución: Lenguaje claro.</text>
+<rect fill="#ffffff" height="55" rx="6" stroke="#e2e8f0" width="300" x="0" y="65"></rect>
+<text fill="#991b1b" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="87">2. Ausencia de Dueño</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="10" x="15" y="105">Queda en el olvido -&gt; Solución: Asignación nominal.</text>
+<rect fill="#ffffff" height="55" rx="6" stroke="#e2e8f0" width="300" x="0" y="130"></rect>
+<text fill="#991b1b" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="152">3. Publicación pasiva</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="10" x="15" y="170">Nadie la busca -&gt; Solución: Comunicación proactiva.</text>
+<rect fill="#ffffff" height="55" rx="6" stroke="#e2e8f0" width="300" x="0" y="195"></rect>
+<text fill="#991b1b" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="217">4. Sin comprobación real</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="10" x="15" y="235">Checkbox vacío -&gt; Solución: Tests cortos de nivel.</text>
+<rect fill="#ffffff" height="55" rx="6" stroke="#e2e8f0" width="300" x="0" y="260"></rect>
+<text fill="#991b1b" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="282">5. Obsolescencia histórica</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="10" x="15" y="300">Datos falsos -&gt; Solución: Revisión obligatoria anual.</text>
+</g>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 4: Anti-patrones en políticas internas y cómo corregirlos.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- MÓDULO 4 -->
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+<div class="block" id="s4">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Comprensión verificada</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Verificar comprensión real, no solo confirmar que alguien marcó "lo he leído"</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>Un checkbox de "he leído y entendido la política" sin ninguna verificación de comprensión real es una formalidad que no garantiza nada. Un test breve, o preguntas de escenario práctico, ofrecen evidencia mucho más honesta de que el contenido realmente se entendió.</strong></p>
+<p>La verificación de comprensión es el paso que distingue a las organizaciones maduras de las inmaduras. Las maduras no asumen que el empleado ha entendido la política. Lo verifican. Y si no la entiende, lo saben y pueden corregirlo.</p>
+<div class="defensa-box-tech"><strong>Práctica recomendada:</strong> incluye un test de 5-10 preguntas basadas en escenarios prácticos después de la formación en políticas. El empleado debe demostrar que sabe aplicar la política a situaciones reales, no solo que puede recordar definiciones.</div>
+<p>La verificación de comprensión no es un ejercicio académico. Es una herramienta de gestión que identifica a las personas que no han entendido la política y necesitan formación adicional. También es evidencia defendible ante un auditor de que la organización ha hecho más que "publicar" la política.</p>
+<p>El test de comprensión debe ser específico a la política y al rol del empleado. No todas las políticas aplican a todos los empleados de la misma manera. La verificación debe ser relevante para el trabajo del empleado.</p>
+</div>
+</div>
+<!-- MÓDULO 5 -->
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+<div class="block" id="s5">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Coherencia técnica y revisión</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Coherencia técnica y revisión periódica: la política no es estática</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>Una política de contraseñas que exige 14 caracteres mientras el sistema técnico solo obliga a 8 es una discrepancia que cualquier auditor detecta en minutos.</strong> Y las políticas deberían revisarse periódicamente (anual como mínimo) para reflejar cambios en la organización, la tecnología y el panorama de amenazas.</p>
+<p>La coherencia técnica es la evidencia de que la política no es un documento abstracto, sino una instrucción que se aplica en la realidad. Sin coherencia, la política es una ficción legal.</p>
+<div class="defensa-box-success"><strong>✔ La revisión periódica es lo que mantiene la política relevante.</strong> Una política obsoleta no protege, y peor, puede generar una falsa sensación de protección. La política debe evolucionar con la organización y el contexto.</div>
+<p>La revisión periódica debe ser formal y documentada: quién la revisó, qué cambios se propusieron, quién los aprobó, y cuándo entra en vigor la nueva versión. Sin este registro, la revisión es solo una intención, no un proceso verificable.</p>
+<p>La coherencia técnica también debe verificarse periódicamente. Los sistemas cambian, las configuraciones cambian, y las políticas pueden quedar desactualizadas. Una verificación periódica de coherencia es la evidencia de que la política sigue siendo aplicable.</p>
+</div>
+</div>
+<!-- MÓDULO 6 -->
+
+                    <div class="defensa-box-info ta-reference-box" style="margin:34px 0;">
+                        <strong>🔎 De la política al control verificable.</strong> En diseño, estas referencias deben convertirse en principios, límites, dependencias y decisiones de arquitectura. Las políticas internas deben traducir obligaciones concretas: responsabilidad y medidas de gestión en los artículos 20 y 21 de NIS2; responsabilidad proactiva, protección desde el diseño y seguridad en los artículos 24, 25 y 32 del RGPD (Reglamento General de Protección de Datos); y gobierno, marco de riesgo y protección TIC (Tecnologías de la Información y la Comunicación) en los artículos 5, 6 y 9 de DORA (Digital Operational Resilience Act). La referencia normativa explica el porqué; el procedimiento, la configuración y el registro de ejecución demuestran el cómo. ServiceNow IRM (Integrated Risk Management), Archer y MetricStream pueden gestionar versiones, aprobaciones, excepciones y campañas de cumplimiento. La evidencia efectiva debe enlazarse desde IAM (Identity and Access Management), SIEM (Security Information and Event Management), CMDB (Configuration Management Database), ticketing y repositorios documentales, evitando que la propia plataforma GRC (Governance, Risk and Compliance) sea la única fuente que afirma que el control se cumple.
+                    </div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 06</span></div>
+<div class="block" id="s6">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 06 — Checklist de política efectiva</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Checklist de política efectiva: ¿tu política cambia comportamiento?</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>Este checklist permite evaluar si una política está diseñada para cambiar comportamiento real o solo para cumplir un requisito documental. Responde honestamente a cada pregunta.</p>
+<div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:20px; margin:16px 0;">
+<table style="width:100%; border-collapse:collapse; font-size:14px;">
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669; width:30px;">1.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Lenguaje claro</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Está redactada en lenguaje que el empleado entiende?</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669;">2.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Propietario asignado</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Tiene un propietario responsable de mantenerla vigente?</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669;">3.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Difusión activa</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Se comunica activamente, no solo se publica?</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669;">4.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Comprensión verificada</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Hay un test que verifique que se entendió?</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669;">5.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Coherencia técnica</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿La configuración real coincide con la política?</td>
+</tr>
+<tr>
+<td style="padding:10px 0; font-weight:700; color:#059669;">6.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Revisión periódica</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Tiene fecha de revisión programada (anual)?</td>
+</tr>
+</table>
+</div>
+<p><strong>Resultado:</strong> Si no puedes responder "sí" a todas las preguntas, la política probablemente no está logrando su propósito. Revisa su diseño para hacerla más efectiva.</p>
+<div class="defensa-box-tech"><strong>Práctica recomendada:</strong> revisa este checklist para cada política existente. Las que no cumplan con los criterios deben ser rediseñadas priorizando el cambio de comportamiento real.</div>
+<p><strong>Cierre:</strong> una política efectiva no es la que está bien redactada — es la que cambia comportamiento. Los seis principios descritos aquí —lenguaje claro, propietario asignado, difusión activa, comprensión verificada, coherencia técnica, y revisión periódica— son el diseño mínimo defendible para cualquier política que quiera proteger realmente a la organización.</p>
+</div>
+</div>
+<!-- PIE DE AUTOR -->
+
+<div class="defensa-foot">
+<div class="defensa-author">
+<div class="defensa-foot-label">Autor</div>
+<div class="defensa-author-name">Miguel Ángel Carriazo</div>
+<p class="defensa-author-bio">Arquitecto de Infraestructura y Ciberseguridad con más de 25 años de experiencia diseñando, asegurando y operando entornos tecnológicos críticos. Lead Auditor en ISO/IEC 27001 e ISO/IEC 42001, especializado en gobierno, riesgo, cumplimiento y transformación tecnológica. En esta área aborda las políticas y la normativa interna como instrumentos operativos que deben implantarse, mantenerse y poder demostrarse.</p>
+</div>
+</div></div>
+<!-- SIDEBAR -->
+<aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+<div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+<div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+<table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Área</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Políticas y Normativa Interna</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Enfoque</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Principios de Diseño</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Temas clave</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Lenguaje, Propietario, Comprensión</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Nivel</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Avanzado</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Lectura</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">18-22 min</td></tr>
+<tr><td style="padding:10px 0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Etiquetas</td><td style="padding:10px 0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">#políticas #lenguajeclaro #difusión #comprensión #coherencia</td></tr>
+</table>
+</div>
+<div>
+<div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+<nav class="defensa-toc-nav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+<a href="#s1" style="text-decoration:none; color:#059669; font-size:14px; font-weight:700; border-left:2px solid #059669; margin-left:-16px; padding-left:14px;">01. El documento para auditoría</a>
+<a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Lenguaje claro</a>
+<a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Propietario y difusión</a>
+<a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Comprensión verificada</a>
+<a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Coherencia y revisión</a>
+<a href="#s6" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">06. Checklist de política efectiva</a>
+</nav>
+</div>
+</aside>
+</div>
+<!-- ARTÍCULOS RELACIONADOS -->
+<div class="related-section">
+<div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+<div class="related-grid">
+<a class="related-card" href="politicas-normativa-controles-evidencias.html">
+<div class="r-meta">Políticas y Normativa · Controles</div>
+<div class="r-title">Controles y evidencias: la política que dice una cosa y el sistema hace otra</div>
+<div class="r-desc">Una política de contraseñas que exige 14 caracteres mientras el sistema técnico solo obliga a 8 es una discrepancia que cualquier auditor detecta en minutos.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+<a class="related-card" href="politicas-normativa-madurez-roadmap.html">
+<div class="r-meta">Políticas y Normativa · Madurez</div>
+<div class="r-title">Madurez y roadmap: del documento legal que nadie lee a la política como cultura operativa</div>
+<div class="r-desc">Los cuatro niveles reales de madurez en políticas internas.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+<a class="related-card" href="politicas-normativa-modelo-operativo.html">
+<div class="r-meta">Políticas y Normativa · Operaciones</div>
+<div class="r-title">Modelo operativo: quién es dueño de cada política, y cuándo caduca</div>
+<div class="r-desc">Sin propietario y sin fecha de revisión, una política se convierte en un artefacto histórico.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+</div>
+</div>
+<div id="footer-container"></div>
+</div>
+</div>
+<div class="zoom-overlay"></div>
+<script src="../../js/menu.js"></script>
+<script src="../../js/footer.js"></script>
+<script>
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
+            } else {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function() {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

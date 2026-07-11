@@ -52,7 +52,7 @@
 
 <div style="padding: 40px 48px 24px; border-bottom: 1px solid #ededea;">
     <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Caso Práctico · VMware vSphere</div>
-    <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">vSphere HA y DRS: <span style="color:#059669;">Clústeres que se Curan Solos</span></h1>
+    <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">vSphere HA (High Availability) y DRS (Distributed Resource Scheduler): <span style="color:#059669;">Clústeres que se Curan Solos</span></h1>
     <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Diseño real de alta disponibilidad en VMware: Admission Control, reglas de afinidad, vSAN stretched clusters y lo que nadie te cuenta del heartbeat.</p>
     <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
         <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
@@ -223,7 +223,7 @@
                 <rect x="40" y="185" width="740" height="30" rx="4" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
                 <text x="410" y="205" font-size="10" fill="#94a3b8" text-anchor="middle">Latencia máxima entre sites: 5ms RTT. Distancia típica: ~100km con fibra oscura.</text>
             </svg>
-            <figcaption class="diagram-caption">Figura 4: vSAN Stretched Cluster extiende HA entre dos sites con RPO=0.</figcaption>
+            <figcaption class="diagram-caption">Figura 4: vSAN Stretched Cluster extiende HA entre dos sites con RPO (Recovery Point Objective)=0.</figcaption>
             <span class="zoom-hint">🔍 Clic para ampliar</span>
         </figure>
 
@@ -232,7 +232,7 @@
             <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Por qué falla la HA mal diseñada</h2>
             <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
                 <p>Un clúster VMware con HA activado no es automáticamente resiliente. He visto entornos de producción donde HA estaba habilitado pero Admission Control desactivado: cuando cayó un host, las VMs intentaron reiniciar en los supervivientes y no había recursos suficientes. Resultado: cascada de fallos que empeoró el incidente en vez de resolverlo.</p>
-                <div class="defensa-box-warning"><strong>⚠️ La trampa del N+1</strong><p>N+1 asume que solo pierdes un host a la vez. En un clúster de 4 hosts con mantenimiento planificado (uno en actualización), un fallo en otro te deja en N-1 real. Diseña siempre para N+2 si tu SLA es 99,99%.</p></div>
+                <div class="defensa-box-warning"><strong>⚠️ La trampa del N+1</strong><p>N+1 asume que solo pierdes un host a la vez. En un clúster de 4 hosts con mantenimiento planificado (uno en actualización), un fallo en otro te deja en N-1 real. Diseña siempre para N+2 si tu SLA (Service Level Agreement) es 99,99%.</p></div>
             </div>
         </div>
 
@@ -242,7 +242,7 @@
             <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Mecanismo Interno</div>
             <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El heartbeat de verdad</h2>
             <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>vSphere HA utiliza dos mecanismos de heartbeat: red (entre hosts por la management network) y datastore (escritura en un archivo VMDK especial en almacenamiento compartido). Si un host deja de enviar heartbeats de red pero el datastore heartbeat sigue vivo, el master lo declara <strong>aislado</strong>, no muerto — distinción crítica que cambia toda la respuesta.</p>
+                <p>vSphere HA utiliza dos mecanismos de heartbeat: red (entre hosts por la management network) y datastore (escritura en un archivo VMDK (Virtual Machine Disk) especial en almacenamiento compartido). Si un host deja de enviar heartbeats de red pero el datastore heartbeat sigue vivo, el master lo declara <strong>aislado</strong>, no muerto — distinción crítica que cambia toda la respuesta.</p>
                 <div class="defensa-box-tech"><strong>Configuración recomendada:</strong> dos redes de heartbeat independientes (VLANs separadas), al menos dos datastores para heartbeat, isolation response en <code>Power Off</code> con almacenamiento compartido.</div>
             </div>
         </div>
@@ -254,7 +254,7 @@
             <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">DRS y reglas de afinidad</h2>
             <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
                 <p>DRS no es solo balanceo de carga: es la política de placement que decide dónde viven tus VMs. Las reglas de afinidad y anti-afinidad son lo que separa un clúster que funciona de uno con un punto único de fallo oculto.</p>
-                <div class="defensa-box-success"><strong>✔ Buena práctica</strong><p>Crea grupos de VMs y grupos de hosts. Reglas VM-to-Host para cargas reguladas (datos que no pueden salir de cierto rack) y reglas VM-to-VM anti-affinity para redundancia real.</p></div>
+                <div class="defensa-box-success"><strong>✔ Buena práctica</strong><p>Crea grupos de VMs y grupos de hosts. Reglas VM (Virtual Machine)-to-Host para cargas reguladas (datos que no pueden salir de cierto rack) y reglas VM-to-VM anti-affinity para redundancia real.</p></div>
             </div>
         </div>
 
@@ -265,7 +265,7 @@
             <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">vSAN Stretched: dos sites, un clúster</h2>
             <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
                 <p>vSAN Stretched Cluster extiende un clúster vSAN entre dos sites físicos con un witness en un tercero. Las VMs se replican síncronamente entre ambos sites, y en caso de fallo de un site completo, reinician automáticamente en el superviviente con RPO=0.</p>
-                <p>El requisito crítico es la latencia entre sites: máximo 5ms RTT para escrituras síncronas. Por encima de eso, el rendimiento de I/O se degrada. Eso limita la distancia práctica a unos 100km con fibra oscura directa.</p>
+                <p>El requisito crítico es la latencia entre sites: máximo 5ms RTT (Round-Trip Time) para escrituras síncronas. Por encima de eso, el rendimiento de I/O se degrada. Eso limita la distancia práctica a unos 100km con fibra oscura directa.</p>
             </div>
         </div>
 
@@ -278,7 +278,7 @@
             <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
                 <p>La monitorización en vSphere debe incluir la verificación periódica de que Admission Control sigue teniendo recursos suficientes, que las reglas de anti-affinity se respetan, y que el heartbeat dual está operativo. Herramientas como vCenter Operations Manager o soluciones de terceros pueden generar alertas proactivas.</p>
                 <p>La validación más importante es la prueba de failover programada. Un clúster que no se prueba no es HA — es una hipótesis no verificada. Las pruebas deben incluir tanto fallos de host como fallos de red y de almacenamiento.</p>
-                <div class="defensa-box-tech"><strong>Recomendación:</strong> programa pruebas de failover trimestrales. Documenta los resultados y revisa las métricas de RTO real.</div>
+                <div class="defensa-box-tech"><strong>Recomendación:</strong> programa pruebas de failover trimestrales. Documenta los resultados y revisa las métricas de RTO (Recovery Time Objective) real.</div>
             </div>
         </div>
 
@@ -298,7 +298,7 @@
             <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
                 <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Hipervisor</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">VMware vSphere 8</td></tr>
                 <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Mecanismo HA</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">vSphere HA + DRS</td></tr>
-                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Storage</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">vSAN / FC SAN</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Storage</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">vSAN / FC (Fibre Channel) SAN (Storage Area Network)</td></tr>
                 <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Admission</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">25% reservado</td></tr>
                 <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Prueba HA</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Trimestral</td></tr>
             </table>
@@ -323,7 +323,7 @@
     <div class="related-grid">
         <a class="related-card" href="windows-failover-clustering.html">
             <div class="r-meta">Alta Disponibilidad · Windows Server</div>
-            <div class="r-title">Windows Failover Clustering: quorum, CSV y el detalle que nadie revisa</div>
+            <div class="r-title">Windows Failover Clustering: quorum, CSV (Cluster Shared Volume) y el detalle que nadie revisa</div>
             <div class="r-desc">Configuración real de Failover Clustering en Windows Server, sin la parte que solo sale mal en producción.</div>
             <span class="r-link">Leer artículo →</span>
         </a>
@@ -335,8 +335,8 @@
         </a>
         <a class="related-card" href="multi-az-cloud.html">
             <div class="r-meta">Alta Disponibilidad · Multi-Cloud</div>
-            <div class="r-title">Multi-AZ en AWS, Azure y GCP: lo que cada proveedor no te cuenta</div>
-            <div class="r-desc">Cuando la HA no vive en tu CPD sino en la nube, las reglas cambian — pero menos de lo que el marketing promete.</div>
+            <div class="r-title">Multi-AZ (Availability Zone) en AWS, Azure y GCP (Google Cloud Platform): lo que cada proveedor no te cuenta</div>
+            <div class="r-desc">Cuando la HA no vive en tu CPD (Centro de Procesamiento de Datos) sino en la nube, las reglas cambian — pero menos de lo que el marketing promete.</div>
             <span class="r-link">Leer artículo →</span>
         </a>
     </div>

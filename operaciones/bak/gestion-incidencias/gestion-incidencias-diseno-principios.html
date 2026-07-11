@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Principios de diseño: la incidencia "resuelta" que vuelve a las dos semanas | Gestión de Incidencias | Technology Advisory</title><meta name="description" content="Cerrar una incidencia sin identificar la causa raíz no la resuelve — la pospone hasta la siguiente vez, con el mismo síntoma disfrazado de problema nuevo."><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
+<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // operaciones</span><span>categoría: <strong>Gestión de Incidencias</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Gestión de Incidencias</div><h1 class="article-title">Principios de diseño: la incidencia "resuelta" que vuelve a las dos semanas</h1><p class="article-lead">Cerrar una incidencia sin identificar la causa raíz no la resuelve — la pospone hasta la siguiente vez, con el mismo síntoma disfrazado de problema nuevo.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Gestión de Incidencias"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="900" height="410" rx="14" fill="#fafaf8"/>
+<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">De la incidencia al problema real</text>
+<text x="40" y="66" font-size="12" fill="#77776f">ITIL distingue incidencia de problema — la mayoría los confunde</text>
+<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Incidencia</text>
+<text x="58" y="163" font-size="11" fill="#77776f">Restaurar el servicio, rápido</text>
+<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Causa raíz</text>
+<text x="488" y="163" font-size="11" fill="#77776f">Por qué ocurrió, no solo qué pasó</text>
+<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Gestión de problemas</text>
+<text x="58" y="283" font-size="11" fill="#77776f">Eliminar la causa, no solo el síntoma</text>
+<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Incidencia recurrente</text>
+<text x="488" y="283" font-size="11" fill="#77776f">Señal de causa raíz nunca resuelta</text>
+<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Resolver el síntoma sin la causa raíz garantiza que la incidencia vuelva</text>
+</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 420" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="330" height="420" rx="12" fill="#fafaf8"/>
+<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">De la incidencia al problema real</text>
+<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="89" r="13" fill="#059669"/>
+<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Incidencia</text>
+<text x="64" y="102" font-size="11" fill="#77776f">Restaurar el servicio, rápido</text>
+<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="159" r="13" fill="#059669"/>
+<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Causa raíz</text>
+<text x="64" y="172" font-size="11" fill="#77776f">Por qué ocurrió, no solo qué</text>
+<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="229" r="13" fill="#059669"/>
+<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Gestión de problemas</text>
+<text x="64" y="242" font-size="11" fill="#77776f">Eliminar la causa, no solo el</text>
+<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="299" r="13" fill="#059669"/>
+<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Incidencia recurrente</text>
+<text x="64" y="312" font-size="11" fill="#77776f">Señal de causa raíz nunca</text>
+<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+<rect x="18" y="340" width="294" height="60" rx="10" fill="url(#gm)"/>
+<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Resolver el síntoma sin la causa raíz</text>
+<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">garantiza que la incidencia vuelva</text>
+</svg></div></figure><div class="toc-mini"><a href="#contexto">1. La incidencia que vuelve cada dos semanas</a><a href="#arquitectura">2. Incidencia vs problema: la distinción que importa</a><a href="#seguridad">3. Priorización real, no por quién grita más fuerte</a><a href="#operacion">4. SLA de respuesta vs SLA de resolución</a><a href="#roadmap">5. El patrón que revela un problema sistémico</a></div><h2 id="contexto">1. La incidencia "resuelta" que vuelve a las dos semanas, disfrazada de nueva</h2><div class="body-text"><p><strong>Una incidencia que se cierra restaurando el servicio, sin investigar por qué ocurrió, es una incidencia pospuesta, no resuelta.</strong> Cuando el mismo síntoma reaparece semanas después, el equipo lo trata como un caso nuevo, sin conectar el patrón — repitiendo el ciclo indefinidamente.</p></div><h2 id="arquitectura">2. Incidencia vs problema: la distinción de ITIL que la mayoría confunde en la práctica</h2><div class="body-text"><p>Una incidencia es la interrupción puntual de un servicio; el objetivo es restaurarlo rápido. Un problema es la causa raíz subyacente que puede generar múltiples incidencias. Gestionar bien las incidencias es necesario; gestionar los problemas es lo que evita que se repitan.</p></div><h2 id="seguridad">3. Priorización real por impacto de negocio, no por quién escala más fuerte</h2><div class="body-text"><p>Sin criterios objetivos de priorización, las incidencias tienden a resolverse en el orden de quién más presiona o tiene más influencia organizativa, no según el impacto real en el negocio. Una matriz de priorización explícita (usuarios afectados, criticidad del servicio, impacto económico) corrige ese sesgo.</p></div><h2 id="operacion">4. SLA de respuesta vs SLA de resolución, medidos por separado</h2><div class="body-text"><p>El tiempo hasta que alguien empieza a investigar una incidencia (respuesta) y el tiempo hasta que se resuelve completamente (resolución) son métricas distintas que deberían medirse y reportarse por separado — un SLA de respuesta rápido con resolución lenta sigue dejando al usuario sin servicio funcional.</p></div><h2 id="roadmap">5. El patrón que revela un problema sistémico detrás de incidencias aparentemente aisladas</h2><div class="body-text"><p>Revisar periódicamente las incidencias agrupadas por sistema o componente afectado revela patrones que, vistos individualmente, parecen casos aislados sin conexión — pero que en conjunto señalan un problema sistémico que merece una investigación de causa raíz seria.</p></div><a class="back" href="../index.html?cat=gestion-incidencias">← Volver a Gestión de Incidencias</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. La incidencia que vuelve cada dos semanas</a><a href="#arquitectura">2. Incidencia vs problema: la distinción que importa</a><a href="#seguridad">3. Priorización real, no por quién grita más fuerte</a><a href="#operacion">4. SLA de respuesta vs SLA de resolución</a><a href="#roadmap">5. El patrón que revela un problema sistémico</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>

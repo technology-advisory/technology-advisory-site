@@ -1,50 +1,390 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Principios de diseño: NIS2 ya no es solo para operadores críticos clásicos | Marcos Regulatorios | Technology Advisory</title><meta name="description" content="NIS2 amplió drásticamente el alcance de la directiva original. Si tu empresa tiene más de 50 empleados y opera en uno de los sectores ampliados, probableme"><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
-<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // gobernanza</span><span>categoría: <strong>Marcos Regulatorios</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Marcos Regulatorios</div><h1 class="article-title">Principios de diseño: NIS2 ya no es solo para operadores críticos clásicos</h1><p class="article-lead">NIS2 amplió drásticamente el alcance de la directiva original. Si tu empresa tiene más de 50 empleados y opera en uno de los sectores ampliados, probablemente estás dentro — y con responsabilidad personal de dirección.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Marcos Regulatorios"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
-<rect width="900" height="410" rx="14" fill="#fafaf8"/>
-<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">NIS2 y DORA: alcance ampliado</text>
-<text x="40" y="66" font-size="12" fill="#77776f">ya no son solo para infraestructuras críticas clásicas</text>
-<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">NIS2: entidades esenciales</text>
-<text x="58" y="163" font-size="11" fill="#77776f">Energía, salud, transporte — lo clásico</text>
-<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">NIS2: entidades importantes</text>
-<text x="488" y="163" font-size="11" fill="#77776f">IT, fabricantes TIC, alimentación — lo nuevo</text>
-<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">DORA: sector financiero</text>
-<text x="58" y="283" font-size="11" fill="#77776f">Bancos, aseguradoras, y sus proveedores TIC</text>
-<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Responsabilidad personal</text>
-<text x="488" y="283" font-size="11" fill="#77776f">Dirección, no solo la organización</text>
-<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
-<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
-<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Sanciones hasta 10M€ o 2% de facturación global — con responsabilidad personal de dirección</text>
-</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
-<rect width="330" height="438" rx="12" fill="#fafaf8"/>
-<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">NIS2 y DORA: alcance ampliado</text>
-<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="89" r="13" fill="#059669"/>
-<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
-<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">NIS2: entidades esenciales</text>
-<text x="64" y="102" font-size="11" fill="#77776f">Energía, salud, transporte —</text>
-<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="159" r="13" fill="#059669"/>
-<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
-<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">NIS2: entidades</text>
-<text x="64" y="172" font-size="11" fill="#77776f">IT, fabricantes TIC,</text>
-<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="229" r="13" fill="#059669"/>
-<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
-<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">DORA: sector financiero</text>
-<text x="64" y="242" font-size="11" fill="#77776f">Bancos, aseguradoras, y sus</text>
-<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="299" r="13" fill="#059669"/>
-<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
-<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Responsabilidad personal</text>
-<text x="64" y="312" font-size="11" fill="#77776f">Dirección, no solo la</text>
-<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
-<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
-<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Sanciones hasta 10M€ o 2% de facturación</text>
-<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">global — con responsabilidad personal de</text>
-<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">dirección</text>
-</svg></div></figure><div class="toc-mini"><a href="#contexto">1. El alcance que se amplió sin que muchos lo notaran</a><a href="#arquitectura">2. NIS2: entidades esenciales e importantes</a><a href="#seguridad">3. DORA: resiliencia operativa digital</a><a href="#operacion">4. Requisitos técnicos comunes a ambas normas</a><a href="#roadmap">5. Determinar si estás en scope, sin asumir que no</a></div><h2 id="contexto">1. El alcance que se amplió sin que muchas organizaciones lo notaran</h2><div class="body-text"><p><strong>NIS2 ya no afecta solo a operadores de infraestructuras críticas clásicas —energía, transporte, salud. Ahora incluye entidades "importantes" como proveedores de servicios IT, fabricantes de productos TIC y empresas de sectores que antes quedaban completamente fuera del alcance.</strong> Muchas organizaciones no han verificado si ahora están dentro.</p></div><h2 id="arquitectura">2. NIS2: entidades esenciales e importantes, con requisitos distintos pero ambos serios</h2><div class="body-text"><p>Las entidades esenciales (infraestructura crítica clásica) y las importantes (el ámbito ampliado) tienen requisitos ligeramente distintos, pero ambas categorías están sujetas a obligaciones reales de gestión de riesgo, notificación de incidentes y responsabilidad de dirección — no es una diferencia entre "regulado" y "libre".</p></div><h2 id="seguridad">3. DORA: resiliencia operativa digital específica del sector financiero</h2><div class="body-text"><p>DORA aplica al sector financiero europeo y a sus proveedores TIC críticos, exigiendo pruebas de resiliencia obligatorias —incluyendo threat-led penetration testing basado en TIBER-EU para entidades significativas— que van más allá de un pentest estándar, simulando las tácticas reales de los actores que atacan al sector financiero.</p></div><h2 id="operacion">4. Requisitos técnicos comunes que ambas normas comparten en la práctica</h2><div class="body-text"><p>Traducidos a infraestructura, ambas normas exigen: segmentación de red documentada, backup inmutable con pruebas de restauración, gestión de vulnerabilidades con SLAs, monitorización continua, gestión de identidades con MFA, cifrado de datos, e inventario completo de activos TIC.</p></div><h2 id="roadmap">5. Determinar si estás en scope, sin asumir por defecto que no lo estás</h2><div class="body-text"><p>El primer paso defendible no es implementar controles a ciegas — es determinar formalmente si la organización está en scope de NIS2, DORA, o ambas, según sector y tamaño. Asumir que "esto es para otros" sin verificarlo activamente es el error de partida más común y más costoso.</p></div><a class="back" href="../index.html?cat=marcos-regulatorios">← Volver a Marcos Regulatorios</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. El alcance que se amplió sin que muchos lo notaran</a><a href="#arquitectura">2. NIS2: entidades esenciales e importantes</a><a href="#seguridad">3. DORA: resiliencia operativa digital</a><a href="#operacion">4. Requisitos técnicos comunes a ambas normas</a><a href="#roadmap">5. Determinar si estás en scope, sin asumir que no</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport"/>
+<title>Principios de diseño: NIS2 ya no es solo para operadores críticos clásicos | Marcos Regulatorios | Technology Advisory</title>
+<meta content="NIS2 amplió drásticamente el alcance de la directiva original. Ya no habla solo de energía, transporte o salud — incluye proveedores IT, fabricantes, correo, gestión de residuos. Cómo saber si aplica, qué diferencia a esenciales de importantes, y qué arriesga la dirección si no se toma en serio." name="description"/>
+<meta content="Miguel Ángel Carriazo" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="#059669" name="theme-color"/>
+<link href="../../css/global.css" rel="stylesheet"/>
+<link href="../../css/dossier-core.css" rel="stylesheet"/>
+<link href="../../css/articulo.css" rel="stylesheet"/>
+<link href="../../css/index.css" rel="stylesheet"/>
+<link href="../../css/articulo-diagramas.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        @media (max-width: 1024px) {
+            .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
+            div[style*="padding: 16px 48px 0"], div[style*="padding: 16px 48px 0;"] { padding: 16px 4% 0 !important; }
+            div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding: 40px 4% 24px !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="card-wrapper ds-page">
+<div class="card">
+<div id="menu-container"></div>
+<div class="accent-bar" style="background:#059669;"></div>
+<div class="ds-meta">
+<span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: gobernanza</span>
+<span>categoría: <strong>Marcos Regulatorios</strong></span>
+</div>
+<div style="padding: 16px 4% 0;">
+<a class="defensa-btn-back" href="../index.html?cat=marcos-regulatorios" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Marcos Regulatorios</a>
+</div>
+<div style="padding: 40px 4% 24px; border-bottom: 1px solid #ededea;">
+<div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Principios · Marcos Regulatorios</div>
+<h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Principios de diseño: <span style="color:#059669;">NIS2 ya no es solo para operadores críticos clásicos</span></h1>
+<p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">NIS2 amplió drásticamente el alcance de la directiva original. Ya no habla solo de energía, transporte o salud — incluye proveedores IT (Information Technology), fabricantes, correo, gestión de residuos. Cómo saber si aplica, qué diferencia a esenciales de importantes, y qué arriesga la dirección si no se toma en serio.</p>
+<div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="6" r="2.6"></circle><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"></path></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><rect height="12.5" rx="1.3" width="13" x="2.5" y="3"></rect><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"></path></svg>Marcos Regulatorios</span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="9" r="6.8"></circle><path d="M9 5.3V9l2.8 1.7"></path></svg>Lectura Avanzada (16-20 min)</span>
+</div>
+</div>
+<div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+<div class="defensa-main" style="min-width:0;">
+<!-- GRÁFICO 1: EL ALCANCE AMPLIADO -->
+<figure aria-label="De NIS1 a NIS2: el alcance ampliado" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="260" rx="14" width="900"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="36">De NIS1 a NIS2: un alcance mucho más amplio</text>
+<text fill="#77776f" font-size="12" x="40" y="58">sectores que antes no estaban dentro, ahora sí</text>
+<rect fill="#f8fafc" height="150" rx="10" stroke="#94a3b8" stroke-width="1.5" width="380" x="40" y="80"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="60" y="105">NIS1 · sectores clásicos</text>
+<text fill="#334155" font-size="11" x="60" y="130">Energía · Transporte · Banca</text>
+<text fill="#334155" font-size="11" x="60" y="148">Salud · Agua · Infraestructura</text>
+<text fill="#334155" font-size="11" x="60" y="166">digital tradicional</text>
+<text fill="#64748b" font-size="10" font-weight="700" x="60" y="195">Alcance limitado, criterio nacional</text>
+<rect fill="#d1fae5" height="150" rx="10" stroke="#059669" stroke-width="1.5" width="400" x="460" y="80"></rect>
+<text fill="#065f46" font-size="13" font-weight="800" x="480" y="105">NIS2 · alcance ampliado</text>
+<text fill="#334155" font-size="11" x="480" y="130">+ Proveedores IT y cloud</text>
+<text fill="#334155" font-size="11" x="480" y="148">+ Fabricantes, correo, residuos</text>
+<text fill="#334155" font-size="11" x="480" y="166">+ Administraciones públicas</text>
+<text fill="#059669" font-size="10" font-weight="700" x="480" y="195">Criterio de tamaño + sector</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 300" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="300" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="18" y="28">De NIS1 a NIS2</text>
+<rect fill="#f8fafc" height="110" rx="8" stroke="#94a3b8" stroke-width="1.5" width="294" x="18" y="45"></rect>
+<text fill="#151915" font-size="11" font-weight="800" x="30" y="68">NIS1 · sectores clásicos</text>
+<text fill="#334155" font-size="10" x="30" y="88">Energía, transporte, banca,</text>
+<text fill="#334155" font-size="10" x="30" y="103">salud, agua</text>
+<text fill="#64748b" font-size="9" font-weight="700" x="30" y="123">Alcance limitado</text>
+<rect fill="#d1fae5" height="120" rx="8" stroke="#059669" stroke-width="1.5" width="294" x="18" y="165"></rect>
+<text fill="#065f46" font-size="11" font-weight="800" x="30" y="188">NIS2 · alcance ampliado</text>
+<text fill="#334155" font-size="10" x="30" y="208">+ Proveedores IT y cloud</text>
+<text fill="#334155" font-size="10" x="30" y="223">+ Fabricantes, correo, residuos</text>
+<text fill="#334155" font-size="10" x="30" y="238">+ Administraciones públicas</text>
+<text fill="#059669" font-size="9" font-weight="700" x="30" y="258">Criterio de tamaño + sector</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 1: El cambio de alcance de NIS1 a NIS2 — sectores nuevos que antes no estaban cubiertos.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- SECCIÓN 1 -->
+<div class="block" id="s1">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — El alcance que se pasa por alto</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El alcance ampliado que muchas organizaciones han pasado por alto</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>NIS2 ya no afecta solo a operadores de infraestructuras críticas clásicas —energía, transporte, salud. Ahora incluye entidades "importantes" como proveedores de servicios IT, fabricantes de productos críticos, servicios postales, gestión de residuos y administraciones públicas.</strong></p>
+<p>El error de diagnóstico más habitual que veo es directivos de empresas medianas de servicios tecnológicos que asumen, sin comprobarlo, que NIS2 "es cosa de las eléctricas y los hospitales". La directiva 2022/2555, transpuesta en España mediante el anteproyecto de Ley de Coordinación de Ciberseguridad, amplía el listado de sectores a 18 categorías entre esenciales e importantes, y el criterio de entrada no es solo sectorial — es también de tamaño: empresas medianas y grandes (más de 50 empleados o 10M€ de facturación) dentro de esos sectores quedan dentro, con independencia de si se perciben a sí mismas como "infraestructura crítica".</p>
+<div class="defensa-box-warning"><strong>⚠️ El diagnóstico erróneo más caro:</strong> "esto no va conmigo" es la conclusión que más veces he tenido que corregir en primeras conversaciones con clientes de sectores TIC (Tecnologías de la Información y la Comunicación), fabricación y logística. El coste de descubrirlo tarde —tras un requerimiento o una sanción— es sustancialmente mayor que el de un análisis de aplicabilidad de una tarde.</div>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+<!-- GRÁFICO 2: ESENCIALES VS IMPORTANTES -->
+<figure aria-label="Entidades esenciales frente a entidades importantes" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="260" rx="14" width="900"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="36">Entidades esenciales frente a entidades importantes</text>
+<text fill="#77776f" font-size="12" x="40" y="58">requisitos distintos, pero ambas categorías con obligaciones reales</text>
+<rect fill="#fee2e2" height="150" rx="10" stroke="#dc2626" stroke-width="1.5" width="395" x="40" y="80"></rect>
+<text fill="#7f1d1d" font-size="13" font-weight="800" x="60" y="105">Esenciales</text>
+<text fill="#334155" font-size="11" x="60" y="130">Energía, transporte, banca, salud,</text>
+<text fill="#334155" font-size="11" x="60" y="148">agua, infraestructura digital</text>
+<text fill="#dc2626" font-size="11" font-weight="700" x="60" y="175">Supervisión proactiva</text>
+<text fill="#7f1d1d" font-size="10" x="60" y="195">Auditoría periódica sin requerimiento previo</text>
+<rect fill="#fef3c7" height="150" rx="10" stroke="#d97706" stroke-width="1.5" width="395" x="465" y="80"></rect>
+<text fill="#78350f" font-size="13" font-weight="800" x="485" y="105">Importantes</text>
+<text fill="#334155" font-size="11" x="485" y="130">TIC, fabricación, correo,</text>
+<text fill="#334155" font-size="11" x="485" y="148">residuos, químicos, alimentación</text>
+<text fill="#d97706" font-size="11" font-weight="700" x="485" y="175">Supervisión reactiva</text>
+<text fill="#78350f" font-size="10" x="485" y="195">Auditoría tras incidente o denuncia</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 300" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="300" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="18" y="28">Esenciales vs importantes</text>
+<rect fill="#fee2e2" height="110" rx="8" stroke="#dc2626" stroke-width="1.5" width="294" x="18" y="45"></rect>
+<text fill="#7f1d1d" font-size="12" font-weight="800" x="30" y="68">Esenciales</text>
+<text fill="#334155" font-size="10" x="30" y="88">Energía, transporte, banca,</text>
+<text fill="#334155" font-size="10" x="30" y="103">salud, agua</text>
+<text fill="#dc2626" font-size="9" font-weight="700" x="30" y="123">Supervisión proactiva</text>
+<text fill="#7f1d1d" font-size="9" x="30" y="140">Auditoría sin requerimiento previo</text>
+<rect fill="#fef3c7" height="110" rx="8" stroke="#d97706" stroke-width="1.5" width="294" x="18" y="165"></rect>
+<text fill="#78350f" font-size="12" font-weight="800" x="30" y="188">Importantes</text>
+<text fill="#334155" font-size="10" x="30" y="208">TIC, fabricación, correo,</text>
+<text fill="#334155" font-size="10" x="30" y="223">residuos, químicos</text>
+<text fill="#d97706" font-size="9" font-weight="700" x="30" y="243">Supervisión reactiva</text>
+<text fill="#78350f" font-size="9" x="30" y="260">Auditoría tras incidente</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 2: Entidades esenciales frente a importantes — distinto régimen de supervisión, mismas obligaciones de fondo.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- SECCIÓN 2 -->
+<div class="block" id="s2">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Esenciales vs importantes</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">NIS2: entidades esenciales e importantes, con requisitos distintos pero ambos serios</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>Las entidades esenciales (infraestructura crítica clásica) y las importantes (el ámbito ampliado) tienen requisitos ligeramente distintos, pero ambas categorías están sujetas a obligaciones reales de gestión de riesgo, notificación de incidentes y gobernanza.</strong></p>
+<p>La diferencia sustantiva no está tanto en las obligaciones de fondo —ambas deben implementar medidas técnicas y organizativas de gestión de riesgo, notificar incidentes significativos, y garantizar responsabilidad de la dirección— sino en el régimen de supervisión. Las esenciales están sujetas a supervisión proactiva: la autoridad competente puede auditar sin necesidad de un requerimiento o denuncia previa. Las importantes están sujetas a supervisión reactiva: la auditoría se activa habitualmente tras un incidente, una denuncia, o indicios de incumplimiento.</p>
+<div class="defensa-box-tech"><strong>Consecuencia práctica:</strong> ser "importante" en vez de "esencial" no es un alivio real. Reduce la probabilidad de auditoría rutinaria, pero no reduce la obligación de fondo ni la sanción si se descubre incumplimiento tras un incidente. Tratar la categoría "importante" como menor prioridad es un error de cálculo de riesgo, no una lectura correcta de la norma.</div>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+<!-- SECCIÓN 3 -->
+<div class="block" id="s3">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Responsabilidad personal</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La responsabilidad personal de dirección es el cambio de fondo, no las sanciones</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>El cambio más relevante de NIS2 respecto a NIS1 no es el importe de las sanciones —aunque son sustanciales, hasta 10 millones de euros o el 2% de la facturación global anual para entidades esenciales—. Es que, por primera vez, los órganos de dirección pueden ser sancionados a título personal por incumplimientos graves en la gestión de riesgo de ciberseguridad de su organización.</p>
+<p>Esta responsabilidad personal cambia el cálculo de incentivos dentro de la organización. Ya no es solo "la empresa puede tener un problema"; es "el consejero delegado o el consejo puede tener un problema personal". Ese cambio suele ser el que finalmente moviliza presupuesto y atención ejecutiva que llevaba años estancada en propuestas del CISO (Chief Information Security Officer) sin apoyo real.</p>
+<div class="defensa-box-warning"><strong>⚠️ Implicación para el CISO:</strong> este cambio es, paradójicamente, una palanca útil. Cuando la responsabilidad se vuelve personal para dirección, el argumento de negocio para invertir en gestión de riesgo deja de depender de convencer con datos técnicos y pasa a apoyarse en el interés directo de quien firma el presupuesto.</div>
+</div>
+</div>
+<!-- GRÁFICO 3: SANCIONES NIS2 Y DORA -->
+<figure aria-label="Sanciones bajo NIS2 y DORA" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="220" rx="14" width="900"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="36">Sanciones: el coste real de no tomárselo en serio</text>
+<rect fill="#fee2e2" height="130" rx="10" stroke="#dc2626" stroke-width="1.5" width="395" x="40" y="65"></rect>
+<text fill="#7f1d1d" font-size="13" font-weight="800" x="60" y="90">NIS2 — Entidades esenciales</text>
+<text fill="#151915" font-size="15" font-weight="900" x="60" y="115">Hasta 10M€ o 2% facturación global</text>
+<text fill="#7f1d1d" font-size="11" x="60" y="140">+ Responsabilidad personal de dirección</text>
+<text fill="#7f1d1d" font-size="11" x="60" y="158">+ Suspensión temporal de actividad posible</text>
+<rect fill="#fef3c7" height="130" rx="10" stroke="#d97706" stroke-width="1.5" width="395" x="465" y="65"></rect>
+<text fill="#78350f" font-size="13" font-weight="800" x="485" y="90">DORA — Entidades financieras</text>
+<text fill="#151915" font-size="15" font-weight="900" x="485" y="115">Hasta 1% facturación diaria</text>
+<text fill="#78350f" font-size="11" x="485" y="140">+ Sanción diaria hasta corregir</text>
+<text fill="#78350f" font-size="11" x="485" y="158">+ Supervisión directa de proveedores TIC</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 260" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="260" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="18" y="28">Sanciones NIS2 y DORA</text>
+<rect fill="#fee2e2" height="90" rx="8" stroke="#dc2626" stroke-width="1.5" width="294" x="18" y="45"></rect>
+<text fill="#7f1d1d" font-size="11" font-weight="800" x="30" y="68">NIS2 — Esenciales</text>
+<text fill="#151915" font-size="12" font-weight="900" x="30" y="88">10M€ o 2% facturación</text>
+<text fill="#7f1d1d" font-size="9" x="30" y="105">+ Responsabilidad personal</text>
+<text fill="#7f1d1d" font-size="9" x="30" y="120">+ Suspensión de actividad</text>
+<rect fill="#fef3c7" height="90" rx="8" stroke="#d97706" stroke-width="1.5" width="294" x="18" y="145"></rect>
+<text fill="#78350f" font-size="11" font-weight="800" x="30" y="168">DORA — Financieras</text>
+<text fill="#151915" font-size="12" font-weight="900" x="30" y="188">1% facturación diaria</text>
+<text fill="#78350f" font-size="9" x="30" y="205">+ Sanción diaria hasta corregir</text>
+<text fill="#78350f" font-size="9" x="30" y="220">+ Supervisión de proveedores TIC</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 3: Comparativa de sanciones bajo NIS2 y DORA (Digital Operational Resilience Act) — el coste real del incumplimiento.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+<!-- GRÁFICO 4: TRES PASOS PARA DETERMINAR APLICABILIDAD -->
+<figure aria-label="Tres pasos para determinar si NIS2 aplica a tu organización" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="200" rx="14" width="900"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="36">Tres pasos, no meses: determinar si NIS2 aplica</text>
+<defs><marker id="ap-a" markerheight="6" markerwidth="6" orient="auto" refx="8" refy="5" viewbox="0 0 10 10"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"></path></marker></defs>
+<rect fill="#dbeafe" height="110" rx="10" stroke="#3b82f6" stroke-width="1.5" width="255" x="40" y="65"></rect>
+<text fill="#1e40af" font-size="12" font-weight="800" x="60" y="90">1. Sector</text>
+<text fill="#334155" font-size="10" x="60" y="112">¿Encaja en alguno de</text>
+<text fill="#334155" font-size="10" x="60" y="127">los 18 sectores listados?</text>
+<line marker-end="url(#ap-a)" stroke="#94a3b8" stroke-width="2" x1="300" x2="330" y1="120" y2="120"></line>
+<rect fill="#fef3c7" height="110" rx="10" stroke="#d97706" stroke-width="1.5" width="255" x="335" y="65"></rect>
+<text fill="#78350f" font-size="12" font-weight="800" x="355" y="90">2. Tamaño</text>
+<text fill="#334155" font-size="10" x="355" y="112">¿Más de 50 empleados</text>
+<text fill="#334155" font-size="10" x="355" y="127">o 10M€ de facturación?</text>
+<line marker-end="url(#ap-a)" stroke="#94a3b8" stroke-width="2" x1="595" x2="625" y1="120" y2="120"></line>
+<rect fill="#d1fae5" height="110" rx="10" stroke="#059669" stroke-width="1.5" width="230" x="630" y="65"></rect>
+<text fill="#065f46" font-size="12" font-weight="800" x="650" y="90">3. Categoría</text>
+<text fill="#334155" font-size="10" x="650" y="112">¿Esencial o</text>
+<text fill="#334155" font-size="10" x="650" y="127">importante?</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 260" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="260" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="18" y="28">Tres pasos de aplicabilidad</text>
+<rect fill="#dbeafe" height="60" rx="8" stroke="#3b82f6" stroke-width="1.5" width="294" x="18" y="45"></rect>
+<text fill="#1e40af" font-size="11" font-weight="800" x="30" y="68">1. Sector — ¿de los 18 listados?</text>
+<rect fill="#fef3c7" height="60" rx="8" stroke="#d97706" stroke-width="1.5" width="294" x="18" y="115"></rect>
+<text fill="#78350f" font-size="11" font-weight="800" x="30" y="138">2. Tamaño — ¿50+ empl. o 10M€?</text>
+<rect fill="#d1fae5" height="60" rx="8" stroke="#059669" stroke-width="1.5" width="294" x="18" y="185"></rect>
+<text fill="#065f46" font-size="11" font-weight="800" x="30" y="208">3. Categoría — ¿esencial o importante?</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 4: Los tres pasos para determinar si NIS2 aplica a una organización concreta.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- SECCIÓN 4 -->
+<div class="block" id="s4">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — El coste del incumplimiento</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El coste del incumplimiento: sanciones significativas y responsabilidad personal</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>Las sanciones de NIS2 pueden alcanzar hasta 10 millones de euros o el 2% de la facturación global anual —lo que sea mayor— para entidades esenciales, y cifras algo menores pero igualmente significativas para importantes. Los órganos de dirección también pueden ser sancionados personalmente por incumplimientos graves.</strong></p>
+<p>Para poner el importe en perspectiva: una organización mediana con 40 millones de facturación anual se enfrenta a una sanción potencial de hasta 800.000 euros por el criterio del 2%, además del coste reputacional, el coste de remediación forzosa, y el riesgo de responsabilidad personal para su dirección. Comparado con el coste de un programa de adecuación bien diseñado —que para una organización de ese tamaño suele oscilar entre 60.000 y 250.000 euros según el punto de partida— la aritmética del incumplimiento no favorece la inacción.</p>
+<div class="defensa-box-success"><strong>✔ El argumento de negocio correcto:</strong> no presentes la adecuación a NIS2 como coste de cumplimiento. Preséntala como seguro frente a una sanción cuyo coste esperado (probabilidad de incidente × sanción potencial) supera con facilidad el coste del programa de adecuación en la mayoría de escenarios reales.</div>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+<!-- SECCIÓN 5 -->
+<div class="block" id="s5">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Cómo determinar si aplica</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El análisis de aplicabilidad no debería tardar más de una semana</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>Determinar si NIS2 aplica a una organización concreta es un ejercicio acotado, no un proyecto de meses. Los tres pasos son: identificar si la actividad principal encaja en alguno de los 18 sectores listados en los anexos de la directiva; verificar si el tamaño supera los umbrales (más de 50 empleados o más de 10M€ de facturación, con excepciones para casos de criticidad específica independientemente del tamaño); y, si ambas condiciones se cumplen, determinar si la categoría es esencial o importante según el sector concreto.</p>
+<p>Este análisis, bien enfocado, se resuelve en días, no en meses. El problema real no es la complejidad del análisis, es que muchas organizaciones nunca lo hacen porque asumen de antemano que no les aplica. La inversión de una semana de análisis es la decisión de menor coste y mayor impacto en todo el proceso de adecuación regulatoria.</p>
+<div class="defensa-box-tech"><strong>Práctica recomendada:</strong> documenta el análisis de aplicabilidad aunque la conclusión sea "no aplica". Si la interpretación cambia con el tiempo —por crecimiento de la organización o por guías de interpretación posteriores de la autoridad—, tener el análisis original documentado protege frente a la acusación de negligencia por no haberlo evaluado nunca.</div>
+</div>
+</div>
+
+                    <div class="defensa-box-info ta-reference-box" style="margin:34px 0;">
+                        <strong>🔎 Correspondencia normativa concreta.</strong> En diseño, estas referencias deben convertirse en principios, límites, dependencias y decisiones de arquitectura. NIS2 sitúa la responsabilidad de los órganos de dirección en el artículo 20, las medidas de gestión de riesgos de ciberseguridad en el 21 y la notificación de incidentes en el 23. DORA articula el gobierno y el marco de riesgo TIC en los artículos 5 y 6, la protección y prevención en el 9, la respuesta y recuperación en el 11, la gestión de incidentes en el 17 y el riesgo de terceros en los artículos 28 a 30. El RGPD (Reglamento General de Protección de Datos) exige conectar principios, responsabilidad, diseño, registro, seguridad y evaluación de impacto mediante los artículos 5, 24, 25, 30, 32 y 35. La matriz de correspondencia puede mantenerse en ServiceNow IRM (Integrated Risk Management), Archer, MetricStream u otra plataforma GRC (Governance, Risk and Compliance), pero las evidencias deben proceder de los sistemas que ejecutan el control: IAM (Identity and Access Management), CMDB (Configuration Management Database), SIEM (Security Information and Event Management), ticketing, repositorios de configuración, contratos y plataformas de continuidad.
+                    </div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 06</span></div>
+<!-- SECCIÓN 6: CHECKLIST -->
+<div class="block" id="s6">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 06 — Checklist de aplicabilidad</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Checklist de aplicabilidad: ¿te aplica NIS2 y todavía no lo sabes?</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>Este checklist es un primer filtro, no una determinación legal definitiva. Responde honestamente a cada pregunta.</p>
+<div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:20px; margin:16px 0;">
+<table style="width:100%; border-collapse:collapse; font-size:14px;">
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669; width:30px;">1.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Sector</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Tu actividad principal encaja en alguno de los 18 sectores de los anexos NIS2?</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669;">2.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Tamaño</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Superas 50 empleados o 10M€ de facturación anual?</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669;">3.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Análisis documentado</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Existe un análisis formal de aplicabilidad, aunque la conclusión fuera "no aplica"?</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669;">4.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Categoría clara</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">Si aplica, ¿sabes si eres esencial o importante, y qué implica cada una?</td>
+</tr>
+<tr>
+<td style="padding:10px 0; font-weight:700; color:#059669;">5.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Dirección informada</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿La dirección conoce su exposición personal a sanciones bajo la norma?</td>
+</tr>
+</table>
+</div>
+<p><strong>Resultado:</strong> si no puedes responder con certeza a la pregunta 3, el primer paso no es un proyecto de adecuación — es una semana de análisis de aplicabilidad, documentado y firmado.</p>
+</div>
+</div>
+<!-- PIE DE AUTOR -->
+
+<div class="defensa-foot">
+<div class="defensa-author">
+<div class="defensa-foot-label">Autor</div>
+<div class="defensa-author-name">Miguel Ángel Carriazo</div>
+<p class="defensa-author-bio">Arquitecto de Infraestructura y Ciberseguridad con más de 25 años de experiencia diseñando, asegurando y operando entornos tecnológicos críticos. Lead Auditor en ISO/IEC 27001 e ISO/IEC 42001, especializado en gobierno, riesgo, cumplimiento y transformación tecnológica. En esta área aborda los marcos regulatorios desde su traducción a controles, responsabilidades, evidencias y decisiones tecnológicas verificables.</p>
+</div>
+</div></div>
+<aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+<div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+<div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+<table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Área</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#0f172a; font-weight:600; text-align:right;">Marcos Regulatorios</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Enfoque</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#059669; font-weight:700; text-align:right;">Principios de Diseño</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Temas clave</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#059669; font-weight:700; text-align:right;">NIS2, alcance, sanciones</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Nivel</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#0f172a; font-weight:600; text-align:right;">Avanzado</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Lectura</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#0f172a; font-weight:600; text-align:right;">16-20 min</td></tr>
+<tr><td style="padding:10px 0; color:#64748b; font-weight:700;">Etiquetas</td><td style="padding:10px 0; color:#0f172a; font-weight:600; text-align:right;">#NIS2 #alcance #sanciones #DORA</td></tr>
+</table>
+</div>
+<div>
+<div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+<nav class="defensa-toc-nav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+<a href="#s1" style="text-decoration:none; color:#059669; font-size:14px; font-weight:700; border-left:2px solid #059669; margin-left:-16px; padding-left:14px;">01. El alcance que se ignora</a>
+<a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Esenciales vs importantes</a>
+<a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Responsabilidad personal</a>
+<a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. El coste real</a>
+<a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Cómo determinarlo</a>
+<a href="#s6" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">06. Checklist</a>
+</nav>
+</div>
+</aside>
+</div>
+<div class="related-section">
+<div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+<div class="related-grid">
+<a class="related-card" href="marcos-regulatorios-controles-evidencias.html">
+<div class="r-meta">Marcos Regulatorios · Controles</div>
+<div class="r-title">Controles y evidencias: el gap analysis que reveló que ya cumplías el 70%</div>
+<div class="r-desc">Si ya certificas ISO 27001 con alcance amplio, probablemente ya cubres buena parte de NIS2.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+<a class="related-card" href="marcos-regulatorios-modelo-operativo.html">
+<div class="r-meta">Marcos Regulatorios · Operaciones</div>
+<div class="r-title">Modelo operativo: quién decide si un incidente se notifica en 24 horas</div>
+<div class="r-desc">Sin criterio definido de antemano y sin autoridad clara para decidir, las primeras horas se pierden discutiendo, no notificando.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+<a class="related-card" href="marcos-regulatorios-madurez-roadmap.html">
+<div class="r-meta">Marcos Regulatorios · Madurez</div>
+<div class="r-title">Madurez y roadmap: de no saber si aplica a cumplimiento integrado</div>
+<div class="r-desc">Los cuatro niveles reales de madurez frente a marcos regulatorios como NIS2 y DORA.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+</div>
+</div>
+<div id="footer-container"></div>
+</div>
+</div>
+<script src="../../js/menu.js"></script>
+<script src="../../js/footer.js"></script>
+<script>
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
+            } else {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function() {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -52,7 +52,7 @@
 
 <div style="padding: 40px 48px 24px; border-bottom: 1px solid #ededea;">
     <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Caso Práctico · Kubernetes</div>
-    <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">HA en Kubernetes: <span style="color:#059669;">El Mito de la Autocuración</span></h1>
+    <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">HA (High Availability) en Kubernetes: <span style="color:#059669;">El Mito de la Autocuración</span></h1>
     <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Kubernetes reinicia pods caídos, pero eso no es alta disponibilidad. PodDisruptionBudgets, anti-affinity, topology spread constraints y multi-zona hecho bien.</p>
     <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
         <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
@@ -248,7 +248,7 @@
             <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Presupuesto de Disrupción</div>
             <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">PodDisruptionBudgets: el control que casi nadie configura</h2>
             <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>Un PodDisruptionBudget (PDB) define cuántas réplicas de una aplicación pueden estar caídas simultáneamente durante disrupciones <strong>voluntarias</strong> — mantenimiento de nodos, actualizaciones del clúster, escalado descendente. Sin un PDB, un drain de nodo puede tumbar todas las réplicas de un servicio a la vez si todas resultan estar en ese nodo.</p>
+                <p>Un PodDisruptionBudget (PDB (Pod Disruption Budget)) define cuántas réplicas de una aplicación pueden estar caídas simultáneamente durante disrupciones <strong>voluntarias</strong> — mantenimiento de nodos, actualizaciones del clúster, escalado descendente. Sin un PDB, un drain de nodo puede tumbar todas las réplicas de un servicio a la vez si todas resultan estar en ese nodo.</p>
                 <p>El PDB no protege contra fallos involuntarios (un nodo que se cae de golpe) — para eso está la distribución de réplicas. Protege contra el operador que, sin mala intención, drena tres nodos seguidos para actualizar el clúster y no se da cuenta de que las tres réplicas de un servicio crítico estaban precisamente en esos tres nodos.</p>
                 <div class="defensa-box-tech"><strong>Configuración mínima:</strong> <code>minAvailable: 1</code> o <code>maxUnavailable: 1</code> para servicios con 2-3 réplicas. Para servicios con más réplicas, <code>maxUnavailable: 25%</code> es un punto de partida razonable.</div>
             </div>
@@ -272,7 +272,7 @@
             <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Plano de Control</div>
             <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La HA del plano de control también es responsabilidad tuya</h2>
             <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>Toda la discusión anterior asume implícitamente que el plano de control de Kubernetes (API server, etcd, scheduler) está sano. En clústeres gestionados (EKS, AKS, GKE) el proveedor se ocupa de eso. En clústeres autogestionados, la HA del plano de control es tan crítica como la de las cargas de trabajo — y etcd, en particular, requiere un número impar de nodos (típicamente 3 o 5) por el mismo motivo de quorum que cualquier sistema distribuido.</p>
+                <p>Toda la discusión anterior asume implícitamente que el plano de control de Kubernetes (API (Application Programming Interface) server, etcd, scheduler) está sano. En clústeres gestionados (EKS (Elastic Kubernetes Service), AKS (Azure Kubernetes Service), GKE (Google Kubernetes Engine)) el proveedor se ocupa de eso. En clústeres autogestionados, la HA del plano de control es tan crítica como la de las cargas de trabajo — y etcd, en particular, requiere un número impar de nodos (típicamente 3 o 5) por el mismo motivo de quorum que cualquier sistema distribuido.</p>
                 <p>Un error habitual en clústeres on-premises es dimensionar correctamente la HA de las aplicaciones pero desplegar etcd en un único nodo "para simplificar". Si ese nodo cae, no es que una aplicación se caiga — es que todo el clúster deja de poder programar, escalar o reconciliar nada, aunque los pods que ya estaban corriendo sigan funcionando por un tiempo.</p>
             </div>
         </div>
@@ -331,19 +331,19 @@
     <div class="related-grid">
         <a class="related-card" href="windows-failover-clustering.html">
             <div class="r-meta">Alta Disponibilidad · Windows Server</div>
-            <div class="r-title">Windows Failover Clustering: quorum, CSV y el detalle que nadie revisa</div>
+            <div class="r-title">Windows Failover Clustering: quorum, CSV (Cluster Shared Volume) y el detalle que nadie revisa</div>
             <div class="r-desc">Configuración real de Failover Clustering en Windows Server.</div>
             <span class="r-link">Leer artículo →</span>
         </a>
         <a class="related-card" href="vsphere-ha-drs.html">
             <div class="r-meta">Alta Disponibilidad · VMware</div>
-            <div class="r-title">vSphere HA y DRS: Clústeres que se Curan Solos</div>
+            <div class="r-title">vSphere HA y DRS (Distributed Resource Scheduler): Clústeres que se Curan Solos</div>
             <div class="r-desc">El mismo problema de quorum y fencing, resuelto del lado VMware.</div>
             <span class="r-link">Leer artículo →</span>
         </a>
         <a class="related-card" href="multi-az-cloud.html">
             <div class="r-meta">Alta Disponibilidad · Multi-Cloud</div>
-            <div class="r-title">Multi-AZ en AWS, Azure y GCP: lo que cada proveedor no te cuenta</div>
+            <div class="r-title">Multi-AZ (Availability Zone) en AWS, Azure y GCP (Google Cloud Platform): lo que cada proveedor no te cuenta</div>
             <div class="r-desc">Comparativa práctica de alta disponibilidad multi-zona en los tres grandes clouds.</div>
             <span class="r-link">Leer artículo →</span>
         </a>

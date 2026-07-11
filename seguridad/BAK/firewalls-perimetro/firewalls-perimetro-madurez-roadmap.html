@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Madurez y roadmap: del any-any olvidado al firewalling este-oeste distribuido | Firewalls y Perímetro | Technology Advisory</title><meta name="description" content="Los cuatro niveles reales de madurez de perímetro, del firewall con reglas heredadas sin auditar al firewalling distribuido que cubre también el tráfico in"><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
+<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // seguridad</span><span>categoría: <strong>Firewalls y Perímetro</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Firewalls y Perímetro</div><h1 class="article-title">Madurez y roadmap: del any-any olvidado al firewalling este-oeste distribuido</h1><p class="article-lead">Los cuatro niveles reales de madurez de perímetro, del firewall con reglas heredadas sin auditar al firewalling distribuido que cubre también el tráfico interno.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Firewalls y Perímetro"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="900" height="410" rx="14" fill="#fafaf8"/>
+<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Cuatro niveles de madurez de perímetro</text>
+<text x="40" y="66" font-size="12" fill="#77776f">del perímetro poroso al firewalling distribuido interno</text>
+<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Nivel 1 · Poroso</text>
+<text x="58" y="163" font-size="11" fill="#77776f">Reglas heredadas, sin auditar</text>
+<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Nivel 2 · Gestionado</text>
+<text x="488" y="163" font-size="11" fill="#77776f">Proceso de cambios, sin revisión periódica</text>
+<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Nivel 3 · Auditado</text>
+<text x="58" y="283" font-size="11" fill="#77776f">Revisión trimestral, cero any-any</text>
+<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Nivel 4 · Distribuido</text>
+<text x="488" y="283" font-size="11" fill="#77776f">Firewalling también este-oeste</text>
+<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">El salto al Nivel 4 extiende el firewall más allá del perímetro tradicional</text>
+</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 420" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="330" height="420" rx="12" fill="#fafaf8"/>
+<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Cuatro niveles de madurez de perímetro</text>
+<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="89" r="13" fill="#059669"/>
+<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Nivel 1 · Poroso</text>
+<text x="64" y="102" font-size="11" fill="#77776f">Reglas heredadas, sin auditar</text>
+<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="159" r="13" fill="#059669"/>
+<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Nivel 2 · Gestionado</text>
+<text x="64" y="172" font-size="11" fill="#77776f">Proceso de cambios, sin</text>
+<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="229" r="13" fill="#059669"/>
+<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Nivel 3 · Auditado</text>
+<text x="64" y="242" font-size="11" fill="#77776f">Revisión trimestral, cero</text>
+<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="299" r="13" fill="#059669"/>
+<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Nivel 4 · Distribuido</text>
+<text x="64" y="312" font-size="11" fill="#77776f">Firewalling también este-oeste</text>
+<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+<rect x="18" y="340" width="294" height="60" rx="10" fill="url(#gm)"/>
+<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">El salto al Nivel 4 extiende el firewall</text>
+<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">más allá del perímetro tradicional</text>
+</svg></div></figure><div class="toc-mini"><a href="#contexto">1. El firewall que solo mira hacia fuera</a><a href="#arquitectura">2. Nivel 1 y 2: reglas heredadas y proceso básico</a><a href="#seguridad">3. Nivel 3: auditado con evidencia real</a><a href="#operacion">4. Nivel 4: firewalling también dentro</a><a href="#roadmap">5. El perímetro ya no es solo la frontera</a></div><h2 id="contexto">1. El firewall que solo mira hacia fuera, mientras el riesgo está también dentro</h2><div class="body-text"><p><strong>Muchas organizaciones invierten fuertemente en el firewall perimetral y dejan el tráfico interno completamente sin filtrar.</strong> El resultado es un perímetro robusto que no ayuda nada una vez que un atacante ya está dentro — que es exactamente el escenario que hay que asumir posible.</p></div><h2 id="arquitectura">2. Nivel 1 y 2: reglas heredadas y proceso básico de cambios</h2><div class="body-text"><p>El <strong>Nivel 1 (Poroso)</strong> tiene reglas acumuladas durante años sin auditoría, probablemente con any-any olvidados. El <strong>Nivel 2 (Gestionado)</strong> introduce un proceso formal de solicitud y aprobación de cambios — un avance real, aunque sin revisión periódica de lo ya existente.</p></div><h2 id="seguridad">3. Nivel 3: auditado con evidencia real y revisión trimestral</h2><div class="body-text"><p>El <strong>Nivel 3 (Auditado)</strong> añade revisión periódica contra tráfico real, recuento verificado de reglas permisivas en cero o justificadas, y evidencia exportable del proceso completo — el firewall como sistema gestionado activamente, no solo configurado una vez.</p></div><h2 id="operacion">4. Nivel 4: firewalling distribuido que también cubre el tráfico este-oeste</h2><div class="body-text"><p>El <strong>Nivel 4 (Distribuido)</strong> extiende el filtrado más allá del perímetro tradicional hacia el tráfico interno servidor-a-servidor, con microsegmentación o firewalling distribuido a nivel de carga de trabajo — reconociendo que el 70% del tráfico en un datacenter moderno nunca cruza el perímetro tradicional.</p></div><h2 id="roadmap">5. El perímetro ya no es solo la frontera con internet</h2><div class="body-text"><p>El roadmap de madurez de perímetro moderno reconoce que el concepto de "perímetro único" ha perdido sentido con el cloud, el trabajo remoto y las arquitecturas distribuidas. La progresión natural es hacia firewalling en cada punto de decisión relevante, no solo en la frontera con el exterior.</p></div><a class="back" href="../index.html?cat=firewalls-perimetro">← Volver a Firewalls y Perímetro</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. El firewall que solo mira hacia fuera</a><a href="#arquitectura">2. Nivel 1 y 2: reglas heredadas y proceso básico</a><a href="#seguridad">3. Nivel 3: auditado con evidencia real</a><a href="#operacion">4. Nivel 4: firewalling también dentro</a><a href="#roadmap">5. El perímetro ya no es solo la frontera</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>

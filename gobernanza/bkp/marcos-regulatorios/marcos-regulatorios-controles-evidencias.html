@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+    <title>Controles y evidencias: el gap analysis que reveló que ya cumplías el 70% | Marcos Regulatorios | Technology Advisory</title>
+    <meta name="description" content="Organizaciones que ya certifican ISO 27001 con alcance amplio descubren, al hacer el gap analysis contra NIS2, que ya cubren una parte sustancial de los requisitos. Cómo mapear evidencia reutilizable y construir un plan de adecuación por olas, no un proyecto único.">
+    <meta name="author" content="Miguel Ángel Carriazo">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#059669">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/dossier-core.css">
+    <link rel="stylesheet" href="../../css/articulo.css">
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/articulo-diagramas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @media (max-width: 1024px) {
+            .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
+            div[style*="padding: 16px 48px 0"], div[style*="padding: 16px 48px 0;"] { padding: 16px 4% 0 !important; }
+            div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding: 40px 4% 24px !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-wrapper ds-page">
+        <div class="card">
+
+            <div id="menu-container"></div>
+            <div class="accent-bar" style="background:#059669;"></div>
+
+            <div class="ds-meta">
+                <span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: gobernanza</span>
+                <span>categoría: <strong>Marcos Regulatorios</strong></span>
+            </div>
+
+            <div style="padding: 16px 4% 0;">
+                <a href="../index.html?cat=marcos-regulatorios" class="defensa-btn-back" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Marcos Regulatorios</a>
+            </div>
+
+            <div style="padding: 40px 4% 24px; border-bottom: 1px solid #ededea;">
+                <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Controles · Marcos Regulatorios</div>
+                <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Controles y evidencias: <span style="color:#059669;">el gap analysis que reveló que ya cumplías el 70%</span></h1>
+                <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Organizaciones que ya certifican ISO 27001 con alcance amplio descubren, al hacer el gap analysis contra NIS2, que ya cubren una parte sustancial de los requisitos. Cómo mapear evidencia reutilizable y construir un plan de adecuación por olas, no un proyecto único.</p>
+                <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>Marcos Regulatorios</span>
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>Lectura Avanzada (16-20 min)</span>
+                </div>
+            </div>
+
+            <div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+                <div class="defensa-main" style="min-width:0;">
+
+                    <!-- GRÁFICO 1: SOLAPAMIENTO ISO 27001 / NIS2 -->
+                    <figure class="article-diagram" aria-label="El solapamiento entre ISO 27001 y NIS2" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="260" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">El solapamiento entre ISO 27001 y NIS2</text>
+                                <text x="40" y="58" font-size="12" fill="#77776f">lo que ya se cumple no siempre es evidente sin mapear</text>
+                                <circle cx="330" cy="150" r="80" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="1.5"/>
+                                <circle cx="450" cy="150" r="80" fill="#059669" fill-opacity="0.15" stroke="#059669" stroke-width="1.5"/>
+                                <text x="280" y="145" font-size="13" font-weight="800" fill="#1e40af" text-anchor="middle">ISO 27001</text>
+                                <text x="500" y="145" font-size="13" font-weight="800" fill="#065f46" text-anchor="middle">NIS2</text>
+                                <text x="390" y="150" font-size="18" font-weight="900" fill="#151915" text-anchor="middle">~70%</text>
+                                <text x="390" y="168" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">solapamiento</text>
+                                <rect x="600" y="105" width="260" height="95" rx="10" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                                <text x="620" y="130" font-size="12" font-weight="800" fill="#151915">Lo que ya cubres</text>
+                                <text x="620" y="150" font-size="11" fill="#334155">Riesgo, incidentes,</text>
+                                <text x="620" y="166" font-size="11" fill="#334155">continuidad, control de acceso</text>
+                                <text x="620" y="185" font-size="10" font-weight="700" fill="#059669">Reutilizable, no duplicar</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 300" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="300" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">Solapamiento ISO 27001 / NIS2</text>
+                                <circle cx="110" cy="110" r="55" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="1.5"/>
+                                <circle cx="180" cy="110" r="55" fill="#059669" fill-opacity="0.15" stroke="#059669" stroke-width="1.5"/>
+                                <text x="75" y="106" font-size="10" font-weight="800" fill="#1e40af" text-anchor="middle">ISO 27001</text>
+                                <text x="215" y="106" font-size="10" font-weight="800" fill="#065f46" text-anchor="middle">NIS2</text>
+                                <text x="145" y="112" font-size="15" font-weight="900" fill="#151915" text-anchor="middle">~70%</text>
+                                <rect x="18" y="195" width="294" height="90" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                                <text x="30" y="218" font-size="11" font-weight="800" fill="#151915">Lo que ya cubres</text>
+                                <text x="30" y="238" font-size="10" fill="#334155">Riesgo, incidentes,</text>
+                                <text x="30" y="254" font-size="10" fill="#334155">continuidad, control de acceso</text>
+                                <text x="30" y="272" font-size="9" font-weight="700" fill="#059669">Reutilizable, no duplicar</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 1: El solapamiento entre ISO 27001 y NIS2 — lo que ya se cumple y lo que falta.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- SECCIÓN 1 -->
+                    <div class="block" id="s1">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — El gap analysis</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El gap analysis que sorprendió para bien: ya se cumplía más de lo esperado</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>Organizaciones que ya certifican ISO 27001 con un alcance razonablemente amplio descubren, al hacer el gap analysis contra NIS2, que ya cubren una parte sustancial de los requisitos — el ejercicio de adecuación no siempre parte de cero.</strong></p>
+                            <p>He visto esta sorpresa repetirse en varias auditorías de arranque: la dirección espera un proyecto de adecuación completo de doce meses y un presupuesto elevado, y el gap analysis inicial revela que la infraestructura procedimental de la gestión de riesgo, la respuesta a incidentes y la continuidad de negocio ya cumple gran parte de lo que NIS2 pide. Lo que suele faltar no es el fondo, es la forma: procesos específicos de notificación regulatoria, cobertura de la cadena de proveedores, y evidencia de responsabilidad personal de la dirección.</p>
+                            <div class="defensa-box-success"><strong>✔ El gap analysis no es un ejercicio de búsqueda de fallos, es un ejercicio de identificación de lo que ya funciona.</strong> Identificar lo que ya se cumple es tan importante como identificar lo que falta — y es lo que evita presupuestar un proyecto el doble de caro de lo necesario.</div>
+                            <p>El gap analysis debe documentarse formalmente, con un mapeo claro entre cada requisito de la norma y el control existente que lo cubre (o no), y una valoración de cumplimiento explícita para cada punto. Este documento es la base del plan de adecuación, y también la primera pieza de evidencia que un auditor va a pedir cuando llegue el momento de demostrar diligencia debida.</p>
+                        </div>
+                    </div>
+
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+
+                    <!-- GRÁFICO 2: MAPEO DE EVIDENCIA REUTILIZABLE -->
+                    <figure class="article-diagram" aria-label="Mapeo de evidencia reutilizable de ISO 27001 a NIS2" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="280" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">Mapeo de evidencia: qué se reutiliza, qué falta</text>
+                                <rect x="40" y="60" width="230" height="30" rx="5" fill="#0f172a"/>
+                                <text x="155" y="80" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Control ISO 27001</text>
+                                <rect x="280" y="60" width="230" height="30" rx="5" fill="#0f172a"/>
+                                <text x="395" y="80" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">¿Reutilizable en NIS2?</text>
+                                <rect x="520" y="60" width="340" height="30" rx="5" fill="#0f172a"/>
+                                <text x="690" y="80" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Evidencia técnica</text>
+                                <rect x="40" y="95" width="230" height="28" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                <text x="52" y="114" font-size="10" fill="#334155">Gestión de riesgos</text>
+                                <rect x="280" y="95" width="230" height="28" rx="4" fill="#ecfdf5" stroke="#a7f3d0"/>
+                                <text x="292" y="114" font-size="10" font-weight="700" fill="#047857">✔ Sí — A.8.2/A.8.3</text>
+                                <rect x="520" y="95" width="340" height="28" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                <text x="532" y="114" font-size="10" fill="#475569">Registro corporativo + actas de comité</text>
+                                <rect x="40" y="128" width="230" height="28" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                <text x="52" y="147" font-size="10" fill="#334155">Incidentes de seguridad</text>
+                                <rect x="280" y="128" width="230" height="28" rx="4" fill="#ecfdf5" stroke="#a7f3d0"/>
+                                <text x="292" y="147" font-size="10" font-weight="700" fill="#047857">✔ Sí — A.6.8</text>
+                                <rect x="520" y="128" width="340" height="28" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                <text x="532" y="147" font-size="10" fill="#475569">Logs SIEM + lecciones aprendidas</text>
+                                <rect x="40" y="161" width="230" height="28" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                <text x="52" y="180" font-size="10" fill="#334155">Continuidad de negocio</text>
+                                <rect x="280" y="161" width="230" height="28" rx="4" fill="#ecfdf5" stroke="#a7f3d0"/>
+                                <text x="292" y="180" font-size="10" font-weight="700" fill="#047857">✔ Sí — A.5.29/A.5.30</text>
+                                <rect x="520" y="161" width="340" height="28" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                <text x="532" y="180" font-size="10" fill="#475569">Plan BCP/DRP + simulacros anuales</text>
+                                <rect x="40" y="194" width="230" height="28" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                                <text x="52" y="213" font-size="10" fill="#334155">Notificación CSIRT 24h/72h</text>
+                                <rect x="280" y="194" width="230" height="28" rx="4" fill="#fef2f2" stroke="#fecaca"/>
+                                <text x="292" y="213" font-size="10" font-weight="700" fill="#b91c1c">✗ No — proceso específico</text>
+                                <rect x="520" y="194" width="340" height="28" rx="4" fill="#fef2f2" stroke="#fecaca"/>
+                                <text x="532" y="213" font-size="10" font-weight="600" fill="#991b1b">Desarrollar flujo y playbook desde cero</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 340" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="340" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">Mapeo de evidencia</text>
+                                <rect x="18" y="45" width="294" height="35" rx="6" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+                                <text x="30" y="63" font-size="10" font-weight="700" fill="#047857">✔ Riesgos e incidentes — reutilizable</text>
+                                <text x="30" y="76" font-size="9" fill="#334155">A.8.2/A.8.3 + A.6.8</text>
+                                <rect x="18" y="88" width="294" height="35" rx="6" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+                                <text x="30" y="106" font-size="10" font-weight="700" fill="#047857">✔ BCP/DRP y accesos — reutilizable</text>
+                                <text x="30" y="119" font-size="9" fill="#334155">A.5.29/A.5.30</text>
+                                <rect x="18" y="131" width="294" height="35" rx="6" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+                                <text x="30" y="149" font-size="10" font-weight="700" fill="#047857">✔ Cadena de proveedores — ajuste leve</text>
+                                <rect x="18" y="174" width="294" height="45" rx="6" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+                                <text x="30" y="192" font-size="10" font-weight="700" fill="#991b1b">✗ Notificación CSIRT 24h — brecha</text>
+                                <text x="30" y="208" font-size="9" fill="#334155">Requiere flujo específico</text>
+                                <rect x="18" y="230" width="294" height="50" rx="8" fill="#0f172a"/>
+                                <text x="30" y="252" font-size="10" font-weight="700" fill="#ffffff">Estrategia:</text>
+                                <text x="30" y="268" font-size="9" fill="#e2e8f0">aislar la brecha, blindar el core técnico</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 2: Mapeo de evidencia reutilizable de ISO 27001 hacia los requisitos de NIS2.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- SECCIÓN 2 -->
+                    <div class="block" id="s2">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Reutilización de evidencia</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Reutilizar evidencia de ISO 27001 existente en lugar de duplicar esfuerzo</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>Muchos controles que ISO 27001 ya exige —gestión de riesgo, gestión de incidentes, continuidad de negocio— se solapan sustancialmente con los requisitos de NIS2. El gap analysis debe identificar explícitamente qué evidencia ya existe y es reutilizable, no reconstruir todo desde cero.</strong></p>
+                            <div class="defensa-box-tech"><strong>Práctica recomendada:</strong> crea un mapeo de controles entre ISO 27001 y NIS2. Para cada requisito de NIS2, identifica si existe un control equivalente en ISO 27001. Si existe, la evidencia es reutilizable. Si no existe, es una brecha real que debe cubrirse desde cero.</div>
+                            <p>La reutilización de evidencia no es solo eficiente en presupuesto, también es defendible en auditoría. Un auditor no penaliza a una organización por utilizar la misma evidencia para múltiples marcos regulatorios — la penaliza por no tener evidencia en absoluto. Reutilizar bien construido es señal de madurez, no de atajo.</p>
+                            <p>La brecha más consistente en las revisiones que he hecho es siempre la misma: notificación CSIRT en 24/72 horas. ISO 27001 exige gestionar incidentes, pero no exige el flujo específico de notificación regulatoria con esos plazos exactos y ese destinatario concreto. Esa pieza casi siempre hay que construirla desde cero, por muy maduro que sea el resto del sistema de gestión.</p>
+                        </div>
+                    </div>
+
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+
+                    <!-- GRÁFICO 3: PLAN POR OLAS -->
+                    <figure class="article-diagram" aria-label="Plan de adecuación por olas cronológicas" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="240" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">Plan de adecuación por olas, no proyecto único</text>
+                                <text x="40" y="58" font-size="12" fill="#77776f">priorizar por criticidad regulatoria, no por comodidad de calendario</text>
+                                <defs><marker id="ola-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/></marker></defs>
+                                <rect x="40" y="80" width="255" height="120" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="60" y="105" font-size="12" font-weight="800" fill="#1e40af">Ola 1 · Gobierno</text>
+                                <text x="60" y="128" font-size="11" fill="#334155">Activos, alcance legal,</text>
+                                <text x="60" y="144" font-size="11" fill="#334155">gap analysis completo</text>
+                                <text x="60" y="170" font-size="11" font-weight="700" fill="#1e40af">Mes 1-2</text>
+                                <line x1="300" y1="140" x2="330" y2="140" stroke="#94a3b8" stroke-width="2" marker-end="url(#ola-a)"/>
+                                <rect x="335" y="80" width="255" height="120" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+                                <text x="355" y="105" font-size="12" font-weight="800" fill="#78350f">Ola 2 · Reporte</text>
+                                <text x="355" y="128" font-size="11" fill="#334155">Flujo notificación 24h,</text>
+                                <text x="355" y="144" font-size="11" fill="#334155">playbooks técnicos</text>
+                                <text x="355" y="170" font-size="11" font-weight="700" fill="#d97706">Mes 2-3</text>
+                                <line x1="595" y1="140" x2="625" y2="140" stroke="#94a3b8" stroke-width="2" marker-end="url(#ola-a)"/>
+                                <rect x="630" y="80" width="230" height="120" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="650" y="105" font-size="12" font-weight="800" fill="#065f46">Ola 3 · Cadena</text>
+                                <text x="650" y="128" font-size="11" fill="#334155">Riesgo de terceros,</text>
+                                <text x="650" y="144" font-size="11" fill="#334155">cláusulas SLA, auditoría</text>
+                                <text x="650" y="170" font-size="11" font-weight="700" fill="#059669">Mes 3-5</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 320" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="320" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">Plan por olas</text>
+                                <rect x="18" y="45" width="294" height="80" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="30" y="68" font-size="11" font-weight="800" fill="#1e40af">Ola 1 · Gobierno (mes 1-2)</text>
+                                <text x="30" y="86" font-size="10" fill="#334155">Activos, alcance, gap analysis</text>
+                                <rect x="18" y="135" width="294" height="80" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+                                <text x="30" y="158" font-size="11" font-weight="800" fill="#78350f">Ola 2 · Reporte (mes 2-3)</text>
+                                <text x="30" y="176" font-size="10" fill="#334155">Flujo notificación, playbooks</text>
+                                <rect x="18" y="225" width="294" height="80" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="30" y="248" font-size="11" font-weight="800" fill="#065f46">Ola 3 · Cadena (mes 3-5)</text>
+                                <text x="30" y="266" font-size="10" fill="#334155">Terceros, SLA, auditoría</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 3: Plan de adecuación estructurado en olas cronológicas por criticidad regulatoria.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- SECCIÓN 3 -->
+                    <div class="block" id="s3">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Plan por olas</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Plan de adecuación estructurado por olas, con fechas concretas, no un proyecto único</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>Un plan de adecuación de "doce meses, todo a la vez" es difícil de gestionar y casi imposible de auditar por hitos. La alternativa que funciona en la práctica es dividir el plan en olas, cada una con entregables concretos y fecha, priorizadas por criticidad regulatoria: primero el gobierno y el alcance, después el reporte de incidentes (porque es lo que un regulador examina primero tras un incidente real), y por último la cadena de proveedores (que suele ser la pieza más lenta por depender de terceros).</p>
+                            <p>Esta secuenciación no es arbitraria. Si la organización sufre un incidente durante la adecuación —y estadísticamente, en un proyecto de varios meses, es razonablemente probable— lo primero que un regulador va a preguntar es si el proceso de notificación funcionó. Tener la Ola 2 completada antes que la Ola 3 significa que ese riesgo específico está cubierto aunque el proyecto global no haya terminado.</p>
+                            <div class="defensa-box-warning"><strong>⚠️ El error habitual:</strong> tratar la adecuación como un proyecto de "todo o nada" que se presenta como completado al final. Un plan por olas permite demostrar progreso auditable en cada fase, y permite reaccionar si una ola concreta se retrasa sin comprometer todo el calendario.</p></div>
+                        </div>
+                    </div>
+
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+
+                    <!-- GRÁFICO 4: LOS CUATRO COMPONENTES DE EVIDENCIA DEFENDIBLE -->
+                    <figure class="article-diagram" aria-label="Los cuatro componentes de evidencia defendible ante auditor" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="220" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">Los cuatro componentes de evidencia defendible</text>
+                                <text x="40" y="58" font-size="12" fill="#77776f">lo que un auditor NIS2 pide, más allá de la certificación ISO 27001</text>
+                                <rect x="40" y="80" width="195" height="110" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="60" y="105" font-size="12" font-weight="800" fill="#1e40af">Gap analysis</text>
+                                <text x="60" y="125" font-size="10" fill="#334155">con fecha y firma</text>
+                                <rect x="245" y="80" width="195" height="110" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+                                <text x="265" y="105" font-size="12" font-weight="800" fill="#78350f">Plan de adecuación</text>
+                                <text x="265" y="125" font-size="10" fill="#334155">con hitos y responsables</text>
+                                <rect x="450" y="80" width="195" height="110" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="470" y="105" font-size="12" font-weight="800" fill="#065f46">Mapeo técnico</text>
+                                <text x="470" y="125" font-size="10" fill="#334155">control por control</text>
+                                <rect x="655" y="80" width="205" height="110" rx="10" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+                                <text x="675" y="105" font-size="12" font-weight="800" fill="#312e81">Trazabilidad</text>
+                                <text x="675" y="125" font-size="10" fill="#334155">de decisiones tomadas</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 300" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="300" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">Cuatro componentes de evidencia</text>
+                                <rect x="18" y="45" width="294" height="55" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="30" y="68" font-size="11" font-weight="800" fill="#1e40af">Gap analysis con fecha y firma</text>
+                                <rect x="18" y="110" width="294" height="55" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+                                <text x="30" y="133" font-size="11" font-weight="800" fill="#78350f">Plan con hitos y responsables</text>
+                                <rect x="18" y="175" width="294" height="55" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="30" y="198" font-size="11" font-weight="800" fill="#065f46">Mapeo técnico control por control</text>
+                                <rect x="18" y="240" width="294" height="55" rx="8" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+                                <text x="30" y="263" font-size="11" font-weight="800" fill="#312e81">Trazabilidad de decisiones</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 4: Los cuatro componentes de evidencia defendible ante un auditor NIS2.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- SECCIÓN 4 -->
+                    <div class="block" id="s4">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Evidencia defendible</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Lo que un auditor de NIS2 pide, y lo que no basta con enseñar</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>La evidencia defendible ante un auditor NIS2 tiene cuatro componentes: el gap analysis documentado con fecha y firma, el plan de adecuación con hitos y responsables, la evidencia técnica del mapeo control por control (no solo la afirmación de que "está cubierto"), y trazabilidad de las decisiones tomadas durante la adecuación —por qué se priorizó una ola sobre otra, quién lo aprobó—.</p>
+                            <p>No basta con enseñar la certificación ISO 27001 y decir "esto ya cubre NIS2". Un auditor pide el mapeo explícito control por control, con la evidencia técnica concreta detrás de cada afirmación de cobertura. Sin ese mapeo documentado, la certificación ISO 27001 es una señal de madurez general, pero no es evidencia específica de cumplimiento NIS2.</p>
+                            <div class="defensa-box-success"><strong>✔ Buena práctica:</strong> mantener el mapeo de controles como documento vivo, actualizado cada vez que cambia el alcance de la certificación ISO 27001 o se publica una guía de interpretación nueva de NIS2 por parte de la autoridad competente (en España, el INCIBE-CERT y el CCN).</p></div>
+                        </div>
+                    </div>
+
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+
+                    <!-- SECCIÓN 5 -->
+                    <div class="block" id="s5">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — La trampa del "ya cumplimos"</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El 70% de solapamiento no es 70% de cumplimiento</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>El dato de "70% de solapamiento" que abre este artículo es real y útil, pero se malinterpreta con facilidad. Solapamiento de controles no equivale a cumplimiento normativo. ISO 27001 y NIS2 comparten dominios temáticos, pero los requisitos concretos —plazos exactos, destinatarios, responsabilidad personal de dirección explícitamente nombrada— son propios de NIS2 y no aparecen en la norma ISO tal cual.</p>
+                            <p>El riesgo de la trampa es presupuestario y de expectativa: dirección escucha "70% ya cumplido" y asume que el proyecto restante es pequeño. En la práctica, el 30% restante suele concentrar los requisitos más costosos de implementar —flujos de notificación con plazos legales estrictos, responsabilidad personal documentada, auditoría de la cadena de suministro— precisamente porque son los que ISO 27001 no cubre por diseño.</p>
+                            <div class="defensa-box-tech"><strong>Comunicación a dirección:</strong> presenta siempre el porcentaje de solapamiento junto con una estimación de esfuerzo por brecha, no solo el porcentaje aislado. "70% cubierto, pero el 30% restante concentra el 60% del esfuerzo estimado" es una frase más honesta y más útil para presupuestar que "ya cumplimos el 70%".</p></div>
+                        </div>
+                    </div>
+
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 06</span></div>
+
+                    <!-- SECCIÓN 6: CHECKLIST -->
+                    <div class="block" id="s6">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 06 — Checklist de adecuación</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Checklist de adecuación: ¿tu gap analysis sobreviviría a un auditor?</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>Este checklist evalúa si el trabajo de adecuación a NIS2 (o marco regulatorio equivalente) tiene la solidez documental que un auditor va a exigir. Responde honestamente a cada pregunta.</p>
+                            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:20px; margin:16px 0;">
+                                <table style="width:100%; border-collapse:collapse; font-size:14px;">
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669; width:30px;">1.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Gap analysis documentado</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Existe documento formal con fecha, firma y mapeo control por control?</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">2.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Evidencia técnica del mapeo</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Cada afirmación de cobertura tiene evidencia concreta detrás, no solo una casilla marcada?</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">3.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Plan por olas con fechas</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿El plan de adecuación tiene hitos concretos con responsables, no solo un calendario aspiracional?</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">4.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Esfuerzo estimado por brecha</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Dirección conoce el esfuerzo real del 30% restante, no solo el porcentaje de solapamiento?</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">5.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Mapeo actualizado</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Se revisa el mapeo cuando cambia el alcance ISO 27001 o la interpretación de NIS2?</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p><strong>Resultado:</strong> si no puedes responder "sí" con evidencia a las cinco preguntas, el gap analysis existe pero no es defendible. La diferencia entre un solapamiento del 70% bien documentado y uno solo afirmado es la que un auditor va a encontrar en la primera hora de revisión.</p>
+                        </div>
+                    </div>
+
+                    <!-- PIE DE AUTOR -->
+                    <div class="defensa-foot">
+                        <div class="defensa-author">
+                            <div class="defensa-foot-label">Autor</div>
+                            <div class="defensa-author-name">Miguel Ángel Carriazo</div>
+                            <p class="defensa-author-bio">vCISO y Arquitecto de Infraestructura con más de 25 años diseñando, asegurando y operando sistemas críticos. ISO 27001 &amp; 42001 Lead Auditor.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+                    <div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+                        <div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+                        <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Área</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#0f172a; font-weight:600; text-align:right;">Marcos Regulatorios</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Enfoque</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#059669; font-weight:700; text-align:right;">Controles y Evidencias</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Temas clave</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#059669; font-weight:700; text-align:right;">Gap analysis, ISO 27001, NIS2</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Nivel</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#0f172a; font-weight:600; text-align:right;">Avanzado</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Lectura</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#0f172a; font-weight:600; text-align:right;">16-20 min</td></tr>
+                            <tr><td style="padding:10px 0; color:#64748b; font-weight:700;">Etiquetas</td><td style="padding:10px 0; color:#0f172a; font-weight:600; text-align:right;">#NIS2 #ISO27001 #gapanalysis #evidencia</td></tr>
+                        </table>
+                    </div>
+                    <div>
+                        <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+                        <nav class="defensa-toc-nav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+                            <a href="#s1" style="text-decoration:none; color:#059669; font-size:14px; font-weight:700; border-left:2px solid #059669; margin-left:-16px; padding-left:14px;">01. El gap analysis</a>
+                            <a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Reutilización de evidencia</a>
+                            <a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Plan por olas</a>
+                            <a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Evidencia defendible</a>
+                            <a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. La trampa del 70%</a>
+                            <a href="#s6" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">06. Checklist</a>
+                        </nav>
+                    </div>
+                </aside>
+
+            </div>
+
+            <div class="related-section">
+                <div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+                <div class="related-grid">
+                    <a class="related-card" href="marcos-regulatorios-diseno-principios.html">
+                        <div class="r-meta">Marcos Regulatorios · Principios</div>
+                        <div class="r-title">Principios de diseño: NIS2 ya no es solo para operadores críticos clásicos</div>
+                        <div class="r-desc">NIS2 amplió drásticamente el alcance de la directiva original.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                    <a class="related-card" href="marcos-regulatorios-modelo-operativo.html">
+                        <div class="r-meta">Marcos Regulatorios · Operaciones</div>
+                        <div class="r-title">Modelo operativo: quién decide si un incidente se notifica en 24 horas</div>
+                        <div class="r-desc">Sin criterio definido de antemano y sin autoridad clara para decidir, las primeras horas se pierden discutiendo, no notificando.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                    <a class="related-card" href="marcos-regulatorios-madurez-roadmap.html">
+                        <div class="r-meta">Marcos Regulatorios · Madurez</div>
+                        <div class="r-title">Madurez y roadmap: de no saber si aplica a cumplimiento integrado</div>
+                        <div class="r-desc">Los cuatro niveles reales de madurez frente a marcos regulatorios como NIS2 y DORA.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                </div>
+            </div>
+
+            <div id="footer-container"></div>
+
+        </div>
+    </div>
+
+    <script src="../../js/menu.js"></script>
+    <script src="../../js/footer.js"></script>
+    <script>
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
+            } else {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function() {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>

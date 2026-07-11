@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=3.0">
+<title>Arquitecturas de referencia | Technology Advisory</title><meta name="description" content="Arquitecturas de referencia comentadas para redes seguras, perímetro, DevSecOps, alta disponibilidad y continuidad."><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669">
+<link rel="stylesheet" href="../css/global.css"><link rel="stylesheet" href="../css/dossier-core.css"><link rel="stylesheet" href="../css/articulo.css"><link rel="stylesheet" href="../css/index.css"><link rel="stylesheet" href="../css/articulo-diagramas.css"><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+.reference-wrap{padding:40px 4% 50px}.reference-lead{font-size:17px;line-height:1.75;color:#475569;max-width:980px}.reference-note{margin:22px 0 34px;padding:17px 20px;border-left:4px solid #059669;background:#f8fafc;color:#334155;line-height:1.7}.reference-card{border:1px solid #e2e8f0;border-radius:14px;background:#fff;margin:0 0 32px;overflow:hidden}.reference-head{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;padding:22px 24px 18px;border-bottom:1px solid #e2e8f0}.reference-series{font-family:monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#059669;font-weight:700}.reference-head h2{font-size:24px;line-height:1.2;color:#151915;margin:7px 0 0}.reference-code{font-family:monospace;font-size:11px;color:#64748b;white-space:nowrap}.reference-intro{padding:18px 24px;font-size:16px;line-height:1.75;color:#334155}.reference-diagram{position:relative;padding:16px 24px 24px;background:#fafaf8;cursor:zoom-in}.reference-diagram svg{display:block;width:100%;height:auto}.diagrama-desktop{display:block!important}.diagrama-mobile{display:none!important}.reference-analysis{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid #e2e8f0}.reference-analysis>div{padding:20px 24px}.reference-analysis>div+div{border-left:1px solid #e2e8f0}.reference-analysis span{font-family:monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#059669;font-weight:700}.reference-analysis p{margin:9px 0 0;line-height:1.7;color:#475569;font-size:14px}.reference-foot{padding:12px 24px;border-top:1px solid #e2e8f0;font-family:monospace;font-size:10px;color:#64748b;line-height:1.6}.references-pagination{display:flex;justify-content:center;gap:8px;align-items:center;margin:32px 0 0}.page-btn{min-width:38px;height:38px;padding:0 11px;border:1px solid #d8d4c8;background:#fff;color:#475569;border-radius:7px;cursor:pointer;font-family:monospace}.page-btn.active{background:#059669;color:#fff;border-color:#059669}.page-btn:disabled{opacity:.35;cursor:not-allowed}.reference-diagram.zoomed{position:fixed;z-index:1001;inset:4vh 3vw;background:#fff;padding:20px;overflow:auto;cursor:zoom-out;box-shadow:0 20px 70px rgba(0,0,0,.25)}.zoom-overlay{position:fixed;inset:0;background:rgba(15,23,42,.72);z-index:1000;display:none}.zoom-overlay.active{display:block}@media(max-width:700px){.reference-head{display:block}.reference-code{display:block;margin-top:10px}.reference-analysis{grid-template-columns:1fr}.reference-analysis>div+div{border-left:0;border-top:1px solid #e2e8f0}.diagrama-desktop{display:none!important}.diagrama-mobile{display:block!important}.reference-wrap{padding:30px 4% 42px}.reference-diagram{padding:12px}}
+</style></head><body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669"></div><div class="ds-meta"><span><span class="dot" style="background:#059669"></span>Technology Advisory // arquitecturas de referencia</span><span>colección: <strong>patrones comentados</strong></span></div><div style="padding:16px 4% 0"><a href="../index.html" class="defensa-btn-back" style="display:inline-block;background:#059669;color:#fff!important;font-weight:700;font-size:14px;padding:8px 20px;border-radius:30px;text-decoration:none">← Volver al inicio</a></div><header style="padding:40px 4% 24px;border-bottom:1px solid #ededea"><div style="font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.15em;font-weight:700;margin-bottom:8px"><span style="color:#059669">Referencias</span><span style="color:#151915"> · Arquitectura técnica</span></div><h1 style="font-size:clamp(32px,5vw,46px);font-weight:900;color:#151915;margin:0 0 12px;line-height:1.08;letter-spacing:-.02em">Arquitecturas de referencia: <span style="color:#059669">el diagrama importa menos que las decisiones que hay detrás</span></h1><p class="reference-lead">Diez patrones técnicos comentados para redes seguras, perímetro, cloud híbrido, DevSecOps, core redundante y continuidad. No son recetas universales: cada diseño se acompaña de la intención arquitectónica, lo que intenta resolver y los límites que deben validarse antes de llevarlo a producción.</p></header><main class="reference-wrap"><div class="reference-note"><strong>Criterio de uso:</strong> estas arquitecturas son puntos de partida para discusión y diseño. Direccionamiento, productos, latencias, capacidades, RTO/RPO y controles deben ajustarse al contexto real. Copiar un diagrama sin validar sus supuestos es otra forma de construir deuda técnica.</div><div id="referencesGrid"><article class="reference-card" data-ref-item id="segmentacion-red-corporativa">
+      <div class="reference-head"><div><span class="reference-series">Redes seguras</span><h2>Segmentación de red corporativa</h2></div><span class="reference-code">TA-NET-01 · LLD</span></div>
+      <div class="reference-intro"><strong>Segmentación por función y sensibilidad.</strong> Separa usuarios, servidores, gestión e invitados para reducir movimiento lateral y limitar el alcance de un compromiso. El firewall interno y las reglas entre segmentos convierten la segmentación lógica en una frontera verificable.</div>
+      <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de segmentación de red corporativa en tres capas con VLANs y firewall interno" class="diagrama-desktop" role="img" viewbox="0 0 900 560" xmlns="http://www.w3.org/2000/svg">
+<!-- Internet -->
+<ellipse cx="450" cy="42" fill="none" rx="90" ry="26" stroke="#16150f" stroke-width="1.5"></ellipse>
+<text fill="#16150f" font-size="13" font-weight="600" text-anchor="middle" x="450" y="47">INTERNET</text>
+<line stroke="#16150f" stroke-width="1.5" x1="450" x2="450" y1="68" y2="100"></line>
+<!-- FW perimetral -->
+<rect fill="#e6f4ee" height="46" stroke="#059669" stroke-width="1.6" width="140" x="380" y="100"></rect>
+<text fill="#16150f" font-size="12" font-weight="600" text-anchor="middle" x="450" y="119">FW PERIMETRAL</text>
+<text fill="#5c584a" font-size="10" text-anchor="middle" x="450" y="136">HA activo/pasivo · IPS</text>
+<line stroke="#16150f" stroke-width="1.5" x1="450" x2="450" y1="146" y2="180"></line>
+<!-- Core -->
+<rect fill="#ffffff" height="52" stroke="#16150f" stroke-width="1.5" width="240" x="330" y="180"></rect>
+<text fill="#16150f" font-size="12" font-weight="600" text-anchor="middle" x="450" y="201">CAPA CORE</text>
+<text fill="#5c584a" font-size="10" text-anchor="middle" x="450" y="219">2× switch L3 · stack · routing inter-VLAN</text>
+<!-- Firewall interno east-west -->
+<rect fill="#e6f4ee" height="46" stroke="#059669" stroke-width="1.6" width="150" x="620" y="183"></rect>
+<text fill="#16150f" font-size="11.5" font-weight="600" text-anchor="middle" x="695" y="202">FW INTERNO</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="695" y="218">inspección east-west</text>
+<line stroke="#059669" stroke-dasharray="5 3" stroke-width="1.4" x1="570" x2="620" y1="206" y2="206"></line>
+<line stroke="#16150f" stroke-width="1.5" x1="450" x2="450" y1="232" y2="266"></line>
+<!-- Distribución -->
+<rect fill="#ffffff" height="46" stroke="#16150f" stroke-width="1.5" width="240" x="330" y="266"></rect>
+<text fill="#16150f" font-size="12" font-weight="600" text-anchor="middle" x="450" y="285">CAPA DISTRIBUCIÓN</text>
+<text fill="#5c584a" font-size="10" text-anchor="middle" x="450" y="302">agregación · ACL entre segmentos</text>
+<!-- Líneas hacia VLANs -->
+<line stroke="#16150f" stroke-width="1.5" x1="450" x2="450" y1="312" y2="336"></line>
+<line stroke="#16150f" stroke-width="1.5" x1="120" x2="780" y1="336" y2="336"></line>
+<line stroke="#16150f" stroke-width="1.5" x1="120" x2="120" y1="336" y2="360"></line>
+<line stroke="#16150f" stroke-width="1.5" x1="340" x2="340" y1="336" y2="360"></line>
+<line stroke="#16150f" stroke-width="1.5" x1="560" x2="560" y1="336" y2="360"></line>
+<line stroke="#16150f" stroke-width="1.5" x1="780" x2="780" y1="336" y2="360"></line>
+<!-- VLAN usuarios -->
+<rect fill="#ffffff" height="88" stroke="#16150f" stroke-width="1.3" width="170" x="35" y="360"></rect>
+<rect fill="#16150f" height="24" width="170" x="35" y="360"></rect>
+<text fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="middle" x="120" y="376">VLAN 10 · USUARIOS</text>
+<text fill="#5c584a" font-size="10" x="45" y="404">10.10.0.0/22</text>
+<text fill="#5c584a" font-size="10" x="45" y="421">802.1X + NAC</text>
+<text fill="#5c584a" font-size="10" x="45" y="438">sin acceso a gestión</text>
+<!-- VLAN servidores -->
+<rect fill="#ffffff" height="88" stroke="#16150f" stroke-width="1.3" width="170" x="255" y="360"></rect>
+<rect fill="#16150f" height="24" width="170" x="255" y="360"></rect>
+<text fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="middle" x="340" y="376">VLAN 20 · SERVIDORES</text>
+<text fill="#5c584a" font-size="10" x="265" y="404">10.20.0.0/24</text>
+<text fill="#5c584a" font-size="10" x="265" y="421">tráfico vía FW interno</text>
+<text fill="#5c584a" font-size="10" x="265" y="438">microsegmentación</text>
+<!-- VLAN gestión -->
+<rect fill="#e6f4ee" height="88" stroke="#059669" stroke-width="1.5" width="170" x="475" y="360"></rect>
+<rect fill="#059669" height="24" width="170" x="475" y="360"></rect>
+<text fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="middle" x="560" y="376">VLAN 99 · GESTIÓN</text>
+<text fill="#5c584a" font-size="10" x="485" y="404">10.99.0.0/26 · OOB</text>
+<text fill="#5c584a" font-size="10" x="485" y="421">solo jump host + MFA</text>
+<text fill="#5c584a" font-size="10" x="485" y="438">iDRAC · iLO · vCenter</text>
+<!-- VLAN invitados -->
+<rect fill="#ffffff" height="88" stroke="#16150f" stroke-dasharray="6 3" stroke-width="1.3" width="170" x="695" y="360"></rect>
+<rect fill="#5c584a" height="24" width="170" x="695" y="360"></rect>
+<text fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="middle" x="780" y="376">VLAN 40 · INVITADOS</text>
+<text fill="#5c584a" font-size="10" x="705" y="404">172.16.40.0/24</text>
+<text fill="#5c584a" font-size="10" x="705" y="421">aislada · solo salida web</text>
+<text fill="#5c584a" font-size="10" x="705" y="438">portal cautivo</text>
+<!-- Regla bloqueada invitados → corporativo -->
+<line stroke="#b3402e" stroke-dasharray="4 4" stroke-width="1.4" x1="695" x2="205" y1="470" y2="470"></line>
+<line stroke="#b3402e" stroke-width="2" x1="440" x2="456" y1="462" y2="478"></line>
+<line stroke="#b3402e" stroke-width="2" x1="456" x2="440" y1="462" y2="478"></line>
+<line stroke="#b3402e" stroke-dasharray="4 4" stroke-width="1.4" x1="780" x2="780" y1="448" y2="470"></line>
+<line stroke="#b3402e" stroke-dasharray="4 4" stroke-width="1.4" x1="120" x2="120" y1="448" y2="470"></line>
+<text fill="#b3402e" font-size="10" text-anchor="middle" x="450" y="496">DENY invitados → red corporativa (deny-all por defecto)</text>
+<!-- Leyenda -->
+<line stroke="#d8d4c8" stroke-width="1" x1="35" x2="865" y1="520" y2="520"></line>
+<rect fill="#e6f4ee" height="10" stroke="#059669" stroke-width="1.2" width="14" x="35" y="534"></rect>
+<text fill="#5c584a" font-size="9.5" x="56" y="543">punto de control de seguridad</text>
+<line stroke="#b3402e" stroke-dasharray="4 4" stroke-width="1.4" x1="260" x2="290" y1="539" y2="539"></line>
+<text fill="#5c584a" font-size="9.5" x="298" y="543">flujo denegado</text>
+<line stroke="#059669" stroke-dasharray="5 3" stroke-width="1.4" x1="420" x2="450" y1="539" y2="539"></line>
+<text fill="#5c584a" font-size="9.5" x="458" y="543">tráfico inspeccionado east-west</text>
+</svg><svg aria-label="Diagrama vertical de segmentación de red corporativa" class="diagrama-mobile" role="img" viewbox="0 0 400 780" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="200" cy="34" fill="none" rx="80" ry="24" stroke="#16150f" stroke-width="1.5"></ellipse>
+<text fill="#16150f" font-size="14" font-weight="600" text-anchor="middle" x="200" y="39">INTERNET</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="58" y2="84"></line>
+<rect fill="#e6f4ee" height="52" stroke="#059669" stroke-width="1.6" width="260" x="70" y="84"></rect>
+<text fill="#16150f" font-size="13.5" font-weight="600" text-anchor="middle" x="200" y="106">FW PERIMETRAL</text>
+<text fill="#5c584a" font-size="11.5" text-anchor="middle" x="200" y="125">HA activo/pasivo · IPS</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="136" y2="162"></line>
+<rect fill="#ffffff" height="56" stroke="#16150f" stroke-width="1.5" width="260" x="70" y="162"></rect>
+<text fill="#16150f" font-size="13.5" font-weight="600" text-anchor="middle" x="200" y="184">CAPA CORE</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="204">2× switch L3 · inter-VLAN</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="218" y2="244"></line>
+<rect fill="#e6f4ee" height="52" stroke="#059669" stroke-width="1.6" width="260" x="70" y="244"></rect>
+<text fill="#16150f" font-size="13.5" font-weight="600" text-anchor="middle" x="200" y="266">FW INTERNO</text>
+<text fill="#5c584a" font-size="11.5" text-anchor="middle" x="200" y="285">inspección east-west</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="296" y2="322"></line>
+<rect fill="#ffffff" height="52" stroke="#16150f" stroke-width="1.5" width="260" x="70" y="322"></rect>
+<text fill="#16150f" font-size="13.5" font-weight="600" text-anchor="middle" x="200" y="344">DISTRIBUCIÓN</text>
+<text fill="#5c584a" font-size="11.5" text-anchor="middle" x="200" y="363">ACL entre segmentos</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="374" y2="400"></line>
+<rect fill="#ffffff" height="70" stroke="#16150f" stroke-width="1.3" width="320" x="40" y="400"></rect>
+<rect fill="#16150f" height="26" width="320" x="40" y="400"></rect>
+<text fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle" x="200" y="418">VLAN 10 · USUARIOS</text>
+<text fill="#5c584a" font-size="11.5" x="54" y="446">10.10.0.0/22 · 802.1X + NAC</text>
+<text fill="#5c584a" font-size="11.5" x="54" y="463">sin acceso a gestión</text>
+<line stroke="#d8d4c8" stroke-width="1.3" x1="200" x2="200" y1="470" y2="486"></line>
+<rect fill="#ffffff" height="70" stroke="#16150f" stroke-width="1.3" width="320" x="40" y="486"></rect>
+<rect fill="#16150f" height="26" width="320" x="40" y="486"></rect>
+<text fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle" x="200" y="504">VLAN 20 · SERVIDORES</text>
+<text fill="#5c584a" font-size="11.5" x="54" y="532">10.20.0.0/24 · vía FW interno</text>
+<text fill="#5c584a" font-size="11.5" x="54" y="549">microsegmentación</text>
+<line stroke="#d8d4c8" stroke-width="1.3" x1="200" x2="200" y1="556" y2="572"></line>
+<rect fill="#e6f4ee" height="70" stroke="#059669" stroke-width="1.5" width="320" x="40" y="572"></rect>
+<rect fill="#059669" height="26" width="320" x="40" y="572"></rect>
+<text fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle" x="200" y="590">VLAN 99 · GESTIÓN</text>
+<text fill="#5c584a" font-size="11.5" x="54" y="618">10.99.0.0/26 · OOB · jump host</text>
+<text fill="#5c584a" font-size="11.5" x="54" y="635">MFA · iDRAC · iLO · vCenter</text>
+<line stroke="#d8d4c8" stroke-width="1.3" x1="200" x2="200" y1="642" y2="658"></line>
+<rect fill="#ffffff" height="70" stroke="#16150f" stroke-dasharray="6 3" stroke-width="1.3" width="320" x="40" y="658"></rect>
+<rect fill="#5c584a" height="26" width="320" x="40" y="658"></rect>
+<text fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle" x="200" y="676">VLAN 40 · INVITADOS</text>
+<text fill="#5c584a" font-size="11.5" x="54" y="704">172.16.40.0/24 · aislada</text>
+<text fill="#5c584a" font-size="11.5" x="54" y="721">solo salida web · portal cautivo</text>
+<text fill="#b3402e" font-size="10.5" text-anchor="middle" x="200" y="762">DENY invitados → red corporativa</text>
+</svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
+      <div class="reference-analysis"><div><span>Qué resuelve</span><p>Separa usuarios, servidores, gestión e invitados para reducir movimiento lateral y limitar el alcance de un compromiso. El firewall interno y las reglas entre segmentos convierten la segmentación lógica en una frontera verificable.</p></div><div><span>Límites y validación</span><p>La topología es una referencia. Las VLAN, rangos, ACL y zonas deben adaptarse a los flujos autorizados, al modelo de identidad y a la criticidad de los activos.</p></div></div>
+      <div class="reference-foot">FIG. 1 — Segmentación en tres capas con VLANs funcionales, gestión out-of-band y firewall interno para tráfico east-west. Política deny-all por defecto entre segmentos.</div>
+    </article><article class="reference-card" data-ref-item id="dmz-doble-capa">
+      <div class="reference-head"><div><span class="reference-series">Redes seguras</span><h2>DMZ moderna de doble capa</h2></div><span class="reference-code">TA-NET-02 · HLD</span></div>
+      <div class="reference-intro"><strong>Publicación de servicios con doble frontera.</strong> Aísla la exposición pública mediante una DMZ de doble capa, separando los controles de entrada de los sistemas internos. WAF, reverse proxy y relays reducen la necesidad de publicar directamente servidores de negocio.</div>
+      <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de DMZ con doble firewall, WAF, reverse proxy y relay de correo" class="diagrama-desktop" role="img" viewbox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="90" cy="200" fill="none" rx="62" ry="26" stroke="#16150f" stroke-width="1.5"></ellipse>
+<text fill="#16150f" font-size="12.5" font-weight="600" text-anchor="middle" x="90" y="205">INTERNET</text>
+<line stroke="#16150f" stroke-width="1.5" x1="152" x2="196" y1="200" y2="200"></line>
+<polygon fill="#16150f" points="196,195 206,200 196,205"></polygon>
+<!-- FW externo -->
+<rect fill="#e6f4ee" height="64" stroke="#059669" stroke-width="1.6" width="96" x="206" y="168"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="254" y="194">FW</text>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="254" y="209">EXTERNO</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="254" y="224">solo 443/25 in</text>
+<line stroke="#16150f" stroke-width="1.5" x1="302" x2="346" y1="200" y2="200"></line>
+<polygon fill="#16150f" points="346,195 356,200 346,205"></polygon>
+<!-- Zona DMZ -->
+<rect fill="none" height="300" stroke="#8a6d1f" stroke-dasharray="8 4" stroke-width="1.4" width="240" x="356" y="60"></rect>
+<text fill="#8a6d1f" font-size="11" font-weight="600" letter-spacing="2" text-anchor="middle" x="476" y="82">ZONA DMZ · 192.168.100.0/24</text>
+<rect fill="#ffffff" height="56" stroke="#16150f" stroke-width="1.3" width="180" x="386" y="102"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="476" y="124">WAF</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="476" y="142">OWASP CRS · TLS termination</text>
+<rect fill="#ffffff" height="56" stroke="#16150f" stroke-width="1.3" width="180" x="386" y="176"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="476" y="198">REVERSE PROXY</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="476" y="216">sin datos · sin credenciales AD</text>
+<rect fill="#ffffff" height="56" stroke="#16150f" stroke-width="1.3" width="180" x="386" y="250"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="476" y="272">RELAY SMTP</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="476" y="290">antispam · sandboxing adjuntos</text>
+<text fill="#8a6d1f" font-size="9.5" text-anchor="middle" x="476" y="340">hosts hardenizados · sin rutas a LAN · logging a SIEM</text>
+<line stroke="#16150f" stroke-width="1.5" x1="596" x2="640" y1="200" y2="200"></line>
+<polygon fill="#16150f" points="640,195 650,200 640,205"></polygon>
+<!-- FW interno -->
+<rect fill="#e6f4ee" height="64" stroke="#059669" stroke-width="1.6" width="96" x="650" y="168"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="698" y="194">FW</text>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="698" y="209">INTERNO</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="698" y="224">otro fabricante</text>
+<line stroke="#16150f" stroke-width="1.5" x1="746" x2="790" y1="200" y2="200"></line>
+<polygon fill="#16150f" points="790,195 800,200 790,205"></polygon>
+<!-- LAN -->
+<rect fill="#ffffff" height="100" stroke="#16150f" stroke-width="1.5" width="80" x="800" y="150"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="840" y="190">LAN</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="840" y="208">apps · BBDD</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="840" y="223">AD · ficheros</text>
+<!-- Flujo prohibido directo -->
+<path d="M 254 260 Q 450 400 840 268" fill="none" stroke="#b3402e" stroke-dasharray="4 4" stroke-width="1.4"></path>
+<line stroke="#b3402e" stroke-width="2" x1="540" x2="556" y1="352" y2="368"></line>
+<line stroke="#b3402e" stroke-width="2" x1="556" x2="540" y1="352" y2="368"></line>
+<text fill="#b3402e" font-size="10" text-anchor="middle" x="548" y="392">ningún flujo directo Internet → LAN: todo pasa por la DMZ</text>
+</svg><svg aria-label="Diagrama vertical de DMZ de doble capa" class="diagrama-mobile" role="img" viewbox="0 0 400 700" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="200" cy="34" fill="none" rx="80" ry="24" stroke="#16150f" stroke-width="1.5"></ellipse>
+<text fill="#16150f" font-size="14" font-weight="600" text-anchor="middle" x="200" y="39">INTERNET</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="58" y2="84"></line>
+<polygon fill="#16150f" points="195,84 200,94 205,84"></polygon>
+<rect fill="#e6f4ee" height="54" stroke="#059669" stroke-width="1.6" width="260" x="70" y="94"></rect>
+<text fill="#16150f" font-size="13.5" font-weight="600" text-anchor="middle" x="200" y="116">FW EXTERNO</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="136">solo 443/25 entrantes</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="148" y2="172"></line>
+<polygon fill="#16150f" points="195,172 200,182 205,172"></polygon>
+<rect fill="none" height="290" stroke="#8a6d1f" stroke-dasharray="8 4" stroke-width="1.4" width="320" x="40" y="182"></rect>
+<text fill="#8a6d1f" font-size="11.5" font-weight="600" letter-spacing="1.5" text-anchor="middle" x="200" y="206">ZONA DMZ · 192.168.100.0/24</text>
+<rect fill="#ffffff" height="58" stroke="#16150f" stroke-width="1.3" width="260" x="70" y="222"></rect>
+<text fill="#16150f" font-size="13" font-weight="600" text-anchor="middle" x="200" y="246">WAF</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="266">OWASP CRS · TLS termination</text>
+<rect fill="#ffffff" height="58" stroke="#16150f" stroke-width="1.3" width="260" x="70" y="294"></rect>
+<text fill="#16150f" font-size="13" font-weight="600" text-anchor="middle" x="200" y="318">REVERSE PROXY</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="338">sin datos ni credenciales AD</text>
+<rect fill="#ffffff" height="58" stroke="#16150f" stroke-width="1.3" width="260" x="70" y="366"></rect>
+<text fill="#16150f" font-size="13" font-weight="600" text-anchor="middle" x="200" y="390">RELAY SMTP</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="410">antispam · sandboxing</text>
+<text fill="#8a6d1f" font-size="10.5" text-anchor="middle" x="200" y="452">hardening · sin rutas a LAN · SIEM</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="472" y2="496"></line>
+<polygon fill="#16150f" points="195,496 200,506 205,496"></polygon>
+<rect fill="#e6f4ee" height="54" stroke="#059669" stroke-width="1.6" width="260" x="70" y="506"></rect>
+<text fill="#16150f" font-size="13.5" font-weight="600" text-anchor="middle" x="200" y="528">FW INTERNO</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="548">otro fabricante · defensa en capas</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="560" y2="584"></line>
+<polygon fill="#16150f" points="195,584 200,594 205,584"></polygon>
+<rect fill="#ffffff" height="62" stroke="#16150f" stroke-width="1.5" width="260" x="70" y="594"></rect>
+<text fill="#16150f" font-size="13.5" font-weight="600" text-anchor="middle" x="200" y="618">LAN INTERNA</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="640">apps · BBDD · AD · ficheros</text>
+<text fill="#b3402e" font-size="10.5" text-anchor="middle" x="200" y="686">ningún flujo directo Internet → LAN</text>
+</svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
+      <div class="reference-analysis"><div><span>Qué resuelve</span><p>Aísla la exposición pública mediante una DMZ de doble capa, separando los controles de entrada de los sistemas internos. WAF, reverse proxy y relays reducen la necesidad de publicar directamente servidores de negocio.</p></div><div><span>Límites y validación</span><p>No sustituye un análisis de flujos. Doble firewall no significa doble seguridad si ambos comparten reglas permisivas, administración o un único dominio de fallo.</p></div></div>
+      <div class="reference-foot">FIG. 2 — DMZ con doble firewall de fabricantes distintos. Los servicios expuestos no almacenan datos ni credenciales de dominio; el compromiso de la DMZ no otorga acceso a la LAN.</div>
+    </article><article class="reference-card" data-ref-item id="acceso-remoto-ztna">
+      <div class="reference-head"><div><span class="reference-series">Redes seguras</span><h2>Acceso remoto ZTNA</h2></div><span class="reference-code">TA-NET-03 · Zero Trust</span></div>
+      <div class="reference-intro"><strong>Acceso remoto basado en identidad y contexto.</strong> Sustituye el acceso amplio de una VPN tradicional por autorización por aplicación. La identidad, la postura del dispositivo y la política determinan qué recurso puede alcanzar cada sesión.</div>
+      <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de acceso remoto ZTNA con verificación de identidad y postura" class="diagrama-desktop" role="img" viewbox="0 0 900 440" xmlns="http://www.w3.org/2000/svg">
+<!-- Usuario -->
+<rect fill="#ffffff" height="80" stroke="#16150f" stroke-width="1.5" width="140" x="40" y="170"></rect>
+<text fill="#16150f" font-size="11.5" font-weight="600" text-anchor="middle" x="110" y="198">USUARIO REMOTO</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="110" y="216">endpoint gestionado</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="110" y="232">agente ZTNA + EDR</text>
+<line stroke="#16150f" stroke-width="1.5" x1="180" x2="250" y1="210" y2="210"></line>
+<polygon fill="#16150f" points="250,205 260,210 250,215"></polygon>
+<!-- IdP -->
+<rect fill="#e6f4ee" height="72" stroke="#059669" stroke-width="1.6" width="180" x="260" y="60"></rect>
+<text fill="#16150f" font-size="11.5" font-weight="600" text-anchor="middle" x="350" y="86">IDENTIDAD (IdP)</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="350" y="104">MFA resistente a phishing</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="350" y="120">acceso condicional</text>
+<!-- Broker -->
+<rect fill="#e6f4ee" height="80" stroke="#059669" stroke-width="1.6" width="180" x="260" y="170"></rect>
+<text fill="#16150f" font-size="11.5" font-weight="600" text-anchor="middle" x="350" y="196">BROKER ZTNA</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="350" y="214">policy engine</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="350" y="230">identidad + postura + contexto</text>
+<!-- Postura -->
+<rect fill="#ffffff" height="72" stroke="#16150f" stroke-width="1.3" width="180" x="260" y="290"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="350" y="316">POSTURA DISPOSITIVO</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="350" y="334">cifrado · parches · EDR activo</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="350" y="350">certificado de dispositivo</text>
+<line stroke="#059669" stroke-width="1.4" x1="350" x2="350" y1="132" y2="170"></line>
+<line stroke="#059669" stroke-width="1.4" x1="350" x2="350" y1="290" y2="250"></line>
+<!-- Túnel saliente -->
+<line stroke="#059669" stroke-width="1.6" x1="440" x2="530" y1="210" y2="210"></line>
+<polygon fill="#059669" points="530,205 540,210 530,215"></polygon>
+<text fill="#059669" font-size="9" text-anchor="middle" x="490" y="198">túnel por app</text>
+<!-- Conectores -->
+<rect fill="#ffffff" height="68" stroke="#16150f" stroke-width="1.3" width="130" x="540" y="176"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="605" y="202">CONECTOR</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="605" y="220">solo conexión saliente</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="605" y="235">sin puertos expuestos</text>
+<line stroke="#16150f" stroke-width="1.5" x1="670" x2="740" y1="210" y2="210"></line>
+<polygon fill="#16150f" points="740,205 750,210 740,215"></polygon>
+<!-- Apps -->
+<rect fill="#ffffff" height="46" stroke="#16150f" stroke-width="1.3" width="120" x="750" y="120"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="810" y="147">ERP interno</text>
+<rect fill="#ffffff" height="46" stroke="#16150f" stroke-width="1.3" width="120" x="750" y="186"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="810" y="213">Ficheros</text>
+<rect fill="#ffffff" height="46" stroke="#16150f" stroke-width="1.3" width="120" x="750" y="252"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="810" y="279">Intranet</text>
+<line stroke="#d8d4c8" stroke-width="1.2" x1="750" x2="740" y1="143" y2="205"></line>
+<line stroke="#d8d4c8" stroke-width="1.2" x1="750" x2="740" y1="275" y2="215"></line>
+<!-- vs VPN -->
+<line stroke="#d8d4c8" stroke-width="1" x1="40" x2="860" y1="400" y2="400"></line>
+<text fill="#b3402e" font-size="10" x="40" y="424">✕ VPN tradicional: acceso a toda la red al conectar</text>
+<text fill="#059669" font-size="10" x="470" y="424">✓ ZTNA: acceso por aplicación, verificación continua, red invisible</text>
+</svg><svg aria-label="Diagrama vertical de acceso remoto ZTNA" class="diagrama-mobile" role="img" viewbox="0 0 400 720" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#ffffff" height="66" stroke="#16150f" stroke-width="1.5" width="260" x="70" y="20"></rect>
+<text fill="#16150f" font-size="13.5" font-weight="600" text-anchor="middle" x="200" y="46">USUARIO REMOTO</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="68">endpoint gestionado · agente + EDR</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="86" y2="110"></line>
+<polygon fill="#16150f" points="195,110 200,120 205,110"></polygon>
+<rect fill="#e6f4ee" height="66" stroke="#059669" stroke-width="1.6" width="260" x="70" y="120"></rect>
+<text fill="#16150f" font-size="13" font-weight="600" text-anchor="middle" x="200" y="146">IDENTIDAD (IdP)</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="168">MFA anti-phishing · condicional</text>
+<line stroke="#059669" stroke-width="1.5" x1="200" x2="200" y1="186" y2="210"></line>
+<polygon fill="#059669" points="195,210 200,220 205,210"></polygon>
+<rect fill="#ffffff" height="66" stroke="#16150f" stroke-width="1.3" width="260" x="70" y="220"></rect>
+<text fill="#16150f" font-size="13" font-weight="600" text-anchor="middle" x="200" y="246">POSTURA DISPOSITIVO</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="268">cifrado · parches · EDR activo</text>
+<line stroke="#059669" stroke-width="1.5" x1="200" x2="200" y1="286" y2="310"></line>
+<polygon fill="#059669" points="195,310 200,320 205,310"></polygon>
+<rect fill="#e6f4ee" height="66" stroke="#059669" stroke-width="1.6" width="260" x="70" y="320"></rect>
+<text fill="#16150f" font-size="13" font-weight="600" text-anchor="middle" x="200" y="346">BROKER ZTNA</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="368">identidad + postura + contexto</text>
+<line stroke="#059669" stroke-width="1.5" x1="200" x2="200" y1="386" y2="410"></line>
+<polygon fill="#059669" points="195,410 200,420 205,410"></polygon>
+<text fill="#059669" font-size="10" text-anchor="middle" x="200" y="404"> </text>
+<rect fill="#ffffff" height="66" stroke="#16150f" stroke-width="1.3" width="260" x="70" y="420"></rect>
+<text fill="#16150f" font-size="13" font-weight="600" text-anchor="middle" x="200" y="446">CONECTOR</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="468">solo saliente · sin puertos abiertos</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="486" y2="510"></line>
+<polygon fill="#16150f" points="195,510 200,520 205,510"></polygon>
+<rect fill="#ffffff" height="110" stroke="#16150f" stroke-width="1.3" width="260" x="70" y="520"></rect>
+<text fill="#16150f" font-size="13" font-weight="600" text-anchor="middle" x="200" y="546">APLICACIONES</text>
+<text fill="#5c584a" font-size="11.5" text-anchor="middle" x="200" y="570">ERP interno</text>
+<text fill="#5c584a" font-size="11.5" text-anchor="middle" x="200" y="590">Ficheros</text>
+<text fill="#5c584a" font-size="11.5" text-anchor="middle" x="200" y="610">Intranet</text>
+<line stroke="#d8d4c8" stroke-width="1" x1="40" x2="360" y1="654" y2="654"></line>
+<text fill="#b3402e" font-size="10.5" text-anchor="middle" x="200" y="678">✕ VPN: acceso a toda la red</text>
+<text fill="#059669" font-size="10.5" text-anchor="middle" x="200" y="700">✓ ZTNA: acceso por app · verificación continua</text>
+</svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
+      <div class="reference-analysis"><div><span>Qué resuelve</span><p>Sustituye el acceso amplio de una VPN tradicional por autorización por aplicación. La identidad, la postura del dispositivo y la política determinan qué recurso puede alcanzar cada sesión.</p></div><div><span>Límites y validación</span><p>ZTNA no elimina la necesidad de segmentación interna ni de proteger las identidades privilegiadas. El plano de control y el IdP se convierten en dependencias críticas.</p></div></div>
+      <div class="reference-foot">FIG. 3 — Acceso remoto Zero Trust: el broker evalúa identidad, postura del dispositivo y contexto antes de cada acceso. El conector solo establece conexiones salientes: la red interna es invisible desde Internet.</div>
+    </article><article class="reference-card" data-ref-item id="red-hibrida-hub-spoke">
+      <div class="reference-head"><div><span class="reference-series">Redes seguras</span><h2>Red híbrida hub-spoke con inspección centralizada</h2></div><span class="reference-code">TA-NET-04 · Cloud</span></div>
+      <div class="reference-intro"><strong>Conectividad híbrida con inspección central.</strong> Centraliza conectividad, rutas y controles de seguridad en un hub, reduciendo conexiones punto a punto entre redes cloud y on-premises. Permite aplicar inspección y gobierno de rutas de forma consistente.</div>
+      <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de red híbrida hub-spoke con firewall centralizado en el hub" class="diagrama-desktop" role="img" viewbox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
+<!-- On-prem -->
+<rect fill="#ffffff" height="180" stroke="#16150f" stroke-width="1.5" width="190" x="40" y="150"></rect>
+<rect fill="#16150f" height="28" width="190" x="40" y="150"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="135" y="169">CPD ON-PREM</text>
+<text fill="#5c584a" font-size="10" x="54" y="202">10.0.0.0/16</text>
+<text fill="#5c584a" font-size="10" x="54" y="222">AD · ERP legacy</text>
+<text fill="#5c584a" font-size="10" x="54" y="242">almacenamiento</text>
+<text fill="#5c584a" font-size="10" x="54" y="262">FW perimetral</text>
+<text fill="#8a6d1f" font-size="9.5" x="54" y="292">BGP hacia el hub</text>
+<!-- Enlace -->
+<line stroke="#059669" stroke-width="2" x1="230" x2="330" y1="240" y2="240"></line>
+<text fill="#059669" font-size="9.5" font-weight="600" text-anchor="middle" x="280" y="228">ExpressRoute /</text>
+<text fill="#059669" font-size="9.5" font-weight="600" text-anchor="middle" x="280" y="258">VPN S2S cifrada</text>
+<!-- HUB -->
+<rect fill="#e6f4ee" height="240" stroke="#059669" stroke-width="1.8" width="240" x="330" y="120"></rect>
+<rect fill="#059669" height="28" width="240" x="330" y="120"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="450" y="139">HUB VNET · 10.100.0.0/22</text>
+<rect fill="#ffffff" height="46" stroke="#059669" stroke-width="1.4" width="196" x="352" y="164"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="450" y="183">FIREWALL CLOUD</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="450" y="200">inspección N-S y E-W · TLS</text>
+<rect fill="#ffffff" height="40" stroke="#16150f" stroke-width="1.2" width="196" x="352" y="222"></rect>
+<text fill="#16150f" font-size="10" font-weight="600" text-anchor="middle" x="450" y="239">BASTION</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="450" y="254">acceso admin sin IP pública</text>
+<rect fill="#ffffff" height="40" stroke="#16150f" stroke-width="1.2" width="196" x="352" y="274"></rect>
+<text fill="#16150f" font-size="10" font-weight="600" text-anchor="middle" x="450" y="291">DNS PRIVADO + GW</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="450" y="306">resolución híbrida</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="450" y="340">UDR: 0.0.0.0/0 → firewall</text>
+<!-- Peering líneas -->
+<line stroke="#16150f" stroke-width="1.4" x1="570" x2="660" y1="180" y2="120"></line>
+<line stroke="#16150f" stroke-width="1.4" x1="570" x2="660" y1="240" y2="240"></line>
+<line stroke="#16150f" stroke-width="1.4" x1="570" x2="660" y1="300" y2="360"></line>
+<text fill="#5c584a" font-size="8.5" text-anchor="middle" transform="rotate(-18 612 212)" x="612" y="212">peering</text>
+<!-- Spokes -->
+<rect fill="#ffffff" height="80" stroke="#16150f" stroke-width="1.3" width="200" x="660" y="80"></rect>
+<rect fill="#16150f" height="24" width="200" x="660" y="80"></rect>
+<text fill="#ffffff" font-size="10" font-weight="600" text-anchor="middle" x="760" y="96">SPOKE PROD · 10.101.0.0/24</text>
+<text fill="#5c584a" font-size="9.5" x="672" y="124">apps críticas · NSG por subred</text>
+<text fill="#5c584a" font-size="9.5" x="672" y="142">sin IP pública · private endpoints</text>
+<rect fill="#ffffff" height="80" stroke="#16150f" stroke-width="1.3" width="200" x="660" y="200"></rect>
+<rect fill="#16150f" height="24" width="200" x="660" y="200"></rect>
+<text fill="#ffffff" font-size="10" font-weight="600" text-anchor="middle" x="760" y="216">SPOKE DEV · 10.102.0.0/24</text>
+<text fill="#5c584a" font-size="9.5" x="672" y="244">entornos de prueba</text>
+<text fill="#5c584a" font-size="9.5" x="672" y="262">aislado de producción</text>
+<rect fill="#ffffff" height="80" stroke="#16150f" stroke-width="1.3" width="200" x="660" y="320"></rect>
+<rect fill="#16150f" height="24" width="200" x="660" y="320"></rect>
+<text fill="#ffffff" font-size="10" font-weight="600" text-anchor="middle" x="760" y="336">SPOKE DATOS · 10.103.0.0/24</text>
+<text fill="#5c584a" font-size="9.5" x="672" y="364">BBDD · private link</text>
+<text fill="#5c584a" font-size="9.5" x="672" y="382">cifrado en reposo · CMK</text>
+<!-- Spoke a spoke prohibido directo -->
+<path d="M 862 160 Q 892 240 862 320" fill="none" stroke="#b3402e" stroke-dasharray="4 4" stroke-width="1.3"></path>
+<line stroke="#b3402e" stroke-width="2" x1="872" x2="886" y1="232" y2="246"></line>
+<line stroke="#b3402e" stroke-width="2" x1="886" x2="872" y1="232" y2="246"></line>
+<line stroke="#d8d4c8" stroke-width="1" x1="40" x2="860" y1="430" y2="430"></line>
+<text fill="#5c584a" font-size="9.5" x="40" y="454">Los spokes no tienen peering entre sí: todo el tráfico spoke↔spoke y spoke↔on-prem atraviesa el firewall del hub (UDR forzada).</text>
+</svg><svg aria-label="Diagrama vertical de red híbrida hub-spoke" class="diagrama-mobile" role="img" viewbox="0 0 400 760" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#ffffff" height="96" stroke="#16150f" stroke-width="1.5" width="300" x="50" y="20"></rect>
+<rect fill="#16150f" height="28" width="300" x="50" y="20"></rect>
+<text fill="#ffffff" font-size="12.5" font-weight="600" text-anchor="middle" x="200" y="39">CPD ON-PREM · 10.0.0.0/16</text>
+<text fill="#5c584a" font-size="11" x="66" y="72">AD · ERP legacy · almacenamiento</text>
+<text fill="#5c584a" font-size="11" x="66" y="92">FW perimetral · BGP hacia el hub</text>
+<line stroke="#059669" stroke-width="2" x1="200" x2="200" y1="116" y2="146"></line>
+<text fill="#059669" font-size="10.5" font-weight="600" text-anchor="middle" x="200" y="138">ExpressRoute / VPN S2S</text>
+<rect fill="#e6f4ee" height="230" stroke="#059669" stroke-width="1.8" width="300" x="50" y="152"></rect>
+<rect fill="#059669" height="28" width="300" x="50" y="152"></rect>
+<text fill="#ffffff" font-size="12.5" font-weight="600" text-anchor="middle" x="200" y="171">HUB VNET · 10.100.0.0/22</text>
+<rect fill="#ffffff" height="50" stroke="#059669" stroke-width="1.4" width="256" x="72" y="192"></rect>
+<text fill="#16150f" font-size="12" font-weight="600" text-anchor="middle" x="200" y="212">FIREWALL CLOUD</text>
+<text fill="#5c584a" font-size="10.5" text-anchor="middle" x="200" y="230">inspección N-S y E-W · TLS</text>
+<rect fill="#ffffff" height="46" stroke="#16150f" stroke-width="1.2" width="256" x="72" y="252"></rect>
+<text fill="#16150f" font-size="11.5" font-weight="600" text-anchor="middle" x="200" y="271">BASTION</text>
+<text fill="#5c584a" font-size="10.5" text-anchor="middle" x="200" y="289">admin sin IP pública</text>
+<rect fill="#ffffff" height="46" stroke="#16150f" stroke-width="1.2" width="256" x="72" y="308"></rect>
+<text fill="#16150f" font-size="11.5" font-weight="600" text-anchor="middle" x="200" y="327">DNS PRIVADO + GW</text>
+<text fill="#5c584a" font-size="10.5" text-anchor="middle" x="200" y="345">resolución híbrida</text>
+<text fill="#5c584a" font-size="10" text-anchor="middle" x="200" y="374">UDR: 0.0.0.0/0 → firewall</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="382" y2="408"></line>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="200" y="402"> </text>
+<rect fill="#ffffff" height="86" stroke="#16150f" stroke-width="1.3" width="300" x="50" y="408"></rect>
+<rect fill="#16150f" height="26" width="300" x="50" y="408"></rect>
+<text fill="#ffffff" font-size="11.5" font-weight="600" text-anchor="middle" x="200" y="426">SPOKE PROD · 10.101.0.0/24</text>
+<text fill="#5c584a" font-size="11" x="66" y="456">apps críticas · NSG por subred</text>
+<text fill="#5c584a" font-size="11" x="66" y="476">sin IP pública · private endpoints</text>
+<line stroke="#d8d4c8" stroke-width="1.3" x1="200" x2="200" y1="494" y2="510"></line>
+<rect fill="#ffffff" height="86" stroke="#16150f" stroke-width="1.3" width="300" x="50" y="510"></rect>
+<rect fill="#16150f" height="26" width="300" x="50" y="510"></rect>
+<text fill="#ffffff" font-size="11.5" font-weight="600" text-anchor="middle" x="200" y="528">SPOKE DEV · 10.102.0.0/24</text>
+<text fill="#5c584a" font-size="11" x="66" y="558">entornos de prueba</text>
+<text fill="#5c584a" font-size="11" x="66" y="578">aislado de producción</text>
+<line stroke="#d8d4c8" stroke-width="1.3" x1="200" x2="200" y1="596" y2="612"></line>
+<rect fill="#ffffff" height="86" stroke="#16150f" stroke-width="1.3" width="300" x="50" y="612"></rect>
+<rect fill="#16150f" height="26" width="300" x="50" y="612"></rect>
+<text fill="#ffffff" font-size="11.5" font-weight="600" text-anchor="middle" x="200" y="630">SPOKE DATOS · 10.103.0.0/24</text>
+<text fill="#5c584a" font-size="11" x="66" y="660">BBDD · private link</text>
+<text fill="#5c584a" font-size="11" x="66" y="680">cifrado en reposo · CMK</text>
+<text fill="#b3402e" font-size="10" text-anchor="middle" x="200" y="730">sin peering spoke↔spoke:</text>
+<text fill="#b3402e" font-size="10" text-anchor="middle" x="200" y="748">todo el tráfico pasa por el firewall del hub</text>
+</svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
+      <div class="reference-analysis"><div><span>Qué resuelve</span><p>Centraliza conectividad, rutas y controles de seguridad en un hub, reduciendo conexiones punto a punto entre redes cloud y on-premises. Permite aplicar inspección y gobierno de rutas de forma consistente.</p></div><div><span>Límites y validación</span><p>Un hub mal dimensionado puede convertirse en cuello de botella o punto único de fallo. Deben validarse throughput, tablas de rutas, latencia y comportamiento durante la pérdida de un enlace.</p></div></div>
+      <div class="reference-foot">FIG. 4 — Topología hub-spoke: el hub concentra firewall, bastión y DNS. Los spokes se comunican únicamente a través del hub mediante UDR forzada, sin peering directo entre ellos.</div>
+    </article><article class="reference-card" data-ref-item id="pipeline-devsecops">
+      <div class="reference-head"><div><span class="reference-series">DevSecOps y cloud native</span><h2>Pipeline DevSecOps: Seguridad Shift-Left automatizada</h2></div><span class="reference-code">TA-DVO-15 · CI/CD</span></div>
+      <div class="reference-intro"><strong>Seguridad integrada en el pipeline.</strong> Desplaza controles al ciclo de desarrollo: SAST, SCA y DAST aparecen en fases distintas y los gates automáticos impiden promover artefactos que incumplen criterios definidos.</div>
+      <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama horizontal de pipeline DevSecOps con fases de seguridad integradas" class="diagrama-desktop" role="img" viewbox="0 0 900 440" xmlns="http://www.w3.org/2000/svg">
+<!-- Fase 1: Code -->
+<rect fill="#ffffff" height="200" stroke="#16150f" stroke-width="1.5" width="170" x="40" y="100"></rect>
+<rect fill="#16150f" height="26" width="170" x="40" y="100"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="125" y="117">1 · COMMIT / CODE</text>
+<text fill="#16150f" font-size="10" font-weight="600" x="54" y="150">Pre-commit Hooks</text>
+<text fill="#5c584a" font-size="9.5" x="54" y="170">IDE Security Plugins</text>
+<rect fill="#e6f4ee" height="42" stroke="#059669" stroke-width="1.2" width="150" x="50" y="194"></rect>
+<text fill="#16150f" font-size="10" font-weight="600" text-anchor="middle" x="125" y="211">ANÁLISIS SAST</text>
+<text fill="#5c584a" font-size="8.5" text-anchor="middle" x="125" y="226">Escaneo de código base</text>
+<text fill="#5c584a" font-size="9.5" x="54" y="262">Análisis de secretos</text>
+<text fill="#5c584a" font-size="9.5" x="54" y="280">revisión criptográfica</text>
+<!-- Flecha 1-2 -->
+<line stroke="#16150f" stroke-width="1.5" x1="210" x2="255" y1="200" y2="200"></line>
+<polygon fill="#16150f" points="247,195 257,200 247,205"></polygon>
+<!-- Fase 2: Build -->
+<rect fill="#ffffff" height="200" stroke="#16150f" stroke-width="1.5" width="170" x="257" y="100"></rect>
+<rect fill="#16150f" height="26" width="170" x="257" y="100"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="342" y="117">2 · BUILD / ARTIFACT</text>
+<text fill="#16150f" font-size="10" font-weight="600" x="271" y="150">Construcción Imagen</text>
+<text fill="#5c584a" font-size="9.5" x="271" y="170">Dockerfiles / IaC templates</text>
+<rect fill="#e6f4ee" height="42" stroke="#059669" stroke-width="1.2" width="150" x="267" y="194"></rect>
+<text fill="#16150f" font-size="10" font-weight="600" text-anchor="middle" x="342" y="211">ANÁLISIS SCA</text>
+<text fill="#5c584a" font-size="8.5" text-anchor="middle" x="342" y="226">Vulnerabilidades dependencias</text>
+<text fill="#5c584a" font-size="9.5" x="271" y="262">Análisis de linters IaC</text>
+<text fill="#5c584a" font-size="9.5" x="271" y="280">Software Bill of Materials</text>
+<!-- Flecha 2-3 -->
+<line stroke="#16150f" stroke-width="1.5" x1="427" x2="472" y1="200" y2="200"></line>
+<polygon fill="#16150f" points="464,195 474,200 464,205"></polygon>
+<!-- Fase 3: Test -->
+<rect fill="#ffffff" height="200" stroke="#16150f" stroke-width="1.5" width="170" x="474" y="100"></rect>
+<rect fill="#16150f" height="26" width="170" x="474" y="100"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="559" y="117">3 · STAGING / TEST</text>
+<text fill="#16150f" font-size="10" font-weight="600" x="488" y="150">Entorno QA Aislado</text>
+<text fill="#5c584a" font-size="9.5" x="488" y="170">Despliegue efímero pruebas</text>
+<rect fill="#e6f4ee" height="42" stroke="#059669" stroke-width="1.2" width="150" x="484" y="194"></rect>
+<text fill="#16150f" font-size="10" font-weight="600" text-anchor="middle" x="559" y="211">PRUEBAS DAST</text>
+<text fill="#5c584a" font-size="8.5" text-anchor="middle" x="559" y="226">Análisis dinámico en ejecución</text>
+<text fill="#5c584a" font-size="9.5" x="488" y="262">Escaneo de APIs</text>
+<text fill="#5c584a" font-size="9.5" x="488" y="280">Penetration testing autom.</text>
+<!-- Flecha 3-4 -->
+<line stroke="#16150f" stroke-width="1.5" x1="644" x2="689" y1="200" y2="200"></line>
+<polygon fill="#16150f" points="681,195 691,200 681,205"></polygon>
+<!-- Fase 4: Deploy -->
+<rect fill="#ffffff" height="200" stroke="#16150f" stroke-width="1.5" width="170" x="689" y="100"></rect>
+<rect fill="#16150f" height="26" width="170" x="689" y="100"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="774" y="117">4 · PRODUCTION</text>
+<text fill="#16150f" font-size="10" font-weight="600" x="703" y="150">Despliegue Seguro</text>
+<text fill="#5c584a" font-size="9.5" x="703" y="170">Verificación de firma digital</text>
+<rect fill="#ffffff" height="42" stroke="#8a6d1f" stroke-width="1.2" width="150" x="699" y="194"></rect>
+<text fill="#16150f" font-size="10" font-weight="600" text-anchor="middle" x="774" y="211">COMPLIANCE AS CODE</text>
+<text fill="#5c584a" font-size="8.5" text-anchor="middle" x="774" y="226">Políticas de admisión (OPA)</text>
+<text fill="#5c584a" font-size="9.5" x="703" y="262">Monitoreo continuo activo</text>
+<text fill="#5c584a" font-size="9.5" x="703" y="280">Runtime Protection (EDR/CWPP)</text>
+<!-- Bloqueo de fallo en calidad (Gate perimetral) -->
+<path d="M 559 300 Q 450 370 342 300" fill="none" stroke="#b3402e" stroke-dasharray="4 4" stroke-width="1.4"></path>
+<line stroke="#b3402e" stroke-width="2" x1="442" x2="458" y1="332" y2="348"></line>
+<line stroke="#b3402e" stroke-width="2" x1="458" x2="442" y1="332" y2="348"></line>
+<text fill="#b3402e" font-size="10" text-anchor="middle" x="450" y="380">Vulnerabilidades críticas detectadas = BREAK THE BUILD (Automatizado)</text>
+<!-- Leyenda / Notas transversales -->
+<line stroke="#d8d4c8" stroke-width="1" x1="40" x2="860" y1="405" y2="405"></line>
+<text fill="#5c584a" font-size="9.5" x="40" y="424">Métrica clave: Reducir el tiempo de feedback al desarrollador. El coste de mitigar un fallo en producción es hasta 30 veces superior que en diseño.</text>
+</svg><svg aria-label="Diagrama vertical de pipeline DevSecOps" class="diagrama-mobile" role="img" viewbox="0 0 400 750" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#ffffff" height="130" stroke="#16150f" stroke-width="1.5" width="320" x="40" y="20"></rect>
+<rect fill="#16150f" height="26" width="320" x="40" y="20"></rect>
+<text fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle" x="200" y="38">1 · COMMIT / CODE</text>
+<text fill="#16150f" font-size="11" font-weight="600" x="56" y="66">SAST + Escaneo de secretos</text>
+<text fill="#5c584a" font-size="10.5" x="56" y="86">Filtros preventivos en el IDE y pre-commit</text>
+<text fill="#5c584a" font-size="10.5" x="56" y="106">Análisis estático de la base de código local</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="150" y2="180"></line>
+<polygon fill="#16150f" points="195,180 200,190 205,180"></polygon>
+<rect fill="#ffffff" height="130" stroke="#16150f" stroke-width="1.5" width="320" x="40" y="190"></rect>
+<rect fill="#16150f" height="26" width="320" x="40" y="190"></rect>
+<text fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle" x="200" y="208">2 · BUILD / ARTIFACT</text>
+<text fill="#059669" font-size="11" font-weight="600" x="56" y="236">SCA · Dependencias e imágenes</text>
+<text fill="#5c584a" font-size="10.5" x="56" y="256">Generación de SBOM e inventariado técnico</text>
+<text fill="#5c584a" font-size="10.5" x="56" y="276">Búsqueda de CVEs en librerías open-source</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="320" y2="350"></line>
+<polygon fill="#16150f" points="195,350 200,360 205,350"></polygon>
+<rect fill="#ffffff" height="130" stroke="#16150f" stroke-width="1.5" width="320" x="40" y="350"></rect>
+<rect fill="#16150f" height="26" width="320" x="40" y="350"></rect>
+<text fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle" x="200" y="368">3 · STAGING / TEST</text>
+<text fill="#059669" font-size="11" font-weight="600" x="56" y="396">DAST · Pruebas en ejecución</text>
+<text fill="#5c584a" font-size="10.5" x="56" y="416">Ataques simulados automáticos sobre APIs</text>
+<text fill="#5c584a" font-size="10.5" x="56" y="436">Entornos efímeros idénticos a producción</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="480" y2="510"></line>
+<polygon fill="#16150f" points="195,510 200,520 205,510"></polygon>
+<rect fill="#e6f4ee" height="130" stroke="#059669" stroke-width="1.6" width="320" x="40" y="510"></rect>
+<rect fill="#059669" height="26" width="320" x="40" y="510"></rect>
+<text fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle" x="200" y="528">4 · PRODUCTION</text>
+<text fill="#16150f" font-size="11" font-weight="600" x="56" y="556">OPA + Runtime Protection</text>
+<text fill="#5c584a" font-size="10.5" x="56" y="576">Validación estricta de firmas criptográficas</text>
+<text fill="#5c584a" font-size="10.5" x="56" y="596">Auditoría continua en producción (Cloud-Native)</text>
+<text fill="#b3402e" font-size="11" font-weight="600" text-anchor="middle" x="200" y="674">Fallo crítico detectado = Detener despliegue</text>
+<text fill="#5c584a" font-size="10" text-anchor="middle" x="200" y="710">La seguridad integrada evita incidentes post-despliegue</text>
+</svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
+      <div class="reference-analysis"><div><span>Qué resuelve</span><p>Desplaza controles al ciclo de desarrollo: SAST, SCA y DAST aparecen en fases distintas y los gates automáticos impiden promover artefactos que incumplen criterios definidos.</p></div><div><span>Límites y validación</span><p>El pipeline debe gestionar falsos positivos, excepciones y caducidad. Romper el build sin un modelo operativo termina creando bypass permanentes.</p></div></div>
+      <div class="reference-foot">FIG. 15 — Integración orgánica de la seguridad en el ciclo de vida del software (DevSecOps). La validación automática de calidad frena el avance del código vulnerable hacia las ramas principales de producción.</div>
+    </article><article class="reference-card" data-ref-item id="service-mesh-mtls">
+      <div class="reference-head"><div><span class="reference-series">DevSecOps y cloud native</span><h2>Seguridad en Microservicios: Service Mesh con mTLS estricto</h2></div><span class="reference-code">TA-NET-16 · Cloud Native K8s</span></div>
+      <div class="reference-intro"><strong>Identidad de servicio y cifrado este-oeste.</strong> Usa una service mesh para proporcionar mTLS, identidad de servicio y políticas de comunicación sin delegar toda la lógica criptográfica en cada aplicación.</div>
+      <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama horizontal de Service Mesh en Kubernetes con mTLS entre sidecars" class="diagrama-desktop" role="img" viewbox="0 0 900 460" xmlns="http://www.w3.org/2000/svg">
+<!-- Ingress Gateway -->
+<rect fill="#ffffff" height="90" stroke="#16150f" stroke-width="1.5" width="140" x="40" y="160"></rect>
+<rect fill="#16150f" height="24" width="140" x="40" y="160"></rect>
+<text fill="#ffffff" font-size="10.5" font-weight="600" text-anchor="middle" x="110" y="176">INGRESS GATEWAY</text>
+<text fill="#16150f" font-size="9.5" x="52" y="202">Terminación TLS</text>
+<text fill="#5c584a" font-size="9" x="52" y="218">Control de acceso perimetral</text>
+<text fill="#5c584a" font-size="9" x="52" y="234">Enrutamiento inteligente</text>
+<!-- Conexión Ingress a Pod A -->
+<line stroke="#16150f" stroke-width="1.5" x1="180" x2="240" y1="205" y2="205"></line>
+<polygon fill="#16150f" points="232,200 240,205 232,210"></polygon>
+<!-- POD A -->
+<rect fill="none" height="230" stroke="#5c584a" stroke-dasharray="6 4" stroke-width="1.2" width="220" x="240" y="70"></rect>
+<text fill="#5c584a" font-size="10" font-weight="700" letter-spacing="1" x="250" y="88">POD KUBERNETES · A</text>
+<rect fill="#ffffff" height="60" stroke="#16150f" stroke-width="1.3" width="180" x="260" y="110"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="350" y="132">Contenedor App (Frontend)</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="350" y="150">Lógica web · Sin código de red TLS</text>
+<line stroke="#16150f" stroke-width="1.2" x1="350" x2="350" y1="170" y2="200"></line>
+<rect fill="#e6f4ee" height="64" stroke="#059669" stroke-width="1.5" width="180" x="260" y="200"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="350" y="220">Sidecar Proxy (Envoy)</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="350" y="236">Intercepta todo el tráfico local</text>
+<text fill="#059669" font-size="8.5" text-anchor="middle" x="350" y="250">Identidad SPIFFE inyectada</text>
+<!-- Canalización mTLS (Tráfico Seguro) -->
+<line stroke="#059669" stroke-width="2.2" x1="440" x2="600" y1="232" y2="232"></line>
+<polygon fill="#059669" points="590,226 600,232 590,238"></polygon>
+<polygon fill="#059669" points="450,226 440,232 450,238"></polygon>
+<text fill="#059669" font-size="9.5" font-weight="600" text-anchor="middle" x="520" y="218">CANAL mTLS ESTRICTO</text>
+<text fill="#5c584a" font-size="8" text-anchor="middle" x="520" y="250">Cifrado + Autorización mutua</text>
+<!-- POD B -->
+<rect fill="none" height="230" stroke="#5c584a" stroke-dasharray="6 4" stroke-width="1.2" width="220" x="600" y="70"></rect>
+<text fill="#5c584a" font-size="10" font-weight="700" letter-spacing="1" x="610" y="88">POD KUBERNETES · B</text>
+<rect fill="#e6f4ee" height="64" stroke="#059669" stroke-width="1.5" width="180" x="620" y="200"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="710" y="220">Sidecar Proxy (Envoy)</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="710" y="236">Valida certificado de origen</text>
+<text fill="#059669" font-size="8.5" text-anchor="middle" x="710" y="250">Aplica reglas de RBAC local</text>
+<line stroke="#16150f" stroke-width="1.2" x1="710" x2="710" y1="200" y2="170"></line>
+<rect fill="#ffffff" height="60" stroke="#16150f" stroke-width="1.3" width="180" x="620" y="110"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="710" y="132">Contenedor App (Backend)</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="710" y="150">Procesa datos transaccionales</text>
+<!-- Control Plane (Istiod / Linkerd) -->
+<rect fill="#ffffff" height="66" stroke="#8a6d1f" stroke-width="1.4" width="320" x="370" y="350"></rect>
+<rect fill="#8a6d1f" height="22" width="320" x="370" y="350"></rect>
+<text fill="#ffffff" font-size="10" font-weight="600" text-anchor="middle" x="530" y="365">CONTROL PLANE (Malla de Servicios)</text>
+<text fill="#16150f" font-size="9" x="382" y="388">Emisión automática y rotación de certificados x509 por carga</text>
+<text fill="#5c584a" font-size="8.5" x="382" y="402">Distribución centralizada de políticas criptográficas de acceso</text>
+<!-- Conexiones Control Plane a Proxies -->
+<path d="M 390 350 L 350 264" fill="none" stroke="#8a6d1f" stroke-dasharray="4 3" stroke-width="1"></path>
+<path d="M 670 350 L 710 264" fill="none" stroke="#8a6d1f" stroke-dasharray="4 3" stroke-width="1"></path>
+<text fill="#8a6d1f" font-size="8.5" text-anchor="middle" x="530" y="336">Configuración de políticas &amp; Certificados criptográficos</text>
+</svg><svg aria-label="Diagrama vertical de Service Mesh" class="diagrama-mobile" role="img" viewbox="0 0 400 760" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#ffffff" height="60" stroke="#16150f" stroke-width="1.4" width="260" x="70" y="20"></rect>
+<text fill="#16150f" font-size="12" font-weight="600" text-anchor="middle" x="200" y="44">INGRESS GATEWAY</text>
+<text fill="#5c584a" font-size="10" text-anchor="middle" x="200" y="62">Terminación perimetral TLS</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="80" y2="110"></line>
+<polygon fill="#16150f" points="195,110 200,120 205,110"></polygon>
+<!-- Pod A Mobile -->
+<rect fill="none" height="180" stroke="#5c584a" stroke-dasharray="5 4" stroke-width="1.2" width="320" x="40" y="118"></rect>
+<text fill="#5c584a" font-size="10" font-weight="700" x="52" y="138">POD KUBERNETES · FRONTEND</text>
+<rect fill="#ffffff" height="46" stroke="#16150f" stroke-width="1.2" width="276" x="62" y="150"></rect>
+<text fill="#16150f" font-size="11" text-anchor="middle" x="200" y="176">App (Frontend Container)</text>
+<rect fill="#e6f4ee" height="50" stroke="#059669" stroke-width="1.4" width="276" x="62" y="210"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="200" y="230">Sidecar Proxy (Envoy)</text>
+<text fill="#059669" font-size="9.5" text-anchor="middle" x="200" y="246">Gestión automatizada del tráfico local</text>
+<line stroke="#16150f" stroke-width="1" x1="200" x2="200" y1="196" y2="210"></line>
+<!-- Línea de tránsito mTLS vertical -->
+<line stroke="#059669" stroke-width="2.2" x1="200" x2="200" y1="298" y2="354"></line>
+<polygon fill="#059669" points="194,354 200,364 206,354"></polygon>
+<text fill="#059669" font-size="10.5" font-weight="600" x="215" y="332">mTLS ESTRICTO</text>
+<!-- Pod B Mobile -->
+<rect fill="none" height="180" stroke="#5c584a" stroke-dasharray="5 4" stroke-width="1.2" width="320" x="40" y="356"></rect>
+<text fill="#5c584a" font-size="10" font-weight="700" x="52" y="376">POD KUBERNETES · BACKEND</text>
+<rect fill="#e6f4ee" height="50" stroke="#059669" stroke-width="1.4" width="276" x="62" y="388"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="200" y="408">Sidecar Proxy (Envoy)</text>
+<text fill="#059669" font-size="9.5" text-anchor="middle" x="200" y="424">Autenticación mutua + Control RBAC</text>
+<rect fill="#ffffff" height="46" stroke="#16150f" stroke-width="1.2" width="276" x="62" y="464"></rect>
+<text fill="#16150f" font-size="11" text-anchor="middle" x="200" y="490">App (Backend Container)</text>
+<line stroke="#16150f" stroke-width="1" x1="200" x2="200" y1="438" y2="464"></line>
+<line stroke="#8a6d1f" stroke-dasharray="4 3" stroke-width="1.2" x1="200" x2="200" y1="536" y2="566"></line>
+<!-- Control Plane Mobile -->
+<rect fill="#ffffff" height="74" stroke="#8a6d1f" stroke-width="1.4" width="320" x="40" y="566"></rect>
+<rect fill="#8a6d1f" height="24" width="320" x="40" y="566"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="200" y="582">CONTROL PLANE (Malla)</text>
+<text fill="#16150f" font-size="10.5" x="52" y="612">Rotación automática de identidades x509</text>
+<text fill="#5c584a" font-size="10.5" x="52" y="628">Carga centralizada de políticas Zero Trust</text>
+<text fill="#5c584a" font-size="10" text-anchor="middle" x="200" y="694">La red de infraestructura no hereda confianza</text>
+<text fill="#5c584a" font-size="10" text-anchor="middle" x="200" y="714">Cada conexión es aislada, cifrada y auditada</text>
+</svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
+      <div class="reference-analysis"><div><span>Qué resuelve</span><p>Usa una service mesh para proporcionar mTLS, identidad de servicio y políticas de comunicación sin delegar toda la lógica criptográfica en cada aplicación.</p></div><div><span>Límites y validación</span><p>La malla añade complejidad operativa y una nueva capa crítica. La rotación de certificados, el control plane y la observabilidad deben diseñarse antes de desplegarla masivamente.</p></div></div>
+      <div class="reference-foot">FIG. 16 — Arquitectura de malla de servicios (Service Mesh). Las aplicaciones quedan totalmente liberadas de implementar la lógica criptográfica de transporte; el proxy sidecar asume de manera transparente el cifrado mTLS.</div>
+    </article><article class="reference-card" data-ref-item id="cluster-ngfw-ha">
+      <div class="reference-head"><div><span class="reference-series">Perímetro y firewalls</span><h2>Clúster NGFW en Alta Disponibilidad (HA Activo/Pasivo)</h2></div><span class="reference-code">TA-FW-17 · LLD</span></div>
+      <div class="reference-intro"><strong>Alta disponibilidad perimetral con estado.</strong> Representa un par de NGFW activo/pasivo con sincronización de sesiones y enlaces redundantes hacia WAN y core. El objetivo es evitar que el firewall se convierta en un único punto de fallo.</div>
+      <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de clúster de firewalls en alta disponibilidad con enlaces redundantes y sincronización de estado" class="diagrama-desktop" role="img" viewbox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
+<!-- Switches Perimetrales / ISP -->
+<rect fill="#ffffff" height="40" stroke="#16150f" stroke-width="1.5" width="400" x="250" y="20"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="450" y="44">SWITCHES PERIMETRALES (WAN / ENLACES ISP)</text>
+<!-- Líneas WAN hacia FW -->
+<line stroke="#16150f" stroke-width="1.3" x1="350" x2="350" y1="60" y2="120"></line>
+<line stroke="#5c584a" stroke-dasharray="4 3" stroke-width="1.2" x1="350" x2="550" y1="60" y2="120"></line>
+<line stroke="#16150f" stroke-width="1.3" x1="550" x2="350" y1="60" y2="120"></line>
+<line stroke="#5c584a" stroke-dasharray="4 3" stroke-width="1.2" x1="550" x2="550" y1="60" y2="120"></line>
+<!-- FW-01 Activo -->
+<rect fill="#e6f4ee" height="150" stroke="#059669" stroke-width="1.8" width="220" x="180" y="120"></rect>
+<rect fill="#059669" height="26" width="220" x="180" y="120"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="290" y="137">NGFW-01 · ACTIVO</text>
+<text fill="#16150f" font-size="10" font-weight="600" x="195" y="170">IP Virtual (VIP) asignada</text>
+<text fill="#5c584a" font-size="9.5" x="195" y="190">Procesa el 100% del tráfico</text>
+<text fill="#5c584a" font-size="9.5" x="195" y="210">Monitoreo de interfaces físicas</text>
+<text fill="#059669" font-size="9" font-weight="600" x="195" y="235">Prioridad HA: 200 (Master)</text>
+<!-- Enlaces HA (Control y Datos) -->
+<line stroke="#b3402e" stroke-dasharray="4 2" stroke-width="1.5" x1="400" x2="500" y1="160" y2="160"></line>
+<text fill="#alerta" font-size="8.5" font-weight="600" text-anchor="middle" x="450" y="152">HA Control (Heartbeat)</text>
+<line stroke="#059669" stroke-width="1.5" x1="400" x2="500" y1="210" y2="210"></line>
+<text fill="#059669" font-size="8.5" font-weight="600" text-anchor="middle" x="450" y="202">HA Data (Session Sync)</text>
+<text fill="#5c584a" font-size="8" text-anchor="middle" x="450" y="224">Sincronización de estado</text>
+<!-- FW-02 Pasivo -->
+<rect fill="#ffffff" height="150" stroke="#5c584a" stroke-dasharray="6 3" stroke-width="1.5" width="220" x="500" y="120"></rect>
+<rect fill="#5c584a" height="26" width="220" x="500" y="120"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="610" y="137">NGFW-02 · PASIVO / STANDBY</text>
+<text fill="#5c584a" font-size="10" font-weight="600" x="515" y="170">En espera de failover</text>
+<text fill="#5c584a" font-size="9.5" x="515" y="190">Tabla de sesiones replicada</text>
+<text fill="#5c584a" font-size="9.5" x="515" y="210">Interfaces en modo escucha</text>
+<text fill="#5c584a" font-size="9" x="515" y="235">Prioridad HA: 100 (Backup)</text>
+<!-- Líneas LAN hacia switches Core -->
+<line stroke="#16150f" stroke-width="1.3" x1="290" x2="290" y1="270" y2="350"></line>
+<line stroke="#16150f" stroke-width="1.3" x1="290" x2="610" y1="270" y2="350"></line>
+<line stroke="#5c584a" stroke-dasharray="4 3" stroke-width="1.2" x1="610" x2="290" y1="270" y2="350"></line>
+<line stroke="#5c584a" stroke-dasharray="4 3" stroke-width="1.2" x1="610" x2="610" y1="270" y2="350"></line>
+<!-- Sw Core 01 y 02 en Stack -->
+<rect fill="#ffffff" height="60" stroke="#16150f" stroke-width="1.5" width="280" x="150" y="350"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="290" y="376">SWITCH CORE A (Stack / vPC)</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="290" y="394">LACP local-preference activo</text>
+<rect fill="#ffffff" height="60" stroke="#16150f" stroke-width="1.5" width="280" x="470" y="350"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="610" y="376">SWITCH CORE B (Stack / vPC)</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="610" y="394">Enlace inter-switch de alta velocidad</text>
+<line stroke="#16150f" stroke-width="1.5" x1="430" x2="470" y1="380" y2="380"></line>
+<!-- Nota al pie técnica -->
+<line stroke="#d8d4c8" stroke-width="1" x1="40" x2="860" y1="455" y2="455"></line>
+<text fill="#5c584a" font-size="9.5" x="40" y="475">El clúster dinámico sincroniza las sesiones en tiempo real (Stateful HA). Si el nodo activo cae, el pasivo asume la IP virtual (Gratuitous ARP) en menos de 1 segundo</text>
+<text fill="#5c584a" font-size="9.5" x="40" y="492">previniendo la desconexión de túneles VPN y flujos críticos de la LAN.</text>
+</svg><svg aria-label="Diagrama vertical de clúster de firewalls en alta disponibilidad" class="diagrama-mobile" role="img" viewbox="0 0 400 760" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#ffffff" height="46" stroke="#16150f" stroke-width="1.4" width="320" x="40" y="20"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="200" y="46">CONEXIONES WAN / ROUTERS ISP</text>
+<line stroke="#16150f" stroke-width="1.3" x1="150" x2="150" y1="66" y2="110"></line>
+<line stroke="#5c584a" stroke-dasharray="4 3" stroke-width="1.2" x1="250" x2="250" y1="66" y2="300"></line>
+<!-- Nodo Activo -->
+<rect fill="#e6f4ee" height="140" stroke="#059669" stroke-width="1.6" width="320" x="40" y="110"></rect>
+<rect fill="#059669" height="26" width="320" x="40" y="110"></rect>
+<text fill="#ffffff" font-size="11.5" font-weight="600" text-anchor="middle" x="200" y="127">NGFW-01 · NODO ACTIVO</text>
+<text fill="#16150f" font-size="10.5" font-weight="600" x="56" y="160">VIP activa · Procesa todo el tráfico</text>
+<text fill="#5c584a" font-size="10" x="56" y="180">Monitoreo activo de enlaces e interfaces</text>
+<text fill="#5c584a" font-size="10" x="56" y="200">Prioridad: 200 (Preemption habilitado)</text>
+<text fill="#059669" font-size="10" font-weight="600" x="56" y="225">Sesiones activas en tiempo de ejecución</text>
+<!-- Enlaces HA Verticales -->
+<line stroke="#b3402e" stroke-dasharray="4 2" stroke-width="1.3" x1="140" x2="140" y1="250" y2="300"></line>
+<text fill="#b3402e" font-size="9" font-weight="600" text-anchor="end" x="130" y="280">Heartbeat</text>
+<line stroke="#059669" stroke-width="1.4" x1="260" x2="260" y1="250" y2="300"></line>
+<text fill="#059669" font-size="9" font-weight="600" text-anchor="start" x="270" y="280">Sincronización de Sesiones</text>
+<!-- Nodo Pasivo -->
+<rect fill="#ffffff" height="130" stroke="#5c584a" stroke-dasharray="5 3" stroke-width="1.4" width="320" x="40" y="300"></rect>
+<rect fill="#5c584a" height="26" width="320" x="40" y="300"></rect>
+<text fill="#ffffff" font-size="11.5" font-weight="600" text-anchor="middle" x="200" y="317">NGFW-02 · NODO PASIVO</text>
+<text fill="#5c584a" font-size="10.5" x="56" y="350">Interfaces preparadas en modo pasivo</text>
+<text fill="#5c584a" font-size="10" x="56" y="370">Copia idéntica de la tabla de conexiones</text>
+<text fill="#5c584a" font-size="10" x="56" y="390">Prioridad: 100 · Absorción inmediata de VIP</text>
+<line stroke="#16150f" stroke-width="1.3" x1="150" x2="150" y1="430" y2="480"></line>
+<line stroke="#5c584a" stroke-dasharray="4 3" stroke-width="1.2" x1="250" x2="250" y1="430" y2="480"></line>
+<!-- Core Switches Mobile -->
+<rect fill="#ffffff" height="100" stroke="#16150f" stroke-width="1.4" width="320" x="40" y="480"></rect>
+<rect fill="#16150f" height="24" width="320" x="40" y="480"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="200" y="496">SWITCHES DE CORE EN STACK</text>
+<text fill="#16150f" font-size="10.5" x="56" y="524">LACP distribuido entre chasis físicos</text>
+<text fill="#5c584a" font-size="10" x="56" y="544">Rutas estáticas apuntando a la VIP interna</text>
+<text fill="#5c584a" font-size="10" x="56" y="564">Aislamiento total ante caídas de hardware</text>
+<text fill="#b3402e" font-size="11" font-weight="600" text-anchor="middle" x="200" y="620">Failover transparente en menos de 1 segundo</text>
+<text fill="#5c584a" font-size="10" text-anchor="middle" x="200" y="650">Misma configuración de políticas</text>
+<text fill="#5c584a" font-size="10" text-anchor="middle" x="200" y="668">replicada de forma automática por plano HA</text>
+</svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
+      <div class="reference-analysis"><div><span>Qué resuelve</span><p>Representa un par de NGFW activo/pasivo con sincronización de sesiones y enlaces redundantes hacia WAN y core. El objetivo es evitar que el firewall se convierta en un único punto de fallo.</p></div><div><span>Límites y validación</span><p>La alta disponibilidad debe probarse con sesiones reales. Heartbeat disponible no demuestra que NAT, VPN, routing dinámico o inspección mantengan el servicio durante un failover.</p></div></div>
+      <div class="reference-foot">FIG. 17 — Diseño de topología LLD para un clúster NGFW perimetral. La infraestructura se conecta mediante enlaces redundantes LACP cruzados hacia la electrónica de red interna, anulando cualquier punto único de fallo (SPOF).</div>
+    </article><article class="reference-card" data-ref-item id="inspeccion-ssl-tls">
+      <div class="reference-head"><div><span class="reference-series">Perímetro y firewalls</span><h2>Inspección de Contenido SSL/TLS (Capa de Descifrado Segura)</h2></div><span class="reference-code">TA-SEC-18 · Deep Packet Inspection</span></div>
+      <div class="reference-intro"><strong>Descifrado controlado para inspección.</strong> Introduce una capa de inspección TLS con criterios de exclusión, re-cifrado y trazabilidad. Permite analizar contenido cifrado sin convertir el descifrado en una excepción opaca.</div>
+      <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de flujo de inspección SSL y descifrado de paquetes en un firewall de nueva generación" class="diagrama-desktop" role="img" viewbox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
+<!-- Cliente LAN -->
+<rect fill="#ffffff" height="80" stroke="#16150f" stroke-width="1.5" width="150" x="30" y="180"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="105" y="210">CLIENTE INTERNO</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="105" y="228">Puesto de usuario LAN</text>
+<text fill="#059669" font-size="8.5" text-anchor="middle" x="105" y="244">Certificado CA raíz instalado</text>
+<!-- Solicitud HTTPS Saliente -->
+<line stroke="#16150f" stroke-width="1.5" x1="180" x2="280" y1="220" y2="220"></line>
+<polygon fill="#16150f" points="272,215 280,220 272,225"></polygon>
+<text fill="#16150f" font-size="9" text-anchor="middle" x="230" y="208">Petición HTTPS</text>
+<!-- Nivel Superior: Ruta de Bypass -->
+<path d="M 140 180 Q 230 60 450 60" fill="none" stroke="#8a6d1f" stroke-dasharray="5 3" stroke-width="1.4"></path>
+<rect fill="#ffffff" height="40" stroke="#8a6d1f" stroke-width="1.3" width="180" x="360" y="80"></rect>
+<text fill="#8a6d1f" font-size="9.5" font-weight="600" text-anchor="middle" x="450" y="98">LISTA DE BYPASS (SSL)</text>
+<text fill="#5c584a" font-size="8" text-anchor="middle" x="450" y="112">Banca · Salud · Privacidad laboral</text>
+<path d="M 450 60 Q 670 60 760 180" fill="none" stroke="#8a6d1f" stroke-dasharray="5 3" stroke-width="1.4"></path>
+<text fill="#8a6d1f" font-size="9" text-anchor="middle" x="450" y="44">Tráfico sin descifrar (Flujo directo)</text>
+<!-- CAJA MOTOR NGFW -->
+<rect fill="#e6f4ee" height="230" stroke="#059669" stroke-width="1.8" width="340" x="280" y="140"></rect>
+<rect fill="#059669" height="26" width="340" x="280" y="140"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="450" y="157">MOTOR DE INSPECCIÓN DE SEGURIDAD NGFW</text>
+<!-- Componentes Internos del Motor -->
+<rect fill="#ffffff" height="50" stroke="#16150f" stroke-width="1.2" width="90" x="300" y="186"></rect>
+<text fill="#16150f" font-size="9" font-weight="600" text-anchor="middle" x="345" y="210">Descifrado</text>
+<text fill="#5c584a" font-size="8" text-anchor="middle" x="345" y="224">Copia intermedia</text>
+<line stroke="#16150f" stroke-width="1.2" x1="390" x2="420" y1="211" y2="211"></line>
+<rect fill="#ffffff" height="110" stroke="#b3402e" stroke-width="1.3" width="100" x="420" y="186"></rect>
+<text fill="#b3402e" font-size="9.5" font-weight="600" text-anchor="middle" x="470" y="210">ANÁLISIS DPI</text>
+<text fill="#5c584a" font-size="8" x="430" y="235">· Motor IPS</text>
+<text fill="#5c584a" font-size="8" x="430" y="250">· Antimalware</text>
+<text fill="#5c584a" font-size="8" x="430" y="265">· Filtrado URL</text>
+<text fill="#5c584a" font-size="8" x="430" y="280">· Sandboxing</text>
+<line stroke="#16150f" stroke-width="1.2" x1="520" x2="550" y1="211" y2="211"></line>
+<rect fill="#ffffff" height="50" stroke="#16150f" stroke-width="1.2" width="60" x="550" y="186"></rect>
+<text fill="#16150f" font-size="9" font-weight="600" text-anchor="middle" x="580" y="210">Recifrado</text>
+<text fill="#5c584a" font-size="8" text-anchor="middle" x="580" y="224">Clave local</text>
+<text fill="#16150f" font-size="9" font-weight="600" text-anchor="middle" x="450" y="325">Certificado SSL emulado al vuelo por el FW</text>
+<text fill="#5c584a" font-size="8.5" text-anchor="middle" x="450" y="342">Exclusivo para dominios validados y de reputación segura</text>
+<!-- Conexión a Internet -->
+<line stroke="#16150f" stroke-width="1.5" x1="620" x2="720" y1="220" y2="220"></line>
+<polygon fill="#16150f" points="712,215 720,220 712,225"></polygon>
+<!-- Servidor Web Externo -->
+<rect fill="#ffffff" height="80" stroke="#16150f" stroke-width="1.5" width="150" x="720" y="180"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="795" y="210">SERVIDOR DESTINO</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="795" y="228">Internet / SaaS público</text>
+<text fill="#5c584a" font-size="8.5" text-anchor="middle" x="795" y="244">Conexión TLS externa</text>
+<!-- Alerta de Bloqueo de Amenaza -->
+<line stroke="#b3402e" stroke-dasharray="3 3" stroke-width="1.3" x1="470" x2="470" y1="296" y2="380"></line>
+<rect fill="#ffffff" height="30" stroke="#b3402e" stroke-width="1.2" width="210" x="365" y="380"></rect>
+<text fill="#b3402e" font-size="9" font-weight="600" text-anchor="middle" x="470" y="399">AMENAZA ENCONTRADA = DROP PACKET</text>
+</svg><svg aria-label="Diagrama vertical de flujo de inspección de contenido SSL/TLS" class="diagrama-mobile" role="img" viewbox="0 0 400 760" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#ffffff" height="66" stroke="#16150f" stroke-width="1.4" width="280" x="60" y="20"></rect>
+<text fill="#16150f" font-size="12" font-weight="600" text-anchor="middle" x="200" y="46">CLIENTE INTERNO (PUESTO)</text>
+<text fill="#5c584a" font-size="10.5" text-anchor="middle" x="200" y="66">Requiere certificado CA del Firewall</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="86" y2="120"></line>
+<!-- Desvío de Bypass en Móvil -->
+<line stroke="#8a6d1f" stroke-dasharray="4 3" stroke-width="1.3" x1="200" x2="330" y1="100" y2="100"></line>
+<line stroke="#8a6d1f" stroke-dasharray="4 3" stroke-width="1.3" x1="330" x2="330" y1="100" y2="590"></line>
+<line stroke="#8a6d1f" stroke-dasharray="4 3" stroke-width="1.3" x1="330" x2="200" y1="590" y2="590"></line>
+<text fill="#8a6d1f" font-size="9.5" text-anchor="middle" transform="rotate(90 320 340)" x="320" y="340">Bypass de Descifrado (Salud / Finanzas)</text>
+<!-- Bloque Principal Firewall -->
+<rect fill="#e6f4ee" height="380" stroke="#059669" stroke-width="1.6" width="260" x="40" y="120"></rect>
+<rect fill="#059669" height="26" width="260" x="40" y="120"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="170" y="137">PERÍMETRO DE INSPECCIÓN NGFW</text>
+<!-- Pasos Internos Verticales -->
+<rect fill="#ffffff" height="42" stroke="#16150f" stroke-width="1.2" width="220" x="60" y="166"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="170" y="192">1. Apertura de Sesión SSL</text>
+<line stroke="#16150f" stroke-width="1.2" x1="170" x2="170" y1="208" y2="230"></line>
+<rect fill="#ffffff" height="110" stroke="#b3402e" stroke-width="1.4" width="220" x="60" y="230"></rect>
+<text fill="#b3402e" font-size="11" font-weight="600" text-anchor="middle" x="170" y="252">2. INSPECCIÓN PROFUNDA (DPI)</text>
+<text fill="#5c584a" font-size="10" x="76" y="276">· Detección firmas IPS</text>
+<text fill="#5c584a" font-size="10" x="76" y="294">· Análisis de Malware payload</text>
+<text fill="#5c584a" font-size="10" x="76" y="312">· Control de aplicaciones nativas</text>
+<line stroke="#16150f" stroke-width="1.2" x1="170" x2="170" y1="340" y2="362"></line>
+<rect fill="#ffffff" height="42" stroke="#16150f" stroke-width="1.2" width="220" x="60" y="362"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="170" y="388">3. Recifrado de Tráfico</text>
+<line stroke="#16150f" stroke-width="1.2" x1="170" x2="170" y1="404" y2="426"></line>
+<rect fill="#ffffff" height="52" stroke="#8a6d1f" stroke-width="1.3" width="220" x="60" y="426"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="170" y="448">4. Re-emisión de Certificado</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="170" y="464">Firmado por la CA corporativa</text>
+<line stroke="#16150f" stroke-width="1.5" x1="170" x2="170" y1="500" y2="540"></line>
+<polygon fill="#16150f" points="165,540 200,550 205,540"></polygon>
+<!-- Internet Mobile -->
+<rect fill="#ffffff" height="60" stroke="#16150f" stroke-width="1.4" width="220" x="60" y="540"></rect>
+<text fill="#16150f" font-size="12" font-weight="600" text-anchor="middle" x="170" y="566">SERVIDOR WEB DESTINO</text>
+<text fill="#5c584a" font-size="10.5" text-anchor="middle" x="170" y="584">Internet global / Destino externo</text>
+<text fill="#b3402e" font-size="11" font-weight="600" text-anchor="middle" x="200" y="630">El 80% del malware actual viaja cifrado</text>
+<text fill="#5c584a" font-size="10.5" text-anchor="middle" x="200" y="650">Sin inspección de SSL, las capas perimetrales</text>
+<text fill="#5c584a" font-size="10.5" text-anchor="middle" x="200" y="668">se vuelven completamente ciegas ante el payload</text>
+</svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
+      <div class="reference-analysis"><div><span>Qué resuelve</span><p>Introduce una capa de inspección TLS con criterios de exclusión, re-cifrado y trazabilidad. Permite analizar contenido cifrado sin convertir el descifrado en una excepción opaca.</p></div><div><span>Límites y validación</span><p>El descifrado tiene impacto legal, de privacidad y de capacidad. Deben excluirse categorías sensibles y proteger especialmente las claves y certificados de la CA de inspección.</p></div></div>
+      <div class="reference-foot">FIG. 18 — Mecanismo de descifrado y descapsulado SSL/TLS (DPI-SSL). Permite al cortafuegos interceptar, limpiar virus o vectores maliciosos y recifrar la sesión de forma transparente antes de su salida a Internet.</div>
+    </article><article class="reference-card" data-ref-item id="core-l3-redundante">
+      <div class="reference-head"><div><span class="reference-series">Core y campus</span><h2>Tolerancia a fallos en Core L3 (Agregación Multi-Chassis)</h2></div><span class="reference-code">TA-NET-19 · Core High Availability</span></div>
+      <div class="reference-intro"><strong>Core redundante y agregación multi-chassis.</strong> Elimina dependencias de un único switch de core mediante agregación cruzada y un plano lógico coordinado. La pérdida de un enlace no debe provocar pérdida completa de conectividad.</div>
+      <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de redundancia de red con stack de switches core L3 y conmutación por fallo de enlace LACP" class="diagrama-desktop" role="img" viewbox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
+<!-- Contenedor del Stack Core -->
+<rect fill="none" height="170" stroke="#8a6d1f" stroke-dasharray="8 4" stroke-width="1.4" width="600" x="150" y="30"></rect>
+<text fill="#8a6d1f" font-size="11" font-weight="600" letter-spacing="1.5" text-anchor="middle" x="450" y="52">CAPA CORE L3 (SWITCHES EN STACK VIRTUAL / VSS / vPC)</text>
+<!-- Core Switch 01 -->
+<rect fill="#e6f4ee" height="94" stroke="#059669" stroke-width="1.6" width="220" x="180" y="76"></rect>
+<text fill="#16150f" font-size="11.5" font-weight="600" text-anchor="middle" x="290" y="100">CORE-SW-01 (Master)</text>
+<text fill="#5c584a" font-size="9.5" x="196" y="124">IP/Routing Engine Activo</text>
+<text fill="#5c584a" font-size="9.5" x="196" y="142">Prioridad de stack superior</text>
+<!-- Enlace inter-switch de alta velocidad (Stackwise / VSL) -->
+<line stroke="#8a6d1f" stroke-width="3" x1="400" x2="500" y1="120" y2="120"></line>
+<text fill="#8a6d1f" font-size="9" font-weight="600" text-anchor="middle" x="450" y="110">Backplane / Stack Link</text>
+<!-- Core Switch 02 -->
+<rect fill="#ffffff" height="94" stroke="#16150f" stroke-width="1.5" width="220" x="500" y="76"></rect>
+<text fill="#16150f" font-size="11.5" font-weight="600" text-anchor="middle" x="610" y="100">CORE-SW-02 (Standby)</text>
+<text fill="#5c584a" font-size="9.5" x="516" y="124">Plano de datos sincronizado</text>
+<text fill="#5c584a" font-size="9.5" x="516" y="142">Failover de control pasivo</text>
+<!-- CAPA DE DISTRIBUCIÓN / ACCESO -->
+<!-- Switch Distribución 01 (Simulación escenario de Caída de Enlace) -->
+<rect fill="#ffffff" height="90" stroke="#16150f" stroke-width="1.5" width="220" x="180" y="360"></rect>
+<text fill="#16150f" font-size="11.5" font-weight="600" text-anchor="middle" x="290" y="384">DIST-SW-01</text>
+<text fill="#16150f" font-size="9.5" font-weight="600" x="196" y="410">MEC / Port-Channel 10</text>
+<text fill="#5c584a" font-size="9.5" x="196" y="428">Agregación LACP cruzada</text>
+<!-- Switch Distribución 02 (Escenario Operativo Normal) -->
+<rect fill="#ffffff" height="90" stroke="#16150f" stroke-width="1.5" width="220" x="500" y="360"></rect>
+<text fill="#16150f" font-size="11.5" font-weight="600" text-anchor="middle" x="610" y="384">DIST-SW-02</text>
+<text fill="#059669" font-size="9.5" font-weight="600" x="516" y="410">MEC / Port-Channel 20</text>
+<text fill="#5c584a" font-size="9.5" x="516" y="428">Reparto de carga equilibrado</text>
+<!-- CONEXIONES FÍSICAS Y SIMULACIÓN DE FAILOVER -->
+<!-- Enlaces cruzados DIST-01 (LACP Activo con fallo simulado) -->
+<!-- Enlace principal operativo -->
+<line stroke="#059669" stroke-width="2" x1="260" x2="260" y1="360" y2="170"></line>
+<text fill="#059669" font-size="9" font-weight="600" text-anchor="end" x="250" y="260">Tráfico Activo (100%)</text>
+<!-- Enlace redundante con rotura/caída física -->
+<line stroke="#b3402e" stroke-dasharray="4 4" stroke-width="1.5" x1="320" x2="550" y1="360" y2="170"></line>
+<line stroke="#b3402e" stroke-width="2.2" x1="430" x2="446" y1="257" y2="273"></line>
+<line stroke="#b3402e" stroke-width="2.2" x1="446" x2="430" y1="257" y2="273"></line>
+<text fill="#b3402e" font-size="9.5" font-weight="600" text-anchor="middle" x="445" y="246">LINK DOWN</text>
+<!-- Enlaces cruzados DIST-02 (Operativa balanceada estándar) -->
+<line stroke="#16150f" stroke-width="1.5" x1="580" x2="350" y1="360" y2="170"></line>
+<line stroke="#16150f" stroke-width="1.5" x1="640" x2="640" y1="360" y2="170"></line>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="615" y="260">LACP balanceado</text>
+<!-- Anillos indicadores de agregación lógica (EtherChannel) -->
+<ellipse cx="270" cy="290" fill="none" rx="20" ry="8" stroke="#059669" stroke-width="1.2" transform="rotate(-30 270 290)"></ellipse>
+<ellipse cx="620" cy="290" fill="none" rx="25" ry="8" stroke="#16150f" stroke-width="1.2" transform="rotate(30 620 290)"></ellipse>
+<!-- Notas de Ingeniería e Impacto -->
+<line stroke="#d8d4c8" stroke-width="1" x1="40" x2="860" y1="475" y2="475"></line>
+<text fill="#5c584a" font-size="9.5" x="40" y="495">Topología libre de bucles sin dependencia de Spanning-Tree (STP blocking eliminado). Al agrupar el Core de manera lógica, las conexiones hacia distribución actúan</text>
+<text fill="#5c584a" font-size="9.5" x="40" y="510">como un único enlace lógico Port-Channel. Ante la rotura del hilo de fibra, la convergencia es sub-segundo vía hardware.</text>
+</svg><svg aria-label="Diagrama vertical de failover y redundancia en switches core" class="diagrama-mobile" role="img" viewbox="0 0 400 760" xmlns="http://www.w3.org/2000/svg">
+<!-- Stack Core Mobile -->
+<rect fill="none" height="230" stroke="#8a6d1f" stroke-dasharray="6 3" stroke-width="1.4" width="320" x="40" y="20"></rect>
+<text fill="#8a6d1f" font-size="10.5" font-weight="600" text-anchor="middle" x="200" y="40">CAPA CORE L3 EN STACK</text>
+<rect fill="#e6f4ee" height="64" stroke="#059669" stroke-width="1.6" width="280" x="60" y="56"></rect>
+<text fill="#16150f" font-size="11.5" font-weight="600" text-anchor="middle" x="200" y="80">CORE-SW-01 (Master)</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="200" y="98">IP/Routing Engine Principal</text>
+<!-- Stack link vertical -->
+<line stroke="#8a6d1f" stroke-width="2.5" x1="200" x2="200" y1="120" y2="150"></line>
+<rect fill="#ffffff" height="64" stroke="#16150f" stroke-width="1.4" width="280" x="60" y="150"></rect>
+<text fill="#16150f" font-size="11.5" font-weight="600" text-anchor="middle" x="200" y="174">CORE-SW-02 (Standby)</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="200" y="192">Plano de datos replicado</text>
+<!-- Tránsito central -->
+<line stroke="#059669" stroke-width="2" x1="120" x2="120" y1="250" y2="440"></line>
+<text fill="#059669" font-size="10" font-weight="600" text-anchor="end" x="110" y="340">Enlace Activo</text>
+<!-- Simulación de caída de enlace físico -->
+<line stroke="#b3402e" stroke-dasharray="4 4" stroke-width="1.5" x1="280" x2="280" y1="250" y2="440"></line>
+<line stroke="#b3402e" stroke-width="2" x1="272" x2="288" y1="332" y2="348"></line>
+<line stroke="#b3402e" stroke-width="2" x1="288" x2="272" y1="332" y2="348"></line>
+<text fill="#b3402e" font-size="10" font-weight="600" x="298" y="344">FAIL</text>
+<!-- Capa de Distribución Mobile -->
+<rect fill="#ffffff" height="150" stroke="#16150f" stroke-width="1.5" width="320" x="40" y="440"></rect>
+<rect fill="#16150f" height="26" width="320" x="40" y="440"></rect>
+<text fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle" x="200" y="457">SWITCHES DE ACCESO / DISTRIBUCIÓN</text>
+<text fill="#16150f" font-size="11" font-weight="600" x="60" y="496">DIST-SW-01</text>
+<text fill="#5c584a" font-size="10" x="60" y="516">Conmutación automática por LACP activo</text>
+<text fill="#5c584a" font-size="10" x="60" y="534">Redirección inmediata de flujos de datos</text>
+<text fill="#059669" font-size="10" font-weight="600" x="60" y="556">Pérdida de paquetes detectada: Cero</text>
+<!-- Leyendas inferiores móviles -->
+<text fill="#b3402e" font-size="11" font-weight="600" text-anchor="middle" x="200" y="630">No depende del recálculo de Spanning-Tree</text>
+<text fill="#5c584a" font-size="10" text-anchor="middle" x="200" y="652">Evita interrupciones de tráfico de voz IP</text>
+<text fill="#5c584a" font-size="10" text-anchor="middle" x="200" y="670">y cortes de conectividad en apps corporativas</text>
+</svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
+      <div class="reference-analysis"><div><span>Qué resuelve</span><p>Elimina dependencias de un único switch de core mediante agregación cruzada y un plano lógico coordinado. La pérdida de un enlace no debe provocar pérdida completa de conectividad.</p></div><div><span>Límites y validación</span><p>MLAG, vPC, VSS o stack virtual tienen límites distintos. Deben documentarse split-brain, peer-link, keepalive y comportamiento ante fallos parciales.</p></div></div>
+      <div class="reference-foot">FIG. 19 — Mecanismo de Failover LAN en Capa de Distribución y Core. Al eliminar puertos bloqueados por STP mediante agregación lógica, los enlaces cruzados absorben instantáneamente toda la carga en caso de siniestro físico o avería del transceptor.</div>
+    </article><article class="reference-card" data-ref-item id="estrategia-multisitio-3dc">
+      <div class="reference-head"><div><span class="reference-series">Resiliencia y continuidad</span><h2>Estrategia Multi-Sitio 3DC (Malla Metropolitana + DR Remoto)</h2></div><span class="reference-code">TA-DRP-20 · High Availability &amp; DR</span></div>
+      <div class="reference-intro"><strong>Resiliencia metropolitana y desastre geográfico.</strong> Combina dos centros activos de baja latencia con un tercer sitio remoto para contingencia. Separa alta disponibilidad local de recuperación ante desastre geográfico.</div>
+      <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama horizontal de arquitectura de tres datacenters (3DC) con balanceo metropolitano y sitio alternativo de contingencia asíncrono" class="diagrama-desktop" role="img" viewbox="0 0 900 540" xmlns="http://www.w3.org/2000/svg">
+<!-- Balanceador Global GSLB -->
+<rect fill="#e6f4ee" height="46" stroke="#059669" stroke-width="1.6" width="180" x="360" y="20"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="450" y="40">DNS GLOBAL / GSLB</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="450" y="56">Distribución inteligente de carga</text>
+<!-- Conexiones GSLB -->
+<path d="M 360 43 L 155 140" fill="none" stroke="#16150f" stroke-width="1.2"></path>
+<path d="M 540 43 L 395 140" fill="none" stroke="#16150f" stroke-width="1.2"></path>
+<path d="M 450 66 L 710 140" fill="none" stroke="#5c584a" stroke-dasharray="4 3" stroke-width="1.2"></path>
+<!-- PERÍMETRO 1: REGION METROPOLITANA (ACTIVO/ACTIVO) -->
+<rect fill="none" height="320" stroke="#059669" stroke-dasharray="8 4" stroke-width="1.4" width="510" x="30" y="94"></rect>
+<text fill="#059669" font-size="10" font-weight="700" letter-spacing="1" x="40" y="114">ZONA METROPOLITANA (Latencia inferior a 2ms)</text>
+<!-- DC-01 (Madrid-A) -->
+<rect fill="#ffffff" height="250" stroke="#16150f" stroke-width="1.5" width="210" x="50" y="140"></rect>
+<rect fill="#16150f" height="26" width="210" x="50" y="140"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="155" y="157">DC-01 · MADRID CENTRO</text>
+<text fill="#059669" font-size="10" font-weight="600" x="64" y="190">ESTADO: ACTIVO</text>
+<rect fill="#ffffff" height="40" stroke="#16150f" stroke-width="1.1" width="186" x="62" y="212"></rect>
+<text font-size="9.5" font-weight="600" text-anchor="middle" x="155" y="230">Stretch Cluster Compute</text>
+<rect fill="#e6f4ee" height="40" stroke="#059669" stroke-width="1.2" width="186" x="62" y="262"></rect>
+<text font-size="9.5" font-weight="600" text-anchor="middle" x="155" y="280">Cabina Virtualizada A</text>
+<text fill="#5c584a" font-size="9" x="64" y="330">· Red local L2 extendida (VXLAN)</text>
+<text fill="#5c584a" font-size="9" x="64" y="348">· Enrutamiento Anycast local</text>
+<!-- Réplica Síncrona Cero Pérdida -->
+<line stroke="#059669" stroke-width="2" x1="260" x2="310" y1="282" y2="282"></line>
+<polygon fill="#059669" points="268,277 260,282 268,287"></polygon>
+<polygon fill="#059669" points="302,277 310,282 302,287"></polygon>
+<text fill="#059669" font-size="8.5" font-weight="600" text-anchor="middle" x="285" y="272">mTLS / Fibre</text>
+<text fill="#059669" font-size="8" font-weight="600" text-anchor="middle" x="285" y="298">SÍNCRONA</text>
+<!-- DC-02 (Madrid-B) -->
+<rect fill="#ffffff" height="250" stroke="#16150f" stroke-width="1.5" width="210" x="310" y="140"></rect>
+<rect fill="#16150f" height="26" width="210" x="310" y="140"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="415" y="157">DC-02 · MADRID NORTE</text>
+<text fill="#059669" font-size="10" font-weight="600" x="324" y="190">ESTADO: ACTIVO</text>
+<rect fill="#ffffff" height="40" stroke="#16150f" stroke-width="1.1" width="186" x="322" y="212"></rect>
+<text font-size="9.5" font-weight="600" text-anchor="middle" x="415" y="230">Stretch Cluster Compute</text>
+<rect fill="#e6f4ee" height="40" stroke="#059669" stroke-width="1.2" width="186" x="322" y="262"></rect>
+<text font-size="9.5" font-weight="600" text-anchor="middle" x="415" y="280">Cabina Virtualizada B</text>
+<text fill="#5c584a" font-size="9" x="324" y="330">· Balanceo de carga en caliente</text>
+<text fill="#5c584a" font-size="9" x="324" y="348">· Movilidad de VMs sin corte</text>
+<!-- REPLICACIÓN ASÍNCRONA A REGIN REMOTA (WAN) -->
+<line stroke="#8a6d1f" stroke-dasharray="5 3" stroke-width="1.6" x1="520" x2="610" y1="282" y2="282"></line>
+<polygon fill="#8a6d1f" points="602,277 610,282 602,287"></polygon>
+<text fill="#ambar" font-size="8.5" font-weight="600" text-anchor="middle" x="565" y="268">ASÍNCRONA</text>
+<text fill="#5c584a" font-size="8" text-anchor="middle" x="565" y="296">IPSec / WAN</text>
+<!-- PERÍMETRO 2: REGIÓN REMOTA DR (PASIVO) -->
+<rect fill="none" height="320" stroke="#5c584a" stroke-dasharray="6 3" stroke-width="1.2" width="270" x="590" y="94"></rect>
+<text fill="#5c584a" font-size="10" font-weight="700" letter-spacing="1" x="600" y="114">REGIÓN REMOTA (Tolerancia geográfica)</text>
+<!-- DC-03 (Barcelona o Valencia / Contingencia) -->
+<rect fill="#ffffff" height="250" stroke="#5c584a" stroke-dasharray="6 3" stroke-width="1.5" width="230" x="610" y="140"></rect>
+<rect fill="#5c584a" height="26" width="230" x="610" y="140"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="725" y="157">DC-03 · SITIO DR PASIVO</text>
+<text fill="#8a6d1f" font-size="10" font-weight="700" x="624" y="190">ESTADO: REPLICA STANDBY</text>
+<rect fill="#ffffff" height="40" stroke="#5c584a" stroke-dasharray="4 2" stroke-width="1.1" width="206" x="622" y="212"></rect>
+<text fill="#5c584a" font-size="9.5" font-weight="500" text-anchor="middle" x="725" y="230">Infraestructura Reservada</text>
+<rect fill="#ffffff" height="40" stroke="#8a6d1f" stroke-width="1.2" width="206" x="622" y="262"></rect>
+<text fill="#16150f" font-size="9.5" font-weight="600" text-anchor="middle" x="725" y="280">Réplica de Storage (PiT)</text>
+<text fill="#5c584a" font-size="9" x="624" y="330">· Orquestador DRP listo (Runbook)</text>
+<text fill="#5c584a" font-size="9" x="624" y="348">· Recuperación ante corrupción lógica</text>
+<!-- Testigo Arbitrador de Quorum Independiente -->
+<rect fill="#ffffff" height="50" stroke="#8a6d1f" stroke-width="1.4" width="240" x="330" y="440"></rect>
+<text fill="#16150f" font-size="10" font-weight="600" text-anchor="middle" x="450" y="461">TESTIGO DE QUORUM (SITIO NEUTRO)</text>
+<text fill="#5c584a" font-size="8.5" text-anchor="middle" x="450" y="478">Despliegue en Cloud independiente · Evita Split-Brain</text>
+<line stroke="#8a6d1f" stroke-dasharray="4 4" stroke-width="1" x1="330" x2="155" y1="465" y2="390"></line>
+<line stroke="#8a6d1f" stroke-dasharray="4 4" stroke-width="1" x1="570" x2="415" y1="465" y2="390"></line>
+<!-- Línea final divisoria -->
+<line stroke="#d8d4c8" stroke-width="1" x1="40" x2="860" y1="510" y2="510"></line>
+</svg><svg aria-label="Diagrama vertical de topología de recuperación de datos en tres sitios 3DC" class="diagrama-mobile" role="img" viewbox="0 0 400 860" xmlns="http://www.w3.org/2000/svg">
+<!-- GSLB Mobile -->
+<rect fill="#e6f4ee" height="50" stroke="#059669" stroke-width="1.6" width="260" x="70" y="16"></rect>
+<text fill="#16150f" font-size="12" font-weight="600" text-anchor="middle" x="200" y="38">DNS GLOBAL / GSLB</text>
+<text fill="#5c584a" font-size="10" text-anchor="middle" x="200" y="54">Distribuidor de carga</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="66" y2="96"></line>
+<!-- DC-01 Activo Local -->
+<rect fill="#ffffff" height="150" stroke="#16150f" stroke-width="1.6" width="320" x="40" y="96"></rect>
+<rect fill="#16150f" height="26" width="320" x="40" y="96"></rect>
+<text fill="#ffffff" font-size="11.5" font-weight="600" text-anchor="middle" x="200" y="113">DC-01 · MADRID CENTRO (ACTIVO)</text>
+<text fill="#059669" font-size="11" font-weight="600" x="56" y="150">Capa de cómputo extendida L2</text>
+<text fill="#5c584a" font-size="10.5" x="56" y="170">Cabina virtual en malla metropolitana</text>
+<text fill="#5c584a" font-size="10.5" x="56" y="190">RPO igual a 0 · Tolerancia a fallos local</text>
+<!-- Conexión Síncrona Vertical -->
+<line stroke="#059669" stroke-width="2" x1="200" x2="200" y1="246" y2="296"></line>
+<polygon fill="#059669" points="195,254 200,246 205,254"></polygon>
+<polygon fill="#059669" points="195,288 200,296 205,288"></polygon>
+<text fill="#059669" font-size="10" font-weight="600" x="215" y="276">REPLICA SÍNCRONA</text>
+<!-- DC-02 Activo Local -->
+<rect fill="#ffffff" height="150" stroke="#16150f" stroke-width="1.6" width="320" x="40" y="296"></rect>
+<rect fill="#16150f" height="26" width="320" x="40" y="296"></rect>
+<text fill="#ffffff" font-size="11.5" font-weight="600" text-anchor="middle" x="200" y="313">DC-02 · MADRID NORTE (ACTIVO)</text>
+<text fill="#059669" font-size="11" font-weight="600" x="56" y="350">Balanceo síncrono activo-activo</text>
+<text fill="#5c584a" font-size="10.5" x="56" y="370">Simetría total de almacenamiento local</text>
+<text fill="#5c584a" font-size="10.5" x="56" y="390">Infraestructura inmune a caída de un nodo</text>
+<!-- Conexión Asíncrona WAN Remota -->
+<line stroke="#8a6d1f" stroke-dasharray="5 3" stroke-width="1.5" x1="200" x2="200" y1="446" y2="520"></line>
+<polygon fill="#8a6d1f" points="195,512 200,520 205,512"></polygon>
+<text fill="#8a6d1f" font-size="10.5" font-weight="600" x="215" y="488">RÉPLICA ASÍNCRONA (WAN)</text>
+<!-- DC-03 DR Remoto Pasivo -->
+<rect fill="#ffffff" height="150" stroke="#5c584a" stroke-dasharray="6 3" stroke-width="1.5" width="320" x="40" y="520"></rect>
+<rect fill="#5c584a" height="26" width="320" x="40" y="520"></rect>
+<text fill="#ffffff" font-size="11.5" font-weight="600" text-anchor="middle" x="200" y="537">DC-03 · SITIO DR (PASIVO REMOTO)</text>
+<text fill="#8a6d1f" font-size="11" font-weight="600" x="56" y="574">Copia Point-in-Time aislada</text>
+<text fill="#5c584a" font-size="10.5" x="56" y="594">Aislamiento geográfico total (otra región)</text>
+<text fill="#5c584a" font-size="10.5" x="56" y="614">Runbook de automatización listo para activar</text>
+<!-- Arbitraje Quorum Mobile -->
+<line stroke="#8a6d1f" stroke-dasharray="4 4" stroke-width="1.2" x1="200" x2="200" y1="670" y2="700"></line>
+<rect fill="#ffffff" height="52" stroke="#8a6d1f" stroke-width="1.4" width="280" x="60" y="700"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="200" y="722">TESTIGO DE QUORUM NEUTRO</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="200" y="738">Instancia Cloud para validación de nodos</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="796">Malla local RPO=0 + Resiliencia geográfica regional</text>
+</svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
+      <div class="reference-analysis"><div><span>Qué resuelve</span><p>Combina dos centros activos de baja latencia con un tercer sitio remoto para contingencia. Separa alta disponibilidad local de recuperación ante desastre geográfico.</p></div><div><span>Límites y validación</span><p>La replicación síncrona y la extensión de capa 2 tienen restricciones de latencia. El tercer centro debe probarse como entorno recuperable, no limitarse a recibir réplicas.</p></div></div>
+      <div class="reference-foot">FIG. 20 — Estrategia de disponibilidad 3DC (Three Data Center): La réplica síncrona metropolitana garantiza cero pérdida de información ante incidentes locales, mientras que el tercer nodo remoto asegura la continuidad operativa frente a desastres de escala regional.</div>
+    </article></div><div class="references-pagination" id="referencesPagination"></div></main><div id="footer-container"></div></div></div><script src="../js/menu.js"></script><script src="../js/footer.js"></script><script>
+const REF_PER_PAGE=7;let refPage=parseInt(new URLSearchParams(location.search).get('page')||'1',10);const refItems=[...document.querySelectorAll('[data-ref-item]')];function renderRefs(){const total=Math.max(1,Math.ceil(refItems.length/REF_PER_PAGE));refPage=Math.min(Math.max(refPage,1),total);refItems.forEach((el,i)=>el.style.display=(i>=(refPage-1)*REF_PER_PAGE&&i<refPage*REF_PER_PAGE)?'block':'none');let h=`<button class="page-btn" ${refPage===1?'disabled':''} onclick="goRef(${refPage-1})">←</button>`;for(let i=1;i<=total;i++)h+=`<button class="page-btn${i===refPage?' active':''}" onclick="goRef(${i})">${i}</button>`;h+=`<button class="page-btn" ${refPage===total?'disabled':''} onclick="goRef(${refPage+1})">→</button>`;document.getElementById('referencesPagination').innerHTML=h}function goRef(n){const total=Math.max(1,Math.ceil(refItems.length/REF_PER_PAGE));if(n<1||n>total)return;const u=new URL(location.href);n===1?u.searchParams.delete('page'):u.searchParams.set('page',n);location.href=u.pathname+(u.searchParams.toString()?'?'+u.searchParams.toString():'')}function toggleZoom(el){if(el.classList.contains('zoomed')){el.classList.remove('zoomed');document.querySelector('.zoom-overlay')?.classList.remove('active')}else{document.querySelectorAll('.reference-diagram.zoomed').forEach(x=>x.classList.remove('zoomed'));el.classList.add('zoomed');let o=document.querySelector('.zoom-overlay');if(!o){o=document.createElement('div');o.className='zoom-overlay';o.onclick=()=>{document.querySelectorAll('.reference-diagram.zoomed').forEach(x=>x.classList.remove('zoomed'));o.classList.remove('active')};document.body.appendChild(o)}o.classList.add('active')}}renderRefs();
+if(location.hash){requestAnimationFrame(()=>{const target=document.querySelector(location.hash);if(target) target.scrollIntoView({behavior:'smooth',block:'start'});});}
+</script></body></html>

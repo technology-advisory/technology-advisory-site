@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+    <title>Controles y evidencias: el drift que nadie detectó durante meses | Infraestructura como Código | Technology Advisory</title>
+    <meta name="description" content="Qué evidencias de IaC reunir, y por qué la más reveladora es la comparación entre lo que el código dice y lo que realmente existe en producción.">
+    <meta name="author" content="Miguel Ángel Carriazo">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#059669">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/dossier-core.css">
+    <link rel="stylesheet" href="../../css/articulo.css">
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/articulo-diagramas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="card-wrapper ds-page">
+        <div class="card">
+
+            <div id="menu-container"></div>
+            <div class="accent-bar" style="background:#059669;"></div>
+
+            <div class="ds-meta">
+                <span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: arquitectura</span>
+                <span>categoría: <strong>Infraestructura como Código</strong></span>
+            </div>
+
+            <div style="padding: 16px 4% 0;">
+                <a href="../index.html?cat=infraestructura-codigo" class="defensa-btn-back" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Infraestructura como Código</a>
+            </div>
+
+            <div style="padding: 40px 4% 24px; border-bottom: 1px solid #ededea;">
+                <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Controles · Infraestructura como Código</div>
+                <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Controles y evidencias: <span style="color:#059669;">el drift que nadie detectó durante meses</span></h1>
+                <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Qué evidencias de IaC reunir, y por qué la más reveladora es la comparación entre lo que el código dice y lo que realmente existe en producción.</p>
+                <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>Infraestructura como Código</span>
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>Lectura Avanzada (16-20 min)</span>
+                </div>
+            </div>
+
+            <div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+                <div class="defensa-main" style="min-width:0;">
+
+                    <!-- GRÁFICO 1: EVIDENCIAS DE IAC -->
+                    <figure class="article-diagram" aria-label="Evidencias de infraestructura como código" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="410" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Evidencias de infraestructura como código</text>
+                                <text x="40" y="66" font-size="12" fill="#77776f">del historial de Git a la detección de drift</text>
+                                <rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Historial de Git</text>
+                                <text x="58" y="163" font-size="11" fill="#77776f">Quién cambió qué, y cuándo</text>
+                                <rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Plan de cada cambio</text>
+                                <text x="488" y="163" font-size="11" fill="#77776f">Diff documentado antes de aplicar</text>
+                                <rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Detección de drift</text>
+                                <text x="58" y="283" font-size="11" fill="#77776f">¿Coincide el código con la realidad?</text>
+                                <rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Escaneo de seguridad</text>
+                                <text x="488" y="283" font-size="11" fill="#77776f">tfsec/Checkov antes de aplicar</text>
+                                <defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+                                <rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+                                <text x="68" y="375" font-size="13" font-weight="700" fill="#fff">El drift no detectado es la brecha silenciosa entre lo documentado y lo real</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 420" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="420" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Evidencias de infraestructura como código</text>
+                                <rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <circle cx="40" cy="89" r="13" fill="#059669"/>
+                                <text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+                                <text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Historial de Git</text>
+                                <text x="64" y="102" font-size="11" fill="#77776f">Quién cambió qué, y cuándo</text>
+                                <rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <circle cx="40" cy="159" r="13" fill="#059669"/>
+                                <text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+                                <text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Plan de cada cambio</text>
+                                <text x="64" y="172" font-size="11" fill="#77776f">Diff documentado antes de</text>
+                                <rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <circle cx="40" cy="229" r="13" fill="#059669"/>
+                                <text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+                                <text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Detección de drift</text>
+                                <text x="64" y="242" font-size="11" fill="#77776f">¿Coincide el código con la</text>
+                                <rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <circle cx="40" cy="299" r="13" fill="#059669"/>
+                                <text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+                                <text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Escaneo de seguridad</text>
+                                <text x="64" y="312" font-size="11" fill="#77776f">tfsec/Checkov antes de aplicar</text>
+                                <defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+                                <rect x="18" y="340" width="294" height="60" rx="10" fill="url(#gm)"/>
+                                <text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">El drift no detectado es la brecha</text>
+                                <text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">silenciosa entre lo documentado y lo real</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 1: Las cuatro evidencias clave para auditar IaC.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- GRÁFICO 2: FLUJO DE DETECCIÓN DE DRIFT -->
+                    <figure class="article-diagram" aria-label="Flujo de detección de drift" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="300" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">Flujo de detección de drift</text>
+                                <text x="40" y="58" font-size="12" fill="#77776f">cómo identificar cambios manuales no versionados</text>
+                                <rect x="40" y="80" width="240" height="90" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="160" y="108" font-size="13" font-weight="800" fill="#059669" text-anchor="middle">1. Código en Git</text>
+                                <text x="160" y="128" font-size="11" fill="#77776f" text-anchor="middle">Estado deseado</text>
+                                <text x="160" y="148" font-size="10" fill="#94a3b8" text-anchor="middle">Terraform/HCL</text>
+                                <line x1="280" y1="125" x2="320" y2="125" stroke="#059669" stroke-width="2"/>
+                                <polygon points="318,120 328,125 318,130" fill="#059669"/>
+                                <rect x="330" y="80" width="240" height="90" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="450" y="108" font-size="13" font-weight="800" fill="#d97706" text-anchor="middle">2. Plan periódico</text>
+                                <text x="450" y="128" font-size="11" fill="#77776f" text-anchor="middle">Compara código vs realidad</text>
+                                <text x="450" y="148" font-size="10" fill="#94a3b8" text-anchor="middle">terraform plan -refresh</text>
+                                <line x1="570" y1="125" x2="610" y2="125" stroke="#f59e0b" stroke-width="2"/>
+                                <polygon points="608,120 618,125 608,130" fill="#f59e0b"/>
+                                <rect x="620" y="80" width="240" height="90" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="740" y="108" font-size="13" font-weight="800" fill="#2563eb" text-anchor="middle">3. Alerta de drift</text>
+                                <text x="740" y="128" font-size="11" fill="#77776f" text-anchor="middle">Si hay diferencias → notificar</text>
+                                <text x="740" y="148" font-size="10" fill="#94a3b8" text-anchor="middle">Resolver o actualizar código</text>
+                                <rect x="40" y="200" width="820" height="70" rx="10" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="450" y="225" font-size="13" font-weight="700" fill="#151915" text-anchor="middle">El drift no detectado es la brecha entre lo declarado y lo real</text>
+                                <text x="450" y="248" font-size="11" fill="#77776f" text-anchor="middle">La detección automática convierte el drift en una excepción gestionable</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 380" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="380" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="14" font-weight="800" fill="#151915">Detección de drift</text>
+                                <rect x="20" y="45" width="90" height="65" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="65" y="68" font-size="10" font-weight="800" fill="#059669" text-anchor="middle">1. Código</text>
+                                <text x="65" y="85" font-size="9" fill="#77776f" text-anchor="middle">Git</text>
+                                <text x="65" y="100" font-size="8" fill="#94a3b8" text-anchor="middle">Terraform</text>
+                                <line x1="110" y1="77" x2="125" y2="77" stroke="#059669" stroke-width="1.5"/>
+                                <polygon points="123,74 130,77 123,80" fill="#059669"/>
+                                <rect x="130" y="45" width="90" height="65" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="175" y="68" font-size="10" font-weight="800" fill="#d97706" text-anchor="middle">2. Plan</text>
+                                <text x="175" y="85" font-size="9" fill="#77776f" text-anchor="middle">Periódico</text>
+                                <text x="175" y="100" font-size="8" fill="#94a3b8" text-anchor="middle">-refresh</text>
+                                <line x1="220" y1="77" x2="235" y2="77" stroke="#f59e0b" stroke-width="1.5"/>
+                                <polygon points="233,74 240,77 233,80" fill="#f59e0b"/>
+                                <rect x="240" y="45" width="70" height="65" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="275" y="68" font-size="10" font-weight="800" fill="#2563eb" text-anchor="middle">3. Alerta</text>
+                                <text x="275" y="85" font-size="9" fill="#77776f" text-anchor="middle">Drift</text>
+                                <text x="275" y="100" font-size="8" fill="#94a3b8" text-anchor="middle">Notificar</text>
+                                <rect x="20" y="135" width="290" height="55" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="165" y="157" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Drift = brecha documentado vs real</text>
+                                <text x="165" y="175" font-size="9" fill="#77776f" text-anchor="middle">Detección automática es clave</text>
+                                <rect x="20" y="210" width="290" height="60" rx="8" fill="#059669" opacity=".08"/>
+                                <text x="165" y="232" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Programa un plan automático</text>
+                                <text x="165" y="250" font-size="9" fill="#77776f" text-anchor="middle">diario o semanal</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 2: Flujo de detección de drift en IaC.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- SECCIÓN 1 -->
+                    <div class="block" id="s1">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — El Síntoma Silencioso</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El drift que nadie detectó durante meses</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>El drift ocurre cuando alguien modifica manualmente un recurso que está gestionado por Terraform, sin pasar por el código.</strong> El código sigue diciendo una cosa; la realidad en producción dice otra. Sin detección activa de drift, esa discrepancia puede persistir meses hasta que un <code>terraform apply</code> intenta "corregir" el cambio manual, con resultados inesperados.</p>
+                            <p>El drift es el equivalente en infraestructura de la deuda técnica: no duele hasta que duele. Puedes tener meses de drift sin darte cuenta, hasta que un día alguien ejecuta un apply y descubre que el firewall que creías que estaba abierto en el código fue cerrado manualmente hace semanas — y nadie se acuerda por qué.</p>
+                            <p>La detección activa de drift es la única forma de evitar que estas discrepancias se conviertan en incidentes. No es un lujo de organizaciones grandes; es un control básico para cualquier equipo que use IaC.</p>
+                            <div class="defensa-box-warning"><strong>⚠️ El drift es la brecha silenciosa:</strong> el código dice una cosa, la realidad dice otra. Sin detección automática, esa brecha puede persistir meses.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECCIÓN 2 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+
+                    <div class="block" id="s2">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — El Registro de Auditoría</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Historial de Git como evidencia de cambios</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>El historial de commits de un repositorio de Terraform es, en sí mismo, un registro de auditoría de cambios de infraestructura: quién propuso el cambio, quién lo aprobó, cuándo se aplicó. Esta evidencia, generada como subproducto natural del flujo de trabajo, es mucho más completa que cualquier registro manual paralelo.</p>
+                            <p>Cada commit en el repositorio de IaC debería estar vinculado a un ticket de cambios (Jira, ServiceNow, etc.) que documente el motivo del cambio. Esta trazabilidad es lo que permite a un auditor reconstruir por qué se hizo un cambio determinado, sin tener que confiar en la memoria de nadie.</p>
+                            <p>La práctica de "commits atómicos" — cada commit representa un cambio lógico completo y autónomo — es especialmente importante en IaC. Hace que el historial sea navegable, que los rollbacks sean seguros, y que el equipo pueda entender la evolución de la infraestructura sin tener que descifrar commits gigantes.</p>
+                            <div class="defensa-box-tech"><strong>Práctica recomendada:</strong> todos los cambios de infraestructura deben pasar por pull request con aprobación explícita. El merge a la rama principal es el evento que desencadena el pipeline de aplicación.</div>
+                        </div>
+                    </div>
+
+                    <!-- GRÁFICO 3: HERRAMIENTAS DE SEGURIDAD EN IAC -->
+                    <figure class="article-diagram" aria-label="Herramientas de seguridad en IaC" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="280" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">Seguridad en el pipeline de IaC</text>
+                                <text x="40" y="58" font-size="12" fill="#77776f">herramientas y gates en el flujo de trabajo</text>
+                                <rect x="40" y="80" width="250" height="110" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="165" y="108" font-size="13" font-weight="800" fill="#2563eb" text-anchor="middle">tfsec / Checkov</text>
+                                <text x="165" y="130" font-size="11" fill="#77776f" text-anchor="middle">Escaneo estático de</text>
+                                <text x="165" y="148" font-size="11" fill="#77776f" text-anchor="middle">configuraciones inseguras</text>
+                                <text x="165" y="170" font-size="10" fill="#94a3b8" text-anchor="middle">Bucket público, puertos abiertos</text>
+                                <line x1="290" y1="135" x2="320" y2="135" stroke="#3b82f6" stroke-width="2"/>
+                                <polygon points="318,130 328,135 318,140" fill="#3b82f6"/>
+                                <rect x="330" y="80" width="250" height="110" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="455" y="108" font-size="13" font-weight="800" fill="#d97706" text-anchor="middle">OPA / Sentinel</text>
+                                <text x="455" y="130" font-size="11" fill="#77776f" text-anchor="middle">Políticas como código</text>
+                                <text x="455" y="148" font-size="11" fill="#77776f" text-anchor="middle">Compliance organizacional</text>
+                                <text x="455" y="170" font-size="10" fill="#94a3b8" text-anchor="middle">Tags, naming, restricciones</text>
+                                <line x1="580" y1="135" x2="610" y2="135" stroke="#f59e0b" stroke-width="2"/>
+                                <polygon points="608,130 618,135 608,140" fill="#f59e0b"/>
+                                <rect x="620" y="80" width="240" height="110" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="740" y="108" font-size="13" font-weight="800" fill="#059669" text-anchor="middle">Infracost</text>
+                                <text x="740" y="130" font-size="11" fill="#77776f" text-anchor="middle">Estimación de costos</text>
+                                <text x="740" y="148" font-size="11" fill="#77776f" text-anchor="middle">antes de desplegar</text>
+                                <text x="740" y="170" font-size="10" fill="#94a3b8" text-anchor="middle">Visibilidad financiera</text>
+                                <rect x="40" y="215" width="820" height="40" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="450" y="240" font-size="12" font-weight="700" fill="#151915" text-anchor="middle">El escaneo de seguridad como gate obligatorio bloquea cambios inseguros antes de aplicar</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 420" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="420" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">Seguridad en IaC</text>
+                                <rect x="18" y="45" width="92" height="90" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="64" y="68" font-size="10" font-weight="800" fill="#2563eb" text-anchor="middle">tfsec /</text>
+                                <text x="64" y="83" font-size="10" font-weight="800" fill="#2563eb" text-anchor="middle">Checkov</text>
+                                <text x="64" y="100" font-size="8" fill="#77776f" text-anchor="middle">Escaneo</text>
+                                <text x="64" y="115" font-size="8" fill="#77776f" text-anchor="middle">estático</text>
+                                <text x="64" y="128" font-size="7" fill="#94a3b8" text-anchor="middle">seguridad</text>
+                                <rect x="120" y="45" width="92" height="90" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="166" y="68" font-size="10" font-weight="800" fill="#d97706" text-anchor="middle">OPA /</text>
+                                <text x="166" y="83" font-size="10" font-weight="800" fill="#d97706" text-anchor="middle">Sentinel</text>
+                                <text x="166" y="100" font-size="8" fill="#77776f" text-anchor="middle">Políticas</text>
+                                <text x="166" y="115" font-size="8" fill="#77776f" text-anchor="middle">código</text>
+                                <text x="166" y="128" font-size="7" fill="#94a3b8" text-anchor="middle">compliance</text>
+                                <rect x="222" y="45" width="92" height="90" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="268" y="68" font-size="10" font-weight="800" fill="#059669" text-anchor="middle">Infracost</text>
+                                <text x="268" y="83" font-size="10" font-weight="800" fill="#059669" text-anchor="middle">Costos</text>
+                                <text x="268" y="100" font-size="8" fill="#77776f" text-anchor="middle">Estimación</text>
+                                <text x="268" y="115" font-size="8" fill="#77776f" text-anchor="middle">financiera</text>
+                                <text x="268" y="128" font-size="7" fill="#94a3b8" text-anchor="middle">presupuesto</text>
+                                <rect x="18" y="155" width="294" height="50" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="165" y="177" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Gates obligatorios en el pipeline</text>
+                                <text x="165" y="195" font-size="9" fill="#77776f" text-anchor="middle">Blocan cambios inseguros</text>
+                                <rect x="18" y="225" width="294" height="60" rx="8" fill="#059669" opacity=".08"/>
+                                <text x="165" y="248" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Seguridad antes de aplicar</text>
+                                <text x="165" y="266" font-size="9" fill="#77776f" text-anchor="middle">No después del despliegue</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 3: Herramientas de seguridad en el pipeline de IaC.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- SECCIÓN 3 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+
+                    <div class="block" id="s3">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Seguridad Integrada</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Escaneo de seguridad en el pipeline, no después del despliegue</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>Herramientas como tfsec o Checkov analizan el código de Terraform antes de aplicarlo, detectando configuraciones inseguras (buckets S3 públicos, security groups demasiado abiertos, cifrado no habilitado) en el momento del pull request, no después de que el recurso inseguro ya esté en producción expuesto.</p>
+                            <p>La diferencia entre escanear antes o después del despliegue es enorme. Escanear después es reactivo: el recurso ya está en producción, el daño potencial ya existe. Escanear antes es preventivo: el recurso nunca llega a producción en un estado inseguro. Es la diferencia entre "arreglaremos esto cuando podamos" y "esto no se despliega así".</p>
+                            <div class="defensa-box-tech"><strong>Práctica recomendada:</strong> el escaneo de seguridad como gate obligatorio del pipeline — un hallazgo crítico bloquea el merge, no genera solo una alerta que se puede ignorar.</div>
+                            <p>Las herramientas de escaneo estático son el primer filtro, pero no el único. La combinación de tfsec/Checkov (para reglas predefinidas) y OPA/Sentinel (para políticas personalizadas de la organización) proporciona una cobertura completa que detecta tanto problemas comunes como requisitos específicos de compliance.</p>
+                        </div>
+                    </div>
+
+                    <!-- SECCIÓN 4 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+
+                    <div class="block" id="s4">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Prevención Proactiva</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Detectar drift antes de que sea un problema</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>Ejecutar <code>terraform plan</code> periódicamente contra el estado actual (sin aplicar nada) revela cualquier drift acumulado — diferencias entre lo que el código declara y lo que realmente existe. Programar esta verificación como tarea automática diaria o semanal, con alerta si se detecta drift, es la práctica que evita sorpresas.</p>
+                            <p>El drift es inevitable en entornos donde coexisten cambios manuales y automatización. Pero la diferencia entre una organización madura y una inmadura no es la ausencia de drift — es cómo lo detecta y gestiona. La detección automática convierte el drift en una excepción gestionable, no en una bomba de relojería.</p>
+                            <p>La práctica recomendada es:</p>
+                            <ul style="list-style-type:disc; padding-left:24px; margin:12px 0 16px;">
+                                <li>Programar un <code>terraform plan -refresh</code> diario en cada ambiente</li>
+                                <li>Enviar el resultado a un sistema de logs o dashboard</li>
+                                <li>Alertar si el plan detecta cambios no declarados</li>
+                                <li>Establecer un procedimiento para resolver drift: o actualizar el código o revertir el cambio manual</li>
+                            </ul>
+                            <div class="defensa-box-warning"><strong>⚠️ El drift no es un error — es una señal:</strong> indica que alguien ha hecho un cambio fuera del proceso. La señal es valiosa, pero solo si se detecta y se actúa sobre ella.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECCIÓN 5 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+
+                    <div class="block" id="s5">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — La Auditoría de IaC</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La evidencia que un auditor de IaC pide de verdad</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>Más allá del código en sí, la evidencia de madurez incluye: historial de aprobaciones de cambios en producción, resultados de escaneos de seguridad por cada cambio, y registro de detecciones de drift con su resolución. Sin estos tres elementos, tener el código en Git es solo el primer paso, no la evidencia completa de un proceso maduro.</p>
+                            <p>Un auditor de IaC no se conforma con ver el repositorio. Pregunta:</p>
+                            <ul style="list-style-type:disc; padding-left:24px; margin:12px 0 16px;">
+                                <li>¿Todos los cambios de infraestructura pasan por pull request?</li>
+                                <li>¿Hay evidencia de que se revisa el plan antes de aplicar?</li>
+                                <li>¿Cómo se detecta y resuelve el drift?</li>
+                                <li>¿Los escaneos de seguridad son obligatorios en el pipeline?</li>
+                            </ul>
+                            <p>La madurez en IaC se demuestra con evidencia, no con intención. Un repositorio con código pero sin proceso alrededor es solo código — no es gobernanza.</p>
+                            <div class="defensa-box-success"><strong>✔ Las tres evidencias de madurez:</strong> historial de Git + escaneos de seguridad + detección de drift. Sin estas tres, el código es solo un artefacto, no una práctica.</div>
+                        </div>
+                    </div>
+
+                    <!-- PIE DE AUTOR -->
+                    <div class="defensa-foot">
+                        <div class="defensa-author">
+                            <div class="defensa-foot-label">Autor</div>
+                            <div class="defensa-author-name">Miguel Ángel Carriazo</div>
+                            <p class="defensa-author-bio">Arquitecto de infraestructura y seguridad con más de 15 años de experiencia diseñando entornos críticos. Especializado en automatización, IaC y gobernanza de infraestructura. En Technology Advisory ayuda a organizaciones a convertir la infraestructura en un activo gestionable, no en un misterio.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SIDEBAR -->
+                <aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+                    <div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+                        <div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+                        <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Área</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Infraestructura como Código</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Enfoque</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Controles y Evidencias</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Herramientas clave</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">tfsec, Checkov, OPA</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Nivel</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Avanzado</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Lectura</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">16-20 min</td></tr>
+                            <tr><td style="padding:10px 0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Etiquetas</td><td style="padding:10px 0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">#IaC #drift #terraform #seguridad #pipelines</td></tr>
+                        </table>
+                    </div>
+
+                    <div>
+                        <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+                        <nav class="defensa-toc-nav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+                            <a href="#s1" class="active" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px; color:#059669; border-left:2px solid #059669; font-weight:700;">01. El Drift Silencioso</a>
+                            <a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Historial de Git</a>
+                            <a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Escaneo de Seguridad</a>
+                            <a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Detección de Drift</a>
+                            <a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Auditoría de IaC</a>
+                        </nav>
+                    </div>
+                </aside>
+
+            </div>
+
+            <!-- ARTÍCULOS RELACIONADOS -->
+            <div class="related-section">
+                <div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+                <div class="related-grid">
+                    <a class="related-card" href="infraestructura-codigo-diseno-principios.html">
+                        <div class="r-meta">Infraestructura como Código · Principios</div>
+                        <div class="r-title">Principios de diseño: el clic en la consola que nadie puede reproducir</div>
+                        <div class="r-desc">Cada cambio hecho a mano es un cambio que nadie puede versionar, revisar ni reproducir.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                    <a class="related-card" href="infraestructura-codigo-madurez-roadmap.html">
+                        <div class="r-meta">Infraestructura como Código · Madurez</div>
+                        <div class="r-title">Madurez y roadmap: del script suelto al módulo reutilizable con políticas</div>
+                        <div class="r-desc">Los cuatro niveles reales de madurez en IaC, desde scripts sueltos hasta políticas como código.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                    <a class="related-card" href="infraestructura-codigo-modelo-operativo.html">
+                        <div class="r-meta">Infraestructura como Código · Operaciones</div>
+                        <div class="r-title">Modelo operativo: pipelines que aplican cambios sin que nadie tenga que acordarse</div>
+                        <div class="r-desc">Si aplicar el código depende de que alguien ejecute un comando manual, tienes IaC de nombre pero no de práctica.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                </div>
+            </div>
+
+            <div id="footer-container"></div>
+
+        </div>
+    </div>
+
+    <script src="../../js/menu.js"></script>
+    <script src="../../js/footer.js"></script>
+    <script>
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
+            } else {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function() {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>

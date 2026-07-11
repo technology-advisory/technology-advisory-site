@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Controles y evidencias: la regla de correlación que nunca disparó ni una vez | SIEM y Detección | Technology Advisory</title><meta name="description" content="Una regla de detección que lleva un año activa sin generar ni un solo hallazgo real puede significar dos cosas muy distintas — y solo una de ellas es buena"><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
+<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // seguridad</span><span>categoría: <strong>SIEM y Detección</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · SIEM y Detección</div><h1 class="article-title">Controles y evidencias: la regla de correlación que nunca disparó ni una vez</h1><p class="article-lead">Una regla de detección que lleva un año activa sin generar ni un solo hallazgo real puede significar dos cosas muy distintas — y solo una de ellas es buena noticia.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de SIEM y Detección"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="900" height="410" rx="14" fill="#fafaf8"/>
+<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Evidencias de un SIEM que funciona</text>
+<text x="40" y="66" font-size="12" fill="#77776f">del recuento de reglas activas a los casos reales gestionados</text>
+<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Reglas activas vs disparadas</text>
+<text x="58" y="163" font-size="11" fill="#77776f">¿Cuántas nunca se activaron?</text>
+<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">MTTD medido</text>
+<text x="488" y="163" font-size="11" fill="#77776f">No estimado, con datos reales</text>
+<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Casos gestionados</text>
+<text x="58" y="283" font-size="11" fill="#77776f">Con clasificación y cierre</text>
+<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Cobertura MITRE ATT&CK</text>
+<text x="488" y="283" font-size="11" fill="#77776f">Qué técnicas cubren tus reglas</text>
+<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Una regla que nunca dispara puede estar mal escrita, no significa que no haya amenaza</text>
+</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="330" height="438" rx="12" fill="#fafaf8"/>
+<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Evidencias de un SIEM que funciona</text>
+<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="89" r="13" fill="#059669"/>
+<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Reglas activas vs</text>
+<text x="64" y="102" font-size="11" fill="#77776f">¿Cuántas nunca se activaron?</text>
+<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="159" r="13" fill="#059669"/>
+<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">MTTD medido</text>
+<text x="64" y="172" font-size="11" fill="#77776f">No estimado, con datos reales</text>
+<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="229" r="13" fill="#059669"/>
+<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Casos gestionados</text>
+<text x="64" y="242" font-size="11" fill="#77776f">Con clasificación y cierre</text>
+<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="299" r="13" fill="#059669"/>
+<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Cobertura MITRE ATT&CK</text>
+<text x="64" y="312" font-size="11" fill="#77776f">Qué técnicas cubren tus reglas</text>
+<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
+<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Una regla que nunca dispara puede estar</text>
+<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">mal escrita, no significa que no haya</text>
+<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">amenaza</text>
+</svg></div></figure><div class="toc-mini"><a href="#contexto">1. La regla silenciosa: buena o mala señal</a><a href="#arquitectura">2. MTTD medido con datos, no supuesto</a><a href="#seguridad">3. Cobertura MITRE ATT&CK real</a><a href="#operacion">4. Casos gestionados con trazabilidad completa</a><a href="#roadmap">5. Auditar las reglas, no solo el volumen de logs</a></div><h2 id="contexto">1. La regla silenciosa: ¿buena o mala señal?</h2><div class="body-text"><p><strong>Una regla de correlación que lleva un año activa sin disparar ni una vez puede significar dos cosas: que la amenaza que detecta simplemente no ha ocurrido, o que la regla está mal escrita y nunca detectaría nada aunque la amenaza ocurriera.</strong> Sin pruebas periódicas (red team, purple team, simulación), no hay forma de distinguir ambos escenarios.</p></div><h2 id="arquitectura">2. MTTD medido con datos reales, no estimado de memoria</h2><div class="body-text"><p>El Mean Time To Detect debería calcularse con datos reales de incidentes gestionados —tiempo entre el timestamp del evento original y el momento en que un analista lo identificó como sospechoso— no como una cifra estimada sin base en casos concretos.</p></div><h2 id="seguridad">3. Cobertura MITRE ATT&CK real, no aspiracional</h2><div class="body-text"><p>Mapear cada regla de correlación activa contra las técnicas MITRE ATT&CK que cubre revela objetivamente qué parte de la matriz de amenazas conocidas está realmente cubierta, y dónde hay huecos significativos que un atacante experimentado podría explotar sin generar ninguna alerta.</p></div><h2 id="operacion">4. Casos gestionados con trazabilidad completa, no solo cerrados</h2><div class="body-text"><p>La evidencia de un SOC funcional incluye el registro completo de cada caso: cuándo se generó, cómo se clasificó, quién lo investigó, qué se encontró, y cómo se cerró — no solo el número total de "casos cerrados" sin contexto de lo que realmente ocurrió en cada uno.</p></div><h2 id="roadmap">5. Auditar las reglas activas, no solo el volumen de logs ingestados</h2><div class="body-text"><p>Una auditoría de SIEM seria revisa la calidad y cobertura de las reglas de detección activas, no solo cuántos gigabytes se ingestan al día. El volumen de datos sin reglas efectivas que los analicen es exactamente el cementerio de logs que hay que evitar desde el diseño.</p></div><a class="back" href="../index.html?cat=siem-deteccion">← Volver a SIEM y Detección</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. La regla silenciosa: buena o mala señal</a><a href="#arquitectura">2. MTTD medido con datos, no supuesto</a><a href="#seguridad">3. Cobertura MITRE ATT&CK real</a><a href="#operacion">4. Casos gestionados con trazabilidad completa</a><a href="#roadmap">5. Auditar las reglas, no solo el volumen de logs</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>

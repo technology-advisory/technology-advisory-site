@@ -52,7 +52,7 @@
 
 <div style="padding: 40px 48px 24px; border-bottom: 1px solid #ededea;">
     <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Caso Práctico · Conectividad</div>
-    <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">ExpressRoute vs VPN: <span style="color:#059669;">La Decisión Correcta</span></h1>
+    <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">ExpressRoute vs VPN (Virtual Private Network): <span style="color:#059669;">La Decisión Correcta</span></h1>
     <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">VPN site-to-site, ExpressRoute y Direct Connect no son intercambiables. Latencia, coste y resiliencia real de cada opción, sin el filtro de ventas del proveedor.</p>
 
     <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
@@ -155,7 +155,7 @@
             <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
                 <p>Una VPN IPsec site-to-site sobre internet público es la opción de entrada casi universal: coste mínimo, despliegue en horas, sin dependencia de un circuito físico dedicado. Es perfectamente adecuada para cargas que toleran variabilidad de latencia — backups, replicación asíncrona, entornos de desarrollo.</p>
                 <p>Lo que la VPN no puede prometer es latencia consistente, porque el tráfico viaja por la internet pública compartida, sujeta a la congestión y las rutas que decidan los proveedores de tránsito en cada momento. Para una aplicación que necesita latencia predecible bajo 10ms, una VPN estándar es una apuesta, no una garantía.</p>
-                <div class="defensa-box-tech"><strong>Cuándo basta con VPN:</strong> replicación de backups, DR con RPO en horas, entornos no productivos, conectividad de contingencia sobre la línea principal.</div>
+                <div class="defensa-box-tech"><strong>Cuándo basta con VPN:</strong> replicación de backups, DR (Disaster Recovery) con RPO (Recovery Point Objective) en horas, entornos no productivos, conectividad de contingencia sobre la línea principal.</div>
                 <p>La VPN también puede ser una excelente opción de respaldo para una conexión dedicada. En caso de fallo del circuito principal, la VPN puede mantener la conectividad con una latencia mayor pero suficiente para mantener los servicios críticos.</p>
             </div>
         </div>
@@ -166,8 +166,8 @@
             <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Conexión Dedicada</div>
             <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">ExpressRoute / Direct Connect: predecible, pero no barata</h2>
             <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>ExpressRoute (Azure) y Direct Connect (AWS) ofrecen una conexión privada, fuera de la internet pública, con un SLA de latencia y disponibilidad que la VPN simplemente no puede igualar. El tráfico va por un circuito dedicado o semi-dedicado contratado con un proveedor de telecomunicaciones, sin compartir ruta con tráfico de terceros.</p>
-                <p>El coste no es solo el circuito en sí — incluye el puerto en el datacenter de interconexión (Equinix, por ejemplo), el circuito hasta tu CPD, y el propio servicio cloud. Para cargas con SLA estricto de latencia (trading, aplicaciones industriales en tiempo real, VoIP corporativo entre sites), es la única opción defendible.</p>
+                <p>ExpressRoute (Azure) y Direct Connect (AWS) ofrecen una conexión privada, fuera de la internet pública, con un SLA (Service Level Agreement) de latencia y disponibilidad que la VPN simplemente no puede igualar. El tráfico va por un circuito dedicado o semi-dedicado contratado con un proveedor de telecomunicaciones, sin compartir ruta con tráfico de terceros.</p>
+                <p>El coste no es solo el circuito en sí — incluye el puerto en el datacenter de interconexión (Equinix, por ejemplo), el circuito hasta tu CPD (Centro de Procesamiento de Datos), y el propio servicio cloud. Para cargas con SLA estricto de latencia (trading, aplicaciones industriales en tiempo real, VoIP corporativo entre sites), es la única opción defendible.</p>
                 <div class="defensa-box-warning"><strong>⚠️ No olvides la redundancia</strong><p>Un único circuito ExpressRoute es, de nuevo, un punto único de fallo — aunque sea uno muy fiable. Los diseños críticos contratan dos circuitos por rutas físicas distintas, o combinan ExpressRoute como primario con VPN como respaldo automático.</p></div>
                 <p>El tiempo de despliegue de una conexión dedicada suele ser de varias semanas, ya que requiere la instalación física de un circuito en el datacenter de interconexión. Planifica este tiempo en el proyecto.</p>
             </div>
@@ -200,7 +200,7 @@
             <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La combinación que usan los diseños maduros</h2>
             <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
                 <p>El patrón más robusto en producción no es "elegir uno", sino combinarlos: ExpressRoute como ruta primaria para el tráfico crítico, con una VPN configurada como respaldo automático que entra en juego si el circuito dedicado falla. El coste incremental de la VPN de respaldo es mínimo comparado con el de una indisponibilidad total de conectividad híbrida.</p>
-                <p>Esta combinación exige configurar correctamente las métricas de enrutamiento (BGP local preference, por ejemplo) para que el tráfico prefiera siempre ExpressRoute cuando está disponible, y solo caiga a VPN cuando el circuito dedicado deja de responder — sin intervención manual en el momento del fallo.</p>
+                <p>Esta combinación exige configurar correctamente las métricas de enrutamiento (BGP (Border Gateway Protocol) local preference, por ejemplo) para que el tráfico prefiera siempre ExpressRoute cuando está disponible, y solo caiga a VPN cuando el circuito dedicado deja de responder — sin intervención manual en el momento del fallo.</p>
                 <p>La conmutación automática entre la ruta primaria y la de respaldo debe probarse periódicamente, simulando la caída del circuito dedicado para verificar que la VPN toma el relevo correctamente. Sin estas pruebas, la redundancia es teórica, no real.</p>
             </div>
         </div>
@@ -234,7 +234,7 @@
         <div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
             <div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
             <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
-                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Opciones</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">VPN / ExpressRoute / DC</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Opciones</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">VPN / ExpressRoute / DC (Data Center)</td></tr>
                 <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Latencia</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">SLA con dedicada</td></tr>
                 <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Redundancia</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Doble circuito recomendado</td></tr>
                 <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Fallback</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">VPN automática por BGP</td></tr>

@@ -1,50 +1,392 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Madurez y roadmap: de "usamos IA" sin inventario a gobierno integrado con ISO 42001 | Gobierno de IA | Technology Advisory</title><meta name="description" content="Los cuatro niveles reales de madurez en gobierno de IA, desde el uso no inventariado hasta la integración completa con un sistema de gestión certificado ba"><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
-<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // gobernanza</span><span>categoría: <strong>Gobierno de IA</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Gobierno de IA</div><h1 class="article-title">Madurez y roadmap: de "usamos IA" sin inventario a gobierno integrado con ISO 42001</h1><p class="article-lead">Los cuatro niveles reales de madurez en gobierno de IA, desde el uso no inventariado hasta la integración completa con un sistema de gestión certificado bajo ISO 42001.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Gobierno de IA"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
-<rect width="900" height="410" rx="14" fill="#fafaf8"/>
-<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Cuatro niveles de madurez en gobierno de IA</text>
-<text x="40" y="66" font-size="12" fill="#77776f">de "usamos IA en algún sitio" al sistema de gestión certificado</text>
-<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Nivel 1 · Sin inventario</text>
-<text x="58" y="163" font-size="11" fill="#77776f">IA en uso, sin registro formal</text>
-<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Nivel 2 · Inventariado</text>
-<text x="488" y="163" font-size="11" fill="#77776f">Sistemas listados, sin clasificación de riesgo</text>
-<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Nivel 3 · Clasificado</text>
-<text x="58" y="283" font-size="11" fill="#77776f">Riesgo AI Act determinado, AIIA documentada</text>
-<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Nivel 4 · Certificado</text>
-<text x="488" y="283" font-size="11" fill="#77776f">ISO 42001, gestión continua auditada</text>
-<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
-<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
-<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">El Nivel 4 convierte el cumplimiento en sistema de gestión continuo, no en ejercicio puntual</text>
-</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
-<rect width="330" height="438" rx="12" fill="#fafaf8"/>
-<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Cuatro niveles de madurez en gobierno de IA</text>
-<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="89" r="13" fill="#059669"/>
-<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
-<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Nivel 1 · Sin inventario</text>
-<text x="64" y="102" font-size="11" fill="#77776f">IA en uso, sin registro formal</text>
-<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="159" r="13" fill="#059669"/>
-<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
-<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Nivel 2 · Inventariado</text>
-<text x="64" y="172" font-size="11" fill="#77776f">Sistemas listados, sin</text>
-<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="229" r="13" fill="#059669"/>
-<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
-<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Nivel 3 · Clasificado</text>
-<text x="64" y="242" font-size="11" fill="#77776f">Riesgo AI Act determinado,</text>
-<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="299" r="13" fill="#059669"/>
-<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
-<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Nivel 4 · Certificado</text>
-<text x="64" y="312" font-size="11" fill="#77776f">ISO 42001, gestión continua</text>
-<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
-<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
-<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">El Nivel 4 convierte el cumplimiento en</text>
-<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">sistema de gestión continuo, no en</text>
-<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">ejercicio puntual</text>
-</svg></div></figure><div class="toc-mini"><a href="#contexto">1. "Usamos IA en algún sitio" no es gobierno</a><a href="#arquitectura">2. Nivel 1 y 2: sin inventario, e inventariado sin clasificar</a><a href="#seguridad">3. Nivel 3: clasificado según el AI Act</a><a href="#operacion">4. Nivel 4: certificado con ISO 42001</a><a href="#roadmap">5. La pregunta que revela el nivel real</a></div><h2 id="contexto">1. "Usamos IA en algún sitio" no es una respuesta de gobierno, es una confesión de falta de control</h2><div class="body-text"><p><strong>Muchas organizaciones saben que usan IA en distintos sistemas y procesos, pero no tienen un inventario formal ni clasificación de riesgo — la respuesta ante una pregunta regulatoria directa sería vaga en el mejor de los casos.</strong></p></div><h2 id="arquitectura">2. Nivel 1 y 2: sin inventario, e inventariado sin clasificación de riesgo</h2><div class="body-text"><p>El <strong>Nivel 1 (Sin inventario)</strong> usa IA sin registro formal de qué sistemas existen. El <strong>Nivel 2 (Inventariado)</strong> lista los sistemas conocidos — un avance real, aunque sin la clasificación de riesgo que determina las obligaciones legales aplicables a cada uno.</p></div><h2 id="seguridad">3. Nivel 3: clasificado según el AI Act, con evaluación de impacto documentada</h2><div class="body-text"><p>El <strong>Nivel 3 (Clasificado)</strong> determina la categoría de riesgo de cada sistema según el Anexo III del AI Act, con evaluación de impacto documentada para los de alto riesgo y registro en la base de datos pública de la UE cuando corresponde.</p></div><h2 id="operacion">4. Nivel 4: certificado con ISO 42001, gestión continua auditada</h2><div class="body-text"><p>El <strong>Nivel 4 (Certificado)</strong> integra el gobierno de IA en un sistema de gestión formal certificable —ISO 42001— con auditoría interna periódica, revisión continua del inventario y clasificación, y mejora continua basada en el ciclo PDCA aplicado específicamente a los riesgos de IA.</p></div><h2 id="roadmap">5. La pregunta que revela honestamente el nivel real de gobierno de IA</h2><div class="body-text"><p>Si preguntas cuántos sistemas de IA de alto riesgo tiene la organización, con clasificación documentada y evaluación de impacto para cada uno, la respuesta separa los niveles con precisión. Sin cifra concreta, Nivel 1-2. Con cifra y documentación completa, Nivel 3-4.</p></div><a class="back" href="../index.html?cat=gobierno-ia">← Volver a Gobierno de IA</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. "Usamos IA en algún sitio" no es gobierno</a><a href="#arquitectura">2. Nivel 1 y 2: sin inventario, e inventariado sin clasificar</a><a href="#seguridad">3. Nivel 3: clasificado según el AI Act</a><a href="#operacion">4. Nivel 4: certificado con ISO 42001</a><a href="#roadmap">5. La pregunta que revela el nivel real</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport"/>
+<title>Madurez y roadmap: de 'usamos IA' sin inventario a gobierno integrado con ISO 42001 | Gobierno de IA | Technology Advisory</title>
+<meta content="Los cuatro niveles reales de madurez en gobierno de IA, desde el uso no inventariado hasta la integración completa con un sistema de gestión certificado bajo ISO 42001." name="description"/>
+<meta content="Miguel Ángel Carriazo" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="#059669" name="theme-color"/>
+<link href="../../css/global.css" rel="stylesheet"/>
+<link href="../../css/dossier-core.css" rel="stylesheet"/>
+<link href="../../css/articulo.css" rel="stylesheet"/>
+<link href="../../css/index.css" rel="stylesheet"/>
+<link href="../../css/articulo-diagramas.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght=500;700&amp;family=IBM+Plex+Mono:wght=400;500&amp;family=Inter:wght=400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        @media (max-width: 1024px) {
+            .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
+            div[style<strong>="padding: 16px 48px 0"], div[style</strong>="padding: 16px 48px 0;"] { padding: 16px 4% 0 !important; }
+            div[style<strong>="padding: 40px 48px 24px"], div[style</strong>="padding: 40px 48px 24px;"] { padding: 40px 4% 24px !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="card-wrapper ds-page">
+<div class="card">
+<div id="menu-container"></div>
+<div class="accent-bar" style="background:#059669;"></div>
+<div class="ds-meta">
+<span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: gobernanza</span>
+<span>categoría: <strong>Gobierno de IA</strong></span>
+</div>
+<div style="padding: 16px 4% 0;">
+<a class="defensa-btn-back" href="../index.html?cat=gobierno-ia" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Gobierno de IA</a>
+</div>
+<div style="padding: 40px 4% 24px; border-bottom: 1px solid #ededea;">
+<div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Roadmap · Gobierno de IA</div>
+<h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Madurez y roadmap: <span style="color:#059669;">de "usamos IA" sin inventario a gobierno integrado con ISO 42001</span></h1>
+<p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">La transición operativa real del cumplimiento corporativo. Auditoría pericial de los cuatro estadios de control de sistemas predictivos y la hoja de ruta técnica para consolidar un Sistema de Gestión certificable.</p>
+<div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="6" r="2.6"></circle><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"></path></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><rect height="12.5" rx="1.3" width="13" x="2.5" y="3"></rect><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"></path></svg>Gobierno de IA</span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="9" r="6.8"></circle><path d="M9 5.3V9l2.8 1.7"></path></svg>Lectura Avanzada (18 min)</span>
+</div>
+</div>
+<div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+<div class="defensa-main" style="min-width:0;">
+<!-- GRÁFICO 1: TAXONOMÍA DEL ECOSISTEMA DE EVIDENCIAS -->
+<figure aria-label="Taxonomía del ecosistema de evidencias obligatorias" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 380" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="380" rx="14" width="900"></rect>
+<text fill="#151915" font-size="19" font-weight="800" x="40" y="42">Ecosistema Integrado de Evidencias de Cumplimiento (AI Act / ISO 42001)</text>
+<text fill="#77776f" font-size="12" x="40" y="66">Trazabilidad jerárquica obligatoria desde la infraestructura de almacenamiento local hasta el Identificador Único de la UE</text>
+<rect fill="#ffffff" height="180" rx="10" stroke="#64748b" stroke-width="1.5" width="230" x="40" y="110"></rect>
+<text fill="#0f172a" font-size="14" font-weight="700" text-anchor="middle" x="155" y="140">Capas de Infraestructura</text>
+<text fill="#4a5568" font-size="12" text-anchor="middle" x="155" y="170">• Inventario Técnico Clasificado</text>
+<text fill="#4a5568" font-size="12" text-anchor="middle" x="155" y="195">• Logs Criptográficos SHA-256</text>
+<text fill="#4a5568" font-size="12" text-anchor="middle" x="155" y="220">• Telemetría OTLP Activa</text>
+<text fill="#059669" font-size="11" text-anchor="middle" x="155" y="245">[Evidencia Base Local]</text>
+<path d="M 270 200 L 330 200" stroke="#059669" stroke-dasharray="4 4" stroke-width="2"></path>
+<rect fill="#ffffff" height="180" rx="10" stroke="#059669" stroke-width="2" width="240" x="330" y="110"></rect>
+<text fill="#059669" font-size="14" font-weight="700" text-anchor="middle" x="450" y="140">Procesos del SGIA</text>
+<text fill="#334155" font-size="12" text-anchor="middle" x="450" y="170">• Evaluación AIIA (Impacto)</text>
+<text fill="#334155" font-size="12" text-anchor="middle" x="450" y="195">• Monitorización Forense Continua</text>
+<text fill="#334155" font-size="12" text-anchor="middle" x="450" y="220">• Control de Desviaciones (Drift)</text>
+<text fill="#059669" font-size="11" text-anchor="middle" x="450" y="245">[Gobernanza ISO 42001]</text>
+<path d="M 570 200 L 630 200" stroke="#059669" stroke-width="2"></path>
+<rect fill="#151915" height="180" rx="10" width="230" x="630" y="110"></rect>
+<text fill="#ffffff" font-size="14" font-weight="700" text-anchor="middle" x="745" y="140">Validación Externa</text>
+<text fill="#059669" font-size="13" font-weight="800" text-anchor="middle" x="745" y="180">TOKEN REGISTRO UE</text>
+<text fill="#94a3b8" font-size="11" text-anchor="middle" x="745" y="210">Identificador Único Obligatorio</text>
+<text fill="#94a3b8" font-size="11" text-anchor="middle" x="745" y="225">bajo especificaciones del Anexo VIII</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 350" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="350" rx="12" width="330"></rect>
+<text fill="#151915" font-size="15" font-weight="800" x="20" y="35">Ecosistema de Evidencias</text>
+<rect fill="#ffffff" height="60" rx="6" stroke="#64748b" stroke-width="1.5" width="290" x="20" y="60"></rect>
+<text fill="#151915" font-size="12" font-weight="700" x="35" y="95">1. Base Local (Hashes, Logs WORM)</text>
+<rect fill="#ffffff" height="60" rx="6" stroke="#059669" stroke-width="1.5" width="290" x="20" y="135"></rect>
+<text fill="#059669" font-size="12" font-weight="700" x="35" y="170">2. Proceso SGIA (ISO 42001 / AIIA)</text>
+<rect fill="#151915" height="70" rx="6" width="290" x="20" y="210"></rect>
+<text fill="#ffffff" font-size="12" font-weight="700" x="35" y="245">3. Token de Registro Final de la UE</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 1: Mapeo estructural de dependencias documentales y técnicas necesarias para la puesta en conformidad.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- SECCIÓN 1 -->
+<div class="block" id="s1">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — El Diagnóstico Real</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">"Usamos IA en algún sitio" no es una respuesta de gobierno, es una confesión de falta de control</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>Escudarse tras afirmaciones genéricas sobre el uso corporativo de tecnologías predictivas constituye una declaración implícita de vulnerabilidad operativa.</strong> En el marco de una auditoría pericial de sistemas, la vaguedad documental equivale a la inexistencia total de controles. Muchas organizaciones operan en la actualidad bajo la peligrosa ilusión de que cumplir con el AI (Artificial Intelligence) Act se reduce a redactar una política de uso aceptable en formato PDF (Portable Document Format) estático o a firmar adendas genéricas con proveedores de tecnología en la nube.</p>
+<p>En los niveles donde la observabilidad deja de ser manual, OTLP (OpenTelemetry Protocol) permite normalizar el transporte de trazas, métricas y registros hacia colectores y plataformas de análisis, evitando que cada equipo construya una canalización de telemetría incompatible con el resto.</p>
+<p>La cruda realidad de los entornos de producción demuestra que carecer de un mapa de dependencias exhaustivo, con sus firmas de código y perímetros algorítmicos perfectamente definidos, sitúa a la compañía en el nivel más bajo de exposición ante incidentes normativos. Cuando un sistema automatizado influye directamente sobre el perfilado de datos o la asignación de recursos humanos, un juez o un inspector del organismo regulador no evaluará las buenas intenciones declaradas por el comité directivo: exigirá de inmediato el volcado de trazas técnicas verificables.</p>
+<div class="defensa-box-warning"><strong>⚠️ Vulnerabilidad por indefinición:</strong> Si tu organización no es capaz de determinar la ubicación exacta, el stack tecnológico y la clasificación jurídica de cada modelo estadístico en producción, la infraestructura técnica se considera oficialmente desprotegida e inhábil ante inspecciones normativas de la Unión Europea.</div>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+<!-- SECCIÓN 2 -->
+<div class="block" id="s2">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Los Estadios Realistas de Control</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La escala de madurez técnica: Del caos no inventariado al gobierno predictivo continuo</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>La evolución del gobierno corporativo de sistemas complejos se divide en cuatro estadios nítidos, determinados exclusivamente por la calidad y robustez de las evidencias empíricas recolectadas en la capa de datos. El <strong>Nivel 1 (Falta de control)</strong> se caracteriza por la proliferación descontrolada de modelos sin catalogar que alteran flujos operativos esenciales de la compañía de forma opaca.</p>
+<p>El <strong>Nivel 2 (Catalogación básica)</strong> introduce listas estáticas que identifican los sistemas en explotación, pero carece de análisis formales de riesgo parametrizado bajo el estándar del AI Act. El salto operativo decisivo se alcanza en el <strong>Nivel 3 (Validación jurídica)</strong>, donde cada modelo cuenta con su correspondiente Evaluación de Impacto (AIIA). Finalmente, la excelencia técnica se consolida en el <strong>Nivel 4 (Integración continua)</strong>, donde el Sistema de Gestión (SGIA (Sistema de Gestión de Inteligencia Artificial)) monitoriza en tiempo real las desviaciones operativas y los sesgos algorítmicos mediante automatizaciones en el pipeline de MLOps.</p>
+</div>
+</div>
+<!-- GRÁFICO 2: DIAGRAMA DE FLUJO TÉCNICO DE DATA-LINEAGE Y MEDICIÓN DE SESGO -->
+<figure aria-label="Diagrama de flujo de data-lineage y triggers de control de sesgo" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="320" rx="14" width="900"></rect>
+<text fill="#151915" font-size="18" font-weight="800" x="40" y="42">Flujo Forense de Data-Lineage y Puntos de Medición de Desviación</text>
+<text fill="#77776f" font-size="12" x="40" y="66">Detección y control automatizado de desvíos estadísticos (data/concept drift) en la canalización de MLOps</text>
+<rect fill="#ffffff" height="70" rx="6" stroke="#3b82f6" stroke-width="2" width="150" x="40" y="110"></rect>
+<text fill="#151915" font-size="13" font-weight="700" text-anchor="middle" x="115" y="140">Ingesta de Datos</text>
+<text fill="#64748b" font-size="11" text-anchor="middle" x="115" y="155">Versionado DVC</text>
+<path d="M 190 145 L 240 145" stroke="#059669" stroke-width="2"></path>
+<polygon fill="#059669" points="235,140 245,145 235,150"></polygon>
+<text fill="#059669" font-size="10" font-weight="700" text-anchor="middle" x="215" y="135">T1</text>
+<rect fill="#e0f2fe" height="70" rx="6" stroke="#0284c7" stroke-width="2" width="170" x="240" y="110"></rect>
+<text fill="#0f172a" font-size="13" font-weight="700" text-anchor="middle" x="325" y="140">Preprocesado / Filtro</text>
+<text fill="#0369a1" font-size="10" text-anchor="middle" x="325" y="155">Medición Inicial de Sesgo</text>
+<path d="M 410 145 L 460 145" stroke="#059669" stroke-width="2"></path>
+<polygon fill="#059669" points="455,140 465,145 455,150"></polygon>
+<rect fill="#fef3c7" height="70" rx="6" stroke="#d97706" stroke-width="2" width="180" x="460" y="110"></rect>
+<text fill="#0f172a" font-size="13" font-weight="700" text-anchor="middle" x="550" y="140">Inferencia Operativa</text>
+<text fill="#b45309" font-size="10" text-anchor="middle" x="550" y="155">Monitorización de Feature Drift</text>
+<path d="M 640 145 L 690 145" stroke="#ef4444" stroke-dasharray="4 4" stroke-width="2"></path>
+<polygon fill="#ef4444" points="685,140 695,145 685,150"></polygon>
+<text fill="#ef4444" font-size="10" font-weight="700" text-anchor="middle" x="665" y="135">T2</text>
+<rect fill="#fee2e2" height="70" rx="6" stroke="#dc2626" stroke-width="2" width="170" x="690" y="110"></rect>
+<text fill="#151915" font-size="13" font-weight="700" text-anchor="middle" x="775" y="140">Disparador de Alerta</text>
+<text fill="#dc2626" font-size="10" text-anchor="middle" x="775" y="155">Concept Drift / Desviación</text>
+<rect fill="#151915" height="45" rx="8" width="820" x="40" y="225"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="450" y="252">El Punto T1 valida la integridad origen-destino del linaje; el Punto T2 frena la inferencia ante roturas del umbral predictivo.</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 260" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="260" rx="12" width="330"></rect>
+<text fill="#151915" font-size="14" font-weight="800" x="15" y="30">Linaje y Drift Estadístico</text>
+<rect fill="#ffffff" height="45" rx="6" stroke="#3b82f6" stroke-width="1.5" width="290" x="15" y="50"></rect>
+<text fill="#151915" font-size="11" font-weight="700" x="30" y="77">1. Ingesta Segura (DVC Check)</text>
+<rect fill="#e0f2fe" height="45" rx="6" stroke="#0284c7" stroke-width="1.5" width="290" x="15" y="110"></rect>
+<text fill="#0369a1" font-size="11" font-weight="700" x="30" y="137">2. Control de Sesgo en Pipelines</text>
+<rect fill="#fee2e2" height="45" rx="6" stroke="#dc2626" stroke-width="1.5" width="290" x="15" y="170"></rect>
+<text fill="#dc2626" font-size="11" font-weight="700" x="30" y="197">3. Freno por Concept Drift (T2)</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 2: Secuencia pericial de puntos de control e interrupción ante desviaciones en entornos de producción.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+<!-- SECCIÓN 3 -->
+<div class="block" id="s3">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Inmutabilidad en Producción</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Evidencias técnicas inmutables: Blindando las trazas de inferencia contra perfiles root</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>En el terreno de la auditoría pericial, un registro de actividad almacenable en un archivo de texto plano o en una base de datos maleable carece por completo de validez probatoria ante un tribunal. Los sistemas de Alto Riesgo bajo el AI Act exigen la implantación de una infraestructura de recolección de logs transaccionales que impida de raíz su alteración retroactiva, incluso por parte de los administradores de sistemas con privilegios máximos de superusuario (<strong>root</strong>).</p>
+<p>Cada vez que un algoritmo toma una decisión corporativa con impacto sobre terceros, la plataforma de ejecución debe canalizar de forma instantánea el vector de características de la inferencia, la salida del modelo y la identidad del supervisor humano hacia un repositorio inmutable protegido con políticas WORM (<strong>Write Once, Read Many</strong>). Modificar una sola línea de estas trazas rompería irremediablemente el hash SHA (Secure Hash Algorithm)-256 de control de integridad, delatando manipulación deliberada ante el perito.</p>
+</div>
+</div>
+<!-- GRÁFICO 3: ARQUITECTURA DEL PIPELINE DE LOGS INMUTABLES -->
+<figure aria-label="Arquitectura técnica del pipeline de logs inmutables" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="240" rx="14" width="900"></rect>
+<text fill="#151915" font-size="18" font-weight="800" x="40" y="42">Arquitectura de Telemetría Inmutable y Captura Transaccional de Inferencias</text>
+<text fill="#77776f" font-size="12" x="40" y="66">Aislamiento criptográfico estricto desde los pods de inferencia en Kubernetes hasta la bóveda WORM sin accesos root</text>
+<rect fill="#ffffff" height="80" rx="8" stroke="#059669" stroke-width="2" width="180" x="40" y="100"></rect>
+<text fill="#151915" font-size="13" font-weight="700" text-anchor="middle" x="130" y="135">Entorno Ejecución</text>
+<text fill="#059669" font-size="11" text-anchor="middle" x="130" y="155">Inferencia Activa</text>
+<path d="M 220 140 L 290 140" stroke="#059669" stroke-width="2"></path>
+<polygon fill="#059669" points="285,135 295,140 285,145"></polygon>
+<text fill="#64748b" font-size="10" text-anchor="middle" x="255" y="130">OTLP</text>
+<rect fill="#ffffff" height="80" rx="8" stroke="#3b82f6" stroke-width="2" width="220" x="290" y="100"></rect>
+<text fill="#151915" font-size="13" font-weight="700" text-anchor="middle" x="400" y="135">Colector Centralizado</text>
+<text fill="#3b82f6" font-size="11" text-anchor="middle" x="400" y="155">Firma SHA-256 en Bloque</text>
+<path d="M 510 140 L 580 140" stroke="#ef4444" stroke-width="2"></path>
+<polygon fill="#ef4444" points="575,135 585,140 575,145"></polygon>
+<text fill="#ef4444" font-size="9" font-weight="700" text-anchor="middle" x="545" y="130">Acceso Root Bloqueado</text>
+<rect fill="#151915" height="80" rx="8" width="280" x="580" y="100"></rect>
+<text fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle" x="720" y="135">Almacenamiento Bóveda WORM</text>
+<text fill="#059669" font-size="11" text-anchor="middle" x="720" y="155">Inmutabilidad Histórica Absoluta</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 220" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="220" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="15" y="30">Pipeline Logs Transaccionales</text>
+<rect fill="#ffffff" height="40" rx="6" stroke="#059669" stroke-width="1.5" width="290" x="15" y="50"></rect>
+<text fill="#151915" font-size="11" x="25" y="75">1. Pod de Inferencia (Tráfico Activo)</text>
+<rect fill="#ffffff" height="40" rx="6" stroke="#3b82f6" stroke-width="1.5" width="290" x="15" y="100"></rect>
+<text fill="#151915" font-size="11" x="25" y="125">2. Tokenizador y Hasher SHA-256</text>
+<rect fill="#151915" height="40" rx="6" width="290" x="15" y="150"></rect>
+<text fill="#ffffff" font-size="11" x="25" y="175">3. Depósito Inmutable WORM No-Root</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 3: Canalización criptográfica y aislamiento de logs de inferencia frente a intrusiones o alteraciones internas.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+<!-- SECCIÓN 4 -->
+<div class="block" id="s4">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Construcción de la Hoja de Ruta</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El Roadmap de transición técnica: Avance por fases con validación pericial de hitos</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>El diseño de una hoja de ruta con garantías institucionales prohíbe la ejecución de saltos evolutivos ficticios en tus sistemas. No es viable implantar un sofisticado programa de monitorización automatizada de sesgos en entornos distribuidos si la capa base de tus servidores de datos carece de la capacidad de catalogar sus flujos elementales con hashes estables.</p>
+<p>Cada fase del plan de despliegue exige la entrega de un documento pericial auditable. La consolidación de la primera etapa obliga a cerrar de forma completa el inventariado técnico de sistemas internos y herramientas SaaS heredadas. La segunda fase se centra en automatizar los flujos de <strong>data-lineage</strong> y preprocesado. Finalmente, la tercera fase culminará con el acoplamiento de las políticas de gestión del riesgo algorítmico sobre las rutinas diarias de tus administradores de bases de datos.</p>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+<!-- SECCIÓN 5 -->
+<div class="block" id="s5">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Convergencia de Sistemas de Gestión</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La consolidación definitiva: Integrar la gobernanza algorítmica en tu núcleo ISO</h2>
+<div class="body-text; text-align:justify;" style="font-size:16px; line-height:1.85; color:#334155;">
+<p>Gestionar el cumplimiento de la norma <strong>ISO/IEC 42001</strong> como si fuera una isla documental totalmente escindida del mapa de control de riesgos generales de tecnologías de la información es una anomalía de diseño muy costosa. Multiplicar las comisiones evaluadoras y amontonar cuestionarios duplicados para tus ingenieros de datos solo sirve para incentivar la aparición de prácticas de evasión y rebajar el nivel de la seguridad de la compañía.</p>
+<p>El esquema avanzado unifica los controles de acceso lógico, segregación de funciones, inmutabilidad física y custodia de secretos técnicos ya validados en tu certificación <strong>ISO/IEC 27001</strong>, extendiéndolos de forma natural hacia los pipelines de inferencia. La reutilización sistémica de la infraestructura documental reduce duplicidades, facilita la auditoría y permite que el blindaje algorítmico se convierta en una práctica nativa de tus analistas.</p>
+</div>
+</div>
+<!-- GRÁFICO 4: MATRIZ COMPARATIVA DE CONTROL EN SILO VS INTEGRADO -->
+<figure aria-label="Matriz comparativa: Control fragmentado en silos frente a Arquitectura Integrada" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="300" rx="14" width="900"></rect>
+<text fill="#151915" font-size="18" font-weight="800" x="40" y="42">Matriz de Control: Estructuras en Silo vs Arquitectura Integrada ISO</text>
+<text fill="#77776f" font-size="12" x="40" y="66">Análisis pericial de la eficiencia de procesos frente a la duplicidad documental tradicional</text>
+<rect fill="#ffffff" height="150" rx="8" stroke="#ef4444" stroke-width="1.5" width="370" x="50" y="100"></rect>
+<text fill="#ef4444" font-size="14" font-weight="700" x="70" y="130">Operativa Fragmentada (Silos Normativos)</text>
+<text fill="#4a5568" font-size="12" x="70" y="160">• Políticas e inventarios duplicados sin conexión técnica.</text>
+<text fill="#4a5568" font-size="12" x="70" y="185">• Mayor latencia de respuesta ante inspecciones oficiales.</text>
+<text fill="#4a5568" font-size="12" x="70" y="210">• Puntos ciegos críticos en linajes de datos de producción.</text>
+<rect fill="#ffffff" height="150" rx="8" stroke="#059669" stroke-width="2" width="380" x="470" y="100"></rect>
+<text fill="#059669" font-size="14" font-weight="700" x="490" y="130">Arquitectura Unificada (ISO 27001 + 42001)</text>
+<text fill="#151915" font-size="12" x="490" y="160">• Reutilización estructural de logs inmutables WORM.</text>
+<text fill="#151915" font-size="12" x="490" y="185">• Auditorías forenses conjuntas sin fricción organizativa.</text>
+<text fill="#151915" font-size="12" x="490" y="210">• Correlación en tiempo real: Evento TI ↔ Riesgo IA.</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 240" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="240" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="15" y="35">Silos vs Arquitectura Unificada</text>
+<rect fill="#ffffff" height="60" rx="6" stroke="#ef4444" stroke-width="1.2" width="290" x="15" y="55"></rect>
+<text fill="#ef4444" font-size="11" x="25" y="80">Silos: Duplicidad, retrasos e ineficiencia base.</text>
+<rect fill="#ffffff" height="60" rx="6" stroke="#059669" stroke-width="2" width="290" x="15" y="130"></rect>
+<text fill="#059669" font-size="11" x="25" y="155">Unificado: Logs compartidos y control en tiempo real.</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 4: Evaluación de impacto en la velocidad de auditoría pericial comparando esquemas fragmentados frente a integrados.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+
+                    <div class="defensa-box-info ta-reference-box" style="margin:34px 0;">
+                        <strong>🔎 Referencias normativas y herramientas de implementación.</strong> En el roadmap, deben convertirse en capacidades con dependencias y criterios de salida, no en una simple lista de productos. En el AI Act, los artículos 9, 10, 12, 13 y 14 concretan, para sistemas de alto riesgo, la gestión de riesgos, el gobierno del dato, el registro de eventos, la información al responsable del despliegue y la supervisión humana. Los artículos 17, 26 y 72 completan el marco con el sistema de gestión de calidad, las obligaciones del responsable del despliegue y la monitorización posterior a la comercialización. Los anexos III y VIII deben utilizarse para clasificar casos de uso y preparar el registro exigible, sin inventar tokens técnicos ni requisitos de hash que el Reglamento no establece. Como soporte operativo pueden utilizarse MLflow Model Registry, Azure Machine Learning, Amazon SageMaker Model Registry o IBM watsonx.governance. La herramienta no sustituye el control: debe conservarse la relación entre caso de uso, versión del modelo, datos, evaluación, aprobación, despliegue, incidencias y retirada.
+                    </div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 06</span></div>
+<!-- MÓDULO 6: CHECKLIST DE AUDITORÍA -->
+<div class="block" id="s6">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 06 — Verificación de Hitos</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Checklist Pericial de Hitos: Requisitos empíricos para la convalidación del Roadmap</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:left;">
+<p style="text-align: left;">Cada transición formal de nivel dentro de la hoja de ruta corporativa exige la validación pericial de las siguientes pruebas de laboratorio tecnológico:</p>
+<div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px; margin:20px 0; text-align: left;">
+<table style="width:100%; border-collapse:collapse; font-size:14px; text-align: left;">
+<thead>
+<tr style="border-bottom:2px solid #e2e8f0; text-align: left;">
+<th style="padding:10px 0; color:#0f172a; font-weight:700; text-align: left; width:50px;">Ref</th>
+<th style="padding:10px 0; color:#0f172a; font-weight:700; text-align: left; width:250px;">Evidencia Requerida</th>
+<th style="padding:10px 0; color:#0f172a; font-weight:700; text-align: left;">Criterio de Aceptación de Auditoría</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid #e2e8f0; text-align: left;">
+<td style="padding:12px 0; font-weight:700; color:#059669; text-align: left;">01</td>
+<td style="padding:12px 0; font-weight:600; color:#0f172a; text-align: left;">Cierre del Censo Algorítmico</td>
+<td style="padding:12px 0; color:#475569; font-size:13px; text-align: left;">Validación de escaneos automáticos de dependencias en repositorios de código y auditoría de integraciones API (Application Programming Interface) en entornos SaaS corporativos.</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0; text-align: left;">
+<td style="padding:12px 0; font-weight:700; color:#059669; text-align: left;">02</td>
+<td style="padding:12px 0; font-weight:600; color:#0f172a; text-align: left;">Inyección de Identificadores UE (Unión Europea)</td>
+<td style="padding:12px 0; color:#475569; font-size:13px; text-align: left;">Confirmación empírica de la inclusión del Token de Registro de la UE del Anexo VIII dentro de las variables de entorno de los contenedores de producción.</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0; text-align: left;">
+<td style="padding:12px 0; font-weight:700; color:#059669; text-align: left;">03</td>
+<td style="padding:12px 0; font-weight:600; color:#0f172a; text-align: left;">Aislamiento Criptográfico WORM (Write Once, Read Many)</td>
+<td style="padding:12px 0; color:#475569; font-size:13px; text-align: left;">Verificación de directivas de denegación absoluta sobre políticas de borrado de trazas de inferencia para perfiles root y hashes SHA-256 intactos.</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0; text-align: left;">
+<td style="padding:12px 0; font-weight:700; color:#059669; text-align: left;">04</td>
+<td style="padding:12px 0; font-weight:600; color:#0f172a; text-align: left;">Confluencia de Riesgos ISO</td>
+<td style="padding:12px 0; color:#475569; font-size:13px; text-align: left;">Comprobación de la unificación de los registros de incidentes de seguridad bajo un único flujo automatizado correlacionando ISO 27001 e ISO 42001.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- PIE DE AUTOR -->
+
+<div class="defensa-foot">
+<div class="defensa-author">
+<div class="defensa-foot-label">Autor</div>
+<div class="defensa-author-name">Miguel Ángel Carriazo</div>
+<p class="defensa-author-bio">Arquitecto de Infraestructura y Ciberseguridad con más de 25 años de experiencia diseñando, asegurando y operando entornos tecnológicos críticos. Lead Auditor en ISO/IEC 27001 e ISO/IEC 42001, especializado en gobierno, riesgo, cumplimiento y transformación tecnológica. En esta área aborda el gobierno de la inteligencia artificial desde el inventario, el riesgo, la supervisión, la trazabilidad y el control efectivo de su ciclo de vida.</p>
+</div>
+</div></div>
+<!-- SIDEBAR -->
+<aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+<div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+<div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+<table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Área</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Gobierno de IA</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Enfoque</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Madurez y Roadmap</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Estrategia</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">ISO 42001 Integrada</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Nivel</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Sénior Avanzado</td></tr>
+</table>
+</div>
+<div>
+<div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+<nav class="defensa-toc-nav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+<a class="active" href="#s1" style="text-decoration:none; color:#059669; font-size:14px; font-weight:700; border-left:2px solid #059669; margin-left:-16px; padding-left:14px;">01. El Diagnóstico Real</a>
+<a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Niveles de Control</a>
+<a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Inmutabilidad Logs</a>
+<a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Hoja de Ruta TI</a>
+<a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Integración ISO</a>
+<a href="#s6" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">06. Checklist Hitos</a>
+</nav>
+</div>
+</aside>
+</div>
+<!-- ARTÍCULOS RELACIONADOS -->
+<div class="related-section">
+<div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+<div class="related-grid">
+<a class="related-card" href="gobierno-ia-controles-evidencias.html">
+<div class="r-meta">Gobierno de IA · Controles</div>
+<div class="r-title">Controles y evidencias: el registro de la UE que tu sistema de alto riesgo debería tener y no tiene</div>
+<div class="r-desc">Los sistemas de IA de alto riesgo deben registrarse en la base de datos pública de la UE antes de su puesta en mercado.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+<a class="related-card" href="gobierno-ia-diseno-principios.html">
+<div class="r-meta">Gobierno de IA · Principios</div>
+<div class="r-title">Principios de diseño: el algoritmo de scoring de hace 5 años también es IA bajo el AI Act</div>
+<div class="r-desc">Muchas organizaciones no consideran "IA" a los modelos de ML (Machine Learning) que llevan años en producción. Si influye en decisiones sobre personas, probablemente es alto riesgo.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+<a class="related-card" href="gobierno-ia-modelo-operativo.html">
+<div class="r-meta">Gobierno de IA · Operaciones</div>
+<div class="r-title">Modelo operativo: quién supervisa la decisión que toma el modelo, de verdad</div>
+<div class="r-desc">"Hay un humano en el proceso" no basta si ese humano aprueba automáticamente el 99% de las decisiones sin revisarlas críticamente.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+</div>
+</div>
+<div id="footer-container"></div>
+</div>
+</div>
+<script src="../../js/menu.js"></script>
+<script src="../../js/footer.js"></script>
+<script>
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
+            } else {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function() {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

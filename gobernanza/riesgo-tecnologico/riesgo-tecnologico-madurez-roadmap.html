@@ -1,50 +1,475 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Madurez y roadmap: de la lista de miedos sin cuantificar a la gestión de riesgo cuantitativa integrada | Riesgo Tecnológico | Technology Advisory</title><meta name="description" content="Los cuatro niveles reales de madurez en gestión de riesgo tecnológico, desde una lista cualitativa sin estructura hasta la cuantificación integrada en las "><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
-<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // gobernanza</span><span>categoría: <strong>Riesgo Tecnológico</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Riesgo Tecnológico</div><h1 class="article-title">Madurez y roadmap: de la lista de miedos sin cuantificar a la gestión de riesgo cuantitativa integrada</h1><p class="article-lead">Los cuatro niveles reales de madurez en gestión de riesgo tecnológico, desde una lista cualitativa sin estructura hasta la cuantificación integrada en las decisiones de inversión de la organización.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Riesgo Tecnológico"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
-<rect width="900" height="410" rx="14" fill="#fafaf8"/>
-<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Cuatro niveles de madurez en riesgo tecnológico</text>
-<text x="40" y="66" font-size="12" fill="#77776f">de la lista de miedos sin cuantificar a la decisión de inversión basada en ALE</text>
-<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Nivel 1 · Lista informal</text>
-<text x="58" y="163" font-size="11" fill="#77776f">Riesgos mencionados, sin registro</text>
-<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Nivel 2 · Matriz cualitativa</text>
-<text x="488" y="163" font-size="11" fill="#77776f">Alto/medio/bajo, sin cuantificar</text>
-<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Nivel 3 · Cuantificado</text>
-<text x="58" y="283" font-size="11" fill="#77776f">ALE con FAIR, comparable</text>
-<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Nivel 4 · Integrado en decisiones</text>
-<text x="488" y="283" font-size="11" fill="#77776f">Inversión de seguridad basada en ALE</text>
-<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
-<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
-<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">El Nivel 4 usa el ALE para decidir presupuesto, no solo para reportar a dirección</text>
-</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
-<rect width="330" height="438" rx="12" fill="#fafaf8"/>
-<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Cuatro niveles de madurez en riesgo tecnológico</text>
-<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="89" r="13" fill="#059669"/>
-<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
-<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Nivel 1 · Lista informal</text>
-<text x="64" y="102" font-size="11" fill="#77776f">Riesgos mencionados, sin</text>
-<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="159" r="13" fill="#059669"/>
-<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
-<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Nivel 2 · Matriz</text>
-<text x="64" y="172" font-size="11" fill="#77776f">Alto/medio/bajo, sin</text>
-<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="229" r="13" fill="#059669"/>
-<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
-<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Nivel 3 · Cuantificado</text>
-<text x="64" y="242" font-size="11" fill="#77776f">ALE con FAIR, comparable</text>
-<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="299" r="13" fill="#059669"/>
-<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
-<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Nivel 4 · Integrado en</text>
-<text x="64" y="312" font-size="11" fill="#77776f">Inversión de seguridad basada</text>
-<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
-<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
-<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">El Nivel 4 usa el ALE para decidir</text>
-<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">presupuesto, no solo para reportar a</text>
-<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">dirección</text>
-</svg></div></figure><div class="toc-mini"><a href="#contexto">1. De la lista de miedos a la decisión informada</a><a href="#arquitectura">2. Nivel 1 y 2: informal y matriz cualitativa</a><a href="#seguridad">3. Nivel 3: cuantificado con FAIR</a><a href="#operacion">4. Nivel 4: integrado en decisiones de inversión reales</a><a href="#roadmap">5. La pregunta que revela el nivel honesto</a></div><h2 id="contexto">1. De la lista informal de miedos técnicos a la decisión de inversión informada</h2><div class="body-text"><p><strong>Muchas organizaciones tienen una noción informal de sus riesgos tecnológicos —"nos preocupa el ransomware", "el sistema legacy es frágil"— sin ningún registro estructurado ni cuantificación que permita comparar y priorizar entre ellos con criterio objetivo.</strong></p></div><h2 id="arquitectura">2. Nivel 1 y 2: lista informal, y matriz cualitativa sin cuantificar</h2><div class="body-text"><p>El <strong>Nivel 1 (Lista informal)</strong> menciona riesgos sin registro formal. El <strong>Nivel 2 (Matriz cualitativa)</strong> introduce una matriz de alto/medio/bajo — estructura real, pero sin la capacidad de comparación numérica que permite justificar inversiones ante un comité financiero.</p></div><h2 id="seguridad">3. Nivel 3: cuantificado con metodología FAIR, comparable entre riesgos distintos</h2><div class="body-text"><p>El <strong>Nivel 3 (Cuantificado)</strong> calcula ALE para los riesgos principales, permitiendo comparar objetivamente la severidad relativa y justificar inversiones de mitigación con retorno calculado, no solo con intuición sobre la gravedad relativa.</p></div><h2 id="operacion">4. Nivel 4: integrado en las decisiones reales de inversión de la organización</h2><div class="body-text"><p>El <strong>Nivel 4 (Integrado)</strong> usa el ALE cuantificado como input directo en las decisiones de presupuesto de seguridad y tecnología — no solo como reporte informativo a dirección, sino como criterio activo que determina dónde se invierte y cuánto, con seguimiento del ALE residual tras cada mitigación implementada.</p></div><h2 id="roadmap">5. La pregunta que revela honestamente el nivel de madurez real</h2><div class="body-text"><p>Si preguntas cuál es el ALE del riesgo tecnológico más significativo de la organización, con una cifra concreta en euros, la respuesta separa los niveles con precisión. Sin cifra, Nivel 1-2. Con cifra pero sin conexión a decisiones de presupuesto reales, Nivel 3. Con cifra y decisiones de inversión trazables a ella, Nivel 4.</p></div><a class="back" href="../index.html?cat=riesgo-tecnologico">← Volver a Riesgo Tecnológico</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. De la lista de miedos a la decisión informada</a><a href="#arquitectura">2. Nivel 1 y 2: informal y matriz cualitativa</a><a href="#seguridad">3. Nivel 3: cuantificado con FAIR</a><a href="#operacion">4. Nivel 4: integrado en decisiones de inversión reales</a><a href="#roadmap">5. La pregunta que revela el nivel honesto</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport"/>
+<title>Madurez y roadmap: los cuatro niveles de una gestión de riesgo que sobrevive al CISO | Riesgo Tecnológico | Technology Advisory</title>
+<meta content="Los cuatro niveles reales de madurez en gestión de riesgo tecnológico, medidos no por lo que la política dice sino por lo que el sistema puede demostrar. Curva de reducción de exposición por nivel, coste esperado del salto crítico y roadmap con plazos honestos." name="description"/>
+<meta content="Miguel Ángel Carriazo" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="#059669" name="theme-color"/>
+<link href="../../css/global.css" rel="stylesheet"/>
+<link href="../../css/dossier-core.css" rel="stylesheet"/>
+<link href="../../css/articulo.css" rel="stylesheet"/>
+<link href="../../css/index.css" rel="stylesheet"/>
+<link href="../../css/articulo-diagramas.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        @media (max-width: 1024px) {
+            .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
+            div[style*="padding: 16px 48px 0"], div[style*="padding: 16px 48px 0;"] { padding: 16px 4% 0 !important; }
+            div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding: 40px 4% 24px !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="card-wrapper ds-page">
+<div class="card">
+<div id="menu-container"></div>
+<div class="accent-bar" style="background:#059669;"></div>
+<div class="ds-meta">
+<span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: gobernanza</span>
+<span>categoría: <strong>Riesgo Tecnológico</strong></span>
+</div>
+<div style="padding: 16px 4% 0;">
+<a class="defensa-btn-back" href="../index.html?cat=riesgo-tecnologico" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Riesgo Tecnológico</a>
+</div>
+<div style="padding: 40px 4% 24px; border-bottom: 1px solid #ededea;">
+<div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Madurez · Riesgo Tecnológico</div>
+<h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Madurez y roadmap: <span style="color:#059669;">los cuatro niveles de una gestión de riesgo que sobrevive al CISO (Chief Information Security Officer)</span></h1>
+<p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Los cuatro niveles reales de madurez en gestión de riesgo tecnológico, medidos no por lo que la política dice sino por lo que el sistema puede demostrar. Curva de reducción de exposición por nivel, coste esperado del salto crítico y roadmap con plazos honestos.</p>
+<div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="6" r="2.6"></circle><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"></path></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><rect height="12.5" rx="1.3" width="13" x="2.5" y="3"></rect><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"></path></svg>Riesgo Tecnológico</span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="9" r="6.8"></circle><path d="M9 5.3V9l2.8 1.7"></path></svg>Lectura Avanzada (16-20 min)</span>
+</div>
+</div>
+<div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+<div class="defensa-main" style="min-width:0;">
+<!-- GRÁFICO 1: LOS CUATRO NIVELES (convención enciclopédica) -->
+<figure aria-label="Cuatro niveles de madurez en gestión de riesgo tecnológico" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 430" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="430" rx="14" width="900"></rect>
+<text fill="#151915" font-size="19" font-weight="800" x="40" y="42">Cuatro niveles de madurez en gestión de riesgo tecnológico</text>
+<text fill="#77776f" font-size="12" x="40" y="66">medidos por lo que el sistema puede demostrar, no por lo que la política declara</text>
+<defs>
+<marker id="arrow-mad" markerheight="6" markerwidth="6" orient="auto" refx="5" refy="5" viewbox="0 0 10 10">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"></path>
+</marker>
+</defs>
+<!-- N1 -->
+<rect fill="#fee2e2" height="100" rx="14" stroke="#ef4444" stroke-width="1.5" width="390" x="40" y="110"></rect>
+<circle cx="70" cy="160" fill="#ef4444" r="18"></circle>
+<text fill="#ffffff" font-size="14" font-weight="800" text-anchor="middle" x="70" y="166">1</text>
+<text fill="#151915" font-size="15" font-weight="800" x="100" y="148">Nivel 1 · Informal</text>
+<text fill="#77776f" font-size="12" x="100" y="172">Sin registro estructurado</text>
+<text fill="#94a3b8" font-size="11" x="100" y="190">Firma: nadie sabe cuántos riesgos hay</text>
+<line marker-end="url(#arrow-mad)" stroke="#94a3b8" stroke-width="2" x1="430" x2="468" y1="160" y2="160"></line>
+<!-- N2 -->
+<rect fill="#fef3c7" height="100" rx="14" stroke="#f59e0b" stroke-width="1.5" width="390" x="470" y="110"></rect>
+<circle cx="500" cy="160" fill="#f59e0b" r="18"></circle>
+<text fill="#ffffff" font-size="14" font-weight="800" text-anchor="middle" x="500" y="166">2</text>
+<text fill="#151915" font-size="15" font-weight="800" x="530" y="148">Nivel 2 · Cualitativo</text>
+<text fill="#77776f" font-size="12" x="530" y="172">Registro con heatmap 5x5</text>
+<text fill="#94a3b8" font-size="11" x="530" y="190">Firma: existe el registro, no discrimina</text>
+<line marker-end="url(#arrow-mad)" stroke="#94a3b8" stroke-width="2" x1="430" x2="468" y1="225" y2="225"></line>
+<!-- N3 -->
+<rect fill="#dbeafe" height="100" rx="14" stroke="#3b82f6" stroke-width="1.5" width="390" x="40" y="230"></rect>
+<circle cx="70" cy="280" fill="#3b82f6" r="18"></circle>
+<text fill="#ffffff" font-size="14" font-weight="800" text-anchor="middle" x="70" y="286">3</text>
+<text fill="#151915" font-size="15" font-weight="800" x="100" y="268">Nivel 3 · Cuantitativo</text>
+<text fill="#77776f" font-size="12" x="100" y="292">TOP riesgos con ALE en euros, FAIR</text>
+<text fill="#94a3b8" font-size="11" x="100" y="310">Firma: decisiones se argumentan con números</text>
+<line marker-end="url(#arrow-mad)" stroke="#94a3b8" stroke-width="2" x1="430" x2="468" y1="280" y2="280"></line>
+<!-- N4 -->
+<rect fill="#d1fae5" height="100" rx="14" stroke="#059669" stroke-width="2" width="390" x="470" y="230"></rect>
+<circle cx="500" cy="280" fill="#059669" r="18"></circle>
+<text fill="#ffffff" font-size="14" font-weight="800" text-anchor="middle" x="500" y="286">4</text>
+<text fill="#151915" font-size="15" font-weight="800" x="530" y="268">Nivel 4 · Integrado</text>
+<text fill="#77776f" font-size="12" x="530" y="292">Riesgo dirige inversión y prioridades</text>
+<text fill="#94a3b8" font-size="11" x="530" y="310">Firma: sobrevive al cambio de CISO</text>
+<!-- Barra inferior -->
+<defs><lineargradient id="gbar-mad" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"></stop><stop offset="1" stop-color="#151915" stop-opacity=".88"></stop></lineargradient></defs>
+<rect fill="url(#gbar-mad)" height="45" rx="14" width="820" x="40" y="355"></rect>
+<text fill="#fff" font-size="13" font-weight="700" x="68" y="385">El salto Nivel 2 → 3 es el más costoso y el que más reduce la exposición</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 490" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="490" rx="12" width="330"></rect>
+<text fill="#151915" font-size="14" font-weight="800" x="18" y="30">Cuatro niveles de madurez</text>
+<rect fill="#fee2e2" height="90" rx="10" stroke="#ef4444" stroke-width="1.5" width="294" x="18" y="50"></rect>
+<circle cx="40" cy="80" fill="#ef4444" r="13"></circle>
+<text fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" x="40" y="85">1</text>
+<text fill="#151915" font-size="13" font-weight="800" x="62" y="78">Nivel 1 · Informal</text>
+<text fill="#77776f" font-size="10" x="62" y="98">Sin registro estructurado</text>
+<text fill="#94a3b8" font-size="9" font-style="italic" x="62" y="120">Nadie sabe cuántos riesgos hay</text>
+<rect fill="#fef3c7" height="90" rx="10" stroke="#f59e0b" stroke-width="1.5" width="294" x="18" y="150"></rect>
+<circle cx="40" cy="180" fill="#f59e0b" r="13"></circle>
+<text fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" x="40" y="185">2</text>
+<text fill="#151915" font-size="13" font-weight="800" x="62" y="178">Nivel 2 · Cualitativo</text>
+<text fill="#77776f" font-size="10" x="62" y="198">Registro con heatmap 5x5</text>
+<text fill="#94a3b8" font-size="9" font-style="italic" x="62" y="220">Existe, pero no discrimina</text>
+<rect fill="#dbeafe" height="90" rx="10" stroke="#3b82f6" stroke-width="1.5" width="294" x="18" y="250"></rect>
+<circle cx="40" cy="280" fill="#3b82f6" r="13"></circle>
+<text fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" x="40" y="285">3</text>
+<text fill="#151915" font-size="13" font-weight="800" x="62" y="278">Nivel 3 · Cuantitativo</text>
+<text fill="#77776f" font-size="10" x="62" y="298">FAIR + ALE en euros</text>
+<text fill="#94a3b8" font-size="9" font-style="italic" x="62" y="320">Decisiones con números</text>
+<rect fill="#d1fae5" height="90" rx="10" stroke="#059669" stroke-width="2" width="294" x="18" y="350"></rect>
+<circle cx="40" cy="380" fill="#059669" r="13"></circle>
+<text fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" x="40" y="385">4</text>
+<text fill="#151915" font-size="13" font-weight="800" x="62" y="378">Nivel 4 · Integrado</text>
+<text fill="#77776f" font-size="10" x="62" y="398">Riesgo dirige inversión</text>
+<text fill="#94a3b8" font-size="9" font-style="italic" x="62" y="420">Sobrevive al cambio de CISO</text>
+<rect fill="#059669" height="28" opacity=".12" rx="6" width="294" x="18" y="455"></rect>
+<text fill="#151915" font-size="10" font-weight="700" text-anchor="middle" x="165" y="474">Salto 2 → 3: el más costoso y el más útil</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 1: Los cuatro niveles de madurez en gestión de riesgo tecnológico y la firma observable de cada uno.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- SECCIÓN 1 -->
+<div class="block" id="s1">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — Cómo se mide</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La madurez se mide por lo que el sistema puede demostrar</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>La primera regla al medir madurez en gestión de riesgo tecnológico es no preguntarle a la organización qué nivel cree que tiene.</strong> La autoevaluación es sistemáticamente optimista. La medida honesta pasa por observar la firma operativa: qué artefactos existen, con qué recencia, con qué trazabilidad, y qué decisiones concretas se han tomado con ellos en los últimos tres meses.</p>
+<p>Los cuatro niveles que describo abajo están calibrados con esa lógica. Cada uno tiene una firma diagnóstica que un observador externo puede verificar en pocas horas sin depender de lo que le cuenten en la reunión inicial. Un CISO puede afirmar que su organización está en Nivel 3; si al pedir el ALE (Annualized Loss Expectancy) cuantificado del top-5 de riesgos no aparece anexo de supuestos, el nivel real es 2 con voluntad de 3. Esa distinción es la que marca la diferencia entre un roadmap ambicioso y un autoengaño colectivo.</p>
+<div class="defensa-box-warning"><strong>⚠️ El sesgo de autoevaluación:</strong> en las revisiones de terceros que hago cada año, el nivel autopercibido supera al nivel demostrable en aproximadamente el 60% de los casos, con un desfase medio de un nivel entero. La causa habitual: confundir tener herramientas o consultores con haber implantado el proceso.</div>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+<!-- SECCIÓN 2 -->
+<div class="block" id="s2">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Niveles 1 y 2</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Nivel 1: informal, y Nivel 2: registro con heatmap</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>El <strong>Nivel 1 (Informal)</strong> describe organizaciones sin registro estructurado de riesgos. Hay preocupaciones —típicamente conocidas por el responsable de TI y por el CISO— pero no hay listado formal, no hay propietarios asignados, no hay periodicidad de revisión. Cuando un directivo pregunta "¿cuáles son nuestros principales riesgos tecnológicos?", la respuesta viene de memoria y varía según a quién se pregunte. La firma diagnóstica: no existe respuesta consistente a "cuántos riesgos activos tiene la organización". Este nivel es incompatible con NIS2 y DORA (Digital Operational Resilience Act). Cualquier auditoría externa —incluso una revisión de proveedor exigente— lo detecta en la primera hora.</p>
+<p>El <strong>Nivel 2 (Cualitativo)</strong> es donde vive la mayoría de las organizaciones medianas españolas hoy. Existe registro formal —Excel, SharePoint o herramienta— con probabilidad e impacto estimados en escala cualitativa (típicamente 1-5), con score derivado (P × I), coloreado en heatmap. Hay comité formal, aunque su cadencia real suele ser anual con revisión pre-auditoría. Los propietarios están asignados a nivel de área ("Sistemas es dueña del riesgo de disponibilidad") en lugar de a persona nominal. Las aceptaciones no tienen fecha de caducidad explícita.</p>
+<p>Este nivel cumple formalmente el requisito de "existe gestión de riesgo", pero no permite decidir con criterio económico. La firma diagnóstica: el 70% del registro está en score "medio" o "medio-alto", los top-riesgos llevan más de un año sin cambio de estado, y la última acta de comité de riesgo tiene más de seis meses. Es el nivel más peligroso porque da falsa sensación de conformidad. Un auditor NIS2 estricto identifica huecos aquí que un auditor menos técnico deja pasar; el margen entre uno y otro es lo que separa un dictamen limpio de un informe con hallazgos.</p>
+</div>
+</div>
+<!-- GRÁFICO 3: LA FIRMA DIAGNÓSTICA POR NIVEL -->
+<figure aria-label="Firma diagnóstica observable en Nivel 1 y Nivel 2" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 230" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="230" rx="14" width="900"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="36">La firma diagnóstica: lo que se observa, no lo que se declara</text>
+<text fill="#77776f" font-size="12" x="40" y="58">cómo distinguir Nivel 1 de Nivel 2 sin depender de la autoevaluación</text>
+<rect fill="#fee2e2" height="120" rx="10" stroke="#ef4444" stroke-width="1.5" width="395" x="40" y="80"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="60" y="105">Nivel 1 · Informal</text>
+<text fill="#7f1d1d" font-size="11" x="60" y="128">"¿Cuántos riesgos activos?"</text>
+<text fill="#7f1d1d" font-size="11" x="60" y="146">→ Respuesta distinta según a</text>
+<text fill="#7f1d1d" font-size="11" x="60" y="164">quién se pregunte, sin registro</text>
+<text fill="#dc2626" font-size="11" font-weight="700" x="60" y="182">Detectable en la primera hora</text>
+<rect fill="#fef3c7" height="120" rx="10" stroke="#f59e0b" stroke-width="1.5" width="395" x="465" y="80"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="485" y="105">Nivel 2 · Cualitativo</text>
+<text fill="#78350f" font-size="11" x="485" y="128">70% del registro en "medio"</text>
+<text fill="#78350f" font-size="11" x="485" y="146">→ Top-riesgos sin cambio de</text>
+<text fill="#78350f" font-size="11" x="485" y="164">estado en más de un año</text>
+<text fill="#d97706" font-size="11" font-weight="700" x="485" y="182">El nivel más peligroso: parece cumplir</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 280" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="280" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="18" y="28">La firma diagnóstica</text>
+<rect fill="#fee2e2" height="105" rx="8" stroke="#ef4444" stroke-width="1.5" width="294" x="18" y="45"></rect>
+<text fill="#151915" font-size="12" font-weight="800" x="30" y="68">Nivel 1 · Informal</text>
+<text fill="#7f1d1d" font-size="10" x="30" y="88">Respuesta distinta según a</text>
+<text fill="#7f1d1d" font-size="10" x="30" y="103">quién se pregunte</text>
+<text fill="#dc2626" font-size="9" font-weight="700" x="30" y="123">Detectable en 1ª hora</text>
+<rect fill="#fef3c7" height="105" rx="8" stroke="#f59e0b" stroke-width="1.5" width="294" x="18" y="160"></rect>
+<text fill="#151915" font-size="12" font-weight="800" x="30" y="183">Nivel 2 · Cualitativo</text>
+<text fill="#78350f" font-size="10" x="30" y="203">70% del registro en "medio"</text>
+<text fill="#78350f" font-size="10" x="30" y="218">Top-riesgos estancados 1 año</text>
+<text fill="#d97706" font-size="9" font-weight="700" x="30" y="238">El nivel más peligroso</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 3: La firma diagnóstica observable de Nivel 1 y Nivel 2, sin depender de la autoevaluación.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+<!-- SECCIÓN 3: el salto crítico -->
+<div class="block" id="s3">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — El salto crítico</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Nivel 3: cuantitativo — el salto más costoso y el más útil</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>El <strong>Nivel 3 (Cuantitativo)</strong> es donde la gestión de riesgo pasa de ser ejercicio documental a herramienta de decisión. La organización aplica cuantificación seria —FAIR (Factor Analysis of Information Risk) u otro método reconocido— a los TOP 10-20 riesgos por exposición, con distribuciones LEF/LM justificadas y trazabilidad de supuestos. El resto del registro sigue en análisis semi-cuantitativo estructurado. El comité de riesgo tiene cadencia trimestral efectiva. Las aceptaciones tienen fecha de caducidad. Las decisiones de inversión en seguridad se argumentan con reducciones esperadas de ALE, no con referencias genéricas a mejores prácticas.</p>
+<p>El salto de Nivel 2 a Nivel 3 es, con diferencia, el más costoso del roadmap. Requiere típicamente entre 6 y 18 meses según tamaño y punto de partida, exige formación en cuantificación (una persona experimentada acompañada por consultor durante los primeros 3-4 meses), y suele implicar sustituir o extender la herramienta de gestión. El coste directo entre formación, consultoría y herramienta puede oscilar entre 40k€ y 200k€ para una organización mediana, dependiendo del alcance.</p>
+<p>Pero es también el salto que más reduce la exposición residual, porque es el primero que permite priorizar la inversión en seguridad con criterio económico defendible. Antes de Nivel 3, la organización invierte en lo que suena bien o en lo que el proveedor con mejor comercial vende. En Nivel 3, la organización invierte donde la reducción marginal de ALE por euro invertido es máxima. Es la diferencia entre asignar presupuesto por inercia y asignarlo por análisis.</p>
+<div class="defensa-box-success"><strong>✔ La regla del 80/20 aplicada al salto:</strong> no cuantificar los 200 riesgos del registro; cuantificar los TOP 15 que concentran típicamente el 75-85% de la exposición estimada. Ese subconjunto es viable en 4-6 meses y produce el 80% del valor de la cuantificación. Intentar cuantificar todo el registro es la razón por la que muchos proyectos FAIR se detienen a la mitad y no vuelven a arrancar.</div>
+</div>
+</div>
+<!-- GRÁFICO 2: CURVA DE REDUCCIÓN DE ALE POR NIVEL (segundo diagrama, específico del dominio) -->
+<figure aria-label="Curva de reducción de exposición residual por nivel de madurez" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 380" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="380" rx="14" width="900"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="36">Exposición residual esperada por nivel de madurez</text>
+<text fill="#77776f" font-size="12" x="40" y="58">reducción proporcional de ALE agregado en organización mediana (referencia)</text>
+<!-- Ejes -->
+<line stroke="#0f172a" stroke-width="1.5" x1="90" x2="820" y1="290" y2="290"></line>
+<line stroke="#0f172a" stroke-width="1.5" x1="90" x2="90" y1="100" y2="290"></line>
+<!-- Etiquetas eje X -->
+<text fill="#0f172a" font-size="12" font-weight="700" text-anchor="middle" x="180" y="315">Nivel 1</text>
+<text fill="#77776f" font-size="10" text-anchor="middle" x="180" y="332">Informal</text>
+<text fill="#0f172a" font-size="12" font-weight="700" text-anchor="middle" x="360" y="315">Nivel 2</text>
+<text fill="#77776f" font-size="10" text-anchor="middle" x="360" y="332">Cualitativo</text>
+<text fill="#0f172a" font-size="12" font-weight="700" text-anchor="middle" x="540" y="315">Nivel 3</text>
+<text fill="#77776f" font-size="10" text-anchor="middle" x="540" y="332">Cuantitativo</text>
+<text fill="#0f172a" font-size="12" font-weight="700" text-anchor="middle" x="720" y="315">Nivel 4</text>
+<text fill="#77776f" font-size="10" text-anchor="middle" x="720" y="332">Integrado</text>
+<!-- Etiquetas eje Y -->
+<text fill="#77776f" font-size="10" text-anchor="end" x="80" y="115">100%</text>
+<text fill="#77776f" font-size="10" text-anchor="end" x="80" y="165">75%</text>
+<text fill="#77776f" font-size="10" text-anchor="end" x="80" y="215">50%</text>
+<text fill="#77776f" font-size="10" text-anchor="end" x="80" y="265">25%</text>
+<text fill="#77776f" font-size="10" text-anchor="end" x="80" y="295">0</text>
+<text fill="#64748b" font-size="11" font-weight="700" text-anchor="middle" transform="rotate(-90 20 200)" x="20" y="200">ALE residual</text>
+<!-- Barras -->
+<rect fill="#ef4444" height="180" opacity="0.85" rx="4" width="80" x="140" y="110"></rect>
+<text fill="#dc2626" font-size="12" font-weight="800" text-anchor="middle" x="180" y="102">100%</text>
+<text fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle" x="180" y="205">Baseline</text>
+<rect fill="#f59e0b" height="145" opacity="0.85" rx="4" width="80" x="320" y="145"></rect>
+<text fill="#d97706" font-size="12" font-weight="800" text-anchor="middle" x="360" y="137">~80%</text>
+<text fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle" x="360" y="220">-20%</text>
+<rect fill="#3b82f6" height="75" opacity="0.85" rx="4" width="80" x="500" y="215"></rect>
+<text fill="#3b82f6" font-size="12" font-weight="800" text-anchor="middle" x="540" y="207">~40%</text>
+<text fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle" x="540" y="255">-50%</text>
+<rect fill="#059669" height="38" rx="4" width="80" x="680" y="252"></rect>
+<text fill="#059669" font-size="12" font-weight="800" text-anchor="middle" x="720" y="244">~20%</text>
+<text fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle" x="720" y="278">-40%</text>
+<!-- Anotación: salto crítico -->
+<path d="M 400 145 Q 450 90, 500 215" fill="none" stroke="#dc2626" stroke-dasharray="4,3" stroke-width="2"></path>
+<text fill="#dc2626" font-size="12" font-weight="800" text-anchor="middle" x="450" y="80">Salto crítico</text>
+<text fill="#7f1d1d" font-size="10" text-anchor="middle" x="450" y="95">-50% de exposición</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 380" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="380" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="18" y="28">Reducción de ALE por nivel</text>
+<line stroke="#0f172a" stroke-width="1.5" x1="55" x2="310" y1="310" y2="310"></line>
+<line stroke="#0f172a" stroke-width="1.5" x1="55" x2="55" y1="80" y2="310"></line>
+<text fill="#77776f" font-size="8" text-anchor="end" x="50" y="90">100%</text>
+<text fill="#77776f" font-size="8" text-anchor="end" x="50" y="200">50%</text>
+<text fill="#77776f" font-size="8" text-anchor="end" x="50" y="313">0</text>
+<rect fill="#ef4444" height="225" opacity="0.85" rx="3" width="45" x="70" y="85"></rect>
+<text fill="#151915" font-size="10" font-weight="700" text-anchor="middle" x="92" y="330">N1</text>
+<text fill="#dc2626" font-size="9" text-anchor="middle" x="92" y="345">100%</text>
+<rect fill="#f59e0b" height="180" opacity="0.85" rx="3" width="45" x="130" y="130"></rect>
+<text fill="#151915" font-size="10" font-weight="700" text-anchor="middle" x="152" y="330">N2</text>
+<text fill="#d97706" font-size="9" text-anchor="middle" x="152" y="345">80%</text>
+<rect fill="#3b82f6" height="90" opacity="0.85" rx="3" width="45" x="190" y="220"></rect>
+<text fill="#151915" font-size="10" font-weight="700" text-anchor="middle" x="212" y="330">N3</text>
+<text fill="#3b82f6" font-size="9" text-anchor="middle" x="212" y="345">40%</text>
+<rect fill="#059669" height="46" rx="3" width="45" x="250" y="264"></rect>
+<text fill="#151915" font-size="10" font-weight="700" text-anchor="middle" x="272" y="330">N4</text>
+<text fill="#059669" font-size="9" text-anchor="middle" x="272" y="345">20%</text>
+<rect fill="#dc2626" height="18" opacity="0.12" rx="4" width="294" x="18" y="358"></rect>
+<text fill="#dc2626" font-size="9" font-weight="800" text-anchor="middle" x="165" y="371">Salto N2 → N3 = -50% de exposición</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 2: Curva típica de reducción de exposición residual por nivel de madurez. El salto Nivel 2 → 3 concentra la mayor reducción marginal.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+<!-- SECCIÓN 4 -->
+<div class="block" id="s4">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — El nivel del que casi nadie sale</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Nivel 4: integrado — cuando el riesgo dirige, no reporta</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>El <strong>Nivel 4 (Integrado)</strong> es donde la gestión de riesgo tecnológico deja de ser una función de reporte y se convierte en un input directo a la toma de decisiones ejecutivas. El apetito de riesgo cuantitativo está fijado por el consejo. La asignación de presupuesto anual de tecnología y seguridad se hace, en parte significativa, mediante optimización de reducción esperada de ALE por euro invertido. Los proyectos con impacto material en el perfil de riesgo pasan por análisis pre-lanzamiento con actualización explícita del registro. Los indicadores clave de riesgo tecnológico están en el cuadro de mando del comité de dirección junto con métricas financieras y operativas.</p>
+<p>La firma diagnóstica de este nivel es sutil pero inconfundible: el proceso sobrevive al cambio de CISO sin degradación en 90 días. Cuando la gestión de riesgo depende de una persona —típicamente el CISO o un responsable interno con conocimiento acumulado en la cabeza— la salida de esa persona degrada el nivel en meses. Cuando el proceso está institucionalizado, con documentación, herramienta configurada, cadencia protegida por calendario ejecutivo y responsabilidades reglamentadas, el nuevo CISO llega y encuentra un sistema operando. Ese es el test real de Nivel 4.</p>
+<p>Este nivel es raro. En mi experiencia revisando organizaciones españolas medianas y grandes, menos del 10% está aquí. La mayoría del sector financiero grande —bancos significativos, aseguradoras de tamaño medio-grande— sí, en gran medida forzado por DORA. En sector energético, telco y transporte, el impulso lo está dando NIS2, con progreso desigual. En sector público estatal, el impulso es el ENS (Esquema Nacional de Seguridad) RD (Real Decreto) 311/2022 con matices. En el resto —industria, retail, servicios profesionales— el Nivel 4 es aspiración más que realidad, y el 2 el estándar de facto.</p>
+<div class="defensa-box-tech"><strong>Métrica de Nivel 4 defendible:</strong> el CFO (Chief Financial Officer) puede responder en una reunión —sin llamar al CISO— cuánto es la exposición residual estimada de la organización en euros y cuál sería la reducción esperada si se aprobase el próximo tramo de inversión en ciberseguridad. Si esa conversación no es posible sin ayuda técnica, el nivel no es 4.</div>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+<!-- SECCIÓN 5: roadmap con plazos honestos -->
+<div class="block" id="s5">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Roadmap realista</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Plazos honestos y el error de saltarse niveles</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>Un roadmap defendible reconoce que los niveles no se saltan. Intentar pasar de Nivel 1 a Nivel 3 en un año contratando una plataforma GRC (Governance, Risk and Compliance) y un consultor produce, con altísima probabilidad, un sistema formalmente en Nivel 3 y operativamente en Nivel 2 —herramienta puesta pero sin proceso ni disciplina detrás—. Es el escenario clásico del "proyecto de implantación" que termina en informe de aceptación y no cambia el comportamiento organizativo.</p>
+<p>Los plazos que veo funcionar en la práctica: de Nivel 1 a Nivel 2, entre 4 y 8 meses de trabajo dedicado, con presupuesto ligero (una persona a tiempo parcial, quizá una consultoría de 20-40k€ para arranque). De Nivel 2 a Nivel 3, entre 12 y 24 meses, con inversión significativa en formación, herramienta y consultoría. De Nivel 3 a Nivel 4, entre 18 meses y varios años, con presupuesto sostenido y —crucialmente— involucración del comité de dirección más allá del CISO. El paso a Nivel 4 no lo dirige el CISO; lo dirige el CFO o el CEO (Chief Executive Officer) con el CISO como habilitador técnico.</p>
+<p>Un roadmap típico para una organización mediana en Nivel 2 con obligación NIS2/DORA de conseguir Nivel 3 defendible: seis meses para diseñar el modelo cuantitativo, formar al equipo y elegir herramienta; seis meses para aplicar FAIR a los TOP 15 riesgos con acompañamiento consultor; seis meses para institucionalizar la cadencia, integrar con incidentes y demostrar retroalimentación; seis meses para consolidar, absorber la primera auditoría en el nuevo nivel y ajustar. Total: 24 meses realistas. Prometer 12 meses es común y también es la razón por la que muchas organizaciones aparecen "cumpliendo NIS2" en papel y sufriendo hallazgos en la primera revisión.</p>
+<div class="defensa-box-warning"><strong>⚠️ El error de saltarse Nivel 2:</strong> algunas organizaciones intentan pasar directamente de Nivel 1 a Nivel 3 saltándose la disciplina de tener primero un registro operativo simple. Rara vez funciona. El proceso de gestión de riesgo requiere aprendizaje organizativo que solo se produce operando el modelo simple durante suficiente tiempo antes de sofisticarlo.</div>
+</div>
+</div>
+<!-- GRÁFICO 4: ROADMAP DE TRANSICIÓN CON PLAZOS -->
+<figure aria-label="Roadmap de transición entre niveles con plazos realistas" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="220" rx="14" width="900"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="36">Roadmap de transición: plazos realistas, no aspiracionales</text>
+<text fill="#77776f" font-size="12" x="40" y="58">los niveles no se saltan; cada salto tiene su tiempo mínimo defendible</text>
+<line stroke="#cbd5e1" stroke-width="3" x1="60" x2="840" y1="130" y2="130"></line>
+<circle cx="100" cy="130" fill="#ef4444" r="10"></circle>
+<text fill="#151915" font-size="11" font-weight="700" text-anchor="middle" x="100" y="160">N1</text>
+<text fill="#64748b" font-size="11" text-anchor="middle" x="230" y="115">4-8 meses</text>
+<circle cx="360" cy="130" fill="#f59e0b" r="10"></circle>
+<text fill="#151915" font-size="11" font-weight="700" text-anchor="middle" x="360" y="160">N2</text>
+<text fill="#64748b" font-size="11" text-anchor="middle" x="540" y="115">12-24 meses</text>
+<circle cx="620" cy="130" fill="#3b82f6" r="10"></circle>
+<text fill="#151915" font-size="11" font-weight="700" text-anchor="middle" x="620" y="160">N3</text>
+<text fill="#64748b" font-size="11" text-anchor="middle" x="730" y="115">18m-varios años</text>
+<circle cx="820" cy="130" fill="#059669" r="10"></circle>
+<text fill="#151915" font-size="11" font-weight="700" text-anchor="middle" x="820" y="160">N4</text>
+<text fill="#dc2626" font-size="12" font-weight="700" text-anchor="middle" x="450" y="195">Prometer 12 meses de N1 a N3 es la causa más común de "cumplimiento" solo en papel</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 340" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="340" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="18" y="28">Roadmap con plazos realistas</text>
+<line stroke="#cbd5e1" stroke-width="3" x1="45" x2="45" y1="55" y2="270"></line>
+<circle cx="45" cy="60" fill="#ef4444" r="9"></circle>
+<text fill="#151915" font-size="11" font-weight="700" x="65" y="65">Nivel 1</text>
+<text fill="#64748b" font-size="10" x="65" y="82">↓ 4-8 meses</text>
+<circle cx="45" cy="130" fill="#f59e0b" r="9"></circle>
+<text fill="#151915" font-size="11" font-weight="700" x="65" y="135">Nivel 2</text>
+<text fill="#64748b" font-size="10" x="65" y="152">↓ 12-24 meses</text>
+<circle cx="45" cy="200" fill="#3b82f6" r="9"></circle>
+<text fill="#151915" font-size="11" font-weight="700" x="65" y="205">Nivel 3</text>
+<text fill="#64748b" font-size="10" x="65" y="222">↓ 18m - varios años</text>
+<circle cx="45" cy="270" fill="#059669" r="9"></circle>
+<text fill="#151915" font-size="11" font-weight="700" x="65" y="275">Nivel 4</text>
+<rect fill="#fee2e2" height="35" rx="6" width="294" x="18" y="295"></rect>
+<text fill="#dc2626" font-size="9" font-weight="700" text-anchor="middle" x="165" y="317">12 meses de N1 a N3 = papel, no realidad</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 4: Roadmap de transición entre niveles de madurez, con plazos mínimos defendibles.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 06</span></div>
+<!-- SECCIÓN 6: autodiagnóstico -->
+<div class="block" id="s6">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 06 — Checklist de madurez</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Checklist de madurez en riesgo tecnológico: ¿en qué nivel está tu organización?</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>Este autodiagnóstico está diseñado para no admitir la respuesta autopercibida. Cada pregunta se responde con evidencia, no con opinión. El nivel real es el correspondiente a la respuesta menos favorable de las cinco.</p>
+<div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:20px; margin:20px 0;">
+<table style="width:100%; border-collapse:collapse; font-size:14px;">
+<thead>
+<tr style="border-bottom:2px solid #e2e8f0;">
+<th style="padding:12px 0; text-align:left; font-weight:800; color:#0f172a; width:55%;">Pregunta</th>
+<th style="padding:12px 0; text-align:left; font-weight:800; color:#0f172a;">Nivel según respuesta</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:14px 20px 14px 0; color:#334155;">¿Cuántos riesgos tecnológicos activos tiene la organización? ¿Coincide la respuesta del CISO con la del CIO (Chief Information Officer)?</td>
+<td style="padding:14px 0; color:#64748b;">Sin registro → N1. Con registro coincidente → N2 o superior.</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:14px 20px 14px 0; color:#334155;">¿Cuál es el ALE del riesgo #1 del registro, con anexo de supuestos?</td>
+<td style="padding:14px 0; color:#64748b;">Sin cifra en euros → N2. Con cifra sin anexo → N2+. Con anexo → N3.</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:14px 20px 14px 0; color:#334155;">¿Cuándo fue la última acta de comité de riesgo y qué se decidió?</td>
+<td style="padding:14px 0; color:#64748b;">&gt;6 meses o sin decisiones → N2. Trimestral con decisiones → N3+.</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:14px 20px 14px 0; color:#334155;">¿Existe decisión de inversión en 2025-2026 argumentada con reducción de ALE esperado?</td>
+<td style="padding:14px 0; color:#64748b;">No → N2 o inferior. Sí, con documento explícito → N3+.</td>
+</tr>
+<tr>
+<td style="padding:14px 20px 14px 0; color:#334155;">¿El proceso sobreviviría a la baja del CISO durante 90 días sin degradación observable?</td>
+<td style="padding:14px 0; color:#64748b;">No → N3 como mucho. Sí, con evidencia (documentación, calendario, herramienta) → N4.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Cierre:</strong> la madurez en gestión de riesgo tecnológico no es un peldaño que se sube por proyecto — se sube por institucionalización. Un proyecto pone la herramienta y la metodología; solo la disciplina operativa sostenida durante trimestres consecutivos convierte esa infraestructura en madurez real. El roadmap más importante no es el diagrama de Gantt del proyecto de implantación; es el calendario de comités trimestrales del año siguiente, cumplido sin excepciones ni aplazamientos, con actas que registran decisiones concretas. Cuando ese calendario existe y se cumple durante dos años seguidos, la madurez del nivel siguiente ya no depende de nadie en particular — depende del sistema. Y ese es el único tipo de gestión de riesgo que sobrevive al cambio de CISO.</p>
+</div>
+</div>
+
+<div class="defensa-foot">
+<div class="defensa-author">
+<div class="defensa-foot-label">Autor</div>
+<div class="defensa-author-name">Miguel Ángel Carriazo</div>
+<p class="defensa-author-bio">Arquitecto de Infraestructura y Ciberseguridad con más de 25 años de experiencia diseñando, asegurando y operando entornos tecnológicos críticos. Lead Auditor en ISO/IEC 27001 e ISO/IEC 42001, especializado en gobierno, riesgo, cumplimiento y transformación tecnológica. En esta área aborda el riesgo tecnológico desde los activos, las dependencias, la operación, la toma de decisiones y la evidencia del riesgo residual.</p>
+</div>
+</div></div>
+<aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+<div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+<div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+<table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Área</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#0f172a; font-weight:600; text-align:right;">Riesgo Tecnológico</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Enfoque</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#059669; font-weight:700; text-align:right;">Madurez y Roadmap</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Nivel salto</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#059669; font-weight:700; text-align:right;">N2 → N3 crítico</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Nivel</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#0f172a; font-weight:600; text-align:right;">Avanzado</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Lectura</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#0f172a; font-weight:600; text-align:right;">16-20 min</td></tr>
+<tr><td style="padding:10px 0; color:#64748b; font-weight:700;">Etiquetas</td><td style="padding:10px 0; color:#0f172a; font-weight:600; text-align:right;">#madurez #roadmap #FAIR #NIS2</td></tr>
+</table>
+</div>
+<div>
+<div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+<nav class="defensa-toc-nav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+<a href="#s1" style="text-decoration:none; color:#059669; font-size:14px; font-weight:700; border-left:2px solid #059669; margin-left:-16px; padding-left:14px;">01. Cómo se mide</a>
+<a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Niveles 1 y 2</a>
+<a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Nivel 3 (salto crítico)</a>
+<a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Nivel 4</a>
+<a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Roadmap realista</a>
+<a href="#s6" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">06. Autodiagnóstico</a>
+</nav>
+</div>
+</aside>
+</div>
+<div class="related-section">
+<div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+<div class="related-grid">
+<a class="related-card" href="riesgo-tecnologico-diseno-principios.html">
+<div class="r-meta">Riesgo Tecnológico · Principios</div>
+<div class="r-title">Principios de diseño: el mapa de calor de riesgos oculta más de lo que muestra</div>
+<div class="r-desc">Un heatmap 5x5 comprime tres decisiones distintas en una celda de color. Por qué la gestión de riesgo defendible no cabe en una escala ordinal.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+<a class="related-card" href="riesgo-tecnologico-modelo-operativo.html">
+<div class="r-meta">Riesgo Tecnológico · Operaciones</div>
+<div class="r-title">Modelo operativo: el registro de riesgos que solo existe cuando se acerca la auditoría</div>
+<div class="r-desc">La gestión operativa real no es un stream separado — se enchufa a los procesos que ya operan: cambios, incidentes, vulnerabilidades.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+<a class="related-card" href="riesgo-tecnologico-controles-evidencias.html">
+<div class="r-meta">Riesgo Tecnológico · Controles</div>
+<div class="r-title">Controles y evidencias: qué evidencia real exige un auditor NIS2 sobre gestión de riesgo</div>
+<div class="r-desc">Del acta de comité a la trazabilidad completa del razonamiento. Qué evidencias diferencian una gestión defendible de una aparente.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+</div>
+</div>
+<div id="footer-container"></div>
+</div>
+</div>
+<script src="../../js/menu.js"></script>
+<script src="../../js/footer.js"></script>
+<script>
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
+            } else {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function() {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

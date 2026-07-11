@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Principios de diseño: si te enteras por el usuario, no estás monitorizando | Monitorización y Observabilidad | Technology Advisory</title><meta name="description" content="Monitorizar servidores y monitorizar servicios no es lo mismo. Un servidor al 95% de CPU puede estar perfectamente sano; un servicio que responde en 8 segu"><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
+<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // operaciones</span><span>categoría: <strong>Monitorización y Observabilidad</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Monitorización y Observabilidad</div><h1 class="article-title">Principios de diseño: si te enteras por el usuario, no estás monitorizando</h1><p class="article-lead">Monitorizar servidores y monitorizar servicios no es lo mismo. Un servidor al 95% de CPU puede estar perfectamente sano; un servicio que responde en 8 segundos cuando debería en 2 es un problema, aunque el servidor esté tranquilo.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Monitorización y Observabilidad"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="900" height="410" rx="14" fill="#fafaf8"/>
+<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Servicio vs servidor: qué monitorizar de verdad</text>
+<text x="40" y="66" font-size="12" fill="#77776f">la métrica técnica no siempre refleja la experiencia real</text>
+<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">CPU/RAM/disco</text>
+<text x="58" y="163" font-size="11" fill="#77776f">Salud del servidor, no del servicio</text>
+<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Latencia percibida</text>
+<text x="488" y="163" font-size="11" fill="#77776f">Lo que el usuario realmente experimenta</text>
+<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Tasa de error</text>
+<text x="58" y="283" font-size="11" fill="#77776f">Peticiones fallidas, no solo caídas</text>
+<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">SLA del servicio</text>
+<text x="488" y="283" font-size="11" fill="#77776f">El objetivo real a monitorizar</text>
+<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Un servidor al 20% de CPU puede tener un servicio completamente caído por otra causa</text>
+</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="330" height="438" rx="12" fill="#fafaf8"/>
+<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Servicio vs servidor: qué monitorizar de verdad</text>
+<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="89" r="13" fill="#059669"/>
+<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">CPU/RAM/disco</text>
+<text x="64" y="102" font-size="11" fill="#77776f">Salud del servidor, no del</text>
+<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="159" r="13" fill="#059669"/>
+<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Latencia percibida</text>
+<text x="64" y="172" font-size="11" fill="#77776f">Lo que el usuario realmente</text>
+<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="229" r="13" fill="#059669"/>
+<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Tasa de error</text>
+<text x="64" y="242" font-size="11" fill="#77776f">Peticiones fallidas, no solo</text>
+<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="299" r="13" fill="#059669"/>
+<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">SLA del servicio</text>
+<text x="64" y="312" font-size="11" fill="#77776f">El objetivo real a monitorizar</text>
+<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
+<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Un servidor al 20% de CPU puede tener un</text>
+<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">servicio completamente caído por otra</text>
+<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">causa</text>
+</svg></div></figure><div class="toc-mini"><a href="#contexto">1. Monitorizar servidores no es monitorizar servicios</a><a href="#arquitectura">2. Los tres pilares: métricas, logs, traces</a><a href="#seguridad">3. Alertas accionables, no ruido</a><a href="#operacion">4. Dashboards por audiencia, no uno para todos</a><a href="#roadmap">5. Empezar por lo que el usuario experimenta</a></div><h2 id="contexto">1. Monitorizar servidores no es monitorizar servicios</h2><div class="body-text"><p><strong>Si te enteras de un problema porque llama un usuario, no estás monitorizando — estás rezando.</strong> Monitoriza servicios, no servidores. Un servidor al 95% de CPU puede estar perfectamente sano —es lo esperado de un servidor bien dimensionado— mientras un servicio que responde en 8 segundos cuando el SLA es 2 es un problema real aunque el servidor esté al 20%.</p></div><h2 id="arquitectura">2. Los tres pilares de la observabilidad, y cuál priorizar primero</h2><div class="body-text"><p>Métricas (números en el tiempo: CPU, latencia, errores por segundo) son baratas y perfectas para alertas basadas en umbrales. Logs (eventos textuales) son imprescindibles para el diagnóstico posterior a una alerta. Traces (seguimiento de una petición a través de servicios) son esenciales en microservicios, opcionales en monolitos. Si solo puedes empezar por uno, empieza por métricas con alertas.</p></div><h2 id="seguridad">3. Alertas accionables, no ruido que todos acaban ignorando</h2><div class="body-text"><p>Una alerta debe ser accionable (el receptor puede hacer algo con ella), contextual (incluye información suficiente para empezar a investigar) y rara (si alertas 50 veces al día, el equipo las ignora todas). Los umbrales estáticos generan falsos positivos; los umbrales dinámicos basados en baseline reducen el ruido, a costa de más trabajo de configuración inicial.</p></div><h2 id="operacion">4. Dashboards por audiencia, no un único dashboard para todo el mundo</h2><div class="body-text"><p>El dashboard operativo (para el equipo de guardia) y el dashboard ejecutivo (para dirección) son cosas distintas, con métricas distintas, actualizados con frecuencia distinta. Mezclarlos en un único dashboard "Frankenstein" produce algo que nadie mira porque no sabe si es para él.</p></div><h2 id="roadmap">5. Empezar por lo que el usuario realmente experimenta, no por lo más fácil de medir</h2><div class="body-text"><p>El punto de partida defendible no es monitorizar lo que es técnicamente más sencillo de instrumentar —CPU y memoria están ahí desde el primer día— sino identificar qué experimenta realmente el usuario final del servicio, y construir la observabilidad hacia atrás desde ese punto.</p></div><a class="back" href="../index.html?cat=monitorizacion-observabilidad">← Volver a Monitorización y Observabilidad</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. Monitorizar servidores no es monitorizar servicios</a><a href="#arquitectura">2. Los tres pilares: métricas, logs, traces</a><a href="#seguridad">3. Alertas accionables, no ruido</a><a href="#operacion">4. Dashboards por audiencia, no uno para todos</a><a href="#roadmap">5. Empezar por lo que el usuario experimenta</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>

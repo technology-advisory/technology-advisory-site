@@ -1,50 +1,362 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Madurez y roadmap: de datos dispersos sin dueño al gobierno del dato como ventaja competitiva | Gobierno del Dato | Technology Advisory</title><meta name="description" content="Los cuatro niveles reales de madurez en gobierno del dato, desde la dispersión sin propietarios hasta el gobierno maduro que se convierte en ventaja compet"><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
-<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // gobernanza</span><span>categoría: <strong>Gobierno del Dato</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Gobierno del Dato</div><h1 class="article-title">Madurez y roadmap: de datos dispersos sin dueño al gobierno del dato como ventaja competitiva</h1><p class="article-lead">Los cuatro niveles reales de madurez en gobierno del dato, desde la dispersión sin propietarios hasta el gobierno maduro que se convierte en ventaja competitiva real, no solo en obligación de cumplimiento.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Gobierno del Dato"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
-<rect width="900" height="410" rx="14" fill="#fafaf8"/>
-<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Cuatro niveles de madurez en gobierno del dato</text>
-<text x="40" y="66" font-size="12" fill="#77776f">de la dispersión sin dueño a la ventaja competitiva real</text>
-<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Nivel 1 · Disperso</text>
-<text x="58" y="163" font-size="11" fill="#77776f">Sin propietarios ni clasificación</text>
-<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Nivel 2 · Con propietarios</text>
-<text x="488" y="163" font-size="11" fill="#77776f">Data Owners asignados, sin proceso completo</text>
-<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Nivel 3 · Gobernado</text>
-<text x="58" y="283" font-size="11" fill="#77776f">Clasificación, aprobación, mapa actualizado</text>
-<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Nivel 4 · Estratégico</text>
-<text x="488" y="283" font-size="11" fill="#77776f">El dato bien gobernado habilita mejores decisiones</text>
-<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
-<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
-<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">El Nivel 4 convierte el gobierno del dato de obligación de compliance en ventaja de negocio</text>
-</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
-<rect width="330" height="438" rx="12" fill="#fafaf8"/>
-<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Cuatro niveles de madurez en gobierno del dato</text>
-<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="89" r="13" fill="#059669"/>
-<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
-<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Nivel 1 · Disperso</text>
-<text x="64" y="102" font-size="11" fill="#77776f">Sin propietarios ni</text>
-<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="159" r="13" fill="#059669"/>
-<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
-<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Nivel 2 · Con propietarios</text>
-<text x="64" y="172" font-size="11" fill="#77776f">Data Owners asignados, sin</text>
-<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="229" r="13" fill="#059669"/>
-<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
-<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Nivel 3 · Gobernado</text>
-<text x="64" y="242" font-size="11" fill="#77776f">Clasificación, aprobación,</text>
-<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="299" r="13" fill="#059669"/>
-<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
-<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Nivel 4 · Estratégico</text>
-<text x="64" y="312" font-size="11" fill="#77776f">El dato bien gobernado</text>
-<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
-<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
-<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">El Nivel 4 convierte el gobierno del dato</text>
-<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">de obligación de compliance en ventaja de</text>
-<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">negocio</text>
-</svg></div></figure><div class="toc-mini"><a href="#contexto">1. De la dispersión sin control a la ventaja estratégica</a><a href="#arquitectura">2. Nivel 1 y 2: disperso, y con propietarios asignados</a><a href="#seguridad">3. Nivel 3: gobernado con proceso completo</a><a href="#operacion">4. Nivel 4: el dato como ventaja competitiva real</a><a href="#roadmap">5. La pregunta que revela honestamente el nivel real</a></div><h2 id="contexto">1. De la dispersión de datos sin control a la ventaja estratégica real</h2><div class="body-text"><p><strong>La mayoría de organizaciones empiezan con datos dispersos en múltiples sistemas, sin propietarios claros ni clasificación consistente.</strong> El camino de madurez no termina en "cumplir GDPR" — en su forma más avanzada, el gobierno del dato se convierte en una ventaja competitiva real, porque decisiones basadas en datos de calidad conocida son mejores decisiones.</p></div><h2 id="arquitectura">2. Nivel 1 y 2: datos dispersos sin propietario, y con propietarios asignados sin proceso completo</h2><div class="body-text"><p>El <strong>Nivel 1 (Disperso)</strong> tiene datos sin propietario claro ni clasificación consistente. El <strong>Nivel 2 (Con propietarios)</strong> asigna Data Owners para los dominios principales — un avance real, aunque sin proceso formal de aprobación de comparticiones ni mapa de flujo mantenido activamente.</p></div><h2 id="seguridad">3. Nivel 3: gobernado con clasificación real, proceso de aprobación y mapa de datos vivo</h2><div class="body-text"><p>El <strong>Nivel 3 (Gobernado)</strong> tiene clasificación de sensibilidad verificada, proceso de aprobación para comparticiones según nivel de riesgo, y un mapa de flujo de datos que se mantiene actualizado como práctica operativa normal, no como proyecto puntual.</p></div><h2 id="operacion">4. Nivel 4: el dato bien gobernado se convierte en ventaja competitiva, no solo en obligación cumplida</h2><div class="body-text"><p>El <strong>Nivel 4 (Estratégico)</strong> aprovecha la calidad y confiabilidad del dato bien gobernado para tomar mejores decisiones de negocio —analítica fiable, IA entrenada con datos de calidad conocida, cumplimiento normativo que se convierte en argumento de venta ante clientes exigentes— transformando lo que empezó como obligación en capacidad diferencial.</p></div><h2 id="roadmap">5. La pregunta que revela honestamente en qué nivel está la organización</h2><div class="body-text"><p>Si preguntas quién es el propietario de negocio de un conjunto de datos concreto, y qué nivel de sensibilidad tiene clasificado, la claridad y rapidez de la respuesta revela el nivel real. Sin respuesta clara, Nivel 1. Con propietario pero sin clasificación verificada recientemente, Nivel 2. Con ambos claros y actualizados, Nivel 3 en adelante.</p></div><a class="back" href="../index.html?cat=gobierno-dato">← Volver a Gobierno del Dato</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. De la dispersión sin control a la ventaja estratégica</a><a href="#arquitectura">2. Nivel 1 y 2: disperso, y con propietarios asignados</a><a href="#seguridad">3. Nivel 3: gobernado con proceso completo</a><a href="#operacion">4. Nivel 4: el dato como ventaja competitiva real</a><a href="#roadmap">5. La pregunta que revela honestamente el nivel real</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport"/>
+<title>Madurez y roadmap: no se madura comprando un catálogo | Gobierno del Dato | Technology Advisory</title>
+<meta content="Roadmap de madurez basado en capacidades observables, dependencias, criterios de salida y adopción operativa del gobierno del dato." name="description"/>
+<meta content="Miguel Ángel Carriazo" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="#059669" name="theme-color"/>
+<link href="../../css/global.css" rel="stylesheet"/>
+<link href="../../css/dossier-core.css" rel="stylesheet"/>
+<link href="../../css/articulo.css" rel="stylesheet"/>
+<link href="../../css/index.css" rel="stylesheet"/>
+<link href="../../css/articulo-diagramas.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        @media (max-width: 1024px) {
+            .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
+            div[style*="padding: 16px 48px 0"], div[style*="padding: 16px 48px 0;"] { padding: 16px 4% 0 !important; }
+            div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding: 40px 4% 24px !important; }
+        }
+        .article-diagram svg { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<div class="card-wrapper ds-page">
+<div class="card">
+<div id="menu-container"></div>
+<div class="accent-bar" style="background:#059669;"></div>
+<div class="ds-meta">
+<span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: gobernanza</span>
+<span>categoría: <strong>Gobierno del Dato</strong></span>
+</div>
+<div style="padding: 16px 4% 0;">
+<a class="defensa-btn-back" href="../index.html?cat=gobierno-dato" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Gobierno del Dato</a>
+</div>
+<div style="padding: 40px 4% 24px; border-bottom: 1px solid #ededea;">
+<div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Roadmap · Gobierno del Dato</div>
+<h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Madurez y roadmap: <span style="color:#059669;">no se madura comprando un catálogo</span></h1>
+<p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">La madurez no se mide por herramientas adquiridas, comités creados o políticas publicadas. Se mide por la capacidad de asignar decisiones, aplicar controles, detectar desviaciones y demostrar resultados de forma repetible.</p>
+<div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="6" r="2.6"></circle><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"></path></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><rect height="12.5" rx="1.3" width="13" x="2.5" y="3"></rect><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"></path></svg>Gobierno del Dato</span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="9" r="6.8"></circle><path d="M9 5.3V9l2.8 1.7"></path></svg>Lectura Avanzada (20-24 min)</span>
+</div>
+</div>
+<div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+<div class="defensa-main" style="min-width:0;">
+<!-- GRÁFICO 1: CUATRO NIVELES -->
+<!-- SECCIÓN 1 -->
+<!-- GRÁFICO 2: ROADMAP -->
+<!-- GRÁFICO 3: COMPARATIVA -->
+<!-- GRÁFICO 4: LA PREGUNTA CLAVE -->
+<!-- PIE DE AUTOR -->
+<figure aria-label="Cuatro niveles de madurez" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 440" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="440" rx="14" width="900"></rect>
+<text fill="#151915" font-size="19" font-weight="800" x="40" y="42">Cuatro niveles de madurez en gobierno del dato</text>
+<text fill="#77776f" font-size="12" x="40" y="66">de la dispersión sin dueño a la ventaja competitiva real</text>
+<defs>
+<marker id="a1" markerheight="6" markerwidth="6" orient="auto" refx="5" refy="5" viewbox="0 0 10 10"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"></path></marker>
+<lineargradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#059669"></stop><stop offset="1" stop-color="#151915"></stop></lineargradient>
+</defs>
+<rect fill="#fee2e2" height="100" rx="14" stroke="#ef4444" stroke-width="1.5" width="390" x="40" y="110"></rect>
+<circle cx="70" cy="160" fill="#ef4444" r="18"></circle>
+<text fill="#ffffff" font-size="14" font-weight="800" text-anchor="middle" x="70" y="166">1</text>
+<text fill="#151915" font-size="15" font-weight="800" x="100" y="148">Nivel 1 · Disperso</text>
+<text fill="#77776f" font-size="12" x="100" y="172">Sin propietarios ni clasificación</text>
+<line marker-end="url(#a1)" stroke="#94a3b8" stroke-width="2" x1="430" x2="468" y1="160" y2="160"></line>
+<rect fill="#fef3c7" height="100" rx="14" stroke="#f59e0b" stroke-width="1.5" width="390" x="470" y="110"></rect>
+<circle cx="500" cy="160" fill="#f59e0b" r="18"></circle>
+<text fill="#ffffff" font-size="14" font-weight="800" text-anchor="middle" x="500" y="166">2</text>
+<text fill="#151915" font-size="15" font-weight="800" x="530" y="148">Nivel 2 · Con propietarios</text>
+<text fill="#77776f" font-size="12" x="530" y="172">Data Owners asignados, sin proceso completo</text>
+<line marker-end="url(#a1)" stroke="#94a3b8" stroke-width="2" x1="430" x2="468" y1="225" y2="225"></line>
+<rect fill="#dbeafe" height="100" rx="14" stroke="#3b82f6" stroke-width="1.5" width="390" x="40" y="230"></rect>
+<circle cx="70" cy="280" fill="#3b82f6" r="18"></circle>
+<text fill="#ffffff" font-size="14" font-weight="800" text-anchor="middle" x="70" y="286">3</text>
+<text fill="#151915" font-size="15" font-weight="800" x="100" y="268">Nivel 3 · Gobernado</text>
+<text fill="#77776f" font-size="12" x="100" y="292">Clasificación, aprobación, mapa actualizado</text>
+<line marker-end="url(#a1)" stroke="#94a3b8" stroke-width="2" x1="430" x2="468" y1="280" y2="280"></line>
+<rect fill="#d1fae5" height="100" rx="14" stroke="#059669" stroke-width="2" width="390" x="470" y="230"></rect>
+<circle cx="500" cy="280" fill="#059669" r="18"></circle>
+<text fill="#ffffff" font-size="14" font-weight="800" text-anchor="middle" x="500" y="286">4</text>
+<text fill="#151915" font-size="15" font-weight="800" x="530" y="268">Nivel 4 · Estratégico</text>
+<text fill="#77776f" font-size="12" x="530" y="292">El dato bien gobernado habilita mejores decisiones</text>
+<rect fill="url(#g1)" height="50" opacity=".95" rx="14" width="820" x="40" y="360"></rect>
+<text fill="#ffffff" font-size="13" font-weight="700" x="68" y="385">El Nivel 4 convierte el gobierno del dato de obligación de compliance en ventaja de negocio</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 480" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="480" rx="12" width="330"></rect>
+<text fill="#151915" font-size="15" font-weight="800" x="18" y="34">Cuatro niveles de madurez</text>
+<rect fill="#fee2e2" height="55" rx="10" stroke="#ef4444" stroke-width="1.5" width="294" x="18" y="55"></rect>
+<circle cx="40" cy="82" fill="#ef4444" r="13"></circle><text fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" x="40" y="87">1</text>
+<text fill="#151915" font-size="12" font-weight="800" x="64" y="78">Nivel 1 · Disperso</text><text fill="#77776f" font-size="10" x="64" y="95">Sin propietarios ni</text>
+<rect fill="#fef3c7" height="55" rx="10" stroke="#f59e0b" stroke-width="1.5" width="294" x="18" y="115"></rect>
+<circle cx="40" cy="142" fill="#f59e0b" r="13"></circle><text fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" x="40" y="147">2</text>
+<text fill="#151915" font-size="12" font-weight="800" x="64" y="138">Nivel 2 · Con propietarios</text><text fill="#77776f" font-size="10" x="64" y="155">Data Owners asignados</text>
+<rect fill="#dbeafe" height="55" rx="10" stroke="#3b82f6" stroke-width="1.5" width="294" x="18" y="175"></rect>
+<circle cx="40" cy="202" fill="#3b82f6" r="13"></circle><text fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" x="40" y="207">3</text>
+<text fill="#151915" font-size="12" font-weight="800" x="64" y="198">Nivel 3 · Gobernado</text><text fill="#77776f" font-size="10" x="64" y="215">Clasificación, aprobación</text>
+<rect fill="#d1fae5" height="55" rx="10" stroke="#059669" stroke-width="2" width="294" x="18" y="235"></rect>
+<circle cx="40" cy="262" fill="#059669" r="13"></circle><text fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" x="40" y="267">4</text>
+<text fill="#151915" font-size="12" font-weight="800" x="64" y="258">Nivel 4 · Estratégico</text><text fill="#77776f" font-size="10" x="64" y="275">Ventaja competitiva</text>
+<rect fill="url(#g1)" height="55" rx="10" width="294" x="18" y="310"></rect>
+<text fill="#ffffff" font-size="10" font-weight="700" x="32" y="332">El Nivel 4 convierte el gobierno</text>
+<text fill="#d1fae5" font-size="9" x="32" y="349">de compliance en ventaja de negocio</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 1: Los cuatro niveles de madurez en gobierno del dato.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure><div class="block" id="s1">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — Diagnóstico honesto</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La madurez real aparece cuando se pide una respuesta concreta</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p><strong>Preguntar si existe gobierno del dato produce respuestas optimistas.</strong> Preguntar quién es el propietario de un conjunto crítico, qué regla de calidad falló ayer y qué terceros lo reciben produce un diagnóstico mucho más preciso.</p><p>La evaluación debe observar capacidades, no declaraciones: ownership, clasificación, inventario, linaje, acceso, calidad, compartición, retención, métricas y evidencia. Cada capacidad puede encontrarse en un nivel diferente.</p><p>Una media global oculta riesgos. Una organización puede tener un catálogo avanzado y, al mismo tiempo, no saber qué exportaciones salen de sus aplicaciones. El roadmap debe partir de las brechas que afectan decisiones reales.</p><div class="defensa-box-warning"><strong>No puntúes presentaciones.</strong> Puntúa lo que puede demostrarse con sistemas, registros y decisiones trazables.</div></div>
+</div><div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div><div class="block" id="s2">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Nivel 1 — Reactivo</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Los datos existen, pero la organización solo los gobierna cuando aparece un problema</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p>Los propietarios son implícitos, la clasificación depende del proyecto y los mapas quedan obsoletos. Los accesos se conceden por proximidad al equipo y las incidencias de calidad se corrigen manualmente sin análisis de causa.</p><p>La prioridad no es desplegar una plataforma compleja. Es identificar dominios críticos, asignar responsables y contener los riesgos más evidentes: accesos sin dueño, transferencias no registradas, datos sensibles en entornos no controlados y retenciones indefinidas.</p><p>El criterio de salida exige un inventario mínimo fiable, propietarios confirmados y un proceso simple para altas, comparticiones y excepciones.</p><div class="defensa-box-info"><strong>Primer objetivo:</strong> saber qué datos importan, quién decide sobre ellos y dónde están los riesgos inmediatos.</div></div>
+</div><figure aria-label="Roadmap de transición" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="320" rx="14" width="900"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="36">Roadmap de transición en gobierno del dato</text>
+<text fill="#77776f" font-size="12" x="40" y="58">avanzar un nivel a la vez, con evidencia antes de cada paso</text>
+<defs><lineargradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#059669"></stop><stop offset="1" stop-color="#0f172a"></stop></lineargradient></defs>
+<line stroke="#059669" stroke-width="3" x1="60" x2="840" y1="150" y2="150"></line>
+<circle cx="140" cy="150" fill="#ef4444" r="18" stroke="#ef4444" stroke-width="2.5"></circle>
+<text fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle" x="140" y="155">1</text>
+<text fill="#151915" font-size="12" font-weight="700" text-anchor="middle" x="140" y="190">Disperso</text>
+<text fill="#77776f" font-size="10" text-anchor="middle" x="140" y="208">Punto de partida</text>
+<line stroke="#059669" stroke-dasharray="6,4" stroke-width="2" x1="158" x2="260" y1="150" y2="150"></line>
+<circle cx="320" cy="150" fill="#f59e0b" r="18" stroke="#f59e0b" stroke-width="2.5"></circle>
+<text fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle" x="320" y="155">2</text>
+<text fill="#151915" font-size="12" font-weight="700" text-anchor="middle" x="320" y="190">Propietarios</text>
+<text fill="#77776f" font-size="10" text-anchor="middle" x="320" y="208">1-3 meses</text>
+<line stroke="#059669" stroke-dasharray="6,4" stroke-width="2" x1="338" x2="440" y1="150" y2="150"></line>
+<circle cx="500" cy="150" fill="#3b82f6" r="18" stroke="#3b82f6" stroke-width="2.5"></circle>
+<text fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle" x="500" y="155">3</text>
+<text fill="#151915" font-size="12" font-weight="700" text-anchor="middle" x="500" y="190">Gobernado</text>
+<text fill="#77776f" font-size="10" text-anchor="middle" x="500" y="208">3-6 meses</text>
+<line stroke="#059669" stroke-dasharray="6,4" stroke-width="2" x1="518" x2="620" y1="150" y2="150"></line>
+<circle cx="680" cy="150" fill="#059669" r="18" stroke="#059669" stroke-width="2.5"></circle>
+<text fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle" x="680" y="155">4</text>
+<text fill="#151915" font-size="12" font-weight="700" text-anchor="middle" x="680" y="190">Estratégico</text>
+<text fill="#77776f" font-size="10" text-anchor="middle" x="680" y="208">6-12 meses</text>
+<rect fill="url(#g2)" height="50" opacity=".9" rx="8" width="820" x="40" y="250"></rect>
+<text fill="#ffffff" font-size="12" font-weight="700" x="68" y="275">Cada nivel requiere evidencia verificable antes de avanzar al siguiente</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 400" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="400" rx="12" width="330"></rect>
+<text fill="#151915" font-size="14" font-weight="800" x="18" y="28">Roadmap</text>
+<line stroke="#059669" stroke-width="2" x1="40" x2="290" y1="120" y2="120"></line>
+<circle cx="70" cy="120" fill="#ef4444" r="14" stroke="#ef4444" stroke-width="2"></circle>
+<text fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle" x="70" y="124">1</text>
+<text fill="#151915" font-size="10" font-weight="700" text-anchor="middle" x="70" y="150">Disperso</text>
+<line stroke="#059669" stroke-dasharray="4,3" stroke-width="1.5" x1="84" x2="120" y1="120" y2="120"></line>
+<circle cx="140" cy="120" fill="#f59e0b" r="14" stroke="#f59e0b" stroke-width="2"></circle>
+<text fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle" x="140" y="124">2</text>
+<text fill="#151915" font-size="10" font-weight="700" text-anchor="middle" x="140" y="150">Propietarios</text>
+<line stroke="#059669" stroke-dasharray="4,3" stroke-width="1.5" x1="154" x2="190" y1="120" y2="120"></line>
+<circle cx="210" cy="120" fill="#3b82f6" r="14" stroke="#3b82f6" stroke-width="2"></circle>
+<text fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle" x="210" y="124">3</text>
+<text fill="#151915" font-size="10" font-weight="700" text-anchor="middle" x="210" y="150">Gobernado</text>
+<line stroke="#059669" stroke-dasharray="4,3" stroke-width="1.5" x1="224" x2="260" y1="120" y2="120"></line>
+<circle cx="280" cy="120" fill="#059669" r="14" stroke="#059669" stroke-width="2"></circle>
+<text fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle" x="280" y="124">4</text>
+<text fill="#151915" font-size="10" font-weight="700" text-anchor="middle" x="280" y="150">Estratégico</text>
+<rect fill="#059669" height="50" opacity=".08" rx="8" width="294" x="18" y="185"></rect>
+<text fill="#151915" font-size="10" font-weight="700" text-anchor="middle" x="165" y="207">Evidencia antes de avanzar</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 2: Roadmap de transición entre niveles de madurez.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure><div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div><div class="block" id="s3">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Nivel 2 — Definido</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Existen reglas y responsables, pero la ejecución todavía depende de personas concretas</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p>La organización ha definido taxonomía, roles y procesos, pero la cobertura es irregular. Los equipos más maduros aplican el modelo; otros siguen operando por correo y conocimiento local.</p><p>El roadmap debe integrar los flujos con gestión de cambios, IAM (Identity and Access Management), contratos y herramientas de datos. También debe formar a propietarios para que decidan con información suficiente, no solo firmen aprobaciones.</p><p>El criterio de salida no es publicar más procedimientos. Es demostrar que una parte significativa de los dominios prioritarios ejecuta el proceso de forma repetible y conserva evidencia.</p><div class="defensa-box-warning"><strong>Un proceso conocido por dos especialistas no está institucionalizado.</strong> Está sostenido por dependencia personal.</div></div>
+</div><figure aria-label="Comparativa de niveles" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="320" rx="14" width="900"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="36">Comparativa de niveles de madurez en gobierno del dato</text>
+<text fill="#77776f" font-size="12" x="40" y="58">lo que cada nivel aporta (y lo que no)</text>
+<defs><lineargradient id="g3" x1="0" x2="1"><stop offset="0" stop-color="#059669"></stop><stop offset="1" stop-color="#0f172a"></stop></lineargradient></defs>
+<rect fill="#fee2e2" height="140" rx="8" stroke="#ef4444" stroke-width="1.5" width="190" x="40" y="80"></rect>
+<text fill="#dc2626" font-size="13" font-weight="800" text-anchor="middle" x="135" y="105">Nivel 1 · Disperso</text>
+<text fill="#77776f" font-size="11" text-anchor="middle" x="135" y="130">❌ Sin dueños</text>
+<text fill="#77776f" font-size="11" text-anchor="middle" x="135" y="148">❌ Sin clasificación</text>
+<text fill="#77776f" font-size="11" text-anchor="middle" x="135" y="166">❌ Sin procesos</text>
+<text fill="#dc2626" font-size="11" font-weight="700" text-anchor="middle" x="135" y="190">Riesgo: CRÍTICO</text>
+<rect fill="#fef3c7" height="140" rx="8" stroke="#f59e0b" stroke-width="1.5" width="190" x="245" y="80"></rect>
+<text fill="#d97706" font-size="13" font-weight="800" text-anchor="middle" x="340" y="105">Nivel 2 · Propietarios</text>
+<text fill="#77776f" font-size="11" text-anchor="middle" x="340" y="130">✅ Data Owners</text>
+<text fill="#77776f" font-size="11" text-anchor="middle" x="340" y="148">❌ Sin procesos</text>
+<text fill="#77776f" font-size="11" text-anchor="middle" x="340" y="166">❌ Sin mapa vivo</text>
+<text fill="#d97706" font-size="11" font-weight="700" text-anchor="middle" x="340" y="190">Riesgo: ALTO</text>
+<rect fill="#dbeafe" height="140" rx="8" stroke="#3b82f6" stroke-width="1.5" width="190" x="450" y="80"></rect>
+<text fill="#2563eb" font-size="13" font-weight="800" text-anchor="middle" x="545" y="105">Nivel 3 · Gobernado</text>
+<text fill="#77776f" font-size="11" text-anchor="middle" x="545" y="130">✅ Clasificación real</text>
+<text fill="#77776f" font-size="11" text-anchor="middle" x="545" y="148">✅ Proceso de aprobación</text>
+<text fill="#77776f" font-size="11" text-anchor="middle" x="545" y="166">✅ Mapa actualizado</text>
+<text fill="#2563eb" font-size="11" font-weight="700" text-anchor="middle" x="545" y="190">Riesgo: MODERADO</text>
+<rect fill="#d1fae5" height="140" rx="8" stroke="#059669" stroke-width="1.5" width="200" x="655" y="80"></rect>
+<text fill="#059669" font-size="13" font-weight="800" text-anchor="middle" x="755" y="105">Nivel 4 · Estratégico</text>
+<text fill="#77776f" font-size="11" text-anchor="middle" x="755" y="130">✅ Datos fiables</text>
+<text fill="#77776f" font-size="11" text-anchor="middle" x="755" y="148">✅ Decisiones mejores</text>
+<text fill="#77776f" font-size="11" text-anchor="middle" x="755" y="166">✅ Ventaja competitiva</text>
+<text fill="#059669" font-size="11" font-weight="700" text-anchor="middle" x="755" y="190">Riesgo: BAJO</text>
+<rect fill="url(#g3)" height="50" opacity=".9" rx="8" width="820" x="40" y="250"></rect>
+<text fill="#ffffff" font-size="12" font-weight="700" x="68" y="275">El salto de Nivel 2 a Nivel 3 (gobernanza activa) es el que más reduce el riesgo</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 420" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="420" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="18" y="28">Comparativa niveles</text>
+<rect fill="#fee2e2" height="80" rx="6" stroke="#ef4444" stroke-width="1.5" width="68" x="18" y="45"></rect>
+<text fill="#dc2626" font-size="10" font-weight="800" text-anchor="middle" x="52" y="65">N1</text>
+<text fill="#77776f" font-size="8" text-anchor="middle" x="52" y="80">Disperso</text>
+<text fill="#dc2626" font-size="8" font-weight="700" text-anchor="middle" x="52" y="95">Crítico</text>
+<rect fill="#fef3c7" height="80" rx="6" stroke="#f59e0b" stroke-width="1.5" width="68" x="96" y="45"></rect>
+<text fill="#d97706" font-size="10" font-weight="800" text-anchor="middle" x="130" y="65">N2</text>
+<text fill="#77776f" font-size="8" text-anchor="middle" x="130" y="80">Dueños</text>
+<text fill="#d97706" font-size="8" font-weight="700" text-anchor="middle" x="130" y="95">Alto</text>
+<rect fill="#dbeafe" height="80" rx="6" stroke="#3b82f6" stroke-width="1.5" width="68" x="174" y="45"></rect>
+<text fill="#2563eb" font-size="10" font-weight="800" text-anchor="middle" x="208" y="65">N3</text>
+<text fill="#77776f" font-size="8" text-anchor="middle" x="208" y="80">Gobernado</text>
+<text fill="#2563eb" font-size="8" font-weight="700" text-anchor="middle" x="208" y="95">Moderado</text>
+<rect fill="#d1fae5" height="80" rx="6" stroke="#059669" stroke-width="1.5" width="68" x="252" y="45"></rect>
+<text fill="#059669" font-size="10" font-weight="800" text-anchor="middle" x="286" y="65">N4</text>
+<text fill="#77776f" font-size="8" text-anchor="middle" x="286" y="80">Estratégico</text>
+<text fill="#059669" font-size="8" font-weight="700" text-anchor="middle" x="286" y="95">Bajo</text>
+<rect fill="#f8fafc" height="50" rx="8" stroke="#ededea" stroke-width="1" width="294" x="18" y="145"></rect>
+<text fill="#151915" font-size="10" font-weight="700" text-anchor="middle" x="165" y="167">Salto N2 → N3 reduce más el riesgo</text>
+<rect fill="#059669" height="60" opacity=".08" rx="8" width="294" x="18" y="215"></rect>
+<text fill="#151915" font-size="10" font-weight="700" text-anchor="middle" x="165" y="238">Avanzar un nivel a la vez</text>
+<text fill="#77776f" font-size="9" text-anchor="middle" x="165" y="258">con evidencia verificable</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 3: Comparativa de los cuatro niveles de madurez en gobierno del dato.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure><div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div><div class="block" id="s4">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Nivel 3 — Operado</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La gobernanza está integrada en la plataforma y produce señales accionables</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p>El inventario y el linaje se actualizan con cambios, los accesos se recertifican, las reglas de calidad generan incidencias y las comparticiones con terceros tienen revisión y cierre. Las excepciones caducan y se escalan cuando no se corrigen.</p><p>En este nivel, la automatización reduce trabajo manual y aumenta cobertura. Pero automatizar un criterio defectuoso solo acelera el error; por eso las reglas necesitan propietario, pruebas y capacidad de revisión.</p><p>El criterio de salida es la efectividad: controles que detectan desviaciones, tiempos de respuesta medidos, reducción de reincidencias y evidencia recuperable sin campañas extraordinarias.</p><div class="defensa-box-success"><strong>Señal de madurez:</strong> la operación genera la evidencia como consecuencia natural del trabajo, no como preparación para una auditoría.</div></div>
+</div><div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div><div class="block" id="s5">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Nivel 4 — Estratégico</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El gobierno permite reutilizar datos con mayor velocidad y menor incertidumbre</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p>Cuando el contexto, la calidad y las restricciones son conocidos, los equipos pueden localizar y reutilizar datos con menos negociación. La gobernanza deja de ser solo protección y se convierte en una infraestructura de confianza.</p><p>Las decisiones se basan en métricas de valor y riesgo: tiempo para habilitar un caso de uso, reducción de duplicados, calidad en procesos críticos, coste de conservación, incidencias evitadas y velocidad de respuesta.</p><p>El nivel estratégico no elimina controles. Los hace más precisos. Los datos de bajo riesgo circulan con automatización; los casos sensibles reciben revisión proporcional y especializada.</p><div class="defensa-box-info"><strong>Ventaja real:</strong> saber qué dato puede usarse, bajo qué condiciones y con qué calidad antes de iniciar el proyecto.</div></div>
+</div><figure aria-label="La pregunta que revela el nivel" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="260" rx="14" width="900"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="36">La pregunta que revela el nivel real</text>
+<text fill="#77776f" font-size="12" x="40" y="58">la claridad de la respuesta define la madurez</text>
+<defs><lineargradient id="g4" x1="0" x2="1"><stop offset="0" stop-color="#059669"></stop><stop offset="1" stop-color="#0f172a"></stop></lineargradient></defs>
+<rect fill="#f8fafc" height="50" rx="10" stroke="#ededea" stroke-width="1" width="820" x="40" y="80"></rect>
+<text fill="#151915" font-size="14" font-weight="700" text-anchor="middle" x="450" y="110">"¿Quién es el propietario de negocio de este conjunto de datos y qué nivel de sensibilidad tiene?"</text>
+<rect fill="#fee2e2" height="45" rx="8" stroke="#ef4444" stroke-width="1.5" width="190" x="40" y="140"></rect>
+<text fill="#dc2626" font-size="12" font-weight="700" text-anchor="middle" x="135" y="167">Sin respuesta clara → Nivel 1</text>
+<rect fill="#fef3c7" height="45" rx="8" stroke="#f59e0b" stroke-width="1.5" width="190" x="245" y="140"></rect>
+<text fill="#d97706" font-size="12" font-weight="700" text-anchor="middle" x="340" y="167">Con dueño sin clasificación → Nivel 2</text>
+<rect fill="#dbeafe" height="45" rx="8" stroke="#3b82f6" stroke-width="1.5" width="190" x="450" y="140"></rect>
+<text fill="#2563eb" font-size="12" font-weight="700" text-anchor="middle" x="545" y="167">Ambos claros y actualizados → Nivel 3+</text>
+<rect fill="url(#g4)" height="35" opacity=".9" rx="8" width="820" x="40" y="210"></rect>
+<text fill="#ffffff" font-size="12" font-weight="700" x="68" y="233">La claridad y rapidez de la respuesta revela el nivel real de madurez de la organización</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 400" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="400" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="18" y="28">La pregunta que revela</text>
+<rect fill="#f8fafc" height="60" rx="8" stroke="#ededea" stroke-width="1" width="294" x="18" y="45"></rect>
+<text fill="#151915" font-size="9" font-weight="700" text-anchor="middle" x="165" y="67">"¿Quién es el propietario</text>
+<text fill="#151915" font-size="9" font-weight="700" text-anchor="middle" x="165" y="82">y qué nivel de sensibilidad?"</text>
+<rect fill="#fee2e2" height="35" rx="6" stroke="#ef4444" stroke-width="1.5" width="294" x="18" y="115"></rect>
+<text fill="#dc2626" font-size="9" font-weight="700" text-anchor="middle" x="165" y="137">Sin respuesta clara → N1</text>
+<rect fill="#fef3c7" height="35" rx="6" stroke="#f59e0b" stroke-width="1.5" width="294" x="18" y="155"></rect>
+<text fill="#d97706" font-size="9" font-weight="700" text-anchor="middle" x="165" y="177">Con dueño sin clasif. → N2</text>
+<rect fill="#dbeafe" height="35" rx="6" stroke="#3b82f6" stroke-width="1.5" width="294" x="18" y="195"></rect>
+<text fill="#2563eb" font-size="9" font-weight="700" text-anchor="middle" x="165" y="217">Ambos claros → N3+</text>
+<rect fill="#059669" height="50" opacity=".08" rx="8" width="294" x="18" y="250"></rect>
+<text fill="#151915" font-size="9" font-weight="700" text-anchor="middle" x="165" y="272">La claridad de la respuesta</text>
+<text fill="#77776f" font-size="9" text-anchor="middle" x="165" y="289">define la madurez real</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 4: La pregunta que revela el nivel real de madurez en gobierno del dato.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+                    <div class="defensa-box-info ta-reference-box" style="margin:34px 0;">
+                        <strong>🔎 Normativa y plataformas para gobernar el dato.</strong> En el roadmap, deben convertirse en capacidades con dependencias y criterios de salida, no en una simple lista de productos. El RGPD (Reglamento General de Protección de Datos) conecta principios y calidad del tratamiento en el artículo 5, responsabilidad del responsable en el 24, protección desde el diseño y por defecto en el 25, registro de actividades en el 30, seguridad en el 32 y evaluación de impacto en el 35. Estas referencias no sustituyen el modelo de gobierno, pero obligan a saber qué datos existen, para qué se utilizan, quién decide y qué controles protegen su ciclo de vida. Microsoft Purview, Collibra, Alation e Informatica son ejemplos de catálogos y plataformas de gobierno. Su utilidad depende de conectores, linaje, glosario, propietarios, calidad y flujos de aprobación actualizados desde los sistemas fuente; un catálogo rellenado manualmente para una auditoría vuelve a quedar obsoleto en cuanto cambia la arquitectura.
+                    </div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 06</span></div><div class="block" id="s6">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 06 — Roadmap ejecutable</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Cada iniciativa necesita dependencia, responsable y criterio de salida</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p>El roadmap debe secuenciar capacidades. No tiene sentido automatizar linaje sin acordar dominios y propietarios, ni desplegar métricas de calidad sin responsables capaces de decidir sobre el impacto.</p><p>Organiza el trabajo en oleadas: contener riesgos, establecer ownership, integrar procesos, automatizar señales y optimizar valor. Cada oleada debe cerrar con pruebas y adopción, no con la fecha de instalación de una herramienta.</p><p>Los indicadores deben evitar la vanidad. Más datasets catalogados no implica mejor gobierno si los propietarios no responden o la información está obsoleta. Mide cobertura útil, tiempo de decisión, excepciones vencidas, incidencias repetidas y controles efectivos.</p><div class="defensa-box-success"><strong>Conclusión:</strong> la madurez no es llegar a una etiqueta. Es reducir incertidumbre y riesgo mientras aumenta la capacidad de utilizar el dato con criterio.</div></div>
+</div><div class="defensa-foot" style="margin-top:48px; padding:24px; border-top:1px solid #e2e8f0; background:#fafaf8; border-radius:12px;"><div class="defensa-foot-label">Autor</div>
+<div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; font-weight:700; margin-bottom:8px;">Autor</div>
+<div style="font-weight:800; color:#0f172a; margin-bottom:6px;">Miguel Ángel Carriazo</div>
+<div style="font-size:14px; line-height:1.65; color:#64748b;">Arquitecto de infraestructura, seguridad y gobierno tecnológico. Análisis independiente orientado a diseño, operación, evidencia y riesgo real.</div>
+<div class="defensa-author-name">Miguel Ángel Carriazo</div><p class="defensa-author-bio">Arquitecto de Infraestructura y Ciberseguridad con más de 25 años de experiencia diseñando, asegurando y operando entornos tecnológicos críticos. Lead Auditor en ISO/IEC 27001 e ISO/IEC 42001, especializado en gobierno, riesgo, cumplimiento y transformación tecnológica. En esta área aborda el gobierno del dato desde la propiedad, la trazabilidad, la calidad y la evidencia operativa.</p></div></div>
+<!-- SIDEBAR -->
+<aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+<div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+<div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+<table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Área</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Gobierno del Dato</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Enfoque</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Madurez y Roadmap</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Niveles</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">4 niveles de madurez</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Nivel</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Avanzado</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Lectura</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">20-24 min</td></tr>
+<tr><td style="padding:10px 0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Etiquetas</td><td style="padding:10px 0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">#gobiernodedato #madurez #roadmap #transformación</td></tr>
+</table>
+</div>
+<div>
+<div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+<nav class="defensa-toc-nav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;"><a href="#s1" style="text-decoration:none; color:#059669; font-size:14px; font-weight:700; border-left:2px solid #059669; margin-left:-16px; padding-left:14px;">01. Diagnóstico honesto</a><a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Nivel 1 — Reactivo</a><a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Nivel 2 — Definido</a><a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Nivel 3 — Operado</a><a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Nivel 4 — Estratégico</a><a href="#s6" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">06. Roadmap ejecutable</a></nav>
+</div>
+</aside>
+</div>
+<!-- ARTÍCULOS RELACIONADOS -->
+<div class="related-section">
+<div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+<div class="related-grid"><a class="related-card" href="gobierno-dato-diseno-principios.html"><div class="r-meta">Gobierno del Dato · Principios</div><div class="r-title">Principios de diseño: si nadie es dueño del dato, todos son dueños de nada</div><div class="r-desc">Ownership, clasificación, linaje y ciclo de vida conectados con la arquitectura real.</div><span class="r-link">Leer artículo →</span></a><a class="related-card" href="gobierno-dato-modelo-operativo.html"><div class="r-meta">Gobierno del Dato · Operaciones</div><div class="r-title">Modelo operativo: el dato no se gobierna en un comité, se gobierna en cada decisión</div><div class="r-desc">Decisiones integradas con cambios, IAM, calidad, terceros y excepciones.</div><span class="r-link">Leer artículo →</span></a><a class="related-card" href="gobierno-dato-controles-evidencias.html"><div class="r-meta">Gobierno del Dato · Controles</div><div class="r-title">Controles y evidencias: el mapa que no cambia con producción es una ficción</div><div class="r-desc">Pruebas verificables de propiedad, acceso, calidad, retención y eliminación.</div><span class="r-link">Leer artículo →</span></a></div>
+</div>
+<div id="footer-container"></div>
+</div>
+</div>
+<script src="../../js/menu.js"></script>
+<script src="../../js/footer.js"></script>
+<script>
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
+            } else {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function() {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

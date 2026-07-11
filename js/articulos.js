@@ -6,7 +6,7 @@ let articulosData = [];
 let currentCategory = "all";
 let currentPage = 1;
 let sortMode = "newest";
-const PER_PAGE = 16;
+const PER_PAGE = 7;
 
 // ==============================
 // PARSEAR FECHA EN ESPAÑOL

@@ -53,7 +53,7 @@
 <div style="padding: 40px 48px 24px; border-bottom: 1px solid #ededea;">
     <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Caso Práctico · Azure Arc</div>
     <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Azure Arc: <span style="color:#059669;">Un Plano de Control para Todo</span></h1>
-    <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Cómo extender el plano de control de Azure a tu CPD sin mover un solo servidor. Landing Zones, políticas y compliance unificados en un solo cristal.</p>
+    <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Cómo extender el plano de control de Azure a tu CPD (Centro de Procesamiento de Datos) sin mover un solo servidor. Landing Zones, políticas y compliance unificados en un solo cristal.</p>
 
     <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
         <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
@@ -107,7 +107,7 @@
                     <text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">Manager, sin moverse de sitio</text>
                 </svg>
             </div>
-            <figcaption class="diagram-caption">Figura 1: Azure Resource Manager como plano de control unificado para recursos on-prem, AWS y GCP.</figcaption>
+            <figcaption class="diagram-caption">Figura 1: Azure Resource Manager como plano de control unificado para recursos on-prem, AWS y GCP (Google Cloud Platform).</figcaption>
             <span class="zoom-hint">🔍 Clic para ampliar</span>
         </figure>
 
@@ -240,9 +240,9 @@
             <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Cómo funciona el agente de verdad</h2>
             <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
                 <p>Azure Arc no mueve tus cargas a Azure. Las registra como recursos de Azure aunque corran en tu CPD, en AWS, o en una Raspberry Pi en un armario. Eso significa que puedes aplicar Azure Policy, Azure Monitor y Microsoft Defender for Cloud a servidores que físicamente están en otro sitio completamente distinto.</p>
-                <p>El agente Connected Machine se instala en cada servidor (Windows o Linux) y establece un canal cifrado saliente hacia Azure Resource Manager. A partir de ahí, el servidor aparece en el portal como un recurso más, con sus tags, su RBAC y su compliance score visible junto al resto.</p>
-                <div class="defensa-box-tech"><strong>Requisitos mínimos de red:</strong> salida HTTPS 443 hacia <code>*.his.arc.azure.com</code>, <code>*.guestconfiguration.azure.com</code> y <code>management.azure.com</code>. No requiere entrada. Compatible con proxy corporativo.</div>
-                <p>El agente no abre puertos entrantes. La comunicación siempre es iniciada desde el servidor hacia Azure, lo que reduce drásticamente la superficie de ataque en el CPD. El canal se cifra con TLS 1.2, y la autenticación se realiza mediante identidad gestionada o Entra ID.</p>
+                <p>El agente Connected Machine se instala en cada servidor (Windows o Linux) y establece un canal cifrado saliente hacia Azure Resource Manager. A partir de ahí, el servidor aparece en el portal como un recurso más, con sus tags, su RBAC (Role-Based Access Control) y su compliance score visible junto al resto.</p>
+                <div class="defensa-box-tech"><strong>Requisitos mínimos de red:</strong> salida HTTPS (Hypertext Transfer Protocol Secure) 443 hacia <code>*.his.arc.azure.com</code>, <code>*.guestconfiguration.azure.com</code> y <code>management.azure.com</code>. No requiere entrada. Compatible con proxy corporativo.</div>
+                <p>El agente no abre puertos entrantes. La comunicación siempre es iniciada desde el servidor hacia Azure, lo que reduce drásticamente la superficie de ataque en el CPD. El canal se cifra con TLS (Transport Layer Security) 1.2, y la autenticación se realiza mediante identidad gestionada o Entra ID.</p>
             </div>
         </div>
 
@@ -253,7 +253,7 @@
             <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Landing Zones paso a paso</h2>
             <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
                 <p>Una Landing Zone no es un diagrama bonito: es la configuración base (suscripciones, grupos de gestión, redes, identidad, logging) que garantiza que todo lo que despliegues después nace ya gobernado. El modelo Hub-Spoke de Microsoft Cloud Adoption Framework sigue siendo el más probado en producción real.</p>
-                <p>El Hub centraliza la conectividad (ExpressRoute/VPN, Azure Firewall, DNS), la identidad (Entra ID + AD on-prem) y el logging (Log Analytics Workspace central). Cada Spoke es una suscripción aislada por carga de trabajo, con peering al Hub y políticas heredadas del grupo de gestión superior.</p>
+                <p>El Hub centraliza la conectividad (ExpressRoute/VPN (Virtual Private Network), Azure Firewall, DNS (Domain Name System)), la identidad (Entra ID + AD (Active Directory) on-prem) y el logging (Log Analytics Workspace central). Cada Spoke es una suscripción aislada por carga de trabajo, con peering al Hub y políticas heredadas del grupo de gestión superior.</p>
                 <div class="defensa-box-success"><strong>✔ Consejo de campo</strong><p>Empieza con tres Spokes: producción, preproducción y sandbox. No diseñes para 50 suscripciones el primer día — escala cuando lo necesites, no cuando lo imagines de antemano.</p></div>
                 <p>La clave de una Landing Zone bien diseñada es que el onboarding de un nuevo equipo o proyecto no requiera configuración manual. Todo está predefinido: la red, las políticas de seguridad, el logging, el etiquetado de costes. El equipo solo despliega sus cargas y el gobierno ya está aplicado.</p>
             </div>
@@ -267,7 +267,7 @@
             <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
                 <p>Azure Policy permite definir reglas que se evalúan automáticamente contra todo recurso registrado en Arc: que los servidores tengan el agente de Defender, que los discos estén cifrados, que los puertos de gestión no estén expuestos al exterior. Las políticas se asignan a nivel de grupo de gestión y se heredan hacia abajo sin intervención manual.</p>
                 <p>Para el entorno no-Azure (AWS, GCP, on-prem), las mismas políticas se aplican a través del agente Arc. El resultado es un único dashboard de compliance con un score unificado, independientemente de dónde corra cada máquina físicamente.</p>
-                <p>El compliance unificado permite detectar desviaciones de seguridad en tiempo real, tanto en recursos cloud como on-prem, y aplicar remediaciones automáticas o manuales según la criticidad del hallazgo. Esto es especialmente relevante para organizaciones con requisitos regulatorios como ISO 27001, ENS o NIS2.</p>
+                <p>El compliance unificado permite detectar desviaciones de seguridad en tiempo real, tanto en recursos cloud como on-prem, y aplicar remediaciones automáticas o manuales según la criticidad del hallazgo. Esto es especialmente relevante para organizaciones con requisitos regulatorios como ISO 27001, ENS (Esquema Nacional de Seguridad) o NIS2.</p>
             </div>
         </div>
 
@@ -278,10 +278,10 @@
             <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Costes y Métricas</div>
             <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Lo que cuesta Azure Arc y cómo medir su valor</h2>
             <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>Azure Arc tiene un coste asociado que depende del tipo de recurso gestionado. Para servidores, el coste es de aproximadamente 5-6 USD por servidor al mes (varía según región y tipo de suscripción). Para clústeres Kubernetes, el coste es de aproximadamente 2 USD por núcleo al mes, con un mínimo de 10 USD por clúster.</p>
-                <p>El valor de Azure Arc no está en el ahorro directo, sino en la reducción de la complejidad operativa. Un único equipo puede gestionar y aplicar políticas a recursos que antes requerían tres equipos distintos. El ROI se mide en horas de operación ahorradas, en reducción de incidentes de seguridad por configuraciones inconsistentes, y en la capacidad de auditar y demostrar compliance de forma unificada.</p>
+                <p>Azure Arc tiene un coste asociado que depende del tipo de recurso gestionado. Para servidores, el coste es de aproximadamente 5-6 USD (United States dollar) por servidor al mes (varía según región y tipo de suscripción). Para clústeres Kubernetes, el coste es de aproximadamente 2 USD por núcleo al mes, con un mínimo de 10 USD por clúster.</p>
+                <p>El valor de Azure Arc no está en el ahorro directo, sino en la reducción de la complejidad operativa. Un único equipo puede gestionar y aplicar políticas a recursos que antes requerían tres equipos distintos. El ROI (Return on Investment) se mide en horas de operación ahorradas, en reducción de incidentes de seguridad por configuraciones inconsistentes, y en la capacidad de auditar y demostrar compliance de forma unificada.</p>
                 <div class="defensa-box-tech"><strong>Recomendación:</strong> empieza con un piloto de 20-50 servidores o unos pocos clústeres Kubernetes. Evalúa el valor operativo durante 3 meses antes de escalar a toda la infraestructura. No todos los recursos necesitan Arc — solo los que requieren gobernanza centralizada.</div>
-                <p>Métrica clave: "Mean Time to Compliance (MTTC)" — tiempo que transcurre entre que se detecta una no conformidad y se corrige. Con Azure Arc y políticas automáticas, el MTTC se reduce de días o semanas a minutos u horas.</p>
+                <p>Métrica clave: "Mean Time to Compliance (MTTC (Mean Time to Change))" — tiempo que transcurre entre que se detecta una no conformidad y se corrige. Con Azure Arc y políticas automáticas, el MTTC se reduce de días o semanas a minutos u horas.</p>
             </div>
         </div>
 

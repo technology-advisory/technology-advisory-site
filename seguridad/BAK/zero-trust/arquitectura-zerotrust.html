@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Arquitectura Zero Trust corporativa | Technology Advisory</title>
+<meta name="description" content="Diseño perimetral e implementación técnica bajo el paradigma de Confianza Cero. Validación contextual continua y microsegmentación de red.">
+<meta name="keywords" content="zero trust, mfa, microsegmentacion, identidad, ciberseguridad, arquitectura critica">
+<meta name="author" content="Miguel Ángel Carriazo">
+<meta name="theme-color" content="#059669">
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/articulo-diagramas.css">
+</head>
+<body>
+
+<div class="card-wrapper ds-page">
+<div class="card">
+
+<div id="menu-container"></div>
+<div class="accent-bar" style="background: #059669;"></div>
+
+<div class="ds-meta">
+    <span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: ciberseguridad</span>
+    <span>nivel: <strong>Consultoría e Infraestructura Crítica</strong></span>
+</div>
+
+<div style="padding: 16px 48px 0;">
+    <a href="../index.html?cat=zero-trust" class="defensa-btn-back" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Seguridad</a>
+</div>
+
+<div style="padding: 40px 48px 24px; border-bottom: 1px solid #ededea;">
+    <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Especialidad · Zero Trust Perimeters</div>
+    <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #0f172a; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Modelos de Confianza Cero: <span style="color:#059669;">Validación Contextual</span></h1>
+    <p style="font-size: 18px; color: #475569; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">
+        Superación del perímetro tradicional mediante microsegmentación lógica estricta, telemetría e identidades securizadas bajo validaciones adaptativas en tiempo real.
+    </p>
+
+    <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>Zero Trust Framework</span>
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>Lectura Avanzada (15 min)</span>
+    </div>
+</div>
+
+<div class="defensa-layout" style="display:grid; grid-template-columns:1fr 340px; gap:48px; align-items:start; padding:0 48px 40px;">
+    <div class="defensa-main" style="min-width:0;">
+
+        <!-- GRÁFICO 1: MODELO ZERO TRUST VS PERÍMETRO TRADICIONAL -->
+        <figure class="article-diagram" aria-label="Zero Trust vs Perímetro Tradicional" onclick="toggleZoom(this)">
+            <div class="diagram-desktop">
+                <svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <rect width="900" height="400" rx="14" fill="#fafaf8"/>
+                    <text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Zero Trust vs Perímetro Tradicional</text>
+                    <text x="40" y="66" font-size="12" fill="#77776f">confianza implícita vs validación continua</text>
+                    <rect x="40" y="90" width="370" height="220" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+                    <text x="225" y="118" font-size="15" font-weight="700" fill="#b45309" text-anchor="middle">Perímetro Tradicional</text>
+                    <rect x="70" y="135" width="310" height="40" rx="6" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                    <text x="225" y="160" font-size="12" fill="#151915" text-anchor="middle">✅ Confianza implícita dentro de la red</text>
+                    <rect x="70" y="185" width="310" height="40" rx="6" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                    <text x="225" y="210" font-size="12" fill="#151915" text-anchor="middle">✅ Un firewall protege todo</text>
+                    <rect x="70" y="235" width="310" height="40" rx="6" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                    <text x="225" y="260" font-size="12" fill="#ef4444" text-anchor="middle">❌ Movimiento lateral fácil</text>
+                    <rect x="70" y="285" width="310" height="40" rx="6" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                    <text x="225" y="310" font-size="12" fill="#ef4444" text-anchor="middle">❌ Una brecha → todo comprometido</text>
+                    <rect x="490" y="90" width="370" height="220" rx="12" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                    <text x="675" y="118" font-size="15" font-weight="700" fill="#059669" text-anchor="middle">Zero Trust</text>
+                    <rect x="520" y="135" width="310" height="40" rx="6" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                    <text x="675" y="160" font-size="12" fill="#151915" text-anchor="middle">✅ Verificar siempre, confiar nunca</text>
+                    <rect x="520" y="185" width="310" height="40" rx="6" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                    <text x="675" y="210" font-size="12" fill="#151915" text-anchor="middle">✅ Microsegmentación por identidad</text>
+                    <rect x="520" y="235" width="310" height="40" rx="6" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                    <text x="675" y="260" font-size="12" fill="#059669" text-anchor="middle">✅ Movimiento lateral bloqueado</text>
+                    <rect x="520" y="285" width="310" height="40" rx="6" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                    <text x="675" y="310" font-size="12" fill="#059669" text-anchor="middle">✅ Una brecha → alcance limitado</text>
+                    <defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+                    <rect x="40" y="340" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+                    <text x="68" y="365" font-size="13" font-weight="700" fill="#fff">El modelo Zero Trust asume la red como hostil por defecto</text>
+                </svg>
+            </div>
+            <div class="diagram-mobile">
+                <svg viewBox="0 0 330 480" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <rect width="330" height="480" rx="12" fill="#fafaf8"/>
+                    <text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Zero Trust vs Tradicional</text>
+                    <rect x="18" y="60" width="294" height="150" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+                    <text x="165" y="85" font-size="14" font-weight="700" fill="#b45309" text-anchor="middle">Perímetro Tradicional</text>
+                    <text x="40" y="110" font-size="11" fill="#151915">✅ Confianza implícita</text>
+                    <text x="40" y="130" font-size="11" fill="#ef4444">❌ Movimiento lateral fácil</text>
+                    <text x="40" y="150" font-size="11" fill="#ef4444">❌ Brecha = todo comprometido</text>
+                    <text x="40" y="170" font-size="11" fill="#151915">✅ Un firewall lo protege</text>
+                    <rect x="18" y="225" width="294" height="150" rx="10" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                    <text x="165" y="250" font-size="14" font-weight="700" fill="#059669" text-anchor="middle">Zero Trust</text>
+                    <text x="40" y="275" font-size="11" fill="#151915">✅ Verificar siempre</text>
+                    <text x="40" y="295" font-size="11" fill="#059669">✅ Microsegmentación</text>
+                    <text x="40" y="315" font-size="11" fill="#059669">✅ Movimiento lateral bloqueado</text>
+                    <text x="40" y="335" font-size="11" fill="#059669">✅ Brecha = alcance limitado</text>
+                    <defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+                    <rect x="18" y="390" width="294" height="40" rx="10" fill="url(#gm)"/>
+                    <text x="165" y="415" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">La red es hostil por defecto</text>
+                </svg>
+            </div>
+            <figcaption class="diagram-caption">Figura 1: Comparativa entre el modelo de perímetro tradicional y Zero Trust.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- GRÁFICO 2: PILARES DE ZERO TRUST -->
+        <figure class="article-diagram" aria-label="Pilares de Zero Trust" onclick="toggleZoom(this)">
+            <svg viewBox="0 0 820 280" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect width="820" height="280" rx="14" fill="#fafaf8"/>
+                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Pilares de Zero Trust</text>
+                <rect x="40" y="60" width="170" height="80" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="125" y="85" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">Identidad</text>
+                <text x="125" y="105" font-size="11" fill="#77776f" text-anchor="middle">MFA obligatorio</text>
+                <text x="125" y="122" font-size="11" fill="#77776f" text-anchor="middle">Contexto continuo</text>
+                <rect x="230" y="60" width="170" height="80" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="315" y="85" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">Red</text>
+                <text x="315" y="105" font-size="11" fill="#77776f" text-anchor="middle">Microsegmentación</text>
+                <text x="315" y="122" font-size="11" fill="#77776f" text-anchor="middle">Cifrado extremo</text>
+                <rect x="420" y="60" width="170" height="80" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="505" y="85" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">Datos</text>
+                <text x="505" y="105" font-size="11" fill="#77776f" text-anchor="middle">Cifrado y DLP</text>
+                <text x="505" y="122" font-size="11" fill="#77776f" text-anchor="middle">Clasificación</text>
+                <rect x="610" y="60" width="170" height="80" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="695" y="85" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">Dispositivos</text>
+                <text x="695" y="105" font-size="11" fill="#77776f" text-anchor="middle">Postura continua</text>
+                <text x="695" y="122" font-size="11" fill="#77776f" text-anchor="middle">Endpoint seguro</text>
+                <rect x="40" y="165" width="740" height="80" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="60" y="190" font-size="12" font-weight="700" fill="#b45309">⚠️ Los 4 pilares deben implementarse de forma coordinada</text>
+                <text x="60" y="212" font-size="11" fill="#78350f">No basta con MFA. La microsegmentación debe basarse en identidad, no en IP.</text>
+                <text x="60" y="232" font-size="11" fill="#78350f">El cifrado de datos debe aplicarse en tránsito y en reposo.</text>
+            </svg>
+            <figcaption class="diagram-caption">Figura 2: Los cuatro pilares de una arquitectura Zero Trust.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- GRÁFICO 3: FLUJO DE VALIDACIÓN CONTEXTUAL -->
+        <figure class="article-diagram" aria-label="Flujo de validación contextual" onclick="toggleZoom(this)">
+            <svg viewBox="0 0 820 280" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect width="820" height="280" rx="14" fill="#fafaf8"/>
+                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Flujo de validación contextual Zero Trust</text>
+                <rect x="40" y="60" width="130" height="40" rx="20" fill="#059669"/>
+                <text x="105" y="85" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Usuario solicita</text>
+                <line x1="170" y1="80" x2="200" y2="80" stroke="#77776f" stroke-width="2"/>
+                <rect x="202" y="60" width="130" height="40" rx="20" fill="#f59e0b"/>
+                <text x="267" y="85" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Autenticación MFA</text>
+                <line x1="332" y1="80" x2="362" y2="80" stroke="#77776f" stroke-width="2"/>
+                <rect x="364" y="60" width="130" height="40" rx="20" fill="#059669"/>
+                <text x="429" y="85" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Contexto (ubicación)</text>
+                <line x1="494" y1="80" x2="524" y2="80" stroke="#77776f" stroke-width="2"/>
+                <rect x="526" y="60" width="130" height="40" rx="20" fill="#059669"/>
+                <text x="591" y="85" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Postura dispositivo</text>
+                <line x1="656" y1="80" x2="686" y2="80" stroke="#77776f" stroke-width="2"/>
+                <rect x="688" y="60" width="100" height="40" rx="20" fill="#059669"/>
+                <text x="738" y="85" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Acceso</text>
+                <rect x="40" y="135" width="740" height="40" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="60" y="158" font-size="12" font-weight="600" fill="#14532d">✅ Si todo es válido → autorización temporal (JIT)</text>
+                <text x="60" y="174" font-size="11" fill="#77776f">El acceso se concede solo por el tiempo necesario y con los permisos mínimos</text>
+                <rect x="40" y="195" width="740" height="40" rx="8" fill="#fffbeb" stroke="#ef4444" stroke-width="1.5"/>
+                <text x="60" y="215" font-size="12" font-weight="600" fill="#b45309">❌ Si algo falla → denegación o degradación de privilegios</text>
+                <text x="60" y="230" font-size="11" fill="#78350f">Un cambio en la ubicación puede requerir reautenticación en tiempo real</text>
+            </svg>
+            <figcaption class="diagram-caption">Figura 3: Flujo de validación contextual en una arquitectura Zero Trust.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- GRÁFICO 4: MICROSEGMENTACIÓN -->
+        <figure class="article-diagram" aria-label="Microsegmentación" onclick="toggleZoom(this)">
+            <svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" role="img">
+                <rect width="820" height="260" rx="14" fill="#fafaf8"/>
+                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Microsegmentación basada en identidad</text>
+                <text x="40" y="58" font-size="12" fill="#77776f">políticas granulares aplicadas al flujo de red</text>
+                <rect x="40" y="80" width="180" height="50" rx="6" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="130" y="100" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">Aplicación Web</text>
+                <text x="130" y="118" font-size="11" fill="#77776f" text-anchor="middle">Identidad: web-app</text>
+                <rect x="320" y="80" width="180" height="50" rx="6" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="410" y="100" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">Base de Datos</text>
+                <text x="410" y="118" font-size="11" fill="#77776f" text-anchor="middle">Identidad: db-core</text>
+                <rect x="600" y="80" width="180" height="50" rx="6" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
+                <text x="690" y="100" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">Almacenamiento</text>
+                <text x="690" y="118" font-size="11" fill="#77776f" text-anchor="middle">Identidad: storage</text>
+                <line x1="220" y1="105" x2="240" y2="105" stroke="#059669" stroke-width="2" stroke-dasharray="4,4"/>
+                <text x="230" y="98" font-size="10" fill="#059669" text-anchor="middle">✅</text>
+                <line x1="500" y1="105" x2="520" y2="105" stroke="#059669" stroke-width="2" stroke-dasharray="4,4"/>
+                <text x="510" y="98" font-size="10" fill="#059669" text-anchor="middle">✅</text>
+                <line x1="220" y1="120" x2="320" y2="120" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,4"/>
+                <text x="270" y="115" font-size="10" fill="#ef4444" text-anchor="middle">❌</text>
+                <rect x="40" y="160" width="740" height="60" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                <text x="410" y="180" font-size="11" fill="#151915" text-anchor="middle">Política: web-app → solo puede acceder a db-core (lectura/escritura)</text>
+                <text x="410" y="200" font-size="11" fill="#77776f" text-anchor="middle">web-app → no puede acceder a storage (bloqueado por identidad)</text>
+            </svg>
+            <figcaption class="diagram-caption">Figura 4: Microsegmentación basada en identidades lógicas, no en direcciones IP.</figcaption>
+            <span class="zoom-hint">🔍 Clic para ampliar</span>
+        </figure>
+
+        <!-- SECCIÓN 1 -->
+        <div class="block" id="s1">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">01 // Ruptura del Modelo Perimetral</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Nunca Confiar, Siempre Verificar</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>La asunción tradicional de que los recursos internos de una red son confiables por el mero hecho de operar tras un firewall perimetral físico está obsoleta. Las brechas modernas demuestran que una vez comprometida una VPN corporativa, los atacantes realizan movimientos laterales sin impedimento alguno. El modelo <strong>Zero Trust</strong> asume la red como hostil por defecto.</p>
+                <p>Cada solicitud de acceso, provenga de donde provenga, debe cifrarse de extremo a extremo, autenticarse y autorizarse contra políticas contextuales adaptativas antes de abrir cualquier flujo en el plano de datos, impidiendo la exposición innecesaria de recursos críticos de la corporación.</p>
+                <div class="defensa-box-warning"><strong>⚠️ Riesgo Crítico: Confianza Implícita en Redes Locales</strong><p>Tratar los segmentos On-Premises como zonas exentas de controles criptográficos avanzados permite que un compromiso en una terminal de usuario común escale lateralmente hacia los clústeres de servidores relacionales o hipervisores, paralizando toda la operación de sistemas de la compañía.</p></div>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+
+        <div class="block" id="s2">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">02 // Despliegue de Control Lógico</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Microsegmentación y Políticas de Control Adaptativo</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>La implementación real de este marco requiere aislar las cargas de procesamiento mediante políticas lógicas granulares aplicadas directamente al flujo de red:</p>
+                <div class="defensa-box-tech"><strong>🔹 Microsegmentación Basada en Identidades de Software</strong><p style="margin:6px 0 0 0;color:#334155;">Las conexiones de red ya no se autorizan únicamente por rangos de direcciones IP o puertos de escucha fijos. Se aplican políticas de cortafuegos de nueva generación basadas en identidades lógicas y etiquetas criptográficas del recurso origen. Si una instancia web se compromete, sus permisos de comunicación hacia el motor de base de datos se revocan de manera autónoma en milisegundos.</p></div>
+                <div class="defensa-box-tech"><strong>🔹 Políticas de Acceso Contextual en Tiempo Real</strong><p style="margin:6px 0 0 0;color:#334155;">La validación de la petición incluye el análisis de múltiples factores: ubicación geográfica, estado del dispositivo (parcheado, presencia de antimalware), historial de comportamiento del usuario y sensibilidad del dato solicitado. Un cambio en cualquiera de estos parámetros (p.ej., acceso desde una ubicación no habitual) puede degradar dinámicamente los privilegios o requerir una autenticación adicional.</p></div>
+                <div class="defensa-box-tech"><strong>🔹 Gestión de Identidades y Acceso (IAM) Unificada</strong><p style="margin:6px 0 0 0;color:#334155;">Centralización de la autenticación y autorización mediante un proveedor de identidades (IdP) que actúa como orquestador de confianza. La integración con sistemas de MFA y de gestión de sesiones permite aplicar políticas de "single sign-on" (SSO) y de "just-in-time" (JIT) para minimizar la exposición de credenciales y tokens de larga duración.</p></div>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+
+        <div class="block" id="s3">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">03 // Visibilidad y Telemetría de Red</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Analítica de Comportamiento y Detección de Anomalías</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>El modelo Zero Trust requiere una visibilidad sin precedentes de todo el tráfico de red y las actividades de los usuarios. La analítica de comportamiento (UEBA) y la gestión de eventos e información de seguridad (SIEM) son componentes críticos para detectar y responder a amenazas en tiempo real.</p>
+                <div class="defensa-box-tech"><strong>🔹 Análisis de Comportamiento de Usuarios y Entidades (UEBA)</strong><p style="margin:6px 0 0 0;color:#334155;">Utilización de algoritmos de machine learning para establecer líneas de base de comportamiento normal de usuarios, dispositivos y aplicaciones. Cualquier desviación significativa, como un acceso masivo a datos fuera de horas laborales, genera una alerta y puede desencadenar acciones de respuesta automáticas.</p></div>
+                <div class="defensa-box-tech"><strong>🔹 Correlación de Eventos de Seguridad (SIEM)</strong><p style="margin:6px 0 0 0;color:#334155;">Agregación y correlación de logs de todos los sistemas (firewalls, servidores, aplicaciones, endpoints) para identificar patrones de ataque complejos que involucran múltiples vectores. La correlación permite detectar amenazas que individualmente pasarían desapercibidas.</p></div>
+                <div class="defensa-box-success"><strong>✅ Beneficio Clave: Detección Temprana de Amenazas Internas</strong><p>La combinación de UEBA y SIEM permite detectar y neutralizar amenazas internas (insider threats) y ataques avanzados que ya han evadido los controles perimetrales, minimizando el tiempo de permanencia del atacante en la red y reduciendo el impacto potencial.</p></div>
+            </div>
+        </div>
+
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+
+        <div class="block" id="s4">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">04 // Integración y Automatización de Respuesta</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Respuesta Automatizada a Incidentes y Orquestación</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>La automatización de la respuesta a incidentes es fundamental para operar un modelo Zero Trust a escala. La orquestación de acciones de seguridad (SOAR) permite ejecutar playbooks de respuesta de forma rápida y consistente, reduciendo la dependencia de la intervención manual.</p>
+                <div class="defensa-box-tech"><strong>🔹 Playbooks de Respuesta Automatizada</strong><p style="margin:6px 0 0 0;color:#334155;">Definición de flujos de trabajo predefinidos para responder a diferentes tipos de incidentes (p.ej., detección de malware, accesos no autorizados, exfiltración de datos). Los playbooks pueden incluir acciones como el bloqueo de cuentas, el aislamiento de equipos, la revocación de tokens y la notificación a los equipos de seguridad.</p></div>
+                <div class="defensa-box-tech"><strong>🔹 Integración con APIs y Herramientas de Terceros</strong><p style="margin:6px 0 0 0;color:#334155;">La plataforma SOAR se integra con el ecosistema de seguridad existente (firewalls, EDR, IAM, SIEM) a través de APIs, permitiendo ejecutar acciones de forma centralizada y orquestada sin necesidad de intervención manual en cada consola.</p></div>
+                <p>La adopción de una arquitectura Zero Trust no es un proyecto de tecnología pura, sino una transformación cultural y operativa que requiere el compromiso de toda la organización. La implementación por fases, comenzando por los activos más críticos, permite gestionar el cambio de manera controlada y obtener resultados tangibles desde las primeras etapas.</p>
+            </div>
+        </div>
+
+        <!-- MÓDULO 5: NUEVO - MÉTRICAS Y MADUREZ -->
+        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+
+        <div class="block" id="s5">
+            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">05 // Métricas y Madurez</div>
+            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Medir el progreso hacia una arquitectura Zero Trust</h2>
+            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                <p>La madurez en Zero Trust no se alcanza de la noche a la mañana. Es un viaje progresivo que debe medirse con métricas claras y objetivas. Algunas de las métricas clave incluyen: el porcentaje de aplicaciones que requieren MFA, el tiempo medio de detección de movimientos laterales, la cobertura de microsegmentación, y el número de accesos privilegiados concedidos sin justificación temporal (JIT).</p>
+                <p>Una organización madura en Zero Trust puede detectar y responder a un movimiento lateral en minutos, no en horas. La telemetría continua y la mejora iterativa de las políticas son la base de esta madurez. El objetivo final no es la perfección, sino la capacidad de limitar el impacto de cualquier brecha a un conjunto mínimo de activos.</p>
+                <div class="defensa-box-tech"><strong>Métrica recomendada:</strong> "Mean Time to Detect (MTTD) lateral movement". Un MTTD inferior a 5 minutos indica una madurez significativa en la detección de amenazas internas.</div>
+            </div>
+        </div>
+
+        <div class="defensa-foot">
+            <div class="defensa-author">
+                <div class="defensa-foot-label">Autor del Dossier</div>
+                <div class="defensa-author-name">Miguel Ángel Carriazo <span>· Infrastructure & Cybersecurity Architect</span></div>
+                <p class="defensa-author-bio">Especialista con más de 25 años en el sector IT corporativo. Experto en el diseño y auditoría de arquitecturas críticas distribuidas bajo marcos estrictos de confianza cero, con certificaciones en Zero Trust, cloud security y gestión de identidades.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+        <div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+            <div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha de Arquitectura Zero Trust</div>
+            <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Paradigma</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Zero Trust Core</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Mecanismo</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Microsegmentación</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Validación</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Contextual Realtime</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Visibilidad</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">SIEM / UEBA</td></tr>
+                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Respuesta</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">SOAR / Orquestación</td></tr>
+            </table>
+        </div>
+        <div>
+            <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+            <nav class="defensa-toc-nav" id="artTocNav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+                <a href="#s1" class="active" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px; color:#059669; border-left:2px solid #059669; font-weight:700;">01. Ruptura Perimetral</a>
+                <a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Control Lógico</a>
+                <a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Visibilidad y Telemetría</a>
+                <a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Automatización</a>
+                <a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Métricas y Madurez</a>
+            </nav>
+        </div>
+    </aside>
+
+</div>
+
+<div id="footer-container"></div>
+
+</div>
+</div>
+
+<script src="../../js/menu.js"></script>
+<script src="../../js/footer.js"></script>
+<script>
+function toggleZoom(element) {
+    if (element.classList.contains('zoomed')) {
+        element.classList.remove('zoomed');
+        document.querySelector('.zoom-overlay')?.classList.remove('active');
+    } else {
+        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+        element.classList.add('zoomed');
+        let overlay = document.querySelector('.zoom-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'zoom-overlay';
+            overlay.onclick = function() {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                overlay.classList.remove('active');
+            };
+            document.body.appendChild(overlay);
+        }
+        overlay.classList.add('active');
+    }
+}
+</script>
+
+</body>
+</html>

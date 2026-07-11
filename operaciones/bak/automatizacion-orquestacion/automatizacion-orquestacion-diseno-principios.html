@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Principios de diseño: automatizar un proceso roto solo lo rompe más rápido | Automatización y Orquestación | Technology Advisory</title><meta name="description" content="La automatización amplifica lo que ya existe. Si el proceso manual era confuso e inconsistente, automatizarlo tal cual produce fallos confusos e inconsiste"><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
+<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // operaciones</span><span>categoría: <strong>Automatización y Orquestación</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Automatización y Orquestación</div><h1 class="article-title">Principios de diseño: automatizar un proceso roto solo lo rompe más rápido</h1><p class="article-lead">La automatización amplifica lo que ya existe. Si el proceso manual era confuso e inconsistente, automatizarlo tal cual produce fallos confusos e inconsistentes, pero a mayor velocidad.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Automatización y Orquestación"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="900" height="410" rx="14" fill="#fafaf8"/>
+<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Automatizar bien: orden correcto</text>
+<text x="40" y="66" font-size="12" fill="#77776f">entender, simplificar, y solo entonces automatizar</text>
+<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Entender el proceso real</text>
+<text x="58" y="163" font-size="11" fill="#77776f">No el que está documentado</text>
+<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Simplificar antes de automatizar</text>
+<text x="488" y="163" font-size="11" fill="#77776f">Menos pasos, menos excepciones</text>
+<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Automatizar con manejo de errores</text>
+<text x="58" y="283" font-size="11" fill="#77776f">No solo el camino feliz</text>
+<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Automatizar sin entender</text>
+<text x="488" y="283" font-size="11" fill="#77776f">Amplifica el caos existente</text>
+<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Automatizar el camino feliz sin manejar errores solo mueve el problema más rápido</text>
+</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 420" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="330" height="420" rx="12" fill="#fafaf8"/>
+<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Automatizar bien: orden correcto</text>
+<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="89" r="13" fill="#059669"/>
+<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Entender el proceso real</text>
+<text x="64" y="102" font-size="11" fill="#77776f">No el que está documentado</text>
+<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="159" r="13" fill="#059669"/>
+<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Simplificar antes de</text>
+<text x="64" y="172" font-size="11" fill="#77776f">Menos pasos, menos excepciones</text>
+<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="229" r="13" fill="#059669"/>
+<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Automatizar con manejo de</text>
+<text x="64" y="242" font-size="11" fill="#77776f">No solo el camino feliz</text>
+<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+<circle cx="40" cy="299" r="13" fill="#059669"/>
+<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Automatizar sin entender</text>
+<text x="64" y="312" font-size="11" fill="#77776f">Amplifica el caos existente</text>
+<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+<rect x="18" y="340" width="294" height="60" rx="10" fill="url(#gm)"/>
+<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Automatizar el camino feliz sin manejar</text>
+<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">errores solo mueve el problema más rápido</text>
+</svg></div></figure><div class="toc-mini"><a href="#contexto">1. El proceso roto, ahora más rápido</a><a href="#arquitectura">2. Entender antes de automatizar</a><a href="#seguridad">3. Manejo de errores, no solo el camino feliz</a><a href="#operacion">4. Idempotencia: ejecutar dos veces sin doble efecto</a><a href="#roadmap">5. Automatizar lo aburrido, no lo crítico sin red</a></div><h2 id="contexto">1. El proceso roto, ahora ejecutándose más rápido</h2><div class="body-text"><p><strong>Automatizar un proceso manual confuso, con excepciones no documentadas y pasos que dependen del criterio de quien lo ejecuta, no arregla el proceso — lo convierte en un script que falla de forma más rápida y menos comprensible.</strong> La automatización amplifica lo que ya existe, para bien o para mal.</p></div><h2 id="arquitectura">2. Entender el proceso real antes de automatizar, no el documentado</h2><div class="body-text"><p>El proceso que realmente se ejecuta en la práctica —con sus excepciones, atajos y criterios tácitos— casi nunca coincide exactamente con el documento formal. Automatizar directamente desde el documento sin observar la ejecución real produce automatización que falla en los casos que el documento no contemplaba.</p></div><h2 id="seguridad">3. Manejo de errores real, no solo automatizar el camino feliz</h2><div class="body-text"><p>Un script que funciona perfectamente cuando todo va bien y falla silenciosamente (o de forma catastrófica) cuando algo inesperado ocurre es automatización incompleta. El manejo explícito de errores —qué hacer cuando un recurso no existe, cuando la red falla a mitad de ejecución— es tan importante como la lógica del camino feliz.</p></div><h2 id="operacion">4. Idempotencia: ejecutar el script dos veces no debería duplicar el efecto</h2><div class="body-text"><p>Un script idempotente produce el mismo resultado final independientemente de cuántas veces se ejecute — crítico quando un script se relanza tras un fallo parcial, o cuando alguien lo ejecuta por error una segunda vez. Un script no idempotente que crea un recurso nuevo cada vez que se ejecuta, en lugar de verificar si ya existe, acumula duplicados silenciosamente.</p></div><h2 id="roadmap">5. Automatizar lo repetitivo primero, lo crítico solo con red de seguridad</h2><div class="body-text"><p>Las tareas repetitivas de bajo riesgo son el punto de partida ideal para automatización — el aprendizaje se acumula con bajo coste de error. Las tareas críticas con alto impacto si fallan merecen automatización solo cuando ya existe experiencia acumulada, y siempre con capacidad de rollback verificada.</p></div><a class="back" href="../index.html?cat=automatizacion-orquestacion">← Volver a Automatización y Orquestación</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. El proceso roto, ahora más rápido</a><a href="#arquitectura">2. Entender antes de automatizar</a><a href="#seguridad">3. Manejo de errores, no solo el camino feliz</a><a href="#operacion">4. Idempotencia: ejecutar dos veces sin doble efecto</a><a href="#roadmap">5. Automatizar lo aburrido, no lo crítico sin red</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>

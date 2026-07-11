@@ -1,0 +1,425 @@
+
+---
+
+## Artículo 2: `virtualizacion-contenedores-diseno-principios.html`
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+    <title>Principios de diseño: un contenedor no es una VM ligera, es otro modelo de seguridad | Virtualización y Contenedores | Technology Advisory</title>
+    <meta name="description" content="Tratar los contenedores como 'VMs pequeñas' es el error conceptual que produce despliegues inseguros. Comparten kernel con el host — el aislamiento es de proceso, no de hardware virtualizado.">
+    <meta name="author" content="Miguel Ángel Carriazo">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#059669">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/dossier-core.css">
+    <link rel="stylesheet" href="../../css/articulo.css">
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/articulo-diagramas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="card-wrapper ds-page">
+        <div class="card">
+
+            <div id="menu-container"></div>
+            <div class="accent-bar" style="background:#059669;"></div>
+
+            <div class="ds-meta">
+                <span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: arquitectura</span>
+                <span>categoría: <strong>Virtualización y Contenedores</strong></span>
+            </div>
+
+            <div style="padding: 16px 4% 0;">
+                <a href="../index.html?cat=virtualizacion-contenedores" class="defensa-btn-back" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Virtualización y Contenedores</a>
+            </div>
+
+            <div style="padding: 40px 4% 24px; border-bottom: 1px solid #ededea;">
+                <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Principios · Virtualización y Contenedores</div>
+                <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Principios de diseño: <span style="color:#059669;">un contenedor no es una VM ligera, es otro modelo de seguridad</span></h1>
+                <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Tratar los contenedores como "VMs pequeñas" es el error conceptual que produce despliegues inseguros. Comparten kernel con el host — el aislamiento es de proceso, no de hardware virtualizado.</p>
+                <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>Virtualización y Contenedores</span>
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>Lectura Avanzada (18-22 min)</span>
+                </div>
+            </div>
+
+            <div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+                <div class="defensa-main" style="min-width:0;">
+
+                    <!-- GRÁFICO 1: VM VS CONTENEDOR -->
+                    <figure class="article-diagram" aria-label="VM vs contenedor" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="410" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="42" font-size="19" font-weight="800" fill="#151915">VM vs contenedor: aislamiento distinto</text>
+                                <text x="40" y="66" font-size="12" fill="#77776f">la diferencia que cambia todo el modelo de seguridad</text>
+                                <rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <text x="58" y="140" font-size="14" font-weight="800" fill="#151915">VM</text>
+                                <text x="58" y="163" font-size="11" fill="#77776f">Hipervisor + kernel propio</text>
+                                <rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Contenedor</text>
+                                <text x="488" y="163" font-size="11" fill="#77776f">Kernel compartido con el host</text>
+                                <rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Aislamiento VM</text>
+                                <text x="58" y="283" font-size="11" fill="#77776f">Fuerte, a nivel de hardware virtual</text>
+                                <rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Aislamiento contenedor</text>
+                                <text x="488" y="283" font-size="11" fill="#77776f">Namespaces + cgroups, más débil</text>
+                                <defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
+                                <rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
+                                <text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Un contenedor comprometido con privilegios excesivos puede alcanzar el kernel del host</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="438" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="34" font-size="16" font-weight="800" fill="#151915">VM vs contenedor: aislamiento distinto</text>
+                                <rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <circle cx="40" cy="89" r="13" fill="#059669"/>
+                                <text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+                                <text x="64" y="84" font-size="13" font-weight="800" fill="#151915">VM</text>
+                                <text x="64" y="102" font-size="11" fill="#77776f">Hipervisor + kernel propio</text>
+                                <rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <circle cx="40" cy="159" r="13" fill="#059669"/>
+                                <text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+                                <text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Contenedor</text>
+                                <text x="64" y="172" font-size="11" fill="#77776f">Kernel compartido con el host</text>
+                                <rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <circle cx="40" cy="229" r="13" fill="#059669"/>
+                                <text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+                                <text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Aislamiento VM</text>
+                                <text x="64" y="242" font-size="11" fill="#77776f">Fuerte, a nivel de hardware</text>
+                                <rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
+                                <circle cx="40" cy="299" r="13" fill="#059669"/>
+                                <text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+                                <text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Aislamiento contenedor</text>
+                                <text x="64" y="312" font-size="11" fill="#77776f">Namespaces + cgroups, más</text>
+                                <defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
+                                <rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
+                                <text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Un contenedor comprometido con privilegios</text>
+                                <text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">excesivos puede alcanzar el kernel del</text>
+                                <text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">host</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 1: Comparativa de aislamiento entre VM y contenedor.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- GRÁFICO 2: NAMESPACES Y CGROUPS -->
+                    <figure class="article-diagram" aria-label="Namespaces y cgroups" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="280" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">Namespaces y cgroups: el aislamiento del contenedor</text>
+                                <text x="40" y="58" font-size="12" fill="#77776f">cómo Linux aísla procesos sin virtualización de hardware</text>
+                                <rect x="40" y="80" width="250" height="110" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="165" y="108" font-size="14" font-weight="800" fill="#059669" text-anchor="middle">Namespaces</text>
+                                <text x="165" y="130" font-size="11" fill="#77776f" text-anchor="middle">PID, NET, MNT, UTS</text>
+                                <text x="165" y="148" font-size="11" fill="#77776f" text-anchor="middle">IPC, USER, CGROUP</text>
+                                <text x="165" y="168" font-size="11" fill="#77776f" text-anchor="middle">Aislamiento lógico</text>
+                                <text x="165" y="186" font-size="10" fill="#94a3b8" text-anchor="middle">Cada contenedor ve su propio espacio</text>
+                                <line x1="290" y1="135" x2="320" y2="135" stroke="#059669" stroke-width="2"/>
+                                <polygon points="318,130 328,135 318,140" fill="#059669"/>
+                                <rect x="330" y="80" width="250" height="110" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="455" y="108" font-size="14" font-weight="800" fill="#d97706" text-anchor="middle">cgroups</text>
+                                <text x="455" y="130" font-size="11" fill="#77776f" text-anchor="middle">CPU, memoria, I/O</text>
+                                <text x="455" y="148" font-size="11" fill="#77776f" text-anchor="middle">Limitación de recursos</text>
+                                <text x="455" y="168" font-size="11" fill="#77776f" text-anchor="middle">Aislamiento de rendimiento</text>
+                                <text x="455" y="186" font-size="10" fill="#94a3b8" text-anchor="middle">Un contenedor no puede saturar el host</text>
+                                <line x1="580" y1="135" x2="610" y2="135" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                                <rect x="620" y="80" width="240" height="110" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="740" y="108" font-size="14" font-weight="800" fill="#2563eb" text-anchor="middle">Kernel compartido</text>
+                                <text x="740" y="130" font-size="11" fill="#77776f" text-anchor="middle">Todos los contenedores</text>
+                                <text x="740" y="148" font-size="11" fill="#77776f" text-anchor="middle">usan el mismo kernel</text>
+                                <text x="740" y="168" font-size="11" fill="#77776f" text-anchor="middle">El punto débil del</text>
+                                <text x="740" y="186" font-size="10" fill="#94a3b8" text-anchor="middle">aislamiento de contenedores</text>
+                                <rect x="40" y="215" width="820" height="45" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="450" y="238" font-size="12" font-weight="700" fill="#151915" text-anchor="middle">Namespaces + cgroups crean la ilusión de aislamiento — pero el kernel es uno solo</text>
+                                <text x="450" y="253" font-size="10" fill="#77776f" text-anchor="middle">Un escape de contenedor puede comprometer todos los contenedores del host</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 400" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="400" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">Namespaces y cgroups</text>
+                                <rect x="18" y="45" width="92" height="85" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="64" y="65" font-size="10" font-weight="800" fill="#059669" text-anchor="middle">Namespaces</text>
+                                <text x="64" y="80" font-size="8" fill="#77776f" text-anchor="middle">Aislamiento</text>
+                                <text x="64" y="95" font-size="8" fill="#77776f" text-anchor="middle">lógico</text>
+                                <text x="64" y="112" font-size="7" fill="#94a3b8" text-anchor="middle">PID, NET, MNT</text>
+                                <text x="64" y="124" font-size="7" fill="#94a3b8" text-anchor="middle">USER, IPC</text>
+                                <rect x="120" y="45" width="92" height="85" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="166" y="65" font-size="10" font-weight="800" fill="#d97706" text-anchor="middle">cgroups</text>
+                                <text x="166" y="80" font-size="8" fill="#77776f" text-anchor="middle">Limitación</text>
+                                <text x="166" y="95" font-size="8" fill="#77776f" text-anchor="middle">recursos</text>
+                                <text x="166" y="112" font-size="7" fill="#94a3b8" text-anchor="middle">CPU, memoria</text>
+                                <text x="166" y="124" font-size="7" fill="#94a3b8" text-anchor="middle">I/O</text>
+                                <rect x="222" y="45" width="92" height="85" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="268" y="65" font-size="10" font-weight="800" fill="#2563eb" text-anchor="middle">Kernel</text>
+                                <text x="268" y="80" font-size="8" fill="#77776f" text-anchor="middle">Compartido</text>
+                                <text x="268" y="95" font-size="8" fill="#77776f" text-anchor="middle">por todos</text>
+                                <text x="268" y="112" font-size="7" fill="#94a3b8" text-anchor="middle">Punto débil</text>
+                                <text x="268" y="124" font-size="7" fill="#94a3b8" text-anchor="middle">del aislamiento</text>
+                                <rect x="18" y="150" width="294" height="50" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="165" y="172" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Aislamiento lógico, no físico</text>
+                                <text x="165" y="190" font-size="9" fill="#77776f" text-anchor="middle">El kernel es compartido</text>
+                                <rect x="18" y="220" width="294" height="55" rx="8" fill="#059669" opacity=".08"/>
+                                <text x="165" y="243" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Escape de contenedor</text>
+                                <text x="165" y="261" font-size="9" fill="#77776f" text-anchor="middle">= comprometer el host</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 2: Namespaces, cgroups y el kernel compartido.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- SECCIÓN 1 -->
+                    <div class="block" id="s1">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — El Error Conceptual</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">"VM ligera" es un error conceptual con consecuencias reales</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>Un contenedor no es una máquina virtual más pequeña y rápida.</strong> Una VM tiene su propio kernel, aislado por el hipervisor a nivel de hardware virtualizado. Un contenedor comparte el kernel del host — el aislamiento es lógico (namespaces, cgroups), no físico. Esa diferencia cambia completamente el modelo de amenazas.</p>
+                            <p>Este error conceptual es común porque los contenedores <em>parecen</em> VMs: tienen su propio sistema de ficheros, su propia red, sus propios procesos. Pero debajo del capó, la arquitectura es completamente diferente. Una VM virtualiza hardware; un contenedor virtualiza el sistema operativo. La diferencia en el modelo de seguridad es enorme.</p>
+                            <p>Las implicaciones de seguridad de esta diferencia son:</p>
+                            <ul style="list-style-type:disc; padding-left:24px; margin:12px 0 16px;">
+                                <li>Un escape de contenedor puede comprometer el kernel del host</li>
+                                <li>Un contenedor privilegiado tiene acceso a recursos del host que una VM no tendría</li>
+                                <li>Las vulnerabilidades del kernel afectan a todos los contenedores del host</li>
+                            </ul>
+                            <div class="defensa-box-warning"><strong>⚠️ Consecuencia directa:</strong> una vulnerabilidad de escape de contenedor puede comprometer el kernel del host y, con él, todos los demás contenedores que corren sobre esa misma máquina. En una VM, el hipervisor aísla el kernel de la VM del host.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECCIÓN 2 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+
+                    <div class="block" id="s2">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Mecanismos de Aislamiento</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Namespaces y cgroups: cómo aísla de verdad un contenedor</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>Los namespaces de Linux dan a cada contenedor su propia vista aislada de procesos, red, punto de montaje e identificadores de usuario. Los cgroups limitan y contabilizan el uso de recursos (CPU, memoria, I/O). Juntos crean la ilusión de aislamiento — pero el kernel subyacente es uno solo, compartido por todos los contenedores del host.</p>
+                            <p>Los principales namespaces que usa Docker/Kubernetes son:</p>
+                            <ul style="list-style-type:disc; padding-left:24px; margin:12px 0 16px;">
+                                <li><strong>PID:</strong> los procesos dentro del contenedor ven su propio espacio de IDs</li>
+                                <li><strong>NET:</strong> cada contenedor tiene su propia interfaz de red y tabla de rutas</li>
+                                <li><strong>MNT:</strong> sistema de ficheros aislado dentro del contenedor</li>
+                                <li><strong>USER:</strong> mapeo de usuarios — el root dentro del contenedor no es root en el host</li>
+                                <li><strong>IPC:</strong> comunicación entre procesos aislada</li>
+                            </ul>
+                            <p>Los cgroups, por su parte, garantizan que un contenedor no pueda consumir todos los recursos del host, protegiendo a otros contenedores y al propio sistema operativo de denial of service. La combinación de namespaces y cgroups hace que los contenedores sean seguros <em>por defecto</em> — pero solo si se usan correctamente.</p>
+                            <div class="defensa-box-tech"><strong>El aislamiento del contenedor es lógico, no físico:</strong> namespaces + cgroups crean la ilusión de aislamiento, pero el kernel es compartido. Esto es lo que permite la eficiencia de los contenedores y también lo que crea su modelo de amenazas específico.</div>
+                        </div>
+                    </div>
+
+                    <!-- GRÁFICO 3: CUÁNDO VM, CUÁNDO CONTENEDOR -->
+                    <figure class="article-diagram" aria-label="Cuándo VM, cuándo contenedor" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="300" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">Cuándo elegir VM, cuándo contenedor</text>
+                                <text x="40" y="58" font-size="12" fill="#77776f">la decisión depende del nivel de aislamiento que la carga de trabajo necesita</text>
+                                <rect x="40" y="80" width="390" height="130" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="235" y="108" font-size="15" font-weight="800" fill="#059669" text-anchor="middle">✅ Contenedor</text>
+                                <text x="235" y="130" font-size="12" fill="#77776f" text-anchor="middle">Microservicios internos</text>
+                                <text x="235" y="148" font-size="12" fill="#77776f" text-anchor="middle">Misma organización</text>
+                                <text x="235" y="166" font-size="12" fill="#77776f" text-anchor="middle">Confianza razonable</text>
+                                <text x="235" y="190" font-size="11" fill="#94a3b8" text-anchor="middle">Velocidad y eficiencia</text>
+                                <rect x="470" y="80" width="390" height="130" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="665" y="108" font-size="15" font-weight="800" fill="#2563eb" text-anchor="middle">🛡️ VM</text>
+                                <text x="665" y="130" font-size="12" fill="#77776f" text-anchor="middle">Multi-tenancy sin confianza</text>
+                                <text x="665" y="148" font-size="12" fill="#77776f" text-anchor="middle">Requisitos regulatorios</text>
+                                <text x="665" y="166" font-size="12" fill="#77776f" text-anchor="middle">Aislamiento fuerte</text>
+                                <text x="665" y="190" font-size="11" fill="#94a3b8" text-anchor="middle">Mayor sobrecarga</text>
+                                <rect x="40" y="235" width="820" height="45" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="450" y="258" font-size="12" font-weight="700" fill="#151915" text-anchor="middle">La decisión no es "contenedores porque están de moda" — es evaluar el aislamiento necesario</text>
+                                <text x="450" y="273" font-size="10" fill="#77776f" text-anchor="middle">Cargas multi-tenant sin confianza siguen justificando VMs</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 400" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="400" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">VM vs Contenedor</text>
+                                <rect x="18" y="45" width="140" height="100" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="88" y="68" font-size="12" font-weight="800" fill="#059669" text-anchor="middle">✅ Contenedor</text>
+                                <text x="88" y="85" font-size="9" fill="#77776f" text-anchor="middle">Microservicios</text>
+                                <text x="88" y="100" font-size="9" fill="#77776f" text-anchor="middle">Misma organización</text>
+                                <text x="88" y="115" font-size="9" fill="#77776f" text-anchor="middle">Confianza razonable</text>
+                                <text x="88" y="132" font-size="8" fill="#94a3b8" text-anchor="middle">Eficiencia</text>
+                                <rect x="172" y="45" width="140" height="100" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="242" y="68" font-size="12" font-weight="800" fill="#2563eb" text-anchor="middle">🛡️ VM</text>
+                                <text x="242" y="85" font-size="9" fill="#77776f" text-anchor="middle">Multi-tenancy</text>
+                                <text x="242" y="100" font-size="9" fill="#77776f" text-anchor="middle">Sin confianza</text>
+                                <text x="242" y="115" font-size="9" fill="#77776f" text-anchor="middle">Aislamiento fuerte</text>
+                                <text x="242" y="132" font-size="8" fill="#94a3b8" text-anchor="middle">Sobrecarga</text>
+                                <rect x="18" y="165" width="294" height="50" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="165" y="187" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Evaluar el aislamiento necesario</text>
+                                <text x="165" y="205" font-size="9" fill="#77776f" text-anchor="middle">No elegir por moda</text>
+                                <rect x="18" y="235" width="294" height="55" rx="8" fill="#059669" opacity=".08"/>
+                                <text x="165" y="258" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Multi-tenant sin confianza</text>
+                                <text x="165" y="276" font-size="9" fill="#77776f" text-anchor="middle">= VM sigue siendo la opción</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 3: Cuándo elegir VM vs contenedor.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- SECCIÓN 3 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+
+                    <div class="block" id="s3">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — El Riesgo de Privilegios</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Root en el contenedor puede significar root en el host</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>Ejecutar un contenedor con privilegios elevados (<code>--privileged</code> en Docker, o un Pod sin restricciones en Kubernetes) reduce drásticamente el aislamiento — un proceso con privilegios dentro del contenedor puede, en muchos escenarios, acceder a recursos del host que un contenedor bien configurado nunca debería alcanzar.</p>
+                            <p>El flag <code>--privileged</code> da a un contenedor acceso a todos los dispositivos del host y elimina la mayoría de las restricciones del kernel. En Kubernetes, un Pod sin restricciones (especialmente en modo Privileged) puede hacer lo mismo. Esto es equivalente a ejecutar el proceso como root en el host — y es una práctica que nunca debería ser el default.</p>
+                            <p>La configuración defendible por defecto es:</p>
+                            <ul style="list-style-type:disc; padding-left:24px; margin:12px 0 16px;">
+                                <li><strong>Usuario no-root</strong> dentro del contenedor (definido en el Dockerfile)</li>
+                                <li><strong>Capabilities mínimas</strong> (drop todas, añadir solo las necesarias)</li>
+                                <li><strong>Sistema de ficheros de solo lectura</strong> donde sea posible</li>
+                                <li><strong>Sin flag --privileged</strong> salvo excepción justificada</li>
+                            </ul>
+                            <div class="defensa-box-warning"><strong>⚠️ Root en el contenedor no es root en el host, gracias al user namespace — pero la diferencia es mucho menor en un contenedor privilegiado.</strong> El user namespace mapea el root del contenedor a un usuario no privilegiado en el host, pero --privileged desactiva esa protección.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECCIÓN 4 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+
+                    <div class="block" id="s4">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — La Decisión de Arquitectura</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Cuándo elegir VM, cuándo contenedor</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>La decisión no es "contenedores porque están de moda" — es evaluar el nivel de aislamiento que la carga de trabajo necesita. Multi-tenancy con clientes que no confían entre sí, o cargas con requisitos regulatorios estrictos de aislamiento, siguen justificando VMs. Microservicios internos de una misma organización, con confianza razonable entre ellos, se benefician del contenedor.</p>
+                            <p>La pregunta clave para decidir entre VM y contenedor es: <strong>¿Qué nivel de aislamiento necesita esta carga de trabajo?</strong></p>
+                            <ul style="list-style-type:disc; padding-left:24px; margin:12px 0 16px;">
+                                <li><strong>Si el aislamiento es crítico</strong> (multi-tenant, clientes externos, regulación estricta) → VM</li>
+                                <li><strong>Si la velocidad y eficiencia importan más</strong> (microservicios internos, CI/CD) → contenedor</li>
+                                <li><strong>Si hay dudas</strong> → empieza por contenedores con políticas de seguridad estrictas, y si no es suficiente, pasa a VM</li>
+                            </ul>
+                            <div class="defensa-box-tech"><strong>Consejo práctico:</strong> para la mayoría de las cargas internas, los contenedores con Pod Security Standards Baseline son suficientes. Para cargas multi-tenant sin confianza, las VMs siguen siendo la opción más segura.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECCIÓN 5 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+
+                    <div class="block" id="s5">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Seguridad por Defecto</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Runtime seguro por defecto, no como añadido posterior</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>Las políticas de seguridad de contenedores (Pod Security Standards en Kubernetes, o equivalentes) deberían aplicarse por defecto a todo el clúster desde el primer día — usuario no-root, sistema de ficheros de solo lectura donde sea posible, sin privilegios elevados salvo excepción justificada — no añadirse retroactivamente cuando ya hay cientos de cargas desplegadas sin esas restricciones.</p>
+                            <p>El enfoque de "seguridad por defecto" es el que permite escalar de forma segura. Si la seguridad es una excepción que hay que añadir después, la mayoría de las cargas no la tendrán. Si la seguridad es el default, la mayoría de las cargas la tendrán automáticamente, y las excepciones serán gestionadas como lo que son: excepciones.</p>
+                            <p>La implementación práctica de seguridad por defecto en contenedores incluye:</p>
+                            <ul style="list-style-type:disc; padding-left:24px; margin:12px 0 16px;">
+                                <li>Pod Security Standards activados a nivel de namespace (Baseline o Restricted)</li>
+                                <li>Escaneo de imágenes obligatorio en el pipeline</li>
+                                <li>RBAC con privilegios mínimos para ServiceAccounts</li>
+                                <li>Políticas de red que limitan la comunicación entre pods</li>
+                                <li>Auditoría continua del clúster</li>
+                            </ul>
+                            <div class="defensa-box-success"><strong>✔ El principio de seguridad por defecto:</strong> si tienes que añadir seguridad a cada despliegue, la seguridad es una opción. Si la seguridad viene por defecto y solo se desactiva con justificación, la seguridad es el estándar.</div>
+                        </div>
+                    </div>
+
+                    <!-- PIE DE AUTOR -->
+                    <div class="defensa-foot">
+                        <div class="defensa-author">
+                            <div class="defensa-foot-label">Autor</div>
+                            <div class="defensa-author-name">Miguel Ángel Carriazo</div>
+                            <p class="defensa-author-bio">Arquitecto de infraestructura y seguridad con más de 15 años de experiencia diseñando entornos críticos. Especializado en virtualización, contenedores y seguridad de plataformas. En Technology Advisory ayuda a organizaciones a adoptar contenedores sin comprometer la seguridad.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SIDEBAR -->
+                <aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+                    <div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+                        <div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+                        <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Área</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Virtualización y Contenedores</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Enfoque</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Principios de Diseño</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Concepto clave</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Aislamiento de contenedores</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Nivel</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Avanzado</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Lectura</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">18-22 min</td></tr>
+                            <tr><td style="padding:10px 0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Etiquetas</td><td style="padding:10px 0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">#contenedores #kubernetes #aislamiento #namespaces #cgroups</td></tr>
+                        </table>
+                    </div>
+
+                    <div>
+                        <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+                        <nav class="defensa-toc-nav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+                            <a href="#s1" class="active" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px; color:#059669; border-left:2px solid #059669; font-weight:700;">01. VM ligera = Error</a>
+                            <a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Namespaces y cgroups</a>
+                            <a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Root en el Contenedor</a>
+                            <a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. VM vs Contenedor</a>
+                            <a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Seguridad por Defecto</a>
+                        </nav>
+                    </div>
+                </aside>
+
+            </div>
+
+            <!-- ARTÍCULOS RELACIONADOS -->
+            <div class="related-section">
+                <div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+                <div class="related-grid">
+                    <a class="related-card" href="virtualizacion-contenedores-controles-evidencias.html">
+                        <div class="r-meta">Virtualización y Contenedores · Controles</div>
+                        <div class="r-title">Controles y evidencias: el Pod Security Standard que existe pero no se aplica</div>
+                        <div class="r-desc">Tener una política de seguridad definida no es lo mismo que tenerla aplicada. Qué evidencias verificar para saber si la política es real o decorativa.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                    <a class="related-card" href="virtualizacion-contenedores-madurez-roadmap.html">
+                        <div class="r-meta">Virtualización y Contenedores · Madurez</div>
+                        <div class="r-title">Madurez y roadmap: de "funciona en mi Docker" a plataforma gobernada</div>
+                        <div class="r-desc">Los cuatro niveles reales de madurez en contenedores, desde el desarrollo local sin gobierno hasta la plataforma con políticas.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                    <a class="related-card" href="virtualizacion-contenedores-modelo-operativo.html">
+                        <div class="r-meta">Virtualización y Contenedores · Operaciones</div>
+                        <div class="r-title">Modelo operativo: quién actualiza la imagen base, y con qué frecuencia</div>
+                        <div class="r-desc">Una imagen construida hace un año acumula vulnerabilidades conocidas silenciosamente, aunque la aplicación no haya cambiado.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                </div>
+            </div>
+
+            <div id="footer-container"></div>
+
+        </div>
+    </div>
+
+    <script src="../../js/menu.js"></script>
+    <script src="../../js/footer.js"></script>
+    <script>
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
+            } else {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function() {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>

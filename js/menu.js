@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", function() {
     else if (/\/seguridad(\/|$)/.test(currentPath)) active = 'seguridad';
     else if (/\/operaciones(\/|$)/.test(currentPath)) active = 'operaciones';
     else if (/\/gobernanza(\/|$)/.test(currentPath)) active = 'gobernanza';
+    else if (/\/mi-enfoque(\/|$)/.test(currentPath)) active = 'mi-enfoque';
+    else if (/\/referencias(\/|$)/.test(currentPath)) active = 'referencias';
+    else if (/\/tools(\/|$)/.test(currentPath)) active = 'tools';
     else if (/\/sobre-mi(\/|$)/.test(currentPath)) active = 'sobre-mi';
     else if (/\/legal(\/|$)/.test(currentPath)) active = 'legal';
     const A = (k) => (active === k ? ' active' : '');
@@ -61,16 +64,36 @@ document.addEventListener("DOMContentLoaded", function() {
             { num: '4.6', name: 'Políticas y Normativa Interna', slug: 'politicas-normativa' },
             { num: '4.7', name: 'Auditoría y Control Interno', slug: 'auditoria-control-interno' },
             { num: '4.8', name: 'Gobierno del Dato', slug: 'gobierno-dato' }
+        ],
+        tools: [
+            { num: '6.1', name: 'CISA KEV Intelligence', slug: 'cisa-kev' }
+        ],
+        referencias: [
+            { num: '5.1', name: 'Segmentación corporativa', slug: 'segmentacion-red-corporativa', page: 1 },
+            { num: '5.2', name: 'DMZ de doble capa', slug: 'dmz-doble-capa', page: 1 },
+            { num: '5.3', name: 'Acceso remoto ZTNA', slug: 'acceso-remoto-ztna', page: 1 },
+            { num: '5.4', name: 'Red híbrida hub-spoke', slug: 'red-hibrida-hub-spoke', page: 1 },
+            { num: '5.5', name: 'Pipeline DevSecOps', slug: 'pipeline-devsecops', page: 1 },
+            { num: '5.6', name: 'Service Mesh con mTLS', slug: 'service-mesh-mtls', page: 1 },
+            { num: '5.7', name: 'Clúster NGFW en HA', slug: 'cluster-ngfw-ha', page: 1 },
+            { num: '5.8', name: 'Inspección SSL/TLS', slug: 'inspeccion-ssl-tls', page: 2 },
+            { num: '5.9', name: 'Core L3 redundante', slug: 'core-l3-redundante', page: 2 },
+            { num: '5.10', name: 'Estrategia Multi-Sitio 3DC', slug: 'estrategia-multisitio-3dc', page: 2 }
         ]
     };
 
     function buildSubItems(area) {
-        return subs[area].map(s =>
-            `<a class="sub-item" href="${basePath}${area}/index.html?cat=${s.slug}">
+        return subs[area].map(s => {
+            const href = area === 'referencias'
+                ? `${basePath}referencias/index.html${s.page > 1 ? `?page=${s.page}` : ''}#${s.slug}`
+                : area === 'tools'
+                    ? `${basePath}tools/${s.slug}/index.html`
+                    : `${basePath}${area}/index.html?cat=${s.slug}`;
+            return `<a class="sub-item" href="${href}">
                 <span class="sub-num">${s.num}</span>
                 <span class="sub-name">${s.name}</span>
-            </a>`
-        ).join('');
+            </a>`;
+        }).join('');
     }
 
     function areaItem(key, label, svgPath, devFlag) {
@@ -103,33 +126,34 @@ document.addEventListener("DOMContentLoaded", function() {
                 z-index: 100;
             }
             .nav-container {
-                max-width: 1120px;
+                max-width: 1360px;
                 margin: 0 auto;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                gap: 1rem;
-                padding: 0.85rem 2rem;
+                gap: 0.75rem;
+                padding: 0.78rem 1.25rem;
             }
             .logo-link {
                 font-family: var(--font-display);
-                font-size: 1.05rem;
+                font-size: 0.98rem;
                 font-weight: 700;
                 color: var(--ink);
                 text-decoration: none;
                 display: flex;
                 align-items: center;
-                gap: 0.5rem;
+                gap: 0.42rem;
                 white-space: nowrap;
                 letter-spacing: -0.01em;
             }
             .logo-link svg {
-                width: 24px; height: 24px;
+                width: 22px; height: 22px;
+                min-width: 22px; flex: 0 0 22px;
                 stroke: var(--accent); stroke-width: 2.2; fill: none;
                 stroke-linecap: round; stroke-linejoin: round;
             }
             .nav-list {
-                display: flex; gap: 1.3rem;
+                display: flex; gap: 0.78rem;
                 list-style: none; padding: 0; margin: 0;
                 align-items: center;
             }
@@ -139,22 +163,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 text-decoration: none;
                 color: var(--text-muted);
                 font-weight: 400;
-                font-size: 0.72rem;
-                letter-spacing: 0.03em;
+                font-size: 0.66rem;
+                letter-spacing: 0.02em;
                 text-transform: uppercase;
                 transition: color 0.2s;
                 cursor: pointer;
-                display: flex; align-items: center; gap: 6px;
+                display: flex; align-items: center; gap: 5px;
                 padding: 6px 0;
             }
             .nav-link svg:not(.chevron) {
-                width: 15px; height: 15px;
+                width: 13px; height: 13px;
                 stroke: currentColor; fill: none; stroke-width: 2;
                 stroke-linecap: round; stroke-linejoin: round;
                 flex-shrink: 0;
             }
             .chevron {
-                width: 11px !important; height: 11px !important;
+                width: 9px !important; height: 9px !important;
                 stroke: currentColor; fill: none; stroke-width: 2.5;
                 stroke-linecap: round; stroke-linejoin: round;
                 transition: transform 0.2s;
@@ -168,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 color: #ffffff;
                 background: var(--accent);
                 border: 1px solid var(--accent);
-                padding: 6px 13px;
+                padding: 6px 10px;
                 border-radius: 6px;
                 font-weight: 500;
             }
@@ -272,7 +296,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             /* ---- RESPONSIVE ---- */
-            @media (max-width: 960px) {
+            @media (max-width: 1120px) {
                 .hamburger { display: block; }
                 .logo-link { flex: 1; }
                 .nav-list {
@@ -356,10 +380,15 @@ document.addEventListener("DOMContentLoaded", function() {
                     <li><a href="${basePath}index.html" class="nav-link${A('inicio')}">
                         <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                         Inicio</a></li>
+                    <li><a href="${basePath}mi-enfoque/index.html" class="nav-link${A('mi-enfoque')}">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="3" x2="12" y2="6"/><line x1="21" y1="12" x2="18" y2="12"/><line x1="12" y1="21" x2="12" y2="18"/><line x1="3" y1="12" x2="6" y2="12"/></svg>
+                        Mi enfoque</a></li>
                     ${areaItem('arquitectura', 'Arquitectura', '<rect x="2" y="3" width="20" height="14" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/>', false)}
                     ${areaItem('seguridad', 'Seguridad', '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>', true)}
                     ${areaItem('operaciones', 'Operaciones', '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>', true)}
                     ${areaItem('gobernanza', 'Gobernanza', '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>', true)}
+                                        ${areaItem('referencias', 'Referencias', '<path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/>', false)}
+                    ${areaItem('tools', 'Tools', '<path d="M14.7 6.3a4 4 0 0 0-5 5L3 18l3 3 6.7-6.7a4 4 0 0 0 5-5l-2.2 2.2-3-3 2.2-2.2z"/>', false)}
                     <li><a href="${basePath}sobre-mi/sobre-mi.html" class="nav-link${A('sobre-mi')}">
                         <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                         Sobre mí</a></li>
@@ -387,7 +416,7 @@ document.addEventListener("DOMContentLoaded", function() {
     /* --- Móvil: acordeón para submenús --- */
     document.querySelectorAll('.has-sub > .nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
-            if (window.innerWidth <= 960) {
+            if (window.innerWidth <= 1120) {
                 e.preventDefault();
                 e.stopPropagation();
                 const panel = this.nextElementSibling;

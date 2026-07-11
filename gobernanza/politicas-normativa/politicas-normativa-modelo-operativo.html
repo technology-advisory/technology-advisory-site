@@ -1,50 +1,498 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Modelo operativo: quién es dueño de cada política, y cuándo caduca | Políticas y Normativa Interna | Technology Advisory</title><meta name="description" content="Sin propietario y sin fecha de revisión, una política se convierte en un artefacto histórico que nadie se atreve a modificar ni a derogar formalmente."><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
-<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // gobernanza</span><span>categoría: <strong>Políticas y Normativa Interna</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Políticas y Normativa Interna</div><h1 class="article-title">Modelo operativo: quién es dueño de cada política, y cuándo caduca</h1><p class="article-lead">Sin propietario y sin fecha de revisión, una política se convierte en un artefacto histórico que nadie se atreve a modificar ni a derogar formalmente.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Políticas y Normativa Interna"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
-<rect width="900" height="410" rx="14" fill="#fafaf8"/>
-<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Ciclo de vida de una política interna</text>
-<text x="40" y="66" font-size="12" fill="#77776f">de la redacción a la revisión periódica obligatoria</text>
-<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Propietario asignado</text>
-<text x="58" y="163" font-size="11" fill="#77776f">Responsable de mantenerla vigente</text>
-<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Aprobación formal</text>
-<text x="488" y="163" font-size="11" fill="#77776f">Con nivel de autoridad adecuado</text>
-<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Difusión y verificación</text>
-<text x="58" y="283" font-size="11" fill="#77776f">No solo publicación</text>
-<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Fecha de revisión obligatoria</text>
-<text x="488" y="283" font-size="11" fill="#77776f">Anual, no indefinida</text>
-<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
-<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
-<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Sin fecha de revisión, una política se vuelve obsoleta en silencio, sin que nadie lo note</text>
-</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
-<rect width="330" height="438" rx="12" fill="#fafaf8"/>
-<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Ciclo de vida de una política interna</text>
-<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="89" r="13" fill="#059669"/>
-<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
-<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Propietario asignado</text>
-<text x="64" y="102" font-size="11" fill="#77776f">Responsable de mantenerla</text>
-<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="159" r="13" fill="#059669"/>
-<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
-<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Aprobación formal</text>
-<text x="64" y="172" font-size="11" fill="#77776f">Con nivel de autoridad</text>
-<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="229" r="13" fill="#059669"/>
-<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
-<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Difusión y verificación</text>
-<text x="64" y="242" font-size="11" fill="#77776f">No solo publicación</text>
-<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="299" r="13" fill="#059669"/>
-<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
-<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Fecha de revisión</text>
-<text x="64" y="312" font-size="11" fill="#77776f">Anual, no indefinida</text>
-<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
-<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
-<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Sin fecha de revisión, una política se</text>
-<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">vuelve obsoleta en silencio, sin que nadie</text>
-<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">lo note</text>
-</svg></div></figure><div class="toc-mini"><a href="#contexto">1. La política sin dueño</a><a href="#arquitectura">2. Propietario responsable de mantenerla vigente</a><a href="#seguridad">3. Aprobación con el nivel de autoridad correcto</a><a href="#operacion">4. Excepciones documentadas, no incumplimiento silencioso</a><a href="#roadmap">5. Catálogo completo de políticas con estado visible</a></div><h2 id="contexto">1. La política sin dueño que nadie se atreve a modificar ni a derogar</h2><div class="body-text"><p><strong>Una política sin propietario claro tiende a acumular obsolescencia silenciosa —hace referencia a sistemas que ya no existen, procesos que cambiaron— sin que nadie tenga la autoridad o la responsabilidad explícita de actualizarla.</strong></p></div><h2 id="arquitectura">2. Propietario responsable de mantener cada política vigente y relevante</h2><div class="body-text"><p>Cada política debería tener un propietario nombrado —normalmente el responsable del área a la que aplica— con la responsabilidad explícita de revisarla periódicamente y proponer actualizaciones cuando el contexto cambie.</p></div><h2 id="seguridad">3. Aprobación con el nivel de autoridad correspondiente a su alcance e impacto</h2><div class="body-text"><p>Una política que afecta a toda la organización necesita aprobación de dirección; una política de alcance departamental puede aprobarse a un nivel inferior. Definir claramente qué nivel de autoridad aprueba cada tipo de política evita tanto burocracia excesiva como aprobaciones sin suficiente respaldo.</p></div><h2 id="operacion">4. Excepciones documentadas formalmente, no incumplimiento silencioso tolerado</h2><div class="body-text"><p>Cuando una situación concreta no puede cumplir una política tal como está escrita, el camino correcto es una excepción formal documentada y aprobada —no el incumplimiento silencioso que nadie cuestiona hasta que aparece en una auditoría.</p></div><h2 id="roadmap">5. Catálogo completo de políticas con estado de vigencia visible para toda la organización</h2><div class="body-text"><p>Un catálogo central que muestre todas las políticas activas, su propietario, y su fecha de última revisión da visibilidad tanto a quien debe cumplirlas como a quien audita el sistema completo — sin ese catálogo, las políticas viven dispersas sin ningún control centralizado de su vigencia real.</p></div><a class="back" href="../index.html?cat=politicas-normativa">← Volver a Políticas y Normativa Interna</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. La política sin dueño</a><a href="#arquitectura">2. Propietario responsable de mantenerla vigente</a><a href="#seguridad">3. Aprobación con el nivel de autoridad correcto</a><a href="#operacion">4. Excepciones documentadas, no incumplimiento silencioso</a><a href="#roadmap">5. Catálogo completo de políticas con estado visible</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport"/>
+<title>Modelo operativo: quién es dueño de cada política, y cuándo caduca | Políticas y Normativa Interna | Technology Advisory</title>
+<meta content="Sin propietario y sin fecha de revisión, una política se convierte en un artefacto histórico que nadie se atreve a modificar ni a derogar formalmente." name="description"/>
+<meta content="Miguel Ángel Carriazo" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="#059669" name="theme-color"/>
+<link href="../../css/global.css" rel="stylesheet"/>
+<link href="../../css/dossier-core.css" rel="stylesheet"/>
+<link href="../../css/articulo.css" rel="stylesheet"/>
+<link href="../../css/index.css" rel="stylesheet"/>
+<link href="../../css/articulo-diagramas.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght=500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        @media (max-width: 1024px) {
+            .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
+            div[style*="padding: 16px 48px 0"], div[style*="padding: 16px 48px 0;"] { padding: 16px 4% 0 !important; }
+            div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding: 40px 4% 24px !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="card-wrapper ds-page">
+<div class="card">
+<div id="menu-container"></div>
+<div class="accent-bar" style="background:#059669;"></div>
+<div class="ds-meta">
+<span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: gobernanza</span>
+<span>categoría: <strong>Políticas y Normativa Interna</strong></span>
+</div>
+<div style="padding: 16px 4% 0;">
+<a class="defensa-btn-back" href="../index.html?cat=politicas-normativa" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Políticas y Normativa Interna</a>
+</div>
+<div style="padding: 40px 4% 24px; border-bottom: 1px solid #ededea;">
+<div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Operaciones · Políticas y Normativa Interna</div>
+<h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Modelo operativo: <span style="color:#059669;">quién es dueño de cada política, y cuándo caduca</span></h1>
+<p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Sin propietario y sin fecha de revisión, una política se convierte en un artefacto histórico que nadie se atreve a modificar ni a derogar formalmente.</p>
+<div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="6" r="2.6"></circle><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"></path></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><rect height="12.5" rx="1.3" width="13" x="2.5" y="3"></rect><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"></path></svg>Políticas y Normativa Interna</span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="9" r="6.8"></circle><path d="M9 5.3V9l2.8 1.7"></path></svg>Lectura Avanzada (16-20 min)</span>
+</div>
+</div>
+<div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+<div class="defensa-main" style="min-width:0;">
+<!-- GRÁFICO 1: CICLO DE VIDA DE UNA POLÍTICA INTERNA -->
+<figure aria-label="Ciclo de vida de una política interna" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 430" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#f8fafc" height="430" rx="16" width="900"></rect>
+<defs>
+<lineargradient id="g-op-main" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#059669"></stop><stop offset="1%" stop-color="#111827"></stop>
+</lineargradient>
+</defs>
+<text fill="#0f172a" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" x="40" y="45">Ciclo de vida de una política interna</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="13" x="40" y="68">de la redacción a la revisión periódica obligatoria</text>
+<g transform="translate(0, 15)">
+<!-- Phase 1 -->
+<rect fill="#ffffff" height="100" rx="12" stroke="#e2e8f0" width="390" x="40" y="80"></rect>
+<circle cx="80" cy="130" fill="#eff6ff" r="16"></circle>
+<text fill="#3b82f6" font-family="'IBM Plex Mono', monospace" font-size="14" font-weight="700" text-anchor="middle" x="80" y="135">1</text>
+<text fill="#0f172a" font-family="'Inter', sans-serif" font-size="14" font-weight="700" x="115" y="115">Propietario asignado</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="12" x="115" y="136">Responsable de mantener</text>
+<text fill="#94a3b8" font-family="'Inter', sans-serif" font-size="11" x="115" y="154">la política vigente y real</text>
+<!-- Phase 2 -->
+<rect fill="#ffffff" height="100" rx="12" stroke="#e2e8f0" width="390" x="470" y="80"></rect>
+<circle cx="510" cy="130" fill="#fef3c7" r="16"></circle>
+<text fill="#d97706" font-family="'IBM Plex Mono', monospace" font-size="14" font-weight="700" text-anchor="middle" x="510" y="135">2</text>
+<text fill="#0f172a" font-family="'Inter', sans-serif" font-size="14" font-weight="700" x="545" y="115">Aprobación formal</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="12" x="545" y="136">Con nivel de autoridad</text>
+<text fill="#94a3b8" font-family="'Inter', sans-serif" font-size="11" x="545" y="154">adecuado al alcance operativo</text>
+<!-- Phase 3 -->
+<rect fill="#ffffff" height="100" rx="12" stroke="#e2e8f0" width="390" x="40" y="200"></rect>
+<circle cx="80" cy="250" fill="#e6f4ea" r="16"></circle>
+<text fill="#059669" font-family="'IBM Plex Mono', monospace" font-size="14" font-weight="700" text-anchor="middle" x="80" y="255">3</text>
+<text fill="#0f172a" font-family="'Inter', sans-serif" font-size="14" font-weight="700" x="115" y="235">Difusión y verificación</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="12" x="115" y="256">No solo publicación estática</text>
+<text fill="#94a3b8" font-family="'Inter', sans-serif" font-size="11" x="115" y="274">Comunicación e interacción activa</text>
+<!-- Phase 4 -->
+<rect fill="#ffffff" height="100" rx="12" stroke="#e2e8f0" width="390" x="470" y="200"></rect>
+<circle cx="510" cy="250" fill="#fde8e8" r="16"></circle>
+<text fill="#dc2626" font-family="'IBM Plex Mono', monospace" font-size="14" font-weight="700" text-anchor="middle" x="510" y="255">4</text>
+<text fill="#0f172a" font-family="'Inter', sans-serif" font-size="14" font-weight="700" x="545" y="235">Fecha de revisión</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="12" x="545" y="256">Anual, no indefinida temporalmente</text>
+<text fill="#94a3b8" font-family="'Inter', sans-serif" font-size="11" x="545" y="274">Caducidad programada explícita</text>
+</g>
+<rect fill="url(#g-op-main)" height="50" rx="10" width="820" x="40" y="355"></rect>
+<text fill="#ffffff" font-family="'Inter', sans-serif" font-size="13" font-weight="600" x="65" y="376">Sin fecha de revisión, una política se vuelve obsoleta en silencio, sin que nadie lo note</text>
+<text fill="#a7f3d0" font-family="'Inter', sans-serif" font-size="11" x="65" y="393">Una política sin dueño es una política que nadie mantiene viva</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 340 430" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#f8fafc" height="430" rx="12" width="340"></rect>
+<text fill="#0f172a" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" x="20" y="30">Fases Operativas Críticas</text>
+<g transform="translate(20, 45)">
+<rect fill="#ffffff" height="55" rx="8" stroke="#e2e8f0" width="300" x="0" y="0"></rect>
+<text fill="#3b82f6" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="24">1. Dueño nominal directo</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="10" x="15" y="42">Asignación de responsabilidades de control</text>
+<rect fill="#ffffff" height="55" rx="8" stroke="#e2e8f0" width="300" x="0" y="65"></rect>
+<text fill="#d97706" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="89">2. Firma y aprobación formal</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="10" x="15" y="107">Comités directivos integrados</text>
+<rect fill="#ffffff" height="55" rx="8" stroke="#e2e8f0" width="300" x="0" y="130"></rect>
+<text fill="#059669" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="154">3. Despliegue activo</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="10" x="15" y="172">Formación interactiva periódica</text>
+<rect fill="#ffffff" height="55" rx="8" stroke="#e2e8f0" width="300" x="0" y="195"></rect>
+<text fill="#dc2626" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="219">4. Caducidad y Control Anual</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="10" x="15" y="237">Revisión profunda obligatoria</text>
+</g>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 1: Ciclo de vida de una política interna — propietario, aprobación, difusión, revisión.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- MÓDULO 1 -->
+<div class="block" id="s1">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — El problema de fondo</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La política sin dueño que nadie se atreve a modificar ni a derogar</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>Una política sin propietario claro tiende a acumular obsolescencia silenciosa —hace referencia a sistemas que ya no existen, procesos que cambiaron— sin que nadie tenga la autoridad o la responsabilidad explícita de actualizarla.</strong></p>
+<p>El problema de las políticas sin dueño es que nadie se siente responsable de mantenerlas actualizadas. El CISO (Chief Information Security Officer) puede ser el "propietario nominal" de todas las políticas de seguridad, pero si tiene que gestionar docenas de políticas, ninguna recibe la atención que necesita.</p>
+<p>La solución es asignar un propietario específico por política o grupo de políticas relacionadas. El propietario no tiene que ser el redactor original, pero debe ser la persona que entiende el dominio de la política y puede evaluar si sigue siendo relevante.</p>
+<div class="defensa-box-warning"><strong>⚠️ Una política sin dueño es una política que se vuelve obsoleta en silencio.</strong> Nadie la actualiza porque nadie se siente responsable. Y nadie la deroga porque nadie tiene autoridad para hacerlo. El resultado es un documento que ya no refleja la realidad.</div>
+<p>La asignación de propietarios debe ser documentada y visible. Un catálogo de políticas que muestre el propietario de cada una es la herramienta que permite a la organización saber quién es responsable de mantener cada política vigente.</p>
+<p>El propietario de una política debe tener la autoridad para proponer cambios y la responsabilidad de revisarla periódicamente. Sin autoridad, el propietario es un rol decorativo. Sin responsabilidad, la política no se revisa.</p>
+</div>
+</div>
+<!-- GRÁFICO 2: ROLES Y RESPONSABILIDADES -->
+<figure aria-label="Roles y responsabilidades en la gestión de políticas" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="300" rx="14" width="900"></rect>
+<text fill="#151915" font-family="'Inter', sans-serif" font-size="17" font-weight="800" x="40" y="36">Roles y responsabilidades en la gestión de políticas</text>
+<text fill="#77776f" font-family="'Inter', sans-serif" font-size="12" x="40" y="58">quién redacta, quién aprueba, quién revisa</text>
+<rect fill="#059669" height="30" rx="4" width="160" x="40" y="80"></rect>
+<text fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="120" y="100">Rol</text>
+<rect fill="#059669" height="30" rx="4" width="660" x="200" y="80"></rect>
+<text fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="530" y="100">Responsabilidad</text>
+<rect fill="#f0fdf4" height="30" rx="4" stroke="#059669" stroke-width="1" width="160" x="40" y="110"></rect>
+<text fill="#059669" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="120" y="130">Propietario</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="660" x="200" y="110"></rect>
+<text fill="#151915" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" x="530" y="130">Redacta, mantiene vigente, propone revisiones</text>
+<rect fill="#f0fdf4" height="30" rx="4" stroke="#059669" stroke-width="1" width="160" x="40" y="140"></rect>
+<text fill="#059669" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="120" y="160">Aprobador</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="660" x="200" y="140"></rect>
+<text fill="#151915" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" x="530" y="160">Nivel de autoridad según alcance e impacto</text>
+<rect fill="#f0fdf4" height="30" rx="4" stroke="#059669" stroke-width="1" width="160" x="40" y="170"></rect>
+<text fill="#059669" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="120" y="190">Difusor</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="660" x="200" y="170"></rect>
+<text fill="#151915" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" x="530" y="190">Comunica activamente y verifica comprensión</text>
+<rect fill="#f0fdf4" height="30" rx="4" stroke="#059669" stroke-width="1" width="160" x="40" y="200"></rect>
+<text fill="#059669" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="120" y="220">Revisor</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="660" x="200" y="200"></rect>
+<text fill="#151915" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" x="530" y="220">Verifica coherencia técnica y actualización</text>
+<rect fill="#f8fafc" height="30" rx="8" stroke="#ededea" stroke-width="1" width="820" x="40" y="250"></rect>
+<text fill="#94a3b8" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle" x="450" y="270">El propietario y el revisor pueden ser la misma persona, pero no debería ser el aprobador</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 350" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="350" rx="12" width="330"></rect>
+<text fill="#151915" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="800" x="18" y="28">Roles en políticas</text>
+<g transform="translate(18, 45)">
+<rect fill="#f0fdf4" height="45" rx="6" stroke="#059669" stroke-width="1" width="294" x="0" y="0"></rect>
+<text fill="#059669" font-family="'Inter', sans-serif" font-size="11" font-weight="600" x="15" y="26">Propietario: Mantiene y actualiza</text>
+<rect fill="#ffffff" height="45" rx="6" stroke="#ededea" stroke-width="1" width="294" x="0" y="55"></rect>
+<text fill="#151915" font-family="'Inter', sans-serif" font-size="11" font-weight="600" x="15" y="81">Aprobador: Valida formalmente</text>
+<rect fill="#f0fdf4" height="45" rx="6" stroke="#059669" stroke-width="1" width="294" x="0" y="110"></rect>
+<text fill="#059669" font-family="'Inter', sans-serif" font-size="11" font-weight="600" x="15" y="136">Difusor: Campañas y concienciación</text>
+<rect fill="#ffffff" height="45" rx="6" stroke="#ededea" stroke-width="1" width="294" x="0" y="165"></rect>
+<text fill="#151915" font-family="'Inter', sans-serif" font-size="11" font-weight="600" x="15" y="191">Revisor: Auditoría técnica continua</text>
+</g>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 2: Roles y responsabilidades en la gestión de políticas.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- MÓDULO 2 -->
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+<div class="block" id="s2">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Propietario</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Propietario responsable de mantener cada política vigente y relevante</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>Cada política debería tener un propietario nombrado —normalmente el responsable del área a la que aplica— con la responsabilidad explícita de revisarla periódicamente y proponer actualizaciones cuando el contexto cambie.</strong></p>
+<p>El propietario de una política no es necesariamente su autor. Es la persona que entiende el dominio de la política, que puede evaluar si sigue siendo relevante, y que tiene la autoridad para proponer cambios. En organizaciones grandes, el propietario puede delegar la redacción, pero no la responsabilidad de mantener la política vigente.</p>
+<div class="defensa-box-tech"><strong>Práctica recomendada:</strong> nombra un propietario por política y documenta su nombramiento. El propietario debe ser responsable de revisar la política al menos anualmente y de proponer actualizaciones cuando sea necesario.</div>
+<p>El propietario de una política debe tener acceso al catálogo de políticas para actualizar el estado de su política después de cada revisión. La visibilidad del estado de las políticas es tan importante como la existencia del propietario.</p>
+<p>El propietario también es el responsable de asegurar que la política se difunde y se comunica adecuadamente. No basta con que la política exista — debe ser conocida por quienes deben seguirla.</p>
+</div>
+</div>
+<!-- GRÁFICO 3: NIVELES DE APROBACIÓN -->
+<figure aria-label="Niveles de aprobación por tipo de política" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="280" rx="14" width="900"></rect>
+<text fill="#151915" font-family="'Inter', sans-serif" font-size="17" font-weight="800" x="40" y="36">Niveles de aprobación por tipo de política</text>
+<text fill="#77776f" font-family="'Inter', sans-serif" font-size="12" x="40" y="58">proporcional al alcance e impacto de la política</text>
+<defs>
+<marker id="arrow-op-pol2" markerheight="6" markerwidth="6" orient="auto" refx="5" refy="5" viewbox="0 0 10 10">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"></path>
+</marker>
+</defs>
+<rect fill="#d1fae5" height="120" rx="10" stroke="#059669" stroke-width="1.5" width="250" x="40" y="80"></rect>
+<text fill="#059669" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="800" text-anchor="middle" x="165" y="108">✅ Política departamental</text>
+<text fill="#77776f" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" x="165" y="130">Jefe de departamento</text>
+<text fill="#77776f" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" x="165" y="148">Alcance: un equipo</text>
+<text fill="#77776f" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" x="165" y="166">Riesgo: bajo</text>
+<text fill="#77776f" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" x="165" y="184">Ej: política de acceso a sala</text>
+<line marker-end="url(#arrow-op-pol2)" stroke="#94a3b8" stroke-width="2" x1="290" x2="320" y1="140" y2="140"></line>
+<rect fill="#fef3c7" height="120" rx="10" stroke="#d97706" stroke-width="1.5" width="250" x="330" y="80"></rect>
+<text fill="#d97706" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="800" text-anchor="middle" x="455" y="108">⚠️ Política de área</text>
+<text fill="#77776f" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" x="455" y="130">Director de área</text>
+<text fill="#77776f" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" x="455" y="148">Alcance: varias áreas</text>
+<text fill="#77776f" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" x="455" y="166">Riesgo: medio</text>
+<text fill="#77776f" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" x="455" y="184">Ej: acceso a sistemas</text>
+<line marker-end="url(#arrow-op-pol2)" stroke="#94a3b8" stroke-width="2" x1="580" x2="610" y1="140" y2="140"></line>
+<rect fill="#fee2e2" height="120" rx="10" stroke="#dc2626" stroke-width="1.5" width="240" x="620" y="80"></rect>
+<text fill="#dc2626" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="800" text-anchor="middle" x="740" y="108">🔴 Política corporativa</text>
+<text fill="#77776f" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" x="740" y="130">Dirección / Comité</text>
+<text fill="#77776f" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" x="740" y="148">Alcance: corporativo</text>
+<text fill="#77776f" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" x="740" y="166">Riesgo: crítico</text>
+<text fill="#77776f" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" x="740" y="184">Ej: seguridad global</text>
+<rect fill="#f8fafc" height="30" rx="8" stroke="#ededea" stroke-width="1" width="820" x="40" y="235"></rect>
+<text fill="#151915" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="450" y="255">El nivel de aprobación debe ser proporcional al riesgo y alcance, no uniforme</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 380" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="380" rx="12" width="330"></rect>
+<text fill="#151915" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="800" x="18" y="28">Niveles de aprobación</text>
+<g transform="translate(18, 45)">
+<rect fill="#d1fae5" height="65" rx="6" stroke="#059669" stroke-width="1" width="294" x="0" y="0"></rect>
+<text fill="#047857" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="25">Departamental (Bajo Impacto)</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="10" x="15" y="45">Aprobado por jefes de sección</text>
+<rect fill="#fef3c7" height="65" rx="6" stroke="#d97706" stroke-width="1" width="294" x="0" y="75"></rect>
+<text fill="#b45309" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="100">De Área (Impacto Medio)</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="10" x="15" y="120">Aprobado por el Director Funcional</text>
+<rect fill="#fee2e2" height="65" rx="6" stroke="#dc2626" stroke-width="1" width="294" x="0" y="150"></rect>
+<text fill="#991b1b" font-family="'Inter', sans-serif" font-size="11" font-weight="700" x="15" y="175">Corporativa (Alto Impacto)</text>
+<text fill="#475569" font-family="'Inter', sans-serif" font-size="10" x="15" y="195">Comité de Dirección / CEO</text>
+</g>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 3: Niveles de aprobación proporcionales al tipo de política.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- MÓDULO 3 -->
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+<div class="block" id="s3">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Aprobación</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Aprobación con el nivel de autoridad correspondiente a su alcance e impacto</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>Una política que afecta a toda la organización necesita aprobación de dirección; una política de alcance departamental puede aprobarse a un nivel inferior. Definir claramente qué nivel de autoridad aprueba cada tipo de política evita tanto burocracia excesiva como aprobaciones sin suficiente respaldo.</strong></p>
+<p>La aprobación no es solo un trámite administrativo. Es la evidencia de que la política ha sido revisada y respaldada por el nivel de autoridad adecuado. Una política aprobada por un nivel inadecuado puede ser cuestionada por un auditor o no tener el peso necesario para ser cumplida.</p>
+<div class="defensa-box-success"><strong>✔ La aprobación debe ser proporcional al riesgo.</strong> Políticas de alto riesgo requieren aprobación de dirección. Políticas de bajo riesgo pueden aprobarse a nivel departamental. La proporcionalidad evita burocracia innecesaria y asegura el respaldo adecuado.</div>
+<p>La aprobación debe ser documentada con evidencia: acta de comité, firma, correo electrónico de aprobación. Sin esta evidencia, la aprobación es solo una declaración informal sin valor ante un auditor.</p>
+<p>La aprobación también debe incluir la fecha de entrada en vigor y la fecha de próxima revisión. La política no es válida indefinidamente — tiene una fecha de caducidad que fuerza su revisión.</p>
+</div>
+</div>
+<!-- GRÁFICO 4: CATÁLOGO DE POLÍTICAS -->
+<figure aria-label="Catálogo de políticas con estado visible" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#f8fafc" height="320" rx="14" width="900"></rect>
+<defs>
+<lineargradient id="grad-operativo" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#0284c7"></stop>
+<stop offset="100%" stop-color="#0f172a"></stop>
+</lineargradient>
+</defs>
+<text fill="#0f172a" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" x="40" y="45">Catálogo Operativo Centralizado</text>
+<text fill="#64748b" font-family="'Inter', sans-serif" font-size="13" x="40" y="68">Matriz de Gobierno de Políticas e Indicadores de Control Anual</text>
+<rect fill="url(#grad-operativo)" height="32" rx="4" width="160" x="40" y="95"></rect>
+<text fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="120" y="115">Dominio Normativo</text>
+<rect fill="url(#grad-operativo)" height="32" rx="4" width="140" x="205" y="95"></rect>
+<text fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="275" y="115">Propietario Nominal</text>
+<rect fill="url(#grad-operativo)" height="32" rx="4" width="120" x="350" y="95"></rect>
+<text fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="410" y="115">Última Revisión</text>
+<rect fill="url(#grad-operativo)" height="32" rx="4" width="120" x="475" y="95"></rect>
+<text fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="535" y="115">Ciclo de Caducidad</text>
+<rect fill="url(#grad-operativo)" height="32" rx="4" width="260" x="600" y="95"></rect>
+<text fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="730" y="115">Estado del Arte Técnico</text>
+<g transform="translate(0, 132)">
+<rect fill="#ffffff" height="30" rx="4" stroke="#e2e8f0" width="160" x="40" y="0"></rect>
+<text fill="#0284c7" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="120" y="19">Security Global</text>
+<rect fill="#ffffff" height="30" rx="4" stroke="#e2e8f0" width="140" x="205" y="0"></rect>
+<text fill="#334155" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" x="275" y="19">CISO Corporativo</text>
+<rect fill="#ffffff" height="30" rx="4" stroke="#e2e8f0" width="120" x="350" y="0"></rect>
+<text fill="#475569" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" x="410" y="19">Marzo 2026</text>
+<rect fill="#ffffff" height="30" rx="4" stroke="#e2e8f0" width="120" x="475" y="0"></rect>
+<text fill="#475569" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" x="535" y="19">Anual (Fijo)</text>
+<rect fill="#d1fae5" height="30" rx="4" stroke="#34d399" width="260" x="600" y="0"></rect>
+<text fill="#065f46" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="730" y="19">✓ Vigente y Alineado</text>
+</g>
+<g transform="translate(0, 167)">
+<rect fill="#ffffff" height="30" rx="4" stroke="#e2e8f0" width="160" x="40" y="0"></rect>
+<text fill="#0284c7" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="120" y="19">Identidades / AD</text>
+<rect fill="#ffffff" height="30" rx="4" stroke="#e2e8f0" width="140" x="205" y="0"></rect>
+<text fill="#334155" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" x="275" y="19">Resp. Infraestructura</text>
+<rect fill="#ffffff" height="30" rx="4" stroke="#e2e8f0" width="120" x="350" y="0"></rect>
+<text fill="#475569" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" x="410" y="19">Enero 2024</text>
+<rect fill="#ffffff" height="30" rx="4" stroke="#e2e8f0" width="120" x="475" y="0"></rect>
+<text fill="#475569" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" x="535" y="19">Anual (Mandatorio)</text>
+<rect fill="#fee2e2" height="30" rx="4" stroke="#f87171" width="260" x="600" y="0"></rect>
+<text fill="#991b1b" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="730" y="19">⚠️ Desactualizado (Hallazgo)</text>
+</g>
+<g transform="translate(0, 202)">
+<rect fill="#ffffff" height="30" rx="4" stroke="#e2e8f0" width="160" x="40" y="0"></rect>
+<text fill="#0284c7" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="120" y="19">Cifrado de Datos</text>
+<rect fill="#ffffff" height="30" rx="4" stroke="#e2e8f0" width="140" x="205" y="0"></rect>
+<text fill="#334155" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" x="275" y="19">Arquit. Seguridad</text>
+<rect fill="#ffffff" height="30" rx="4" stroke="#e2e8f0" width="120" x="350" y="0"></rect>
+<text fill="#475569" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" x="410" y="19">Octubre 2025</text>
+<rect fill="#ffffff" height="30" rx="4" stroke="#e2e8f0" width="120" x="475" y="0"></rect>
+<text fill="#475569" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" x="535" y="19">Anual (Fijo)</text>
+<rect fill="#d1fae5" height="30" rx="4" stroke="#34d399" width="260" x="600" y="0"></rect>
+<text fill="#065f46" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="730" y="19">✓ Coherencia Técnica</text>
+</g>
+<rect fill="#f1f5f9" height="35" rx="6" stroke="#cbd5e1" width="820" x="40" y="255"></rect>
+<text fill="#475569" font-family="system-ui, sans-serif" font-size="11" x="60" y="277">El catálogo centralizado mitiga la proliferación de políticas huérfanas sin revisión periódica legal.</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 220" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="220" rx="12" width="330"></rect>
+<text fill="#151915" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="800" x="18" y="28">Catálogo operativo resumido</text>
+<g transform="translate(18, 45)">
+<rect fill="#ffffff" height="35" rx="4" stroke="#e2e8f0" width="294" x="0" y="0"></rect>
+<text fill="#111827" font-family="'Inter', sans-serif" font-size="10" x="10" y="22">Gobernanza Global · CISO · Vigente</text>
+<rect fill="#ffffff" height="35" rx="4" stroke="#e2e8f0" width="294" x="0" y="45"></rect>
+<text fill="#b91c1c" font-family="'Inter', sans-serif" font-size="10" x="10" y="67">Identidades · IT Ops · Revisión Expirada ⚠️</text>
+<rect fill="#ffffff" height="35" rx="4" stroke="#e2e8f0" width="294" x="0" y="90"></rect>
+<text fill="#111827" font-family="'Inter', sans-serif" font-size="10" x="10" y="112">Cifrado Estructuras · Seguridad · Vigente</text>
+</g>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 4: Catálogo de políticas con estado visible para toda la organización.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- MÓDULO 4 -->
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+<div class="block" id="s4">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Excepciones</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Excepciones documentadas formalmente, no incumplimiento silencioso tolerado</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>Cuando una situación concreta no puede cumplir una política tal como está escrita, el camino correcto es una excepción formal documentada y aprobada —no el incumplimiento silencioso que nadie cuestiona hasta que aparece en una auditoría.</strong></p>
+<p>Las excepciones son inevitables. Hay sistemas legacy que no pueden cumplir ciertos requisitos, o casos de negocio donde el coste de cumplir supera el beneficio. Lo que distingue a una organización madura es que estas excepciones se gestionan formalmente, no se ignoran.</p>
+<div class="defensa-box-warning"><strong>⚠️ Una excepción no documentada es un incumplimiento, no una excepción.</strong> La diferencia entre una excepción gestionada y un incumplimiento silencioso es la documentación y la aprobación formal. Sin ellas, el auditor no ve una excepción, ve un incumplimiento.</div>
+<p>El registro de excepciones debe ser centralizado y accesible para auditoría. Debe incluir: la política a la que se aplica la excepción, la justificación, el nivel de aprobación, y la fecha de revisión. Cada excepción debe ser revisada periódicamente para evaluar si sigue siendo necesaria.</p>
+<p>Las excepciones deben tener fecha de caducidad. Una excepción indefinida es un incumplimiento permanente. La fecha de caducidad fuerza la reevaluación periódica y evita que las excepciones se conviertan en la norma.</p>
+</div>
+</div>
+<!-- MÓDULO 5 -->
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+<div class="block" id="s5">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Catálogo central</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Catálogo completo de políticas con estado de vigencia visible para toda la organización</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>Un catálogo central que muestre todas las políticas activas, su propietario, y su fecha de última revisión da visibilidad tanto a quien debe cumplirlas como a quien audita el sistema completo — sin ese catálogo, las políticas viven dispersas sin ningún control centralizado de su vigencia real.</strong></p>
+<p>El catálogo de políticas es la herramienta de gestión que permite a la organización saber qué políticas tiene, quién es responsable de cada una, y cuándo deben ser revisadas. Es la base de cualquier programa de gobierno de políticas.</p>
+<div class="defensa-box-tech"><strong>Práctica recomendada:</strong> mantén un catálogo central de políticas en un repositorio accesible a toda la organización. El catálogo debe incluir: nombre de la política, propietario, fecha de aprobación, fecha de última revisión, fecha de próxima revisión, y estado (vigente, en revisión, obsoleta).</div>
+<p>El catálogo debe ser actualizado después de cada revisión de política. La actualización del catálogo es la evidencia de que la revisión se ha realizado. Sin actualización del catálogo, la revisión no es verificable.</p>
+<p>El catálogo también es una herramienta de comunicación. Permite a los empleados saber qué políticas existen y dónde encontrarlas. Y permite a los auditores ver el estado de todas las políticas en un solo vistazo.</p>
+</div>
+</div>
+<!-- MÓDULO 6 -->
+
+                    <div class="defensa-box-info ta-reference-box" style="margin:34px 0;">
+                        <strong>🔎 De la política al control verificable.</strong> En operación, deben materializarse en responsables, eventos de activación, herramientas, aprobaciones, excepciones y trazabilidad. Las políticas internas deben traducir obligaciones concretas: responsabilidad y medidas de gestión en los artículos 20 y 21 de NIS2; responsabilidad proactiva, protección desde el diseño y seguridad en los artículos 24, 25 y 32 del RGPD (Reglamento General de Protección de Datos); y gobierno, marco de riesgo y protección TIC (Tecnologías de la Información y la Comunicación) en los artículos 5, 6 y 9 de DORA (Digital Operational Resilience Act). La referencia normativa explica el porqué; el procedimiento, la configuración y el registro de ejecución demuestran el cómo. ServiceNow IRM (Integrated Risk Management), Archer y MetricStream pueden gestionar versiones, aprobaciones, excepciones y campañas de cumplimiento. La evidencia efectiva debe enlazarse desde IAM (Identity and Access Management), SIEM (Security Information and Event Management), CMDB (Configuration Management Database), ticketing y repositorios documentales, evitando que la propia plataforma GRC (Governance, Risk and Compliance) sea la única fuente que afirma que el control se cumple.
+                    </div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 06</span></div>
+<div class="block" id="s6">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 06 — Checklist de gobierno de políticas</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Checklist de gobierno de políticas: ¿tu organización gestiona sus políticas como un activo?</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>Este checklist permite evaluar si la organización gestiona sus políticas como un activo estratégico o si las trata como documentos burocráticos. Responde honestamente a cada pregunta.</p>
+<div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:20px; margin:16px 0;">
+<table style="width:100%; border-collapse:collapse; font-size:14px;">
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669; width:30px;">1.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Propietario asignado</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Cada política tiene un propietario nombrado?</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669;">2.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Nivel de aprobación</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Es proporcional al riesgo y alcance?</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669;">3.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Fecha de revisión</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Todas las políticas tienen fecha de próxima revisión?</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669;">4.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Excepciones documentadas</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Se gestionan formalmente con aprobación y fecha?</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669;">5.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Catálogo central</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Existe un repositorio central con estado visible?</td>
+</tr>
+<tr>
+<td style="padding:10px 0; font-weight:700; color:#059669;">6.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Difusión y formación</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Se difunden activamente y se forma sobre ellas?</td>
+</tr>
+</table>
+</div>
+<p><strong>Resultado:</strong> Si no puedes responder "sí" a todas las preguntas, hay brechas en el gobierno de políticas que deben cubrirse. El gobierno de políticas es la base de un programa de cumplimiento efectivo.</p>
+<p><strong>Cierre:</strong> El gobierno de políticas no es un lujo — es la base de cualquier programa de cumplimiento efectivo. Los cinco elementos descritos aquí —propietario, aprobación proporcional, revisión periódica, excepciones gestionadas, y catálogo central— son el diseño mínimo defendible para cualquier organización que quiera gestionar sus políticas como un activo, no como un pasivo.</p>
+</div>
+</div>
+<!-- PIE DE AUTOR -->
+
+<div class="defensa-foot">
+<div class="defensa-author">
+<div class="defensa-foot-label">Autor</div>
+<div class="defensa-author-name">Miguel Ángel Carriazo</div>
+<p class="defensa-author-bio">Arquitecto de Infraestructura y Ciberseguridad con más de 25 años de experiencia diseñando, asegurando y operando entornos tecnológicos críticos. Lead Auditor en ISO/IEC 27001 e ISO/IEC 42001, especializado en gobierno, riesgo, cumplimiento y transformación tecnológica. En esta área aborda las políticas y la normativa interna como instrumentos operativos que deben implantarse, mantenerse y poder demostrarse.</p>
+</div>
+</div></div>
+<!-- SIDEBAR -->
+<aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+<div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+<div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+<table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Área</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Políticas y Normativa Interna</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Enfoque</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Modelo Operativo</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Temas clave</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Propietario, Aprobación, Catálogo</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Nivel</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Avanzado</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#cbd5e1; font-weight:700; text-align:left;">Lectura</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">16-20 min</td></tr>
+</table>
+</div>
+<div>
+<div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+<nav class="defensa-toc-nav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+<a href="#s1" style="text-decoration:none; color:#059669; font-size:14px; font-weight:700; border-left:2px solid #059669; margin-left:-16px; padding-left:14px;">01. La política sin dueño</a>
+<a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Propietario</a>
+<a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Aprobación</a>
+<a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Excepciones</a>
+<a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Catálogo central</a>
+<a href="#s6" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">06. Checklist de gobierno</a>
+</nav>
+</div>
+</aside>
+</div>
+<!-- ARTÍCULOS RELACIONADOS -->
+<div class="related-section" style="margin-top: 60px; border-top: 1px solid #ededea; padding-top: 40px;">
+<div class="related-label" style="font-family:'Space Grotesk', sans-serif; font-size:16px; font-weight:700; color:#0f172a; margin-bottom:20px;">Sigue Leyendo — Artículos Relacionados</div>
+<div class="related-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:24px;">
+<a class="related-card" href="politicas-normativa-controles-evidencias.html" style="text-decoration:none; display:block; padding:20px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px;">
+<div class="r-meta" style="font-size:11px; color:#64748b; text-transform:uppercase; margin-bottom:8px;">Controles y Evidencias</div>
+<div class="r-title" style="font-size:15px; font-weight:700; color:#111827; margin-bottom:8px;">La política que dice una cosa y el sistema hace otra</div>
+<span class="r-link" style="font-size:13px; color:#059669; font-weight:600;">Leer artículo →</span>
+</a>
+<a class="related-card" href="politicas-normativa-diseno-principios.html" style="text-decoration:none; display:block; padding:20px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px;">
+<div class="r-meta" style="font-size:11px; color:#64748b; text-transform:uppercase; margin-bottom:8px;">Principios de Diseño</div>
+<div class="r-title" style="font-size:15px; font-weight:700; color:#111827; margin-bottom:8px;">La política de seguridad que nadie ha leído nunca</div>
+<span class="r-link" style="font-size:13px; color:#059669; font-weight:600;">Leer artículo →</span>
+</a>
+</div>
+</div>
+<div id="footer-container" style="margin-top: 60px;"></div>
+</div>
+</div>
+<script src="../../js/menu.js"></script>
+<script src="../../js/footer.js"></script>
+<script>
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
+            } else {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function() {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

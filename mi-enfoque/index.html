@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0" />
+    <title>Mi enfoque: diseño, operación, evidencia y madurez | Technology Advisory</title>
+    <meta name="description" content="El modelo de análisis técnico de Technology Advisory: diseño, operación, evidencia y madurez como cuatro ejes para entender cualquier capacidad tecnológica." />
+    <meta name="author" content="Miguel Ángel Carriazo" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#059669" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/dossier-core.css" />
+    <link rel="stylesheet" href="../css/articulo.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/articulo-diagramas.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        .defensa-main table, .defensa-main th, .defensa-main td { text-align:left !important; }
+        .defensa-main th, .defensa-main td { vertical-align:top !important; }
+        .article-diagram svg { max-width:100%; height:auto; }
+        .enfoque-kicker { display:inline-flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+        .enfoque-pill { display:inline-block; padding:8px 12px; border-radius:999px; background:#ecfdf5; color:#065f46; font-size:12px; font-weight:700; border:1px solid #a7f3d0; }
+        .enfoque-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin:24px 0 12px; }
+        .enfoque-card { border:1px solid #e2e8f0; border-radius:14px; background:#fff; padding:18px; }
+        .enfoque-card h3 { margin:0 0 10px; font-size:18px; color:#151915; }
+        .enfoque-card p { margin:0; color:#475569; line-height:1.7; font-size:15px; }
+        .enfoque-card .n { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:50%; background:#059669; color:#fff; font-weight:800; font-size:13px; margin-bottom:12px; }
+        .enfoque-quote { margin:18px 0; padding:16px 18px; border-left:4px solid #059669; background:#f8fafc; color:#0f172a; font-weight:700; }
+        .matrix { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+        .matrix .col { border:1px solid #e2e8f0; border-radius:14px; padding:18px; background:#fff; }
+        .matrix .col h4 { margin:0 0 12px; font-size:16px; }
+        .matrix ul { margin:0; padding-left:18px; color:#475569; line-height:1.7; }
+        .matrix .ok h4 { color:#059669; }
+        .matrix .no h4 { color:#b91c1c; }
+        @media (max-width: 1024px) {
+            .defensa-layout { display:block !important; padding:0 4% 40px !important; }
+            .defensa-toc { position:static !important; margin-top:32px; }
+            .enfoque-grid, .matrix { grid-template-columns:1fr; }
+            div[style*="padding: 16px 48px 0"], div[style*="padding: 16px 48px 0;"] { padding:16px 4% 0 !important; }
+            div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding:40px 4% 24px !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-wrapper ds-page">
+        <div class="card">
+            <div id="menu-container"></div>
+            <div class="accent-bar" style="background:#059669;"></div>
+
+            <div class="ds-meta">
+                <span><span class="dot" style="background:#059669;"></span>Technology Advisory // visión del proyecto</span>
+                <span>sección: <strong>Mi enfoque</strong></span>
+            </div>
+
+            <div style="padding:16px 4% 0;">
+                <a href="../index.html" class="defensa-btn-back" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; border:none;">← Volver al inicio</a>
+            </div>
+
+            <div style="padding:40px 4% 24px; border-bottom:1px solid #ededea;">
+                <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;"><span style="color:#059669;">Enfoque</span><span style="color:#151915;"> · Technology Advisory</span></div>
+                <h1 style="font-size:clamp(32px,5vw,46px); font-weight:900; color:#151915; margin:0 0 12px; line-height:1.08; letter-spacing:-0.02em;">Mi enfoque: <span style="color:#059669;">diseño, operación, evidencia y madurez</span></h1>
+                <p style="font-size:18px; color:#4a4a44; line-height:1.65; margin:0; max-width:980px; padding-bottom:16px;">Technology Advisory no está organizado como una colección de artículos sueltos. Cada capacidad tecnológica se analiza desde un modelo técnico en cuatro ejes: <strong>diseño</strong>, <strong>operación</strong>, <strong>evidencia</strong> y <strong>madurez</strong>. Ese es el hilo que conecta Gobernanza, Seguridad, Arquitectura y Operaciones.</p>
+                <div class="enfoque-kicker">
+                    <span class="enfoque-pill">Diseño → Operación → Evidencia → Madurez</span>
+                    <span class="enfoque-pill">Arquitectura, seguridad y gobierno real</span>
+                    <span class="enfoque-pill">Criterio técnico y evidencia verificable</span>
+                </div>
+                <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:18px 0 0 0;">
+                    <span style="font-size:13px; color:#5b6670;"><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+                    <span style="font-size:13px; color:#5b6670;">Página marco del proyecto</span>
+                    <span style="font-size:13px; color:#5b6670;">Lectura recomendada (8–10 min)</span>
+                </div>
+            </div>
+
+            <div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+                <div class="defensa-main" style="min-width:0;">
+
+                    <figure class="article-diagram" aria-label="Modelo de análisis en cuatro ejes" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="430" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Modelo de análisis técnico en cuatro ejes</text>
+                                <text x="40" y="66" font-size="12" fill="#64748b">La misma capacidad tecnológica se observa desde su arquitectura, su operación, su prueba y su evolución</text>
+                                <defs>
+                                    <marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/></marker>
+                                </defs>
+                                <circle cx="450" cy="220" r="82" fill="#151915"/>
+                                <text x="450" y="210" text-anchor="middle" font-size="16" font-weight="800" fill="#ffffff">Technology</text>
+                                <text x="450" y="232" text-anchor="middle" font-size="16" font-weight="800" fill="#ffffff">Advisory</text>
+
+                                <rect x="110" y="150" width="190" height="96" rx="14" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+                                <text x="205" y="182" text-anchor="middle" font-size="15" font-weight="800" fill="#151915">01. Diseño</text>
+                                <text x="205" y="206" text-anchor="middle" font-size="11" fill="#475569">Arquitectura, límites,</text>
+                                <text x="205" y="223" text-anchor="middle" font-size="11" fill="#475569">dependencias y criterios</text>
+
+                                <rect x="350" y="56" width="200" height="96" rx="14" fill="#ffffff" stroke="#0ea5e9" stroke-width="2"/>
+                                <text x="450" y="88" text-anchor="middle" font-size="15" font-weight="800" fill="#151915">02. Operación</text>
+                                <text x="450" y="112" text-anchor="middle" font-size="11" fill="#475569">Roles, eventos, escalado,</text>
+                                <text x="450" y="129" text-anchor="middle" font-size="11" fill="#475569">herramientas y ejecución</text>
+
+                                <rect x="600" y="150" width="190" height="96" rx="14" fill="#ffffff" stroke="#f59e0b" stroke-width="2"/>
+                                <text x="695" y="182" text-anchor="middle" font-size="15" font-weight="800" fill="#151915">03. Evidencia</text>
+                                <text x="695" y="206" text-anchor="middle" font-size="11" fill="#475569">Control diseñado, ejecutado,</text>
+                                <text x="695" y="223" text-anchor="middle" font-size="11" fill="#475569">probado y defendible</text>
+
+                                <rect x="350" y="290" width="200" height="96" rx="14" fill="#ffffff" stroke="#8b5cf6" stroke-width="2"/>
+                                <text x="450" y="322" text-anchor="middle" font-size="15" font-weight="800" fill="#151915">04. Madurez</text>
+                                <text x="450" y="346" text-anchor="middle" font-size="11" fill="#475569">Capacidad observable,</text>
+                                <text x="450" y="363" text-anchor="middle" font-size="11" fill="#475569">priorización y roadmap</text>
+
+                                <path d="M 300 198 C 330 160, 340 140, 370 126" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+                                <path d="M 550 126 C 580 140, 595 160, 600 198" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+                                <path d="M 690 246 C 650 280, 600 300, 550 320" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+                                <path d="M 350 320 C 300 300, 250 280, 210 246" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+
+                                <rect x="40" y="398" width="820" height="1" fill="#e2e8f0"/>
+                                <text x="40" y="418" font-size="12" fill="#64748b">No explicamos solo qué es una tecnología. Explicamos cómo se diseña, cómo se opera, cómo se demuestra y cómo evoluciona.</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 430" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="430" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="30" font-size="14" font-weight="800" fill="#151915">Modelo en cuatro ejes</text>
+                                <rect x="18" y="55" width="294" height="52" rx="10" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+                                <text x="165" y="78" text-anchor="middle" font-size="12" font-weight="800" fill="#151915">01. Diseño</text>
+                                <text x="165" y="95" text-anchor="middle" font-size="10" fill="#64748b">Arquitectura y criterios</text>
+                                <rect x="18" y="121" width="294" height="52" rx="10" fill="#ffffff" stroke="#0ea5e9" stroke-width="1.5"/>
+                                <text x="165" y="144" text-anchor="middle" font-size="12" font-weight="800" fill="#151915">02. Operación</text>
+                                <text x="165" y="161" text-anchor="middle" font-size="10" fill="#64748b">Roles y ejecución</text>
+                                <rect x="18" y="187" width="294" height="52" rx="10" fill="#ffffff" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="165" y="210" text-anchor="middle" font-size="12" font-weight="800" fill="#151915">03. Evidencia</text>
+                                <text x="165" y="227" text-anchor="middle" font-size="10" fill="#64748b">Demostración y prueba</text>
+                                <rect x="18" y="253" width="294" height="52" rx="10" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5"/>
+                                <text x="165" y="276" text-anchor="middle" font-size="12" font-weight="800" fill="#151915">04. Madurez</text>
+                                <text x="165" y="293" text-anchor="middle" font-size="10" fill="#64748b">Capacidad y roadmap</text>
+                                <rect x="18" y="330" width="294" height="62" rx="10" fill="#151915"/>
+                                <text x="165" y="356" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff">Technology Advisory</text>
+                                <text x="165" y="376" text-anchor="middle" font-size="10" fill="#cbd5e1">Cada tema se analiza desde los cuatro ejes</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 1: esquema base del proyecto y lógica común para todas las áreas.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <div class="block" id="s1">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — Qué es este proyecto</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">No es un blog de temas sueltos. Es un sistema para analizar capacidades tecnológicas</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>Technology Advisory está construido para que una misma capacidad se pueda entender de extremo a extremo.</strong> No me interesa explicar una tecnología como una ficha de producto ni como un resumen académico. Me interesa bajar a lo que ocurre cuando una arquitectura entra en producción, cuando un control falla, cuando una dependencia no estaba bien definida o cuando una auditoría pide pruebas y la organización descubre que solo tenía narrativa.</p>
+                            <p>Por eso cada capacidad se trabaja siempre desde una estructura constante. No para repetir una plantilla, sino para responder a las cuatro preguntas que de verdad separan un discurso bonito de una capacidad defendible: <strong>cómo se diseña</strong>, <strong>cómo se opera</strong>, <strong>cómo se demuestra</strong> y <strong>cómo evoluciona</strong>. Esa lógica se aplica igual a un firewall, a un modelo de gobierno del dato, a un proceso de gestión de cambios o a una arquitectura de alta disponibilidad.</p>
+                            <div class="enfoque-quote">No explico solo qué es una tecnología. Analizo cómo se diseña, cómo se opera, cómo se demuestra que funciona y qué hace falta para llevarla al siguiente nivel.</div>
+                            <div class="enfoque-grid">
+                                <div class="enfoque-card"><div class="n">1</div><h3>Cuatro áreas, un mismo método</h3><p>Gobernanza, Seguridad, Arquitectura y Operaciones no son compartimentos estancos. Cambia el dominio, pero no la exigencia técnica.</p></div>
+                                <div class="enfoque-card"><div class="n">2</div><h3>Lectura útil, no decorativa</h3><p>Cada texto está pensado para quien diseña, opera, audita o tiene que tomar decisiones con impacto real sobre el riesgo y la continuidad.</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+
+                    <div class="block" id="s2">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Principios de diseño</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Diseño: aquí se decide qué puede funcionar y qué acabará fallando</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>El primer eje responde a una pregunta simple: <strong>¿cómo debería estar pensado esto?</strong> Aquí se habla de arquitectura, límites, dependencias, dominios de fallo, separación de funciones, modelo de autoridad, criterios de diseño y condiciones que invalidan una solución antes incluso de que llegue a producir.</p>
+                            <p>Muchos problemas operativos no empiezan el día del incidente. Empiezan cuando una mala decisión de diseño se normaliza y termina pareciendo razonable. Un clúster no es altamente disponible porque tenga varios nodos. Una red no está segmentada porque existan VLAN. Un programa de gobierno no existe porque haya una política. Diseñar bien significa establecer las condiciones para que algo pueda sostenerse después.</p>
+                            <p>En esta capa busco desmontar la comodidad del diagrama optimista. Me interesa la arquitectura real: qué dependencias no se han reconocido, qué supuestos no están probados, qué piezas son decorativas y qué criterio técnico permite distinguir una buena decisión de una moda con nombre elegante.</p>
+                        </div>
+                    </div>
+
+                    <figure class="article-diagram" aria-label="Qué aporta cada eje" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="340" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Qué aporta cada eje</text>
+                                <text x="40" y="66" font-size="12" fill="#64748b">No son cuatro etiquetas. Son cuatro tipos distintos de análisis.</text>
+                                <rect x="45" y="110" width="190" height="160" rx="14" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+                                <text x="140" y="140" text-anchor="middle" font-size="16" font-weight="800" fill="#151915">Diseño</text>
+                                <text x="140" y="170" text-anchor="middle" font-size="11" fill="#475569">Arquitectura</text>
+                                <text x="140" y="188" text-anchor="middle" font-size="11" fill="#475569">Dependencias</text>
+                                <text x="140" y="206" text-anchor="middle" font-size="11" fill="#475569">Límites</text>
+                                <text x="140" y="224" text-anchor="middle" font-size="11" fill="#475569">Patrones válidos</text>
+                                <rect x="255" y="110" width="190" height="160" rx="14" fill="#ffffff" stroke="#0ea5e9" stroke-width="2"/>
+                                <text x="350" y="140" text-anchor="middle" font-size="16" font-weight="800" fill="#151915">Operación</text>
+                                <text x="350" y="170" text-anchor="middle" font-size="11" fill="#475569">Eventos</text>
+                                <text x="350" y="188" text-anchor="middle" font-size="11" fill="#475569">Roles</text>
+                                <text x="350" y="206" text-anchor="middle" font-size="11" fill="#475569">Herramientas</text>
+                                <text x="350" y="224" text-anchor="middle" font-size="11" fill="#475569">Excepciones</text>
+                                <rect x="465" y="110" width="190" height="160" rx="14" fill="#ffffff" stroke="#f59e0b" stroke-width="2"/>
+                                <text x="560" y="140" text-anchor="middle" font-size="16" font-weight="800" fill="#151915">Evidencia</text>
+                                <text x="560" y="170" text-anchor="middle" font-size="11" fill="#475569">Fuente</text>
+                                <text x="560" y="188" text-anchor="middle" font-size="11" fill="#475569">Ejecución</text>
+                                <text x="560" y="206" text-anchor="middle" font-size="11" fill="#475569">Prueba</text>
+                                <text x="560" y="224" text-anchor="middle" font-size="11" fill="#475569">Efectividad</text>
+                                <rect x="675" y="110" width="180" height="160" rx="14" fill="#ffffff" stroke="#8b5cf6" stroke-width="2"/>
+                                <text x="765" y="140" text-anchor="middle" font-size="16" font-weight="800" fill="#151915">Madurez</text>
+                                <text x="765" y="170" text-anchor="middle" font-size="11" fill="#475569">Capacidades</text>
+                                <text x="765" y="188" text-anchor="middle" font-size="11" fill="#475569">Prioridades</text>
+                                <text x="765" y="206" text-anchor="middle" font-size="11" fill="#475569">Dependencias</text>
+                                <text x="765" y="224" text-anchor="middle" font-size="11" fill="#475569">Roadmap</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 380" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="380" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="30" font-size="14" font-weight="800" fill="#151915">Qué aporta cada eje</text>
+                                <rect x="18" y="55" width="294" height="58" rx="10" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+                                <text x="30" y="80" font-size="12" font-weight="800" fill="#151915">Diseño</text><text x="30" y="98" font-size="10" fill="#64748b">Arquitectura, límites y criterios</text>
+                                <rect x="18" y="123" width="294" height="58" rx="10" fill="#ffffff" stroke="#0ea5e9" stroke-width="1.5"/>
+                                <text x="30" y="148" font-size="12" font-weight="800" fill="#151915">Operación</text><text x="30" y="166" font-size="10" fill="#64748b">Roles, eventos y herramientas</text>
+                                <rect x="18" y="191" width="294" height="58" rx="10" fill="#ffffff" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="30" y="216" font-size="12" font-weight="800" fill="#151915">Evidencia</text><text x="30" y="234" font-size="10" fill="#64748b">Prueba y efectividad</text>
+                                <rect x="18" y="259" width="294" height="58" rx="10" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5"/>
+                                <text x="30" y="284" font-size="12" font-weight="800" fill="#151915">Madurez</text><text x="30" y="302" font-size="10" fill="#64748b">Capacidad y roadmap</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 2: los cuatro ejes responden a preguntas distintas y complementarias.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+
+                    <div class="block" id="s3">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Modelo operativo</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Operación: la arquitectura termina cuando alguien tiene que usarla</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>El segundo eje responde a la pregunta que más rápidamente separa la teoría de la realidad: <strong>¿cómo funciona esto cuando entra en producción?</strong> Aquí el análisis deja de ser estático y entra en el terreno de los roles, los eventos, las herramientas, las ventanas de tiempo, las excepciones, el escalado y la trazabilidad.</p>
+                            <p>Un buen diseño puede quedar invalidado por un mal modelo operativo. También ocurre lo contrario: organizaciones que compensan diseños discretos con una disciplina operativa excelente. Por eso en este eje me interesa quién aprueba, quién ejecuta, quién responde, qué automatización existe, dónde queda el registro y qué ocurre cuando el proceso sale del camino ideal.</p>
+                            <p>Este eje es especialmente importante porque la mayoría de los fallos no nacen de la ausencia total de control, sino de la distancia entre lo que el procedimiento dice y lo que el equipo puede ejecutar de verdad en un martes normal o a las tres de la mañana cuando hay una incidencia.</p>
+                        </div>
+                    </div>
+
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+
+                    <div class="block" id="s4">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Controles y evidencias</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Evidencia: la pregunta recurrente es siempre la misma</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>Enséñamelo.</strong> Ese es el tercer eje y, probablemente, la pregunta más útil de todo el proyecto. No basta con afirmar que el backup funciona, que el firewall está bien configurado, que la política se cumple o que el SIEM detecta. La cuestión es qué evidencia existe para demostrar que el control fue diseñado, implantado, ejecutado, conservado y que, además, fue efectivo.</p>
+                            <p>En esta capa separo deliberadamente lo que muchas organizaciones mezclan: una política no es una ejecución, una configuración no es una prueba, una captura no es una evidencia suficiente y una herramienta comprada no es un control por sí misma. La configuración demuestra intención. La evidencia demuestra funcionamiento.</p>
+                            <div class="matrix">
+                                <div class="col ok">
+                                    <h4>Lo que sí busco</h4>
+                                    <ul>
+                                        <li>Registros, tickets, actas y trazas.</li>
+                                        <li>Pruebas de restauración, failover o respuesta.</li>
+                                        <li>Criterios de aceptación observables.</li>
+                                        <li>Relación entre control, activo, riesgo e incidente.</li>
+                                    </ul>
+                                </div>
+                                <div class="col no">
+                                    <h4>Lo que no doy por válido</h4>
+                                    <ul>
+                                        <li>Políticas sin prueba de ejecución.</li>
+                                        <li>Capturas aisladas sin contexto.</li>
+                                        <li>Declaraciones como “se revisa periódicamente”.</li>
+                                        <li>Madurez asumida por tener una herramienta.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+
+                    <div class="block" id="s5">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Madurez y roadmap</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Madurez: no una etiqueta bonita, sino una capacidad observable</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>El cuarto eje responde a la pregunta final: <strong>¿dónde estás hoy y qué necesitas para avanzar?</strong> Aquí la madurez no se plantea como una etiqueta decorativa ni como una carrera por acumular herramientas. Se plantea como una capacidad observable: qué puede ejecutar la organización, qué puede medir, qué puede automatizar, qué puede recuperar y qué puede defender ante una auditoría o un incidente.</p>
+                            <p>Por eso el roadmap no empieza comprando. Empieza identificando capacidades, dependencias, cuellos de botella y criterios de salida. Comprar una plataforma puede ser necesario, pero no aumenta la madurez por sí mismo. La madurez aparece cuando una capacidad se sostiene en producción, se opera con regularidad, deja evidencia y resiste la realidad.</p>
+                            <p>Este eje también sirve para evitar dos errores comunes: creer que todo se arregla con un proyecto y creer que todo debe resolverse de golpe. El roadmap ordena, prioriza y da secuencia. Es el puente entre la situación actual y una capacidad más robusta, no un listado genérico de deseos.</p>
+                        </div>
+                    </div>
+
+                    <figure class="article-diagram" aria-label="Cómo usar la web" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 310" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="310" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Cómo leer Technology Advisory</text>
+                                <text x="40" y="66" font-size="12" fill="#64748b">Un mismo tema puede leerse por capítulos o como consulta directa en cualquier eje</text>
+                                <rect x="45" y="110" width="180" height="110" rx="14" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+                                <text x="135" y="145" text-anchor="middle" font-size="15" font-weight="800" fill="#151915">Entrada 1</text>
+                                <text x="135" y="170" text-anchor="middle" font-size="11" fill="#475569">Llegas por Diseño</text>
+                                <text x="135" y="188" text-anchor="middle" font-size="11" fill="#475569">y navegas el resto</text>
+                                <rect x="255" y="110" width="180" height="110" rx="14" fill="#ffffff" stroke="#0ea5e9" stroke-width="2"/>
+                                <text x="345" y="145" text-anchor="middle" font-size="15" font-weight="800" fill="#151915">Entrada 2</text>
+                                <text x="345" y="170" text-anchor="middle" font-size="11" fill="#475569">Llegas directo por</text>
+                                <text x="345" y="188" text-anchor="middle" font-size="11" fill="#475569">Modelo operativo</text>
+                                <rect x="465" y="110" width="180" height="110" rx="14" fill="#ffffff" stroke="#f59e0b" stroke-width="2"/>
+                                <text x="555" y="145" text-anchor="middle" font-size="15" font-weight="800" fill="#151915">Entrada 3</text>
+                                <text x="555" y="170" text-anchor="middle" font-size="11" fill="#475569">Vienes por Controles</text>
+                                <text x="555" y="188" text-anchor="middle" font-size="11" fill="#475569">y necesitas prueba</text>
+                                <rect x="675" y="110" width="180" height="110" rx="14" fill="#ffffff" stroke="#8b5cf6" stroke-width="2"/>
+                                <text x="765" y="145" text-anchor="middle" font-size="15" font-weight="800" fill="#151915">Entrada 4</text>
+                                <text x="765" y="170" text-anchor="middle" font-size="11" fill="#475569">Buscas Madurez</text>
+                                <text x="765" y="188" text-anchor="middle" font-size="11" fill="#475569">y hoja de ruta</text>
+                                <text x="450" y="268" text-anchor="middle" font-size="12" fill="#64748b">Los artículos pueden leerse de forma secuencial o aislada, pero siempre forman parte de un mismo sistema.</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 360" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="360" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="30" font-size="14" font-weight="800" fill="#151915">Cómo leer la web</text>
+                                <rect x="18" y="55" width="294" height="50" rx="10" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+                                <text x="30" y="84" font-size="12" font-weight="800" fill="#151915">Diseño → navegas al resto</text>
+                                <rect x="18" y="117" width="294" height="50" rx="10" fill="#ffffff" stroke="#0ea5e9" stroke-width="1.5"/>
+                                <text x="30" y="146" font-size="12" font-weight="800" fill="#151915">Operación → consulta directa</text>
+                                <rect x="18" y="179" width="294" height="50" rx="10" fill="#ffffff" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="30" y="208" font-size="12" font-weight="800" fill="#151915">Evidencia → prueba y defensa</text>
+                                <rect x="18" y="241" width="294" height="50" rx="10" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5"/>
+                                <text x="30" y="270" font-size="12" font-weight="800" fill="#151915">Madurez → priorización</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 3: formas de entrada y lectura de la estructura en cuatro ejes.</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 06</span></div>
+
+                    <div class="block" id="s6">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 06 — Cómo usarlo</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Qué encontrará aquí quien llegue a esta web</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>Quien llegue a Technology Advisory encontrará una forma de analizar tecnología que intenta evitar dos extremos: la superficialidad del contenido promocional y la abstracción del documento que nunca toca producción. Aquí cada tema se descompone en preguntas útiles para quien diseña, opera, revisa o tiene que justificar decisiones.</p>
+                            <p>Si entras por <strong>Gobernanza</strong>, verás cómo se traducen marcos, responsabilidades y decisiones a controles, evidencia y operación real. Si entras por <strong>Seguridad</strong>, el foco estará en superficie de ataque, implementación, detección, respuesta y efectividad. En <strong>Arquitectura</strong>, en cambio, el peso cae sobre dependencias, dominios de fallo, topología y límites de diseño. Y en <strong>Operaciones</strong>, sobre el comportamiento del sistema cuando tiene que sostenerse día a día.</p>
+                            <p><strong>En todos los casos, el criterio es el mismo:</strong> menos literatura corporativa y más arquitectura, más operación, más evidencia y más capacidad real. Ese es mi enfoque. Y esa es también la lógica sobre la que está construido todo el proyecto.</p>
+                            <div class="defensa-box-success"><strong>Idea central:</strong> Technology Advisory analiza cada capacidad tecnológica desde su diseño, su operación, su capacidad de control y su evolución. Ese es el patrón común de toda la web.</div>
+                        </div>
+                    </div>
+
+                    <div class="defensa-foot" style="margin-top:42px; padding:24px; border-top:3px solid #059669; background:#fafaf8; border-radius:0 0 12px 12px;">
+                        <div class="defensa-foot-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; font-weight:700; letter-spacing:.12em;">Autor</div>
+                        <div class="defensa-author-name" style="font-size:20px; font-weight:800; color:#151915; margin-top:8px;">Miguel Ángel Carriazo</div>
+                        <p class="defensa-author-bio" style="font-size:14px; line-height:1.7; color:#475569; margin-bottom:0;">Arquitecto de Infraestructura y Ciberseguridad con más de 25 años de experiencia diseñando, asegurando y operando entornos tecnológicos críticos. Lead Auditor en ISO/IEC 27001 e ISO/IEC 42001. Esta página resume el modelo de análisis que estructura todo Technology Advisory: diseño, operación, evidencia y madurez.</p>
+                    </div>
+                </div>
+
+                <aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:32px; min-width:0;">
+                    <div>
+                        <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:.1em; margin-bottom:14px; font-weight:700;">Ficha técnica</div>
+                        <table style="width:100%; border-collapse:collapse; font-size:13px;">
+                            <tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:700; text-align:left;">Área</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; text-align:left;">Global</td></tr>
+                            <tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:700; text-align:left;">Tipo</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; text-align:left;">Página marco</td></tr>
+                            <tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:700; text-align:left;">Modelo</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; text-align:left;">4 ejes</td></tr>
+                            <tr><td style="padding:10px; border-bottom:1px solid #e2e8f0; font-weight:700; text-align:left;">Dominios</td><td style="padding:10px; border-bottom:1px solid #e2e8f0; text-align:left;">Gobernanza, Seguridad, Arquitectura y Operaciones</td></tr>
+                            <tr><td style="padding:10px; font-weight:700; text-align:left;">Propósito</td><td style="padding:10px; text-align:left;">Explicar el sistema editorial del proyecto</td></tr>
+                        </table>
+                    </div>
+                    <div>
+                        <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+                        <nav class="defensa-toc-nav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+                            <a href="#s1" style="text-decoration:none; color:#059669; font-size:14px; font-weight:700; border-left:2px solid #059669; margin-left:-16px; padding-left:14px;">01. Qué es este proyecto</a>
+                            <a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Principios de diseño</a>
+                            <a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Modelo operativo</a>
+                            <a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Controles y evidencias</a>
+                            <a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Madurez y roadmap</a>
+                            <a href="#s6" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">06. Cómo usarlo</a>
+                        </nav>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="related-section" style="padding:32px 4% 44px; border-top:1px solid #ededea;">
+                <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; font-weight:700; letter-spacing:.12em; margin-bottom:14px;">Áreas del proyecto</div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;">
+                    <a href="../gobernanza/index.html" style="display:block; padding:16px; border:1px solid #e2e8f0; border-radius:12px; text-decoration:none; color:#0f172a; background:#fff;"><strong>Gobernanza</strong><span style="display:block; margin-top:8px; color:#64748b; font-size:13px;">Riesgo, gobierno TI, IA, terceros, políticas y marcos.</span></a>
+                    <a href="../seguridad/index.html" style="display:block; padding:16px; border:1px solid #e2e8f0; border-radius:12px; text-decoration:none; color:#0f172a; background:#fff;"><strong>Seguridad</strong><span style="display:block; margin-top:8px; color:#64748b; font-size:13px;">Identidad, detección, vulnerabilidades, Zero Trust y respuesta.</span></a>
+                    <a href="../arquitectura/index.html" style="display:block; padding:16px; border:1px solid #e2e8f0; border-radius:12px; text-decoration:none; color:#0f172a; background:#fff;"><strong>Arquitectura</strong><span style="display:block; margin-top:8px; color:#64748b; font-size:13px;">Alta disponibilidad, red, cloud híbrido, CPD e infraestructura como código.</span></a>
+                    <a href="../operaciones/index.html" style="display:block; padding:16px; border:1px solid #e2e8f0; border-radius:12px; text-decoration:none; color:#0f172a; background:#fff;"><strong>Operaciones</strong><span style="display:block; margin-top:8px; color:#64748b; font-size:13px;">Cambios, incidencias, continuidad, observabilidad y automatización.</span></a>
+                </div>
+            </div>
+
+            <div id="footer-container"></div>
+        </div>
+    </div>
+
+    <script src="../js/menu.js"></script>
+    <script src="../js/footer.js"></script>
+    <script>
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
+            } else {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function () {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,50 +1,357 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Controles y evidencias: el mapa de datos que nadie ha actualizado desde el proyecto que lo creó | Gobierno del Dato | Technology Advisory</title><meta name="description" content="Un mapa de flujo de datos desactualizado da una falsa sensación de control. La evidencia real de gobierno del dato se mantiene viva, no se archiva tras el "><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
-<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // gobernanza</span><span>categoría: <strong>Gobierno del Dato</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Gobierno del Dato</div><h1 class="article-title">Controles y evidencias: el mapa de datos que nadie ha actualizado desde el proyecto que lo creó</h1><p class="article-lead">Un mapa de flujo de datos desactualizado da una falsa sensación de control. La evidencia real de gobierno del dato se mantiene viva, no se archiva tras el proyecto que la generó.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Gobierno del Dato"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
-<rect width="900" height="410" rx="14" fill="#fafaf8"/>
-<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Evidencias de gobierno del dato vivo</text>
-<text x="40" y="66" font-size="12" fill="#77776f">del mapa de flujo de datos a la clasificación verificada</text>
-<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Mapa de flujo de datos actualizado</text>
-<text x="58" y="163" font-size="11" fill="#77776f">No el de un proyecto de hace años</text>
-<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Clasificación verificada</text>
-<text x="488" y="163" font-size="11" fill="#77776f">¿Coincide con la sensibilidad real?</text>
-<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Registro de comparticiones</text>
-<text x="58" y="283" font-size="11" fill="#77776f">Exportable, con propietario</text>
-<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Métrica de calidad del dato</text>
-<text x="488" y="283" font-size="11" fill="#77776f">Medida, no asumida</text>
-<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
-<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
-<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">Un mapa de datos de hace tres años probablemente ya no refleja los flujos reales actuales</text>
-</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
-<rect width="330" height="438" rx="12" fill="#fafaf8"/>
-<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Evidencias de gobierno del dato vivo</text>
-<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="89" r="13" fill="#059669"/>
-<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
-<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Mapa de flujo de datos</text>
-<text x="64" y="102" font-size="11" fill="#77776f">No el de un proyecto de hace</text>
-<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="159" r="13" fill="#059669"/>
-<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
-<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Clasificación verificada</text>
-<text x="64" y="172" font-size="11" fill="#77776f">¿Coincide con la sensibilidad</text>
-<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="229" r="13" fill="#059669"/>
-<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
-<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Registro de comparticiones</text>
-<text x="64" y="242" font-size="11" fill="#77776f">Exportable, con propietario</text>
-<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="299" r="13" fill="#059669"/>
-<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
-<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Métrica de calidad del</text>
-<text x="64" y="312" font-size="11" fill="#77776f">Medida, no asumida</text>
-<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
-<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
-<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">Un mapa de datos de hace tres años</text>
-<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">probablemente ya no refleja los flujos</text>
-<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">reales actuales</text>
-</svg></div></figure><div class="toc-mini"><a href="#contexto">1. El mapa que se hizo una vez y se archivó</a><a href="#arquitectura">2. Mapa de flujo de datos como documento vivo</a><a href="#seguridad">3. Clasificación verificada contra la realidad</a><a href="#operacion">4. Métrica de calidad del dato medida activamente</a><a href="#roadmap">5. La evidencia que GDPR y sectoriales exigen</a></div><h2 id="contexto">1. El mapa de flujo de datos que se hizo una vez, para un proyecto, y nunca se volvió a tocar</h2><div class="body-text"><p><strong>Un mapa de flujo de datos creado para un proyecto específico de compliance hace tres años, sin actualizar desde entonces, da una falsa sensación de control — la organización ha seguido generando, moviendo y compartiendo datos de formas que ese mapa histórico nunca contempló.</strong></p></div><h2 id="arquitectura">2. Mapa de flujo de datos como documento vivo, actualizado con cada cambio significativo</h2><div class="body-text"><p>Cada nuevo sistema, integración o proceso que mueve datos significativos debería disparar una actualización del mapa de flujo correspondiente — tratarlo como documento vivo, no como artefacto de un proyecto puntual que se completó y se archivó.</p></div><h2 id="seguridad">3. Clasificación de sensibilidad verificada periódicamente contra la realidad de los datos</h2><div class="body-text"><p>Un dato clasificado como "interno" hace tiempo puede haber cambiado de naturaleza —empezó a incluir información personal identificable, por ejemplo— sin que la clasificación se haya actualizado en consecuencia. La verificación periódica detecta esta deriva antes de que se convierta en un incumplimiento real.</p></div><h2 id="operacion">4. Métrica de calidad del dato medida activamente, no asumida por defecto</h2><div class="body-text"><p>Indicadores concretos de calidad —porcentaje de registros completos, tasa de duplicados, consistencia entre sistemas que deberían coincidir— dan evidencia objetiva de si el gobierno del dato está funcionando, más allá de la percepción subjetiva de que "los datos están bien".</p></div><h2 id="roadmap">5. La evidencia que GDPR y normativas sectoriales exigen ante una solicitud o auditoría</h2><div class="body-text"><p>Ante una solicitud de un interesado bajo GDPR, o una auditoría sectorial, la organización necesita poder demostrar rápidamente qué datos tiene sobre una persona, dónde viven, con quién se han compartido — evidencia que solo un mapa de datos actualizado y un registro de comparticiones activo pueden proporcionar con la rapidez que la normativa exige.</p></div><a class="back" href="../index.html?cat=gobierno-dato">← Volver a Gobierno del Dato</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. El mapa que se hizo una vez y se archivó</a><a href="#arquitectura">2. Mapa de flujo de datos como documento vivo</a><a href="#seguridad">3. Clasificación verificada contra la realidad</a><a href="#operacion">4. Métrica de calidad del dato medida activamente</a><a href="#roadmap">5. La evidencia que GDPR y sectoriales exigen</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport"/>
+<title>Controles y evidencias: el mapa que no cambia con producción es una ficción | Gobierno del Dato | Technology Advisory</title>
+<meta content="Controles verificables para demostrar propiedad, clasificación, linaje, acceso, calidad, compartición, retención y eliminación del dato." name="description"/>
+<meta content="Miguel Ángel Carriazo" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="#059669" name="theme-color"/>
+<link href="../../css/global.css" rel="stylesheet"/>
+<link href="../../css/dossier-core.css" rel="stylesheet"/>
+<link href="../../css/articulo.css" rel="stylesheet"/>
+<link href="../../css/index.css" rel="stylesheet"/>
+<link href="../../css/articulo-diagramas.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        @media (max-width: 1024px) {
+            .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
+            div[style*="padding: 16px 48px 0"], div[style*="padding: 16px 48px 0;"] { padding: 16px 4% 0 !important; }
+            div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding: 40px 4% 24px !important; }
+        }
+        .article-diagram svg { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<div class="card-wrapper ds-page">
+<div class="card">
+<div id="menu-container"></div>
+<div class="accent-bar" style="background:#059669;"></div>
+<div class="ds-meta">
+<span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: gobernanza</span>
+<span>categoría: <strong>Gobierno del Dato</strong></span>
+</div>
+<div style="padding: 16px 4% 0;">
+<a class="defensa-btn-back" href="../index.html?cat=gobierno-dato" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Gobierno del Dato</a>
+</div>
+<div style="padding: 40px 4% 24px; border-bottom: 1px solid #ededea;">
+<div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Controles · Gobierno del Dato</div>
+<h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Controles y evidencias: <span style="color:#059669;">el mapa que no cambia con producción es una ficción</span></h1>
+<p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Un control no se acredita con una política ni con una captura aislada. Se acredita demostrando que se ejecuta, que detecta desviaciones y que deja una evidencia suficiente para reconstruir lo ocurrido.</p>
+<div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="6" r="2.6"></circle><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"></path></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><rect height="12.5" rx="1.3" width="13" x="2.5" y="3"></rect><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"></path></svg>Gobierno del Dato</span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="9" r="6.8"></circle><path d="M9 5.3V9l2.8 1.7"></path></svg>Lectura Avanzada (22-26 min)</span>
+</div>
+</div>
+<div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+<div class="defensa-main" style="min-width:0;">
+<!-- GRÁFICO 1: EL MAPA DESACTUALIZADO -->
+<!-- SECCIÓN 1 -->
+<!-- GRÁFICO 2: MAPA VIVO VS ARCHIVADO -->
+<!-- GRÁFICO 3: LO QUE DEBE CONTENER UN MAPA VIVO -->
+<!-- GRÁFICO 4: REGISTRO DE COMPARTICIONES -->
+<figure aria-label="El mapa desactualizado" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="420" rx="14" width="900"></rect>
+<text fill="#151915" font-size="19" font-weight="800" x="40" y="42">El mapa de datos desactualizado</text>
+<text fill="#77776f" font-size="12" x="40" y="66">un mapa de hace tres años no refleja los flujos actuales</text>
+<defs><lineargradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#059669"></stop><stop offset="1" stop-color="#0f172a"></stop></lineargradient></defs>
+<!-- Mapa antiguo -->
+<rect fill="#fef3c7" height="160" rx="14" stroke="#d97706" stroke-width="1.5" width="400" x="40" y="100"></rect>
+<text fill="#d97706" font-size="16" font-weight="800" text-anchor="middle" x="240" y="130">📄 Mapa de hace 3 años</text>
+<text fill="#77776f" font-size="12" text-anchor="middle" x="240" y="155">Creado para un proyecto GDPR</text>
+<text fill="#77776f" font-size="12" text-anchor="middle" x="240" y="175">No se ha actualizado desde entonces</text>
+<text fill="#77776f" font-size="12" text-anchor="middle" x="240" y="195">Nuevos sistemas no están reflejados</text>
+<text fill="#77776f" font-size="12" text-anchor="middle" x="240" y="215">Nuevas integraciones no están</text>
+<text fill="#77776f" font-size="12" text-anchor="middle" x="240" y="235">Nuevos flujos de datos omitidos</text>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="240" y="252">Da falsa sensación de control</text>
+<!-- Flecha -->
+<line marker-end="url(#arrow1)" stroke="#94a3b8" stroke-width="2" x1="440" x2="460" y1="180" y2="180"></line>
+<defs><marker id="arrow1" markerheight="6" markerwidth="6" orient="auto" refx="5" refy="5" viewbox="0 0 10 10"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"></path></marker></defs>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="460" y="170">⬇ El</text>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="460" y="190">riesgo</text>
+<!-- Mapa nuevo -->
+<rect fill="#fee2e2" height="160" rx="14" stroke="#dc2626" stroke-width="1.5" width="380" x="480" y="100"></rect>
+<text fill="#dc2626" font-size="16" font-weight="800" text-anchor="middle" x="670" y="130">🔴 Lo que realmente ocurre</text>
+<text fill="#991b1b" font-size="12" text-anchor="middle" x="670" y="155">Sistemas no documentados</text>
+<text fill="#991b1b" font-size="12" text-anchor="middle" x="670" y="175">Flujos de datos no mapeados</text>
+<text fill="#991b1b" font-size="12" text-anchor="middle" x="670" y="195">Datos compartidos sin registro</text>
+<text fill="#991b1b" font-size="12" text-anchor="middle" x="670" y="215">Responsabilidades difusas</text>
+<text fill="#991b1b" font-size="12" text-anchor="middle" x="670" y="235">Sin trazabilidad real</text>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="670" y="252">El mapa no refleja la realidad</text>
+<rect fill="url(#g1)" height="50" opacity=".95" rx="14" width="820" x="40" y="285"></rect>
+<text fill="#ffffff" font-size="13" font-weight="700" x="68" y="310">Un mapa de datos desactualizado da una falsa sensación de control — y oculta el riesgo real</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 500" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="500" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="18" y="28">El mapa desactualizado</text>
+<rect fill="#fef3c7" height="130" rx="10" stroke="#d97706" stroke-width="1.5" width="294" x="18" y="45"></rect>
+<text fill="#d97706" font-size="12" font-weight="800" text-anchor="middle" x="165" y="68">📄 Mapa de hace 3 años</text>
+<text fill="#77776f" font-size="9" text-anchor="middle" x="165" y="88">Creado para un proyecto</text>
+<text fill="#77776f" font-size="9" text-anchor="middle" x="165" y="103">No actualizado desde entonces</text>
+<text fill="#77776f" font-size="9" text-anchor="middle" x="165" y="118">Nuevos sistemas omitidos</text>
+<text fill="#77776f" font-size="9" text-anchor="middle" x="165" y="133">Nuevos flujos omitidos</text>
+<text fill="#77776f" font-size="9" text-anchor="middle" x="165" y="148">Falsa sensación de control</text>
+<rect fill="#fee2e2" height="50" rx="8" stroke="#dc2626" stroke-width="1.5" width="294" x="18" y="190"></rect>
+<text fill="#dc2626" font-size="12" font-weight="800" text-anchor="middle" x="165" y="212">🔴 Lo que realmente ocurre</text>
+<text fill="#991b1b" font-size="9" text-anchor="middle" x="165" y="230">El mapa no refleja la realidad</text>
+<rect fill="#059669" height="60" opacity=".9" rx="10" width="294" x="18" y="260"></rect>
+<text fill="#ffffff" font-size="10" font-weight="700" x="32" y="282">Un mapa desactualizado</text>
+<text fill="#ffffff" font-size="10" font-weight="700" x="32" y="299">oculta el riesgo real</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 1: El mapa de datos desactualizado — lo que crees que controlas vs lo que realmente ocurre.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure><div class="block" id="s1">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — Evidencia frente a intención</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El documento describe el control; la operación demuestra si existe</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p><strong>La política, el procedimiento y el diagrama son evidencias de diseño.</strong> Sirven para conocer qué debería ocurrir. No prueban que el control se ejecute, que cubra todos los sistemas ni que detecte desviaciones.</p><p>Para acreditar un control se necesitan al menos cuatro capas: diseño aprobado, implantación comprobable, ejecución registrada y prueba de efectividad. Saltarse una de ellas permite que un control aparentemente completo falle en el punto más importante.</p><p>Una captura de pantalla aislada carece de contexto, periodo y reproducibilidad. Puede complementar una revisión, pero no sustituir exportaciones, registros, consultas, tickets y resultados de prueba.</p><div class="defensa-box-warning"><strong>Un control que solo existe durante la auditoría no es un control.</strong> Es una representación preparada para la auditoría.</div></div>
+</div><div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div><div class="block" id="s2">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Mapa y linaje</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El mapa debe cambiar cuando cambia producción</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p>El mapa vivo se alimenta de los eventos que alteran el flujo: nuevas fuentes, APIs, transformaciones, consumidores, ubicaciones, exportaciones y terceros. Su vigencia no depende de que alguien recuerde abrir un documento.</p><p>La evidencia debe permitir comparar la vista declarada con la configuración real. Repositorios, esquemas, canalizaciones, endpoints y permisos ofrecen señales objetivas. Las diferencias deben convertirse en incidencias o tareas de remediación.</p><p>No es necesario capturar cada campo de todos los sistemas al inicio. La cobertura debe priorizar dominios críticos, datos sensibles y decisiones de alto impacto. Lo importante es declarar alcance, lagunas y plan de cierre.</p><div class="defensa-box-success"><strong>Prueba útil:</strong> seleccionar una salida crítica y reconstruir, sin intervención del equipo que la creó, sus fuentes, transformaciones y responsables.</div></div>
+</div><figure aria-label="Mapa vivo vs archivado" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="300" rx="14" width="900"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="36">Mapa vivo vs mapa archivado</text>
+<text fill="#77776f" font-size="12" x="40" y="58">la diferencia entre control real y falsa sensación de control</text>
+<defs><marker id="a2" markerheight="6" markerwidth="6" orient="auto" refx="5" refy="5" viewbox="0 0 10 10"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"></path></marker></defs>
+<rect fill="#d1fae5" height="140" rx="14" stroke="#059669" stroke-width="2" width="390" x="40" y="80"></rect>
+<text fill="#059669" font-size="15" font-weight="800" text-anchor="middle" x="235" y="108">✅ Mapa vivo</text>
+<text fill="#77776f" font-size="12" text-anchor="middle" x="235" y="130">Actualizado con cada cambio</text>
+<text fill="#77776f" font-size="12" text-anchor="middle" x="235" y="150">Refleja los flujos reales</text>
+<text fill="#77776f" font-size="12" text-anchor="middle" x="235" y="170">Propietario designado</text>
+<text fill="#77776f" font-size="12" text-anchor="middle" x="235" y="190">Fecha de última revisión</text>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="235" y="210">Control real</text>
+<line marker-end="url(#a2)" stroke="#059669" stroke-width="2.5" x1="430" x2="470" y1="150" y2="150"></line>
+<rect fill="#fee2e2" height="140" rx="14" stroke="#dc2626" stroke-width="1.5" width="380" x="480" y="80"></rect>
+<text fill="#dc2626" font-size="15" font-weight="800" text-anchor="middle" x="670" y="108">⚠️ Mapa archivado</text>
+<text fill="#77776f" font-size="12" text-anchor="middle" x="670" y="130">Creado para un proyecto</text>
+<text fill="#77776f" font-size="12" text-anchor="middle" x="670" y="150">No se actualiza después</text>
+<text fill="#77776f" font-size="12" text-anchor="middle" x="670" y="170">Propietario desconocido</text>
+<text fill="#77776f" font-size="12" text-anchor="middle" x="670" y="190">Fecha de revisión: hace años</text>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="670" y="210">Falsa sensación de control</text>
+<rect fill="#f8fafc" height="40" rx="8" stroke="#ededea" stroke-width="1" width="820" x="40" y="245"></rect>
+<text fill="#151915" font-size="12" font-weight="700" text-anchor="middle" x="450" y="270">El mapa debe ser un documento vivo, no un artefacto de un proyecto puntual</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 420" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="420" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="18" y="28">Mapa vivo vs archivado</text>
+<rect fill="#d1fae5" height="130" rx="8" stroke="#059669" stroke-width="2" width="130" x="18" y="45"></rect>
+<text fill="#059669" font-size="11" font-weight="800" text-anchor="middle" x="83" y="68">✅ Vivo</text>
+<text fill="#77776f" font-size="9" text-anchor="middle" x="83" y="85">Actualizado</text>
+<text fill="#77776f" font-size="9" text-anchor="middle" x="83" y="100">Propietario</text>
+<text fill="#77776f" font-size="9" text-anchor="middle" x="83" y="115">Revisión</text>
+<text fill="#77776f" font-size="9" text-anchor="middle" x="83" y="130">Flujos reales</text>
+<text fill="#94a3b8" font-size="8" text-anchor="middle" x="83" y="147">Control real</text>
+<rect fill="#fee2e2" height="130" rx="8" stroke="#dc2626" stroke-width="1.5" width="140" x="172" y="45"></rect>
+<text fill="#dc2626" font-size="11" font-weight="800" text-anchor="middle" x="242" y="68">⚠️ Archivado</text>
+<text fill="#77776f" font-size="9" text-anchor="middle" x="242" y="85">Obsoleto</text>
+<text fill="#77776f" font-size="9" text-anchor="middle" x="242" y="100">Sin dueño</text>
+<text fill="#77776f" font-size="9" text-anchor="middle" x="242" y="115">Hace años</text>
+<text fill="#77776f" font-size="9" text-anchor="middle" x="242" y="130">Flujos omitidos</text>
+<text fill="#94a3b8" font-size="8" text-anchor="middle" x="242" y="147">Falso control</text>
+<rect fill="#f8fafc" height="50" rx="8" stroke="#ededea" stroke-width="1" width="294" x="18" y="195"></rect>
+<text fill="#151915" font-size="10" font-weight="700" text-anchor="middle" x="165" y="217">El mapa debe ser vivo</text>
+<text fill="#77776f" font-size="9" text-anchor="middle" x="165" y="235">No un artefacto de proyecto</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 2: Mapa vivo vs mapa archivado — la diferencia entre control real y falsa sensación.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure><div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div><div class="block" id="s3">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Acceso y uso</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El permiso aprobado y el acceso efectivo deben coincidir</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p>La evidencia de acceso debe salir de la plataforma, no de una hoja de cálculo. Incluye identidades, grupos, roles, privilegios, cuentas de servicio, fecha de alta, última actividad y aprobador.</p><p>La revisión periódica debe detectar accesos heredados, grupos anidados, privilegios excesivos y cuentas sin propietario. El muestreo puede ser válido, pero debe ser trazable y proporcional al riesgo.</p><p>Además del acceso, debe verificarse el uso. Consultas masivas, exportaciones anómalas o accesos fuera de patrón pueden revelar que un permiso formalmente correcto está siendo utilizado de forma incompatible con su finalidad.</p><div class="defensa-box-warning"><strong>La identidad en un grupo no explica por qué sigue necesitando acceso.</strong> La recertificación debe validar necesidad, no solo existencia.</div></div>
+</div><figure aria-label="Lo que debe contener un mapa vivo" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="300" rx="14" width="900"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="36">Lo que debe contener un mapa de datos vivo</text>
+<text fill="#77776f" font-size="12" x="40" y="58">información mínima para que sea útil y auditable</text>
+<defs><lineargradient id="g3" x1="0" x2="1"><stop offset="0" stop-color="#059669"></stop><stop offset="1" stop-color="#0f172a"></stop></lineargradient></defs>
+<rect fill="#059669" height="35" rx="4" width="180" x="40" y="80"></rect>
+<text fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle" x="130" y="102">Elemento</text>
+<rect fill="#059669" height="35" rx="4" width="640" x="220" y="80"></rect>
+<text fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle" x="540" y="102">Descripción</text>
+<rect fill="#f0fdf4" height="30" rx="4" stroke="#059669" stroke-width="1" width="180" x="40" y="115"></rect>
+<text fill="#059669" font-size="10" font-weight="600" text-anchor="middle" x="130" y="135">Sistemas origen</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="640" x="220" y="115"></rect>
+<text fill="#151915" font-size="10" text-anchor="middle" x="540" y="135">Dónde se generan y almacenan los datos</text>
+<rect fill="#f0fdf4" height="30" rx="4" stroke="#059669" stroke-width="1" width="180" x="40" y="145"></rect>
+<text fill="#059669" font-size="10" font-weight="600" text-anchor="middle" x="130" y="165">Flujos de datos</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="640" x="220" y="145"></rect>
+<text fill="#151915" font-size="10" text-anchor="middle" x="540" y="165">Cómo se mueven entre sistemas</text>
+<rect fill="#f0fdf4" height="30" rx="4" stroke="#059669" stroke-width="1" width="180" x="40" y="175"></rect>
+<text fill="#059669" font-size="10" font-weight="600" text-anchor="middle" x="130" y="195">Terceros</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="640" x="220" y="175"></rect>
+<text fill="#151915" font-size="10" text-anchor="middle" x="540" y="195">Con quién se comparten datos</text>
+<rect fill="#f0fdf4" height="30" rx="4" stroke="#059669" stroke-width="1" width="180" x="40" y="205"></rect>
+<text fill="#059669" font-size="10" font-weight="600" text-anchor="middle" x="130" y="225">Clasificación</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="640" x="220" y="205"></rect>
+<text fill="#151915" font-size="10" text-anchor="middle" x="540" y="225">Nivel de sensibilidad de cada conjunto</text>
+<rect fill="#f0fdf4" height="30" rx="4" stroke="#059669" stroke-width="1" width="180" x="40" y="235"></rect>
+<text fill="#059669" font-size="10" font-weight="600" text-anchor="middle" x="130" y="255">Propietario</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="640" x="220" y="235"></rect>
+<text fill="#151915" font-size="10" text-anchor="middle" x="540" y="255">Data Owner de cada dominio</text>
+<rect fill="url(#g3)" height="25" opacity=".9" rx="4" width="820" x="40" y="265"></rect>
+<text fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle" x="450" y="282">Un mapa vivo con esta información permite responder a cualquier auditoría</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 400" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="400" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="18" y="28">Mapa vivo: elementos</text>
+<rect fill="#059669" height="25" rx="4" width="294" x="18" y="45"></rect>
+<text fill="#ffffff" font-size="9" font-weight="700" text-anchor="middle" x="165" y="62">Elemento · Descripción</text>
+<rect fill="#f0fdf4" height="25" rx="4" stroke="#059669" stroke-width="1" width="294" x="18" y="70"></rect>
+<text fill="#059669" font-size="9" font-weight="600" text-anchor="middle" x="165" y="87">Origen · Dónde se generan</text>
+<rect fill="#fff" height="25" rx="4" stroke="#ededea" stroke-width="1" width="294" x="18" y="95"></rect>
+<text fill="#151915" font-size="9" text-anchor="middle" x="165" y="112">Flujos · Cómo se mueven</text>
+<rect fill="#f0fdf4" height="25" rx="4" stroke="#059669" stroke-width="1" width="294" x="18" y="120"></rect>
+<text fill="#059669" font-size="9" font-weight="600" text-anchor="middle" x="165" y="137">Terceros · Con quién se comparten</text>
+<rect fill="#fff" height="25" rx="4" stroke="#ededea" stroke-width="1" width="294" x="18" y="145"></rect>
+<text fill="#151915" font-size="9" text-anchor="middle" x="165" y="162">Clasificación · Sensibilidad</text>
+<rect fill="#f0fdf4" height="25" rx="4" stroke="#059669" stroke-width="1" width="294" x="18" y="170"></rect>
+<text fill="#059669" font-size="9" font-weight="600" text-anchor="middle" x="165" y="187">Propietario · Data Owner</text>
+<rect fill="url(#g3)" height="45" opacity=".9" rx="8" width="294" x="18" y="215"></rect>
+<text fill="#ffffff" font-size="9" font-weight="700" text-anchor="middle" x="165" y="238">Mapa vivo = defensa</text>
+<text fill="#d1fae5" font-size="9" text-anchor="middle" x="165" y="253">ante cualquier auditoría</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 3: Lo que debe contener un mapa de datos vivo para ser útil y auditable.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure><div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div><div class="block" id="s4">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Calidad y cambios</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La regla de calidad solo existe si genera respuesta</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p>Cada regla debe declarar dimensión, campo, umbral, frecuencia, propietario y acción. Exactitud, completitud, unicidad, consistencia y actualidad no son etiquetas; necesitan una medición reproducible.</p><p>Cuando se incumple un umbral, la evidencia debe mostrar alerta, triage, impacto, corrección y cierre. Si el proceso de negocio siguió utilizando datos inválidos, debe quedar registrada la aceptación del riesgo o la decisión de detenerlo.</p><p>Los cambios de esquema y transformación deben vincularse a pruebas de regresión. La caída de calidad después de un despliegue no es un problema abstracto de datos: es un fallo de cambio con impacto operativo.</p><div class="defensa-box-info"><strong>Control efectivo:</strong> el umbral detecta, la alerta llega, alguien decide y el resultado queda registrado.</div></div>
+</div><div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div><div class="block" id="s5">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Retención, eliminación y backup</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Borrar en la aplicación no demuestra eliminación completa</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p>La evidencia de retención debe cubrir todas las capas relevantes: base operacional, lago de datos, archivos, cachés, exportaciones, snapshots y backup. Cada capa puede tener un mecanismo y un plazo diferente.</p><p>La eliminación puede demostrarse mediante registros de jobs, informes de objetos afectados, verificaciones posteriores y controles de restauración. Cuando una copia de seguridad reintroduce datos caducados, debe existir un proceso para reaplicar las bajas.</p><p>Las suspensiones legales o necesidades de conservación deben estar identificadas y aprobadas. No justifican retener todo indefinidamente ni bloquean la eliminación de datos fuera de su alcance.</p><div class="defensa-box-warning"><strong>La ausencia en la interfaz no es destrucción.</strong> El dato puede seguir existiendo en repositorios, copias y exportaciones.</div></div>
+</div><figure aria-label="Registro de comparticiones" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="280" rx="14" width="900"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="36">Registro de comparticiones de datos</text>
+<text fill="#77776f" font-size="12" x="40" y="58">información mínima para trazabilidad y auditoría</text>
+<defs><lineargradient id="g4" x1="0" x2="1"><stop offset="0" stop-color="#059669"></stop><stop offset="1" stop-color="#0f172a"></stop></lineargradient></defs>
+<rect fill="#059669" height="30" rx="4" width="160" x="40" y="80"></rect>
+<text fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle" x="120" y="100">Campo</text>
+<rect fill="#059669" height="30" rx="4" width="660" x="200" y="80"></rect>
+<text fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle" x="530" y="100">Contenido</text>
+<rect fill="#f0fdf4" height="30" rx="4" stroke="#059669" stroke-width="1" width="160" x="40" y="110"></rect>
+<text fill="#059669" font-size="11" font-weight="600" text-anchor="middle" x="120" y="130">Fecha</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="660" x="200" y="110"></rect>
+<text fill="#151915" font-size="11" text-anchor="middle" x="530" y="130">Cuándo se realizó la compartición</text>
+<rect fill="#f0fdf4" height="30" rx="4" stroke="#059669" stroke-width="1" width="160" x="40" y="140"></rect>
+<text fill="#059669" font-size="11" font-weight="600" text-anchor="middle" x="120" y="160">Datos</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="660" x="200" y="140"></rect>
+<text fill="#151915" font-size="11" text-anchor="middle" x="530" y="160">Qué datos se compartieron (identificadores, categorías)</text>
+<rect fill="#f0fdf4" height="30" rx="4" stroke="#059669" stroke-width="1" width="160" x="40" y="170"></rect>
+<text fill="#059669" font-size="11" font-weight="600" text-anchor="middle" x="120" y="190">Tercero</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="660" x="200" y="170"></rect>
+<text fill="#151915" font-size="11" text-anchor="middle" x="530" y="190">Con quién se compartieron</text>
+<rect fill="#f0fdf4" height="30" rx="4" stroke="#059669" stroke-width="1" width="160" x="40" y="200"></rect>
+<text fill="#059669" font-size="11" font-weight="600" text-anchor="middle" x="120" y="220">Aprobador</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="660" x="200" y="200"></rect>
+<text fill="#151915" font-size="11" text-anchor="middle" x="530" y="220">Quién autorizó la compartición</text>
+<rect fill="url(#g4)" height="25" opacity=".9" rx="4" width="820" x="40" y="245"></rect>
+<text fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle" x="450" y="262">Registro completo = defensa ante auditoría</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 360" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="360" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="18" y="28">Registro comparticiones</text>
+<rect fill="#059669" height="25" rx="4" width="294" x="18" y="45"></rect>
+<text fill="#ffffff" font-size="9" font-weight="700" text-anchor="middle" x="165" y="62">Campo · Contenido</text>
+<rect fill="#f0fdf4" height="25" rx="4" stroke="#059669" stroke-width="1" width="294" x="18" y="70"></rect>
+<text fill="#059669" font-size="9" font-weight="600" text-anchor="middle" x="165" y="87">Fecha · Cuándo</text>
+<rect fill="#fff" height="25" rx="4" stroke="#ededea" stroke-width="1" width="294" x="18" y="95"></rect>
+<text fill="#151915" font-size="9" text-anchor="middle" x="165" y="112">Datos · Qué</text>
+<rect fill="#f0fdf4" height="25" rx="4" stroke="#059669" stroke-width="1" width="294" x="18" y="120"></rect>
+<text fill="#059669" font-size="9" font-weight="600" text-anchor="middle" x="165" y="137">Tercero · Con quién</text>
+<rect fill="#fff" height="25" rx="4" stroke="#ededea" stroke-width="1" width="294" x="18" y="145"></rect>
+<text fill="#151915" font-size="9" text-anchor="middle" x="165" y="162">Finalidad · Para qué</text>
+<rect fill="#f0fdf4" height="25" rx="4" stroke="#059669" stroke-width="1" width="294" x="18" y="170"></rect>
+<text fill="#059669" font-size="9" font-weight="600" text-anchor="middle" x="165" y="187">Aprobador · Quién</text>
+<rect fill="url(#g4)" height="40" opacity=".9" rx="6" width="294" x="18" y="215"></rect>
+<text fill="#ffffff" font-size="9" font-weight="700" text-anchor="middle" x="165" y="233">Registro completo</text>
+<text fill="#d1fae5" font-size="8" text-anchor="middle" x="165" y="247">defensa ante auditoría</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 4: Registro de comparticiones — información mínima para trazabilidad.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+                    <div class="defensa-box-info ta-reference-box" style="margin:34px 0;">
+                        <strong>🔎 Normativa y plataformas para gobernar el dato.</strong> En control, deben expresarse como pruebas observables con fuente, frecuencia, responsable y criterio de aceptación. El RGPD (Reglamento General de Protección de Datos) conecta principios y calidad del tratamiento en el artículo 5, responsabilidad del responsable en el 24, protección desde el diseño y por defecto en el 25, registro de actividades en el 30, seguridad en el 32 y evaluación de impacto en el 35. Estas referencias no sustituyen el modelo de gobierno, pero obligan a saber qué datos existen, para qué se utilizan, quién decide y qué controles protegen su ciclo de vida. Microsoft Purview, Collibra, Alation e Informatica son ejemplos de catálogos y plataformas de gobierno. Su utilidad depende de conectores, linaje, glosario, propietarios, calidad y flujos de aprobación actualizados desde los sistemas fuente; un catálogo rellenado manualmente para una auditoría vuelve a quedar obsoleto en cuanto cambia la arquitectura.
+                    </div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 06</span></div><div class="block" id="s6">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 06 — Checklist de auditoría</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La evidencia debe poder repetirse y resistir preguntas</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p>Una revisión sólida no busca una carpeta llena de documentos. Selecciona muestras y prueba el recorrido completo: quién es dueño, cómo se clasificó, quién accedió, qué controles se ejecutaron, qué excepciones existieron y cómo terminó el ciclo de vida.</p><p>Los criterios de aceptación deben ser observables. “Revisado periódicamente” no sirve si no indica periodo, población, resultado y responsable. “Acceso adecuado” no sirve si no se compara contra una necesidad aprobada.</p><p>La tabla siguiente resume el conjunto mínimo de evidencias para una revisión técnica del gobierno del dato.</p><div class="defensa-box-success"><strong>Conclusión:</strong> la evidencia no es un anexo de compliance. Es la memoria operacional que permite defender decisiones y corregir fallos.</div><div style="overflow-x:auto; margin:22px 0;"><table style="width:100%; border-collapse:collapse; min-width:700px; font-size:14px;"><thead><tr><th style="padding:12px 10px; border-bottom:2px solid #059669; text-align:left; color:#0f172a;">Ref</th><th style="padding:12px 10px; border-bottom:2px solid #059669; text-align:left; color:#0f172a;">Evidencia requerida</th><th style="padding:12px 10px; border-bottom:2px solid #059669; text-align:left; color:#0f172a;">Criterio de aceptación</th></tr></thead><tbody><tr><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">01</td><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">Propietario y custodio vigentes</td><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">El conjunto tiene responsables nominales, alcance definido, suplencia y revisión registrada.</td></tr><tr><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">02</td><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">Clasificación aplicada</td><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">La clasificación aparece en catálogo y modifica permisos, cifrado, retención o tratamiento.</td></tr><tr><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">03</td><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">Linaje técnico</td><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">Puede recorrerse desde origen hasta consumo, con transformaciones y cambios fechados.</td></tr><tr><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">04</td><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">Accesos efectivos</td><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">La exportación de IAM (Identity and Access Management) coincide con la política; privilegios y cuentas inactivas están justificados.</td></tr><tr><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">05</td><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">Calidad monitorizada</td><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">Reglas, umbrales, alertas y remediaciones conservan resultado y responsable.</td></tr><tr><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">06</td><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">Comparticiones y terceros</td><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">Cada transferencia tiene finalidad, aprobación, contrato, alcance y revisión.</td></tr><tr><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">07</td><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">Retención y eliminación</td><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">La ejecución incluye aplicaciones, repositorios analíticos, archivos y copias según diseño.</td></tr><tr><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">08</td><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">Excepciones</td><td style="padding:12px 10px; border-bottom:1px solid #e2e8f0; vertical-align:top; text-align:left;">Tienen riesgo aceptado, compensaciones, propietario y fecha de caducidad no vencida.</td></tr></tbody></table></div></div>
+</div><div class="defensa-foot" style="margin-top:48px; padding:24px; border-top:1px solid #e2e8f0; background:#fafaf8; border-radius:12px;"><div class="defensa-foot-label">Autor</div>
+<div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; font-weight:700; margin-bottom:8px;">Autor</div>
+<div style="font-weight:800; color:#0f172a; margin-bottom:6px;">Miguel Ángel Carriazo</div>
+<div style="font-size:14px; line-height:1.65; color:#64748b;">Arquitecto de infraestructura, seguridad y gobierno tecnológico. Análisis independiente orientado a diseño, operación, evidencia y riesgo real.</div>
+<div class="defensa-author-name">Miguel Ángel Carriazo</div><p class="defensa-author-bio">Arquitecto de Infraestructura y Ciberseguridad con más de 25 años de experiencia diseñando, asegurando y operando entornos tecnológicos críticos. Lead Auditor en ISO/IEC 27001 e ISO/IEC 42001, especializado en gobierno, riesgo, cumplimiento y transformación tecnológica. En esta área aborda el gobierno del dato desde la propiedad, la trazabilidad, la calidad y la evidencia operativa.</p></div></div>
+<aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+<div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+<div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+<table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Área</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Gobierno del Dato</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Enfoque</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Controles y Evidencias</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Evidencia clave</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Mapa de flujo de datos vivo</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Nivel</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Avanzado</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Lectura</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">22-26 min</td></tr>
+<tr><td style="padding:10px 0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Etiquetas</td><td style="padding:10px 0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">#gobiernodedato #auditoría #evidencias #calidaddeldato</td></tr>
+</table>
+</div>
+<div>
+<div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+<nav class="defensa-toc-nav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;"><a href="#s1" style="text-decoration:none; color:#059669; font-size:14px; font-weight:700; border-left:2px solid #059669; margin-left:-16px; padding-left:14px;">01. Evidencia frente a intención</a><a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Mapa y linaje</a><a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Acceso y uso</a><a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Calidad y cambios</a><a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Retención y eliminación</a><a href="#s6" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">06. Checklist de auditoría</a></nav>
+</div>
+</aside>
+</div>
+<div class="related-section">
+<div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+<div class="related-grid"><a class="related-card" href="gobierno-dato-diseno-principios.html"><div class="r-meta">Gobierno del Dato · Principios</div><div class="r-title">Principios de diseño: si nadie es dueño del dato, todos son dueños de nada</div><div class="r-desc">Ownership, clasificación, linaje y ciclo de vida conectados con la arquitectura real.</div><span class="r-link">Leer artículo →</span></a><a class="related-card" href="gobierno-dato-modelo-operativo.html"><div class="r-meta">Gobierno del Dato · Operaciones</div><div class="r-title">Modelo operativo: el dato no se gobierna en un comité, se gobierna en cada decisión</div><div class="r-desc">Decisiones integradas con cambios, IAM, calidad, terceros y excepciones.</div><span class="r-link">Leer artículo →</span></a><a class="related-card" href="gobierno-dato-madurez-roadmap.html"><div class="r-meta">Gobierno del Dato · Madurez</div><div class="r-title">Madurez y roadmap: no se madura comprando un catálogo</div><div class="r-desc">Capacidades observables, dependencias y criterios de salida para avanzar con rigor.</div><span class="r-link">Leer artículo →</span></a></div>
+</div>
+<div id="footer-container"></div>
+</div>
+</div>
+<script src="../../js/menu.js"></script>
+<script src="../../js/footer.js"></script>
+<script>
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
+            } else {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function() {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

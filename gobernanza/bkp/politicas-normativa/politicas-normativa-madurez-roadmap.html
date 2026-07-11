@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+    <title>Madurez y roadmap: del documento legal que nadie lee a la política como cultura operativa | Políticas y Normativa Interna | Technology Advisory</title>
+    <meta name="description" content="Los cuatro niveles reales de madurez en políticas internas, desde el documento legal defensivo hasta la política convertida en cultura operativa real, verificada técnicamente.">
+    <meta name="author" content="Miguel Ángel Carriazo">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#059669">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/dossier-core.css">
+    <link rel="stylesheet" href="../../css/articulo.css">
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/articulo-diagramas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght=500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        @media (max-width: 1024px) {
+            .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
+            div[style*="padding: 16px 48px 0"], div[style*="padding: 16px 48px 0;"] { padding: 16px 4% 0 !important; }
+            div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding: 40px 4% 24px !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-wrapper ds-page">
+        <div class="card">
+
+            <div id="menu-container"></div>
+            <div class="accent-bar" style="background:#059669;"></div>
+
+            <div class="ds-meta">
+                <span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: gobernanza</span>
+                <span>categoría: <strong>Políticas y Normativa Interna</strong></span>
+            </div>
+
+            <div style="padding: 16px 4% 0;">
+                <a href="../index.html?cat=politicas-normativa" class="defensa-btn-back" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Políticas y Normativa Interna</a>
+            </div>
+
+            <div style="padding: 40px 4% 24px; border-bottom: 1px solid #ededea;">
+                <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Roadmap · Políticas y Normativa Interna</div>
+                <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Madurez y roadmap: <span style="color:#059669;">del documento legal que nadie lee a la política como cultura operativa</span></h1>
+                <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Los cuatro niveles reales de madurez en políticas internas, desde el documento legal defensivo hasta la política convertida en cultura operativa real, verificada técnicamente.</p>
+                <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>Políticas y Normativa Interna</span>
+                    <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>Lectura Avanzada (18-22 min)</span>
+                </div>
+            </div>
+
+            <div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+                <div class="defensa-main" style="min-width:0;">
+
+                    <!-- GRÁFICO 1: CUATRO NIVELES DE MADUREZ EN POLÍTICAS -->
+                    <figure class="article-diagram" aria-label="Cuatro niveles de madurez en políticas internas" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="320" rx="14" fill="#ffffff"/>
+                                <defs>
+                                    <linearGradient id="grad-linea" x1="0" y1="0" x2="1" y2="0">
+                                        <stop offset="0%" stop-color="#ef4444"/>
+                                        <stop offset="33%" stop-color="#f59e0b"/>
+                                        <stop offset="66%" stop-color="#3b82f6"/>
+                                        <stop offset="100%" stop-color="#10b981"/>
+                                    </linearGradient>
+                                </defs>
+                                
+                                <text x="40" y="45" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#111827">Roadmap Evolutivo de Madurez Normativa</text>
+                                <text x="40" y="68" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280">Evolución de cuatro niveles organizacionales</text>
+                                
+                                <rect x="80" y="145" width="740" height="6" rx="3" fill="url(#grad-linea)"/>
+                                
+                                <g transform="translate(140, 0)">
+                                    <circle cx="0" cy="148" r="16" fill="#fef2f2" stroke="#ef4444" stroke-width="3"/>
+                                    <text x="0" y="153" font-family="monospace" font-size="12" font-weight="800" fill="#b91c1c" text-anchor="middle">L1</text>
+                                    <text x="0" y="190" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#111827" text-anchor="middle">Papel Defensivo</text>
+                                    <text x="0" y="208" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Solo texto legal</text>
+                                </g>
+                                
+                                <g transform="translate(340, 0)">
+                                    <circle cx="0" cy="148" r="16" fill="#fffbeb" stroke="#f59e0b" stroke-width="3"/>
+                                    <text x="0" y="153" font-family="monospace" font-size="12" font-weight="800" fill="#b45309" text-anchor="middle">L2</text>
+                                    <text x="0" y="190" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#111827" text-anchor="middle">Comunicado</text>
+                                    <text x="0" y="208" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Difusión masiva</text>
+                                </g>
+                                
+                                <g transform="translate(540, 0)">
+                                    <circle cx="0" cy="148" r="16" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/>
+                                    <text x="0" y="153" font-family="monospace" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="middle">L3</text>
+                                    <text x="0" y="190" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#111827" text-anchor="middle">Verificado</text>
+                                    <text x="0" y="208" font-family="system-ui, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Alineación técnica</text>
+                                </g>
+                                
+                                <g transform="translate(740, 0)">
+                                    <circle cx="0" cy="148" r="18" fill="#ecfdf5" stroke="#10b981" stroke-width="4"/>
+                                    <text x="0" y="153" font-family="monospace" font-size="12" font-weight="800" fill="#047857" text-anchor="middle">L4</text>
+                                    <text x="0" y="195" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#065f46" text-anchor="middle">Cultura Operativa</text>
+                                    <text x="0" y="213" font-family="system-ui, sans-serif" font-size="11" fill="#047857" text-anchor="middle">Comportamiento innato</text>
+                                </g>
+                                
+                                <rect x="40" y="255" width="820" height="40" rx="6" fill="#f9fafb" stroke="#e5e7eb"/>
+                                <text x="450" y="279" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#4b5563" text-anchor="middle">Métrica de validación: La capacidad de responder con precisión ante auditorías sin preparación previa.</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 420" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="420" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="14" font-weight="800" fill="#151915">Roadmap políticas</text>
+                                <line x1="40" y1="120" x2="290" y2="120" stroke="#059669" stroke-width="2"/>
+                                <circle cx="70" cy="120" r="14" fill="#dc2626" stroke="#dc2626" stroke-width="2"/>
+                                <text x="70" y="124" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">1</text>
+                                <text x="70" y="150" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Legal</text>
+                                <line x1="84" y1="120" x2="120" y2="120" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3"/>
+                                <circle cx="140" cy="120" r="14" fill="#d97706" stroke="#d97706" stroke-width="2"/>
+                                <text x="140" y="124" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">2</text>
+                                <text x="140" y="150" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Comun.</text>
+                                <line x1="154" y1="120" x2="190" y2="120" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3"/>
+                                <circle cx="210" cy="120" r="14" fill="#3b82f6" stroke="#3b82f6" stroke-width="2"/>
+                                <text x="210" y="124" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">3</text>
+                                <text x="210" y="150" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Verif.</text>
+                                <line x1="224" y1="120" x2="260" y2="120" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3"/>
+                                <circle cx="280" cy="120" r="14" fill="#059669" stroke="#059669" stroke-width="2"/>
+                                <text x="280" y="124" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">4</text>
+                                <text x="280" y="150" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Cultura</text>
+                                <rect x="18" y="185" width="294" height="40" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="165" y="210" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Evidencia antes de avanzar</text>
+                                <rect x="18" y="245" width="294" height="55" rx="8" fill="#059669" opacity=".12"/>
+                                <text x="165" y="268" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Salto clave: N2 → N3</text>
+                                <text x="165" y="285" font-size="9" fill="#151915" text-anchor="middle">(verificación técnica)</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 1: Los cuatro niveles de madurez en políticas internas[cite: 3].</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- MÓDULO 1 -->
+                    <div class="block" id="s1">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — El riesgo de partida</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Del documento legal defensivo a la política como cultura operativa real</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>El punto de partida de muchas organizaciones es un documento legal denso, redactado más para proteger a la organización en un litigio que para cambiar comportamiento real[cite: 3].</strong> El camino de madurez transforma ese documento en cultura operativa genuina[cite: 3].</p>
+                            <p>La madurez en políticas no se mide por el número de políticas aprobadas. Se mide por la distancia entre lo que la política dice y lo que la gente hace. En el Nivel 1, esa distancia es enorme. En el Nivel 4, es casi nula porque la política y el comportamiento están alineados[cite: 3].</p>
+                            <p>El viaje de madurez no es lineal ni automático. Requiere esfuerzo consciente en cada etapa: redactar en lenguaje claro, difundir activamente, verificar comprensión, alinear configuración técnica, y finalmente integrar en la cultura operativa[cite: 3].</p>
+                            <div class="defensa-box-warning"><strong>⚠️ El Nivel 1 no es "no tener política" — es tener una política que no funciona[cite: 3].</strong> La organización puede tener todas las políticas aprobadas por dirección y seguir en Nivel 1 porque nadie las lee, las entiende o las sigue[cite: 3].</div>
+                            <p>El diagnóstico honesto es el primer paso. Si preguntas a un empleado aleatorio sobre un requisito de una política relevante y no puede responder, estás en Nivel 1 o 2[cite: 3]. La madurez real se demuestra en la respuesta del empleado, no en el documento firmado[cite: 3].</p>
+                            <p>El viaje de madurez requiere un cambio cultural. No basta con redactar mejores políticas — hay que cambiar cómo se comunican, cómo se verifican y cómo se integran en el trabajo diario[cite: 3].</p>
+                        </div>
+                    </div>
+
+                    <!-- GRÁFICO 2: ROADMAP DE TRANSICIÓN -->
+                    <figure class="article-diagram" aria-label="Roadmap de transición en políticas internas" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="430" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Cuatro niveles de madurez en políticas internas</text>
+                                <text x="40" y="66" font-size="12" fill="#77776f">del documento legal a la cultura operativa verificada</text>
+                                <defs>
+                                    <marker id="arrow-mad-pol" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+                                    </marker>
+                                    <linearGradient id="grad-mad-pol" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#0f172a"/></linearGradient>
+                                </defs>
+                                <rect x="40" y="110" width="390" height="100" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+                                <circle cx="70" cy="160" r="18" fill="#dc2626"/>
+                                <text x="70" y="166" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">1</text>
+                                <text x="100" y="148" font-size="15" font-weight="800" fill="#151915">Nivel 1 · Documento legal</text>
+                                <text x="100" y="172" font-size="12" fill="#77776f">Denso, sin difusión real</text>
+                                <text x="100" y="190" font-size="10.5" fill="#94a3b8">Existe para pasar auditorías</text>
+                                <line x1="430" y1="160" x2="468" y2="160" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-mad-pol)"/>
+                                <rect x="470" y="110" width="390" height="100" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+                                <circle cx="500" cy="160" r="18" fill="#d97706"/>
+                                <text x="500" y="166" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">2</text>
+                                <text x="530" y="148" font-size="15" font-weight="800" fill="#151915">Nivel 2 · Comunicado</text>
+                                <text x="530" y="172" font-size="12" fill="#77776f">Difundido, sin verificar comprensión</text>
+                                <text x="530" y="190" font-size="10.5" fill="#94a3b8">Se difunde pero no se verifica</text>
+                                <line x1="430" y1="225" x2="468" y2="225" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-mad-pol)"/>
+                                <rect x="40" y="230" width="390" height="100" rx="14" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <circle cx="70" cy="280" r="18" fill="#3b82f6"/>
+                                <text x="70" y="286" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">3</text>
+                                <text x="100" y="268" font-size="15" font-weight="800" fill="#151915">Nivel 3 · Verificado técnicamente</text>
+                                <text x="100" y="292" font-size="12" fill="#77776f">Configuración alineada con la política</text>
+                                <text x="100" y="310" font-size="10.5" fill="#94a3b8">Coherencia verificada</text>
+                                <line x1="430" y1="280" x2="468" y2="280" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-mad-pol)"/>
+                                <rect x="470" y="230" width="390" height="100" rx="14" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
+                                <circle cx="500" cy="280" r="18" fill="#059669"/>
+                                <text x="500" y="286" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">4</text>
+                                <text x="530" y="268" font-size="15" font-weight="800" fill="#151915">Nivel 4 · Cultura operativa</text>
+                                <text x="530" y="292" font-size="12" fill="#77776f">Se sigue sin necesidad de recordarlo</text>
+                                <text x="530" y="310" font-size="10.5" fill="#94a3b8">Comportamiento interiorizado</text>
+                                <rect x="40" y="355" width="820" height="55" rx="14" fill="url(#grad-mad-pol)" opacity=".95"/>
+                                <text x="68" y="382" font-size="14" font-weight="700" fill="#ffffff">El Nivel 4 no necesita recordar la política — ya es simplemente cómo se trabaja</text>
+                                <text x="68" y="402" font-size="11" fill="#d1fae5">El salto crítico es Nivel 2 → Nivel 3: verificar la coherencia técnica</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 420" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="420" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="14" font-weight="800" fill="#151915">Roadmap de transición</text>
+                                <line x1="60" y1="150" x2="270" y2="150" stroke="#059669" stroke-width="2"/>
+                                <circle cx="80" cy="150" r="12" fill="#dc2626"/>
+                                <text x="80" y="180" font-size="11" fill="#151915" text-anchor="middle">N1</text>
+                                <circle cx="140" cy="150" r="12" fill="#d97706"/>
+                                <text x="140" y="180" font-size="11" fill="#151915" text-anchor="middle">N2</text>
+                                <circle cx="200" cy="150" r="12" fill="#3b82f6"/>
+                                <text x="200" y="180" font-size="11" fill="#151915" text-anchor="middle">N3</text>
+                                <circle cx="260" cy="150" r="12" fill="#059669"/>
+                                <text x="260" y="180" font-size="11" fill="#151915" text-anchor="middle">N4</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 2: Roadmap de transición entre niveles de madurez en políticas internas[cite: 3].</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- MÓDULO 2 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+
+                    <div class="block" id="s2">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Nivel 1 y 2</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Nivel 1 y 2: documento legal denso, y comunicado sin verificar comprensión</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>El <strong>Nivel 1 (Documento legal)[cite: 3]</strong> existe pero apenas se difunde ni se entiende[cite: 3]. Es el punto de partida de la mayoría de las organizaciones[cite: 3]. Tienen políticas aprobadas, pero están en un repositorio al que nadie accede, redactadas en un lenguaje que nadie entiende, y sin ningún plan para comunicarlas o hacerlas cumplir[cite: 3].</p>
+                            <p>El <strong>Nivel 2 (Comunicado)[cite: 3]</strong> se difunde activamente —un avance real— pero sin verificación de que realmente se comprendió ni de que la configuración técnica la respalda[cite: 3]. La organización ha reconocido que las políticas deben ser comunicadas y ha tomado medidas para difundirlas, pero la difusión sin verificación de comprensión no garantiza que el mensaje haya llegado realmente[cite: 3].</p>
+                            <div class="defensa-box-tech"><strong>Diagnóstico rápido:</strong> si tienes políticas difundidas pero no puedes demostrar que los empleados las entienden, estás en Nivel 2[cite: 3]. Si ni siquiera están difundidas, estás en Nivel 1[cite: 3].</div>
+                            <p>El salto del Nivel 1 al Nivel 2 requiere un plan de comunicación activo[cite: 3]. El salto del Nivel 2 al Nivel 3 requiere verificación de comprensión y alineación técnica[cite: 3]. Cada salto requiere esfuerzo consciente, no ocurre por inercia[cite: 3].</p>
+                            <p>El Nivel 2 es una mejora significativa sobre el Nivel 1, pero no es suficiente[cite: 3]. La difusión sin verificación de comprensión no garantiza que la política se siga[cite: 3]. Un empleado puede haber recibido la política sin haberla entendido[cite: 3].</p>
+                        </div>
+                    </div>
+
+                    <!-- GRÁFICO 3: COMPARATIVA DE NIVELES -->
+                    <figure class="article-diagram" aria-label="Comparativa de niveles de madurez en políticas" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="320" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">Comparativa de niveles de madurez en políticas internas</text>
+                                <text x="40" y="58" font-size="12" fill="#77776f">lo que cada nivel aporta (y lo que no)</text>
+                                <rect x="40" y="80" width="190" height="150" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+                                <text x="135" y="105" font-size="13" font-weight="800" fill="#dc2626" text-anchor="middle">N1 · Documento</text>
+                                <text x="135" y="130" font-size="11" fill="#77776f" text-anchor="middle">❌ Sin difusión</text>
+                                <text x="135" y="148" font-size="11" fill="#77776f" text-anchor="middle">❌ Sin comprensión</text>
+                                <text x="135" y="166" font-size="11" fill="#77776f" text-anchor="middle">❌ Sin verificación</text>
+                                <text x="135" y="190" font-size="11" font-weight="700" fill="#dc2626" text-anchor="middle">Riesgo: CRÍTICO</text>
+                                <rect x="245" y="80" width="190" height="150" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+                                <text x="340" y="105" font-size="13" font-weight="800" fill="#d97706" text-anchor="middle">N2 · Comunicado</text>
+                                <text x="340" y="130" font-size="11" fill="#77776f" text-anchor="middle">✅ Difundido</text>
+                                <text x="340" y="148" font-size="11" fill="#77776f" text-anchor="middle">❌ Sin comprensión</text>
+                                <text x="340" y="166" fill="#77776f" font-size="11" text-anchor="middle">❌ Sin verificación</text>
+                                <text x="340" y="190" font-size="11" font-weight="700" fill="#d97706" text-anchor="middle">Riesgo: ALTO</text>
+                                <rect x="450" y="80" width="190" height="150" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="545" y="105" font-size="13" font-weight="800" fill="#2563eb" text-anchor="middle">N3 · Verificado</text>
+                                <text x="545" y="130" font-size="11" fill="#77776f" text-anchor="middle">✅ Configuración alineada</text>
+                                <text x="545" y="148" font-size="11" fill="#77776f" text-anchor="middle">✅ Comprensión verificada</text>
+                                <text x="545" y="166" font-size="11" fill="#77776f" text-anchor="middle">✅ Excepciones gestionadas</text>
+                                <text x="545" y="190" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">Riesgo: MODERADO</text>
+                                <rect x="655" y="80" width="200" height="150" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+                                <text x="755" y="105" font-size="13" font-weight="800" fill="#059669" text-anchor="middle">N4 · Cultura</text>
+                                <text x="755" y="130" font-size="11" fill="#77776f" text-anchor="middle">✅ Comportamiento interiorizado</text>
+                                <text x="755" y="148" font-size="11" fill="#77776f" text-anchor="middle">✅ Sin necesidad de recordatorio</text>
+                                <text x="755" y="166" font-size="11" fill="#77776f" text-anchor="middle">✅ Mejora continua</text>
+                                <text x="755" y="190" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">Riesgo: BAJO</text>
+                                <rect x="40" y="255" width="820" height="45" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="450" y="280" font-size="11" font-weight="700" fill="#151915" text-anchor="middle">El salto de N2 a N3 (verificación técnica y de comprensión) es el que más reduce el riesgo</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 460" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="460" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">Comparativa niveles</text>
+                                <rect x="18" y="45" width="68" height="85" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+                                <text x="52" y="65" font-size="10" font-weight="800" fill="#dc2626" text-anchor="middle">N1</text>
+                                <text x="52" y="80" font-size="8" fill="#77776f" text-anchor="middle">Legal</text>
+                                <text x="52" y="95" font-size="8" font-weight="700" fill="#dc2626" text-anchor="middle">Crítico</text>
+                                <rect x="96" y="45" width="68" height="85" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+                                <text x="130" y="65" font-size="10" font-weight="800" fill="#d97706" text-anchor="middle">N2</text>
+                                <text x="130" y="80" font-size="8" fill="#77776f" text-anchor="middle">Comun.</text>
+                                <text x="130" y="95" font-size="8" font-weight="700" fill="#d97706" text-anchor="middle">Alto</text>
+                                <rect x="174" y="45" width="68" height="85" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="208" y="65" font-size="10" font-weight="800" fill="#2563eb" text-anchor="middle">N3</text>
+                                <text x="208" y="80" font-size="8" fill="#77776f" text-anchor="middle">Verif.</text>
+                                <text x="208" y="95" font-size="8" font-weight="700" fill="#2563eb" text-anchor="middle">Moderado</text>
+                                <rect x="252" y="45" width="68" height="85" rx="6" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+                                <text x="286" y="65" font-size="10" font-weight="800" fill="#059669" text-anchor="middle">N4</text>
+                                <text x="286" y="80" font-size="8" fill="#77776f" text-anchor="middle">Cultura</text>
+                                <text x="286" y="95" font-size="8" font-weight="700" fill="#059669" text-anchor="middle">Bajo</text>
+                                <rect x="18" y="150" width="294" height="40" rx="8" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="165" y="172" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Salto N2 → N3 reduce más el riesgo</text>
+                                <rect x="18" y="210" width="294" height="60" rx="8" fill="#059669" opacity=".08"/>
+                                <text x="165" y="233" font-size="10" font-weight="700" fill="#151915" text-anchor="middle">Avanzar un nivel a la vez</text>
+                                <text x="165" y="253" font-size="9" fill="#77776f" text-anchor="middle">con evidencia verificable</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 3: Comparativa de los cuatro niveles de madurez en políticas internas[cite: 3].</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- MÓDULO 3 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+
+                    <div class="block" id="s3">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Nivel 3</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Nivel 3: verificado técnicamente contra la configuración real de los sistemas</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>El <strong>Nivel 3 (Verificado técnicamente)[cite: 3]</strong> confirma activamente que la configuración de los sistemas coincide con lo que cada política declara[cite: 3], cerrando la brecha entre lo escrito y lo real que es el hallazgo de auditoría más común en organizaciones menos maduras[cite: 3].</p>
+                            <p>El Nivel 3 también incluye la verificación de comprensión de los empleados[cite: 3]. No basta con que la configuración técnica esté alineada; los empleados también deben entender la política y saber cómo aplicarla en su trabajo diario[cite: 3].</p>
+                            <div class="defensa-box-success"><strong>✔ El Nivel 3 es el estándar mínimo defendible para organizaciones que buscan cumplimiento real[cite: 3].</strong> La política está documentada, difundida, comprendida, y respaldada por la configuración técnica[cite: 3]. La brecha entre lo escrito y lo real se ha cerrado[cite: 3].</div>
+                            <p>El Nivel 3 requiere un process de verificación periódica[cite: 3]. La configuración técnica puede desviarse de la política con el tiempo (cambios no documentados, nuevas versiones de software)[cite: 3]. La verificación debe ser recurrente, no un evento único[cite: 3].</p>
+                            <p>El Nivel 3 también incluye la gestión de excepciones[cite: 3]. Cuando una política no se puede cumplir, la excepción debe ser documentada formalmente, aprobada por el nivel adecuado, y revisada periódicamente[cite: 3].</p>
+                        </div>
+                    </div>
+
+                    <!-- GRÁFICO 4: KPIS POR NIVEL DE MADUREZ -->
+                    <figure class="article-diagram" aria-label="KPIs por nivel de madurez en políticas" onclick="toggleZoom(this)">
+                        <div class="diagram-desktop">
+                            <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="900" height="280" rx="14" fill="#fafaf8"/>
+                                <text x="40" y="36" font-size="17" font-weight="800" fill="#151915">KPIs por nivel de madurez en políticas</text>
+                                <text x="40" y="58" font-size="12" fill="#77776f">cómo medir el progreso entre niveles</text>
+                                <rect x="40" y="80" width="180" height="30" rx="4" fill="#059669"/>
+                                <text x="130" y="100" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Nivel</text>
+                                <rect x="220" y="80" width="640" height="30" rx="4" fill="#059669"/>
+                                <text x="540" y="100" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">KPI de progreso</text>
+                                <rect x="40" y="110" width="180" height="30" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+                                <text x="130" y="130" font-size="11" font-weight="700" fill="#dc2626" text-anchor="middle">N1 → N2</text>
+                                <rect x="220" y="110" width="640" height="30" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                                <text x="540" y="130" font-size="11" fill="#151915" text-anchor="middle">Política comunicada activamente a todos los empleados</text>
+                                <rect x="40" y="140" width="180" height="30" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+                                <text x="130" y="160" font-size="11" font-weight="700" fill="#d97706" text-anchor="middle">N2 → N3</text>
+                                <rect x="220" y="140" width="640" height="30" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                                <text x="540" y="160" font-size="11" fill="#151915" text-anchor="middle">Comprensión verificada + configuración técnica alineada</text>
+                                <rect x="40" y="170" width="180" height="30" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+                                <text x="130" y="190" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">N3 → N4</text>
+                                <rect x="220" y="170" width="640" height="30" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                                <text x="540" y="190" font-size="11" fill="#151915" text-anchor="middle">Comportamiento correcto demostrado sin recordatorios</text>
+                                <rect x="40" y="200" width="180" height="30" rx="4" fill="#d1fae5" stroke="#059669" stroke-width="1"/>
+                                <text x="130" y="220" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">N4 mantenido</text>
+                                <rect x="220" y="200" width="640" height="30" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
+                                <text x="540" y="220" font-size="11" fill="#151915" text-anchor="middle">Revisión anual y mejora continua documentada</text>
+                                <rect x="40" y="250" width="820" height="20" rx="4" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
+                                <text x="450" y="264" font-size="10" fill="#94a3b8" text-anchor="middle">Cada KPI debe ser verificable con evidencia documental, no solo declarado</text>
+                            </svg>
+                        </div>
+                        <div class="diagram-mobile">
+                            <svg viewBox="0 0 330 400" xmlns="http://www.w3.org/2000/svg" role="img">
+                                <rect width="330" height="400" rx="12" fill="#fafaf8"/>
+                                <text x="18" y="28" font-size="13" font-weight="800" fill="#151915">KPIs por nivel</text>
+                                <rect x="18" y="45" width="294" height="25" rx="4" fill="#059669"/>
+                                <text x="165" y="62" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">Nivel · KPI</text>
+                                <rect x="18" y="70" width="294" height="40" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+                                <text x="165" y="88" font-size="9" font-weight="700" fill="#dc2626" text-anchor="middle">N1→N2: Política comunicada</text>
+                                <text x="165" y="102" font-size="8" fill="#77776f" text-anchor="middle">activamente a todos</text>
+                                <rect x="18" y="110" width="294" height="40" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+                                <text x="165" y="128" font-size="9" font-weight="700" fill="#d97706" text-anchor="middle">N2→N3: Comprensión +</text>
+                                <text x="165" y="142" font-size="8" fill="#77776f" text-anchor="middle">configuración alineada</text>
+                                <rect x="18" y="150" width="294" height="40" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+                                <text x="165" y="168" font-size="9" font-weight="700" fill="#2563eb" text-anchor="middle">N3→N4: Comportamiento</text>
+                                <text x="165" y="182" font-size="8" fill="#77776f" text-anchor="middle">correcto sin recordatorios</text>
+                                <rect x="18" y="190" width="294" height="40" rx="4" fill="#d1fae5" stroke="#059669" stroke-width="1"/>
+                                <text x="165" y="208" font-size="9" font-weight="700" fill="#059669" text-anchor="middle">N4: Revisión anual + mejora</text>
+                                <text x="165" y="222" font-size="8" fill="#77776f" text-anchor="middle">continua documentada</text>
+                                <rect x="18" y="250" width="294" height="40" rx="6" fill="#059669" opacity=".08"/>
+                                <text x="165" y="270" font-size="9" font-weight="700" fill="#151915" text-anchor="middle">Cada KPI debe ser verificable</text>
+                                <text x="165" y="284" font-size="8" fill="#77776f" text-anchor="middle">con evidencia documental</text>
+                            </svg>
+                        </div>
+                        <figcaption class="diagram-caption">Figura 4: KPIs por nivel de madurez en políticas internas[cite: 3].</figcaption>
+                        <span class="zoom-hint">🔍 Clic para ampliar</span>
+                    </figure>
+
+                    <!-- MÓDULO 4 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+
+                    <div class="block" id="s4">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Nivel 4</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Nivel 4: la política convertida en cultura operativa que no necesita recordarse constantemente</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>El <strong>Nivel 4 (Cultura operativa)[cite: 3]</strong> alcanza el punto donde seguir la política es simplemente cómo se trabaja, sin necesidad de recordatorios constantes ni de verificación exhaustiva —el comportamiento correcto se ha internalizado como parte natural de la operación diaria[cite: 3].</p>
+                            <p>En el Nivel 4, la política ya no es un documento externo que el empleado debe consultar y recordar[cite: 3]. Es parte de su forma de trabajar[cite: 3]. No necesita pensar en la política porque su comportamiento ya está alineado con ella de forma natural[cite: 3].</p>
+                            <div class="defensa-box-tech"><strong>Recomendación:</strong> el Nivel 4 es el destino, no el punto de partida[cite: 3]. Requiere años de inversión en comunicación, formación, verificación y refuerzo[cite: 3]. No es realista para organizaciones que están empezando su viaje de madurez[cite: 3].</div>
+                            <p>El Nivel 4 no significa que la política no se revise[cite: 3]. Sigue siendo revisada periódicamente, pero las revisiones son ajustes menores en lugar de cambios radicales[cite: 3]. La cultura operativa es estable pero no estática; evoluciona con la organización y el contexto[cite: 3].</p>
+                            <p>En el Nivel 4, el cumplimiento de la política no es un esfuerzo consciente — es simplemente cómo la organización hace las cosas[cite: 3]. La política y la cultura se han fusionado[cite: 3].</p>
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 5 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+
+                    <div class="block" id="s5">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — La señal más honesta</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La señal más honesta del nivel real de madurez de las políticas</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p><strong>Preguntar a un empleado aleatorio, sin previo aviso, sobre un requisito concreto de una política relevante para su rol, y comparar su respuesta con lo que la política realmente dice, revela con honestidad si la organización está en el Nivel 1-2 (respuesta vaga o incorrecta) o en el Nivel 3-4 (respuesta precisa, porque forma parte de cómo trabaja normalmente)[cite: 3].</strong></p>
+                            <p>Esta prueba simple es la más honesta de todas porque no permite preparación[cite: 3]. El empleado no sabe que le van a preguntar, así que no ha estudiado la política[cite: 3]. Su respuesta refleja lo que realmente sabe, no lo que puede recordar después de revisar el documento[cite: 3].</p>
+                            <div class="defensa-box-warning"><strong>⚠️ Si un empleado aleatorio no puede explicar correctamente un requisito de política relevante para su rol, la política no está funcionando[cite: 3].</strong> La prueba de la pregunta inesperada es la evaluación más honesta de la madurez de las políticas[cite: 3].</div>
+                            <p>La prueba no debe ser un examen formal, sino una conversación informal[cite: 3]. El empleado debe poder explicar qué se espera de él en relación con la política[cite: 3]. Si no puede hacerlo, la política no ha llegado a su audiencia objetivo[cite: 3].</p>
+                            <p>La prueba también debe incluir la coherencia técnica[cite: 3]. Si un empleado dice que la política exige 14 caracteres pero el sistema solo permite 8, la política no está funcionando[cite: 3].</p>
+                        </div>
+                    </div>
+
+                    <!-- MÓDULO 6 -->
+                    <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 06</span></div>
+
+                    <div class="block" id="s6">
+                        <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 06 — Checklist de madurez</div>
+                        <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Checklist de madurez en políticas: ¿en qué nivel está tu organización?</h2>
+                        <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+                            <p>Este checklist permite a cualquier organización determinar en qué nivel de madurez se encuentra en la gestión de políticas internas[cite: 3]. Responde honestamente a cada pregunta para obtener una evaluación precisa[cite: 3].</p>
+                            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:20px; margin:16px 0;">
+                                <table style="width:100%; border-collapse:collapse; font-size:14px;">
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669; width:30px;">1.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Políticas documentadas</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Existen políticas aprobadas para áreas clave?</td>
+                                        <td style="padding:10px 0; text-align:right; font-weight:700;">N1</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">2.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Difusión activa</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Se comunican activamente a todos los empleados?</td>
+                                        <td style="padding:10px 0; text-align:right; font-weight:700;">N1→N2</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">3.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Comprensión verificada</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Hay tests o escenarios que verifiquen comprensión?</td>
+                                        <td style="padding:10px 0; text-align:right; font-weight:700;">N2→N3</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">4.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Configuración alineada</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿La configuración técnica coincide con las políticas?</td>
+                                        <td style="padding:10px 0; text-align:right; font-weight:700;">N2→N3</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">5.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Comportamiento interiorizado</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Los empleados siguen la política sin recordatorios?</td>
+                                        <td style="padding:10px 0; text-align:right; font-weight:700;">N3→N4</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:10px 0; font-weight:700; color:#059669;">6.</td>
+                                        <td style="padding:10px 0; font-weight:600; color:#0f172a;">Revisión periódica</td>
+                                        <td style="padding:10px 0; color:#64748b; font-size:13px;">¿Se revisan anualmente con mejora continua?</td>
+                                        <td style="padding:10px 0; text-align:right; font-weight:700;">N4</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p><strong>Resultado:</strong> Si solo cumples el punto 1, estás en Nivel 1[cite: 3]. Si cumples 1 y 2, estás en Nivel 2[cite: 3]. Si cumples 1-4, estás en Nivel 3[cite: 3]. Si cumples todos, estás en Nivel 4[cite: 3].</p>
+                            <div class="defensa-box-tech"><strong>Práctica recomendada:</strong> revisa este checklist anualmente para evaluar el progreso y ajustar el plan de mejora[cite: 3]. La madurez en políticas no es un destino, es un proceso de mejora continua[cite: 3].</div>
+                            <p><strong>Cierre:</strong> la madurez en políticas internas no es un lujo — es la base de cualquier programa de cumplimiento efectivo[cite: 3]. Los cuatro niveles descritos aquí —desde el documento legal defensivo hasta la política convertida en cultura operativa— son el camino que toda organización debe recorrer para que sus políticas protejan realmente a la organización[cite: 3].</p>
+                        </div>
+                    </div>
+
+                    <!-- PIE DE AUTOR -->
+                    <div class="defensa-foot">
+                        <div class="defensa-author">
+                            <div class="defensa-foot-label">Autor</div>
+                            <div class="defensa-author-name">Miguel Ángel Carriazo</div>
+                            <p class="defensa-author-bio">Arquitecto de infraestructura y seguridad con más de 25 años de experiencia diseñando, asegurando y operando sistemas críticos. Especializado en gobernanza, políticas internas y cumplimiento normativo.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SIDEBAR -->
+                <aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+                    <div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+                        <div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+                        <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Área</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Políticas y Normativa Interna</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Enfoque</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Madurez y Roadmap</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Temas clave</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Niveles, KPIs, Transición</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Nivel</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Avanzado</td></tr>
+                            <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Lectura</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">18-22 min</td></tr>
+                            <tr><td style="padding:10px 0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Etiquetas</td><td style="padding:10px 0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">#políticas #madurez #roadmap #kpis #cultura</td></tr>
+                        </table>
+                    </div>
+
+                    <div>
+                        <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+                        <nav class="defensa-toc-nav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+                            <a href="#s1" style="text-decoration:none; color:#059669; font-size:14px; font-weight:700; border-left:2px solid #059669; margin-left:-16px; padding-left:14px;">01. El riesgo de partida</a>
+                            <a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Niveles 1-2</a>
+                            <a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Nivel 3: verificado</a>
+                            <a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Nivel 4: cultura</a>
+                            <a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. La señal más honesta</a>
+                            <a href="#s6" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">06. Checklist de madurez</a>
+                        </nav>
+                    </div>
+                </aside>
+
+            </div>
+
+            <!-- ARTÍCULOS RELACIONADOS -->
+            <div class="related-section">
+                <div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+                <div class="related-grid">
+                    <a class="related-card" href="politicas-normativa-controles-evidencias.html">
+                        <div class="r-meta">Políticas y Normativa · Controles</div>
+                        <div class="r-title">Controles y evidencias: la política que dice una cosa y el sistema hace otra</div>
+                        <div class="r-desc">Una política de contraseñas que exige 14 caracteres mientras el sistema técnico solo obliga a 8 es una discrepancia que cualquier auditor detecta en minutos.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                    <a class="related-card" href="politicas-normativa-diseno-principios.html">
+                        <div class="r-meta">Políticas y Normativa · Principios</div>
+                        <div class="r-title">Principios de diseño: la política de seguridad que nadie ha leído nunca</div>
+                        <div class="r-desc">Una política aprobada por dirección, publicada en la intranet, y jamás leída por quienes deberían seguirla, no protege nada.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                    <a class="related-card" href="politicas-normativa-modelo-operativo.html">
+                        <div class="r-meta">Políticas y Normativa · Operaciones</div>
+                        <div class="r-title">Modelo operativo: quién es dueño de cada política, y cuándo caduca</div>
+                        <div class="r-desc">Sin propietario y sin fecha de revisión, una política se convierte en un artefacto histórico.</div>
+                        <span class="r-link">Leer artículo →</span>
+                    </a>
+                </div>
+            </div>
+
+            <div id="footer-container"></div>
+
+        </div>
+    </div>
+
+    <script src="../../js/menu.js"></script>
+    <script src="../../js/footer.js"></script>
+    <script>
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
+            } else {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function() {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>

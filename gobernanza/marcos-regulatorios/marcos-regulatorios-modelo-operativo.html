@@ -1,50 +1,425 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0"><title>Modelo operativo: quién decide si un incidente se notifica en 24 horas | Marcos Regulatorios | Technology Advisory</title><meta name="description" content="NIS2 exige notificación de alerta inicial en 24 horas y un informe completo en 72. Sin un proceso claro de decisión, esas horas se consumen discutiendo si "><meta name="author" content="Miguel Ángel Carriazo"><meta name="robots" content="index, follow"><meta name="theme-color" content="#059669"><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/dossier-core.css"><link rel="stylesheet" href="../../css/articulo-tecnico.css"><link rel="stylesheet" href="../../css/index.css"></head>
-<body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669;"></div><div class="ds-meta"><span><span class="dot" style="background:#059669;"></span>Technology Advisory // gobernanza</span><span>categoría: <strong>Marcos Regulatorios</strong></span></div><main class="article-wrap"><div class="article-kicker">Sistemas e Infraestructura · Marcos Regulatorios</div><h1 class="article-title">Modelo operativo: quién decide si un incidente se notifica en 24 horas</h1><p class="article-lead">NIS2 exige notificación de alerta inicial en 24 horas y un informe completo en 72. Sin un proceso claro de decisión, esas horas se consumen discutiendo si el incidente cualifica para notificar.</p><div class="article-meta"><span><strong>Autor:</strong> Miguel Ángel Carriazo</span><span><strong>Fecha:</strong> 01 Enero 2026</span><span><strong>Nivel:</strong> Avanzado</span><span><strong>Lectura:</strong> 16–20 min</span></div><div class="article-layout"><article class="article-body"><figure class="article-diagram" aria-label="Diagrama técnico de Marcos Regulatorios"><div class="diagram-desktop"><svg viewBox="0 0 900 410" xmlns="http://www.w3.org/2000/svg" role="img">
-<rect width="900" height="410" rx="14" fill="#fafaf8"/>
-<text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Reloj de notificación NIS2</text>
-<text x="40" y="66" font-size="12" fill="#77776f">24h para la alerta inicial, 72h para el informe completo</text>
-<rect x="40" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="58" y="140" font-size="14" font-weight="800" fill="#151915">Detección del incidente</text>
-<text x="58" y="163" font-size="11" fill="#77776f">Momento cero del reloj regulatorio</text>
-<rect x="470" y="110" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="488" y="140" font-size="14" font-weight="800" fill="#151915">Criterio de notificación</text>
-<text x="488" y="163" font-size="11" fill="#77776f">¿Cualifica según los umbrales de NIS2?</text>
-<rect x="40" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="58" y="260" font-size="14" font-weight="800" fill="#151915">Alerta inicial en 24h</text>
-<text x="58" y="283" font-size="11" fill="#77776f">Aunque la información sea incompleta</text>
-<rect x="470" y="230" width="390" height="100" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<text x="488" y="260" font-size="14" font-weight="800" fill="#151915">Informe completo en 72h</text>
-<text x="488" y="283" font-size="11" fill="#77776f">Con el análisis ya más desarrollado</text>
-<defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
-<rect x="40" y="350" width="820" height="40" rx="14" fill="url(#gbar)" opacity=".95"/>
-<text x="68" y="375" font-size="13" font-weight="700" fill="#fff">El reloj regulatorio empieza en la detección, no en el momento de decidir que hay que notificar</text>
-</svg></div><div class="diagram-mobile"><svg viewBox="0 0 330 438" xmlns="http://www.w3.org/2000/svg" role="img">
-<rect width="330" height="438" rx="12" fill="#fafaf8"/>
-<text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Reloj de notificación NIS2</text>
-<rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="89" r="13" fill="#059669"/>
-<text x="40" y="94" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">1</text>
-<text x="64" y="84" font-size="13" font-weight="800" fill="#151915">Detección del incidente</text>
-<text x="64" y="102" font-size="11" fill="#77776f">Momento cero del reloj</text>
-<rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="159" r="13" fill="#059669"/>
-<text x="40" y="164" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">2</text>
-<text x="64" y="154" font-size="13" font-weight="800" fill="#151915">Criterio de notificación</text>
-<text x="64" y="172" font-size="11" fill="#77776f">¿Cualifica según los umbrales</text>
-<rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="229" r="13" fill="#059669"/>
-<text x="40" y="234" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">3</text>
-<text x="64" y="224" font-size="13" font-weight="800" fill="#151915">Alerta inicial en 24h</text>
-<text x="64" y="242" font-size="11" fill="#77776f">Aunque la información sea</text>
-<rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-<circle cx="40" cy="299" r="13" fill="#059669"/>
-<text x="40" y="304" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">4</text>
-<text x="64" y="294" font-size="13" font-weight="800" fill="#151915">Informe completo en 72h</text>
-<text x="64" y="312" font-size="11" fill="#77776f">Con el análisis ya más</text>
-<defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
-<rect x="18" y="340" width="294" height="78" rx="10" fill="url(#gm)"/>
-<text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">El reloj regulatorio empieza en la</text>
-<text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">detección, no en el momento de decidir que</text>
-<text x="32" y="396" font-size="11.5" font-weight="700" fill="#fff">hay que notificar</text>
-</svg></div></figure><div class="toc-mini"><a href="#contexto">1. Las horas perdidas decidiendo si notificar</a><a href="#arquitectura">2. Criterio de notificación definido de antemano</a><a href="#seguridad">3. Autoridad para decidir sin escalar cada vez</a><a href="#operacion">4. La alerta inicial no necesita información completa</a><a href="#roadmap">5. Simulacros de notificación regulatoria</a></div><h2 id="contexto">1. Las horas perdidas decidiendo si un incidente cualifica para notificar</h2><div class="body-text"><p><strong>NIS2 exige notificación de alerta inicial dentro de 24 horas desde que se tiene conocimiento del incidente. Sin un criterio claro de qué cualifica como notificable, las primeras horas críticas se consumen en discusión interna sobre si hay que notificar, en lugar de preparar la notificación misma.</strong></p></div><h2 id="arquitectura">2. Criterio de notificación definido de antemano, no improvisado durante el incidente</h2><div class="body-text"><p>Definir con anticipación qué tipos de incidentes cualifican como notificables bajo NIS2 —según los umbrales de impacto que la norma establece— elimina la ambigüedad del momento crítico, permitiendo actuar rápido en lugar de deliberar bajo presión.</p></div><h2 id="seguridad">3. Autoridad clara para decidir la notificación, sin necesidad de escalar cada vez a comité</h2><div class="body-text"><p>Debe existir una persona o rol con autoridad explícita para decidir que un incidente cualifica para notificación regulatoria y activar el proceso, sin depender de convocar un comité completo cada vez — el reloj de 24 horas no espera a que todos estén disponibles.</p></div><h2 id="operacion">4. La alerta inicial no necesita información completa, solo iniciar el reloj correctamente</h2><div class="body-text"><p>La notificación de 24 horas puede y debe hacerse con información parcial —lo que se sabe hasta ese momento— sin esperar a tener el cuadro completo del incidente, que llegará con el informe de 72 horas. Esperar a tener información completa antes de la primera notificación es un error de interpretación común que genera incumplimiento evitable.</p></div><h2 id="roadmap">5. Simulacros de notificación regulatoria, no solo de respuesta técnica</h2><div class="body-text"><p>Los simulacros de incidente deberían incluir explícitamente el ejercicio de notificación regulatoria —quién redacta, quién aprueba, a través de qué canal se envía— probando el proceso administrativo con el mismo rigor que la respuesta técnica.</p></div><a class="back" href="../index.html?cat=marcos-regulatorios">← Volver a Marcos Regulatorios</a></article><aside class="side-card"><h3>Índice técnico</h3><a href="#contexto">1. Las horas perdidas decidiendo si notificar</a><a href="#arquitectura">2. Criterio de notificación definido de antemano</a><a href="#seguridad">3. Autoridad para decidir sin escalar cada vez</a><a href="#operacion">4. La alerta inicial no necesita información completa</a><a href="#roadmap">5. Simulacros de notificación regulatoria</a></aside></div></main><div id="footer-container"></div></div></div><script src="../../js/menu.js"></script><script src="../../js/footer.js"></script><script src="../../js/main.js"></script></body></html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport"/>
+<title>Modelo operativo: quién decide si un incidente se notifica en 24 horas | Marcos Regulatorios | Technology Advisory</title>
+<meta content="NIS2 exige alerta temprana en 24 horas desde el conocimiento del incidente. Sin criterio definido de antemano y sin autoridad clara para decidir, esas primeras horas se pierden discutiendo si hay que notificar, en vez de notificando." name="description"/>
+<meta content="Miguel Ángel Carriazo" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="#059669" name="theme-color"/>
+<link href="../../css/global.css" rel="stylesheet"/>
+<link href="../../css/dossier-core.css" rel="stylesheet"/>
+<link href="../../css/articulo.css" rel="stylesheet"/>
+<link href="../../css/index.css" rel="stylesheet"/>
+<link href="../../css/articulo-diagramas.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        @media (max-width: 1024px) {
+            .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
+            div[style*="padding: 16px 48px 0"], div[style*="padding: 16px 48px 0;"] { padding: 16px 4% 0 !important; }
+            div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding: 40px 4% 24px !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="card-wrapper ds-page">
+<div class="card">
+<div id="menu-container"></div>
+<div class="accent-bar" style="background:#059669;"></div>
+<div class="ds-meta">
+<span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: gobernanza</span>
+<span>categoría: <strong>Marcos Regulatorios</strong></span>
+</div>
+<div style="padding: 16px 4% 0;">
+<a class="defensa-btn-back" href="../index.html?cat=marcos-regulatorios" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Marcos Regulatorios</a>
+</div>
+<div style="padding: 40px 4% 24px; border-bottom: 1px solid #ededea;">
+<div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Operaciones · Marcos Regulatorios</div>
+<h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Modelo operativo: <span style="color:#059669;">quién decide si un incidente se notifica en 24 horas</span></h1>
+<p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">NIS2 exige alerta temprana en 24 horas desde el conocimiento del incidente. Sin criterio definido de antemano y sin autoridad clara para decidir, esas primeras horas se pierden discutiendo si hay que notificar, en vez de notificando.</p>
+<div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="6" r="2.6"></circle><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"></path></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><rect height="12.5" rx="1.3" width="13" x="2.5" y="3"></rect><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"></path></svg>Marcos Regulatorios</span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="9" r="6.8"></circle><path d="M9 5.3V9l2.8 1.7"></path></svg>Lectura Avanzada (16-20 min)</span>
+</div>
+</div>
+<div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
+<div class="defensa-main" style="min-width:0;">
+<!-- GRÁFICO 1: EL RELOJ DE 24/72 HORAS -->
+<figure aria-label="El reloj de notificación NIS2: 24 y 72 horas" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="260" rx="14" width="900"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="36">El reloj de notificación NIS2: 24 y 72 horas</text>
+<text fill="#77776f" font-size="12" x="40" y="58">arranca en el instante de la detección, no cuando el comité se reúne</text>
+<line stroke="#cbd5e1" stroke-width="4" x1="60" x2="840" y1="150" y2="150"></line>
+<circle cx="80" cy="150" fill="#0f172a" r="12"></circle>
+<text fill="#151915" font-size="12" font-weight="800" text-anchor="middle" x="80" y="180">T+0</text>
+<text fill="#77776f" font-size="10" text-anchor="middle" x="80" y="196">Detección</text>
+<circle cx="380" cy="150" fill="#3b82f6" r="12"></circle>
+<text fill="#151915" font-size="12" font-weight="800" text-anchor="middle" x="380" y="180">24h</text>
+<text fill="#77776f" font-size="10" text-anchor="middle" x="380" y="196">Alerta preliminar</text>
+<circle cx="820" cy="150" fill="#dc2626" r="12"></circle>
+<text fill="#151915" font-size="12" font-weight="800" text-anchor="middle" x="820" y="180">72h</text>
+<text fill="#77776f" font-size="10" text-anchor="middle" x="820" y="196">Informe completo</text>
+<rect fill="#dbeafe" height="35" rx="6" stroke="#3b82f6" stroke-width="1" width="200" x="140" y="100"></rect>
+<text fill="#1e40af" font-size="10" text-anchor="middle" x="240" y="122">Indicación de impacto, sin forense completo</text>
+<rect fill="#fee2e2" height="35" rx="6" stroke="#dc2626" stroke-width="1" width="340" x="440" y="100"></rect>
+<text fill="#7f1d1d" font-size="10" text-anchor="middle" x="610" y="122">Evaluación formal + medidas de mitigación documentadas</text>
+<rect fill="#0f172a" height="30" rx="8" width="820" x="40" y="220"></rect>
+<text fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle" x="450" y="240">El reloj arranca en la detección positiva del SOC, no en la reunión del comité de crisis</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 300" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="300" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="18" y="28">El reloj 24h / 72h</text>
+<line stroke="#cbd5e1" stroke-width="4" x1="45" x2="45" y1="55" y2="230"></line>
+<circle cx="45" cy="60" fill="#0f172a" r="10"></circle>
+<text fill="#151915" font-size="11" font-weight="800" x="65" y="65">T+0 · Detección</text>
+<rect fill="#dbeafe" height="45" rx="6" stroke="#3b82f6" stroke-width="1" width="294" x="18" y="80"></rect>
+<text fill="#1e40af" font-size="10" font-weight="700" x="30" y="98">24h — Alerta preliminar</text>
+<text fill="#334155" font-size="9" x="30" y="114">Indicación de impacto</text>
+<circle cx="45" cy="150" fill="#3b82f6" r="10"></circle>
+<rect fill="#fee2e2" height="55" rx="6" stroke="#dc2626" stroke-width="1" width="294" x="18" y="170"></rect>
+<text fill="#7f1d1d" font-size="10" font-weight="700" x="30" y="188">72h — Informe completo</text>
+<text fill="#334155" font-size="9" x="30" y="204">Evaluación formal + medidas</text>
+<circle cx="45" cy="225" fill="#dc2626" r="10"></circle>
+<rect fill="#0f172a" height="40" rx="6" width="294" x="18" y="245"></rect>
+<text fill="#ffffff" font-size="9" font-weight="700" text-anchor="middle" x="165" y="268">Arranca en detección, no en el comité</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 1: El reloj de notificación NIS2 — 24h para alerta inicial, 72h para informe completo.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- SECCIÓN 1 -->
+<div class="block" id="s1">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — El problema de fondo</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Las horas perdidas decidiendo si un incidente cualifica para notificar</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>NIS2 exige notificación de alerta inicial dentro de 24 horas desde que se tiene conocimiento del incidente. Sin un criterio claro de qué cualifica como notificable, las primeras horas críticas se consumen en discusión interna sobre si hay que notificar, en lugar de preparar la notificación misma.</strong></p>
+<p>He visto este patrón repetirse: el SOC (Security Operations Center) detecta la anomalía a las 9 de la mañana, y a las 14h todavía se está debatiendo en un hilo de correo si el impacto es "significativo" según el artículo 23 de NIS2. A las 20h, cuando por fin se decide que sí hay que notificar, quedan 13 horas del plazo de 24 y nadie ha empezado a redactar la notificación al CSIRT (Computer Security Incident Response Team). El problema no es técnico — es que nadie definió el criterio antes de que el reloj empezara a correr.</p>
+<div class="defensa-box-warning"><strong>⚠️ Sin un criterio claro de notificación, las primeras horas del reloj regulatorio se consumen en discusión, no en acción.</strong> Definir el criterio de antemano es la inversión más rentable para el cumplimiento operativo de NIS2 — cuesta una tarde de trabajo y ahorra la crisis dentro de la crisis.</div>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+<!-- GRÁFICO 2: FLUJO DE DECISIÓN -->
+<figure aria-label="Flujo de decisión de notificación: detectar, cualificar, decidir, notificar" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="200" rx="14" width="900"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="36">Flujo de decisión: cuatro pasos, sin comité intermedio</text>
+<defs><marker id="fa" markerheight="6" markerwidth="6" orient="auto" refx="8" refy="5" viewbox="0 0 10 10"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"></path></marker></defs>
+<rect fill="#dbeafe" height="90" rx="10" stroke="#3b82f6" stroke-width="1.5" width="180" x="40" y="70"></rect>
+<text fill="#1e40af" font-size="12" font-weight="800" text-anchor="middle" x="130" y="98">1. Detección</text>
+<text fill="#334155" font-size="10" text-anchor="middle" x="130" y="118">SOC identifica anomalía</text>
+<text fill="#1e40af" font-size="10" font-weight="700" text-anchor="middle" x="130" y="135">Inicia cuenta atrás</text>
+<line marker-end="url(#fa)" stroke="#94a3b8" stroke-width="2" x1="225" x2="255" y1="115" y2="115"></line>
+<rect fill="#fef3c7" height="90" rx="10" stroke="#d97706" stroke-width="1.5" width="180" x="260" y="70"></rect>
+<text fill="#78350f" font-size="12" font-weight="800" text-anchor="middle" x="350" y="98">2. Cualificación</text>
+<text fill="#334155" font-size="10" text-anchor="middle" x="350" y="118">Contraste vs umbrales</text>
+<text fill="#78350f" font-size="10" font-weight="700" text-anchor="middle" x="350" y="135">Minutos, no horas</text>
+<line marker-end="url(#fa)" stroke="#94a3b8" stroke-width="2" x1="445" x2="475" y1="115" y2="115"></line>
+<rect fill="#d1fae5" height="90" rx="10" stroke="#059669" stroke-width="1.5" width="180" x="480" y="70"></rect>
+<text fill="#065f46" font-size="12" font-weight="800" text-anchor="middle" x="570" y="98">3. Decisión</text>
+<text fill="#334155" font-size="10" text-anchor="middle" x="570" y="118">Autoridad individual</text>
+<text fill="#065f46" font-size="10" font-weight="700" text-anchor="middle" x="570" y="135">Sin comité paralelo</text>
+<line marker-end="url(#fa)" stroke="#94a3b8" stroke-width="2" x1="665" x2="695" y1="115" y2="115"></line>
+<rect fill="#fee2e2" height="90" rx="10" stroke="#dc2626" stroke-width="1.5" width="160" x="700" y="70"></rect>
+<text fill="#7f1d1d" font-size="12" font-weight="800" text-anchor="middle" x="780" y="98">4. Notificación</text>
+<text fill="#334155" font-size="10" text-anchor="middle" x="780" y="118">CSIRT / autoridad</text>
+<text fill="#7f1d1d" font-size="10" font-weight="700" text-anchor="middle" x="780" y="135">Ventana asegurada</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 340" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="340" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="18" y="28">Flujo de decisión</text>
+<rect fill="#dbeafe" height="65" rx="8" stroke="#3b82f6" stroke-width="1.5" width="294" x="18" y="45"></rect>
+<text fill="#1e40af" font-size="11" font-weight="800" x="30" y="68">1. Detección</text>
+<text fill="#334155" font-size="10" x="30" y="86">SOC identifica anomalía</text>
+<text fill="#1e40af" font-size="9" font-weight="700" x="30" y="100">Inicia cuenta atrás</text>
+<rect fill="#fef3c7" height="65" rx="8" stroke="#d97706" stroke-width="1.5" width="294" x="18" y="120"></rect>
+<text fill="#78350f" font-size="11" font-weight="800" x="30" y="143">2. Cualificación</text>
+<text fill="#334155" font-size="10" x="30" y="161">Contraste vs umbrales</text>
+<text fill="#78350f" font-size="9" font-weight="700" x="30" y="175">Minutos, no horas</text>
+<rect fill="#d1fae5" height="65" rx="8" stroke="#059669" stroke-width="1.5" width="294" x="18" y="195"></rect>
+<text fill="#065f46" font-size="11" font-weight="800" x="30" y="218">3. Decisión</text>
+<text fill="#334155" font-size="10" x="30" y="236">Autoridad individual</text>
+<text fill="#065f46" font-size="9" font-weight="700" x="30" y="250">Sin comité paralelo</text>
+<rect fill="#fee2e2" height="55" rx="8" stroke="#dc2626" stroke-width="1.5" width="294" x="18" y="270"></rect>
+<text fill="#7f1d1d" font-size="11" font-weight="800" x="30" y="293">4. Notificación</text>
+<text fill="#334155" font-size="10" x="30" y="311">CSIRT — ventana asegurada</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 2: Flujo de decisión de notificación — cuatro pasos, sin escalado a comité completo.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- SECCIÓN 2 -->
+<div class="block" id="s2">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Criterio de notificación</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Criterio de notificación definido de antemano, no improvisado durante el incidente</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>Definir con anticipación qué tipos de incidentes cualifican como notificables bajo NIS2 —según los umbrales de impacto que la norma establece— elimina la ambigüedad del momento crítico, permitiendo actuar rápido en lugar de deliberar bajo presión.</strong></p>
+<p>El artículo 23 de NIS2 habla de incidente "significativo": el que ha causado o puede causar una perturbación operativa grave, pérdidas financieras considerables, o daño material o inmaterial sustancial a otras personas físicas o jurídicas. Es una definición deliberadamente amplia, y ese es precisamente el problema si no se traduce a criterio operativo concreto antes de que llegue el primer incidente.</p>
+<div class="defensa-box-tech"><strong>Práctica recomendada:</strong> traduce el criterio legal a umbrales operativos concretos — número de sistemas afectados, duración de la indisponibilidad, volumen de datos comprometidos, coste estimado. Documenta el criterio en una política formal, aprobada por dirección, accesible para todos los equipos de respuesta y revisada al menos anualmente.</div>
+<p>La traducción no es trivial pero tampoco requiere sofisticación. Una tabla simple de tres o cuatro escenarios tipo con su clasificación (notifica / no notifica / consultar) cubre el 80% de los casos reales. El 20% restante siempre va a necesitar juicio humano — pero ese juicio se ejerce mejor con la mayoría de los casos ya resueltos por criterio, no con todos los casos abiertos a interpretación bajo presión de tiempo.</p>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+<!-- GRÁFICO 3: AUTORIDAD DELEGADA VS BUROCRÁTICA -->
+<figure aria-label="Autoridad delegada frente a autoridad burocrática para decidir la notificación" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="260" rx="14" width="900"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="36">Autoridad delegada frente a autoridad burocrática</text>
+<text fill="#77776f" font-size="12" x="40" y="58">el mismo incidente, dos modelos de decisión, dos resultados</text>
+<rect fill="#d1fae5" height="150" rx="12" stroke="#059669" stroke-width="1.5" width="395" x="40" y="80"></rect>
+<text fill="#065f46" font-size="13" font-weight="800" x="60" y="105">✔ Autoridad delegada (CISO)</text>
+<text fill="#334155" font-size="11" x="60" y="128">Decisión individual, sin firma conjunta</text>
+<text fill="#334155" font-size="11" x="60" y="146">Disponibilidad 24/7 con playbook firmado</text>
+<text fill="#334155" font-size="11" x="60" y="164">Amparo por acta previa del comité</text>
+<text fill="#059669" font-size="13" font-weight="800" x="60" y="200">&lt; 15 minutos</text>
+<rect fill="#fee2e2" height="150" rx="12" stroke="#dc2626" stroke-width="1.5" width="395" x="465" y="80"></rect>
+<text fill="#7f1d1d" font-size="13" font-weight="800" x="485" y="105">✗ Autoridad burocrática</text>
+<text fill="#334155" font-size="11" x="485" y="128">Requiere comité de crisis completo</text>
+<text fill="#334155" font-size="11" x="485" y="146">Firmas cruzadas legal + dirección</text>
+<text fill="#334155" font-size="11" x="485" y="164">Sin suplencias fuera de horario</text>
+<text fill="#dc2626" font-size="13" font-weight="800" x="485" y="200">&gt; 6 horas (fallo)</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 300" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="300" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="18" y="28">Delegada vs burocrática</text>
+<rect fill="#d1fae5" height="115" rx="10" stroke="#059669" stroke-width="1.5" width="294" x="18" y="45"></rect>
+<text fill="#065f46" font-size="12" font-weight="800" x="30" y="68">✔ Autoridad delegada</text>
+<text fill="#334155" font-size="10" x="30" y="88">Decisión individual, sin firma</text>
+<text fill="#334155" font-size="10" x="30" y="103">conjunta. Playbook 24/7.</text>
+<text fill="#059669" font-size="12" font-weight="800" x="30" y="128">&lt; 15 minutos</text>
+<rect fill="#fee2e2" height="115" rx="10" stroke="#dc2626" stroke-width="1.5" width="294" x="18" y="170"></rect>
+<text fill="#7f1d1d" font-size="12" font-weight="800" x="30" y="193">✗ Autoridad burocrática</text>
+<text fill="#334155" font-size="10" x="30" y="213">Comité completo, firmas</text>
+<text fill="#334155" font-size="10" x="30" y="228">cruzadas, sin suplencias.</text>
+<text fill="#dc2626" font-size="12" font-weight="800" x="30" y="253">&gt; 6 horas (fallo)</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 3: Autoridad delegada vs burocrática — el mismo incidente, dos velocidades de decisión.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- SECCIÓN 3 -->
+<div class="block" id="s3">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Autoridad para decidir</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Autoridad clara para decidir, sin necesidad de escalar cada vez a comité</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p><strong>Debe existir una persona o rol con autoridad explícita para decidir que un incidente cualifica para notificación regulatoria y activar el proceso, sin depender de convocar un comité completo cada vez — el reloj de 24 horas no espera a que todos estén disponibles.</strong></p>
+<p>La forma correcta de delegar esta autoridad no es informal ("el CISO (Chief Information Security Officer) decide si hace falta"), sino formal: un acta del comité de dirección que otorga explícitamente al CISO —o al rol equivalente— la capacidad de decidir y activar la notificación sin necesidad de aprobación previa caso por caso. Esa acta es, además, la evidencia que protege a quien decide: actúa dentro de un mandato documentado, no por iniciativa personal sin respaldo.</p>
+<div class="defensa-box-warning"><strong>⚠️ Si la decisión de notificar requiere escalar a un comité que se reúne una vez al día, el proceso está diseñado para fallar.</strong> La autoridad debe estar asignada a un rol individual con capacidad de actuar 24/7, con suplencia designada para ausencias.</div>
+<p>La suplencia es el punto que casi siempre se olvida. Un modelo con un único punto de decisión falla en cuanto esa persona está de vacaciones, de baja o simplemente ilocalizable un fin de semana. El modelo operativo defendible incluye un suplente designado explícitamente, con el mismo mandato y el mismo acceso a la información necesaria para decidir.</p>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+<!-- SECCIÓN 4 -->
+<div class="block" id="s4">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — El contenido de la notificación</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La plantilla ya redactada es lo que separa 24 horas de 4</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>Una vez tomada la decisión, redactar la notificación desde cero bajo presión de tiempo es donde se pierden las horas restantes del plazo. La alerta preliminar de 24 horas no exige un análisis forense completo —la propia norma lo reconoce—, pero sí exige una estructura mínima: naturaleza del incidente, sistemas afectados, impacto estimado inicial, y medidas de contención adoptadas hasta el momento.</p>
+<p>Tener esa estructura como plantilla preexistente, con los campos ya identificados y el canal de envío al CSIRT-CV (Coefficient of Variation) o INCIBE (Instituto Nacional de Ciberseguridad)-CERT (Computer Emergency Response Team) ya probado (no descubierto en el momento), reduce el tiempo de redacción de horas a minutos. La plantilla no sustituye el juicio sobre qué escribir en cada campo, pero elimina la fricción de decidir cómo estructurar la comunicación mientras el reloj corre.</p>
+<div class="defensa-box-success"><strong>✔ Buena práctica:</strong> mantener la plantilla de notificación probada con un envío de prueba real al canal correspondiente al menos una vez al año, no solo revisada en papel. Un canal que funcionaba el año pasado puede haber cambiado de formato o de endpoint sin que nadie se entere hasta que hace falta.</div>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+<!-- GRÁFICO 4: EL SIMULACRO ANUAL -->
+<figure aria-label="El simulacro de notificación como única forma de validar el proceso" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="220" rx="14" width="900"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="36">El simulacro anual: lo único que valida el proceso de verdad</text>
+<text fill="#77776f" font-size="12" x="40" y="58">un playbook sin ensayar es una hipótesis, no un procedimiento</text>
+<rect fill="#f8fafc" height="110" rx="10" stroke="#94a3b8" stroke-width="1.5" width="260" x="40" y="80"></rect>
+<text fill="#151915" font-size="12" font-weight="800" x="60" y="105">Sin simulacro</text>
+<text fill="#64748b" font-size="11" x="60" y="128">Playbook en papel</text>
+<text fill="#64748b" font-size="11" x="60" y="145">Contactos no verificados</text>
+<text fill="#94a3b8" font-size="11" font-weight="700" x="60" y="162">Fallo descubierto en real</text>
+<rect fill="#d1fae5" height="110" rx="10" stroke="#059669" stroke-width="1.5" width="260" x="320" y="80"></rect>
+<text fill="#065f46" font-size="12" font-weight="800" x="340" y="105">Con simulacro anual</text>
+<text fill="#334155" font-size="11" x="340" y="128">Canal probado en real</text>
+<text fill="#334155" font-size="11" x="340" y="145">Tiempos medidos y ajustados</text>
+<text fill="#059669" font-size="11" font-weight="700" x="340" y="162">Fallos corregidos antes</text>
+<rect fill="#dbeafe" height="110" rx="10" stroke="#3b82f6" stroke-width="1.5" width="260" x="600" y="80"></rect>
+<text fill="#1e40af" font-size="12" font-weight="800" x="620" y="105">Evidencia generada</text>
+<text fill="#334155" font-size="11" x="620" y="128">Acta del simulacro</text>
+<text fill="#334155" font-size="11" x="620" y="145">Tiempo real medido</text>
+<text fill="#3b82f6" font-size="11" font-weight="700" x="620" y="162">Defendible ante auditor</text>
+</svg>
+</div>
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 300" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="300" rx="12" width="330"></rect>
+<text fill="#151915" font-size="13" font-weight="800" x="18" y="28">El simulacro anual</text>
+<rect fill="#f8fafc" height="70" rx="8" stroke="#94a3b8" stroke-width="1.5" width="294" x="18" y="45"></rect>
+<text fill="#151915" font-size="11" font-weight="800" x="30" y="68">Sin simulacro</text>
+<text fill="#64748b" font-size="10" x="30" y="86">Playbook en papel</text>
+<text fill="#94a3b8" font-size="9" font-weight="700" x="30" y="101">Fallo descubierto en real</text>
+<rect fill="#d1fae5" height="70" rx="8" stroke="#059669" stroke-width="1.5" width="294" x="18" y="125"></rect>
+<text fill="#065f46" font-size="11" font-weight="800" x="30" y="148">Con simulacro anual</text>
+<text fill="#334155" font-size="10" x="30" y="166">Canal probado, tiempos medidos</text>
+<text fill="#059669" font-size="9" font-weight="700" x="30" y="181">Fallos corregidos antes</text>
+<rect fill="#dbeafe" height="70" rx="8" stroke="#3b82f6" stroke-width="1.5" width="294" x="18" y="205"></rect>
+<text fill="#1e40af" font-size="11" font-weight="800" x="30" y="228">Evidencia generada</text>
+<text fill="#334155" font-size="10" x="30" y="246">Acta + tiempo real medido</text>
+<text fill="#3b82f6" font-size="9" font-weight="700" x="30" y="261">Defendible ante auditor</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 4: El simulacro anual de notificación como única forma real de validar el proceso.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- SECCIÓN 5 -->
+<div class="block" id="s5">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Validar con simulacro</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Un playbook sin ensayar es una hipótesis, no un procedimiento</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>El único momento en que se descubre si el modelo operativo funciona de verdad es cuando se pone a prueba. Y esperar al primer incidente real para descubrir que el contacto del CSIRT ha cambiado, que el formulario web pide un campo nuevo, o que el suplente designado no tiene acceso al sistema de tickets, es la peor forma posible de aprenderlo.</p>
+<p>Un simulacro anual de notificación —realista, con tiempo cronometrado, con el canal de envío real (usando el modo de prueba si el CSIRT lo ofrece, o confirmando el procedimiento con ellos directamente)— convierte el playbook de documento teórico a procedimiento validado. El resultado del simulacro, con los tiempos medidos por etapa, es también la evidencia que un auditor NIS2 va a pedir para confirmar que el proceso no es solo aspiracional.</p>
+<div class="defensa-box-tech"><strong>Métrica del simulacro:</strong> mide el tiempo desde "se declara el escenario" hasta "notificación lista para enviar". Si supera las 4 horas en un ensayo sin presión real, en un incidente real con caos añadido va a superar las 24. El simulacro debe forzar mejora del proceso, no solo confirmar que existe.</div>
+</div>
+</div>
+
+                    <div class="defensa-box-info ta-reference-box" style="margin:34px 0;">
+                        <strong>🔎 Correspondencia normativa concreta.</strong> En operación, deben materializarse en responsables, eventos de activación, herramientas, aprobaciones, excepciones y trazabilidad. NIS2 sitúa la responsabilidad de los órganos de dirección en el artículo 20, las medidas de gestión de riesgos de ciberseguridad en el 21 y la notificación de incidentes en el 23. DORA (Digital Operational Resilience Act) articula el gobierno y el marco de riesgo TIC (Tecnologías de la Información y la Comunicación) en los artículos 5 y 6, la protección y prevención en el 9, la respuesta y recuperación en el 11, la gestión de incidentes en el 17 y el riesgo de terceros en los artículos 28 a 30. El RGPD (Reglamento General de Protección de Datos) exige conectar principios, responsabilidad, diseño, registro, seguridad y evaluación de impacto mediante los artículos 5, 24, 25, 30, 32 y 35. La matriz de correspondencia puede mantenerse en ServiceNow IRM (Integrated Risk Management), Archer, MetricStream u otra plataforma GRC (Governance, Risk and Compliance), pero las evidencias deben proceder de los sistemas que ejecutan el control: IAM (Identity and Access Management), CMDB (Configuration Management Database), SIEM (Security Information and Event Management), ticketing, repositorios de configuración, contratos y plataformas de continuidad.
+                    </div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 06</span></div>
+<!-- SECCIÓN 6: CHECKLIST -->
+<div class="block" id="s6">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 06 — Checklist de notificación</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Checklist de notificación: ¿tu organización notificaría a tiempo hoy?</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>Este checklist evalúa si el modelo operativo de notificación funcionaría bajo presión real, no solo sobre el papel. Responde honestamente a cada pregunta.</p>
+<div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:20px; margin:16px 0;">
+<table style="width:100%; border-collapse:collapse; font-size:14px;">
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669; width:30px;">1.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Criterio documentado</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Existe tabla de umbrales operativos aprobada por dirección?</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669;">2.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Autoridad delegada</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Hay una persona con mandato explícito en acta para decidir sin comité?</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669;">3.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Suplencia designada</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Existe suplente con el mismo mandato y el mismo acceso?</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669;">4.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Plantilla lista</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Existe plantilla de notificación con los campos ya identificados?</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td style="padding:10px 0; font-weight:700; color:#059669;">5.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Canal probado</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Se ha usado el canal de notificación real en el último año?</td>
+</tr>
+<tr>
+<td style="padding:10px 0; font-weight:700; color:#059669;">6.</td>
+<td style="padding:10px 0; font-weight:600; color:#0f172a;">Simulacro reciente</td>
+<td style="padding:10px 0; color:#64748b; font-size:13px;">¿Se ha ejecutado un simulacro cronometrado en los últimos 12 meses?</td>
+</tr>
+</table>
+</div>
+<p><strong>Resultado:</strong> si alguna respuesta es "no", el modelo operativo de notificación tiene un punto de fallo que solo se va a descubrir en un incidente real — el peor momento posible para descubrirlo.</p>
+<div class="defensa-box-tech"><strong>Práctica recomendada:</strong> revisa este checklist cada vez que cambie el organigrama del área de seguridad o de dirección. La autoridad delegada y la suplencia son las dos casillas que más rápido caducan sin que nadie se entere.</div>
+</div>
+</div>
+<!-- PIE DE AUTOR -->
+
+<div class="defensa-foot">
+<div class="defensa-author">
+<div class="defensa-foot-label">Autor</div>
+<div class="defensa-author-name">Miguel Ángel Carriazo</div>
+<p class="defensa-author-bio">Arquitecto de Infraestructura y Ciberseguridad con más de 25 años de experiencia diseñando, asegurando y operando entornos tecnológicos críticos. Lead Auditor en ISO/IEC 27001 e ISO/IEC 42001, especializado en gobierno, riesgo, cumplimiento y transformación tecnológica. En esta área aborda los marcos regulatorios desde su traducción a controles, responsabilidades, evidencias y decisiones tecnológicas verificables.</p>
+</div>
+</div></div>
+<!-- SIDEBAR -->
+<aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+<div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+<div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+<table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Área</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#0f172a; font-weight:600; text-align:right;">Marcos Regulatorios</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Enfoque</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#059669; font-weight:700; text-align:right;">Modelo Operativo</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Temas clave</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#059669; font-weight:700; text-align:right;">NIS2, 24/72h, notificación</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Nivel</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#0f172a; font-weight:600; text-align:right;">Avanzado</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#64748b; font-weight:700;">Lectura</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; color:#0f172a; font-weight:600; text-align:right;">16-20 min</td></tr>
+<tr><td style="padding:10px 0; color:#64748b; font-weight:700;">Etiquetas</td><td style="padding:10px 0; color:#0f172a; font-weight:600; text-align:right;">#NIS2 #notificación #simulacro #24h</td></tr>
+</table>
+</div>
+<div>
+<div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+<nav class="defensa-toc-nav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+<a href="#s1" style="text-decoration:none; color:#059669; font-size:14px; font-weight:700; border-left:2px solid #059669; margin-left:-16px; padding-left:14px;">01. Las horas perdidas</a>
+<a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Criterio de notificación</a>
+<a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Autoridad para decidir</a>
+<a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Plantilla lista</a>
+<a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Simulacro anual</a>
+<a href="#s6" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">06. Checklist</a>
+</nav>
+</div>
+</aside>
+</div>
+<div class="related-section">
+<div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+<div class="related-grid">
+<a class="related-card" href="marcos-regulatorios-diseno-principios.html">
+<div class="r-meta">Marcos Regulatorios · Principios</div>
+<div class="r-title">Principios de diseño: NIS2 ya no es solo para operadores críticos clásicos</div>
+<div class="r-desc">NIS2 amplió drásticamente el alcance de la directiva original.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+<a class="related-card" href="marcos-regulatorios-controles-evidencias.html">
+<div class="r-meta">Marcos Regulatorios · Controles</div>
+<div class="r-title">Controles y evidencias: el gap analysis que reveló que ya cumplías el 70%</div>
+<div class="r-desc">Si ya certificas ISO 27001 con alcance amplio, probablemente ya cubres buena parte de NIS2.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+<a class="related-card" href="marcos-regulatorios-madurez-roadmap.html">
+<div class="r-meta">Marcos Regulatorios · Madurez</div>
+<div class="r-title">Madurez y roadmap: de no saber si aplica a cumplimiento integrado</div>
+<div class="r-desc">Los cuatro niveles reales de madurez frente a marcos regulatorios como NIS2 y DORA.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+</div>
+</div>
+<div id="footer-container"></div>
+</div>
+</div>
+<script src="../../js/menu.js"></script>
+<script src="../../js/footer.js"></script>
+<script>
+        function toggleZoom(element) {
+            if (element.classList.contains('zoomed')) {
+                element.classList.remove('zoomed');
+                document.querySelector('.zoom-overlay')?.classList.remove('active');
+            } else {
+                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                element.classList.add('zoomed');
+                let overlay = document.querySelector('.zoom-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'zoom-overlay';
+                    overlay.onclick = function() {
+                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
+                        overlay.classList.remove('active');
+                    };
+                    document.body.appendChild(overlay);
+                }
+                overlay.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
