@@ -3,10 +3,10 @@
   "title": "CISA KEV Intelligence",
   "source": "CISA Known Exploited Vulnerabilities Catalog",
   "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
-  "generated_at": "2026-07-11T18:41:02.292125Z",
+  "last_updated_at": "2026-07-11T19:08:16.566109Z",
   "catalog_version": "2026.07.10",
   "catalog_date_released": "2026-07-10T17:00:25.7327Z",
-  "count": 1637,
+  "total_cve": 1637,
   "vulnerabilities": [
     {
       "cveID": "CVE-2026-56291",
