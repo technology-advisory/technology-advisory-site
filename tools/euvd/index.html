@@ -44,8 +44,8 @@
 <select id="exploited"><option value="">Explotación: todas</option><option value="yes">Explotada</option><option value="no">No marcada</option></select>
 <select id="epss"><option value="">EPSS: todos</option><option value="p90">≥ 90 %</option><option value="p70">≥ 70 %</option><option value="unknown">Sin dato</option></select>
 
-<select id="month"><option value="">Mes: todos</option></select>
-<select id="order"><option value="desc">Publicación: más reciente primero</option><option value="asc">Publicación: más antigua primero</option></select>
+<select id="month"><option value="">Mes de actualización: todos</option></select>
+<select id="order"><option value="desc">Actualización: más reciente primero</option><option value="asc">Actualización: más antigua primero</option></select>
 </section>
 <div id="filterNote" class="filter-note">Cargando datos.</div>
 <main class="content"><div id="list" class="list"></div><div id="pagination" class="pagination"></div></main>
@@ -86,7 +86,7 @@ function matchReason(v,term){
 }
 function monthKey(value){const d=value?new Date(value):null;if(!d||Number.isNaN(d.getTime()))return'';return `${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,'0')}`;}
 function monthLabel(key){const [y,m]=key.split('-').map(Number);return new Intl.DateTimeFormat('es-ES',{month:'long',year:'numeric'}).format(new Date(y,m-1,1));}
-function populateMonths(){const current=$('month').value;const months=[...new Set(catalog.map(v=>monthKey(v.date_published)).filter(Boolean))].sort().reverse();$('month').innerHTML='<option value="">Mes: todos</option>'+months.map(k=>`<option value="${k}">${monthLabel(k)}</option>`).join('');if(months.includes(current))$('month').value=current;}
+function populateMonths(){const current=$('month').value;const months=[...new Set(catalog.map(v=>monthKey(v.date_updated)).filter(Boolean))].sort().reverse();$('month').innerHTML='<option value="">Mes de actualización: todos</option>'+months.map(k=>`<option value="${k}">${monthLabel(k)}</option>`).join('');if(months.includes(current))$('month').value=current;}
 function apply(){
  const term=$('q').value.trim().toLowerCase();
  const vendorTerm=$('vendor').value.trim().toLowerCase();
@@ -103,7 +103,7 @@ function apply(){
   if(vendorTerm&&!vendors.includes(vendorTerm))return false;
   if(productTerm&&!products.includes(productTerm))return false;
   if(assignerTerm&&!assigner.includes(assignerTerm))return false;
-  if(month&&monthKey(v.date_published)!==month)return false;
+  if(month&&monthKey(v.date_updated)!==month)return false;
 
   if(sev==='critical'&&!(v.cvss>=9))return false;
   if(sev==='high'&&!(v.cvss>=7&&v.cvss<9))return false;
@@ -116,7 +116,7 @@ function apply(){
   if(ep==='unknown'&&v.epss!=null)return false;
   return true;
  });
- filtered.sort((a,b)=>{const da=a.date_published?new Date(a.date_published).getTime():0,db=b.date_published?new Date(b.date_published).getTime():0;return order==='asc'?da-db:db-da;});
+ filtered.sort((a,b)=>{const da=a.date_updated?new Date(a.date_updated).getTime():0,db=b.date_updated?new Date(b.date_updated).getTime():0;return order==='asc'?da-db:db-da;});
  page=1;render();
 }
 function render(){
