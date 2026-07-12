@@ -31,9 +31,9 @@
 </section>
 <section class="stats">
 <div class="stat"><b id="statTotal">—</b><span>KEV en catálogo</span></div>
-<div class="stat"><b id="statEnriched">—</b><span>CVE enriquecidas</span></div>
+<div class="stat"><b id="statCvss">—</b><span>CVE con CVSS</span></div>
 <div class="stat"><b id="statRansomware">—</b><span>Con ransomware conocido</span></div>
-<div class="stat"><b id="statOverdue">—</b><span>Deadlines vencidos</span></div>
+<div class="stat"><b id="statEpss">—</b><span>CVE con EPSS</span></div>
 </section>
 <section class="filters">
 <input id="q" type="search" placeholder="Buscar CVE, fabricante, producto o vulnerabilidad…">
@@ -75,7 +75,19 @@ function render(){$('filterNote').textContent=`${filtered.length.toLocaleString(
  if(!rows.length){list.innerHTML=`<div class="empty"><strong>No hay resultados con esta combinación de filtros.</strong><br>El catálogo contiene ${catalog.filter(v=>v.knownRansomwareCampaignUse==='Known').length.toLocaleString('es-ES')} KEV con uso conocido en ransomware. Los filtros se aplican de forma acumulativa.</div>`;} else list.innerHTML=rows.map(v=>{const e=enrichFor(v.cveID); const [label,cls,reason]=priority(v,e); const overdue=parseDate(v.dueDate)&&parseDate(v.dueDate)<today; const src=firstHttp(v.notes); return `<article class="item ${cls}"><div class="item-head"><div><div class="cve">${v.cveID}</div><div class="title">${v.vulnerabilityName}</div><div class="vendor">${v.vendorProject} · ${v.product}</div></div><div class="badges"><span class="badge ${cls==='critical'?'red':cls==='high'?'amber':'green'}">${label}</span>${v.knownRansomwareCampaignUse==='Known'?'<span class="badge red">Ransomware Known</span>':''}<span class="badge ${overdue?'red':'blue'}">${overdue?'Deadline vencido':'En plazo'}</span></div></div><div class="grid"><div class="metric"><small>CVSS</small><strong>${e?.cvss??'Sin dato'}${e?.cvss_version?' · v'+e.cvss_version:''}${e?.cvss_source&&e?.cvss!=null?' · '+e.cvss_source:''}</strong></div><div class="metric"><small>EPSS</small><strong>${fmtPct(e?.epss)}</strong></div><div class="metric"><small>Percentil EPSS</small><strong>${fmtPct(e?.epss_percentile)}</strong></div><div class="metric"><small>Fecha CISA</small><strong>${v.dateAdded||'—'}</strong></div><div class="metric"><small>Deadline</small><strong>${v.dueDate||'—'}</strong></div></div><div class="body"><p>${v.shortDescription}</p><div class="reason"><strong>Por qué se prioriza:</strong> ${reason}</div></div><div class="actions">${src?`<a href="${src}" target="_blank" rel="noopener">Fuente / advisory →</a>`:''}<a href="https://nvd.nist.gov/vuln/detail/${v.cveID}" target="_blank" rel="noopener">NVD →</a></div></article>`}).join('');
  const p=$('pagination'); p.innerHTML=''; const start=Math.max(1,page-2), end=Math.min(pages,start+4); for(let i=start;i<=end;i++){const b=document.createElement('button');b.textContent=i;b.className=i===page?'active':'';b.onclick=()=>{page=i;render();window.scrollTo({top:0,behavior:'smooth'})};p.appendChild(b)} }
 async function init(){try{const [c,e]=await Promise.all([fetch('../../data/cisa-kev.json',{cache:'no-store'}),fetch('../../data/cve-enrichment.json',{cache:'no-store'})]); if(!c.ok||!e.ok)throw new Error('No se pudieron cargar los JSON'); const cj=await c.json(), ej=await e.json(); catalog=cj.vulnerabilities||[]; enrich=ej.items||{}; filtered=[...catalog];
- $('catalogMeta').textContent=`Catálogo ${cj.catalog_version||'—'} · ${cj.count||catalog.length} KEV`; $('enrichMeta').textContent=`Enriquecidas ${ej.count||Object.keys(enrich).length} · ${ej.generated_at||'—'}`; $('statTotal').textContent=(cj.count||catalog.length).toLocaleString('es-ES'); $('statEnriched').textContent=Object.keys(enrich).length.toLocaleString('es-ES'); $('statRansomware').textContent=catalog.filter(v=>v.knownRansomwareCampaignUse==='Known').length.toLocaleString('es-ES'); $('statOverdue').textContent=catalog.filter(v=>parseDate(v.dueDate)&&parseDate(v.dueDate)<today).length.toLocaleString('es-ES'); render(); ['q','ransomware','deadline','cvss','epss'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',apply));}
+ const totalKev=cj.total_cve??catalog.length;
+ const totalCvss=ej.total_cvss??catalog.filter(v=>enrichFor(v.cveID)?.cvss!=null).length;
+ const totalEpss=ej.total_epss??catalog.filter(v=>enrichFor(v.cveID)?.epss!=null).length;
+ const ransomwareKnown=catalog.filter(v=>v.knownRansomwareCampaignUse==='Known').length;
+ const catalogUpdated=cj.last_updated_at||'—';
+ const enrichUpdated=ej.last_updated_at||'—';
+ $('catalogMeta').textContent=`Catálogo ${cj.catalog_version||'—'} · ${totalKev.toLocaleString('es-ES')} KEV · actualizado ${catalogUpdated}`;
+ $('enrichMeta').textContent=`CVSS ${totalCvss.toLocaleString('es-ES')} · EPSS ${totalEpss.toLocaleString('es-ES')} · actualizado ${enrichUpdated}`;
+ $('statTotal').textContent=totalKev.toLocaleString('es-ES');
+ $('statCvss').textContent=totalCvss.toLocaleString('es-ES');
+ $('statRansomware').textContent=ransomwareKnown.toLocaleString('es-ES');
+ $('statEpss').textContent=totalEpss.toLocaleString('es-ES');
+ render(); ['q','ransomware','deadline','cvss','epss'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',apply));}
  catch(err){$('list').innerHTML=`<div class="empty"><strong>Error cargando datos.</strong><br>${err.message}<br><br>Abre esta página desde tu servidor local, no con doble clic.</div>`; console.error(err)}}
 init();
 </script>
