@@ -64,36 +64,16 @@ document.addEventListener("DOMContentLoaded", function() {
             { num: '4.6', name: 'Políticas y Normativa Interna', slug: 'politicas-normativa' },
             { num: '4.7', name: 'Auditoría y Control Interno', slug: 'auditoria-control-interno' },
             { num: '4.8', name: 'Gobierno del Dato', slug: 'gobierno-dato' }
-        ],
-        tools: [
-            { num: '6.1', name: 'CISA KEV Intelligence', slug: 'cisa-kev' }
-        ],
-        referencias: [
-            { num: '5.1', name: 'Segmentación corporativa', slug: 'segmentacion-red-corporativa', page: 1 },
-            { num: '5.2', name: 'DMZ de doble capa', slug: 'dmz-doble-capa', page: 1 },
-            { num: '5.3', name: 'Acceso remoto ZTNA', slug: 'acceso-remoto-ztna', page: 1 },
-            { num: '5.4', name: 'Red híbrida hub-spoke', slug: 'red-hibrida-hub-spoke', page: 1 },
-            { num: '5.5', name: 'Pipeline DevSecOps', slug: 'pipeline-devsecops', page: 1 },
-            { num: '5.6', name: 'Service Mesh con mTLS', slug: 'service-mesh-mtls', page: 1 },
-            { num: '5.7', name: 'Clúster NGFW en HA', slug: 'cluster-ngfw-ha', page: 1 },
-            { num: '5.8', name: 'Inspección SSL/TLS', slug: 'inspeccion-ssl-tls', page: 2 },
-            { num: '5.9', name: 'Core L3 redundante', slug: 'core-l3-redundante', page: 2 },
-            { num: '5.10', name: 'Estrategia Multi-Sitio 3DC', slug: 'estrategia-multisitio-3dc', page: 2 }
         ]
     };
 
     function buildSubItems(area) {
-        return subs[area].map(s => {
-            const href = area === 'referencias'
-                ? `${basePath}referencias/index.html${s.page > 1 ? `?page=${s.page}` : ''}#${s.slug}`
-                : area === 'tools'
-                    ? `${basePath}tools/${s.slug}/index.html`
-                    : `${basePath}${area}/index.html?cat=${s.slug}`;
-            return `<a class="sub-item" href="${href}">
+        return subs[area].map(s =>
+            `<a class="sub-item" href="${basePath}${area}/index.html?cat=${s.slug}">
                 <span class="sub-num">${s.num}</span>
                 <span class="sub-name">${s.name}</span>
-            </a>`;
-        }).join('');
+            </a>`
+        ).join('');
     }
 
     function areaItem(key, label, svgPath, devFlag) {
@@ -115,6 +95,34 @@ document.addEventListener("DOMContentLoaded", function() {
             </li>`;
     }
 
+
+    function toolsItem() {
+        return `
+            <li class="has-sub">
+                <a href="${basePath}tools/cisa-kev/index.html" class="nav-link${A('tools')}">
+                    <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    Tools
+                    <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </a>
+                <div class="sub-panel">
+                    <div class="sub-header">
+                        <span class="sub-area-label">Tools</span>
+                        <span class="sub-see-all">Inteligencia técnica</span>
+                    </div>
+                    <div class="sub-grid">
+                        <a class="sub-item" href="${basePath}tools/cisa-kev/index.html">
+                            <span class="sub-num">T.1</span>
+                            <span class="sub-name">CISA KEV Intelligence</span>
+                        </a>
+                        <a class="sub-item" href="${basePath}tools/euvd/index.html">
+                            <span class="sub-num">T.2</span>
+                            <span class="sub-name">EUVD Intelligence</span>
+                        </a>
+                    </div>
+                </div>
+            </li>`;
+    }
+
     menuContainer.innerHTML = `
         <style>
             .site-nav {
@@ -126,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 z-index: 100;
             }
             .nav-container {
-                max-width: 1360px;
+                max-width: 1280px;
                 margin: 0 auto;
                 display: flex;
                 justify-content: space-between;
@@ -296,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             /* ---- RESPONSIVE ---- */
-            @media (max-width: 1120px) {
+            @media (max-width: 1040px) {
                 .hamburger { display: block; }
                 .logo-link { flex: 1; }
                 .nav-list {
@@ -387,8 +395,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     ${areaItem('seguridad', 'Seguridad', '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>', true)}
                     ${areaItem('operaciones', 'Operaciones', '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>', true)}
                     ${areaItem('gobernanza', 'Gobernanza', '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>', true)}
-                                        ${areaItem('referencias', 'Referencias', '<path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/>', false)}
-                    ${areaItem('tools', 'Tools', '<path d="M14.7 6.3a4 4 0 0 0-5 5L3 18l3 3 6.7-6.7a4 4 0 0 0 5-5l-2.2 2.2-3-3 2.2-2.2z"/>', false)}
+                    <li><a href="${basePath}referencias/index.html" class="nav-link${A('referencias')}">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="6" rx="1"/><rect x="14" y="4" width="7" height="6" rx="1"/><rect x="8.5" y="14" width="7" height="6" rx="1"/><path d="M6.5 10v2h11v-2M12 12v2"/></svg>
+                        Referencias</a></li>
+                    ${toolsItem()}
                     <li><a href="${basePath}sobre-mi/sobre-mi.html" class="nav-link${A('sobre-mi')}">
                         <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                         Sobre mí</a></li>
@@ -416,7 +426,7 @@ document.addEventListener("DOMContentLoaded", function() {
     /* --- Móvil: acordeón para submenús --- */
     document.querySelectorAll('.has-sub > .nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
-            if (window.innerWidth <= 1120) {
+            if (window.innerWidth <= 1040) {
                 e.preventDefault();
                 e.stopPropagation();
                 const panel = this.nextElementSibling;

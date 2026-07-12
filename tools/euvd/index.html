@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>EUVD Intelligence · Technology Advisory</title>
+<meta name="description" content="Explorador técnico de vulnerabilidades de la European Union Vulnerability Database de ENISA.">
+<meta name="theme-color" content="#059669">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<style>
+:root{--ink:#151915;--muted:#64748b;--line:#e2e8f0;--paper:#fff;--canvas:#f4f3ee;--accent:#059669;--accent-soft:#ecfdf5;--amber:#b45309;--red:#b91c1c;--red-soft:#fef2f2;--amber-soft:#fffbeb;--blue:#0369a1;--blue-soft:#eff6ff}
+*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);font-family:Inter,Arial,sans-serif}.wrap{width:100%;max-width:none;margin:0 auto;padding:24px 32px 32px}.euvd-card{width:100%;background:var(--paper);border:1px solid #d8d4c8}.top{padding:28px 32px;border-bottom:1px solid var(--line)}.eyebrow{font:700 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.14em;color:var(--accent)}h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,5vw,52px);line-height:1.05;margin:10px 0 12px}.accent{color:var(--accent)}.lead{font-size:17px;line-height:1.7;color:#475569;max-width:960px}.meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font:500 12px 'IBM Plex Mono',monospace;color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:20px 32px;border-bottom:1px solid var(--line)}.stat{border:1px solid var(--line);padding:16px;background:#fafaf8}.stat b{display:block;font:700 28px 'Space Grotesk',sans-serif}.stat span{font-size:12px;color:var(--muted)}.filters{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:10px;padding:20px 32px;border-bottom:1px solid var(--line);background:#fafaf8}.filters input,.filters select{width:100%;padding:11px 12px;border:1px solid #cbd5e1;background:#fff;font:500 13px Inter;border-radius:6px}.filter-note{padding:10px 32px;border-bottom:1px solid var(--line);background:#fff;font:500 11px 'IBM Plex Mono',monospace;color:var(--muted)}.content{padding:24px 32px}.list{display:grid;gap:14px}.item{border:1px solid var(--line);border-left:4px solid var(--accent);background:#fff}.item.critical{border-left-color:var(--red)}.item.high{border-left-color:var(--amber)}.item-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding:18px 18px 12px}.euvd-id{font:700 14px 'IBM Plex Mono',monospace;color:var(--accent)}.aliases{font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:5px}.title{font:700 19px 'Space Grotesk',sans-serif;margin-top:8px}.vendor{font-size:13px;color:var(--muted);margin-top:6px}.badges{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}.badge{font:700 10px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.04em;padding:6px 8px;border-radius:999px;border:1px solid var(--line);white-space:nowrap}.badge.red{background:var(--red-soft);color:var(--red);border-color:#fecaca}.badge.amber{background:var(--amber-soft);color:var(--amber);border-color:#fde68a}.badge.green{background:var(--accent-soft);color:#047857;border-color:#a7f3d0}.badge.blue{background:var(--blue-soft);color:var(--blue);border-color:#bfdbfe}.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.metric{background:#fafaf8;padding:12px 14px}.metric small{display:block;font:600 10px 'IBM Plex Mono',monospace;text-transform:uppercase;color:var(--muted);margin-bottom:5px}.metric strong{font-size:15px;word-break:break-word}.body{padding:16px 18px}.body p{margin:0;color:#475569;line-height:1.65;font-size:14px}.actions{display:flex;gap:12px;flex-wrap:wrap;padding:0 18px 18px}.actions a{font:700 11px 'IBM Plex Mono',monospace;text-transform:uppercase;text-decoration:none;color:var(--accent)}.pagination{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:24px}.pagination button{min-width:38px;padding:9px 11px;border:1px solid var(--line);background:#fff;cursor:pointer;font:600 12px 'IBM Plex Mono',monospace}.pagination button.active{background:var(--accent);color:#fff;border-color:var(--accent)}.empty{padding:40px;text-align:center;color:var(--muted)}.source-note{padding:18px 32px;border-top:1px solid var(--line);background:#fafaf8;color:var(--muted);font-size:12px;line-height:1.6}
+@media(max-width:980px){.stats{grid-template-columns:repeat(2,1fr)}.filters{grid-template-columns:1fr 1fr}.grid{grid-template-columns:repeat(2,1fr)}.metric:last-child{grid-column:1/-1}.item-head{flex-direction:column}.badges{justify-content:flex-start}}
+@media(max-width:620px){.wrap{padding:10px}.top,.stats,.filters,.content,.source-note{padding-left:18px;padding-right:18px}.stats,.filters,.grid{grid-template-columns:1fr}.metric:last-child{grid-column:auto}h1{font-size:34px}}
+</style>
+</head>
+<body>
+<div class="card-wrapper ds-page"><div class="card">
+<div id="menu-container"></div>
+<div class="accent-bar" style="background:#059669;"></div>
+<div class="wrap"><div class="euvd-card">
+<section class="top">
+<div class="eyebrow">Tools · European Vulnerability Intelligence</div>
+<h1>EUVD <span class="accent">Intelligence</span></h1>
+<p class="lead">Explorador técnico de la European Union Vulnerability Database de ENISA. Correlaciona vulnerabilidades publicadas, criticidad CVSS, EPSS y estado de explotación sin sustituir la información oficial por estimaciones propias.</p>
+<div class="meta"><span id="catalogMeta">EUVD cargando…</span><span id="updatedMeta">Actualización cargando…</span></div>
+</section>
+<section class="stats">
+<div class="stat"><b id="statTotal">—</b><span>Vulnerabilidades sincronizadas</span></div>
+<div class="stat"><b id="statCritical">—</b><span>CVSS crítico ≥ 9</span></div>
+<div class="stat"><b id="statExploited">—</b><span>Marcadas como explotadas</span></div>
+<div class="stat"><b id="statEpss">—</b><span>Con EPSS</span></div>
+</section>
+<section class="filters">
+<input id="q" type="search" placeholder="Buscar EUVD ID, CVE, fabricante, producto o descripción…">
+<select id="severity"><option value="">CVSS: todos</option><option value="critical">Crítico ≥ 9</option><option value="high">Alto 7–8.9</option><option value="medium">Medio 4–6.9</option><option value="unknown">Sin dato</option></select>
+<select id="exploited"><option value="">Explotación: todas</option><option value="yes">Explotada</option><option value="no">No marcada</option></select>
+<select id="epss"><option value="">EPSS: todos</option><option value="p90">≥ 90 %</option><option value="p70">≥ 70 %</option><option value="unknown">Sin dato</option></select>
+</section>
+<div id="filterNote" class="filter-note">Cargando datos.</div>
+<main class="content"><div id="list" class="list"></div><div id="pagination" class="pagination"></div></main>
+<div class="source-note">Fuente: European Union Vulnerability Database (EUVD), mantenida por ENISA. Esta vista consume una copia JSON sincronizada desde la API pública oficial. Los campos ausentes se muestran como “sin dato”; no se generan CVSS, EPSS ni estados de explotación estimados.</div>
+</div></div>
+<div id="footer-container"></div>
+</div></div>
+<script src="../../js/menu.js"></script>
+<script src="../../js/footer.js"></script>
+<script>
+const PER_PAGE=7;let catalog=[],filtered=[],page=1;
+const $=id=>document.getElementById(id);
+const txt=v=>Array.isArray(v)?v.join(' · '):(v??'');
+const fmtPct=v=>v==null?'Sin dato':(Number(v)*100).toLocaleString('es-ES',{maximumFractionDigits:2})+' %';
+const fmtDate=v=>v?String(v).replace('T',' ').replace('Z',' UTC'):'—';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+function severityClass(v){if(v.cvss>=9)return'critical';if(v.cvss>=7)return'high';return'normal'}
+function apply(){
+ const term=$('q').value.trim().toLowerCase(),sev=$('severity').value,exp=$('exploited').value,ep=$('epss').value;
+ filtered=catalog.filter(v=>{
+  const text=[v.id,...(v.aliases||[]),v.description,txt(v.vendor),txt(v.product),v.assigner].join(' ').toLowerCase();
+  if(term&&!text.includes(term))return false;
+  if(sev==='critical'&&!(v.cvss>=9))return false;
+  if(sev==='high'&&!(v.cvss>=7&&v.cvss<9))return false;
+  if(sev==='medium'&&!(v.cvss>=4&&v.cvss<7))return false;
+  if(sev==='unknown'&&v.cvss!=null)return false;
+  if(exp==='yes'&&v.exploited!==true)return false;
+  if(exp==='no'&&v.exploited===true)return false;
+  if(ep==='p90'&&!(v.epss>=.9))return false;
+  if(ep==='p70'&&!(v.epss>=.7))return false;
+  if(ep==='unknown'&&v.epss!=null)return false;
+  return true;
+ });
+ page=1;render();
+}
+function render(){
+ $('filterNote').textContent=`${filtered.length.toLocaleString('es-ES')} resultados de ${catalog.length.toLocaleString('es-ES')} vulnerabilidades sincronizadas · Los filtros son acumulativos.`;
+ const pages=Math.max(1,Math.ceil(filtered.length/PER_PAGE));if(page>pages)page=pages;
+ const rows=filtered.slice((page-1)*PER_PAGE,page*PER_PAGE),list=$('list');
+ if(!rows.length){list.innerHTML='<div class="empty"><strong>No hay resultados con esta combinación de filtros.</strong><br>Prueba a retirar uno de los filtros acumulativos.</div>';}
+ else list.innerHTML=rows.map(v=>{
+  const cls=severityClass(v),aliases=(v.aliases||[]).map(esc).join(' · ')||'Sin identificador alternativo';
+  const vendor=esc(txt(v.vendor)||'Fabricante sin dato'),product=esc(txt(v.product)||'Producto sin dato');
+  const url=v.id?`https://euvd.enisa.europa.eu/vulnerability/${encodeURIComponent(v.id)}`:'https://euvd.enisa.europa.eu/';
+  return `<article class="item ${cls}">
+   <div class="item-head"><div><div class="euvd-id">${esc(v.id||'EUVD sin ID')}</div><div class="aliases">${aliases}</div><div class="title">${esc((v.description||'Vulnerabilidad sin descripción').slice(0,180))}${(v.description||'').length>180?'…':''}</div><div class="vendor">${vendor} · ${product}</div></div>
+   <div class="badges">${v.cvss>=9?'<span class="badge red">Crítica</span>':v.cvss>=7?'<span class="badge amber">Alta</span>':'<span class="badge green">EUVD</span>'}${v.exploited===true?'<span class="badge red">Explotada</span>':''}</div></div>
+   <div class="grid"><div class="metric"><small>CVSS</small><strong>${v.cvss??'Sin dato'}${v.cvss_version?' · v'+esc(v.cvss_version):''}</strong></div><div class="metric"><small>EPSS</small><strong>${fmtPct(v.epss)}</strong></div><div class="metric"><small>Publicada</small><strong>${esc(fmtDate(v.date_published))}</strong></div><div class="metric"><small>Actualizada</small><strong>${esc(fmtDate(v.date_updated))}</strong></div><div class="metric"><small>Assigner / CNA</small><strong>${esc(v.assigner||'Sin dato')}</strong></div></div>
+   <div class="body"><p>${esc(v.description||'Sin descripción disponible.')}</p></div>
+   <div class="actions"><a href="${url}" target="_blank" rel="noopener">EUVD oficial →</a></div>
+  </article>`;
+ }).join('');
+ const p=$('pagination');p.innerHTML='';const start=Math.max(1,page-2),end=Math.min(pages,start+4);
+ for(let i=start;i<=end;i++){const b=document.createElement('button');b.textContent=i;b.className=i===page?'active':'';b.onclick=()=>{page=i;render();window.scrollTo({top:0,behavior:'smooth'})};p.appendChild(b)}
+}
+async function init(){
+ try{
+  const r=await fetch('../../data/euvd.json',{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);
+  const data=await r.json();catalog=data.vulnerabilities||[];filtered=[...catalog];
+  $('catalogMeta').textContent=`EUVD · ${Number(data.total_vulnerabilities||catalog.length).toLocaleString('es-ES')} sincronizadas${data.total_reported_by_euvd!=null?' · '+Number(data.total_reported_by_euvd).toLocaleString('es-ES')+' reportadas por API':''}`;
+  $('updatedMeta').textContent=`Actualizado ${fmtDate(data.last_updated_at)}`;
+  $('statTotal').textContent=Number(data.total_vulnerabilities||catalog.length).toLocaleString('es-ES');
+  $('statCritical').textContent=Number(data.total_critical||0).toLocaleString('es-ES');
+  $('statExploited').textContent=Number(data.total_exploited||0).toLocaleString('es-ES');
+  $('statEpss').textContent=Number(data.total_epss||0).toLocaleString('es-ES');
+  render();['q','severity','exploited','epss'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',apply));
+ }catch(err){$('list').innerHTML=`<div class="empty"><strong>Error cargando EUVD.</strong><br>${esc(err.message)}<br><br>Comprueba que exista data/euvd.json y abre la página desde el servidor.</div>`;console.error(err)}
+}
+init();
+</script>
+</body>
+</html>
