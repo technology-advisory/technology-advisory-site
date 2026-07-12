@@ -213,9 +213,9 @@ function goToPage(n) {
 // FILTRAR POR CATEGORÍA
 // ==============================
 function filterArticles(cat, btn) {
-    const state = getStateFromURL();
-    const mes = state.mes || "all";
-    navigateTo(cat, 1, mes);
+    // Al cambiar de categoría se reinician página y mes.
+    // Evita arrastrar un filtro mensual de otra categoría.
+    navigateTo(cat, 1, "all");
 }
 
 // ==============================
@@ -244,10 +244,23 @@ function applyFilters() {
 // ==============================
 async function cargarArticulos(jsonPath) {
     try {
-        const response = await fetch(jsonPath);
+        const jsonUrl = `${jsonPath}${jsonPath.includes('?') ? '&' : '?'}_=${Date.now()}`;
+        const response = await fetch(jsonUrl, { cache: 'no-store' });
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status} cargando ${jsonPath}`);
+        }
+
         const todos = await response.json();
 
         articulosData = todos.filter(a => a.published === true);
+
+        console.info(
+            '[ARTICULOS]',
+            `JSON=${todos.length}`,
+            `publicados=${articulosData.length}`,
+            `fuente=${jsonPath}`
+        );
 
         // Recuperar modo de orden desde sessionStorage
         const savedSort = sessionStorage.getItem('sortMode');

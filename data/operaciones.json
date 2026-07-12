@@ -318,5 +318,225 @@
     "desc": "Los 4 niveles de madurez: de apagar fuegos aislados a la gestión proactiva que anticipa problemas.",
     "url": "gestion-incidencias/gestion-incidencias-madurez-roadmap.html",
     "published": true
+  },
+  {
+    "id": 33,
+    "cat": "automation-workflows",
+    "meta": "Automation Workflows · Operaciones",
+    "title": "Automatización Avanzada: Orquestación y Flujos de Sistemas",
+    "date": "12 Julio 2026",
+    "desc": "Análisis exhaustivo sobre optimización operativa y Site Reliability Engineering. Implementación de flujos corporativos con PowerShell, Python e integración en n8n.",
+    "url": "automation-workflows/automatizacion-avanzada.html",
+    "published": true
+  },
+  {
+    "id": 34,
+    "cat": "backup-recuperacion",
+    "meta": "Backup y Recuperación · Operaciones",
+    "title": "Arquitectura 3-2-1-1-0: la regla empieza donde termina el marketing",
+    "date": "12 Julio 2026",
+    "desc": "La estrategia de backup debe convertir copias en capacidad de recuperación: múltiples dominios de fallo, copia aislada o inmutable y verificación sin errores.",
+    "url": "backup-recuperacion/arquitectura-backup-3-2-1-1-0.html",
+    "published": true
+  },
+  {
+    "id": 35,
+    "cat": "backup-recuperacion",
+    "meta": "Backup y Recuperación · Operaciones",
+    "title": "Repositorios inmutables: retención bloqueada no significa aislamiento",
+    "date": "12 Julio 2026",
+    "desc": "Object Lock, hardened repositories y WORM reducen el riesgo de borrado, pero la arquitectura depende también de identidad, administración y recuperación de claves.",
+    "url": "backup-recuperacion/repositorios-inmutables.html",
+    "published": true
+  },
+  {
+    "id": 36,
+    "cat": "backup-recuperacion",
+    "meta": "Backup y Recuperación · Operaciones",
+    "title": "Pruebas de restauración: medir RTO real y demostrar que la copia sirve",
+    "date": "12 Julio 2026",
+    "desc": "El job verde demuestra escritura, no recuperación. Una prueba válida define objeto, punto de recuperación, dependencia, tiempo y criterio de aceptación.",
+    "url": "backup-recuperacion/pruebas-restauracion-evidencias.html",
+    "published": true
+  },
+  {
+    "id": 37,
+    "cat": "backup-recuperacion",
+    "meta": "Backup y Recuperación · Operaciones",
+    "title": "Backup frente a ransomware: diseñar para un administrador comprometido",
+    "date": "12 Julio 2026",
+    "desc": "El adversario moderno intenta borrar catálogo, jobs y repositorios. El diseño debe asumir que una identidad privilegiada del entorno productivo puede caer.",
+    "url": "backup-recuperacion/backup-ransomware.html",
+    "published": true
+  },
+  {
+    "id": 38,
+    "cat": "continuidad-negocio",
+    "meta": "Continuidad de Negocio · Operaciones",
+    "title": "RTO y RPO: convertir objetivos de negocio en arquitectura técnica",
+    "date": "12 Julio 2026",
+    "desc": "RTO y RPO no son etiquetas de un BIA; condicionan replicación, backup, capacidad, dependencias, runbooks y coste.",
+    "url": "continuidad-negocio/rto-rpo-diseno-tecnico.html",
+    "published": true
+  },
+  {
+    "id": 39,
+    "cat": "continuidad-negocio",
+    "meta": "Continuidad de Negocio · Operaciones",
+    "title": "Disaster Recovery multi-site: replicar datos no recupera un servicio",
+    "date": "12 Julio 2026",
+    "desc": "Un diseño DR debe resolver identidad, red, DNS, seguridad, capacidad y orden de arranque además de mover datos al segundo sitio.",
+    "url": "continuidad-negocio/disaster-recovery-multi-site.html",
+    "published": true
+  },
+  {
+    "id": 40,
+    "cat": "continuidad-negocio",
+    "meta": "Continuidad de Negocio · Operaciones",
+    "title": "Simulacros DR: probar la organización además de la tecnología",
+    "date": "12 Julio 2026",
+    "desc": "Una prueba de continuidad debe introducir incertidumbre, medir decisiones y verificar comunicaciones; ejecutar un runbook conocido paso a paso solo valida el runbook.",
+    "url": "continuidad-negocio/pruebas-dr-simulacros.html",
+    "published": true
+  },
+  {
+    "id": 41,
+    "cat": "monitorizacion-observabilidad",
+    "meta": "Monitorización y Observabilidad · Operaciones",
+    "title": "Métricas, logs y trazas: tres señales para preguntas distintas",
+    "date": "12 Julio 2026",
+    "desc": "La observabilidad emerge al poder explicar el estado interno a partir de señales externas correlacionadas; acumular telemetría no garantiza diagnóstico.",
+    "url": "monitorizacion-observabilidad/metricas-logs-traces.html",
+    "published": true
+  },
+  {
+    "id": 42,
+    "cat": "monitorizacion-observabilidad",
+    "meta": "Monitorización y Observabilidad · Operaciones",
+    "title": "Alert fatigue: cuando la monitorización entrena al equipo para ignorar alertas",
+    "date": "12 Julio 2026",
+    "desc": "Una alerta sin acción clara, owner, umbral defendible y ventana adecuada degrada la capacidad de respuesta aunque técnicamente sea correcta.",
+    "url": "monitorizacion-observabilidad/alert-fatigue.html",
+    "published": true
+  },
+  {
+    "id": 43,
+    "cat": "monitorizacion-observabilidad",
+    "meta": "Monitorización y Observabilidad · Operaciones",
+    "title": "Observabilidad de infraestructura híbrida: unificar contexto sin borrar diferencias",
+    "date": "12 Julio 2026",
+    "desc": "On-prem, cloud y SaaS producen señales distintas. La capa común debe normalizar servicio, owner, entorno y criticidad sin perder atributos nativos.",
+    "url": "monitorizacion-observabilidad/observabilidad-infraestructura-hibrida.html",
+    "published": true
+  },
+  {
+    "id": 44,
+    "cat": "monitorizacion-observabilidad",
+    "meta": "Monitorización y Observabilidad · Operaciones",
+    "title": "Golden Signals, SLI y SLO: medir experiencia de servicio, no solo infraestructura",
+    "date": "12 Julio 2026",
+    "desc": "Latencia, tráfico, errores y saturación ayudan a observar sistemas, pero deben transformarse en indicadores y objetivos ligados al servicio.",
+    "url": "monitorizacion-observabilidad/golden-signals-sli-slo.html",
+    "published": true
+  },
+  {
+    "id": 45,
+    "cat": "automatizacion-orquestacion",
+    "meta": "Automatización y Orquestación · Operaciones",
+    "title": "PowerShell enterprise: automatizar sin convertir scripts en deuda operativa",
+    "date": "12 Julio 2026",
+    "desc": "Un script que funciona en la consola del autor no es una automatización operable. Necesita parámetros, validación, logging, idempotencia y manejo de secretos.",
+    "url": "automatizacion-orquestacion/powershell-automatizacion-enterprise.html",
+    "published": true
+  },
+  {
+    "id": 46,
+    "cat": "automatizacion-orquestacion",
+    "meta": "Automatización y Orquestación · Operaciones",
+    "title": "GitHub Actions para operaciones: pipelines que modifican producción necesitan gobierno",
+    "date": "12 Julio 2026",
+    "desc": "CI/CD también puede ser una plataforma operativa. Secrets, permisos, runners, concurrency y rollback forman parte de su arquitectura de control.",
+    "url": "automatizacion-orquestacion/github-actions-operaciones.html",
+    "published": true
+  },
+  {
+    "id": 47,
+    "cat": "automatizacion-orquestacion",
+    "meta": "Automatización y Orquestación · Operaciones",
+    "title": "Idempotencia: ejecutar dos veces sin romper dos veces",
+    "date": "12 Julio 2026",
+    "desc": "La automatización robusta converge al estado deseado. Repetir una ejecución no debería duplicar objetos, reglas, usuarios o cambios irreversibles.",
+    "url": "automatizacion-orquestacion/idempotencia-automatizacion.html",
+    "published": true
+  },
+  {
+    "id": 48,
+    "cat": "automatizacion-orquestacion",
+    "meta": "Automatización y Orquestación · Operaciones",
+    "title": "Secretos en automatización: eliminar contraseñas del script no resuelve el problema",
+    "date": "12 Julio 2026",
+    "desc": "Mover una contraseña a una variable de entorno es un avance, pero la arquitectura debe controlar emisión, alcance, rotación, exposición y auditoría.",
+    "url": "automatizacion-orquestacion/secretos-credenciales-automatizacion.html",
+    "published": true
+  },
+  {
+    "id": 49,
+    "cat": "gestion-incidencias",
+    "meta": "Gestión de Incidencias · Operaciones",
+    "title": "Major Incident Management: gobernar el caos técnico sin frenar la recuperación",
+    "date": "12 Julio 2026",
+    "desc": "Un incidente mayor necesita roles, cadencia, canal, timeline y autoridad de decisión. Sin estructura, diez expertos generan diez líneas de trabajo incompatibles.",
+    "url": "gestion-incidencias/major-incident-management.html",
+    "published": true
+  },
+  {
+    "id": 50,
+    "cat": "gestion-incidencias",
+    "meta": "Gestión de Incidencias · Operaciones",
+    "title": "War room técnica: una sala no es un modelo operativo",
+    "date": "12 Julio 2026",
+    "desc": "La war room debe reducir latencia de coordinación. Necesita un único timeline, hipótesis visibles, acciones con owner y disciplina para evitar investigación paralela duplicada.",
+    "url": "gestion-incidencias/war-room-tecnica.html",
+    "published": true
+  },
+  {
+    "id": 51,
+    "cat": "gestion-incidencias",
+    "meta": "Gestión de Incidencias · Operaciones",
+    "title": "Postmortem sin culpa: eliminar condiciones sistémicas, no buscar al último que hizo clic",
+    "date": "12 Julio 2026",
+    "desc": "El análisis útil reconstruye decisiones bajo el contexto disponible y convierte causas contribuyentes en cambios verificables del sistema.",
+    "url": "gestion-incidencias/postmortem-sin-culpa.html",
+    "published": true
+  },
+  {
+    "id": 52,
+    "cat": "gestion-cambios",
+    "meta": "Gestión de Cambios · Operaciones",
+    "title": "Cambios en infraestructura crítica: la ventana no sustituye al diseño",
+    "date": "12 Julio 2026",
+    "desc": "Un cambio de red, almacenamiento, clúster o identidad debe declarar impacto, dependencias, validación y condición de aborto antes de tocar producción.",
+    "url": "gestion-cambios/cambios-infraestructura-critica.html",
+    "published": true
+  },
+  {
+    "id": 53,
+    "cat": "gestion-cambios",
+    "meta": "Gestión de Cambios · Operaciones",
+    "title": "Rollback y validación técnica: volver atrás también es un cambio",
+    "date": "12 Julio 2026",
+    "desc": "El rollback debe ensayarse o al menos diseñarse con el mismo rigor que la implementación; restaurar configuración no siempre restaura estado, datos o sesiones.",
+    "url": "gestion-cambios/rollback-validacion-tecnica.html",
+    "published": true
+  },
+  {
+    "id": 54,
+    "cat": "gestion-cambios",
+    "meta": "Gestión de Cambios · Operaciones",
+    "title": "Cambios de emergencia: velocidad con trazabilidad, no ausencia de control",
+    "date": "12 Julio 2026",
+    "desc": "La emergencia reduce tiempos de aprobación, pero no elimina owner, alcance, registro, validación ni revisión posterior.",
+    "url": "gestion-cambios/cambios-emergencia.html",
+    "published": true
   }
 ]

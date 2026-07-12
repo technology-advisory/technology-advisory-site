@@ -318,5 +318,245 @@
     "desc": "Los 4 niveles de madurez: de datos dispersos sin dueño al gobierno del dato como ventaja competitiva real.",
     "url": "gobierno-dato/gobierno-dato-madurez-roadmap.html",
     "published": true
+  },
+  {
+    "id": 33,
+    "cat": "gobierno-ia",
+    "meta": "Gobierno de IA · Gobernanza",
+    "title": "Inventario de sistemas de IA: no puedes gobernar lo que no sabes que existe",
+    "date": "12 Julio 2026",
+    "desc": "El inventario debe identificar propósito, proveedor, modelo, datos, usuarios, integración, propietario y decisiones afectadas. Una lista de licencias no es gobierno.",
+    "url": "gobierno-ia/inventario-sistemas-ia.html",
+    "published": true
+  },
+  {
+    "id": 34,
+    "cat": "gobierno-ia",
+    "meta": "Gobierno de IA · Gobernanza",
+    "title": "Clasificación de riesgo en el AI Act: el caso de uso manda más que el nombre del modelo",
+    "date": "12 Julio 2026",
+    "desc": "La clasificación exige entender finalidad prevista, contexto de uso, operador y efecto sobre personas. Etiquetar 'copilot' o 'chatbot' no determina el régimen.",
+    "url": "gobierno-ia/clasificacion-riesgo-ai-act.html",
+    "published": true
+  },
+  {
+    "id": 35,
+    "cat": "gobierno-ia",
+    "meta": "Gobierno de IA · Gobernanza",
+    "title": "Controles para IA generativa corporativa: identidad, datos, contexto y salida",
+    "date": "12 Julio 2026",
+    "desc": "La política no basta. Los controles deben actuar en acceso, prompt, recuperación de contexto, herramientas, logging y tratamiento del output.",
+    "url": "gobierno-ia/controles-ia-generativa-corporativa.html",
+    "published": true
+  },
+  {
+    "id": 36,
+    "cat": "gobierno-ia",
+    "meta": "Gobierno de IA · Gobernanza",
+    "title": "Shadow AI: cuando la adopción llega antes que el gobierno",
+    "date": "12 Julio 2026",
+    "desc": "Bloquear dominios no elimina Shadow AI. Hay que entender necesidad, ofrecer alternativas, descubrir uso y aplicar controles proporcionales al dato y al caso.",
+    "url": "gobierno-ia/shadow-ai.html",
+    "published": true
+  },
+  {
+    "id": 37,
+    "cat": "riesgo-tecnologico",
+    "meta": "Riesgo Tecnológico · Gobernanza",
+    "title": "Registro de riesgos tecnológicos: menos frases genéricas y más escenarios verificables",
+    "date": "12 Julio 2026",
+    "desc": "Un riesgo útil declara activo o capacidad, amenaza, condición, impacto y contexto. 'Riesgo de ciberataque' no permite decidir ni medir.",
+    "url": "riesgo-tecnologico/registro-riesgos-tecnologicos.html",
+    "published": true
+  },
+  {
+    "id": 38,
+    "cat": "riesgo-tecnologico",
+    "meta": "Riesgo Tecnológico · Gobernanza",
+    "title": "Riesgo inherente y residual: el control debe cambiar algo medible",
+    "date": "12 Julio 2026",
+    "desc": "El riesgo residual no es el inherente menos un porcentaje arbitrario. Debe reflejar cómo los controles modifican probabilidad, exposición o impacto.",
+    "url": "riesgo-tecnologico/riesgo-inherente-residual.html",
+    "published": true
+  },
+  {
+    "id": 39,
+    "cat": "riesgo-tecnologico",
+    "meta": "Riesgo Tecnológico · Gobernanza",
+    "title": "Apetito y tolerancia al riesgo: convertir frases del consejo en límites técnicos",
+    "date": "12 Julio 2026",
+    "desc": "El apetito debe traducirse a umbrales que permitan saber cuándo una exposición es aceptable, cuándo requiere tratamiento y cuándo debe escalarse.",
+    "url": "riesgo-tecnologico/apetito-tolerancia-riesgo.html",
+    "published": true
+  },
+  {
+    "id": 40,
+    "cat": "riesgo-tecnologico",
+    "meta": "Riesgo Tecnológico · Gobernanza",
+    "title": "KRIs tecnológicos: indicadores que anticipan exposición, no dashboards decorativos",
+    "date": "12 Julio 2026",
+    "desc": "Un KRI debe tener relación causal razonable con el riesgo, fuente fiable, umbral, frecuencia y decisión asociada.",
+    "url": "riesgo-tecnologico/kris-riesgo-tecnologico.html",
+    "published": true
+  },
+  {
+    "id": 41,
+    "cat": "gestion-terceros",
+    "meta": "Gestión de Terceros · Gobernanza",
+    "title": "Due diligence de proveedores TI: evaluar el servicio que compras, no la empresa en abstracto",
+    "date": "12 Julio 2026",
+    "desc": "La evaluación debe centrarse en alcance, datos, integración, dependencia y criticidad del servicio concreto. Un cuestionario corporativo genérico puede ocultar el riesgo real.",
+    "url": "gestion-terceros/due-diligence-proveedores-ti.html",
+    "published": true
+  },
+  {
+    "id": 42,
+    "cat": "gestion-terceros",
+    "meta": "Gestión de Terceros · Gobernanza",
+    "title": "Riesgo de cadena de suministro: la dependencia empieza antes del contrato",
+    "date": "12 Julio 2026",
+    "desc": "Software, firmware, componentes, repositorios y servicios gestionados introducen confianza transitiva que debe visualizarse y monitorizarse.",
+    "url": "gestion-terceros/riesgo-cadena-suministro.html",
+    "published": true
+  },
+  {
+    "id": 43,
+    "cat": "gestion-terceros",
+    "meta": "Gestión de Terceros · Gobernanza",
+    "title": "Cláusulas de ciberseguridad: escribir obligaciones que puedan verificarse",
+    "date": "12 Julio 2026",
+    "desc": "Una cláusula útil define tiempo, evidencia, alcance y derecho de actuación. 'Mantener medidas adecuadas' rara vez permite gestionar un incidente real.",
+    "url": "gestion-terceros/clausulas-ciberseguridad-proveedores.html",
+    "published": true
+  },
+  {
+    "id": 44,
+    "cat": "gestion-terceros",
+    "meta": "Gestión de Terceros · Gobernanza",
+    "title": "Monitorización continua de terceros: el riesgo cambia después del onboarding",
+    "date": "12 Julio 2026",
+    "desc": "La evaluación inicial envejece. Cambios de servicio, adquisiciones, incidentes, subprocesadores y vulnerabilidades pueden alterar el riesgo durante el contrato.",
+    "url": "gestion-terceros/monitorizacion-continua-terceros.html",
+    "published": true
+  },
+  {
+    "id": 45,
+    "cat": "auditoria-control-interno",
+    "meta": "Auditoría y Control Interno · Gobernanza",
+    "title": "Evidencia técnica de auditoría: una captura no demuestra un control continuo",
+    "date": "12 Julio 2026",
+    "desc": "La evidencia debe ser pertinente, íntegra, fechada, reproducible y vinculada al periodo revisado. Una screenshot aislada rara vez demuestra operación sostenida.",
+    "url": "auditoria-control-interno/evidencia-tecnica-auditoria.html",
+    "published": true
+  },
+  {
+    "id": 46,
+    "cat": "auditoria-control-interno",
+    "meta": "Auditoría y Control Interno · Gobernanza",
+    "title": "Diseño del control frente a eficacia operativa: existir no es funcionar",
+    "date": "12 Julio 2026",
+    "desc": "Un control puede estar bien diseñado y no operar, o ejecutarse de forma constante y no mitigar el riesgo que pretende cubrir.",
+    "url": "auditoria-control-interno/diseno-control-vs-eficacia-operativa.html",
+    "published": true
+  },
+  {
+    "id": 47,
+    "cat": "auditoria-control-interno",
+    "meta": "Auditoría y Control Interno · Gobernanza",
+    "title": "Muestreo de evidencias TI: población, criterio y trazabilidad antes de elegir casos",
+    "date": "12 Julio 2026",
+    "desc": "La muestra solo es defendible si la población está completa y el criterio de selección es explícito. Elegir tickets 'bonitos' invalida la conclusión.",
+    "url": "auditoria-control-interno/muestreo-evidencias-ti.html",
+    "published": true
+  },
+  {
+    "id": 48,
+    "cat": "auditoria-control-interno",
+    "meta": "Auditoría y Control Interno · Gobernanza",
+    "title": "Hallazgos y planes de remediación: cerrar la causa, no maquillar la evidencia",
+    "date": "12 Julio 2026",
+    "desc": "Un plan debe tratar causa raíz, definir entregable verificable, owner y fecha. Cambiar el texto del procedimiento no corrige un control técnico fallido.",
+    "url": "auditoria-control-interno/hallazgos-planes-remediacion.html",
+    "published": true
+  },
+  {
+    "id": 49,
+    "cat": "marcos-regulatorios",
+    "meta": "Marcos Regulatorios · Gobernanza",
+    "title": "NIS2 aplicada a tecnología: del requisito de riesgo a la evidencia operativa",
+    "date": "12 Julio 2026",
+    "desc": "NIS2 exige medidas de gestión de riesgos de ciberseguridad y notificación; el reto técnico es traducirlas a servicios, controles, responsables y pruebas sostenidas.",
+    "url": "marcos-regulatorios/nis2-aplicacion-tecnica.html",
+    "published": true
+  },
+  {
+    "id": 50,
+    "cat": "marcos-regulatorios",
+    "meta": "Marcos Regulatorios · Gobernanza",
+    "title": "DORA y resiliencia operativa digital: demostrar capacidad de resistir, responder y recuperar",
+    "date": "12 Julio 2026",
+    "desc": "DORA articula gestión de riesgo TIC, incidentes, pruebas de resiliencia y riesgo de terceros; la evidencia debe conectar función crítica con tecnología y prueba.",
+    "url": "marcos-regulatorios/dora-resiliencia-operativa.html",
+    "published": true
+  },
+  {
+    "id": 51,
+    "cat": "marcos-regulatorios",
+    "meta": "Marcos Regulatorios · Gobernanza",
+    "title": "AI Act y gobierno técnico: inventario, clasificación, evidencia y cambio",
+    "date": "12 Julio 2026",
+    "desc": "El gobierno del AI Act requiere conocer sistemas y roles, clasificar casos de uso, mantener documentación y revaluar cuando cambia la finalidad o el sistema.",
+    "url": "marcos-regulatorios/ai-act-gobierno-tecnico.html",
+    "published": true
+  },
+  {
+    "id": 52,
+    "cat": "marcos-regulatorios",
+    "meta": "Marcos Regulatorios · Gobernanza",
+    "title": "ISO 27001, NIS2 y DORA: mapear una vez sin fingir equivalencia",
+    "date": "12 Julio 2026",
+    "desc": "Un control puede apoyar varios marcos, pero alcance, obligación, sujeto y evidencia no son idénticos. El mapping debe reutilizar pruebas sin borrar diferencias.",
+    "url": "marcos-regulatorios/iso27001-nis2-dora-mapeo.html",
+    "published": true
+  },
+  {
+    "id": 53,
+    "cat": "gobierno-dato",
+    "meta": "Gobierno del Dato · Gobernanza",
+    "title": "Clasificación de datos: la etiqueta debe cambiar el comportamiento del sistema",
+    "date": "12 Julio 2026",
+    "desc": "Una taxonomía solo aporta valor cuando modifica acceso, cifrado, compartición, retención y monitorización de forma consistente.",
+    "url": "gobierno-dato/clasificacion-datos.html",
+    "published": true
+  },
+  {
+    "id": 54,
+    "cat": "gobierno-dato",
+    "meta": "Gobierno del Dato · Gobernanza",
+    "title": "Data lineage: saber de dónde viene un dato antes de confiar en el informe",
+    "date": "12 Julio 2026",
+    "desc": "El lineage conecta origen, transformación, almacenamiento y consumo. Sin él, un KPI puede ser correcto hoy y cambiar mañana sin explicación.",
+    "url": "gobierno-dato/data-lineage.html",
+    "published": true
+  },
+  {
+    "id": 55,
+    "cat": "gobierno-dato",
+    "meta": "Gobierno del Dato · Gobernanza",
+    "title": "Retención y eliminación de datos: borrar de producción no siempre borra el dato",
+    "date": "12 Julio 2026",
+    "desc": "Copias, réplicas, logs, snapshots y data lakes prolongan la vida del dato. La política debe traducirse a rutas técnicas de eliminación verificable.",
+    "url": "gobierno-dato/retencion-eliminacion-datos.html",
+    "published": true
+  },
+  {
+    "id": 56,
+    "cat": "gobierno-dato",
+    "meta": "Gobierno del Dato · Gobernanza",
+    "title": "Gobierno del dato para IA: calidad, autorización y procedencia antes del modelo",
+    "date": "12 Julio 2026",
+    "desc": "La calidad del modelo no compensa datos sin permiso, procedencia o contexto. RAG y entrenamiento amplifican defectos de gobierno existentes.",
+    "url": "gobierno-dato/gobierno-dato-para-ia.html",
+    "published": true
   }
 ]

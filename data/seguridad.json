@@ -318,5 +318,265 @@
     "desc": "Los 4 niveles de madurez en cifrado: activar HTTPS es el mínimo de 2010, la madurez real está en la gestión de claves.",
     "url": "cifrado-identidad-digital/cifrado-identidad-digital-madurez-roadmap.html",
     "published": true
+  },
+  {
+    "id": 33,
+    "cat": "iso-compliance",
+    "meta": "Auditoría y Cumplimiento · Seguridad",
+    "title": "Gobernanza SGSI (Sistema de Gestión de Seguridad de la Información): Garantía ISO/IEC 27001",
+    "date": "12 Julio 2026",
+    "desc": "Análisis técnico de Gobernanza SGSI (Sistema de Gestión de Seguridad de la Información): Garantía ISO/IEC 27001.",
+    "url": "iso-compliance/auditoria-iso27001.html",
+    "published": true
+  },
+  {
+    "id": 34,
+    "cat": "security-design",
+    "meta": "Security by Design · Seguridad",
+    "title": "Security by Design: Bastionado Estructural",
+    "date": "12 Julio 2026",
+    "desc": "Análisis técnico de Security by Design: Bastionado Estructural.",
+    "url": "security-design/seguridad-diseno.html",
+    "published": true
+  },
+  {
+    "id": 35,
+    "cat": "zero-trust",
+    "meta": "Zero Trust · Seguridad",
+    "title": "Modelos de Confianza Cero: Validación Contextual",
+    "date": "12 Julio 2026",
+    "desc": "Análisis técnico de Modelos de Confianza Cero: Validación Contextual.",
+    "url": "zero-trust/arquitectura-zerotrust.html",
+    "published": true
+  },
+  {
+    "id": 36,
+    "cat": "firewalls-perimetro",
+    "meta": "Firewalls y Perímetro · Seguridad",
+    "title": "Clúster NGFW en alta disponibilidad: el failover no es la prueba",
+    "date": "12 Julio 2026",
+    "desc": "Diseñar HA perimetral exige validar estado, sincronización, sesiones, routing y retorno al nodo preferido; dos appliances encendidos no forman una arquitectura resiliente.",
+    "url": "firewalls-perimetro/arquitectura-ngfw-ha.html",
+    "published": true
+  },
+  {
+    "id": 37,
+    "cat": "firewalls-perimetro",
+    "meta": "Firewalls y Perímetro · Seguridad",
+    "title": "Segmentación por zonas y flujos: de la VLAN al límite de confianza",
+    "date": "12 Julio 2026",
+    "desc": "La segmentación útil se diseña desde flujos autorizados, identidad del servicio y dependencia real; una colección de VLAN no demuestra aislamiento.",
+    "url": "firewalls-perimetro/segmentacion-zonas-flujos.html",
+    "published": true
+  },
+  {
+    "id": 38,
+    "cat": "firewalls-perimetro",
+    "meta": "Firewalls y Perímetro · Seguridad",
+    "title": "Gobierno de reglas de firewall: cada excepción acaba convirtiéndose en arquitectura",
+    "date": "12 Julio 2026",
+    "desc": "Un firewall enterprise no se degrada por falta de capacidad sino por años de reglas temporales, objetos duplicados, owners desaparecidos y cambios sin caducidad.",
+    "url": "firewalls-perimetro/gestion-reglas-firewall-empresa.html",
+    "published": true
+  },
+  {
+    "id": 39,
+    "cat": "gestion-vulnerabilidades",
+    "meta": "Gestión de Vulnerabilidades · Seguridad",
+    "title": "CISA KEV y EPSS: priorizar vulnerabilidades con evidencia de amenaza",
+    "date": "12 Julio 2026",
+    "desc": "CVSS explica severidad técnica, pero la operación necesita incorporar explotación conocida, probabilidad y exposición real para decidir qué se corrige primero.",
+    "url": "gestion-vulnerabilidades/cisa-kev-epss-priorizacion.html",
+    "published": true
+  },
+  {
+    "id": 40,
+    "cat": "gestion-vulnerabilidades",
+    "meta": "Gestión de Vulnerabilidades · Seguridad",
+    "title": "Explotación conocida frente a CVSS: por qué 9.8 no siempre va primero",
+    "date": "12 Julio 2026",
+    "desc": "La severidad base no modela por sí sola si existe explotación, si el activo está expuesto, si hay control compensatorio o si el sistema soporta una función crítica.",
+    "url": "gestion-vulnerabilidades/vulnerabilidades-explotadas-vs-cvss.html",
+    "published": true
+  },
+  {
+    "id": 41,
+    "cat": "gestion-vulnerabilidades",
+    "meta": "Gestión de Vulnerabilidades · Seguridad",
+    "title": "Ciclo de remediación: del hallazgo al cierre verificable",
+    "date": "12 Julio 2026",
+    "desc": "Escanear no es gestionar vulnerabilidades. El ciclo termina cuando la corrección se valida sobre el activo correcto y la evidencia demuestra que el riesgo cambió.",
+    "url": "gestion-vulnerabilidades/ciclo-remediacion-vulnerabilidades.html",
+    "published": true
+  },
+  {
+    "id": 42,
+    "cat": "respuesta-incidentes",
+    "meta": "Respuesta a Incidentes · Seguridad",
+    "title": "Triage DFIR en Windows: qué recoger antes de tocar el sistema",
+    "date": "12 Julio 2026",
+    "desc": "El primer objetivo no es limpiar; es preservar suficiente contexto para reconstruir ejecución, persistencia, identidad, red y alcance sin destruir la evidencia volátil.",
+    "url": "respuesta-incidentes/triage-dfir-windows.html",
+    "published": true
+  },
+  {
+    "id": 43,
+    "cat": "respuesta-incidentes",
+    "meta": "Respuesta a Incidentes · Seguridad",
+    "title": "Adquisición de memoria y disco: orden, integridad y cadena de custodia",
+    "date": "12 Julio 2026",
+    "desc": "Memoria y almacenamiento responden preguntas distintas. El orden de adquisición debe considerar volatilidad, riesgo operativo y capacidad de reproducir el análisis.",
+    "url": "respuesta-incidentes/adquisicion-evidencias-memoria-disco.html",
+    "published": true
+  },
+  {
+    "id": 44,
+    "cat": "respuesta-incidentes",
+    "meta": "Respuesta a Incidentes · Seguridad",
+    "title": "Contener sin destruir evidencia: el equilibrio difícil de un incidente real",
+    "date": "12 Julio 2026",
+    "desc": "Aislar demasiado pronto puede perder contexto; esperar demasiado puede ampliar el impacto. La decisión debe estar ligada al objetivo de contención y a la evidencia mínima necesaria.",
+    "url": "respuesta-incidentes/contencion-sin-destruir-evidencia.html",
+    "published": true
+  },
+  {
+    "id": 45,
+    "cat": "respuesta-incidentes",
+    "meta": "Respuesta a Incidentes · Seguridad",
+    "title": "Timeline forense: convertir miles de eventos en una secuencia defendible",
+    "date": "12 Julio 2026",
+    "desc": "La cronología no es una lista ordenada de logs; es una hipótesis temporal donde cada hito debe vincularse a una fuente, precisión de reloj y grado de confianza.",
+    "url": "respuesta-incidentes/timeline-forense-incidente.html",
+    "published": true
+  },
+  {
+    "id": 46,
+    "cat": "siem-deteccion",
+    "meta": "SIEM y Detección · Seguridad",
+    "title": "Arquitectura SIEM enterprise: ingestión, normalización, correlación y retención",
+    "date": "12 Julio 2026",
+    "desc": "Un SIEM debe diseñarse como una plataforma de datos de seguridad: fuentes, parsing, calidad, coste, latencia y uso operativo antes que dashboards.",
+    "url": "siem-deteccion/arquitectura-siem-enterprise.html",
+    "published": true
+  },
+  {
+    "id": 47,
+    "cat": "siem-deteccion",
+    "meta": "SIEM y Detección · Seguridad",
+    "title": "Normalización y correlación de logs: cuando un campo mal parseado rompe la detección",
+    "date": "12 Julio 2026",
+    "desc": "Las detecciones dependen de semántica consistente. `src_ip`, usuario, host, proceso y acción deben conservar significado aunque cambie el fabricante.",
+    "url": "siem-deteccion/normalizacion-correlacion-logs.html",
+    "published": true
+  },
+  {
+    "id": 48,
+    "cat": "siem-deteccion",
+    "meta": "SIEM y Detección · Seguridad",
+    "title": "Sigma y YARA: detección portable sin confundir regla con cobertura",
+    "date": "12 Julio 2026",
+    "desc": "Sigma expresa patrones sobre eventos; YARA identifica contenido o artefactos. Ninguna regla compensa una telemetría ausente ni una colección mal diseñada.",
+    "url": "siem-deteccion/sigma-yara-deteccion.html",
+    "published": true
+  },
+  {
+    "id": 49,
+    "cat": "siem-deteccion",
+    "meta": "SIEM y Detección · Seguridad",
+    "title": "Ingeniería de detección: construir casos de uso que sobrevivan a producción",
+    "date": "12 Julio 2026",
+    "desc": "Un caso de uso debe declarar amenaza, comportamiento observable, fuentes, lógica, respuesta y criterio de calidad. El nombre de una técnica ATT&CK no es una detección.",
+    "url": "siem-deteccion/ingenieria-deteccion-casos-uso.html",
+    "published": true
+  },
+  {
+    "id": 50,
+    "cat": "zero-trust",
+    "meta": "Zero Trust · Seguridad",
+    "title": "Conditional Access y Zero Trust: la sesión también es un perímetro",
+    "date": "12 Julio 2026",
+    "desc": "La autenticación inicial no puede conceder confianza permanente. Riesgo, dispositivo, ubicación, aplicación y sensibilidad deben reevaluarse durante la sesión.",
+    "url": "zero-trust/conditional-access-zero-trust.html",
+    "published": true
+  },
+  {
+    "id": 51,
+    "cat": "zero-trust",
+    "meta": "Zero Trust · Seguridad",
+    "title": "Microsegmentación Zero Trust: controlar el movimiento lateral por identidad de servicio",
+    "date": "12 Julio 2026",
+    "desc": "La red deja de ser la unidad mínima de confianza cuando workloads dinámicos, contenedores y servicios comparten segmentos pero no deberían comunicarse entre sí.",
+    "url": "zero-trust/microsegmentacion-zero-trust.html",
+    "published": true
+  },
+  {
+    "id": 52,
+    "cat": "zero-trust",
+    "meta": "Zero Trust · Seguridad",
+    "title": "Sesiones, tokens y reautenticación: el punto ciego de muchas estrategias Zero Trust",
+    "date": "12 Julio 2026",
+    "desc": "Revocar una cuenta no siempre invalida inmediatamente todos los tokens, sesiones web, refresh tokens o credenciales de aplicación.",
+    "url": "zero-trust/sesiones-tokens-reautenticacion.html",
+    "published": true
+  },
+  {
+    "id": 53,
+    "cat": "cifrado-identidad-digital",
+    "meta": "Cifrado e Identidad Digital · Seguridad",
+    "title": "PKI corporativa: diseñar raíces, emisoras y confianza antes de emitir certificados",
+    "date": "12 Julio 2026",
+    "desc": "La PKI es una arquitectura de confianza. El error no suele estar en el algoritmo sino en jerarquías mal separadas, CA online sin necesidad y plantillas demasiado permisivas.",
+    "url": "cifrado-identidad-digital/pki-corporativa-arquitectura.html",
+    "published": true
+  },
+  {
+    "id": 54,
+    "cat": "cifrado-identidad-digital",
+    "meta": "Cifrado e Identidad Digital · Seguridad",
+    "title": "Ciclo de vida de certificados: descubrir antes de que caduque producción",
+    "date": "12 Julio 2026",
+    "desc": "La gestión de certificados incluye descubrimiento, ownership, emisión, despliegue, renovación, revocación y retirada. Un calendario manual no escala.",
+    "url": "cifrado-identidad-digital/gestion-certificados-ciclo-vida.html",
+    "published": true
+  },
+  {
+    "id": 55,
+    "cat": "cifrado-identidad-digital",
+    "meta": "Cifrado e Identidad Digital · Seguridad",
+    "title": "HSM y gestión de claves: separar criptografía de administración ordinaria",
+    "date": "12 Julio 2026",
+    "desc": "Las claves que sostienen identidad, firma o cifrado crítico requieren controles de generación, custodia, uso, rotación y destrucción distintos a un secreto de aplicación.",
+    "url": "cifrado-identidad-digital/hsm-gestion-claves.html",
+    "published": true
+  },
+  {
+    "id": 56,
+    "cat": "security-design",
+    "meta": "Security by Design · Seguridad",
+    "title": "Threat Modeling para arquitectos: convertir un diagrama en hipótesis de ataque",
+    "date": "12 Julio 2026",
+    "desc": "El modelado de amenazas debe producir decisiones de arquitectura y controles verificables, no una sesión de post-its que termina archivada.",
+    "url": "security-design/threat-modeling-arquitectura.html",
+    "published": true
+  },
+  {
+    "id": 57,
+    "cat": "security-design",
+    "meta": "Security by Design · Seguridad",
+    "title": "Security & Privacy by Design en sistemas de IA corporativa",
+    "date": "12 Julio 2026",
+    "desc": "En IA, seguridad y privacidad convergen sobre los mismos flujos de datos, identidades, prompts, contexto recuperado, logs y outputs.",
+    "url": "security-design/security-privacy-by-design.html",
+    "published": true
+  },
+  {
+    "id": 58,
+    "cat": "security-design",
+    "meta": "Security by Design · Seguridad",
+    "title": "Patrones de seguridad arquitectónica: controles repetibles, límites explícitos",
+    "date": "12 Julio 2026",
+    "desc": "Los patrones permiten repetir decisiones buenas, pero deben declarar contexto, fuerzas, límites y anti-patrones; copiar una referencia cloud no es aplicar un patrón.",
+    "url": "security-design/patrones-seguridad-arquitectura.html",
+    "published": true
   }
 ]

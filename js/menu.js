@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="sub-panel">
                     <div class="sub-header">
                         <span class="sub-area-label">Tools</span>
-                        <span class="sub-see-all">Inteligencia técnica</span>
+                        <a href="${basePath}tools/index.html" class="sub-see-all">Ver todos →</a>
                     </div>
                     <div class="sub-grid">
                         <a class="sub-item" href="${basePath}tools/cisa-kev/index.html">
@@ -117,6 +117,10 @@ document.addEventListener("DOMContentLoaded", function() {
                         <a class="sub-item" href="${basePath}tools/euvd/index.html">
                             <span class="sub-num">T.2</span>
                             <span class="sub-name">EUVD Intelligence</span>
+                        </a>
+                        <a class="sub-item" href="${basePath}tools/incibe-cert/index.html">
+                            <span class="sub-num">T.3</span>
+                            <span class="sub-name">INCIBE-CERT Intelligence</span>
                         </a>
                     </div>
                 </div>

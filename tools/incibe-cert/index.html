@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>INCIBE-CERT Intelligence | Technology Advisory</title>
+<meta name="description" content="Explorador técnico de avisos de alerta temprana publicados por INCIBE-CERT.">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<style>
+:root{--green:#28a745;--ink:#0f172a;--muted:#64748b;--line:#d9ddd6;--paper:#fff}
+*{box-sizing:border-box}
+body{margin:0;background:#f2f0e9;color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+.page{max-width:1360px;margin:0 auto;padding:38px 28px 70px}
+.back{display:inline-block;margin-bottom:24px;color:#0f172a;text-decoration:none;font-weight:700}
+.eyebrow{font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;font-weight:800;color:var(--green)}
+h1{font-size:clamp(2.1rem,5vw,4.5rem);line-height:.95;margin:12px 0 20px}
+h1 span{color:var(--green)}
+.lead{max-width:980px;font-size:1.08rem;line-height:1.7;color:#334155}
+.scope{margin-top:18px;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:30px 0 18px}
+.stat{background:var(--paper);border:1px solid var(--line);padding:22px}
+.stat strong{display:block;font-size:2rem;margin-bottom:6px}
+.stat span{color:var(--muted);font-size:.9rem}
+.meta{display:flex;flex-wrap:wrap;gap:12px 24px;color:var(--muted);font-size:.88rem;margin:14px 0 24px}
+.filters{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:10px;margin:22px 0}
+.filters input,.filters select{width:100%;padding:13px 12px;border:1px solid #cbd5e1;background:#fff;color:#0f172a}
+.result-note{margin:10px 0 18px;color:var(--muted)}
+.list{display:grid;gap:14px}
+.item{background:#fff;border:1px solid var(--line);padding:22px}
+.item-top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
+.item h2{font-size:1.17rem;line-height:1.35;margin:0}
+.item h2 a{color:#0f172a;text-decoration:none}
+.badge{white-space:nowrap;padding:7px 10px;font-size:.78rem;font-weight:800;border:1px solid #cbd5e1}
+.summary{line-height:1.62;color:#334155;margin:16px 0}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tag{font-size:.78rem;padding:6px 8px;background:#f1f5f9;border:1px solid #e2e8f0}
+.date{margin-top:16px;color:var(--muted);font-size:.83rem}
+.pagination{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:28px 0}
+.pagination button{border:1px solid #cbd5e1;background:#fff;padding:9px 12px;cursor:pointer}
+.pagination button.active{background:#0f172a;color:#fff}
+.pagination span{padding:9px 4px;color:#64748b}
+.source-note{margin-top:34px;padding-top:22px;border-top:1px solid var(--line);color:#475569;line-height:1.65}
+@media(max-width:980px){.stats{grid-template-columns:repeat(2,1fr)}.filters{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.page{padding:28px 16px 50px}.stats,.filters{grid-template-columns:1fr}.item-top{display:block}.badge{display:inline-block;margin-top:12px}}
+</style>
+</head>
+<body>
+<div id="menu-container"></div>
+<script src="../../js/menu.js"></script>
+
+<main class="page">
+<a class="back" href="../">← Volver a Tools</a>
+<div class="eyebrow">Tools · Inteligencia técnica y fuentes operativas</div>
+<h1>INCIBE-CERT <span>Intelligence</span></h1>
+<p class="lead">Explorador técnico de los avisos de alerta temprana publicados por INCIBE-CERT. La vista conserva una ventana operativa móvil de los últimos 180 días y permite analizar criticidad, temática y evolución temporal sin sustituir la fuente oficial.</p>
+<p class="scope">Ámbito local: últimos 180 días / 6 meses.</p>
+
+<section class="stats">
+<div class="stat"><strong id="statTotal">—</strong><span>Avisos en ventana</span></div>
+<div class="stat"><strong id="statCritical">—</strong><span>Importancia crítica</span></div>
+<div class="stat"><strong id="statHigh">—</strong><span>Importancia alta</span></div>
+<div class="stat"><strong id="statTags">—</strong><span>Temáticas observadas</span></div>
+</section>
+
+<div class="meta">
+<span id="sourceMeta">INCIBE-CERT cargando…</span>
+<span id="updatedMeta">Actualización cargando…</span>
+</div>
+
+<section class="filters">
+<input id="q" type="search" placeholder="Buscar aviso, tecnología o descripción…">
+<input id="tag" type="search" placeholder="Temática, por ejemplo Ransomware…">
+<select id="importance">
+<option value="">Importancia: todas</option>
+<option value="5">5 - Crítica</option>
+<option value="4">4 - Alta</option>
+<option value="3">3 - Media</option>
+<option value="2">2 - Baja</option>
+<option value="unknown">Sin clasificar</option>
+</select>
+<select id="month"><option value="">Mes: todos</option></select>
+<select id="order">
+<option value="desc">Publicación: más reciente primero</option>
+<option value="asc">Publicación: más antigua primero</option>
+</select>
+</section>
+
+<div id="resultNote" class="result-note"></div>
+<section id="list" class="list"></section>
+<div id="pagination" class="pagination"></div>
+
+<p class="source-note">Fuente: INCIBE-CERT · Alerta temprana · Avisos. Technology Advisory presenta una vista técnica normalizada para consulta y filtrado. La clasificación, el contenido y la autoridad del aviso corresponden a INCIBE-CERT.</p>
+</main>
+
+<div id="footer-container"></div>
+<script src="../../js/footer.js"></script>
+
+<script>
+const $=id=>document.getElementById(id);
+const PAGE_SIZE=12;
+let catalog=[],filtered=[],page=1,windowDays=180;
+
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));}
+function parseDate(v){const d=v?new Date(v):null;return !d||Number.isNaN(d.getTime())?null:d;}
+function fmtDate(v){const d=parseDate(v);return d?new Intl.DateTimeFormat('es-ES',{dateStyle:'medium',timeStyle:'short'}).format(d):'Sin fecha';}
+function monthKey(v){const d=parseDate(v);return d?`${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,'0')}`:'';}
+function monthLabel(k){const [y,m]=k.split('-').map(Number);return new Intl.DateTimeFormat('es-ES',{month:'long',year:'numeric'}).format(new Date(y,m-1,1));}
+function importanceLabel(v){return ({5:'5 - Crítica',4:'4 - Alta',3:'3 - Media',2:'2 - Baja'})[v]||'Sin clasificar';}
+
+function populateMonths(){
+ const current=$('month').value;
+ const months=[...new Set(catalog.map(v=>monthKey(v.published_at)).filter(Boolean))].sort().reverse();
+ $('month').innerHTML='<option value="">Mes: todos</option>'+months.map(k=>`<option value="${k}">${monthLabel(k)}</option>`).join('');
+ if(months.includes(current))$('month').value=current;
+}
+
+function apply(){
+ const term=$('q').value.trim().toLowerCase();
+ const tagTerm=$('tag').value.trim().toLowerCase();
+ const importance=$('importance').value;
+ const month=$('month').value;
+ const order=$('order').value;
+
+ filtered=catalog.filter(v=>{
+  const text=[v.title,v.summary,...(v.tags||[])].join(' ').toLowerCase();
+  const tags=(v.tags||[]).join(' ').toLowerCase();
+
+  if(term&&!text.includes(term))return false;
+  if(tagTerm&&!tags.includes(tagTerm))return false;
+  if(importance==='unknown'&&v.importance!=null)return false;
+  if(importance&&importance!=='unknown'&&String(v.importance)!==importance)return false;
+  if(month&&monthKey(v.published_at)!==month)return false;
+  return true;
+ });
+
+ filtered.sort((a,b)=>{
+  const da=parseDate(a.published_at)?.getTime()||0;
+  const db=parseDate(b.published_at)?.getTime()||0;
+  return order==='asc'?da-db:db-da;
+ });
+
+ page=1;
+ render();
+}
+
+function renderPagination(pages){
+ const el=$('pagination');
+ el.innerHTML='';
+ if(pages<=1)return;
+
+ const visible=new Set([1,pages]);
+ for(let i=page-2;i<=page+2;i++)if(i>=1&&i<=pages)visible.add(i);
+
+ const sorted=[...visible].sort((a,b)=>a-b);
+ let previous=0;
+
+ sorted.forEach(n=>{
+  if(previous&&n-previous>1){
+   const dots=document.createElement('span');
+   dots.textContent='···';
+   el.appendChild(dots);
+  }
+
+  const button=document.createElement('button');
+  button.textContent=n;
+  if(n===page)button.className='active';
+  button.addEventListener('click',()=>{page=n;render();window.scrollTo({top:0,behavior:'smooth'});});
+  el.appendChild(button);
+  previous=n;
+ });
+}
+
+function render(){
+ const pages=Math.max(1,Math.ceil(filtered.length/PAGE_SIZE));
+ if(page>pages)page=pages;
+
+ $('resultNote').textContent=`${filtered.length} resultados en la ventana operativa de ${windowDays} días / 6 meses · ${catalog.length} avisos cargados · Los filtros son acumulativos.`;
+
+ const start=(page-1)*PAGE_SIZE;
+ const rows=filtered.slice(start,start+PAGE_SIZE);
+
+ $('list').innerHTML=rows.map(v=>`
+ <article class="item">
+  <div class="item-top">
+   <h2><a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">${esc(v.title)}</a></h2>
+   <span class="badge">${esc(importanceLabel(v.importance))}</span>
+  </div>
+  <p class="summary">${esc(v.summary||'Sin resumen disponible en el feed.')}</p>
+  <div class="tags">${(v.tags||[]).map(tag=>`<span class="tag">${esc(tag)}</span>`).join('')}</div>
+  <div class="date">Publicado: ${esc(fmtDate(v.published_at))}</div>
+ </article>`).join('');
+
+ renderPagination(pages);
+}
+
+async function load(){
+ try{
+  const response=await fetch('../../data/incibe-cert.json',{cache:'no-store'});
+  if(!response.ok)throw new Error(`HTTP ${response.status}`);
+
+  const data=await response.json();
+  catalog=data.alerts||[];
+  windowDays=Number(data.window_days||180);
+
+  $('statTotal').textContent=Number(data.total_alerts||catalog.length).toLocaleString('es-ES');
+  $('statCritical').textContent=Number(data.total_critical||0).toLocaleString('es-ES');
+  $('statHigh').textContent=Number(data.total_high||0).toLocaleString('es-ES');
+  $('statTags').textContent=Number((data.top_tags||[]).length).toLocaleString('es-ES');
+  $('sourceMeta').textContent=`INCIBE-CERT · Avisos · ventana ${windowDays} días`;
+  $('updatedMeta').textContent=`Actualizado ${fmtDate(data.last_updated_at)}`;
+
+  populateMonths();
+  apply();
+ }catch(error){
+  $('resultNote').textContent=`No se pudo cargar INCIBE-CERT Intelligence: ${error.message}`;
+  $('list').innerHTML='';
+ }
+}
+
+['q','tag','importance','month','order'].forEach(id=>{
+ $(id).addEventListener(['q','tag'].includes(id)?'input':'change',apply);
+});
+
+load();
+</script>
+</body>
+</html>
