@@ -1,18 +1,184 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "title": "INCIBE-CERT Intelligence",
-  "last_updated_at": "2026-07-12T18:50:33.468366Z",
+  "last_updated_at": "2026-07-12T20:16:03.613787Z",
   "window_days": 180,
-  "total_alerts": 10,
-  "total_critical": 6,
-  "total_high": 3,
+  "bootstrap_complete": false,
+  "bootstrap_next_page": 5,
+  "total_alerts": 64,
+  "total_critical": 45,
+  "total_high": 11,
+  "total_exploited": 3,
+  "total_with_cve": 52,
   "importance_counts": {
+    "1": 0,
     "2": 0,
-    "3": 1,
-    "4": 3,
-    "5": 6
+    "3": 5,
+    "4": 11,
+    "5": 45
   },
-  "top_tags": [],
+  "top_tags": [
+    {
+      "tag": "Vulnerabilidad",
+      "count": 50
+    },
+    {
+      "tag": "Actualización",
+      "count": 39
+    },
+    {
+      "tag": "RCE",
+      "count": 16
+    },
+    {
+      "tag": "0day",
+      "count": 14
+    },
+    {
+      "tag": "CNA",
+      "count": 13
+    },
+    {
+      "tag": "Denegación de servicio - DoS - DDoS",
+      "count": 12
+    },
+    {
+      "tag": "Escalada de privilegios",
+      "count": 11
+    },
+    {
+      "tag": "Software",
+      "count": 11
+    },
+    {
+      "tag": "Integridad",
+      "count": 9
+    },
+    {
+      "tag": "Comunicaciones y redes",
+      "count": 7
+    },
+    {
+      "tag": "Código arbitrario",
+      "count": 7
+    },
+    {
+      "tag": "Inyección",
+      "count": 7
+    },
+    {
+      "tag": "Confidencialidad",
+      "count": 6
+    },
+    {
+      "tag": "Aviso",
+      "count": 5
+    },
+    {
+      "tag": "Acceso no autorizado",
+      "count": 4
+    },
+    {
+      "tag": "Autenticación",
+      "count": 4
+    },
+    {
+      "tag": "Desbordamiento",
+      "count": 4
+    },
+    {
+      "tag": "Disponibilidad",
+      "count": 4
+    },
+    {
+      "tag": "Divulgación de información",
+      "count": 4
+    },
+    {
+      "tag": "Explotación",
+      "count": 4
+    },
+    {
+      "tag": "SSRF",
+      "count": 4
+    },
+    {
+      "tag": "Cisco",
+      "count": 3
+    },
+    {
+      "tag": "CMS",
+      "count": 3
+    },
+    {
+      "tag": "Explotación de Vulnerabilidades de software",
+      "count": 3
+    },
+    {
+      "tag": "Oracle",
+      "count": 3
+    },
+    {
+      "tag": "Windows",
+      "count": 3
+    },
+    {
+      "tag": "XSS",
+      "count": 3
+    },
+    {
+      "tag": "HP",
+      "count": 2
+    },
+    {
+      "tag": "Microsoft",
+      "count": 2
+    },
+    {
+      "tag": "Path Traversal",
+      "count": 2
+    },
+    {
+      "tag": "Robo de información",
+      "count": 2
+    },
+    {
+      "tag": "Administración pública",
+      "count": 1
+    },
+    {
+      "tag": "Adobe",
+      "count": 1
+    },
+    {
+      "tag": "Amenaza",
+      "count": 1
+    },
+    {
+      "tag": "Android",
+      "count": 1
+    },
+    {
+      "tag": "Boletín",
+      "count": 1
+    },
+    {
+      "tag": "Ciberseguridad",
+      "count": 1
+    },
+    {
+      "tag": "Cloud",
+      "count": 1
+    },
+    {
+      "tag": "Cookies",
+      "count": 1
+    },
+    {
+      "tag": "Correo electrónico",
+      "count": 1
+    }
+  ],
   "source": "INCIBE-CERT · Alerta temprana · Avisos",
   "source_url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos",
   "feed_url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/feed",
@@ -106,6 +272,3236 @@
       "published_at": "2026-06-22T07:32:26Z",
       "importance": 5,
       "tags": []
+    },
+    {
+      "id": "aadc3f16aba3caccbed608f7",
+      "incibe_id": "INCIBE-2026-476",
+      "title": "Neutralización incorrecta de elementos especiales en FortiSandbox de Fortinet",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/neutralizacion-incorrecta-de-elementos-especiales-en-fortisandbox-de-fortinet",
+      "summary": "Adham El Karn, del equipo de seguridad de productos de Fortinet, ha reportado una vulnerabilidad de severidad critica que, en caso de ser explotada, podría permitir a un atacante ejecutar código o comandos no autorizados.",
+      "affected_resources": "FortiSandbox 5.0: versiones desde 5.0.0 a 5.0.5; FortiSandbox 4.4: versiones desde 4.4.0 a 4.4.8; FortiSandbox Cloud 5.0: versiones desde 5.0.4 a 5.0.5; FortiSandbox PaaS 5.0: versiones desde 5.0.4 a 5.0.5.",
+      "solution": "FortiSandbox 5.0: actualiza a la versión 5.0.6 o superior; FortiSandbox 4.4: actualiza a la versión 4.4.9 o superior; FortiSandbox Cloud 5.0: actualiza a la versión 5.0.6 o superior; FortiSandbox PaaS 5.0: actualiza a la versión 5.0.6 o superior.",
+      "detail": "CVE-2026-25089 : una neutralización incorrecta de elementos especiales utilizados en una vulnerabilidad de comando del sistema operativo podría permitir a un atacante, no autenticado, ejecutar comandos no autorizados a través de solicitudes HTTP especialmente diseñadas. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-25089 Crítica No Fortinet",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Código arbitrario",
+        "Comunicaciones y redes",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-25089"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-25089",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-25089"
+      ]
+    },
+    {
+      "id": "c667210a936fdcf5904ee2b2",
+      "incibe_id": "INCIBE-2026-473",
+      "title": "Path Traversal en ColdFusion de Adobe",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/path-traversal-en-coldfusion-de-adobe",
+      "summary": "Adobe ha publicado una vulnerabilidad de severidad crítica que encaso de ser explotada podría provocar la ejecución de código arbitrario, la escalada de privilegios, la lectura arbitraria del sistema de archivos y la omisión de las funciones de seguridad.",
+      "affected_resources": "ColdFusion 2025: actualización 9 y versiones anteriores. ColdFusion 2023: actualización 20 y versiones anteriores.",
+      "solution": "ColdFusion 2025: actualización 10. ColdFusion 2023: actualización 21.",
+      "detail": "CVE-2026-48282 : vulnerabilidad de limitación incorrecta de una ruta de acceso a un directorio restringido que podría permitir la ejecución de código arbitrario en el contexto del usuario actual. La explotación de esta vulnerabilidad no requiere interacción del usuario. Según la empresa de inteligencia de vulnerabilidades KEVIntel se está explotando esta vulnerabilidad. Existe una prueba de concepto de la vulnerabilidad disponible en github.com. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-48282 Crítica Si Adobe",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Adobe",
+        "Escalada de privilegios",
+        "Explotación",
+        "RCE",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-48282"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-48282",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": true,
+      "manufacturers": [
+        "CVE-2026-48282"
+      ]
+    },
+    {
+      "id": "0bb0628ba182fe48dfdea5fa",
+      "incibe_id": "INCIBE-2026-471",
+      "title": "Autorización incorrecta en Biloop de Adiss",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/autorizacion-incorrecta-en-biloop-de-adiss",
+      "summary": "INCIBE ha coordinado la publicación de una vulnerabilidad de severidad crítica que afecta a Biloop de Adiss, plataforma y portal digital de cliente diseñado para despachos profesionales, asesorías y sus clientes. La vulnerabilidad ha sido descubierta por Jean-Michel Junod. A esta vulnerabilidad se le ha asignado el siguiente código, puntuación base CVSS v4.0, vector del CVSS y el tipo de vulnerabilidad CWE: CVE-2026-12686: CVSS v4.0: 9.3 | CVSS AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:L/SC:H/SI:H/SA:N | CWE-639",
+      "affected_resources": "Biloop, versión 6.1.1.",
+      "solution": "La vulnerabilidad ya se encuentra resuelta, por lo que se recomienda actualizar a la última versión disponible.",
+      "detail": "CVE-2026-12686 : un usuario autenticado podría manipular un parámetro de identificador de empresa en una solicitud POST del backend para obtener acceso no autorizado a otras empresas alojadas en el mismo entorno de subdominio. La aplicación no comprueba adecuadamente si el identificador de empresa solicitado pertenece a la sesión del usuario autenticado, lo que da lugar a una omisión de la autorización entre inquilinos. Si se aprovecha con éxito esta vulnerabilidad, se permite el acceso no autorizado a información confidencial de los clientes, incluidos los datos de facturación, y puede permitir la modificación no autorizada de datos de terceros. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-12686 Crítica No Adiss",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Acceso no autorizado",
+        "Actualización",
+        "CNA",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-12686"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-12686",
+          "cvss": 9.3,
+          "cvss_version": "4.0"
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-12686"
+      ]
+    },
+    {
+      "id": "6e462cbfe996431afa984415",
+      "incibe_id": "INCIBE-2026-470",
+      "title": "Múltiples vulnerabilidades en NetScaler de Citrix",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-netscaler-de-citrix",
+      "summary": "Citrix ha publicado 6 vulnerabilidades: 5 de severidad alta y 1 de severidad media que, en caso de ser explotadas, podrían permitir a un atacante leer la memoria, provocar un comportamiento impredecible o una denegación de servicio.",
+      "affected_resources": "NetScaler ADC y NetScaler Gateway 14.1 anteriores a 14.1-72.61; NetScaler ADC y NetScaler Gateway 13.1 anteriores a 13.1-63.18; FIPS de NetScaler ADC anteriores a 14.1-72.61 FIPS; Compatibilidad con FIPS y NDcPP de NetScaler ADC anteriores a la versión 13.1-37.272.",
+      "solution": "Cloud Software Group insta a los clientes afectados a que instalen las versiones actualizadas correspondientes. NetScaler ADC y NetScaler Gateway versiones 14.1-72.61 y posteriores. NetScaler ADC y NetScaler Gateway 13.1-63.18 y versiones posteriores de 13.1. NetScaler ADC 14.1-FIPS 14.1-72.61 FIPS y versiones posteriores de 14.1-FIPS. NetScaler ADC 13.1-FIPS y 13.1-NDcPP 13.1.37.272 y versiones posteriores de 13.1-FIPS y 13.1-NDcPP.",
+      "detail": "CVE-2026-8451 : validación de entrada insuficiente que provoca una lectura excesiva de la memoria. CVE-2026-8452 : vulnerabilidad por desbordamiento de memoria que provoca un comportamiento impredecible o erróneo y una denegación de servicio. CVE-2026-8655 : múltiples vulnerabilidades de desbordamiento de memoria que provocan un comportamiento impredecible o erróneo y una denegación de servicio. CVE-2026-10816 : lectura arbitraria de archivos (sin autenticación). CVE-2026-13474 : denegación de servicio mediante solicitudes HTTP/2 mal formadas. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-8451 Alta No Citrix CVE-2026-8452 Alta No Citrix CVE-2026-8655 Alta No Citrix CVE-2026-10816 Alta No Citrix CVE-2026-13474 Alta No Citrix CVE-2026-10817 Media No Citrix",
+      "published_at": null,
+      "importance": 4,
+      "tags": [
+        "Actualización",
+        "Comunicaciones y redes",
+        "Denegación de servicio - DoS - DDoS",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-8451",
+        "CVE-2026-8452",
+        "CVE-2026-8655",
+        "CVE-2026-10816",
+        "CVE-2026-13474",
+        "CVE-2026-10817"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-8451",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-8452",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-8655",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-10816",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-13474",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-10817",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-8451"
+      ]
+    },
+    {
+      "id": "76c44ac8a23943dd6a94d835",
+      "incibe_id": "INCIBE-2026-463",
+      "title": "Múltiples vulnerabilidades en el WAF de AWS",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-el-waf-de-aws",
+      "summary": "AWS ha publicado 2 vulnerabilidades de severidad alta que, en caso de ser explotadas, podrían permitir a un atacante omitir reglas administradas por AWS WAF.",
+      "affected_resources": "AWS Application Load Balancer (CVE-2026-13763) Amazon CloudFront (CVE-2026-13762)",
+      "solution": "CVE-2026-13763: este problema solo afecta a los grupos de destino HTTP/2 de ALB. Para solucionarlo, los clientes deben habilitar la configuración del grupo de destino \"Inspeccionar después de datos suficientes\" asociada a un balanceador de carga ALB. CVE-2026-13762: este problema se solucionó en el servidor, no se requiere ninguna acción por parte del cliente.",
+      "detail": "CVE-2026-13763 y CVE-2026-13762 : la interpretación incorrecta de las solicitudes HTTP/2 podría permitir que actores remotos eludan parcialmente la inspección del cuerpo de las solicitudes mediante peticiones HTTP/2 especialmente manipuladas que fragmentan el contenido en múltiples tramas, provocando que únicamente una parte del cuerpo de la solicitud sea analizada por el WAF. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-13763 Alta Si AWS CVE-2026-13762 Alta Si AWS",
+      "published_at": null,
+      "importance": 4,
+      "tags": [
+        "Aviso",
+        "Cloud",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-13763",
+        "CVE-2026-13762"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-13763",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-13762",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-13763"
+      ]
+    },
+    {
+      "id": "3da473a7d21162e8b8f8b8f9",
+      "incibe_id": "INCIBE-2026-462",
+      "title": "Múltiples vulnerabilidades en WebControl CMS de Intermark IT",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-webcontrol-cms-de-intermark-it",
+      "summary": "INCIBE ha coordinado la publicación de 2 vulnerabilidades de severidad media, que afectan a WebControl CMS de Intermark IT,",
+      "affected_resources": "WebControl CMS.",
+      "solution": "de gestión de contenido web versátil y segura. Las vulnerabilidades han sido descubiertas por Erik Villegas. A estas vulnerabilidades se les han asignado los siguientes códigos, puntuación base CVSS v4.0, vector del CVSS y el tipo de vulnerabilidad CWE de cada vulnerabilidad: CVE-2026-6953 y CVE-2026-6954: CVSS v4.0: 5.1 | CVSS AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:N/SI:L/SA:N | CWE-79 Solución No hay solución reportada por el momento.",
+      "detail": "CVE-2026-6953 : vulnerabilidad de inyección de HTML en WebControl CMS v3.5 de Intermark IT. Esta vulnerabilidad permite a un atacante enviar un correo electrónico con código HTML malicioso a una víctima a través del formulario de contacto. Para aprovechar esta vulnerabilidad, el atacante debe enviar una solicitud utilizando los parámetros ' nombreApellidos ', dirección y comentarios en ' /tratarContacto.do '. CVE-2026-6954 : vulnerabilidad de tipo Cross-site Scripting (XSS) reflejada en WebControl CMS v3.5 de Intermark IT. Esta vulnerabilidad permite a un atacante ejecutar código JavaScript o inyectar un iframe dinámico en el navegador de la víctima enviándole una URL maliciosa mediante el parámetro ' urlDestino ' en ' /portal.do '. Esta vulnerabilidad puede ser explotada para robar datos confidenciales del usuario, como cookies de sesión, mostrar interfaces de phishing o realizar acciones en nombre del usuario. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-6953 Media No Intermark IT CVE-2026-6954 Media No Intermark IT",
+      "published_at": null,
+      "importance": 3,
+      "tags": [
+        "0day",
+        "CNA",
+        "Vulnerabilidad",
+        "XSS"
+      ],
+      "cves": [
+        "CVE-2026-6953",
+        "CVE-2026-6954"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-6953",
+          "cvss": 5.1,
+          "cvss_version": "4.0"
+        },
+        {
+          "cve": "CVE-2026-6954",
+          "cvss": 5.1,
+          "cvss_version": "4.0"
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-6953"
+      ]
+    },
+    {
+      "id": "8135cae9fe4b4af4a4ad0904",
+      "incibe_id": "INCIBE-2026-461",
+      "title": "Múltiples vulnerabilidades en MailPlus de Synology",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-mailplus-de-synology",
+      "summary": "Synology ha publicado ha publicado 3 vulnerabilidades: 2 de severidad crítica y 1 media que en caso de ser explotadas, podrían provocar una denegación de servicio o acceso a servicios internos.",
+      "affected_resources": "Synology MailPlus Server, DSM 7.3, 7.2.2 y 7.2.1.",
+      "solution": "Actualizar a la versión 4.0.1-21663 o superior.",
+      "detail": "CVE-2026-13136 : podría permitir a atacantes remotos leer o escribir archivos arbitrarios y llevar a cabo ataques de denegación de servicio. CVE-2025-15660 : podría permitir a atacantes adyacentes leer o escribir archivos arbitrarios y realizar ataques de denegación de servicio. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-13136 Crítica No Synology CVE-2025-15660 Crítica No Synology CVE-2026-13135 Media No Synology",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Correo electrónico",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-13136",
+        "CVE-2025-15660",
+        "CVE-2026-13135"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-13136",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2025-15660",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-13135",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-13136"
+      ]
+    },
+    {
+      "id": "f7de5c8c2ae094f2d04806cf",
+      "incibe_id": "INCIBE-2026-450",
+      "title": "Múltiples vulnerabilidades en Moodle",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-moodle-13",
+      "summary": "Moodle ha publicado 18 vulnerabilidades: 9 de severidad alta, que de ser explotadas, podrían permitir a un atacante poner en riesgo la información.",
+      "affected_resources": "5.2, 5.1 a 5.1.4, 5.0 a 5.0.7, 4.5 a 4.5.11 y versiones anteriores no compatibles.",
+      "solution": "Actualizar a las siguientes versiones 5.2.1, 5.1.5, 5.0.8 y 4.5.12.",
+      "detail": "Aun no se ha asignado CVE a las vulnerabilidades, pero Moodle les ha asignado un identificador propio. Estos se describen a continuación: MDL-87898 Riesgo de denegación de servicio (DoS) a través de la descripción del perfil de usuario. MDL-88529 Falta la comprobación de capacidad en la asignación del marcador de asignación. MDL-88531 Riesgo de CSRF en la recalificación de intentos de cuestionario. MDL-88542 CSRF y XSS en la edición del número de identificación del elemento de grado. MDL-88619 IDOR permite la eliminación arbitraria de comentarios. MDL-88667 Faltan comprobaciones de acceso de grupo en los servicios web de calificaciones. MDL-88735 Riesgo de RCE mediante la importación de preajustes de administrador. MDL-88736 Riesgo de lectura arbitraria de archivos en la restauración de copias de seguridad. MDL-88767 Omisión de MFA basada en correo electrónico. MDL-88595 Riesgo de lectura arbitraria de archivos en el módulo de actividad de la base de datos. CVE Identificador CVE Severidad Explotación Fabricante",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Denegación de servicio - DoS - DDoS",
+        "Vulnerabilidad",
+        "XSS"
+      ],
+      "cves": [],
+      "cve_details": [],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "cd2567c83fed108eed1e69ef",
+      "incibe_id": "INCIBE-2026-448",
+      "title": "Múltiples vulnerabilidades en el juego Assassin de Gaudire",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-el-juego-assassin-de-gaudire",
+      "summary": "INCIBE ha coordinado la publicación de 3 vulnerabilidades, 2 de severidad crítica y 1 de severidad media, que afectan al juego Assassin de Gaudire, juego participativo con tecnología y contenidos creativos. Las vulnerabilidades han sido descubiertas por Adrià Bonilla Martin k0x. A estas vulnerabilidades se les han asignado los siguientes códigos, puntuación base CVSS v4.0, vector del CVSS y el tipo de vulnerabilidad CWE de cada vulnerabilidad: CVE-2026-7165: CVSS v4.0: 9.4 | CVSS AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H | CWE-20 CVE-2026-7166: CVSS v4.0: 9.2 | CVSS AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:H/SI:N/SA:N | CWE-200 CVE-2026-7167: CVSS v4.0: 6.9 | CVSS AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N | CWE-287",
+      "affected_resources": "Juego Assassin, última versión.",
+      "solution": "No hay solución reportada por el momento.",
+      "detail": "CVE-2026-7165 : la vulnerabilidad está presente en el endpoint ' /addJugador ' de Assassin de Gaudire: En los parámetros ' keyJugado r' y ' keyJugadorObjectiu ' se permite modificar la información de otros usuarios sin necesidad de una validación de autorización previa. Esto podría permitir a un atacante autenticado tener la posibilidad de alterar el ID de cualquier usuario y cambiar su información. En los campos ' punts ' y ' numObjectiusEliminats ' se permite añadir datos arbitrarios, ya que no se valida correctamente la entrada del usuario. Esto posibilita obtener premios auténticos, a través de falsificar las puntuaciones del juego, que los ayuntamientos conceden. En el campo ' tokens ' se permite la autoasignación de privilegios administrativos sin una validación por parte del servidor ni autenticación previa. Esta vulnerabilidad podría permitir a un atacante autenticado otorgarse permisos de administrador y conseguir así escalar de privilegios. En los campos numéricos se posibilita introducir valores extremadamente largos lo que da lugar a la saturación del sistema. La explotación exitosa de esta vulnerabilidad podría permitir a un atacante autenticado causar un ataque de denegación de servicio (DoS) impidiendo que las partidas creadas sean jugables. En el parámetro ' urlImatge ' se permite realizar peticiones server-side a URLs arbitrarias, posibilitando la obtención de IPs internas de usuarios, acceso a servicios internos, lectura de archivos locales y la interacción no autorizada con APIs de terceros. Un atacante autenticado podría tener acceso a datos confidenciales. CVE-2026-7166 : exposición de datos sensibles proporcionados sin una protección adecuada en Assassin de Gaudire. Desde la API se exponen los datos del correo y del teléfono de los campos ' email ' y ' telefon '. Esta vulnerabilidad también está presente en la base de datos local ya que contiene información sensible accesible como datos de menores y usuarios de ayuntamientos. La explotación exitosa de esta vulnerabilidad podría permitir a un atacante remoto, no autenticado, tener acceso a información y datos sensibles. CVE-2026-7167 : el sistema no valida adecuadamente el campo ‘ email ’ en Assassin de Gaudire durante el proceso de autenticación, lo que permite la aceptación de direcciones de correo electrónico no verificadas o falsas. Esta falta de validación habilita la creación de cuentas de usuario con correos electrónicos falsos, lo que facilita la creación masiva de cuentas fraudulentas. La explotación exitosa de esta vulnerabilidad podría permitir a un atacante autenticado llevar a cabo diversos ataques, como el envío masivo de spam , el abuso del sistema o el eludir controles de usuario, lo que comprometería la seguridad y la integridad del sistema. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-7165 Crítica No Gaudire CVE-2026-7166 Crítica No Gaudire CVE-2026-7167 Media No Gaudire",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "0day",
+        "CNA",
+        "Escalada de privilegios",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-7165",
+        "CVE-2026-7166",
+        "CVE-2026-7167"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-7165",
+          "cvss": 9.4,
+          "cvss_version": "4.0"
+        },
+        {
+          "cve": "CVE-2026-7166",
+          "cvss": 9.2,
+          "cvss_version": "4.0"
+        },
+        {
+          "cve": "CVE-2026-7167",
+          "cvss": 6.9,
+          "cvss_version": "4.0"
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-7165"
+      ]
+    },
+    {
+      "id": "fbe092a8be9678e6b6926a3c",
+      "incibe_id": "INCIBE-2026-447",
+      "title": "Permisos incorrectos en ArubaSign de Aruba",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/permisos-incorrectos-en-arubasign-de-aruba",
+      "summary": "INCIBE ha coordinado la publicación de una vulnerabilidad de severidad alta, que afecta a ArubaSign de Aruba, aplicación de escritorio para firmar digitalmente, verificar documentos y aplicar marcas de tiempo. La vulnerabilidad ha sido descubierta por Andrea Intilangelo (acme). A esta vulnerabilidad se le ha asignado el siguiente código, puntuación base CVSS v4.0, vector del CVSS y el tipo de vulnerabilidad CWE: CVE-2026-12602: CVSS v4.0:8.8 | CVSS AV:L/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H | CWE-276",
+      "affected_resources": "ArubaSign, versiones anteriores a la v4.6.6.",
+      "solution": "No hay solución reportada por el momento.",
+      "detail": "CVE-2026-12602 : permisos predeterminados incorrectos en ArubaSign, que afecta a versiones anteriores a v4.6.6. La vulnerabilidad es provocada por la asignación de permisos inadecuados durante la instalación predeterminada del software , en la que el ejecutable principal y otros archivos del programa ubicados en C:\\Archivos de programa, tienen permisos excesivos para el grupo ‘Todos’. Esto podría permitir a un usuario sin privilegios sustituir el ejecutable principal y/o sus componentes por un archivo malicioso, lo que permitiría la ejecución de código arbitrario. En el peor de los casos, si el código malicioso se ejecuta con privilegios elevados (como los de Administrador o SYSTEM), el atacante podría escalar privilegios y tomar el control total del sistema, comprometiendo tanto la seguridad como la integridad de los datos. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-12602 Alta No Aruba",
+      "published_at": null,
+      "importance": 4,
+      "tags": [
+        "0day",
+        "CNA",
+        "Escalada de privilegios",
+        "Integridad",
+        "Permisos",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-12602"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-12602",
+          "cvss": 8.8,
+          "cvss_version": "4.0"
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-12602"
+      ]
+    },
+    {
+      "id": "323fda09c4aef5ea647dac26",
+      "incibe_id": "INCIBE-2026-446",
+      "title": "Vulnerabilidad Path Traversal en SOLIDWORKS Desktop",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/vulnerabilidad-path-traversal-en-solidworks-desktop",
+      "summary": "SOLIDWORKS ha publicado una vulnerabilidad de severidad crítica que, en caso de ser explotada, podría permitir a un atacante escribir archivos arbitrarios en el servidor.",
+      "affected_resources": "Versiones desde SOLIDWORKS Desktop Release 2024 hasta SOLIDWORKS Desktop Release 2026.",
+      "solution": "El fabricante recomienda actualizar el producto a la última versión.",
+      "detail": "CVE-2026-10094: vulnerabilidad de tipo Path Traversal que se produce por un error de validación de entrada al procesar secuencias de recorrido de directorios. Un atacante remoto puede enviar peticiones HTTP especialmente diseñadas y escribir archivos arbitrarios en el sistema. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-10094 Crítica No SOLIDWORKS",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Aviso",
+        "Explotación de Vulnerabilidades de software",
+        "Path Traversal",
+        "Software",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-10094"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-10094",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "recomienda actualizar el producto a la última versión. Detalle",
+        "CVE-2026-10094"
+      ]
+    },
+    {
+      "id": "efe355d524391f7968606785",
+      "incibe_id": "INCIBE-2026-445",
+      "title": "Múltiples vulnerabilidades en ISE e ISE-PIC de CISCO",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-ise-e-ise-pic-de-cisco",
+      "summary": "CISCO ha publicado un aviso donde informan de dos vulnerabilidades, una de severidad crítica y otra alta que, en caso de ser explotadas, podrían permitir la ejecución remota de código y la revelación de información.",
+      "affected_resources": "Productos ISE o ISE-PIC versiones: Anteriores a la 3.3 3.3 3.4 3.5 Importante: ISE-PIC ha alcanzado el final de venta, la versión 3.4 es la última con soporte.",
+      "solution": "Según la versión del producto y la vulnerabilidad, actualizar a alguna de las siguientes versiones: Versiones anteriores a la 3.3 CVE-2026-20181: migrar a una versión actualizada CVE-2026-20190: no es vulnerable Versión 3.3: CVE-2026-20181: 3.3 parche 11 CVE-2026-20190: no es vulnerable Versión 3.4: CVE-2026-20181: 3.4 parche 6 CVE-2026-20190: 3.4 parche 6 Versión 3.5: CVE-2026-20181: 3.5 parche 4 (agosto 2026) CVE-2026-20190: 3.5 parche 3 También hay disponible un parche para ISE bajo demanda contactando con el Centro de Asistencia Técnica de CISCO (TAC) .",
+      "detail": "CVE-2026-20181 : un atacante en remoto con credenciales de administrador válidas puede ejecutar comandos arbitrarios en el sistema operativo del dispositivo. La vulnerabilidad se produce por una validación insuficiente de la entrada proporcionada por el usuario. Un atacante puede explotar esta vulnerabilidad enviando una solicitud HTTP manipulada al dispositivo afectado. Si se explota con éxito un atacante puede obtener acceso al sistema operativo con privilegios de usuario y desde ahí incrementar sus privilegios a nivel de root . En entornos de un único nodo, si se explota la vulnerabilidad con éxito, puede hacer que el nodo ISE quede inoperativo y que los endpoints que aún no se hayan autenticado no puedan acceder a la red hasta que el nodo sea restaurado. CVE-2026-20190 : un atacante en remoto no autenticado puede ver información sensible en el dispositivo afectado. La vulnerabilidad se produce por que no se comprueba adecuadamente la autorización cuando accede un recurso. Un atacante puede explotar esta vulnerabilidad enviando tráfico manipulado al dispositivo afectado. Si se explota con éxito se puede hacer que el atacante acceda a información sensible, incluidos hashes de credenciales que luego se pueden usar para futuros ataques. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-20181 Crítica No CISCO CVE-2026-20190 Alta No CISCO",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Cisco",
+        "Comunicaciones y redes",
+        "Fuga de información",
+        "RCE",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-20181",
+        "CVE-2026-20190"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-20181",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-20190",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-20181"
+      ]
+    },
+    {
+      "id": "04fe88cf45310deacdadf18b",
+      "incibe_id": "INCIBE-2026-444",
+      "title": "Múltiples vulnerabilidades en NGINX",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-nginx",
+      "summary": "F5 ha publicado una notificación de seguridad fuera de ciclo donde informa de 6 vulnerabilidades, 2 de severidad crítica, 3 alta y 1 media. En caso de ser explotadas podrían forzar el reinicio del dispositivo, la ejecución de código en remoto o lograr la revelación de memoria.",
+      "affected_resources": "Los siguientes productos: NGINX Plus; NGINX Open Source; NGINX Instance Manager; F5 WAF for NGINX; NGINX App Protect WAF; F5 DoS for NGINX; NGINX App Protect DoS; NGINX Gateway Fabric; NGINX Ingress Controller. Para conocer las versiones afectadas por las vulnerabilidades, consultar los enlaces de las referencias. En dichos enlaces únicamente se muestran las versiones con soporte; las versiones que ya carecen de él no han sido testeadas.",
+      "solution": "Según el producto y la versión afectada, y en la medida de lo posible, actualizar el producto al parche desarrollado por el fabricante.",
+      "detail": "Las vulnerabilidades de severidad crítica son: CVE-2026-42055 : un atacante en remoto, y no autenticado, en condiciones fuera de su control, podría enviar encabezados de gran tamaño al generar una solicitud ascendente ( upstream ). Esto puede causar un desbordamiento de búfer basado en montículo en el proceso de trabajo NGINX que provoque un reinicio. Además, los atacantes pueden ejecutar código en sistemas con Address Space Layout Randomization (ASLR) deshabilitado o cuando el atacante lo puede omitir. Cabe destacar que esta vulnerabilidad solo es explotable bajo configuraciones específicas; los dispositivos que mantienen la configuración predeterminada no se ven afectados. CVE-2026-42530 : un atacante remoto no autenticado podría, bajo condiciones fuera de su control, utilizar una sesión HTTP/3 especialmente manipulada para reabrir un flujo (stream) del codificador QPACK. Esto puede provocar una vulnerabilidad de use-after-free en el proceso worker de NGINX, causando su reinicio inesperado. Además, el atacante podría lograr la ejecución de código en sistemas que tengan deshabilitada la protección ASLR (Address Space Layout Randomization) o si consigue evadirla. El resto de vulnerabilidades se pueden consultar en los enlaces de las referencias. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-42055 Crítica No F5 CVE-2026-42530 Crítica No F5 CVE-2026-50107 Alta No F5 CVE-2026-48142 Media No F5 CVE-2026-11311 Alta No F5 CVE-2026-32682 Alta No F5",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Denegación de servicio - DoS - DDoS",
+        "RCE",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-42055",
+        "CVE-2026-42530",
+        "CVE-2026-50107",
+        "CVE-2026-48142",
+        "CVE-2026-11311",
+        "CVE-2026-32682"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-42055",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-42530",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-50107",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-48142",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-11311",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-32682",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-42055"
+      ]
+    },
+    {
+      "id": "c5c5855159a2c8695c3c963c",
+      "incibe_id": "INCIBE-2026-441",
+      "title": "Múltiples vulnerabilidades en MiCollab de Mitel",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-micollab-de-mitel-1",
+      "summary": "Mitel ha publicado 12 vulnerabilidades: 11 de severidad crítica y una alta que, en caso de ser explotadas, podrían permitir a un atacante, ejecutar comandos arbitrarios dentro del sistema, ver, corromper o eliminar configuraciones, aprovechar las conexiones y los permisos disponibles, ejecutar comandos SQL arbitrarios en la base de datos y obtener acceso no autorizado a archivos arbitrarios.",
+      "affected_resources": "MiCollab: 10.0 (10.0.0.26) a 10.2 SP1 FP1 (10.2.1.102) y 9.8 SP3 FP1 (9.8.3.103) y anteriores; Instancia virtual de la",
+      "solution": "empresarial MiVoice (MiVB SVI): 2.1.0.9-2 y versiones anteriores. Descripción Mitel ha publicado 12 vulnerabilidades: 11 de severidad crítica y una alta que, en caso de ser explotadas, podrían permitir a un atacante, ejecutar comandos arbitrarios dentro del sistema, ver, corromper o eliminar configuraciones, aprovechar las conexiones y los permisos disponibles, ejecutar comandos SQL arbitrarios en la base de datos y obtener acceso no autorizado a archivos arbitrarios. Solución MiCollab: actualizar a la versión 10.2 SP1 FP2 (10.2.1.205) o a la versión 9.8 SP3 FP2 (9.8.3.203), o a versione posteriores. Para MIVB SVI 2.x, actualizar a la versión 2.1.0.9-4 o a versiones posteriores. Para MiVB SVI 1.0, actualizar individualmente el módulo del servidor UC MiCollab Client Service 9.8.3.203 desde el panel Módulos del administrador del servidor SVI.",
+      "detail": "Para estas vulnerabilidad aún no se ha asignado un identificador CVE. Mitel ha incluido su propio identificador para estas vulnerabilidades. MTLVULN-1667 : inyección de comandos en MiCollab Client Service de la instancia virtual de la solución empresarial Mitel MiCollab and MiVoice (MiVB SVI). Un atacante, no autenticado, podría realizar un ataque de inyección de comandos debido a una validación incorrecta del certificado. Si se explota con éxito podría permitir al atacante ejecutar comandos arbitrarios dentro del sistema. MTLVULN-1666 : inyección de comandos en el módulo de retroalimentación del componente de servicio de cliente de MiCollab de la instancia virtual de la solución empresarial Mitel MiCollab y MiVoice (MiVB SVI). Un atacante, no autenticado, podría realizar un ataque de inyección de comandos debido a una depuración insuficiente de parámetros. Si se explota con éxito podría permitir al atacante ejecutar comandos arbitrarios dentro del sistema. MTLVULN-1669 : inyección de comandos en MiCollab Client Service de la instancia virtual de la solución empresarial Mitel MiCollab and MiVoice (MiVB SVI). Un atacante, no autenticado, podría realizar un ataque de inyección de comandos debido a una depuración insuficiente de los parámetros. Si se explota con éxito podría permitir al atacante ejecutar comandos arbitrarios dentro del sistema. MTLVULN-1668 : autorización faltante en MiCollab Client Service de la instancia virtual de la solución empresarial Mitel MiCollab y MiVoice (MiVB SVI). Un atacante, no autenticado, podría realizar un ataque de acceso no autorizado debido a la falta de mecanismos de autenticación.Si se explota con éxito podría permitir al atacante ver, corromper o eliminar configuraciones del sistema. MTLVULN-1641 : falsificación de solicitud del lado del servidor (SSRF) en MiCollab Client Service de la instancia virtual de la solución empresarial Mitel MiCollab y MiVoice (MiVB SVI). Si se explota con éxito, un atacante no autenticado podría realizar un ataque SSRF porque no se restringen lo suficiente las URL proporcionadas por el usuario. Si se explota con éxito podría permitir al atacante aprovechar las conexiones y los permisos disponibles en el servidor host . MTLVULN-1665 : inyección SQL en MiCollab Client Service de la instancia virtual de la solución empresarial Mitel MiCollab and MiVoice (MiVB SVI). Si se explota con éxito, un atacante no autenticado podría realizar un ataque de inyección SQL debido a que no se valida lo suficiente la entrada del usuario. Si se explota con éxito podría permitir al atacante ejecutar comandos SQL arbitrarios en la base de datos. MTLVULN-1631 : inyección de comandos en NuPoint Unified Messaging (NPM) de Mitel MiCollab. Un atacante, no autenticado, podría realizar un ataque de inyección de comandos debido a una depuración insuficiente de parámetros. Si se explota con éxito permitiría al atacante ejecutar comandos arbitrarios dentro del sistema. MTLVULN-1672 : inyección de comandos en NuPoint Unified Messaging (NPM) de Mitel MiCollab. De explotarse con éxito, un atacante no autenticado podría realizar un ataque de inyección de comandos debido a una depuración insuficiente de parámetros. Si se explota con éxito permitiría al atacante ejecutar comandos arbitrarios dentro del sistema. MTLVULN-1633 : escritura de archivos no autorizada en el componente NuPoint Unified Messaging (NPM) de Mitel MiCollab. Si se explota con éxito, un atacante no autenticado podría escribir archivos arbitrarios con contenido malicioso debido a la falta de depuración de rutas. Si se explota con éxito podría permitir la ejecución de código arbitrario. MTLVULN-1632 : carga de archivos arbitrarios en NuPoint Unified Messaging (NPM) de Mitel MiCollab. Un atacante no autenticado podría cargar archivos arbitrarios con contenido malicioso debido a la falta de mecanismos de autenticación, una depuración insuficiente del contenido y la ausencia de validación del tipo de archivo. MTLVULN-1640 : inyección SQL en de audioconferencia, videoconferencia web (AWV) de Mitel MiCollab. Si se explota con éxito, un atacante no autenticado podría realizar un ataque de inyección SQL debido a una validación insuficiente de la entrada del usuario. Si se explota con éxito podría permitir al atacante ejecutar comandos SQL arbitrarios en la base de datos. MTLVULN-1664 : inyección de entidades externas XML (XXE) en NuPoint Unified Messaging (NPM) de Mitel MiCollab. Si se explota con éxito, un atacante no autenticado podría acceder sin autorización a archivos locales del servidor MiCollab, debido a que el analizador XML permite la inyección de entidades externas. Si se explota con éxito podría permitir al atacante obtener acceso no autorizado a archivos arbitrarios. CVE Identificador CVE Severidad Explotación Fabricante",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Inyección",
+        "RCE",
+        "SSRF",
+        "Vulnerabilidad"
+      ],
+      "cves": [],
+      "cve_details": [],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "f863d67e933e3567a5e115ca",
+      "incibe_id": "INCIBE-2026-440",
+      "title": "Inyección de comandos del sistema operativo en AI Toolkit de Splunk",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/inyeccion-de-comandos-del-sistema-operativo-en-ai-toolkit-de-splunk",
+      "summary": "Gabriel Nitu, en coordinación con Splunk, ha publicado una vulnerabilidad de severidad crítica que, en caso de ser explotada podría permitir a un usuario con privilegios de administrador ejecutar comandos arbitrarios en el sistema operativo subyacente donde se ejecuta Splunk Enterprise, comprometiendo la confidencialidad, integridad y disponibilidad del sistema afectado.",
+      "affected_resources": "Versiones de Splunk AI Toolkit anteriores a la 5.7.4.",
+      "solution": "El fabricante recomienda actualizar el producto a la versión 5.7.4 que corrige la vulnerabilidad.",
+      "detail": "CVE-2026-20266: la vulnerabilidad se debe a una inyección de comandos del sistema operativo en el asistente de configuración btool de Splunk AI Toolkit. El fallo se produce debido a una gestión insegura de la ejecución de comandos, donde determinados parámetros dinámicos son utilizados para construir instrucciones del sistema sin deshabilitar correctamente la interpretación del intérprete de comandos. Un usuario con el rol de administrador en Splunk podría explotar esta vulnerabilidad para ejecutar comandos arbitrarios en el sistema operativo del servidor donde se encuentra desplegada la instancia de Splunk Enterprise, comprometiendo la confidencialidad, integridad y disponibilidad del sistema afectado. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-20266 Crítica No Splunk",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Aviso",
+        "Código arbitrario",
+        "Explotación de Vulnerabilidades de software",
+        "RCE",
+        "Software",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-20266"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-20266",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "recomienda actualizar el producto a la versión 5.7.4 que corrige la vulnerabilidad. Detalle",
+        "CVE-2026-20266"
+      ]
+    },
+    {
+      "id": "f11e2d5e1c9328373de82e2a",
+      "incibe_id": "INCIBE-2026-439",
+      "title": "Múltiples vulnerabilidades en el núcleo de Drupal",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-el-nucleo-de-drupal",
+      "summary": "Drupal ha publicado 5 vulnerabilidades: 1 de severidad crítica, 3 de severidad alta y 1 de severidad media que, en caso de ser explotadas, podría permitir a un atacante inyectar objetos PHP, subir cualquier tipo de archivo o realizar solicitudes del lado del servidor.",
+      "affected_resources": "Drupal core : Todas las versiones anteriores a 10.5.12; Desde 10.6.0 hasta 10.6.10 (incluidas); Todas las versiones 11.0.x; Todas las versiones 11.1.x; Desde 11.2.0 hasta 11.2.13 (incluidas); Desde 11.3.0 hasta 11.3.11 (incluidas).",
+      "solution": "Según la versión del producto de la que se disponga, actualizar a alguna de las siguientes versiones: Drupal 11.3.x: 11.3.12. Drupal 11.2.x: 11.2.14. Drupal 10.6.x: 10.6.11. Drupal 10.5.x: 10.5.12. Las versiones Drupal 11.1.x, Drupal 11.0.x, Drupal 10.4.x y anteriores han llegado al final de su ciclo de vida y no reciben soporte de seguridad.",
+      "detail": "CVE-2026-55803 : un atacante con los permisos de escritura adecuados para JSON:API podría, en ciertas circunstancias excepcionales, inyectar código malicioso, lo que podría resultar en una inyección de objetos PHP. CVE-2026-55804 : el núcleo de Drupal contiene una cadena de métodos que podrían ser explotados si existe una vulnerabilidad de deserialización insegura en el sitio. Esta denominada \"cadena de gadgets\" no representa una amenaza directa, pero es un vector que puede utilizarse para lograr la ejecución remota de código o la inyección SQL si la aplicación deserializa datos no confiables debido a otra vulnerabilidad. CVE-2026-55807 : el código de detección de URL podría utilizarse para engañar a Drupal y hacer que realice solicitudes del lado del servidor a cualquier URL. CVE-2026-55808 : Las reglas de validación comprueban la extensión del archivo subido, pero no su tipo MIME. Esto podría permitir que un usuario malintencionado suba un archivo que no sea una imagen. CVE-2026-55806 : El núcleo de Drupal incluye un controlador frontal que se puede utilizar para reconstruir Drupal (borrando las cachés y reconstruyendo el contenedor) cuando el sitio se encuentra en una condición inesperada «rebuild.php». Este script no verifica correctamente el encabezado Host con la lista de patrones de host de confianza. Esto podría provocar un envenenamiento de la caché o una redirección a un dominio controlado por un atacante. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-55803 Crítica No Drupal CVE-2026-55804 Alta No Drupal CVE-2026-55807 Alta No Drupal CVE-2026-55808 Alta No Drupal CVE-2026-55806 Media No Drupal",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "CMS",
+        "Inyección",
+        "SSRF",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-55803",
+        "CVE-2026-55804",
+        "CVE-2026-55807",
+        "CVE-2026-55808",
+        "CVE-2026-55806"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-55803",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-55804",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-55807",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-55808",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-55806",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-55803"
+      ]
+    },
+    {
+      "id": "7760d7250e2347b50c687170",
+      "incibe_id": "INCIBE-2026-436",
+      "title": "Escalada de privilegios locales en DFIR-ORC de ANSSI",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/escalada-de-privilegios-locales-en-dfir-orc-de-anssi",
+      "summary": "INCIBE ha coordinado la publicación de una vulnerabilidad de severidad alta que afecta a DFIR-ORC de ANSSI, una herramienta de código abierto y modular diseñada para recopilar y analizar artefactos forenses en sistemas Microsoft Windows. La vulnerabilidad ha sido descubierta por Rémi Delabrosse y Nicolas Rodrigues de Oppida. A esta vulnerabilidad se le ha asignado el siguiente código, puntuación base CVSS v4.0, vector del CVSS y el tipo de vulnerabilidad CWE: CVE-2026-11958: CVSS v4.0: 7.3 | CVSS AV:L/AC:L/AT:P/PR:L/UI:P/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H | CWE-427",
+      "affected_resources": "Versiones de DFIR-ORC anteriores a la 10.2.7 (incluida).",
+      "solution": "El equipo de la ANSSI ha mitigado la vulnerabilidad en la versión 10.2.8 y la ha solucionado por completo con una corrección mejorada en la versión 10.3.0. Solución provisional para versiones anteriores: No ejecutar desde un directorio demasiado permisivo (v10.8.0). No ejecutar como Sistema a menos que se configure el directorio temporal ( /tempdir ) en una ubicación con los permisos adecuados. (<10.2.8).",
+      "detail": "CVE-2026-11958 : escalada local de privilegios mediante la carga de bibliotecas DLL desde un directorio temporal compartido. Un atacante con acceso previo al sistema, puede colocar una DLL maliciosa en C:\\Windows\\Temp , y esperar a que la aplicación sea ejecutada. Debido a que DFIR-ORC se extrae y ejecuta desde dicha ubicación con privilegios administrativos, la biblioteca maliciosa puede ser cargada automáticamente, permitiendo al atacante obtener privilegios de administrador en el equipo afectado. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-11958 Media No ANSSI",
+      "published_at": null,
+      "importance": 4,
+      "tags": [
+        "0day",
+        "Actualización",
+        "CNA",
+        "Escalada de privilegios",
+        "Software",
+        "Vulnerabilidad",
+        "Windows"
+      ],
+      "cves": [
+        "CVE-2026-11958"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-11958",
+          "cvss": 7.3,
+          "cvss_version": "4.0"
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-11958"
+      ]
+    },
+    {
+      "id": "de6655b11f2f592bdb254532",
+      "incibe_id": "INCIBE-2026-435",
+      "title": "Boletín de seguridad de Oracle: junio de 2026",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/boletin-de-seguridad-de-oracle-junio-de-2026",
+      "summary": "Oracle ha publicado su boletín mensual de seguridad en el que se incluyen 245 vulnerabilidades: 122 de severidad crítica, 104 de severidad alta y 19 de severidad media. Estas vulnerabilidades podrían permitir ejecución remota de código, inyección SQL, deserialización insegura, omisión de autenticación o Cross-Site Scripting.",
+      "affected_resources": "APM - Gestión del rendimiento de las aplicaciones, versiones 13.5 y 24.1 Gestor de identidades, versiones 12.2.1.4.0, 14.1.2.1.0 Conector de Identity Manager, versiones 12.2.1.4.0, 14.1.2.1.0 JD Edwards EnterpriseOne Accounts Payable, versión 9.2 JD Edwards EnterpriseOne General Ledger, versión 9.2 JD Edwards EnterpriseOne Human Resources Management, versión 9.2; JD Edwards EnterpriseOne Order Promising, versión 9.2; JD Edwards EnterpriseOne Project Costing, versión 9.2; JD Edwards EnterpriseOne Tools, versiones 9.2.0.0-9.2.26.2; Clúster MySQL, versiones 8.0.11-8.0.46, 8.4.0-8.4.9, 9.0.0-9.7.0; Clúster MySQL NDB, versiones 8.0.11-8.0.46, 8.4.0-8.4.9, 9.0.0-9.7.0; MySQL Router, versiones 8.4.0-8.4.9, 9.0.0-9.7.0; Servidor MySQL, versiones 8.4.0-8.4.9, 9.0.0-9.7.0; MySQL Shell, versiones 8.4.0-8.4.9, 9.0.0-9.7.0, 2026.2.0+9.6.1; Oracle Access Manager, versiones 12.2.1.4.0, 14.1.2.1.0; Oracle Agile PLM, versión 9.3.6; Oracle Application Development Framework (ADF), versiones 12.2.1.4.0, 14.1.2.0.0; Oracle Coherence, versiones 12.2.1.4.0, 14.1.1.0.0, 14.1.2.0.0, 15.1.1.0.0; Controlador de tarificación convergente de Oracle Communications, versiones 15.0.0.0.0, 15.0.1.0.0, 15.1.0.0.0, 15.2.0.0.0; Oracle Communications Network Charging and Control, versiones 15.0.0.0.0, 15.0.1.0.0, 15.1.0.0.0, 15.2.0.0.0; Oracle Communications Network Integrity, versiones 7.3.6, 7.4.0, 7.5.0, 8.0.0; Oracle Data Integrator, versiones 12.2.1.4.0, 14.1.2.0.0; Oracle E-Business Suite, versiones 12.2.3-12.2.15, V15, V16; Plataforma base de Oracle Enterprise Manager, versiones 13.5 y 24.1; Oracle Solaris, versión 11.4; Directorio Unificado de Oracle, versiones 12.2.1.4.0, 14.1.2.1.0; Directorio virtual de Oracle, versiones 12.2.1.4.0, 14.1.2.0.0; Oracle VM VirtualBox, versión 7.2.8; Oracle WebCenter Content, versiones 12.2.1.4.0, 14.1.2.0.0; Oracle WebCenter Enterprise Capture, versiones 12.2.1.4.0, 14.1.2.0.0; Oracle WebCenter Portal, versiones 12.2.1.4.0, 14.1.2.0.0; Oracle WebCenter Sites, versiones 12.2.1.4.0, 14.1.2.0.0; PeopleSoft Enterprise CS Campus Community, versión 9.2.38; PeopleSoft Enterprise CS Student Financials, versión 9.2.38; PeopleSoft Enterprise PT PeopleTools, versiones 8.61, 8.62; Aplicaciones Siebel, versiones 17.0-26.5; Contenido de WebCenter: Imágenes, versiones 12.2.1.4.0, 14.1.2.0.0; Servidor WebLogic, versiones 12.2.1.4.0, 14.1.1.0.0, 14.1.2.0.0, 15.1.1.0.0.",
+      "solution": "Aplicar los parches indicados por el fabricante.",
+      "detail": "Las vulnerabilidades de severidad crítica más importantes se clasifican a continuación: Ejecución Remota de Código (RCE): permite a un atacante ejecutar comandos maliciosos en el servidor objetivo, obteniendo control total del sistema. CVE-2026-35308 CVE-2026-35307 CVE-2026-46803 CVE-2026-46832 CVE-2026-46850 CVE-2026-46855 CVE-2026-46854 Inyección (SQL, Comandos, LDAP). el atacante manipula consultas o comandos del sistema para filtrar información o ejecutar acciones no autorizadas. CVE-2026-46778 CVE-2026-46781 CVE-2026-46846 CVE-2026-46963 CVE-2026-46964 CVE-2026-46906 Deserialización Insegura: vulnerabilidad técnica crítica en aplicaciones Java que permite la ejecución de código al procesar objetos serializados. CVE-2026-35281 CVE-2026-35282 CVE-2026-35283 CVE-2026-35284 CVE-2026-35285 CVE-2026-35286 Omisión de Autenticación y Fallos de Control de Acceso: permite el acceso a áreas restringidas o funciones administrativas sin proporcionar credenciales válidas. CVE-2026-46902 CVE-2026-46900 CVE-2026-46919 CVE-2026-46897 CVE-2026-46901 Denegación de Servicio (DoS) y otros fallos de disponibilidad: estos fallos se centran en hacer que el sistema sea inaccesible para los usuarios legítimos. CVE-2026-35301 CVE-2026-35320 CVE-2026-46872 CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-35308 Crítica No Oracle CVE-2026-35307 Crítica No Oracle CVE-2026-46778 Crítica No Oracle CVE-2026-46781 Crítica No Oracle CVE-2026-46803 Crítica No Oracle CVE-2026-46846 Crítica No Oracle CVE-2026-46798 Crítica No Oracle CVE-2026-46800 Crítica No Oracle CVE-2026-35301 Crítica No Oracle CVE-2026-35292 Crítica No Oracle CVE-2026-46978 Crítica No Oracle CVE-2026-46872 Crítica No Oracle CVE-2026-35320 Crítica No Oracle CVE-2026-46949 Crítica No Oracle CVE-2026-46896 Crítica No Oracle CVE-2026-46930 Crítica No Oracle CVE-2026-46944 Crítica No Oracle CVE-2026-46945 Crítica No Oracle CVE-2026-46946 Crítica No Oracle CVE-2026-46858 Crítica No Oracle CVE-2026-46875 Crítica No Oracle CVE-2026-35270 Crítica No Oracle CVE-2026-46777 Crítica No Oracle CVE-2026-46809 Crítica No Oracle CVE-2026-46784 Crítica No Oracle CVE-2026-35298 Crítica No Oracle CVE-2026-46892 Crítica No Oracle CVE-2026-46910 Crítica No Oracle CVE-2026-35305 Crítica No Oracle CVE-2026-35306 Crítica No Oracle CVE-2026-46785 Crítica No Oracle CVE-2026-46795 Crítica No Oracle CVE-2026-46805 Crítica No Oracle CVE-2026-46912 Crítica No Oracle CVE-2026-46913 Crítica No Oracle CVE-2026-46899 Crítica No Oracle CVE-2026-46853 Crítica No Oracle CVE-2026-46856 Crítica No Oracle CVE-2026-46786 Crítica No Oracle CVE-2026-46789 Crítica No Oracle CVE-2026-46911 Crítica No Oracle CVE-2026-46906 Crítica No Oracle CVE-2026-46861 Crítica No Oracle CVE-2026-46902 Crítica No Oracle CVE-2026-46857 Crítica No Oracle CVE-2026-46807 Crítica No Oracle CVE-2026-35309 Crítica No Oracle CVE-2026-35310 Crítica No Oracle CVE-2026-35304 Crítica No Oracle CVE-2026-46773 Crítica No Oracle CVE-2026-46774 Crítica No Oracle CVE-2026-35312 Crítica No Oracle CVE-2026-35319 Crítica No Oracle CVE-2026-46766 Crítica No Oracle CVE-2026-35286 Crítica No Oracle CVE-2026-46813 Crítica No Oracle CVE-2026-46845 Crítica No Oracle CVE-2026-35293 Crítica No Oracle CVE-2026-46797 Crítica No Oracle CVE-2026-35296 Crítica No Oracle CVE-2026-46799 Crítica No Oracle CVE-2026-46801 Crítica No Oracle CVE-2026-46783 Crítica No Oracle CVE-2026-35300 Crítica No Oracle CVE-2026-46909 Crítica No Oracle CVE-2026-46905 Crítica No Oracle CVE-2026-46878 Crítica No Oracle CVE-2026-46879 Crítica No Oracle CVE-2026-46880 Crítica No Oracle CVE-2026-46881 Crítica No Oracle CVE-2026-46882 Crítica No Oracle CVE-2026-46883 Crítica No Oracle CVE-2026-46904 Crítica No Oracle CVE-2026-46860 Crítica No Oracle CVE-2026-35278 Crítica No Oracle CVE-2026-46884 Crítica No Oracle CVE-2026-46887 Crítica No Oracle CVE-2026-46889 Crítica No Oracle CVE-2026-46890 Crítica No Oracle CVE-2026-46919 Crítica No Oracle CVE-2026-46859 Crítica No Oracle CVE-2026-46933 Crítica No Oracle CVE-2026-46895 Crítica No Oracle CVE-2026-46897 Crítica No Oracle CVE-2026-46901 Crítica No Oracle CVE-2026-46900 Crítica No Oracle CVE-2026-46918 Crítica No Oracle CVE-2026-46963 Crítica No Oracle CVE-2026-46964 Crítica No Oracle CVE-2026-46854 Crítica No Oracle CVE-2026-46832 Crítica No Oracle CVE-2026-46852 Crítica No Oracle CVE-2026-46855 Crítica No Oracle CVE-2026-35268 Crítica No Oracle CVE-2026-46793 Crítica No Oracle CVE-2026-46792 Crítica No Oracle CVE-2026-35294 Crítica No Oracle CVE-2026-46794 Crítica No Oracle CVE-2026-35313 Crítica No Oracle CVE-2026-35316 Crítica No Oracle CVE-2026-35321 Crítica No Oracle CVE-2026-35323 Crítica No Oracle CVE-2026-46782 Crítica No Oracle CVE-2026-46779 Crítica No Oracle CVE-2026-35280 Crítica No Oracle CVE-2026-35281 Crítica No Oracle CVE-2026-35282 Crítica No Oracle CVE-2026-35283 Crítica No Oracle CVE-2026-35284 Crítica No Oracle CVE-2026-35285 Crítica No Oracle CVE-2026-46765 Crítica No Oracle CVE-2026-46767 Crítica No Oracle CVE-2026-46814 Crítica No Oracle CVE-2026-46802 Crítica No Oracle CVE-2026-46847 Crítica No Oracle CVE-2026-46838 Crítica No Oracle CVE-2026-46844 Crítica No Oracle CVE-2026-35263 Crítica No Oracle CVE-2026-46908 Crítica No Oracle CVE-2026-46893 Crítica No Oracle CVE-2026-46907 Crítica No Oracle CVE-2026-46850 Crítica No Oracle",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Denegación de servicio - DoS - DDoS",
+        "Inyección",
+        "Oracle",
+        "RCE",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-35308",
+        "CVE-2026-35307",
+        "CVE-2026-46803",
+        "CVE-2026-46832",
+        "CVE-2026-46850",
+        "CVE-2026-46855",
+        "CVE-2026-46854",
+        "CVE-2026-46778",
+        "CVE-2026-46781",
+        "CVE-2026-46846",
+        "CVE-2026-46963",
+        "CVE-2026-46964",
+        "CVE-2026-46906",
+        "CVE-2026-35281",
+        "CVE-2026-35282",
+        "CVE-2026-35283",
+        "CVE-2026-35284",
+        "CVE-2026-35285",
+        "CVE-2026-35286",
+        "CVE-2026-46902",
+        "CVE-2026-46900",
+        "CVE-2026-46919",
+        "CVE-2026-46897",
+        "CVE-2026-46901",
+        "CVE-2026-35301",
+        "CVE-2026-35320",
+        "CVE-2026-46872",
+        "CVE-2026-46798",
+        "CVE-2026-46800",
+        "CVE-2026-35292",
+        "CVE-2026-46978",
+        "CVE-2026-46949",
+        "CVE-2026-46896",
+        "CVE-2026-46930",
+        "CVE-2026-46944",
+        "CVE-2026-46945",
+        "CVE-2026-46946",
+        "CVE-2026-46858",
+        "CVE-2026-46875",
+        "CVE-2026-35270",
+        "CVE-2026-46777",
+        "CVE-2026-46809",
+        "CVE-2026-46784",
+        "CVE-2026-35298",
+        "CVE-2026-46892",
+        "CVE-2026-46910",
+        "CVE-2026-35305",
+        "CVE-2026-35306",
+        "CVE-2026-46785",
+        "CVE-2026-46795",
+        "CVE-2026-46805",
+        "CVE-2026-46912",
+        "CVE-2026-46913",
+        "CVE-2026-46899",
+        "CVE-2026-46853",
+        "CVE-2026-46856",
+        "CVE-2026-46786",
+        "CVE-2026-46789",
+        "CVE-2026-46911",
+        "CVE-2026-46861",
+        "CVE-2026-46857",
+        "CVE-2026-46807",
+        "CVE-2026-35309",
+        "CVE-2026-35310",
+        "CVE-2026-35304",
+        "CVE-2026-46773",
+        "CVE-2026-46774",
+        "CVE-2026-35312",
+        "CVE-2026-35319",
+        "CVE-2026-46766",
+        "CVE-2026-46813",
+        "CVE-2026-46845",
+        "CVE-2026-35293",
+        "CVE-2026-46797",
+        "CVE-2026-35296",
+        "CVE-2026-46799",
+        "CVE-2026-46801",
+        "CVE-2026-46783",
+        "CVE-2026-35300",
+        "CVE-2026-46909",
+        "CVE-2026-46905",
+        "CVE-2026-46878",
+        "CVE-2026-46879",
+        "CVE-2026-46880",
+        "CVE-2026-46881",
+        "CVE-2026-46882",
+        "CVE-2026-46883",
+        "CVE-2026-46904",
+        "CVE-2026-46860",
+        "CVE-2026-35278",
+        "CVE-2026-46884",
+        "CVE-2026-46887",
+        "CVE-2026-46889",
+        "CVE-2026-46890",
+        "CVE-2026-46859",
+        "CVE-2026-46933",
+        "CVE-2026-46895",
+        "CVE-2026-46918",
+        "CVE-2026-46852",
+        "CVE-2026-35268",
+        "CVE-2026-46793",
+        "CVE-2026-46792",
+        "CVE-2026-35294",
+        "CVE-2026-46794",
+        "CVE-2026-35313",
+        "CVE-2026-35316",
+        "CVE-2026-35321",
+        "CVE-2026-35323",
+        "CVE-2026-46782",
+        "CVE-2026-46779",
+        "CVE-2026-35280",
+        "CVE-2026-46765",
+        "CVE-2026-46767",
+        "CVE-2026-46814",
+        "CVE-2026-46802",
+        "CVE-2026-46847",
+        "CVE-2026-46838",
+        "CVE-2026-46844",
+        "CVE-2026-35263",
+        "CVE-2026-46908",
+        "CVE-2026-46893",
+        "CVE-2026-46907"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-35308",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35307",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46803",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46832",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46850",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46855",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46854",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46778",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46781",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46846",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46963",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46964",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46906",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35281",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35282",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35283",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35284",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35285",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35286",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46902",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46900",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46919",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46897",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46901",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35301",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35320",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46872",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46798",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46800",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35292",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46978",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46949",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46896",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46930",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46944",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46945",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46946",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46858",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46875",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35270",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46777",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46809",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46784",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35298",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46892",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46910",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35305",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35306",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46785",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46795",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46805",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46912",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46913",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46899",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46853",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46856",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46786",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46789",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46911",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46861",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46857",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46807",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35309",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35310",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35304",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46773",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46774",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35312",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35319",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46766",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46813",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46845",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35293",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46797",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35296",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46799",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46801",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46783",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35300",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46909",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46905",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46878",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46879",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46880",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46881",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46882",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46883",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46904",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46860",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35278",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46884",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46887",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46889",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46890",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46859",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46933",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46895",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46918",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46852",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35268",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46793",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46792",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35294",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46794",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35313",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35316",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35321",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35323",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46782",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46779",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35280",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46765",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46767",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46814",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46802",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46847",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46838",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46844",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35263",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46908",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46893",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46907",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-35308"
+      ]
+    },
+    {
+      "id": "5e043f48b8efc03123013575",
+      "incibe_id": "INCIBE-2026-434",
+      "title": "Boletín de seguridad de Atlassian: junio de 2026",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/boletin-de-seguridad-de-atlassian-junio-de-2026",
+      "summary": "Atlassian ha publicado su boletín mensual de seguridad en el que se incluyen 76 vulnerabilidades: 24 de severidad crítica y 42 de severidad alta. Estas vulnerabilidades afectan a varios de sus productos y su explotación podría permitir a un atacante realizar una ejecución remota de código, una denegación de servicio o divulgación de información entre otros.",
+      "affected_resources": "Bamboo Data Center y Server: 12.1.0 a 12.1.7 (LTS) 12.0.0 a 12.0.2 11.0.0 a 11.0.8 10.2.0 a 10.2.19 (LTS) 10.1.0 a 10.1.1 10.0.0 a 10.0.3 Bitbucket Data Center y Server: 10.3.0 10.2.0 a 10.2.3 (LTS) 10.1.1 a 10.1.5 10.0.0 a 10.0.2 9.6.0 a 9.6.5 9.5.0 a 9.5.2 9.4.0 a 9.4.20 (LTS) 9.3.0 a 9.3.2 9.2.0 a 9.2.1 9.1.0 a 9.1.1 9.0.1 Confluence Data Center y Server: 10.2.0 a 10.2.11 (LTS) 10.1.0 a 10.1.2 10.0.2 a 10.0.3 9.5.1 a 9.5.4 9.4.0 a 9.4.1 9.3.1 a 9.3.2 9.2.0 a 9.2.20 (LTS) 9.1.0 a 9.1.1 9.0.1 a 9.0.3 8.9.4 a 8.9.8 8.5.12 a 8.5.31 (LTS) 7.19.25 a 7.19.30 (LTS) Crowd Data Center y Server: 7.2.0 7.1.0 a 7.1.5 7.0.0 a 7.0.2 6.3.0 a 6.3.6 6.2.0 a 6.2.6 6.1.0 a 6.1.7 6.0.0 a 6.0.10 5.3.2 a 5.3.8 Fisheye/Crucible: 4.9.0 a 4.9.10 Jira Data Center y Server: 11.3.0 a 11.3.6 (LTS) 11.2.0 a 11.2.1 11.1.0 a 11.1.1 11.0.0 a 11.0.1 10.7.1 a 10.7.4 10.6.0 a 10.6.1 10.5.0 a 10.5.1 10.4.0 a 10.4.1 10.3.0 a 10.3.21 (LTS) 10.2.0 a 10.2.1 10.1.1 a 10.1.2 10.0.0 a 10.0.1 9.17.0 a 9.17.5 9.12.11 a 9.12.35 (LTS) Jira Service Management Data Center and Server: 11.3.0 a 11.3.6 (LTS) 11.2.0 a 11.2.1 11.1.0 a 11.1.1 11.0.0 a 11.0.1 10.7.1 a 10.7.4 10.6.0 a 10.6.1 10.5.0 a 10.5.1 10.4.0 a 10.4.1 10.3.0 a 10.3.21 (LTS) 10.2.0 a 10.2.1 10.1.1 a 10.1.2 10.0.0 a 10.0.1 5.17.0 a 5.17.5",
+      "solution": "Bamboo Data Center y Server: 12.1.8 (LTS) Data Center Only 10.2.20 (LTS) Data Center Only Bitbucket Data Center y Server: 10.3.1 Data Center Only 10.2.4 (LTS) Data Center Only 9.4.21 (LTS) Confluence Data Center y Server: 10.2.13 (LTS) 9.2.21 (LTS) Crowd Data Center y Server: 7.2.1 Fisheye/Crucible: 4.9.11 Jira Data Center y Server: 11.3.7 (LTS) 10.3.22 (LTS) Jira Service Management Data Center and Server: 11.3.7 (LTS) 10.3.22 (LTS)",
+      "detail": "Las vulnerabilidades críticas publicadas en este boletín pertenecen a componentes de terceros. Se trata de vulnerabilidades en una dependencia de Jira Software que no pertenece a Atlassian. La aplicación de esta dependencia por parte de Atlassian presenta un riesgo menor, no crítico, según la evaluación realizada. A continuación, se detallan las vulnerabilidades de severidad alta que afectan a Atlassian: CVE-2026-41044 : RCE (Remote Code Execution) en org.apache.activemq:activemq-broker. CVE-2026-44492 : SSRF (Server-Side Request Forgery) en axios. CVE-2026-44487 : Información divulgada en axios. CVE-2026-44488 : DoS (Denial of Service) en axios. CVE-2026-42585 : HTTP Request Smuggling en io.netty:netty-codec-http. CVE-2026-42583 : DoS (Denial of Service) en io.netty:netty-codec. CVE-2026-44486 : Información divulgada en axios. CVE-2026-42038 : SSRF (Server-Side Request Forgery) en axios . CVE-2026-41284 : DoS (Denial of Service) en org.apache.tomcat:tomcat-catalina. CVE-2026-44496 : DoS (Denial of Service) en axios. CVE-2026-42587 : DoS (Denial of Service) en io.netty:netty-codec. CVE-2026-43513 : Vulnerabilidad de lógica de negocio en org.apache.tomcat:tomcat-catalina. CVE-2026-41044 : DoS (Denial of Service) en org.postgresql:postgresql. CVE-2026-42033 : Inyección en axios. CVE-2026-42035 : Inyección en axios. CVE-2026-42038 : SSRF (Server-Side Request Forgery) en axios. CVE-2026-45149 : DoS (Denial of Service) en @isaacs/brace-expansion. CVE-2026-41284 : DoS (Denial of Service) en org.apache.tomcat.embed:tomcat-embed-core. CVE-2026-41284 : (Variante): MITM (Man-in-the-Middle) en org.apache.tomcat.embed:tomcat-embed-core. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-40175 Crítica No Atlassian CVE-2026-40175 Crítica No Atlassian CVE-2026-41293 Crítica No Atlassian CVE-2026-41293 Crítica No Atlassian CVE-2026-41293 Crítica No Atlassian CVE-2026-41293 Crítica No Atlassian CVE-2026-42043 Crítica No Atlassian CVE-2026-42043 Crítica No Atlassian CVE-2026-42264 Crítica No Atlassian CVE-2026-42264 Crítica No Atlassian CVE-2026-42579 Crítica No Atlassian CVE-2026-42581 Crítica No Atlassian CVE-2026-42584 Crítica No Atlassian CVE-2026-42584 Crítica No Atlassian CVE-2026-42584 Crítica No Atlassian CVE-2026-42584 Crítica No Atlassian CVE-2026-43512 Crítica No Atlassian CVE-2026-43512 Crítica No Atlassian CVE-2026-43512 Crítica No Atlassian CVE-2026-43515 Crítica No Atlassian CVE-2026-43515 Crítica No Atlassian CVE-2026-43515 Crítica No Atlassian CVE-2026-43515 Crítica No Atlassian",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Denegación de servicio - DoS - DDoS",
+        "Divulgación de información",
+        "Inyección",
+        "RCE"
+      ],
+      "cves": [
+        "CVE-2026-41044",
+        "CVE-2026-44492",
+        "CVE-2026-44487",
+        "CVE-2026-44488",
+        "CVE-2026-42585",
+        "CVE-2026-42583",
+        "CVE-2026-44486",
+        "CVE-2026-42038",
+        "CVE-2026-41284",
+        "CVE-2026-44496",
+        "CVE-2026-42587",
+        "CVE-2026-43513",
+        "CVE-2026-42033",
+        "CVE-2026-42035",
+        "CVE-2026-45149",
+        "CVE-2026-40175",
+        "CVE-2026-41293",
+        "CVE-2026-42043",
+        "CVE-2026-42264",
+        "CVE-2026-42579",
+        "CVE-2026-42581",
+        "CVE-2026-42584",
+        "CVE-2026-43512",
+        "CVE-2026-43515"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-41044",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-44492",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-44487",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-44488",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-42585",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-42583",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-44486",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-42038",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-41284",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-44496",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-42587",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-43513",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-42033",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-42035",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-45149",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-40175",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-41293",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-42043",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-42264",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-42579",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-42581",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-42584",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-43512",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-43515",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-40175"
+      ]
+    },
+    {
+      "id": "39be9d6eefa6597c633d26d4",
+      "incibe_id": "INCIBE-2026-430",
+      "title": "Fijación de sesión en osTicket de Enhancesoft",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/fijacion-de-sesion-en-osticket-de-enhancesoft",
+      "summary": "INCIBE ha coordinado la publicación de una vulnerabilidad de severidad media que afecta a osTicket de Enhancesoft, un sistema de gestión de tickets de soporte técnico, gratuito y de código abierto. La vulnerabilidad ha sido descubierta por Mario Valiente. A esta vulnerabilidad se le ha asignado el siguiente código, puntuación base CVSS v4.0, vector del CVSS y el tipo de vulnerabilidad CWE: CVE-2026-9507: CVSS v4.0: 5.1 | CVSS AV:N/AC:L/AT:N/PR:N/UI:A/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N | CWE-38",
+      "affected_resources": "osTicket v1.18.2.",
+      "solution": "El código fuente actual (legacy) se encuentra en modo de mantenimiento, mientras que Enhancesoft se centra en una reescritura completa del código (v2.0). Esto significa que los ciclos de lanzamiento y las revisiones de seguridad del código legacy se han alargado considerablemente.",
+      "detail": "CVE-2026-9507 : se ha identificado una vulnerabilidad de fijación de sesión en osTicket v1.18.2.Este fallo de seguridad permite a un atacante secuestrar la cuenta de una víctima al mantener activo el identificador de sesión inicial (OSTSESSID) después de un inicio de sesión exitoso. El problema reside en que la aplicación no invalida la cookie de preautenticación ni genera un nuevo identificador para el contexto autenticado. Como resultado, si un atacante logra establecer un identificador de sesión conocido en el navegador de la víctima, podrá mantener el acceso no autorizado a la cuenta una vez que esta se autentique. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-9507 Media Si osTicket",
+      "published_at": null,
+      "importance": 3,
+      "tags": [
+        "0day",
+        "CNA",
+        "Cookies",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-9507"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-9507",
+          "cvss": 5.1,
+          "cvss_version": "4.0"
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-9507"
+      ]
+    },
+    {
+      "id": "da3accd4a9dc3a483e6c66a7",
+      "incibe_id": "INCIBE-2026-428",
+      "title": "Acceso indebido a ficheros en productos de T-Systems",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/acceso-indebido-ficheros-en-productos-de-t-systems",
+      "summary": "INCIBE ha coordinado la publicación de una vulnerabilidad de severidad media, que afecta a varios productos de la suite TAO 2.0, una plataforma de gestión para la administración pública. La vulnerabilidad ha sido descubierta por el equipo interno de seguridad de T-Systems. A esta vulnerabilidad se le ha asignado el siguiente código, puntuación base CVSS v4.0, vector del CVSS y el tipo de vulnerabilidad CWE: CVE-2026-7185: CVSS v4.0: 6.0 | CVSS AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N | CWE-22",
+      "affected_resources": "Los siguientes productos de la suite TAO 2.0, en sus versiones anteriores a la 2602.00, están afectados: Archivo; MyTAO; eStima; Buroweb.",
+      "solution": "La vulnerabilidad, reportada por el propio equipo de T-Systems, ha sido corregida en la versión 2602.0.0 de los productos afectados. La recomendación general es actualizar a dicha versión o a cualquier versión posterior que incorpore estas correcciones.",
+      "detail": "CVE-2026-7185 : se ha identificado una debilidad de validación en determinadas funcionalidades web relacionadas con la gestión o inclusión de ficheros en varios productos de la suite TAO 2.0. Esta debilidad podría permitir que un atacante con capacidad de interacción con la funcionalidad afectada intentase acceder a recursos del sistema de ficheros fuera del ámbito previsto por la aplicación. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-7185 Media No T-Systems",
+      "published_at": null,
+      "importance": 3,
+      "tags": [
+        "0day",
+        "Actualización",
+        "Administración pública",
+        "CNA",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-7185"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-7185",
+          "cvss": 6.0,
+          "cvss_version": "4.0"
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-7185"
+      ]
+    },
+    {
+      "id": "b548b4d542c88593e054855c",
+      "incibe_id": "INCIBE-2026-427",
+      "title": "Inyección de comandos del sistema operativo en Core Privileged Access Manager (BoKS) de Fortra",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/inyeccion-de-comandos-del-sistema-operativo-en-core-privileged-access-manager",
+      "summary": "Fortra ha publicado una vulnerabilidad de severidad crítica que, en caso de ser explotada, podría permitir la ejecución de código arbitrario, afectando a la confidencialidad, integridad y disponibilidad de los sistemas afectados.",
+      "affected_resources": "boks-server 8.1.0.0 hasta 8.1.0.22; boks-server 9.0.0.0 hasta 9.0.0.4.",
+      "solution": "El fabricante recomienda aplicar las correcciones disponibles mediante las versionas corregidas del producto cuando estén disponibles. Como medida de mitigación temporal, se recomienda restringir el acceso de red al servicio boks_autoregisterd , que utiliza por defecto el puerto TCP/6507, hasta que se hayan desplegado las versiones corregidas. Como alternativa, para instalaciones de boks-server 8.1 y 9.0, se puede deshabilitar el servicio modificando la configuración de boksinit en el servidor BoKS Master.",
+      "detail": "CVE-2026-9862: vulnerabilidad de inyección de comandos del sistema operativo en el servicio boks_autoregisterd de Fortra Core Privileged Access Manager (BoKS). Esta vulnerabilidad permite que un atacante remoto con acceso de red al servicio afectado pueda enviar entradas manipuladas durante el proceso de autoregistro, provocando la ejecución de comandos arbitrarios con los privilegios del servicio vulnerable. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-9862 Crítica No Fortra",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "0day",
+        "Aviso",
+        "Código arbitrario",
+        "RCE",
+        "Software"
+      ],
+      "cves": [
+        "CVE-2026-9862"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-9862",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-9862"
+      ]
+    },
+    {
+      "id": "78d97dff240da457d7cf25c0",
+      "incibe_id": "INCIBE-2026-426",
+      "title": "Omisión de autenticación en SimpleHelp",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/omision-de-autenticacion-en-simplehelp",
+      "summary": "Zach Hanley de Horizon3.ai ha publicado información sobre una vulnerabilidad de severidad crítica que podría permitir a un atacante la omisión de la autenticación multifactor.",
+      "affected_resources": "versiones 5.5.15 y anteriores; versión preliminar de la 6.0.",
+      "solution": "Actualizar: SimpleHelp 5.5.16: para usuarios de la versión 5.5.x. SimpleHelp 6.0 RC2: para usuarios de la versión 6.0.",
+      "detail": "CVE-2026-48558: omisión de autenticación en el software de soporte remoto SimpleHelp. El fallo reside en el flujo de autenticación OIDC (OpenID Connect), donde la aplicación no verifica criptográficamente los tokens de identidad enviados durante el inicio de sesión. Esto permite que un atacante remoto no autenticado falsifique un token con declaraciones de identidad arbitrarias, obteniendo así una sesión de técnico completamente autenticada. En ciertas configuraciones, esta omisión también puede eludir la autenticación multifactor (MFA). CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-48558 Crítica No SimpleHelp",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Acceso no autorizado",
+        "Actualización",
+        "Autenticación",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-48558"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-48558",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-48558"
+      ]
+    },
+    {
+      "id": "1d43a8f2f182db3d5a8e498d",
+      "incibe_id": "INCIBE-2026-424",
+      "title": "Creación y truncado arbitrario de archivos sin autenticación en Enterprise de Splunk",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/creacion-y-truncado-arbitrario-de-archivos-sin-autenticacion-en-enterprise-de",
+      "summary": "Alex Hordijk ha reportado una vulnerabilidad de severidad crítica que, en caso de ser explotada, podría permitir a un atacante remoto no autenticado crear o truncar archivos arbitrarios en el sistema afectado.",
+      "affected_resources": "Splunk Enterprise 10.2.0 a 10.2.3; Splunk Enterprise 10.0.0 a 10.0.6.",
+      "solution": "El fabricante recomienda actualizar Splunk Enterprise a las versiones corregidas: Splunk Enterprise 10.2.4 o superior; Splunk Enterprise 10.0.7 o superior; Splunk Enterprise 10.4.0 o superior.",
+      "detail": "CVE-2026-20253: vulnerabilidad de falta de autenticación en una función crítica que afecta a un endpoint del servicio PostgreSQL sidecar de Splunk Enterprise. Un atacante remoto no autenticado con acceso al servicio, podría ejecutar operaciones de creación o truncado de archivos arbitrarios sin necesidad de credenciales, pudiendo afectar a la confidencialidad, integridad y disponibilidad del sistema. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-20253 Crítica Si Splunk",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Aviso",
+        "Código arbitrario",
+        "Confidencialidad",
+        "Disponibilidad",
+        "Explotación de Vulnerabilidades de software",
+        "Integridad",
+        "Software",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-20253"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-20253",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-20253"
+      ]
+    },
+    {
+      "id": "5978a1892bdbc36ee806ba1f",
+      "incibe_id": "INCIBE-2026-421",
+      "title": "Múltiples vulnerabilidades en MobaXterm Personal Edition (Portable) de Mobatek",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-mobaxterm-personal-edition-portable-de-mobatek",
+      "summary": "INCIBE ha coordinado la publicación de 2 vulnerabilidades de severidad alta que afectan a MobaXterm Personal Edition (Portable) de Mobatek, una herramienta de red y terminal para Windows. Las vulnerabilidades han sido descubiertas por Pedro J. Nunez-Cacho Fuentes (@tunelko). A estas vulnerabilidades se les han asignado los siguientes códigos, puntuación base CVSS v4.0, vector del CVSS y el tipo de vulnerabilidad CWE de cada vulnerabilidad: CVE-2026-11879: CVSS v4.0: 8.5 | CVSS AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N | CWE-427 CVE-2026-11967: CVSS v4.0: 8.5 | CVSS AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N | CWE-427",
+      "affected_resources": "MobaXterm Personal Edition (Portable) 26.3 (Build 5154).",
+      "solution": "Las vulnerabilidades han sido solucionadas por el equipo de Mobatek en la versión 26.4.",
+      "detail": "CVE-2026-11879 : permite la ejecución de código arbitrario mediante la carga de bibliotecas DLL maliciosas desde un directorio temporal predecible y modificable por el usuario. Durante el arranque, la aplicación busca determinadas DLLs en dicha ubicación antes de recurrir a las rutas seguras del sistema, lo que posibilita que un atacante con acceso local coloque una DLL especialmente preparada para que sea ejecutada automáticamente cuando la víctima inicie la aplicación. CVE-2026-11967 : permite la ejecución de código arbitrario mediante la carga de una biblioteca DLL maliciosa ubicada en el mismo directorio que el ejecutable portátil. Debido a que la aplicación carga automáticamente la biblioteca winspool.drv desde dicha ubicación durante su inicio, un atacante con acceso local puede colocar una DLL especialmente diseñada junto al ejecutable para que sea ejecutada cuando la víctima lance la aplicación. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-11879 Alta No Mobatek CVE-2026-11967 Alta No Mobatek",
+      "published_at": null,
+      "importance": 4,
+      "tags": [
+        "0day",
+        "Actualización",
+        "CNA",
+        "Código arbitrario",
+        "Software",
+        "Vulnerabilidad",
+        "Windows"
+      ],
+      "cves": [
+        "CVE-2026-11879",
+        "CVE-2026-11967"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-11879",
+          "cvss": 8.5,
+          "cvss_version": "4.0"
+        },
+        {
+          "cve": "CVE-2026-11967",
+          "cvss": 8.5,
+          "cvss_version": "4.0"
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-11879"
+      ]
+    },
+    {
+      "id": "d2df672667145d7cfd839396",
+      "incibe_id": "INCIBE-2026-420",
+      "title": "Toma de control de PeopleSoft de Oracle",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/toma-de-control-de-peoplesoft-de-oracle",
+      "summary": "Bobby Gould, Lucas Miller y Minh Giang de TrendAI Zero Day Initiative y TrendAI Research han descubierto una vulnerabilidad de severidad crítica que, en caso de ser explotada, permite la toma de control del producto por parte de un atacante.",
+      "affected_resources": "PeopleSoft Enterprise PeopleTools de Oracle, versiones 8.61 y 8.62. Es posible que haya versiones anteriores afectadas, pero como carecen de mantenimiento no se han analizado.",
+      "solution": "El fabricante aporta unas indicaciones de seguridad que se recomienda seguir (es preciso estar registrado) . En líneas generales se recomienda deshabilitar el servicio Environment Management Hub en configuraciones de múltiples servidores o eliminar la aplicación PSEMHUB directamente en configuraciones de un solo servidor. Si no es posible hacer ninguno de los dos, se recomienda bloquear el acceso externo a /PSEMHUB/* (especialmente /PSEMHUB/hub) y /PSIGW/HttpListeningConnector en el perímetro.",
+      "detail": "CVE-2026-35273 : vulnerabilidad en el componente 'Updates Environment Management' que forma parte de 'Environment Management Hub (PSEMHUB)'. Esta permite a atacantes no autenticados con acceso a la red por HTTP, tomar el control del producto; lo que puede permitir realizar acciones como ejecutar código en remoto o acceder a información sensible impactando en la confidencialidad, integridad y disponibilidad del producto. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-35273 Crítica Si Oracle",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "0day",
+        "Confidencialidad",
+        "Disponibilidad",
+        "Integridad",
+        "Oracle",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-35273"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-35273",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-35273"
+      ]
+    },
+    {
+      "id": "3b7e84c7499b25497aaa4c68",
+      "incibe_id": "INCIBE-2026-415",
+      "title": "Denegación de servicio en Serv-U de SolarWinds",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/denegacion-de-servicio-en-serv-u-de-solarwinds",
+      "summary": "SolarWinds ha publicado una vulnerabilidad de severidad alta, cuya explotación podría permitir a un atacante llevar a cabo una denegación de servicio. Esta vulnerabilidad podría estar siendo explotada.",
+      "affected_resources": "SolarWinds Serv-U: versiones 15.5.4 y anteriores.",
+      "solution": "SolarWinds recomienda a los usuarios afectados actualizar a la versión 15.5.4 HF1 de Serv-U.",
+      "detail": "CVE-2026-28318: SolarWinds Serv-U es vulnerable a solicitudes POST especialmente diseñadas que provocan el bloqueo del servicio Serv-U sin necesidad de autenticación mediante el uso de 'Content-Encoding: deflate'. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-28318 Alta No SolarWinds",
+      "published_at": null,
+      "importance": 4,
+      "tags": [
+        "Actualización",
+        "Denegación de servicio - DoS - DDoS",
+        "Intercambio de archivos",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-28318"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-28318",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-28318"
+      ]
+    },
+    {
+      "id": "068ec404191e3f6ea2c583d8",
+      "incibe_id": "INCIBE-2026-413",
+      "title": "[Actualización 11/06/2026] Múltiples vulnerabilidades en productos Ivanti",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-productos-ivanti-7",
+      "summary": "Ivanti ha publicado dos avisos de seguridad donde informan de 4 vulnerabilidades, 2 de severidad crítica y 2 altas. Si se explotan, un atacante podría elevar sus privilegios a nivel de root , obtener acceso completo como administrador o ejecutar código en remoto.",
+      "affected_resources": "Ivanti Sentry, versiones 10.5.1, 10.6.1, 10.7.0 y anteriores; Endpoint Manager Mobile, versiones 12.9.0, 12.8.0.2 y 12.7.0.1.",
+      "solution": "Actualizar los productos a alguna de las siguientes versiones: Ivanti Sentry, versiones 10.5.2, 10.6.2 o 10.7.1. Ivanti Endpoint Manager Mobile, versiones 12.9.0.1, 12.8.0.3 o 12.7.0.2.",
+      "detail": "CVE-2026-10520 : inyección de comandos del sistema operativo, permite a un atacante en remoto y no autenticado ejecutar código en remoto con privilegios de root . CVE-2026-10523 : vulnerabilidad de omisión de autenticación, permite a un atacante en remoto y no autenticado crear cuentas arbitrarias de administrador y lograr acceso total. Las vulnerabilidades de severidad alta son CVE-2026-6973 y CVE-2026-10727 y su detalle se puede consultar en los enlaces de las referencias. [Actualización 11/06/2026] Se ha publicado una prueba de concepto, lo que ha llevado a numerosos escaneos que están intentando explotar activamente la vulnerabilidad, hasta el punto que cualquier Ivanti Sentry que esté expuesto públicamente y no haya sido rápidamente actualizado el mismo día 10, podría encontrarse comprometido. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-10520 Crítica Sí Ivanti CVE-2026-10523 Crítica No Ivanti CVE-2026-6973 Alta No Ivanti CVE-2026-10727 Alta No Ivanti",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Comunicaciones y redes",
+        "Escalada de privilegios",
+        "Explotación",
+        "RCE",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-10520",
+        "CVE-2026-10523",
+        "CVE-2026-6973",
+        "CVE-2026-10727"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-10520",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-10523",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-6973",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-10727",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-10520"
+      ]
+    },
+    {
+      "id": "0950f7769f526ed74d592212",
+      "incibe_id": "INCIBE-2026-412",
+      "title": "Múltiples vulnerabilidades en OpenSSL",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-openssl",
+      "summary": "OpenSSL ha informado de 18 vulnerabilidades nuevas, 1 de severidad crítica, 10 altas, 3 medias y 4 bajas. En caso de ser explotadas podrían provocar fallos en el proceso, corrupción del montículo o ejecución de código en remoto, entre otras acciones.",
+      "affected_resources": "Las siguientes versiones OpenSSL están afectadas: 4.0 3.6 3.5 3.4 3.0 1.1.1 1.0.2 Las versiones que carecen de soporte: 3.1, 3.2 y 3.3 no han sido analizadas y se desconoce si están afectadas por alguna de las vulnerabilidades.",
+      "solution": "Según la versión que disponga, actualizar el producto a alguna de las siguientes versiones: OpenSSL 4.0: actualizar a OpenSSL 4.0.1 OpenSSL 3.6: actualizar a OpenSSL 3.6.3. OpenSSL 3.5: actualizar a OpenSSL 3.5.7. OpenSSL 3.4: actualizar a OpenSSL 3.4.6. OpenSSL 3.0: actualizar a OpenSSL 3.0.21. OpenSSL 1.1.1: actualizar a OpenSSL 1.1.1zh (únicamente para usuarios con soporte premium ) OpenSSL 1.0.2 users should upgrade to OpenSSL 1.0.2zq (únicamente para usuarios con soporte premium )",
+      "detail": "CVE-2026-45447 : un mensaje especialmente diseñado y que esté firmado con PKCS#7 o S/MIME podría provocar un uso después de la liberación de memoria durante la verificación de la firma PKCS#7. Un uso después de la liberación podría provocar fallos en el proceso, corrupción del montón o, potencialmente, la ejecución de código en remoto. Al procesar un mensaje firmado con PKCS#7 o S/MIME, si el campo SignedData digestAlgorithms está presente como un ASN.1 SET vacío, OpenSSL podría liberar incorrectamente un caller-owned BIO durante PKCS7_verify(). Un uso posterior del BIO por la aplicación que realiza la llamada da lugar a una condición de uso después de la liberación. Habitualmente, esto sucede cuando la aplicación luego llama BIO_free() sobre el BIO pasado originalmente a PKCS7_verify(). Dependiendo del comportamiento de quien ha realizado la asignación y de los patrones de uso del BIO específicos de la aplicación, esto puede provocar un bloqueo u otra corrupción de memoria. En algunos contextos de aplicación, esto podría permitir la ejecución de código en remoto. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-45447 Crítica No OpenSSL CVE-2026-34182 Alta No OpenSSL CVE-2026-34183 Alta No OpenSSL CVE-2026-35188 Alta No OpenSSL CVE-2026-42764 Alta No OpenSSL CVE-2026-45445 Alta No OpenSSL CVE-2026-7383 Alta No OpenSSL CVE-2026-9076 Alta No OpenSSL CVE-2026-34180 Alta No OpenSSL CVE-2026-34181 Alta No OpenSSL CVE-2026-42765 Alta No OpenSSL",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "OpenSSL",
+        "RCE",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-45447",
+        "CVE-2026-34182",
+        "CVE-2026-34183",
+        "CVE-2026-35188",
+        "CVE-2026-42764",
+        "CVE-2026-45445",
+        "CVE-2026-7383",
+        "CVE-2026-9076",
+        "CVE-2026-34180",
+        "CVE-2026-34181",
+        "CVE-2026-42765"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-45447",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-34182",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-34183",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35188",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-42764",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-45445",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-7383",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-9076",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-34180",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-34181",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-42765",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-45447"
+      ]
+    },
+    {
+      "id": "f0bd17fb60cc710fcf9c5173",
+      "incibe_id": "INCIBE-2026-411",
+      "title": "Inyección de comandos en FortiSandbox de Fortinet",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/inyeccion-de-comandos-en-fortisandbox-de-fortinet",
+      "summary": "FortiGuard Labs ha publicado una vulnerabilidad de severidad crítica, que es caso de ser explotada, podría permitir a un atacante ejecutar comandos no autorizados a través de solicitudes HTTP especialmente diseñadas.",
+      "affected_resources": "FortiSandbox 5.0: versiones afectadas 5.0.0 a 5.0.5. FortiSandbox 4.4: versiones afectadas 4.4.0 a 4.4.8. FortiSandbox Cloud 5.0: versiones afectadas 5.0.4 a 5.0.5. FortiSandbox PaaS 5.0: versiones afectadas 5.0.4 a 5.0.5.",
+      "solution": "Actualizar a alguna de las siguientes versiones: FortiSandbox 5.0.6 o superior. FortiSandbox 4.4.9 o superior. FortiSandbox Cloud 5.0.6 o superior. FortiSandbox PaaS 5.0.6 o superior.",
+      "detail": "CVE-2026-25089 : neutralización incorrecta de elementos especiales utilizados en un comando del sistema operativo ('inyección de comandos del sistema operativo') podría permitir a un atacante, no autenticado, ejecutar comandos no autorizados mediante solicitudes HTTP especialmente diseñadas. El problema se origina por una validación y depuración insuficientes de la entrada en la gestión de las solicitudes HTTP por parte de la interfaz web. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-25089 Crítica No Fortinet",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Amenaza",
+        "Inyección",
+        "Ransomware",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-25089"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-25089",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-25089"
+      ]
+    },
+    {
+      "id": "a17a590dff0703b60c2fe295",
+      "incibe_id": "INCIBE-2026-410",
+      "title": "Boletín de seguridad de Microsoft: junio de 2026",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/boletin-de-seguridad-de-microsoft-junio-de-2026",
+      "summary": "Microsoft ha publicado su boletín mensual de seguridad en el que se incluyen 206 vulnerabilidades: 10 de severidad crítica, 135 de severidad alta, 54 de severidad medias y 5 bajas. Estas vulnerabilidades afectan a varios de sus productos y su explotación podría permitir a un atacante ejecución remota de código o revelación de información.",
+      "affected_resources": ".NET ASP.NET Core Active Directory Domain Services Azure HorizonDB Azure Stack Edge Copilot Chat (Microsoft Edge) Function Discovery Service (fdwsd.dll) GitHub Copilot and Visual Studio Code HTTP/2 Linux MANA Driver M365 Copilot Microsoft Azure Attestation service and Device Health Attestation Service Microsoft Azure Kubernetes Service Microsoft Bing Microsoft Copilot Microsoft Defender for Endpoint Microsoft Dynamics 365 (on-premises) Microsoft Exchange Online Microsoft Exchange Server Microsoft Graph Microsoft Graphics Component Microsoft Kinect Microsoft Live Share Canvas SDK Microsoft Office Microsoft Office Click-To-Run Microsoft Office Excel Microsoft Office Project Microsoft Office SharePoint Microsoft Office Word Microsoft PC Manager Microsoft PowerToys Microsoft Teams for Android Microsoft UxTheme Library (uxtheme.dll) Microsoft Windows DNS Nuance PowerScribe Office for Android Remote Desktop Client Role: Windows Hyper-V UI Automation Manager (uiamanager.dll) Universal Plug and Play (upnp.dll) Visual Studio Code Windows Administrator Protection Windows Ancillary Function Driver for WinSock Windows Application Identity (AppID) Subsystem Windows BitLocker Windows Bluetooth Port Driver Windows Bluetooth Service Windows Boot Manager Windows Collaborative Translation Framework Windows Common Log File System Driver Windows Cryptographic Services Windows DHCP Client Windows DHCP Server Windows DWM Core Library Windows Deployment Services Windows HTTP.sys Windows Hotpatch Monitoring Service Windows Hyper-V Windows Internet (wininet.dll) Windows Kerberos Windows Kernel Windows Kernel-Mode Drivers Windows Mark of the Web (MOTW) Windows Media Windows NT OS Kernel Windows NTFS Windows NTLM Windows Narrator Braille Windows Network Controller (NC) Host Agent Windows Performance Monitor Windows Program Compatibility Assistant Service Windows Projected File System Filter Driver Windows Push Notifications Windows RDP Windows SDK Windows Secure Boot Windows Shell Windows Storage Windows TCP/IP Windows Telephony Service Windows UEFI Windows Universal Disk Format File System Driver (UDFS) Windows Win32K - GRFX Winlogon",
+      "solution": "Actualizar a la última versión disponible indicada por el fabricante.",
+      "detail": "Las vulnerabilidades de severidad crítica se describen a continuación: CVE-2026-26142 : la deserialización de datos no confiables en Nuance PowerScribe podría permitir que un atacante no autorizado ejecute código a través de una red. CVE-2026-42904 : el desbordamiento de búfer basado en el montículo en Windows TCP/IP permite que un atacante no autorizado eleve sus privilegios sobre una red adyacente. CVE-2026-44815 : un desbordamiento de búfer basado en pila en el cliente DHCP de Windows permite que un atacante no autorizado ejecute código a través de una red. CVE-2026-45602 : no existe ninguna solución para este problema en el servidor DHCP de Windows que permita a un atacante no autorizado manipular una red. CVE-2026-45657 : el uso de código liberado en el kernel de Windows permite que un atacante no autorizado ejecute código a través de una red. CVE-2026-47281 : una validación de entrada incorrecta en Visual Studio Code permite que un atacante no autorizado eleve sus privilegios en una red. CVE-2026-47291 : el desbordamiento de enteros o el ajuste automático de valores en el archivo HTTP.sys de Windows permite que un atacante no autorizado ejecute código a través de una red. CVE-2026-47643 : el control externo del nombre o la ruta de archivo en Azure Stack Edge permite que un atacante no autorizado ejecute código a través de una red. CVE-2026-48567 : la elusión de la autenticación mediante suplantación de identidad en Azure HorizonDB permite a un atacante no autorizado elevar sus privilegios en una red. CVE-2026-48579 : una autorización incorrecta en Microsoft Exchange Online permite que un atacante no autorizado divulgue información a través de una red. Los códigos CVE asignados a las vulnerabilidades no críticas reportadas pueden consultarse en las referencias. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-26142 Crítica No Microsoft CVE-2026-42904 Crítica No Microsoft CVE-2026-44815 Crítica No Microsoft CVE-2026-45602 Crítica No Microsoft CVE-2026-45657 Crítica No Microsoft CVE-2026-47281 Crítica No Microsoft CVE-2026-47291 Crítica No Microsoft CVE-2026-47643 Crítica No Microsoft CVE-2026-48567 Crítica No Microsoft CVE-2026-48579 Crítica No Microsoft",
+      "published_at": null,
+      "importance": null,
+      "tags": [
+        "Actualización",
+        "Divulgación de información",
+        "Escalada de privilegios",
+        "Microsoft",
+        "RCE",
+        "Vulnerabilidad",
+        "Windows"
+      ],
+      "cves": [
+        "CVE-2026-26142",
+        "CVE-2026-42904",
+        "CVE-2026-44815",
+        "CVE-2026-45602",
+        "CVE-2026-45657",
+        "CVE-2026-47281",
+        "CVE-2026-47291",
+        "CVE-2026-47643",
+        "CVE-2026-48567",
+        "CVE-2026-48579"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-26142",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-42904",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-44815",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-45602",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-45657",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-47281",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-47291",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-47643",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-48567",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-48579",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-26142"
+      ]
+    },
+    {
+      "id": "aed56bc0fbe4503637b1d646",
+      "incibe_id": "INCIBE-2026-407",
+      "title": "Boletín de seguridad de SAP: junio de 2026",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/boletin-de-seguridad-de-sap-junio-de-2026",
+      "summary": "SAP ha publicado su boletín mensual en el que se incluyen 15 vulnerabilidades: 4 de severidad crítica, 2 de severidad alta, 7 de severidad media y 2 de severidad baja. Estas vulnerabilidades afectan a varios de sus productos y su explotación podría permitir a un atacante poner en riesgo la confidencialidad, la integridad y la disponibilidad de la aplicación o visualizar y modificar información confidencial o inhabilitar cualquier parte del sistema local.",
+      "affected_resources": "SAP NetWeaver AS ABAP y ABAP Platform, versiones SAP_BASIS 702, SAP_BASIS 731, SAP_BASIS 740, SAP_BASIS 750, SAP_BASIS 751, SAP_BASIS 752, SAP_BASIS 753, SAP_BASIS 754, SAP_BASIS 755, SAP_BASIS 756, SAP_BASIS 757, SAP_BASIS 758, SAP_BASIS 816, SAP_BASIS 918 y SAP_BASIS 919. SAP NetWeaver AS ABAP y ABAP Platform, versiones KRNL64NUC 7.22, 7.22EXT, KRNL64UC 7.22, 722EXT, 7.53, KERNEL 7.22, 7.53, 7.54, 7.77, 7.89, 7.93, 9.16, 9.18 y 91.9. SAP Commerce Cloud y SAP Data Hub, versiones HY_COM 2205, HY_DHUB 2205, COM_CLOUD 2211, 2211-JDK21 y DHUB_CLOUD 2211. SAP NetWeaver Application Server Java (Web Container), versión ENGINEAPI 7.50. SAP Commerce Cloud, versiones HY_COM 2205, COM_CLOUD 2211 y 2211-JDK21. SAP NetWeaver AS ABAP y ABAP Platform, versiones SAP_BASIS 700, SAP_BASIS 701, SAP_BASIS 702, SAP_BASIS 731, SAP_BASIS 740, SAP_BASIS 750, SAP_BASIS 751, SAP_BASIS 752, SAP_BASIS 753, SAP_BASIS 754, SAP_BASIS 755, SAP_BASIS 756, SAP_BASIS 757, SAP_BASIS 758 y SAP_BASIS 816. ODP Data Replication APIs, versiones DW4CORE 200, 300, 400, PI_BASIS 2006_1_700, 701, 702, 731, 740, SAP_BW 750 y 816. SAP S/4HANA, versiones S4FND 102, 103, 104, 105, 106, 107, 108 y 109. SAP NetWeaver AS Java (JDBC Test Servlet), versión BI_UDI 7.50. SAP Wily Introscope Enterprise Manager, versión WILY_INTRO_ENTERPRISE 10.8. SAP MDG (Review Match Groups Application), versiones S4CORE 108, SAP_BASIS 916, SAP_BASIS 917 y SAP_ABA 816. SAP Business Objects Business Intelligence Platform, versiones ENTERPRISE 430, 2025 y 2027. SAP Fiori (launchpad), versiones SAP_UI 754, 755, 756, 757, 758 y 816. SAP Business Objects, versiones ENTERPRISE 430, 2025 y 2027. SAP NetWeaver AS Java, versiones SERVERCORE 7.50, CORE-TOOLS 7.50 y J2EE-APPS 7.50.",
+      "solution": "Actualizar a la última versión disponible indicada por el fabricante.",
+      "detail": "Las vulnerabilidades de severidad crítica son de los siguientes tipos: CVE-2026-44748 : SAP NetWeaver Application Server ABAP y ABAP Platform permiten que un atacante autenticado con privilegios normales obtenga un mensaje firmado válido y envíe documentos XML firmados modificados al verificador. Esto puede resultar en la aceptación de información de identidad manipulada, lo que conlleva un acceso no autorizado a datos confidenciales del usuario y una posible interrupción del funcionamiento normal del sistema. Esto tiene un alto impacto en la confidencialidad, la integridad y la disponibilidad de la aplicación. CVE-2026-27671 : debido a una validación incorrecta del protocolo RFC en el núcleo de SAP utilizado por el servidor de aplicaciones ABAP de SAP NetWeaver y la plataforma ABAP, un atacante no autenticado puede enviar una solicitud RFC manipulada que explota errores lógicos en la gestión de memoria, lo que puede provocar corrupción de memoria. Esto podría tener un gran impacto en la confidencialidad, la integridad y la disponibilidad de la aplicación. CVE-2026-22732 : cuando las aplicaciones especifican encabezados de respuesta HTTP para aplicaciones servlet que utilizan Spring Security, existe la posibilidad de que los encabezados HTTP no se escriban. Este problema afecta a las aplicaciones Spring Security Servlet que utilizan la escritura diferida (predeterminada) de encabezados HTTP. CVE-2026-40128 : SAP NetWeaver Application Server Java (Web Container) permite que un atacante no autenticado cree una solicitud de inicio de sesión HTTP maliciosa que manipula los parámetros de inclusión de archivos, lo que posibilita el acceso no autorizado y el procesamiento del archivo incluido. El procesamiento de dicho archivo podría permitir al atacante visualizar o modificar información confidencial o inhabilitar cualquier parte del sistema local. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-44748 Crítica No SAP CVE-2026-27671 Crítica No SAP CVE-2026-22732 Crítica No SAP CVE-2026-40128 Crítica No SAP",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Boletín",
+        "Confidencialidad",
+        "Disponibilidad",
+        "Integridad",
+        "SAP",
+        "XSS"
+      ],
+      "cves": [
+        "CVE-2026-44748",
+        "CVE-2026-27671",
+        "CVE-2026-22732",
+        "CVE-2026-40128"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-44748",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-27671",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-22732",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-40128",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-44748"
+      ]
+    },
+    {
+      "id": "765a1f574e43802d4fb74614",
+      "incibe_id": "INCIBE-2026-406",
+      "title": "Múltiples vulnerabilidades en productos de Check Point",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-productos-de-check-point",
+      "summary": "Check Point Research, tras realizar una investigación, ha publicado 2 vulnerabilidades: 1 de severidad crítica y otra alta que en caso de ser explotadas podrían permitir a un atacante establece una conexión VPN de acceso remoto sin una contraseña válida o interactuar de intermediario en las conexiones VPN de sitio a sitio.",
+      "affected_resources": "Mobile Access / SSL VPN, Remote Access VPN, Spark Firewall y Security Gateways, Spark Firewall: R80.20.X (EOS), R80.40 (EOS), R81 (EOS), R81.10 (EOS), R81.10.X, R81.20, R82, R82.00.X, R82.10.",
+      "solution": "Check Point puede proporcionar una revisión ( Hotfix ) para R81.20, R82 y R82.10. Descargar la revisión correspondiente según lo indicado por el fabricante. Para Security Gateway / Maestro Orchestrator / Security Group: R82.10 Jumbo Hotfix Accumulator Take 19. R82.10 Jumbo Hotfix Accumulator Take 6. R82 Jumbo Hotfix Accumulator Take 103. R82 Jumbo Hotfix Accumulator Take 91. R81.20 Jumbo Hotfix Accumulator Take 141. R81.20 Jumbo Hotfix Accumulator Take 127. R81.20 Jumbo Hotfix Accumulator Take 120. R81.20 Jumbo Hotfix Accumulator Take 113. Para Check Point Spark Firewalls: R82.00.10 Build 998002216 para Local Installation. R82.00.10 Build 998002216 para Central Deployment en SmartConsole. R82.00.10 Build 998002216 para SmartUpdate. R81.10.17 Build 996004901 para Local Installation. R81.10.17 Build 996004901 para Central Deployment en SmartConsole. R81.10.17 Build 996004901 para SmartUpdate. En caso de no poder actualizar la versión afectada, se recomienda revisar las medidas de mitigación descritas por el fabricante en su aviso oficial enlazado en las referencias.",
+      "detail": "CVE-2026-50751 : permite omitir la autenticación en el acceso remoto VPN y el acceso móvil mediante el intercambio de claves IKEv1, una tecnología obsoleta. Un atacante puede eludir la autenticación del usuario aprovechando una debilidad en el flujo lógico de la validación del certificado de acceso remoto y acceso móvil, y establecer una conexión VPN de acceso remoto sin una contraseña válida. Check Point ha detectado la explotación activa de esta vulnerabilidad. CVE-2026-50752 : una condición en la lógica de validación de certificados del intercambio de claves IKEv1, actualmente obsoleto, puede permitir un ataque de intermediario en las conexiones VPN de sitio a sitio. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-50751 Crítica Si Check Point CVE-2026-50752 Alta No Check Point",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Autenticación",
+        "Comunicaciones y redes",
+        "Explotación",
+        "VPN",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-50751",
+        "CVE-2026-50752"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-50751",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-50752",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": true,
+      "manufacturers": [
+        "en su aviso oficial enlazado en las referencias. Detalle",
+        "CVE-2026-50751"
+      ]
+    },
+    {
+      "id": "418b45686fdc04ccdfea51cc",
+      "incibe_id": "INCIBE-2026-402",
+      "title": "Inyección SQL en productos de Nemon",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/inyeccion-sql-en-productos-de-nemon",
+      "summary": "INCIBE ha coordinado la publicación de una vulnerabilidad de severidad crítica, que afecta a Trade Energy y Trade Energy CRM de Nemon, un software de gestión integral (ERP) para comercializadoras de electricidad y gas. La vulnerabilidad ha sido descubierta por Adrià Alavedra Palacios. A esta vulnerabilidad se le ha asignado el siguiente código, puntuación base CVSS v4.0, vector del CVSS y el tipo de vulnerabilidad CWE: CVE-2026-10731: CVSS v4.0: 9.3 | CVSS AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N | CWE-89",
+      "affected_resources": "Nemon Trade Energy y Nemon Trade Energy CRM en las versiones 2.95.55.",
+      "solution": "La vulnerabilidad reportada fue completamente mitigada por el equipo de Nemon el 26/05/2026. No se tiene constancia de que la vulnerabilidad haya sido explotada, ni de que haya tenido impacto alguno sobre clientes o datos gestionados por la plataforma. Al tratarse de una solución SaaS , la corrección fue aplicada de forma centralizada por Nemon, sin requerir ninguna acción por parte de los clientes. La vulnerabilidad ha sido corregida y no resulta explotable en la actualidad.",
+      "detail": "CVE-2026-10731: inyección SQL en el parámetro ‘ two_steps_auth_code ’ procesado por la función ‘ twoStepsAuthVerification ’ dentro del endpoint ‘ /user-login ’. Se puede acceder a la funcionalidad de doble factor de autenticación (2FA) sin necesidad de autenticación previa, lo que permite a atacantes no autenticados ejecutar consultas SQL arbitrarias en la base de datos del backend . Una explotación exitosa podría dar lugar a la enumeración de la base de datos, la creación no autorizada de usuarios con privilegios, la modificación o eliminación de información crítica y situaciones de denegación de servicio. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-10731 Critical No Nemon",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "0day",
+        "CNA",
+        "Denegación de servicio - DoS - DDoS",
+        "Inyección",
+        "Sector energía",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-10731"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-10731",
+          "cvss": 9.3,
+          "cvss_version": "4.0"
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "6830060517c617d1f47280d9",
+      "incibe_id": "INCIBE-2026-400",
+      "title": "Múltiples vulnerabilidades en Password Manager",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-password-manager",
+      "summary": "INCIBE ha coordinado la publicación de 3 vulnerabilidades de severidad media que afectan a Password Manager, una aplicación para la gestión de contraseñas de múltiples tipos de servicios. Las vulnerabilidades han sido descubiertas por Julen Garrido Estévez. A estas vulnerabilidades se les han asignado los siguientes códigos, puntuación base CVSS v4.0, vector del CVSS y el tipo de vulnerabilidad CWE de cada vulnerabilidad: CVE-2026-10836: CVSS v4.0: 5.1 | CVSS AV:N/AC:L/AT:N/PR:N/UI:A/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N | CWE-644 CVE-2026-10837: CVSS v4.0: 5.1 | CVSS AV:N/AC:L/AT:N/PR:N/UI:A/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N | CWE-601 CVE-2026-10839: CVSS v4.0: 5.1 | CVSS AV:N/AC:L/AT:N/PR:N/UI:A/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N | CWE-601",
+      "affected_resources": "Password Manager (testeado en versiones anteriores a fecha 06/08/2025).",
+      "solution": "Las vulnerabilidades han sido solucionadas por el equipo de Password Manager el 07/08/2025. Se recomienda actualizar a la última versión disponible.",
+      "detail": "CVE-2026-10836: vulnerabilidad de neutralización inadecuada de cabeceras HTTP que permite a un atacante remoto manipular el valor del encabezado Host mediante peticiones especialmente diseñadas. Una explotación exitosa podría provocar la generación de enlaces o respuestas manipuladas, facilitando la exposición limitada de información o afectando a la integridad de servicios dependientes. CVE-2026-10837: vulnerabilidad de redirección abierta debido a una validación insuficiente del encabezado HTTP X-Forwarded-Host . Un atacante podría crear enlaces manipulados que, al ser abiertos por una víctima, provoquen su redirección a dominios controlados por el atacante, permitiendo acciones de phishing o engaño con impacto limitado en la confidencialidad e integridad. CVE-2026-10839: vulnerabilidad de redirección abierta en el sistema de autenticación que permite utilizar valores manipulados del encabezado X-Forwarded-Host para alterar las URL generadas por la aplicación. Una explotación exitosa podría redirigir a usuarios autenticados a sitios maliciosos tras procesos de inicio de sesión o interacción con la interfaz, afectando de forma limitada a la confidencialidad e integridad. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-10836 Medium No Password Manager CVE-2026-10837 Medium No Password Manager CVE-2026-10839 Medium No Password Manager",
+      "published_at": null,
+      "importance": 3,
+      "tags": [
+        "0day",
+        "Actualización",
+        "CNA",
+        "Confidencialidad",
+        "Integridad",
+        "Phishing",
+        "Software"
+      ],
+      "cves": [
+        "CVE-2026-10836",
+        "CVE-2026-10837",
+        "CVE-2026-10839"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-10836",
+          "cvss": 5.1,
+          "cvss_version": "4.0"
+        },
+        {
+          "cve": "CVE-2026-10837",
+          "cvss": 5.1,
+          "cvss_version": "4.0"
+        },
+        {
+          "cve": "CVE-2026-10839",
+          "cvss": 5.1,
+          "cvss_version": "4.0"
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-10836 Medium No Password Manager"
+      ]
+    },
+    {
+      "id": "c019169ffac1e0eaa5f51ea2",
+      "incibe_id": "INCIBE-2026-399",
+      "title": "Múltiples vulnerabilidades en productos de Microsoft",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-productos-de-microsoft",
+      "summary": "Microsoft ha publicado 2 vulnerabilidades críticas que podrían permitir a una atacante divulgar información privada o realizar una escalada de privilegios.",
+      "affected_resources": "Azure HorizonDB; Microsoft Exchange Online.",
+      "solution": "Aunque no se requiere ninguna acción por parte del usuario, se recomienda mantener instaladas todas las actualizaciones disponibles.",
+      "detail": "CVE-2026-48579 : autorización incorrecta en Microsoft Exchange Online podría permitir que un atacante no autorizado divulgue información a través de una red. CVE-2026-48567 : omisión de la autenticación mediante suplantación de identidad en Azure HorizonDB podría permitir a un atacante no autorizado elevar sus privilegios en una red. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-48579 Crítica No Microsoft CVE-2026-48567 Crítica No Microsoft",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Divulgación de información",
+        "Escalada de privilegios",
+        "Microsoft",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-48579",
+        "CVE-2026-48567"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-48579",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-48567",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-48579"
+      ]
+    },
+    {
+      "id": "c7909b63993e083e02011c64",
+      "incibe_id": "INCIBE-2026-398",
+      "title": "[Actualización 02/07/2026] Falsificación de solicitudes del lado del servidor en productos de Cisco",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/falsificacion-de-solicitudes-del-lado-del-servidor-en-productos-de-cisco",
+      "summary": "Cisco ha publicado una vulnerabilidad de severidad alta que podría permitir a un atacante remoto, no autenticado, realizar ataques de falsificación de solicitudes del lado del servidor (SSRF) a través de un dispositivo afectado. [Actualización 02/07/2026] El equipo PSIRT de Cisco tiene conocimiento de que existe código de prueba de concepto para explotar la vulnerabilidad descrita en este aviso.",
+      "affected_resources": "Cisco Unified CM, versión 14, y Unified CM SME, versión 15, si tienen habilitado el servicio WebDialer.",
+      "solution": "Actualizar a las versiones 14SU6 y 15SU5 (septiembre de 2026) o COP 1, respectivamente.",
+      "detail": "CVE-2026-20230 : se debe a una validación de entrada incorrecta para ciertas solicitudes HTTP. Un atacante podría explotarla enviando una solicitud HTTP manipulada a un dispositivo afectado y permitirle escribir archivos en el sistema operativo subyacente, los cuales podrían usarse posteriormente para obtener privilegios de administrador. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-20230 Alta Si Cisco",
+      "published_at": null,
+      "importance": 4,
+      "tags": [
+        "Actualización",
+        "Cisco",
+        "Comunicaciones y redes",
+        "SSRF",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-20230"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-20230",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-20230"
+      ]
+    },
+    {
+      "id": "091094ca19a15e147bc9ed1a",
+      "incibe_id": "INCIBE-2026-395",
+      "title": "Múltiples vulnerabilidades en Telco Network Function Virtualization Orchestrator de HPE",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-telco-network-function-virtualization-orchestrator",
+      "summary": "HPE ha informado sobre 9 vulnerabilidades en HPE Telco Network Function Virtualization Orchestrator, incluyendo 2 vulnerabilidades de severidad crítica, 3 de severidad alta, 2 de severidad media y 2 de severidad baja. La explotación exitosa de las vulnerabilidades más críticas podría permitir a un atacante ejecutar código arbitrario, comprometer la confidencialidad e integridad de la información o provocar condiciones de denegación de servicio en los sistemas afectados.",
+      "affected_resources": "Versiones de HPE Telco Network Function Virtualization Orchestrator v.7.6.0 y anteriores.",
+      "solution": "Actualizar HPE Telco Network Function Virtualization Orchestrator a la versión v.7.7.0 o posteriores.",
+      "detail": "CVE-2025-68121: se debe a una validación incorrecta de certificados durante la reanudación de sesiones en el componente crypto/tls . Si los parámetros ClientCAs o RootCAs son modificados entre el establecimiento inicial de la conexión y su reanudación, una sesión podría restablecerse correctamente cuando debería haber sido rechazada. Como consecuencia, un cliente o servidor podría aceptar conexiones con entidades que no habrían superado la validación original, permitiendo el acceso no autorizado y comprometiendo la confidencialidad e integridad de las comunicaciones. CVE-2026-40453: se debe a una corrección incompleta de una vulnerabilidad previa en varias implementaciones de HeaderFilterStrategy de Apache Camel. Un atacante con capacidad para enviar mensajes a través de JMS u otros mecanismos equivalentes podría inyectar cabeceras internas especialmente manipuladas para eludir los filtros de seguridad. La explotación exitosa de esta vulnerabilidad podría permitir la ejecución remota de código y la escritura arbitraria de archivos en sistemas que procesen dichos mensajes mediante componentes vulnerables. CVE-2026-35554: se debe a una condición de carrera en la gestión de búferes del cliente productor Java de Apache Kafka. Un atacante podría provocar la reutilización indebida de memoria liberada, ocasionando que mensajes destinados a un tema sean entregados a otro diferente sin generar errores. Como consecuencia, información sensible podría quedar expuesta a usuarios no autorizados y producirse alteraciones en la integridad de los datos procesados. CVE-2026-25639 y CVE-2025-61726: vulnerabilidades que podrían ser explotadas remotamente para provocar condiciones de denegación de servicio. En el primer caso, un objeto de configuración especialmente diseñado puede provocar el cierre inesperado de aplicaciones que utilicen la biblioteca Axios. En el segundo, el procesamiento de formularios con un elevado número de parámetros puede ocasionar un consumo excesivo de memoria en aplicaciones que utilicen el paquete net/url de Go, afectando a la disponibilidad del servicio. CVE Identificador CVE Severidad Explotación Fabricante CVE-2025-68121 Crítica No HPE CVE-2026-40453 Crítica No HPE CVE-2026-35554 Alta No HPE CVE-2026-25639 Alta No HPE CVE-2025-61726 Alta No HPE CVE-2025-61728 Media No HPE CVE-2025-13465 Media No HPE CVE-2025-11143 Baja No HPE CVE-2026-2391 Baja No HPE",
+      "published_at": null,
+      "importance": null,
+      "tags": [
+        "Actualización",
+        "Código arbitrario",
+        "Confidencialidad",
+        "Denegación de servicio - DoS - DDoS",
+        "Integridad",
+        "RCE",
+        "Software",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2025-68121",
+        "CVE-2026-40453",
+        "CVE-2026-35554",
+        "CVE-2026-25639",
+        "CVE-2025-61726",
+        "CVE-2025-61728",
+        "CVE-2025-13465",
+        "CVE-2025-11143",
+        "CVE-2026-2391"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2025-68121",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-40453",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-35554",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-25639",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2025-61726",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2025-61728",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2025-13465",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2025-11143",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-2391",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2025-68121"
+      ]
+    },
+    {
+      "id": "9b0c3e80d608a69e80766ef5",
+      "incibe_id": "INCIBE-2026-392",
+      "title": "Desbordamiento de búfer en productos Poly Voice de HP",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/desbordamiento-de-bufer-en-productos-poly-voice-de-hp",
+      "summary": "Stephen Fewer, de Rapid7, ha reportado una vulnerabilidad de severidad crítica que, en caso de ser explotada, podría permitir a un atacante la ejecución remota de código comprometiendo la confidencialidad, integridad y disponibilidad de los sistemas afectados.",
+      "affected_resources": "HP Poly VVX con versiones anteriores a UCS 6.4.8; HP Poly Trio 8300 con versiones anteriores a UCS 8.1.7; HP Poly Trio 8500 con versiones anteriores UCS 7.2.8; HP Poly Trio 8800 con versiones anteriores a UCS 7.2.8.",
+      "solution": "HP recomienda actualizar los dispositivos afectados a las versiones de firmware corregidas publicadas mediante HP Poly Lens. Como medida de mitigación adicional, se recomienda deshabilitar la conectividad ICE (Interactive Connectivity Establishment) cuando no sea necesaria.",
+      "detail": "CVE-2026-0826: la vulnerabilidad se debe a un desbordamiento de búfer en determinados dispositivos HP Poly Voice que se ejecutan sobre plataforma Linux. El fallo puede producirse en escenarios donde un administrador haya habilitado la funcionalidad ICE. Un atacante remoto podría explotar esta vulnerabilidad mediante el envío de datos especialmente diseñados para desencadenar el desbordamiento y ejecutar código arbitrario en el dispositivo afectado. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-0826 Crítica No HP",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Código arbitrario",
+        "Confidencialidad",
+        "Desbordamiento",
+        "Disponibilidad",
+        "HP",
+        "Integridad",
+        "RCE",
+        "Software",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-0826"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-0826",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-0826"
+      ]
+    },
+    {
+      "id": "a0fe7ad890cf04b3afee4514",
+      "incibe_id": "INCIBE-2026-391",
+      "title": "Boletín de seguridad de Android: junio 2026",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/boletin-de-seguridad-de-android-junio-2026",
+      "summary": "Android ha publicado su boletín mensual de seguridad en el que se incluyen 125 vulnerabilidades: 18 de severidad crítica y 104 de severidad alta. Estas vulnerabilidades afectan a varios de sus productos y su explotación podría permitir a un atacante una escalada de privilegios remota sin necesidad de privilegios de ejecución adicionales o una denegación de servicio.",
+      "affected_resources": "Framework y Sistema: Versiones actualizadas del AOSP: 14, 15, 16, 16-qpr2. Componentes de terceros: Qualcomm.",
+      "solution": "Actualizar a la última versión disponible.",
+      "detail": "Las vulnerabilidades de severidad crítica son las siguientes: Escalada de privilegios: CVE-2025-65018 CVE-2026-0043 CVE-2026-0097 CVE-2026-21352 CVE-2026-21353 Denegación de servicios: CVE-2025-64720 CVE-2025-64505 CVE-2026-0039 CVE-2026-0040 CVE-2026-0041 CVE-2026-0042 CVE-2026-0044 CVE-2026-0051 CVE-2026-0052 CVE-2026-0080 Vulnerabilidades críticas de componentes Qualcomm: CVE-2025-47392 CVE-2026-25276 CVE-2026-25277 Nota: Hay indicios de que la CVE-2025-48595 (escalada de privilegios) podría estar bajo explotación limitada y segmentada. CVE Identificador CVE Severidad Explotación Fabricante CVE-2025-65018 Crítica No Android CVE-2025-64720 Crítica No Android CVE-2026-0043 Crítica No Android CVE-2026-0097 Crítica No Android CVE-2026-21352 Crítica No Android CVE-2026-21353 Crítica No Android CVE-2025-64505 Crítica No Android CVE-2026-0039 Crítica No Android CVE-2026-0040 Crítica No Android CVE-2026-0041 Crítica No Android CVE-2026-0042 Crítica No Android CVE-2026-0044 Crítica No Android CVE-2026-0051 Crítica No Android CVE-2026-0052 Crítica No Android CVE-2026-0080 Crítica No Android CVE-2025-47392 Crítica No Android CVE-2026-25276 Crítica No Android CVE-2026-25277 Crítica No Android CVE-2025-48595 Alta Si Android",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Android",
+        "Denegación de servicio - DoS - DDoS",
+        "Escalada de privilegios",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2025-65018",
+        "CVE-2026-0043",
+        "CVE-2026-0097",
+        "CVE-2026-21352",
+        "CVE-2026-21353",
+        "CVE-2025-64720",
+        "CVE-2025-64505",
+        "CVE-2026-0039",
+        "CVE-2026-0040",
+        "CVE-2026-0041",
+        "CVE-2026-0042",
+        "CVE-2026-0044",
+        "CVE-2026-0051",
+        "CVE-2026-0052",
+        "CVE-2026-0080",
+        "CVE-2025-47392",
+        "CVE-2026-25276",
+        "CVE-2026-25277",
+        "CVE-2025-48595"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2025-65018",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-0043",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-0097",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-21352",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-21353",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2025-64720",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2025-64505",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-0039",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-0040",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-0041",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-0042",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-0044",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-0051",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-0052",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-0080",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2025-47392",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-25276",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-25277",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2025-48595",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2025-65018"
+      ]
+    },
+    {
+      "id": "6812363ad7b11d65842bcabc",
+      "incibe_id": "INCIBE-2026-389",
+      "title": "Múltiples vulnerabilidades en BioStar de Suprema",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-biostar-de-suprema",
+      "summary": "INCIBE ha coordinado la publicación de 2 vulnerabilidades, 1 de severidad crítica, 1 de severidad alta, que afectan a BioStar de Suprema, una plataforma de software y hardware de seguridad integral. Las vulnerabilidades han sido descubiertas por Jordi Garcia Ribera. A estas vulnerabilidades se les han asignado los siguientes códigos, puntuación base CVSS v4.0, vector del CVSS y el tipo de vulnerabilidad CWE de cada vulnerabilidad: CVE-2026-9508: CVSS v4.0: 9.8 | CVSS AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:H/SI:H/SA:L | CWE-732 CVE-2026-9509 CVSS v4.0: 8.2 | CVSS AV:N/AC:L/AT:N/PR:N/UI:N/S:C/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H | CWE-248",
+      "affected_resources": "Las siguientes versiones de BioStar 2 (Server) están afectadas: desde la versión v2.9.3 hasta la v2.9.11 (CVE-2026-9508); versiones v2.9.11, v2.9.10 y v2.9.8 (CVE-2026-9509).",
+      "solution": "Las vulnerabilidades han sido solucionadas por el equipo de Suprema. Se recomienda actualizar a la última versión disponible.",
+      "detail": "CVE-2026-9508 : asignación incorrecta de permisos en un recurso crítico de Suprema BioStar 2 (versiones de la 2.9.3 a la 2.9.11) que permite la exposición pública de las copias de seguridad cuando el administrador configura su ruta dentro del webroot de NGINX. Esta vulnerabilidad facilita que un atacante con acceso a la red descargue directamente los archivos ZIP de respaldo a través de ' http(s)://[servidor]/download/… ' sin necesidad de autenticación. Esto expone información altamente sensible que puede derivar en la suplantación del servidor, el acceso no autorizado a bases de datos y el movimiento lateral. CVE-2026-9509 : excepción no controlada en Suprema BioStar 2 (Server), versiones 2.9.8, 2.9.10 y 2.9.11, que permite a un atacante remoto no autenticado provocar una denegación de servicio (DoS) mediante el envío de peticiones HTTP POST al endpoint ' /api/migration '. Esta solicitud desencadena un fallo que detiene procesos críticos, dejando el sistema fuera de línea hasta el reinicio manual de los servicios o del servidor. Como consecuencia, se interrumpe la operatividad de los lectores de control de acceso y se generan posibles fallos en integraciones de terceros. Dado que la explotación no requiere privilegios ni interacción del usuario y es trivial de automatizar, el impacto sobre la disponibilidad es alto y la afectación se extiende a los sistemas interconectados. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-9508 Critical No Suprema CVE-2026-9509 High No Suprema",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "0day",
+        "Actualización",
+        "CNA",
+        "Denegación de servicio - DoS - DDoS",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-9508",
+        "CVE-2026-9509"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-9508",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-9509",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-9508 Critical No Suprema"
+      ]
+    },
+    {
+      "id": "3fd1cf2274d4d8c5371e8c72",
+      "incibe_id": "INCIBE-2026-388",
+      "title": "Publicación de parches de Oracle - Mayo 2026",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/publicacion-de-parches-de-oracle-mayo-2026",
+      "summary": "Oracle ha publicado su actualización mensual de seguridad con parches para corregir vulnerabilidades que afectan a múltiples productos.",
+      "affected_resources": "Oracle Communications Unified Assurance, versiones 6.1.1 - 7.0.0; Oracle Database Server, versiones 23.4.0 - 23.26.2; Oracle E-Business Suite, versiones 12.2.3 - 12.2.15; Oracle Hospitality OPERA 5 Property Services, versiones 5.6.19.24, 5.6.22, 5.6.25.19, 5.6.27.6, 5.6.28; Oracle REST Data Services, versiones 24.2.0 - 26.1.0.",
+      "solution": "Aplicar los parches correspondientes según los productos afectados. La información para descargar las actualizaciones puede obtenerse del boletín de seguridad publicado por Oracle.",
+      "detail": "Oracle, en su publicación trimestral de parches, ha publicado 14 nuevos parches de seguridad divididos de la siguiente forma: 3 nuevos parches de seguridad para Oracle Database Products 11 nuevos parches de seguridad para Oracle REST Data Services En total se actualizan 35 vulnerabilidades de distinta severidad, 11 críticas, 18 altas, 5 medias y 1 baja. Las vulnerabilidades críticas afectan a los siguientes componentes: Oracle REST Data Services CVE-2026-46840 CVE-2026-46775 CVE-2026-46839 CVE-2026-2332 Oracle iAssets CVE-2026-46822 Oracle Universal Work Queue CVE-2026-46824 Oracle Payments CVE-2026-46817 Oracle Hospitality OPERA 5 Property Services CVE-2026-34311 Oracle Communications Unified Assurance CVE-2026-33557 Oracle Internet Procurement Connector CVE-2026-46819 Net Service CVE-2026-46833 El resto de vulnerabilidades se pueden consultar en el enlace de las referencias. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-46840 Crítica No Oracle CVE-2026-46775 Crítica No Oracle CVE-2026-46839 Crítica No Oracle CVE-2026-2332 Crítica No Oracle CVE-2026-46822 Crítica No Oracle CVE-2026-46824 Crítica No Oracle CVE-2026-46817 Crítica No Oracle CVE-2026-34311 Crítica No Oracle CVE-2026-33557 Crítica No Oracle CVE-2026-46819 Crítica No Oracle CVE-2026-46833 Crítica No Oracle",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Oracle",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-46840",
+        "CVE-2026-46775",
+        "CVE-2026-46839",
+        "CVE-2026-2332",
+        "CVE-2026-46822",
+        "CVE-2026-46824",
+        "CVE-2026-46817",
+        "CVE-2026-34311",
+        "CVE-2026-33557",
+        "CVE-2026-46819",
+        "CVE-2026-46833"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-46840",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46775",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46839",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-2332",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46822",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46824",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46817",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-34311",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-33557",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46819",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-46833",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-46840"
+      ]
+    },
+    {
+      "id": "6ad11fb7d974719a23301bcb",
+      "incibe_id": "INCIBE-2026-373",
+      "title": "Desbordamiento de búfer en NGINX en F5",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/desbordamiento-de-bufer-en-nginx-en-f5",
+      "summary": "Mufeed VH, de Nebula Security, ha reportado una vulnerabilidad de severidad crítica que, en caso de ser explotada, podría permitir a un atacante remoto realizar una denegación de servicio en el sistema NGINX y, en determinadas condiciones, ejecutar código arbitrario.",
+      "affected_resources": "Los siguientes productos y versiones se encuentran afectados: NGINX Open Source versiones anteriores a la 1.31.1; NGINX Plus versiones anteriores a la 37.0.1.1.",
+      "solution": "F5 recomienda actualizar los productos afectados a las siguientes versiones corregidas: NGINX Open Source 1.31.1 o posterior; NGINX Plus 37.0.1.1 o posterior.",
+      "detail": "CVE-2026-9256: la vulnerabilidad se debe a un desbordamiento de búfer basado en memoria dinámica en el módulo ngx_http_rewrite_module de NGINX. El fallo puede producirse cuando determinadas directivas rewrite utilizan patrones de expresiones regulares especialmente diseñados. Un atacante remoto no autenticado podría explotar esta vulnerabilidad mediante el envío de peticiones HTTP manipuladas para provocar el cierre inesperado de procesos del servicio afectado, ocasionando una denegación de servicio. En determinadas circunstancias y dependiendo de la configuración del sistema, también podría llegar a permitir la ejecución de remota de código arbitrario. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-9256 Crítica No F5",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Denegación de servicio - DoS - DDoS",
+        "Desbordamiento",
+        "RCE",
+        "Software",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-9256"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-9256",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-9256"
+      ]
+    },
+    {
+      "id": "83e5c550589d643a44cd066f",
+      "incibe_id": "INCIBE-2026-372",
+      "title": "Asignación de privilegios incorrecta en LiteSpeed para cPanel",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/asignacion-de-privilegios-incorrecta-en-litespeed-para-cpanel",
+      "summary": "LiteSpeed ha publicado una actualización para solucionar una vulnerabilidad de severidad crítica que podría permitir a un atacante provocar una escalada de privilegios.",
+      "affected_resources": "Plugin LiteSpeed ​​User-End cPanel anterior a la versión 2.4.5. El plugin LiteSpeed ​​WHM (el plugin principal) no se ve afectado.",
+      "solution": "Se recomienda actualizar a la versión mínima recomendada: 2.4.7.",
+      "detail": "CVE-2026-48172 : el plugin permite la escalada de privilegios (posiblemente a root ). Explotada activamente en mayo de 2026. El problema está relacionado con un manejo incorrecto de las funciones de activación/desactivación de Redis. La mejor manera de detectarla es mediante línea de comandos ' grep -rE \"cpanel_jsonapi_func=redisAble\" /var/cpanel/logs /usr/local/cpanel/logs/ 2>/dev/null' en Bash. Si no obtiene ninguna salida, no ha sido víctima de la explotación de la vulnerabilidad. Si hay alguna salida, se recomienda examinar las direcciones IP de la lista, determinar si son direcciones IP válidas y, de no ser así, bloquearlas. Para determinar el daño causado, examinar los registros del sistema para ver si las direcciones IP detectadas han sido utilizadas. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-48172 Crítica Si LiteSpeed",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Escalada de privilegios",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-48172"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-48172",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": true,
+      "manufacturers": [
+        "CVE-2026-48172"
+      ]
+    },
+    {
+      "id": "2cd4ff2980f3a9dbd9523055",
+      "incibe_id": "INCIBE-2026-371",
+      "title": "Múltiples vulnerabilidades en el software de impresión y creación de imágenes de HP",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-el-software-de-impresion-y-creacion-de-imagenes-de",
+      "summary": "Mohamed Lemine Ahmed Jidou (AegisSec) y Aisle Research han informado sobre 2 vulnerabilidades: 1 de severidad crítica y otra de severidad alta que, en caso de ser explotadas, podrían permitir a un atacante escalar privilegios o ejecutar código remoto.",
+      "affected_resources": "HP Linux Imaging y Printing: versiones anteriores a 3.26.4",
+      "solution": "Actualizar a la versión corregida: 3.26.4.",
+      "detail": "CVE-2026-8631 : vulnerabilidad crítica de seguridad en el software de impresión e imagen de HP para Linux. Esta vulnerabilidad podría permitir la escalada de privilegios y/o la ejecución de código arbitrario mediante un desbordamiento de enteros en la ruta de procesamiento de hpcups al gestionar datos de impresión manipulados. CVE-2026-8632: vulnerabilidad de severidad alta que podría permitir la escalada de privilegios y/o la ejecución de código arbitrario mediante la inyección de comandos del sistema operativo. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-8631 Crítica No HP CVE-2026-8632 Alta No HP",
+      "published_at": null,
+      "importance": null,
+      "tags": [
+        "Actualización",
+        "Escalada de privilegios",
+        "HP",
+        "RCE",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-8631",
+        "CVE-2026-8632"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-8631",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-8632",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-8631"
+      ]
+    },
+    {
+      "id": "436e5afe16add7eb65c0a700",
+      "incibe_id": "INCIBE-2026-370",
+      "title": "Validación de entrada incorrecta en el servidor de UniFI OS",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/validacion-de-entrada-incorrecta-en-el-servidor-de-unifi-os",
+      "summary": "UniFi ha publicado 5 vulnerabilidades: 4 de severidad crítica y 1 de severidad alta que, en caso de ser explotadas, podrían permitir a un atacante ejecutar una inyección de comandos, realizar cambios no autorizados, acceder a una cuenta subyacente u obtener información confidencial.",
+      "affected_resources": "Versión 5.0.6 y anteriores: UniFi OS Server. Versión 5.0.13 y anteriores: UCG-Industrial. Versión 5.0.16 y anteriores: UDM; UDM-Pro; UDM-SE; UDM-Pro-Max; EFG; UDW; UDR; UDR7; Express 7; UNVR; UNVR-Pro; UNVR-Instant; ENVR; UCG-Ultra; UCG-Max; UCG-Fiber. Versión 5.0.17 y anteriores: UDR-5G; ENVR-Core; UCKP; UCK; UCK-Enterprise. Versión 5.1.11 y anteriores : UNVR-G2; UNVR-G2-Pro. Versión 5.1.8 y anteriores: UDM-Beast; UNAS-2; UNAS-4; UNAS-Pro; UNAS-Pro-4; UNAS-Pro-8.",
+      "solution": "A continuación se listan las versiones de actualización requeridas para corregir las vulnerabilidades: Versión 5.0.8 o posterior: UniFi OS Server. Versión 5.1.10 o posterior: UNAS-2; UNAS-4; UNAS-Pro; UNAS-Pro-4; UNAS-Pro-8. Versión 5.1.11 o posterior: UDM-Beast. Versión 5.1.12 o posterior: UCG-Industrial; UDM; UDM-Pro; UDM-SE; UDM-Pro-Max; EFG; UDW; UDR; UDR7; Express 7; UNVR; UNVR-Pro; UNVR-Instant; ENVR; UCG-Ultra; UCG-Max; UCG-Fiber; UDR-5G; ENVR-Core; UCKP; UCK; UCK-Enterprise; UNVR-G2; UNVR-G2-Pro.",
+      "detail": "CVE-2026-33000 : un atacante malintencionado con acceso a la red y altos privilegios podría explotar una vulnerabilidad de validación de entrada incorrecta encontrada en los dispositivos UniFi OS para ejecutar una inyección de comandos. CVE-2026-34908 : un atacante malintencionado con acceso a la red podría explotar una vulnerabilidad de Control de Acceso Inapropiado presente en los dispositivos UniFi OS para realizar cambios no autorizados en el sistema. CVE-2026-34909 : un atacante malintencionado con acceso a la red podría explotar una vulnerabilidad de recorrido de ruta encontrada en los dispositivos UniFi OS para acceder a archivos en el sistema subyacente que podrían ser manipulados para acceder a una cuenta subyacente. CVE-2026-34910 : un atacante malintencionado con acceso a la red podría explotar una vulnerabilidad de validación de entrada incorrecta encontrada en los dispositivos UniFi OS para ejecutar una inyección de comandos. Para la vulnerabilidad de severidad alta se ha asignado el identificador CVE-2026-34911 . CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-33000 Crítica No UniFi CVE-2026-34908 Crítica No UniFi CVE-2026-34909 Crítica No UniFi CVE-2026-34910 Crítica No UniFi CVE-2026-34911 Alta No UniFi",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Acceso no autorizado",
+        "Comunicaciones y redes",
+        "Integridad",
+        "Inyección",
+        "Robo de información",
+        "Sistema operativo",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-33000",
+        "CVE-2026-34908",
+        "CVE-2026-34909",
+        "CVE-2026-34910",
+        "CVE-2026-34911"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-33000",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-34908",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-34909",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-34910",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-34911",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-33000"
+      ]
+    },
+    {
+      "id": "69d62932659b1584d0c646bb",
+      "incibe_id": "INCIBE-2026-367",
+      "title": "Vulnerabilidad de Path Traversal en AutoScript y Autofirma",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/vulnerabilidad-de-path-traversal-en-autoscript-y-autofirma",
+      "summary": "INCIBE ha coordinado la publicación de una vulnerabilidad de severidad crítica que afecta al módulo afirma-signature- retriever de AutoScript y Autofirma, mantenidos por la Agencia Estatal de Administración Digital, dependiente del Ministerio para la Transformación Digital y de la Función Pública. La vulnerabilidad ha sido descubierta, de forma individual, por David Martínez González y por Cosme Vázquez Tomé. A esta vulnerabilidad se le ha asignado el siguiente código, puntuación base CVSS v4.0, vector del CVSS y el tipo de vulnerabilidad CWE: CVE-2026-9159: CVSS v4.0: 8.8 | CVSS AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:L/VA:N/SC:N/SI:N/SA:N | CWE-22",
+      "affected_resources": "Servicios desplegables junto a AutoScript y Autofirma: módulo afirma-signature- retriever .",
+      "solution": "Identificación de los WAR afectados: Se debe revisar si en los servidores se encuentran desplegados los siguientes archivos: afirma-signature-storage.war afirma-signature-retriever.war Otra forma de identificarlos es revisando las siguientes rutas, que se publican en el servidor donde se encuentren instalados estos servicios: https://DOMINIO/afirma-signature-storage/StorageService https://DOMINIO/afirma-signature-retriever/RetrieveService Las rutas anteriores aplican si el servlet base es la raíz. En caso alternativo, añada la ruta que proceda después de DOMINIO. Actualización de los WAR: Si alguno de los WAR anteriores está desplegado, se debe proceder a su actualización con la versión corregida. Los enlaces de descarga son: afirma-signature-storage v1.10 https://administracionelectronica.gob.es/ctt/resources/Soluciones/138/Descargas/afirma-signature-storage-1-10.zip?idIniciativa=138&idElemento=29813 afirma-signature-retriever v1.10 https://administracionelectronica.gob.es/ctt/resources/Soluciones/138/Descargas/afirma-signature-retriever-1-10.zip?idIniciativa=138&idElemento=29814 Pasos recomendados: 1.Detener temporalmente el servicio del servidor de aplicaciones. 2. Sustituir los archivos WAR vulnerables por la nueva versión actualizada proporcionada. 3. Eliminar el directorio desplegado asociado si existe (para forzar redeploy ). 4. Iniciar nuevamente el servicio. 5. Comprobar que los nuevos servicios se han desplegado correctamente. Se puede hacer mediante llamadas desde el navegador o mediante CURL accediendo a las URLs: https://DOMINIO/afirma-signature-storage/StorageService?v=2&op=PUT&id=test&dat=SG9sYSBNdW5kbyE= Devolverá “OK” https://DOMINIO/afirma-signature-retriever/RetrieveService?v=2&op=GET&id=test Devolverá “SG9sYSBNdW 5kbyE=\" Estos enlaces aplican si el servlet base es la raíz. En caso alternativo, añada la ruta que proceda después de DOMINIO.",
+      "detail": "CVE-2026-9159 : vulnerabilidad de Path Traversal en el módulo afirma-signature-retriever , causado por una validación insuficiente del parámetro ' id '. Al inyectar secuencias de directorio (por ejemplo, ../), un atacante podría salir del directorio previsto y acceder a archivos arbitrarios del sistema. Esto podría permitir la divulgación y el borrado de archivos sensibles o archivos de configuración de la aplicación, pudiendo recuperar y eliminar cualquier fichero del servidor del despliegue desde Internet. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-9159 High No Agencia Estatal de Administración Digital",
+      "published_at": null,
+      "importance": 4,
+      "tags": [
+        "0day",
+        "Actualización",
+        "CNA",
+        "Divulgación de información",
+        "Robo de información",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-9159"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-9159",
+          "cvss": 8.8,
+          "cvss_version": "4.0"
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "27bffce374a9d3af636c658d",
+      "incibe_id": "INCIBE-2026-366",
+      "title": "Múltiples vulnerabilidades en Suricata",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-suricata",
+      "summary": "Suricata ha publicado un aviso donde informan de 16 vulnerabilidades, 1 de severidad crítica, 10 alta, 4 media y 1 baja.",
+      "affected_resources": "Suricata versiones anteriores a: 8.0.5 7.0.16",
+      "solution": "Actualizar el producto a alguna de las siguientes versiones: 8.0.5 7.0.16",
+      "detail": "La vulnerabilidad de severidad crítica tiene asignado el identificador CVE-2026-45764. Suricata reserva severidad CRÍTICA para los errores que afectan a las características de nivel 1 que están habilitadas de forma predeterminada, lo que implica la ejecución de código basada en tráfico de activación remota. El resto de vulnerabilidades se pueden consultar en el enlace de las referencias. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-45764 Crítica No Suricata",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Ciberseguridad",
+        "Seguridad",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-45764"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-45764",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-45764"
+      ]
+    },
+    {
+      "id": "d960dee20c8b87d5a11f03e4",
+      "incibe_id": "INCIBE-2026-365",
+      "title": "Ausencia de autenticación en Secure Workload de Cisco",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/ausencia-de-autenticacion-en-secure-workload-de-cisco",
+      "summary": "Cisco ha publicado una vulnerabilidad de severidad crítica que podría permitir a un atacante remoto no autenticado, acceder a los recursos del sitio con privilegios de administrador.",
+      "affected_resources": "Software Cisco Secure Workload Cluster tanto en implementaciones SaaS como locales, independientemente de la configuración del dispositivo, versiones. 3.9 y versiones anteriores; 3.10; 4.0. Nota: esta vulnerabilidad afecta únicamente a las API REST internas y no a la interfaz de administración basada en web.",
+      "solution": "Cisco ha solucionado esta vulnerabilidad en su implementación SaaS de Cisco Secure Workload, que está basada en la nube. No se requiere ninguna acción por parte del usuario. Se recomienda a los clientes que necesiten información adicional que se pongan en contacto con el Centro de Asistencia Técnica (TAC) de Cisco o con sus proveedores de mantenimiento contratados. Versiones corregidas: 3.10.8.3; 4.0.3.17.",
+      "detail": "CVE-2026-20223 : validación y autenticación insuficientes al acceder a los endpoints de la API REST. Un atacante podría explotarla si logra enviar una solicitud de API manipulada a un endpoint afectado. Una explotación exitosa podría permitir al atacante leer información confidencial y realizar cambios de configuración entre diferentes inquilinos con los privilegios de administrador. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-20223 Crítica No Cisco",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Autenticación",
+        "Cisco",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-20223"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-20223",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-20223"
+      ]
+    },
+    {
+      "id": "57a82fc59b13e9318bb0ed38",
+      "incibe_id": "INCIBE-2026-364",
+      "title": "Ejecución de código en remoto en ChromaDB",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/ejecucion-de-codigo-en-remoto-en-chromadb",
+      "summary": "Esteban Tonglet, de HiddenLayer, ha descubierto una vulnerabilidad de severidad crítica que, en caso de ser explotada, permite la ejecución de código en remoto.",
+      "affected_resources": "ChromaDB desde la versión 10.0.0.",
+      "solution": "Actualmente no existe un parche que solucione el problema. Como medidas de mitigación se recomienda: Priorizar el uso de la ruta de implementación basada en Rust ('chroma run', imágenes de Docker Hub desde 1.0.0) por encima del servidor Python FastAPI. El frontend de Rust no se ve afectado. Si ejecuta el servidor FastAPI de Python, restringir el acceso de red al puerto ChromaDB solo a clientes de confianza.",
+      "detail": "CVE-2026-45829 : vulnerabilidad de inyección de código estando pre-autenticado, permite a atacantes, no autenticados, ejecutar código arbitrario en el servidor al enviar un repositorio de modelo malicioso y con 'trust_remote_code' en cierto ( true ) en el endpoint '/api/v2/tenants/{ tenant }/databases/{ db }/collections'. A esta vulnerabilidad se le ha denominado ChromaToast . En realidad se trata de una concatenación de dos fallos independientes que se agravan entre sí. El servidor confía en los identificadores de modelo suministrados por el cliente sin restricciones, y actúa sobre esa confianza antes de autenticar al usuario enviando la solicitud. Cualquiera de los defectos por sí solo sería un problema, pero juntos, hacen que cada implementación del servidor Python que tenga algún puerto accesible desde la red sea explotable por cualquier persona que pueda enviar una solicitud HTTP. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-45829 Crítica Si ChromaDB",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Autenticación",
+        "Inteligencia artificial",
+        "RCE",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-45829"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-45829",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-45829"
+      ]
+    },
+    {
+      "id": "1f8a16b8a294c73ce42d93e0",
+      "incibe_id": "INCIBE-2026-361",
+      "title": "Múltiples vulnerabilidades en la consola Unified OSS de HPE",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidades-en-la-consola-unified-oss-de-hpe",
+      "summary": "HPE ha publicado 7 vulnerabilidades: 1 de severidad crítica, 5 de severidad alta y 1 media que en caso de ser explotadas podrían permitir denegación de servicio (DoS), directory traversal , Server-Side Request Forgery (SSRF), desbordamiento de pila o acceso remoto no autorizado.",
+      "affected_resources": "Consola HPE Unified OSS (UOC): versión 3.1.20 y anteriores.",
+      "solution": "Actualizar a la versión 3.1.21.",
+      "detail": "CVE-2026-27699 : la librería del cliente FTP ` basic-ftp ` para Node.js contiene una vulnerabilidad path traversal en el método `downloadToDir() `. Un servidor FTP malicioso podría enviar listados de directorios con nombres de archivo que contienen secuencias de recorrido de ruta (` ../ `) que provocan que los archivos se escriban fuera del directorio de descarga previsto. Para las vulnerabilidades de severidad alta se han asignado los identificadores CVE-2026-25639, CVE-2026-27904, CVE-2026-26996, CVE-2026-27903 y CVE-2025-12758. Para la vulnerabilidad de severidad media se ha asignado el identificador CVE-2026-27601. CVE Identificador CVE Severidad Explotación Fabricante",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Denegación de servicio - DoS - DDoS",
+        "Desbordamiento",
+        "Path Traversal",
+        "Remoto",
+        "SSRF",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-27699",
+        "CVE-2026-25639",
+        "CVE-2026-27904",
+        "CVE-2026-26996",
+        "CVE-2026-27903",
+        "CVE-2025-12758",
+        "CVE-2026-27601"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-27699",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-25639",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-27904",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-26996",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-27903",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2025-12758",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-27601",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "86f5637ff705d0eef6583535",
+      "incibe_id": "INCIBE-2026-360",
+      "title": "Desbordamiento de búfer en NGINX",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/desbordamiento-de-bufer-en-nginx",
+      "summary": "Markakd Zhenpeng Lin ha informado sobre una vulnerabilidad de severidad crítica que, en caso de ser explotada, podría permitir a un atacante remoto, ejecutar código arbitrario en el sistema afectado.",
+      "affected_resources": "NGINX Open Source desde la versión 0.6.27 hasta la 1.30.0; NGINX Plus desde la versión R32 hasta la R36.",
+      "solution": "Actualizar a las siguientes versiones: NGINX Open Source 1.31.0 y 1.30.1; NGINX Plus R36 P4, R35 P2 y R32 P6.",
+      "detail": "CVE-2026-42945: afecta al módulo ngx_http_rewrite_module de NGINX Open Source y NGINX Plus. El fallo se produce cuando la directiva rewrite es seguida de las directivas rewrite , if o set , utilizando capturas sin nombre de expresiones regulares compatibles con PCRE junto con cadenas de reemplazo que contienen el caracter ? . Un atacante remoto no autenticado podría explotar la vulnerabilidad mediante el envío de solicitudes HTTP especialmente diseñadas, provocando un desbordamiento de búfer en memoria en el montículo dentro del proceso de NGINX. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-42945 Crítica Si NGINX",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "Desbordamiento",
+        "Explotación",
+        "Software",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-42945"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-42945",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-42945"
+      ]
+    },
+    {
+      "id": "995bfcd1c9ede39c00bc4825",
+      "incibe_id": "INCIBE-2026-359",
+      "title": "[Actualización 21/05/2026] Actualización de seguridad crítica en Drupal",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/actualizacion-de-seguridad-critica-en-drupal",
+      "summary": "Drupal ha emitido un comunicado en el que informa de una actualización de seguridad crítica en todos sus sistemas que se hará pública el 20 de mayo de 2026 entre las 19:00 y 23:00 horas (17:00 y 21:00 horas UTC).",
+      "affected_resources": "No todas las configuraciones se ven afectadas. Cuando se publique el parche se indicará cuáles sí lo están. Sin embargo, en el comunicado, se habla de las siguientes versiones. Drupal 10 y 11 Las ramas de Drupal con soporte: 11.3.x 11.2.x 10.6.x 10.5.x Versiones menores del core de Drupal que ya no tienen soporte (Drupal 10 y 11) Debido a la severidad del problema, se proporcionará una actualización para este fallo, pero únicamente para las versiones 11.1.9 y 10.4.9; por lo que se recomienda a todos los administradores de Drupal que utilicen las versiones 10 u 11, que antes de mañana a la hora de la actualización tengan sus sistemas actualizados a las versiones indicadas: Sitios con Drupal 11.1 u 11.0, actualizar antes de mañana, como mínimo, a la versión 11.1.9 Sitios con Drupal 10.4, 10.3, 10.2, 10.1 o 10.0, actualizar antes de mañana, como mínimo, a la versión 10.4.9 Estos sitios deben instalar la actualización de seguridad tan pronto como se lance el 20 de mayo y, en un futuro cercano, actualizar sus sistemas a Drupal 11.3 o 10.6. Versiones del core de Drupal que ya no tienen soporte (Drupal 8 y 9) Estas versiones están completamente fuera del ciclo de vida, así que no se van a crear actualizaciones para estas ramas. Sin embargo, debido a la severidad de la actualización, se proporcionarán ficheros con el parche para Drupal 8.9 y 9.5. Estos parches deberán instalarse manualmente y no hay garantías de que funcionen correctamente; asimismo, puede ser que introduzcan otros fallos o regresiones. Para intentar que el fichero del parche funcione lo mejor posible, se recomienda: Para sitios con cualquier versión de Drupal 9, estar actualizados a Drupal 9.5.11 Para sitios con cualquier versión de Drupal 8, estar actualizados a Drupal 8.9.20 Para estos productos se recomienda actualizar lo antes posible a versiones con soporte, como mínimo, Drupal 10.6, ya que las versiones 8 y 9 de Drupal ya cuentan con muchísimos fallos y problemas de seguridad sin resolver. Drupal 7 No se ve afectado por este problema. General En cualquier caso, para las versiones 10 y 11 el problema no se puede explotar en los sitios protegidos por Drupal Steward, los los cuales están protegidos de los vectores de ataque conocidos. No obstante, se recomienda igualmente su actualización para evitar vectores de ataque adicionales que puedan ir surgiendo. Para las versiones 8 y 9, estas versiones contienen muchas otras vulnerabilidades de seguridad que ya han sido previamente divulgadas y que no serán abordadas por Drupal Steward o los archivos de parche. [Actualización 21/06/2026] El resumen de las versiones afectada actualizado por Drupal es: desde la 8.9.0 hasta la 10.4.9; desde la 10.5.0 hasta la 10.5.9; desde a 10.6.0 hasta la 10.6.8; desde la 11.0.0 hasta la 11.1.9; desde la 11.2.0 hasta la 11.2.11; desde la 11.3.0 hasta la 11.3.9.",
+      "solution": "Para versiones de Drupal sin soporte, en primer lugar, actualizar el sistema a alguna versión válida para la actualización. El 20 de mayo, cuando se lance la actualización, comprobar si su versión del producto se ve afectada por la vulnerabilidad y, en caso afirmativo, instalar la actualización lo antes posible. [Actualización 21/05/2026] Las siguientes versiones estarán disponibles tan pronto como finalice el empaquetado automático. Es posible que reciba un error 404 mientras tanto. Las actualizaciones también podrían estar disponibles antes en Packagist. Drupal 11: Si utiliza Drupal 11.3.x, actualice a Drupal 11.3.10. Si utiliza Drupal 11.2.x, actualice a Drupal 11.2.12. Si utiliza Drupal 11.1.x o 11.0.x, actualice a Drupal 11.1.10. Drupal 10: Si utiliza Drupal 10.6.x, actualice a Drupal 10.6.9. Si utiliza Drupal 10.5.x, actualice a Drupal 10.5.10. Si utiliza Drupal 10.4.x o una versión anterior, actualice a Drupal 10.4.10. Drupal 9 y 8: Si utiliza alguna versión de Drupal 9, intente aplicar manualmente el parche de Drupal 9.5 para solucionar este problema. Si utiliza Drupal 8.9, intente aplicar manualmente el parche de Drupal 8.9 para solucionar este problema.",
+      "detail": "Drupal ha emitido un comunicado en el que informa del lanzamiento de un parche de seguridad de importancia crítica. Por su parte, recomiendan instalar el parche lo antes posible ya que temen que, en cuanto se publique la solución, rápidamente aparezcan exploits para aprovechar el fallo. El anuncio del lanzamiento lo harán en su página web de https://www.drupal.org/security y en sus redes sociales de Bluesky, Mastodon, X (anteriormente Twitter) y LinkedIn. Asimismo, todos aquellos usuarios que estén suscritos a los boletines y avisos de Drupal, también se podrán enterar de la noticia por correo electrónico. [Actualización 21/05/2026] CVE-2026-9082 : la vulnerabilidad permite a un atacante enviar solicitudes especialmente diseñadas, lo que deriva en una inyección SQL arbitraria para sitios que utilizan bases de datos PostgreSQL. Esto puede provocar la divulgación de información y, en algunos casos, la escalada de privilegios, la ejecución remota de código u otros ataques. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-9082 Crítica Si Drupal",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "Actualización",
+        "CMS",
+        "Escalada de privilegios",
+        "Integridad",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-9082"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-9082",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-9082"
+      ]
+    },
+    {
+      "id": "6cc445892ef7c72d476de167",
+      "incibe_id": "INCIBE-2026-358",
+      "title": "Omisión de autorización en ICMS Gestión de Contenidos de Creartia Internet Consulting",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/omision-de-autorizacion-en-icms-gestion-de-contenidos-de-creartia-internet",
+      "summary": "INCIBE ha coordinado la publicación de una vulnerabilidad de severidad crítica que afecta a ICMS Gestión de Contenidos de Creartia Internet Consulting S.L., una consultora de digitalización. La vulnerabilidad ha sido descubierta por Pirolita. A esta vulnerabilidad se le ha asignado el siguiente código, puntuación base CVSS v4.0, vector del CVSS y el tipo de vulnerabilidad CWE: CVE-2026-4320: CVSS v4.0: 9.3 | CVSS AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N | CWE-288",
+      "affected_resources": "ICMS Gestión de Contenidos.",
+      "solution": "La vulnerabilidad ha sido solucionada por el equipo de Creartia Internet Consulting S.L. Se recomienda actualizar a la última versión disponible.",
+      "detail": "CVE-2026-4320 : omisión de autorización en el software ICMS de Creartia que podría permitir a un atacante obtener acceso, no autorizado, a funcionalidades protegidas mediante la manipulación de las cabeceras de redirección HTTP del proceso de login , lo que provocaría que el script continúe ejecutándose y habilite una escalada de privilegios sin necesidad de credenciales. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-4320 Crítica No Creartia Internet Consulting",
+      "published_at": null,
+      "importance": 5,
+      "tags": [
+        "0day",
+        "Acceso no autorizado",
+        "Actualización",
+        "CMS",
+        "CNA",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-4320"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-4320",
+          "cvss": 9.3,
+          "cvss_version": "4.0"
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-4320"
+      ]
     }
   ]
 }
