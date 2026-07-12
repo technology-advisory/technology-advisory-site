@@ -43,6 +43,9 @@
 <select id="severity"><option value="">CVSS: todos</option><option value="critical">Crítico ≥ 9</option><option value="high">Alto 7–8.9</option><option value="medium">Medio 4–6.9</option><option value="unknown">Sin dato</option></select>
 <select id="exploited"><option value="">Explotación: todas</option><option value="yes">Explotada</option><option value="no">No marcada</option></select>
 <select id="epss"><option value="">EPSS: todos</option><option value="p90">≥ 90 %</option><option value="p70">≥ 70 %</option><option value="unknown">Sin dato</option></select>
+
+<select id="month"><option value="">Mes: todos</option></select>
+<select id="order"><option value="desc">Publicación: más reciente primero</option><option value="asc">Publicación: más antigua primero</option></select>
 </section>
 <div id="filterNote" class="filter-note">Cargando datos.</div>
 <main class="content"><div id="list" class="list"></div><div id="pagination" class="pagination"></div></main>
@@ -81,12 +84,15 @@ function matchReason(v,term){
  }
  return [...new Set(hits)].slice(0,4).join(' · ');
 }
+function monthKey(value){const d=value?new Date(value):null;if(!d||Number.isNaN(d.getTime()))return'';return `${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,'0')}`;}
+function monthLabel(key){const [y,m]=key.split('-').map(Number);return new Intl.DateTimeFormat('es-ES',{month:'long',year:'numeric'}).format(new Date(y,m-1,1));}
+function populateMonths(){const current=$('month').value;const months=[...new Set(catalog.map(v=>monthKey(v.date_published)).filter(Boolean))].sort().reverse();$('month').innerHTML='<option value="">Mes: todos</option>'+months.map(k=>`<option value="${k}">${monthLabel(k)}</option>`).join('');if(months.includes(current))$('month').value=current;}
 function apply(){
  const term=$('q').value.trim().toLowerCase();
  const vendorTerm=$('vendor').value.trim().toLowerCase();
  const productTerm=$('product').value.trim().toLowerCase();
  const assignerTerm=$('assigner').value.trim().toLowerCase();
- const sev=$('severity').value,exp=$('exploited').value,ep=$('epss').value;
+ const sev=$('severity').value,exp=$('exploited').value,ep=$('epss').value,month=$('month').value,order=$('order').value;
  filtered=catalog.filter(v=>{
   const text=[v.id,...(v.aliases||[]),v.description,txt(v.vendor),txt(v.product),v.assigner].join(' ').toLowerCase();
   const vendors=(v.vendor||[]).join(' ').toLowerCase();
@@ -97,6 +103,7 @@ function apply(){
   if(vendorTerm&&!vendors.includes(vendorTerm))return false;
   if(productTerm&&!products.includes(productTerm))return false;
   if(assignerTerm&&!assigner.includes(assignerTerm))return false;
+  if(month&&monthKey(v.date_published)!==month)return false;
 
   if(sev==='critical'&&!(v.cvss>=9))return false;
   if(sev==='high'&&!(v.cvss>=7&&v.cvss<9))return false;
@@ -109,6 +116,7 @@ function apply(){
   if(ep==='unknown'&&v.epss!=null)return false;
   return true;
  });
+ filtered.sort((a,b)=>{const da=a.date_published?new Date(a.date_published).getTime():0,db=b.date_published?new Date(b.date_published).getTime():0;return order==='asc'?da-db:db-da;});
  page=1;render();
 }
 function render(){
@@ -139,7 +147,7 @@ function render(){
 async function init(){
  try{
   const r=await fetch('../../data/euvd.json',{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);
-  const data=await r.json();catalog=data.vulnerabilities||[];filtered=[...catalog];window.EUVD_DAYS=Number(data.window_days||180);
+  const data=await r.json();catalog=data.vulnerabilities||[];populateMonths();filtered=[...catalog];window.EUVD_DAYS=Number(data.window_days||180);apply();
   $('catalogMeta').textContent=`EUVD · ${Number(data.total_euvd||0).toLocaleString('es-ES')} vulnerabilidades globales · ventana ${Number(data.window_days||30)} días`;
   $('updatedMeta').textContent=`Actualizado ${fmtDate(data.last_updated_at)} · ${data.window_from||'—'} → ${data.window_to||'—'}`;
   $('statTotal').textContent=Number(data.total_window||catalog.length).toLocaleString('es-ES');
@@ -147,7 +155,7 @@ async function init(){
   $('statCritical').textContent=Number(data.total_critical||0).toLocaleString('es-ES');
   $('statExploited').textContent=Number(data.total_exploited||0).toLocaleString('es-ES');
   $('statEpss').textContent=Number(data.total_epss||0).toLocaleString('es-ES');
-  render();['q','vendor','product','assigner','severity','exploited','epss'].forEach(id=>$(id).addEventListener(['q','vendor','product','assigner'].includes(id)?'input':'change',apply));
+  render();['q','vendor','product','assigner','severity','exploited','epss','month','order'].forEach(id=>$(id).addEventListener(['q','vendor','product','assigner'].includes(id)?'input':'change',apply));
  }catch(err){$('list').innerHTML=`<div class="empty"><strong>Error cargando EUVD.</strong><br>${esc(err.message)}<br><br>Comprueba que exista data/euvd.json y abre la página desde el servidor.</div>`;console.error(err)}
 }
 init();

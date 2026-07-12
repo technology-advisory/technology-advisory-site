@@ -41,6 +41,9 @@
 <select id="deadline"><option value="">Deadline: todos</option><option value="overdue">Vencido</option><option value="open">En plazo</option></select>
 <select id="cvss"><option value="">CVSS: todos</option><option value="critical">Crítico ≥ 9</option><option value="high">Alto 7–8.9</option><option value="unknown">Sin dato</option></select>
 <select id="epss"><option value="">EPSS: todos</option><option value="p90">Percentil ≥ 90</option><option value="p70">Percentil ≥ 70</option><option value="unknown">Sin dato</option></select>
+
+<select id="month"><option value="">Mes: todos</option></select>
+<select id="order"><option value="desc">Fecha: más reciente primero</option><option value="asc">Fecha: más antigua primero</option></select>
 </section>
 <div id="filterNote" class="filter-note">Mostrando catálogo completo.</div>
 <main class="content"><div id="list" class="list"></div><div id="pagination" class="pagination"></div></main>
@@ -66,11 +69,16 @@ function priority(v,e){const overdue=parseDate(v.dueDate)&&parseDate(v.dueDate)<
  if(pct>=.9)return ['ALTA','high','KEV con percentil EPSS elevado; priorizar validación de exposición.'];
  return ['PRIORIZAR','normal','Está en KEV: la explotación conocida obliga a revisar exposición, versión y mitigación.'];}
 function enrichFor(id){return enrich[id]||null}
-function apply(){const term=$('q').value.trim().toLowerCase(), r=$('ransomware').value,d=$('deadline').value,c=$('cvss').value,ep=$('epss').value;
+function monthKey(value){const d=parseDate(value);if(!d)return'';return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;}
+function monthLabel(key){const [y,m]=key.split('-').map(Number);return new Intl.DateTimeFormat('es-ES',{month:'long',year:'numeric'}).format(new Date(y,m-1,1));}
+function populateMonths(){const current=$('month').value;const months=[...new Set(catalog.map(v=>monthKey(v.dateAdded)).filter(Boolean))].sort().reverse();$('month').innerHTML='<option value="">Mes: todos</option>'+months.map(k=>`<option value="${k}">${monthLabel(k)}</option>`).join('');if(months.includes(current))$('month').value=current;}
+function apply(){const term=$('q').value.trim().toLowerCase(), r=$('ransomware').value,d=$('deadline').value,c=$('cvss').value,ep=$('epss').value,month=$('month').value,order=$('order').value;
  filtered=catalog.filter(v=>{const e=enrichFor(v.cveID); const text=[v.cveID,v.vendorProject,v.product,v.vulnerabilityName,v.shortDescription].join(' ').toLowerCase(); const overdue=parseDate(v.dueDate)&&parseDate(v.dueDate)<today;
- if(term&&!text.includes(term))return false; if(r&&v.knownRansomwareCampaignUse!==r)return false; if(d==='overdue'&&!overdue)return false; if(d==='open'&&overdue)return false;
+ if(term&&!text.includes(term))return false; if(month&&monthKey(v.dateAdded)!==month)return false; if(r&&v.knownRansomwareCampaignUse!==r)return false; if(d==='overdue'&&!overdue)return false; if(d==='open'&&overdue)return false;
  if(c==='critical'&&!(e?.cvss>=9))return false; if(c==='high'&&!(e?.cvss>=7&&e?.cvss<9))return false; if(c==='unknown'&&e?.cvss!=null)return false;
- if(ep==='p90'&&!(e?.epss_percentile>=.9))return false; if(ep==='p70'&&!(e?.epss_percentile>=.7))return false; if(ep==='unknown'&&e?.epss!=null)return false; return true;}); page=1; render();}
+ if(ep==='p90'&&!(e?.epss_percentile>=.9))return false; if(ep==='p70'&&!(e?.epss_percentile>=.7))return false; if(ep==='unknown'&&e?.epss!=null)return false; return true;});
+ filtered.sort((a,b)=>{const da=parseDate(a.dateAdded)?.getTime()||0,db=parseDate(b.dateAdded)?.getTime()||0;return order==='asc'?da-db:db-da;});
+ page=1; render();}
 function render(){$('filterNote').textContent=`${filtered.length.toLocaleString('es-ES')} resultados de ${catalog.length.toLocaleString('es-ES')} KEV · Los filtros son acumulativos.`; const pages=Math.max(1,Math.ceil(filtered.length/PER_PAGE)); if(page>pages)page=pages; const rows=filtered.slice((page-1)*PER_PAGE,page*PER_PAGE); const list=$('list');
  if(!rows.length){list.innerHTML=`<div class="empty"><strong>No hay resultados con esta combinación de filtros.</strong><br>El catálogo contiene ${catalog.filter(v=>v.knownRansomwareCampaignUse==='Known').length.toLocaleString('es-ES')} KEV con uso conocido en ransomware. Los filtros se aplican de forma acumulativa.</div>`;} else list.innerHTML=rows.map(v=>{const e=enrichFor(v.cveID); const [label,cls,reason]=priority(v,e); const overdue=parseDate(v.dueDate)&&parseDate(v.dueDate)<today; const src=firstHttp(v.notes); return `<article class="item ${cls}"><div class="item-head"><div><div class="cve">${v.cveID}</div><div class="title">${v.vulnerabilityName}</div><div class="vendor">${v.vendorProject} · ${v.product}</div></div><div class="badges"><span class="badge ${cls==='critical'?'red':cls==='high'?'amber':'green'}">${label}</span>${v.knownRansomwareCampaignUse==='Known'?'<span class="badge red">Ransomware Known</span>':''}<span class="badge ${overdue?'red':'blue'}">${overdue?'Deadline vencido':'En plazo'}</span></div></div><div class="grid"><div class="metric"><small>CVSS</small><strong>${e?.cvss??'Sin dato'}${e?.cvss_version?' · v'+e.cvss_version:''}${e?.cvss_source&&e?.cvss!=null?' · '+e.cvss_source:''}</strong></div><div class="metric"><small>EPSS</small><strong>${fmtPct(e?.epss)}</strong></div><div class="metric"><small>Percentil EPSS</small><strong>${fmtPct(e?.epss_percentile)}</strong></div><div class="metric"><small>Fecha CISA</small><strong>${v.dateAdded||'—'}</strong></div><div class="metric"><small>Deadline</small><strong>${v.dueDate||'—'}</strong></div></div><div class="body"><p>${v.shortDescription}</p><div class="reason"><strong>Por qué se prioriza:</strong> ${reason}</div></div><div class="actions">${src?`<a href="${src}" target="_blank" rel="noopener">Fuente / advisory →</a>`:''}<a href="https://nvd.nist.gov/vuln/detail/${v.cveID}" target="_blank" rel="noopener">NVD →</a></div></article>`}).join('');
  const p=$('pagination'); p.innerHTML='';
@@ -80,7 +88,7 @@ function render(){$('filterNote').textContent=`${filtered.length.toLocaleString(
  for(let i=Math.max(1,page-2);i<=Math.min(pages,page+2);i++)visible.add(i);
  const nums=[...visible].sort((a,b)=>a-b);
  nums.forEach((n,idx)=>{if(idx&&n-nums[idx-1]>1)addDots();addPage(n)}); }
-async function init(){try{const [c,e]=await Promise.all([fetch('../../data/cisa-kev.json',{cache:'no-store'}),fetch('../../data/cve-enrichment.json',{cache:'no-store'})]); if(!c.ok||!e.ok)throw new Error('No se pudieron cargar los JSON'); const cj=await c.json(), ej=await e.json(); catalog=cj.vulnerabilities||[]; enrich=ej.items||{}; filtered=[...catalog];
+async function init(){try{const [c,e]=await Promise.all([fetch('../../data/cisa-kev.json',{cache:'no-store'}),fetch('../../data/cve-enrichment.json',{cache:'no-store'})]); if(!c.ok||!e.ok)throw new Error('No se pudieron cargar los JSON'); const cj=await c.json(), ej=await e.json(); catalog=cj.vulnerabilities||[]; enrich=ej.items||{}; populateMonths(); filtered=[...catalog]; apply();
  const totalKev=cj.total_cve??catalog.length;
  const totalCvss=ej.total_cvss??catalog.filter(v=>enrichFor(v.cveID)?.cvss!=null).length;
  const totalEpss=ej.total_epss??catalog.filter(v=>enrichFor(v.cveID)?.epss!=null).length;
@@ -93,7 +101,7 @@ async function init(){try{const [c,e]=await Promise.all([fetch('../../data/cisa-
  $('statCvss').textContent=totalCvss.toLocaleString('es-ES');
  $('statRansomware').textContent=ransomwareKnown.toLocaleString('es-ES');
  $('statEpss').textContent=totalEpss.toLocaleString('es-ES');
- render(); ['q','ransomware','deadline','cvss','epss'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',apply));}
+ render(); ['q','ransomware','deadline','cvss','epss','month','order'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',apply));}
  catch(err){$('list').innerHTML=`<div class="empty"><strong>Error cargando datos.</strong><br>${err.message}<br><br>Abre esta página desde tu servidor local, no con doble clic.</div>`; console.error(err)}}
 init();
 </script>
