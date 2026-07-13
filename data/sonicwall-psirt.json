@@ -1,7 +1,7 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "title": "SonicWall PSIRT Intelligence",
-  "last_updated_at": "2026-07-13T15:04:59.644239Z",
+  "last_updated_at": "2026-07-13T15:19:54.749828Z",
   "source": "SonicWall Product Security Incident Response Team",
   "source_url": "https://psirt.global.sonicwall.com/",
   "feed_url": "https://psirtapi.global.sonicwall.com/api/v1/feed/rss.xml",
@@ -12,7 +12,8 @@
   "total_high": 12,
   "total_with_cve": 202,
   "total_findings": 54,
-  "total_products": 13,
+  "total_products": 108,
+  "total_product_status_blocks": 88,
   "products": [
     "210",
     "400",
@@ -23,10 +24,105 @@
     "7050",
     "9000",
     "Email Security ES Appliance 5000",
+    "Hosted Email Security",
     "Hyper-V",
+    "NSA 220",
+    "NSA 2400",
+    "NSA 250M",
+    "NSA 250M-W",
+    "NSA 2600",
+    "NSA 2650",
+    "NSA 2700",
+    "NSA 3500",
+    "NSA 3600",
+    "NSA 3650",
+    "NSA 3700",
+    "NSA 4500",
+    "NSA 4600",
+    "NSA 4650",
+    "NSA 4700",
+    "NSA 5500",
+    "NSA 5600",
+    "NSA 5650",
+    "NSA 5700",
+    "NSA 6500",
+    "NSA 6600",
+    "NSA 6650",
+    "NSA 6700",
+    "NSA 8500",
+    "NSA 8510",
+    "NSA 9250",
+    "NSA 9450",
+    "NSA 9650",
+    "NSA E5500",
+    "NSA MX",
+    "NSA W",
+    "NSM On-Premise",
+    "NSM SaaS",
+    "NSSP 10700",
+    "NSSP 11700",
+    "NSSP 12400",
+    "NSSP 12800",
+    "NSSP 13700",
+    "NSSP 15700",
+    "NSV 10",
+    "NSV 100",
+    "NSV 1600",
+    "NSV 200",
+    "NSV 25",
+    "NSV 270",
+    "NSV 400",
+    "NSV 470",
+    "NSV 50",
+    "NSV 800",
+    "NSV 870",
+    "On-Premise Email Security",
+    "SM 9200",
+    "SM 9400",
+    "SM 9600",
+    "SM 9800",
     "SMA 100 series SMA 200",
+    "SMA 200",
+    "SMA 210",
+    "SMA 400",
+    "SMA 410",
+    "SMA 500v",
+    "SMA 6200",
+    "SMA 6210",
+    "SMA 7200",
+    "SMA 7210",
+    "SMA 8200v",
     "SMA100 series SMA 210",
-    "VMWare"
+    "SMA1000",
+    "SonicWall Firewall",
+    "SonicWall firewall",
+    "SRA EX 7000",
+    "SWS 12-10FPOE",
+    "SWS 12-8",
+    "SWS 12-8POE",
+    "SWS 14-24",
+    "SWS 14-24FPOE",
+    "SWS 14-48",
+    "SWS 14-48FPOE",
+    "TZ100/W",
+    "TZ200/W",
+    "TZ210/W",
+    "TZ270/W",
+    "TZ300/W",
+    "TZ350/W",
+    "TZ370/W",
+    "TZ400/W",
+    "TZ470/W",
+    "TZ500/W",
+    "TZ570/W",
+    "TZ600",
+    "TZ670",
+    "VMWare",
+    "WXA 2000",
+    "WXA 4000",
+    "WXA 500",
+    "WXA 5000",
+    "WXA 6000"
   ],
   "advisories": [
     {
@@ -42,6 +138,7 @@
         "CVE-2024-12802"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SSL-VPN MFA Bypass in SonicWALL SSL-VPN can arise in specific cases due to the separate handling of UPN (User Principal Name) and SAM (Security Account Manager) account names when integrated with Microsoft Active Directory, allowing MFA to be configured independently for each login method and potentially enabling attackers to bypass MFA by exploiting the alternative account name.\nIMPORTANT: For GEN7 and GEN8 Firewalls, we have incorporated the remediation steps described in the advisory (Comments section) into versions 7.2.0-7015 and 8.0.1-8017. These versions also include additional security enhancements. After upgrading the firewall to the specified version, the use of userPrincipalName in LDAP server configurations is once again supported.",
@@ -62,6 +159,7 @@
         "CVE-2026-0206"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [
         {
@@ -111,6 +209,7 @@
         "CVE-2026-4116"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "no_evidence",
       "findings": [
         {
@@ -176,6 +275,7 @@
         "VMWare",
         "Hyper-V"
       ],
+      "product_status": [],
       "exploitation_status": "no_evidence",
       "findings": [
         {
@@ -226,6 +326,7 @@
         "CVE-2026-3439"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [
         {
@@ -290,6 +391,7 @@
         "CVE-2025-40602"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A local privilege escalation vulnerability due to insufficient authorization in the SonicWall SMA1000 appliance management console (AMC).\nPlease note that SonicWall Firewall products are not affected by this vulnerability.",
@@ -317,6 +419,7 @@
         "VMWare",
         "Hyper-V"
       ],
+      "product_status": [],
       "exploitation_status": "no_evidence",
       "findings": [
         {
@@ -354,7 +457,8 @@
         "CVE-2025-40601"
       ],
       "products": [],
-      "exploitation_status": "exploited",
+      "product_status": [],
+      "exploitation_status": "no_evidence",
       "findings": [],
       "summary": "A Stack-based buffer overflow vulnerability in the SonicOS SSLVPN service allows a remote unauthenticated attacker to cause Denial of Service (DoS), which could cause an impacted firewall to crash.\nSonicWall PSIRT is not aware of active exploitation in the wild. No reports of a PoC have been made public and malicious use of this vulnerability has not been reported to SonicWall.\nAnd SonicWall strongly urges organizations using impacted SonicWall firewalls listed below to follow the provided guidance.\nNOTE: This vulnerability ONLY impacts the SonicOS SSLVPN interface or service if enabled on the firewall.",
       "categories": []
@@ -372,7 +476,8 @@
         "CVE-2025-40603"
       ],
       "products": [],
-      "exploitation_status": "exploited",
+      "product_status": [],
+      "exploitation_status": "no_evidence",
       "findings": [],
       "summary": "A potential exposure of sensitive information in log files in SonicWall SMA100 Series appliances may allow a remote, authenticated administrator, under certain conditions to view partial users credential data.\nSonicWall strongly recommends that users of the SMA 100 series products (SMA 210, 410, and 500v) upgrade to the specified fixed release version to remediate this vulnerability.\nSonicWall PSIRT is not aware of active exploitation of this vulnerability in the wild. No reports of a PoC have been made public and malicious use of this vulnerability has not been reported to SonicWall.",
       "categories": []
@@ -388,6 +493,7 @@
       "severity": null,
       "cves": [],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall SMA 100 10.2.2.2-92sv build has been released with additional file checking, providing the capability to remove known rootkit malware present on the SMA devices. While this is a valuable security step and a necessary measure to protect our customers, it’s equally important to clarify that this does not change the established End-of-Support (EOS) timeline.\nIMPORTANT: SonicWall strongly recommends that users of the SMA 100 series products (SMA 210, 410, and 500v) upgrade to the 10.2.2.2-92sv version.\nAdditionally, the threat intelligence report from Google Threat Intelligence Group (GTIG) highlights potential risk of using older versions of SMA100 firmware. We strongly recommend that all organizations using SMA 100 Series appliances review and implement the security measures outlined in the KB article\nlinked below.\nhttps://www.sonicwall.com/support/notices/urgent-advisory-for-addressing-rootkits-and-other-critical-vulnerabilities-in-sonicwall-sma-100-series-appliances/250730071322160\nCVE: N/A\nLast updated: Sept. 29, 2025, 11:58 a.m.",
@@ -417,6 +523,7 @@
         "410",
         "500v"
       ],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [
         {
@@ -480,7 +587,10 @@
       "cves": [
         "CVE-2025-40600"
       ],
-      "products": [],
+      "products": [
+        "SonicWall firewall"
+      ],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Use of Externally-Controlled Format String vulnerability in the SonicOS SSL VPN interface allows a remote unauthenticated attacker to cause service disruption.\nSonicWall strongly advises users of the SonicWall firewall products to upgrade to the mentioned fixed release version to address this vulnerability.",
@@ -499,6 +609,7 @@
         "CVE-2025-40599"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "An authenticated arbitrary file upload vulnerability exists in the SMA 100 series web management interface. A remote attacker with administrative privileges can exploit this flaw to upload arbitrary files to the system, potentially leading to remote code execution.\nSonicWall strongly recommends that users of the SMA 100 series products (SMA 210, 410, and 500v) upgrade to the specified fixed release version to remediate this vulnerability.",
@@ -523,6 +634,7 @@
         "410",
         "500v"
       ],
+      "product_status": [],
       "exploitation_status": "no_evidence",
       "findings": [
         {
@@ -577,6 +689,7 @@
         "410",
         "500v"
       ],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [
         {
@@ -622,7 +735,10 @@
       "cves": [
         "CVE-2025-40595"
       ],
-      "products": [],
+      "products": [
+        "SMA1000"
+      ],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A Server-side request forgery (SSRF) vulnerability has been identified in the SMA1000 Appliance Work Place interface. By using an encoded URL, a remote unauthenticated attacker could potentially cause the appliance to make requests to unintended location.\nIMPORTANT: SonicWall PSIRT strongly advises users of the SMA1000 product to upgrade to the latest hotfix release version to address the vulnerability.\nPlease note that SonicWall Firewall and SMA 100 series products are not affected by this vulnerability.",
@@ -640,7 +756,10 @@
       "cves": [
         "CVE-2025-2170"
       ],
-      "products": [],
+      "products": [
+        "SMA1000"
+      ],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A Server-side request forgery (SSRF) vulnerability has been identified in the SMA1000 Appliance Work Place interface, which in specific conditions could potentially enable a remote unauthenticated attacker to cause the appliance to make requests to an unintended location.\nIMPORTANT: SonicWall PSIRT strongly advises users of the SMA1000 product to upgrade to the latest hotfix release version to address the vulnerability.\nPlease note that SonicWall Firewall and SMA 100 series products are not affected by this vulnerability.",
@@ -660,6 +779,7 @@
         "CVE-2023-5970"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [
         {
@@ -699,7 +819,10 @@
         "CVE-2024-53705",
         "CVE-2024-53706"
       ],
-      "products": [],
+      "products": [
+        "SonicWall Firewall"
+      ],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [
         {
@@ -755,6 +878,7 @@
         "CVE-2025-32818"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A Null Pointer Dereference vulnerability in the SonicOS SSLVPN Virtual office interface allows a remote, unauthenticated attacker to crash the firewall, potentially leading to a Denial-of-Service (DoS) condition.",
@@ -773,6 +897,7 @@
         "CVE-2025-32817"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A Improper Link Resolution vulnerability (CWE-59) in the SonicWall Connect Tunnel Windows (32 and 64 bit) Client, this results in unauthorized file overwrite, potentially leading to denial of service or file corruption.",
@@ -791,6 +916,7 @@
         "CVE-2021-20035"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Improper neutralization of special elements in the SMA100 management interface allows a remote authenticated attacker to inject arbitrary commands as a 'nobody' user, which could potentially lead to code execution.",
@@ -811,6 +937,7 @@
         "CVE-2025-23010"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "no_evidence",
       "findings": [
         {
@@ -857,6 +984,7 @@
         "CVE-2025-23007"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in the NetExtender Windows client log export function allows unauthorized access to sensitive Windows system files, potentially leading to privilege escalation.",
@@ -874,8 +1002,11 @@
       "cves": [
         "CVE-2025-23006"
       ],
-      "products": [],
-      "exploitation_status": "exploited",
+      "products": [
+        "SMA1000"
+      ],
+      "product_status": [],
+      "exploitation_status": "unknown",
       "findings": [],
       "summary": "Pre-authentication deserialization of untrusted data vulnerability has been identified in the SMA1000 Appliance Management Console (AMC) and Central Management Console (CMC), which in specific conditions could potentially enable a remote unauthenticated attacker to execute arbitrary OS commands.\nIMPORTANT: SonicWall PSIRT has been notified of possible active exploitation of the referenced vulnerability by threat actors. We strongly advises users of the SMA1000 product to upgrade to the hotfix release version to address the vulnerability.\nPlease note that SonicWall Firewall and SMA 100 series products are not affected by this vulnerability.",
       "categories": []
@@ -894,7 +1025,10 @@
         "CVE-2024-12805",
         "CVE-2024-12806"
       ],
-      "products": [],
+      "products": [
+        "SonicWall Firewall"
+      ],
+      "product_status": [],
       "exploitation_status": "no_evidence",
       "findings": [
         {
@@ -941,7 +1075,8 @@
         "CVE-2024-40765"
       ],
       "products": [],
-      "exploitation_status": "exploited",
+      "product_status": [],
+      "exploitation_status": "no_evidence",
       "findings": [],
       "summary": "A Integer-based buffer overflow vulnerability in the SonicOS via IPSec allows a remote attacker in specific conditions to cause Denial of Service (DoS) and potentially execute arbitrary code by sending a specially crafted IKEv2 payload.\nSonicWall PSIRT is not aware of active exploitation in the wild. No reports of a PoC have been made public and malicious use of this vulnerability has not been reported to SonicWall.",
       "categories": []
@@ -961,6 +1096,7 @@
         "CVE-2024-45317"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "no_evidence",
       "findings": [
         {
@@ -1010,6 +1146,7 @@
         "CVE-2024-47176"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Common UNIX Printing System (CUPS) is an open-source printing system for Linux and other UNIX-like operating systems. CUPS uses the IPP (Internet Printing Protocol) to allow for printing with local and network printers. By combining these vulnerabilities (CVE-2024-47076, CVE-2024-47177, CVE-2024-47175, and CVE-2024-47176), an attacker could potentially execute remote code, which may result in the theft of sensitive information and/or cause damage to essential production systems.\nThe SonicWall PSIRT has analyzed CVE-2024-47076, CVE-2024-47177, CVE-2024-47175, and CVE-2024-47176 in the Common UNIX Printing System (CUPS) to assess their relevance to our products and services.\nSonicWall products and cloud services do not incorporate the impacted CUPS software packages and are not affected by these vulnerabilities.\nSonicWall PSIRT is aware that a proof of concept (PoC) exploit for this vulnerabilities is publicly available, we have no information regarding any exploitation of this vulnerability in the wild.",
@@ -1028,7 +1165,8 @@
         "CVE-2024-40766"
       ],
       "products": [],
-      "exploitation_status": "exploited",
+      "product_status": [],
+      "exploitation_status": "unknown",
       "findings": [],
       "summary": "An improper access control vulnerability has been identified in the SonicWall SonicOS management access and SSLVPN, potentially leading to unauthorized resource access and in specific conditions, causing the firewall to crash.\nThis issue affects SonicWall Gen 5 and Gen 6 devices, as well as Gen 7 devices running SonicOS 7.0.1-5035 and older versions.\nThis vulnerability is potentially being exploited in the wild. Please apply the patch as soon as possible for affected products. The latest patch builds are available for download on mysonicwall.com",
       "categories": []
@@ -1046,7 +1184,8 @@
         "CVE-2024-29013"
       ],
       "products": [],
-      "exploitation_status": "exploited",
+      "product_status": [],
+      "exploitation_status": "no_evidence",
       "findings": [],
       "summary": "Heap-based buffer overflow vulnerability in the SonicOS SSL-VPN allows an authenticated remote attacker to cause Denial of Service (DoS) via memcpy function.\nSonicWall PSIRT is not aware of active exploitation in the wild. No reports of a PoC have been made public and malicious use of this vulnerability has not been reported to SonicWall.",
       "categories": []
@@ -1064,7 +1203,8 @@
         "CVE-2024-29012"
       ],
       "products": [],
-      "exploitation_status": "exploited",
+      "product_status": [],
+      "exploitation_status": "no_evidence",
       "findings": [],
       "summary": "Stack-based buffer overflow vulnerability in the SonicOS HTTP server allows an authenticated remote attacker to cause Denial of Service (DoS) via sscanf function.\nSonicWall PSIRT is not aware of active exploitation in the wild. No reports of a PoC have been made public and malicious use of this vulnerability has not been reported to SonicWall.",
       "categories": []
@@ -1082,6 +1222,7 @@
         "CVE-2024-3596"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "In early July 2024, a group of security researchers found a vulnerability in the RADIUS protocol:\nCVE-2024-3596: RADIUS Protocol under RFC 2865 is susceptible to forgery attacks by an on-path attacker who can modify any valid Response (Access-Accept, Access-Reject, or Access-Challenge) to any other response using a chosen-prefix collision attack against MD5 Response Authenticator signature.\nThe Blast-RADIUS attack enables a man-in-the-middle attacker between the RADIUS client and server to forge a valid protocol accept message in response to a failed authentication request. This forgery could allow the attacker to access network devices and services without needing to guess or brute-force passwords or shared secrets. The attacker does not gain access to user credentials.\nThis vulnerability may impact any RADIUS client and server.\nSonicWall PSIRT is aware that a proof of concept (PoC) exploit for this vulnerability is publicly available, we have no information regarding any exploitation of this vulnerability in the wild. No malicious use of this vulnerability has been reported to SonicWall.",
@@ -1100,6 +1241,7 @@
         "CVE-2024-29014"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Vulnerability in SonicWall SMA100 NetExtender Windows (32 and 64-bit) client 10.2.339 and earlier versions allows an attacker to arbitrary code execution when processing an EPC Client update.\nSonicWall strongly advises SSL VPN NetExtender client users to upgrade to the latest release version.\nIMPORTANT: This vulnerability does not affect SonicWall firewall (SonicOS) products.",
@@ -1118,6 +1260,7 @@
         "CVE-2024-40764"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Heap-based buffer overflow vulnerability in the SonicOS IPSec allows an unauthenticated remote attacker to cause Denial of Service (DoS).",
@@ -1136,6 +1279,7 @@
         "CVE-2024-6387"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A signal handler race condition was found in OpenSSH's server (sshd), where a client does not authenticate within LoginGraceTime seconds (120 by default, 600 in old OpenSSH versions), then sshd's SIGALRM handler is called asynchronously. However, this signal handler calls various functions that are not async-signal-safe, for example, syslog().\n- OpenSSH SonicWall is investigating its product line to determine which products and services may be affected by this vulnerability. The Affected and Fixed Products(s) can change as more information becomes available.\nAs a mitigation please restrict SonicWall product(s) and services SSH access to trusted sources and/or disable SSH access from untrusted Internet sources, then apply the patch as soon as possible when available for impacted products. If you have any further questions on restricting/disabling SSH access or require additional information, please reach out to SonicWall Technical Support .",
@@ -1154,6 +1298,7 @@
         "CVE-2023-48795"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "On December 18th, 2023, researchers from the Ruhr University\nBochum published a protocol flaw in the SSH v2 protocol, called Terrapin\nAttack.\nThe flaw allows removing encrypted SSH messages at the begin\nof the communication, allowing downgrade of security aspects of SSH\nconnections.\nThis occurs because the SSH Binary Packet Protocol (BPP), mishandles the handshake phase, and mishandles\nuse of sequence numbers.\nTo carry out the Terrapin attack, a threat actor must be\ncapable of performing a man-in-the-middle (MITM) attack at the network layer. Another precondition\nis that the connection must be secured by either ChaCha20-Poly1305 or CBC with\nEncrypt-then-MAC.\nSonicWall is investigating its product line to determine which products and services may be affected by this vulnerability and the Affected and Fixed Products(s) can change as more information becomes available.",
@@ -1173,6 +1318,7 @@
         "CVE-2024-29011"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "exploited",
       "findings": [
         {
@@ -1210,6 +1356,7 @@
         "CVE-2024-22398"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "An improper Limitation of a Pathname to a Restricted Directory (Path Traversal) vulnerability in SonicWall Email Security Appliance could allow a remote attacker with administrative privileges to conduct a directory traversal attack and delete arbitrary files from the appliance file system.",
@@ -1228,6 +1375,7 @@
         "CVE-2024-22397"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') in the SonicOS SSLVPN portal allows a remote authenticated attacker as a firewall 'admin' user to store and execute arbitrary JavaScript code.\nThis vulnerability affects only SonicOS Gen7 firmware 7.0.1-5145, 7.1.1-7047 and earlier versions.",
@@ -1246,7 +1394,8 @@
         "CVE-2024-22396"
       ],
       "products": [],
-      "exploitation_status": "exploited",
+      "product_status": [],
+      "exploitation_status": "no_evidence",
       "findings": [],
       "summary": "A Integer-based buffer overflow vulnerability in the SonicOS via IPSec allows a remote attacker in specific conditions to cause Denial of Service (DoS) and potentially execute arbitrary code by sending a specially crafted IKEv2 payload.\nSonicWall PSIRT is not aware of active exploitation in the wild. No reports of a PoC have been made public and malicious use of this vulnerability has not been reported to SonicWall.",
       "categories": []
@@ -1264,6 +1413,7 @@
         "CVE-2021-20031"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A Host Header Redirection vulnerability in SonicOS potentially allows a remote attacker to redirect firewall management users to arbitrary web domains.\nTo avoid this vulnerability, follow these steps:\n- Upgrade the firmware to the fixed version (6.5.4.8-89n, 7.0.1-R1456 etc. and higher versions),\n- Enable the option 'Enforce HTTP Host Header Check' on the Firewall Administrator page Or use the CLI option, configure > administration > enforce-http-host-check.",
@@ -1282,6 +1432,7 @@
         "CVE-2024-22395"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "no_evidence",
       "findings": [],
       "summary": "Improper access control vulnerability has been identified in the SMA100 SSL-VPN virtual office portal, which in specific conditions could potentially enable a remote authenticated attacker to associate another user's MFA mobile application.\nThere is no evidence that these vulnerabilities are being exploited in the wild. SonicWall strongly advises SMA 100 series product users, which include SMA 200, 210, 400, 410, and 500v products to upgrade to the mentioned fixed release version.",
@@ -1300,6 +1451,7 @@
         "CVE-2024-22394"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "An improper authentication vulnerability has been identified in SonicWall SonicOS SSL-VPN feature, which in specific conditions could allow a remote attacker to bypass authentication.\nThis issue affects only firmware version SonicOS 7.1.1-7040.",
@@ -1318,6 +1470,7 @@
         "CVE-2023-6340"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall Capture Client version 3.7.10 and NetExtender Client Windows client 10.2.337 and earlier versions are being installed with sfpmonitor.sys driver. The client applications communicate with the driver through queries. The driver method that handles those queries has Stack-based Buffer Overflow vulnerability that allows an attacker to craft a specific query to overwrite kernel memory, causing Denial of Service (DoS) which potentially leads to code execution in the target operating system.\nSonicWall strongly recommends that users of Capture Client and SSL VPN NetExtender client upgrade to the latest release version.\n- - To perform the upgrade for NetExtender, it is necessary to uninstall the vulnerable version first and then install the new version.\n- - Update: Latest NetExtender Windows 10.2.339 has been released that addresses the 'necessary uninstall' issue.",
@@ -1339,6 +1492,7 @@
         "CVE-2023-36673"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall PSIRT is aware of a research publication that outlines a series of attacks known as 'TunnelCrack' vulnerabilities.\nThese attacks occur when VPN client traffic leaks outside of the secure VPN tunnel, typically happening when clients connect to untrusted networks, like rogue Wi-Fi access points. A Local Network attacker takes advantage of local network access features in various VPN clients from different vendors, allowing an attacker to access unencrypted traffic and an attacker intercepts traffic that's directed to a fake VPN gateway using DNS spoofing attacks.\nHowever, these attacks do not provide the attacker with the ability to decrypt HTTPS or other encrypted traffic.",
@@ -1357,6 +1511,7 @@
         "CVE-2023-44219"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A local privilege escalation vulnerability in SonicWall Directory Services Connector Windows MSI client 4.1.21 and earlier versions allows a local low-privileged user to gain system privileges through running the recovery feature.\nSonicWall strongly advises SonicWall SSO Agent (Directory Services Connector) client users to upgrade to the latest release version.",
@@ -1375,6 +1530,7 @@
         "CVE-2023-44220"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall NetExtender Windows (32 and 64-bit) client 10.2.336 and earlier versions have a DLL Search Order Hijacking vulnerability in the start-up DLL component. Successful exploitation via a local attacker could result in command execution in the target system.\nSonicWall strongly advises SSL VPN NetExtender client users to upgrade to the latest release version.",
@@ -1401,6 +1557,7 @@
         "CVE-2023-41715"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "exploited",
       "findings": [
         {
@@ -1501,6 +1658,7 @@
         "CVE-2023-44218"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A flaw within the SonicWall NetExtender Pre-Logon feature enables an unauthorized user to gain access to the host Windows operating system with 'SYSTEM' level privileges, leading to a local privilege escalation (LPE) vulnerability.\nSonicWall strongly advises SSL VPN NetExtender client users to upgrade to the latest release version.",
@@ -1519,6 +1677,7 @@
         "CVE-2023-44217"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A local privilege escalation vulnerability in SonicWall Net Extender MSI client for Windows 10.2.336 and earlier versions allows a local low-privileged user to gain system privileges through running the repair functionality.\nSonicWall strongly advises SSL VPN NetExtender client users to upgrade to the latest release version.",
@@ -1551,6 +1710,7 @@
         "CVE-2023-34137"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall GMS and Analytics products are affected by critical, high, and medium severity vulnerabilities. While it is important to note that there is currently no evidence of exploitation, SonicWall strongly recommends that organizations running older versions of GMS and Analytics builds upgrade to newer fixed versions.\nCVE\nDescription\nCVSS\nCWE\nVector\nCVE-2023-34123\nPredictable\nPassword Reset Key\n7.5\nCWE-321: Use of Hard-coded\nCryptographic Key\nCVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N\nCVE-2023-34124\nWeb\nService Authentication Bypass\n9.4\nCWE-305: Authentication Bypass by\nPrimary Weakness\nCVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:H\nCVE-2023-34125\nPost-Authenticated\nArbitrary File Read via Backup File Directory Traversal\n6.5\nCWE-27: Path Traversal:\n'dir/../../filename'\nCVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N\nCVE-2023-34126\nPost-Authenticated\nArbitrary File Upload\n7.1\nCWE-434: Unrestricted Upload of File\nwith Dangerous Type\nCVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:N\nCVE-2023-34127\nPost-Authenticated\nCommand Injection\n8.8\nCWE-78: Improper Neutralization of\nSpecial Elements used in an OS Command ('OS Command Injection')\nCVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H\nCVE-2023-34128\nHardcoded\nTomcat Credentials (Privilege Escalation)\n6.5\nCWE-260: Password in Configuration\nFile\nCVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N\nCVE-2023-34129\nPost-Authenticated\nArbitrary File Write via Web Service (Zip Slip)\n7.1\nCWE-22: Improper Limitation of a\nPathname to a Restricted Directory ('Path Traversal')\nCVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:L\nCVE-2023-34130\nUse of\nOutdated Cryptographic Algorithm with Hardcoded Key\n5.3\nCWE-327: Use of a Broken or Risky\nCryptographic Algorithm\nCVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N\nCVE-2023-34131\nUnauthenticated\nSensitive Information Leak\n5.3\nCWE-200: Exposure of Sensitive\nInformation to an Unauthorized Actor\nCVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N\nCVE-2023-34132\nClient-Side\nHashing Function Allows Pass-the-Hash\n4.9\nCWE-836: Use of Password Hash\nInstead of Password for Authentication\nCVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N\nCVE-2023-34133\nMultiple\nUnauthenticated SQL Injection Issues & Security Filter Bypass\n9.8\nCWE-89: Improper Neutralization of\nSpecial Elements used in an SQL Command ('SQL Injection')\nCVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H\nCVE-2023-34134\nPassword\nHash Read via Web Service\n9.8\nCWE-200: Exposure of Sensitive\nInformation to an Unauthorized Actor\nCVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H\nCVE-2023-34135\nPost\nAuthenticated Arbitrary File Read via Web Service\n6.5\nCWE-36: Absolute Path Traversal\nCVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N\nCVE-2023-34136\nUnauthenticated\nFile Upload\n6.5\nCWE-434: Unrestricted Upload of File\nwith Dangerous Type\nCVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L\nCVE-2023-34137\nCAS Authentication\nBypass\n9.4\nCWE-305: Authentication Bypass by\nPrimary Weakness\nCVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:H\nCVE: None\nLast updated: July 12, 2023, 2:41 p.m.",
@@ -1569,6 +1729,7 @@
         "CVE-2023-2650"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Issue summary: Processing some specially crafted ASN.1 object identifiers or data containing them may be very slow.\nImpact summary: Applications that use OBJ_obj2txt() directly, or use any of the OpenSSL subsystems OCSP, PKCS7/SMIME, CMS, CMP/CRMF or TS with no message size limit may experience notable to very long delays when processing those messages, which may lead to a Denial of Service.\nFor more information on the OpenSSL CVE-2023-2650, available here https://www.openssl.org/news/secadv/20230530.txt\nSonicWall is investigating its product line to determine which products and cloud services may be affected by this vulnerability and the Affected and Fixed Products(s) can change as more information becomes available.",
@@ -1594,6 +1755,7 @@
         "CVE-2023-0401"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "OpenSSL has released a security advisory to address multiple vulnerabilities affecting OpenSSL versions 3.0, 1.1.1, and 1.0.2.\n- CVE-2023-0286 - X.400 address type confusion in X.509 GeneralName\n- CVE-2022-4304 - Timing Oracle in RSA Decryption\n- CVE-2022-4203 - X.509 Name Constraints Read Buffer Overflow\n- CVE-2023-0215 - Use-after-free following BIO_new_NDEF\n- CVE-2022-4450 - Double free after calling PEM_read_bio_ex\n- CVE-2023-0216 - Invalid pointer dereference in d2i_PKCS7 functions\n- CVE-2023-0217 - NULL dereference validating DSA public key\n- CVE-2023-0401 - NULL dereference during PKCS7 data verification\nSonicWall is investigating its product line to determine which products and cloud services may be affected by this vulnerability and the Affected and Fixed Products(s) list can change as more information becomes available.",
@@ -1612,6 +1774,7 @@
         "CVE-2022-47522"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Vulnerability in IEEE 802.11 implementation is found. A malicious insider can intercept traffic at the MAC layer by disconnecting a victim and connecting to the network using the victim’s MAC address and the attacker’s credentials even if clients are prevented from communicating with each other. Consequently, any packets still on route to the victim, will be received by the attacker instead.\nIt is important to note that intercepted traffic is mostly protected by higher-layer encryption, such as TLS and HTTPS.\nSonicWall PSIRT believes that this vulnerability has a minimal effect on data confidentiality and considers this vulnerability a low risk vulnerability.\nSonicWall is not aware of any malicious use of this vulnerability.",
@@ -1630,6 +1793,7 @@
         "CVE-2023-1101"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicOS SSLVPN improper restriction of excessive MFA attempts vulnerability allows an authenticated attacker to use excessive MFA codes.",
@@ -1648,7 +1812,8 @@
         "CVE-2023-0656"
       ],
       "products": [],
-      "exploitation_status": "exploited",
+      "product_status": [],
+      "exploitation_status": "no_evidence",
       "findings": [],
       "summary": "A Stack-based buffer overflow vulnerability in the SonicOS allows a remote unauthenticated attacker to cause Denial of Service (DoS), which could cause an impacted firewall to crash.\nSonicWall PSIRT is not aware of active exploitation in the wild. No reports of a PoC have been made public and malicious use of this vulnerability has not been reported to SonicWall.\nAnd SonicWall strongly urges organizations using impacted SonicWall firewalls listed below to follow the provided guidance.\nNOTE: This vulnerability ONLY impacts the \"web management\" interface, the SonicOS SSLVPN interface is not impacted.",
       "categories": []
@@ -1666,6 +1831,7 @@
         "CVE-2023-0655"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall Email Security contains a vulnerability that could permit a remote unauthenticated attacker access to an error page that includes sensitive information about users email addresses.",
@@ -1684,6 +1850,7 @@
         "CVE-2023-0126"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Pre-authentication path traversal vulnerability in SMA1000 firmware version 12.4.2, which allows an unauthenticated attacker to access arbitrary files and directories stored outside the web root directory.\nIMPORTANT: SMA 100 series products are not affected by this vulnerability.",
@@ -1700,6 +1867,7 @@
       "severity": null,
       "cves": [],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "An arbitrary file deletion vulnerability (Aikido) in Sonicwall Capture Client via SentinelOne Agent could allow a local attacker to escalate privileges and delete files. The exploit was confirmed to work with 6 vulnerable EDR products, including the SentinelOne Agent for Windows.\nPlease note: an attacker must first obtain low-privileged access on the target system in order to exploit this vulnerability.\nCVE: N/A\nLast updated: Dec. 13, 2022, 7:24 p.m.",
@@ -1720,6 +1888,7 @@
         "CVE-2022-3786"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "This advisory is intended to cover the following OpenSSL Vulnerabilities\nCVE-2022-3358 - Using a Custom Cipher with NID_undef may lead to NULL encryption\nFixed in OpenSSL 3.0.6 (Affected OpenSSL Versions 3.x, 3.0.0-3.0.5).\nMore vulnerability details are available here https://www.openssl.org/news/secadv/20221011.txt\nCVE-2022-3602 - X.509 Email Address 4-byte Buffer Overflow\nFixed in OpenSSL 3.0.7 (Affected OpenSSL Versions 3.x, 3.0.0-3.0.6).\nMore vulnerability details are available here https://www.openssl.org/news/secadv/20221101.txt\nCVE-2022-3786 - X.509 Email Address Variable Length Buffer Overflow\nFixed in OpenSSL 3.0.7 (Affected OpenSSL Versions 3.x, 3.0.0-3.0.6).\nMore vulnerability details are available here https://www.openssl.org/news/secadv/20221101.txt\nCVE: CVE-2022-3358, CVE-2022-3602 and CVE-2022-3786\nLast updated: Nov. 1, 2022, 10:49 p.m.",
@@ -1737,7 +1906,335 @@
       "cves": [
         "CVE-2022-42889"
       ],
-      "products": [],
+      "products": [
+        "Hosted Email Security",
+        "On-Premise Email Security",
+        "NSM SaaS",
+        "NSM On-Premise",
+        "TZ100/W",
+        "TZ200/W",
+        "TZ210/W",
+        "NSA 220",
+        "NSA W",
+        "NSA 250M",
+        "NSA 250M-W",
+        "NSA 2400",
+        "NSA MX",
+        "NSA 3500",
+        "NSA 4500",
+        "NSA 5500",
+        "NSA E5500",
+        "NSA 6500",
+        "NSA 8500",
+        "NSA 8510",
+        "TZ300/W",
+        "TZ350/W",
+        "TZ400/W",
+        "TZ500/W",
+        "TZ600",
+        "NSA 2600",
+        "NSA 2650",
+        "NSA 3600",
+        "NSA 3650",
+        "NSA 4600",
+        "NSA 4650",
+        "NSA 5600",
+        "NSA 5650",
+        "NSA 6600",
+        "NSA 6650",
+        "SM 9200",
+        "SM 9400",
+        "SM 9600",
+        "SM 9800",
+        "NSA 9250",
+        "NSA 9450",
+        "NSA 9650",
+        "NSSP 12400",
+        "NSSP 12800",
+        "NSV 10",
+        "NSV 25",
+        "NSV 50",
+        "NSV 100",
+        "NSV 200",
+        "NSV 400",
+        "NSV 800",
+        "NSV 1600",
+        "TZ270/W",
+        "TZ370/W",
+        "TZ470/W",
+        "TZ570/W",
+        "TZ670",
+        "NSA 2700",
+        "NSA 3700",
+        "NSA 4700",
+        "NSA 5700",
+        "NSA 6700",
+        "NSSP 10700",
+        "NSSP 11700",
+        "NSSP 13700",
+        "NSSP 15700",
+        "NSV 270",
+        "NSV 470",
+        "NSV 870",
+        "SWS 12-8",
+        "SWS 12-8POE",
+        "SWS 12-10FPOE",
+        "SWS 14-24",
+        "SWS 14-24FPOE",
+        "SWS 14-48",
+        "SWS 14-48FPOE",
+        "SMA 200",
+        "SMA 210",
+        "SMA 400",
+        "SMA 410",
+        "SMA 500v",
+        "SMA 6200",
+        "SMA 7200",
+        "SMA 6210",
+        "SMA 7210",
+        "SMA 8200v",
+        "SRA EX 7000",
+        "WXA 2000",
+        "WXA 4000",
+        "WXA 5000",
+        "WXA 500",
+        "WXA 6000"
+      ],
+      "product_status": [
+        {
+          "family": "Email Security",
+          "products": [
+            "Hosted Email Security",
+            "On-Premise Email Security"
+          ],
+          "status": "Not Impacted",
+          "description": "N/A"
+        },
+        {
+          "family": "NSM",
+          "products": [
+            "NSM SaaS",
+            "NSM On-Premise"
+          ],
+          "status": "TBD",
+          "description": null
+        },
+        {
+          "family": "Under Investigation",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "N/A"
+        },
+        {
+          "family": "Gen5 Firewalls (EOS)",
+          "products": [
+            "TZ100/W",
+            "TZ200/W",
+            "TZ210/W",
+            "NSA 220",
+            "NSA W",
+            "NSA 250M",
+            "NSA 250M-W",
+            "NSA 2400",
+            "NSA MX",
+            "NSA 3500",
+            "NSA 4500",
+            "NSA 5500",
+            "NSA E5500",
+            "NSA 6500",
+            "NSA 8500",
+            "NSA 8510"
+          ],
+          "status": "Not Impacted",
+          "description": "N/A"
+        },
+        {
+          "family": "Gen6 Firewalls",
+          "products": [
+            "TZ300/W",
+            "TZ350/W",
+            "TZ400/W",
+            "TZ500/W",
+            "TZ600",
+            "NSA 2600",
+            "NSA 2650",
+            "NSA 3600",
+            "NSA 3650",
+            "NSA 4600",
+            "NSA 4650",
+            "NSA 5600",
+            "NSA 5650",
+            "NSA 6600",
+            "NSA 6650",
+            "SM 9200",
+            "SM 9400",
+            "SM 9600",
+            "SM 9800",
+            "NSA 9250",
+            "NSA 9450",
+            "NSA 9650",
+            "NSSP 12400",
+            "NSSP 12800",
+            "NSV 10",
+            "NSV 25",
+            "NSV 50",
+            "NSV 100",
+            "NSV 200",
+            "NSV 400",
+            "NSV 800",
+            "NSV 1600"
+          ],
+          "status": "Not Impacted",
+          "description": "N/A"
+        },
+        {
+          "family": "Gen7 Firewalls",
+          "products": [
+            "TZ270/W",
+            "TZ370/W",
+            "TZ470/W",
+            "TZ570/W",
+            "TZ670",
+            "NSA 2700",
+            "NSA 3700",
+            "NSA 4700",
+            "NSA 5700",
+            "NSA 6700",
+            "NSSP 10700",
+            "NSSP 11700",
+            "NSSP 13700",
+            "NSSP 15700",
+            "NSV 270",
+            "NSV 470",
+            "NSV 870"
+          ],
+          "status": "Not Impacted",
+          "description": "N/A"
+        },
+        {
+          "family": "SonicWall Switch",
+          "products": [
+            "SWS 12-8",
+            "SWS 12-8POE",
+            "SWS 12-10FPOE",
+            "SWS 14-24",
+            "SWS 14-24FPOE",
+            "SWS 14-48",
+            "SWS 14-48FPOE"
+          ],
+          "status": "Not Impacted",
+          "description": "N/A"
+        },
+        {
+          "family": "SMA 100",
+          "products": [
+            "SMA 200",
+            "SMA 210",
+            "SMA 400",
+            "SMA 410",
+            "SMA 500v"
+          ],
+          "status": "Not Impacted",
+          "description": "N/A"
+        },
+        {
+          "family": "SMA 1000",
+          "products": [
+            "SMA 6200",
+            "SMA 7200",
+            "SMA 6210",
+            "SMA 7210",
+            "SMA 8200v",
+            "SRA EX 7000"
+          ],
+          "status": "Not Impacted",
+          "description": "N/A"
+        },
+        {
+          "family": "MSW",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "N/A"
+        },
+        {
+          "family": "Analyzer",
+          "products": [],
+          "status": "TBD",
+          "description": null
+        },
+        {
+          "family": "Under Investigation",
+          "products": [],
+          "status": "TBD",
+          "description": null
+        },
+        {
+          "family": "Under Investigation",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "N/A"
+        },
+        {
+          "family": "CAS",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "N/A"
+        },
+        {
+          "family": "Access Points",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "N/A"
+        },
+        {
+          "family": "WNM",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "N/A"
+        },
+        {
+          "family": "Capture Security Appliance",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "N/A"
+        },
+        {
+          "family": "WXA",
+          "products": [
+            "WXA 2000",
+            "WXA 4000",
+            "WXA 5000",
+            "WXA 500",
+            "WXA 6000"
+          ],
+          "status": "Not Impacted",
+          "description": "N/A"
+        },
+        {
+          "family": "CSCMA",
+          "products": [],
+          "status": "TBD",
+          "description": null
+        },
+        {
+          "family": "Under Investigation",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "N/A"
+        },
+        {
+          "family": "Cloud Edge",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "N/A"
+        },
+        {
+          "family": "Analytics",
+          "products": [],
+          "status": "TBD",
+          "description": "Under Investigation CVE: CVE-2022-42889 Last updated: Oct. 21, 2022, 7:14 p.m."
+        }
+      ],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "This advisory will cover the CVE-2022-42889 - Text4shell Apache Commons Text RCE Vulnerability.\nSonicWall Product (Appliance/Cloud/Virtual/OnPrem)\nStatus\nDescription\nEmail Security\n- Hosted Email Security (HES)\n- On-Premise Email Security\nNot Impacted\nN/A\nNSM\n- NSM SaaS\n- NSM On-Premise\nTBD\nUnder Investigation\nWAF\nNot Impacted\nN/A\nGen5 Firewalls (EOS)\n- TZ100/W\n- TZ200/W\n- TZ210/W\n- NSA 220/W\n- NSA 250M/250M-W\n- NSA 2400/MX/3500/4500/5500\n- NSA E5500/6500/6500/8500/8510\nNot Impacted\nN/A\nGen6 Firewalls\n- TZ300/W; TZ350/W\n- TZ400/W\n- TZ500/W\n- TZ600\n- NSA 2600/2650/3600/3650/4600\n/4650/5600/5650/6600/6650\n- SM 9200/9400/9600/9800\n- NSa 9250/9450/9650\n- NSSP 12400/12800\n- NSV 10/25/50/100/200/400/800/1600 (ESX, KVM, HYPER-V, AWS, Azure)\nNot Impacted\nN/A\nGen7 Firewalls\n- TZ270/W\n- TZ370/W\n- TZ470/W\n- TZ570/W\n- TZ670\n- NSA 2700/3700/4700/5700/6700\n- NSSP 10700/11700/13700/15700\n- NSV 270/470/870 (ESX, KVM, HYPER-V, AWS, Azure)\nNot Impacted\nN/A\nSonicWall Switch\n- SWS 12-8/12-8POE\n- SWS 12-10FPOE\n- SWS 14-24/14-24FPOE\n- SWS 14-48/14-48FPOE\nNot Impacted\nN/A\nSMA 100\n- SMA 200/210/400/410\n- SMA 500v (ESX, KVM, Hyper-V, AWS, Azure)\nNot Impacted\nN/A\nSMA 1000\n- SMA 6200/7200/6210/7210\n- SMA 8200v (ESX, KVM, Hyper-V, AWS, Azure)\n- SRA EX 7000\nNot Impacted\nN/A\nMSW\nNot Impacted\nN/A\nAnalyzer\nTBD\nUnder Investigation\nGMS\nTBD\nUnder Investigation\nCapture Client & Capture Client Portal\nNot Impacted\nN/A\nCAS\nNot Impacted\nN/A\nAccess Points\nNot Impacted\nN/A\nWNM\nNot Impacted\nN/A\nCapture Security Appliance\nNot Impacted\nN/A\nWXA\n- WXA 2000/4000\n- Virtual: WXA 5000\n- Software: WXA 500, WXA 6000\nNot Impacted\nN/A\nCSCMA\nTBD\nUnder Investigation\nEPRS\nNot Impacted\nN/A\nCloud Edge\nNot Impacted\nN/A\nAnalytics\nTBD\nUnder Investigation",
@@ -1756,6 +2253,7 @@
         "CVE-2021-20030"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "An unauthenticated attacker can gain access to web directory containing application's binaries and configuration files through file path manipulation vulnerability.",
@@ -1772,6 +2270,7 @@
       "severity": null,
       "cves": [],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in the SonicWall SMA100 appliance could potentially expose sensitive information i.e., third-party packages and library versions used in the appliance firmware to a pre-authenticated actor.\nIMPORTANT: SMA 1000 series products are not affected by this vulnerability.\nCVE: None\nLast updated: Aug. 24, 2022, 3:57 p.m.",
@@ -1790,6 +2289,7 @@
         "CVE-2022-2915"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A Heap-based Buffer Overflow vulnerability in the SonicWall SMA100 appliance allows a remote authenticated attacker to cause Denial of Service (DoS) on the appliance or potentially lead to code execution. This vulnerability impacts 10.2.1.5-34sv and earlier versions.\nIMPORTANT: SMA 1000 series products are not affected by this vulnerability.",
@@ -1809,6 +2309,7 @@
         "CVE-2022-0847"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "This advisory is intended to address Linux Kernel vulnerability CVE-2021-33909 and CVE-2022-0847 in the SonicWall SMA1000 platform.\nSonicWall has performed a comprehensive analysis of the SMA1000 platform that resulted in no observable attack vectors for CVE-2021-33909 and CVE-2022-0847. To remove any potential risk from customer environments SonicWall is releasing firmware for the SMA1000 Platform out of an abundance of caution, addressing these vulnerabilities.\nCVE-2021-33909: fs/seq_file.c in the Linux kernel 3.16 through 5.13.x before 5.13.4 does not properly restrict seq buffer allocations, leading to an integer overflow, an Out-of-bounds Write, and escalation to root by an unprivileged user, aka CID-8cae8cd89f05.\nCVE-2022-0847: A flaw was found in the way the \"flags\" member of the new pipe buffer structure was lacking proper initialization in copy_page_to_iter_pipe and push_pipe functions in the Linux kernel and could thus contain stale values. An unprivileged local user could use this flaw to write to pages in the page cache backed by read-only files and as such escalate their privileges on the system.\nSonicWall SMA1000 Linux kernel has been upgraded to fix version 5.4.187 in the SMA1000 firmware12.4.2-05082 and higher versions.",
@@ -1827,6 +2328,7 @@
         "CVE-2022-22280"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Improper Neutralization of Special Elements used in an SQL Command leading to Unauthenticated SQL Injection vulnerability, impacting SonicWall GMS and Analytics On-Prem.",
@@ -1845,6 +2347,7 @@
         "CVE-2022-2323"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in SonicWall Switch 1.1.1.0-2s and earlier allows an authenticated malicious user to perform remote code execution in the host system.",
@@ -1863,6 +2366,7 @@
         "CVE-2022-2324"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Improperly Implemented Security Check vulnerability in the SonicWall Hosted Email Security leads to bypass of Capture ATP security service in the appliance.",
@@ -1881,6 +2385,7 @@
         "CVE-2022-1292"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A critical vulnerability (CVE-2022-1292) was found in OpenSSL c_rehash script. This is due to shell metacharacters not being properly sanitized, resulting in command injection. An attacker could execute arbitrary commands with the privileges of the script.\nAfter review, it has been determined that vulnerability tracked as CVE-2022-1292 is not applicable to the SonicWall product suite. However, SonicWall has decided to update the impacted OpenSSL package to the fixed version (OpenSSL 1.1.1o) out of an abundance of caution in the following products identified in the \"Affected Product(s)\" list below:",
@@ -1899,6 +2404,7 @@
         "CVE-2022-1703"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Improper neutralization of special elements in the SonicWall SSL-VPN SMA100 series management interface allows a remote authenticated attacker to inject OS Command as a 'root' user which potentially leads to remote command execution vulnerability or denial of service (DoS) attack.\nIMPORTANT: SMA 1000 series products are not affected by this vulnerability.",
@@ -1919,6 +2425,7 @@
         "CVE-2022-1702"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall SSLVPN SMA1000 series appliances are affected by the below listed multiple vulnerabilities, organizations running previous versions of SSLVPN SMA1000 series firmware should upgrade to new firmware release versions.\n1) Unauthenticated access control bypass - SMA1000 series appliance incorrectly restricts access to a resource from an unauthorized actor leading to Improper Access Control vulnerability.\nCVSS score - 8.2(High) CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N\nCWE-284: Improper Access Control\n2) Use of a shared and hard-coded encryption key\nCVSS score - 5.7(Medium) CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N\nCWE-321: Use of Hard-coded Cryptographic Key\n3) SMA1000 series appliances accept a user-controlled input that specifies a link to an external site and uses that link in a redirect which leads to Open redirection vulnerability.\nCVSS score - 6.1(Medium) CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N\nCWE-601: URL Redirection to Untrusted Site ('Open Redirect')",
@@ -1937,6 +2444,7 @@
         "CVE-2022-22281"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A buffer overflow vulnerability in the SonicWall SSL-VPN NetExtender Windows Client (32 and 64 bit) in 10.2.322 and earlier versions, allows an attacker to potentially execute arbitrary code in the host windows operating system.",
@@ -1962,6 +2470,7 @@
         "CVE-2021-20045"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "no_evidence",
       "findings": [],
       "summary": "SonicWall has verified and patched vulnerabilities of critical and\nmedium severity (CVSS 5.3-9.8) in SMA 100 series appliances, which include SMA 200,\n210, 400, 410 and 500v products. SMA 100 series appliances with WAF enabled are\nalso impacted by the majority of these vulnerabilities.\nSonicWall strongly urges that organizations follow the guidance below\nto patch SMA 100 series products, which include SMA 200, 210, 400, 410 and 500v\nproducts.\nIssue\nID\nSummary\nCVE\nCVSS\nReporting Party\nSMA-3217\nUnauthenticated\nStack-Based Buffer Overflow\nCVE-2021-20038\n9.8\nRapid7\nSMA-3204\nAuthenticated\nCommand Injection\nCVE-2021-20039\n7.2\nRapid7\nSMA-3206\nUnauthenticated\nFile Upload Path Traversal\nCVE-2021-20040\n6.5\nRapid7\n|NCCGroup\nSMA-3207\nUnauthenticated\nCPU Exhaustion\nCVE-2021-20041\n7.5\nRapid7\nSMA-3208\nUnauthenticated\nConfused Deputy\nCVE-2021-20042\n6.3\nRapid7\nSMA-3231\nHeap-Based\nBuffer Overflow\nCVE-2021-20043\n8.8\nNCCGroup\nSMA-3233\nPost-Authentication\nRemote Command Execution\nCVE-2021-20044\n7.2\nNCCGroup\nSMA-3235\nMultiple\nUnauthenticated Heap-Based and Stack Based Buffer Overflow\nCVE-2021-20045\n9.4\nNCCGroup\n1. Security Notice:\nSMA-3217\n- SMA100 Unauthenticated Stack-based buffer overflow (CVSS 9.8)\nA critical severity vulnerability\n(CVSS 9.8) in SMA 100 appliances, which includes SMA 200, 210, 400, 410 and\n500v could allow a remote unauthenticated attacker to cause Stack-based Buffer\nOverflow and would result in code execution as the nobody user in the SMA100\nappliance. It\nwas noticed that the SMA 100 users with licensed/enabled WAF are impacted by\nthis vulnerability.\nThe Vulnerability is due to the SonicWall\nSMA SSLVPN Apache httpd server GET method of mod_cgi module environment\nvariables use a single stack-based buffer using `strcat`. This allows remote attacker to\ncause Stack-based Buffer Overflow and would result in code execution.\nThere is no evidence that this\nvulnerability is being exploited in the wild.\nSonicWall strongly urges that\norganizations follow the guidance below to patch SMA 100 series products, which\ninclude SMA 200, 210, 400, 410 and 500v.\nIMPACT :\nAs outlined in SNWLID-2021-0026,\nsuccessfully leveraging CVE-2021-20038 against\nimpacted SMA 100 devices can result in the remote attacker being able to initiate the stack based buffer overflow which can potentially lead to code execution in the device.\nImpacted\nPlatforms\nImpacted\nVersions\nSMA\n100 Series\n(SMA\n200, 210, 400, 410, 500v)\n10.2.0.8-37sv, 10.2.1.1-19sv, 10.2.1.2-24sv\n2. Security Notice:\nSMA-3204\n- SMA 100 Series Authenticated Command Injection Vulnerability as Root (CVSS\n7.2)\nA high severity vulnerability (CVSS 7.2)\nin SMA 100 appliances, which includes SMA 200, 210, 400, 410 and 500v could\nallow remote unauthenticated attacker to execute arbitrary commands in the SMA\n100 appliance as root user. This can potentially lead to the remote\nauthenticated attacker taking over the control of the SMA 100 appliance\nremotely. It was noticed that the SMA 100 users with licensed/enabled WAF are\nnot impacted by this vulnerability.\nThe Vulnerability is due to the SonicWall\nSMA SSLVPN `/cgi-bin/viewcert` POST http method which allows authenticated\nindividuals to upload, view, or delete SSL certificates. A remote authenticated\nattacker can execute arbitrary commands using this POST http method.\nThere is no evidence that this\nvulnerability is being exploited in the wild.\nSonicWall strongly urges that\norganizations follow the guidance below to patch SMA 100 series products, which\ninclude SMA 200, 210, 400, 410 and 500v.\nIMPACT :\nAs outlined in SNWLID-2021-0026,\nsuccessfully leveraging CVE-2021-20039 against\nimpacted SMA 100 devices can result in the remote authenticated attacker\nexecuting arbitrary commands in the SMA 100 appliance as root user resulting in\nthe remote takeover of the device.\nImpacted\nPlatforms\nImpacted\nVersions\nSMA\n100 Series\n(SMA\n200, 210, 400, 410, 500v)\n9.0.0.11-31sv, 10.2.0.8-37sv, 10.2.1.1-19sv\n3. Security Notice:\nSMA-3206\n- SMA 100 Series Unauthenticated File Upload Path Traversal Vulnerability (CVSS\n6.5)\nA medium severity vulnerability\n(CVSS 6.5) in SMA 100 appliances, which includes SMA 200, 210, 400, 410 and\n500v could allow remote unauthenticated attacker to upload arbitrary files.\nAttacker can upload crafted web pages to the web server's root directory or\nmalicious files to any directory in the appliance as a nobody user. It was observed that SMA 100\ndevices with WAF licensed/enabled are also impacted by this vulnerability.\nThis is due to the Path Traversal\nAttack Vulnerability. The Path traversal attacks vulnerability in SMA100 shares\nfunctionality that allows remote unauthenticated attacker to upload arbitrary\nfiles to any directory in the appliance.\nThere is no evidence that this vulnerability is being\nexploited in the wild.\nSonicWall strongly urges that organizations follow the\nguidance below to patch SMA 100 series products, which include SMA 200, 210,\n400, 410 and 500v.\nIMPACT :\nAs outlined in SNWLID-2021-0026,\nsuccessfully leveraging CVE-2021-20040 against\nimpacted SMA 100 devices can allow the remote unauthenticated attacker to\nupload arbitrary files. The a ttacker can upload crafted web pages to the\nweb server's root directory or malicious files to any directory in the\nappliance.\nImpacted\nPlatforms\nImpacted\nVersions\nSMA\n100 Series\n(SMA\n200, 210, 400, 410, 500v)\n10.2.0.8-37sv, 10.2.1.1-19sv\n4. Security Notice:\nSMA-3207 - SMA 100 Series Unauthenticated CPU Exhaustion Vulnerability (CVSS\n7.5)\nA high severity vulnerability (CVSS 7.5) in SMA 100\nappliances, which includes SMA 200, 210, 400, 410 and 500v could allow an\nunauthenticated and remote adversary to consume all of the device’s CPU\npotentially causing DoS. It was observed that the SMA100 appliances with WAF\nlicensed/enabled are also impacted by this vulnerability.\nThe CPU exhaustion is due to the crafted HTTP requests sent\nto https://address/fileshare/sonicfiles/sonicfiles` resulting in an infinite\nloop in the `fileexplorer` process.\nThere is no evidence that this vulnerability is being\nexploited in the wild.\nSonicWall strongly urges that organizations follow the\nguidance below to patch SMA 100 series products, which include SMA 200, 210,\n400, 410 and 500v.\nIMPACT :\nAs outlined in SNWLID-2021-0026, successfully leveraging CVE-2021-20041 against\nimpacted SMA 100 devices can allow an unauthenticated and remote adversary to\nconsume all of the device’s CPU potentially causing DoS.\nImpacted\nPlatforms\nImpacted\nVersions\nSMA\n100 Series\n(SMA\n200, 210, 400, 410, 500v)\n9.0.0.11-31sv, 10.2.0.8-37sv, 10.2.1.1-19sv\n5. Security Notice:\nSMA-3208 - SMA 100 Series Unauthenticated \"Confused Deputy\"\nVulnerability (CVSS 6.3)\nA medium severity vulnerability\n(CVSS 6.3) in SMA 100 appliances, which includes SMA 200, 210, 400, 410 and\n500v could allow a remote unauthenticated attacker to use SMA 100 series\ndevices as an \"unintended proxy or intermediary\" (aka Confused Deputy\n- see CWE-441). Outside attacker can use the SMA 100 as undetectable proxy to\nbypass firewall rules. It was observed that SMA 100 devices with WAF\nlicensed/enabled are also impacted by this vulnerability.\nThere is no evidence that this vulnerability is being\nexploited in the wild.\nSonicWall strongly urges that organizations follow the\nguidance below to patch SMA 100 series products, which include SMA 200, 210,\n400, 410 and 500v.\nIMPACT :\nAs outlined in SNWLID-2021-0026,\nsuccessfully leveraging CVE-2021-20042 against impacted SMA 100 devices\ncan allow the remote unauthenticated attacker to use SMA 100 series devices as\nan \"unintended proxy or intermediary\" (aka Confused Deputy - see CWE-441).\nThe outside attacker can use the SMA 100 as undetectable\nproxy to bypass firewall rules.\nImpacted\nPlatforms\nImpacted\nVersions\nSMA\n100 Series\n(SMA\n200, 210, 400, 410, 500v)\n9.0.0.11-31sv, 10.2.0.8-37sv, 10.2.1.1-19sv\n6. Security Notice:\nSMA-3231 - SMA 100 Series getBookmarks Heap-based Buffer Overflow (CVSS\n8.8)\nA critical severity vulnerability\n(CVSS 8.8) in SMA 100 appliances, which includes SMA 200, 210, 400, 410 and 500v\ncould allow a Remote authenticated attacker can cause Heap-based Buffer\nOverflow and would result in code execution as the nobody user in the SMA100\nappliance. It was observed that the SMA100 appliances with WAF licensed/enabled\nare also impacted by this vulnerability.\nThis Vulnerability is due to the RAC_GET_BOOKMARKS_HTML5\n(RacNumber 35) method that allows users to list their bookmarks. This method is\nvulnerable to heap-based buffer-overflow, due to unchecked use of strcat. So remote\nauthenticated attacker can cause Heap-based Buffer Overflow and would result in\ncode execution as the nobody user in the SMA100 appliance.\nThere is no evidence that this\nvulnerability is being exploited in the wild.\nSonicWall strongly urges that\norganizations follow the guidance below to patch SMA 100 series products, which\ninclude SMA 200, 210, 400, 410 and 500v.\nIMPACT :\nAs outlined in SNWLID-2021-0026, successfully leveraging CVE-2021-20043 against impacted SMA 100\ndevices can allow a Remote authenticated attacker can cause Heap-based Buffer\nOverflow and would result in code execution as the nobody user in the SMA100 appliance.\nImpacted\nPlatforms\nImpacted\nVersions\nSMA\n100 Series\n(SMA\n200, 210, 400, 410, 500v)\n10.2.0.8-37sv, 10.2.1.1-19sv\n7. Security Notice:\nSMA-3233 - SMA 100 Series POST-Authentication Remote Code Execution (RCE)\n(CVSS 7.2)\nA high severity vulnerability\n(CVSS 7.2) in SMA 100 appliances, which includes SMA 200, 210, 400, 410 and\n500v could allow a Remote authenticated attacker to execute system commands as\n‘nobody’, the attacker can modify/delete files in the cgi-bin directory and\nalso able to reboot system remotely. It was observed that the SMA100 appliances\nwith WAF licensed/enabled are also impacted by this vulnerability.\nThis Vulnerability is due to an\nexposed Management API which is written in Python Flask. Remote authenticated\nattacker can execute system commands as ‘nobody’ user in the SMA100 appliance.\nThere is no evidence that this\nvulnerability is being exploited in the wild.\nSonicWall strongly urges that\norganizations follow the guidance below to patch SMA 100 series products, which\ninclude SMA 200, 210, 400, 410 and 500v.\nIMPACT :\nAs outlined in SNWLID-2021-0026,\nsuccessfully leveraging CVE-2021-20044 against impacted SMA 100 devices could\nallow a Remote authenticated attacker to execute system commands as ‘nobody’,\nthe attacker can modify/delete files in the cgi-bin directory and also able to\nreboot system remotely.\nImpacted\nPlatforms\nImpacted\nVersions\nSMA\n100 Series\n(SMA\n200, 210, 400, 410, 500v)\n10.2.0.8-37sv, 10.2.1.1-19sv\n8. Security Notice:\nSMA-3235 - Multiple SMA 100 Unauthenticated File Explorer Heap-based and\nStack-based Buffer Overflows (CVSS 9.4)\nA critical severity vulnerability\n(CVSS 9.4) in SMA 100 appliances, which includes SMA 200, 210, 400, 410 and\n500v could allow a remote unauthenticated attacker to cause Heap-based and\nStack-based Buffer Overflow and would result in code execution as the nobody\nuser in the SMA100 appliance. It was observed that the SMA100 appliances with\nWAF licensed/enabled are also impacted by this vulnerability. Exploitation\npotentially leading to code execution.\nThis Vulnerability is due to the sonicfiles\nRAC_COPY_TO (RacNumber 36) method which allows users to upload files to an SMB\nshare and can be called without any authentication. RacNumber 36 of the\nsonicfiles API maps to the upload_file Python method and this is associated\nwith filexplorer binary, which is a custom program written in C++ which is\nvulnerable to a number of memory safety issues.\nThere is no evidence that this\nvulnerability is being exploited in the wild.\nSonicWall strongly urges that\norganizations follow the guidance below to patch SMA 100 series products, which\ninclude SMA 200, 210, 400, 410 and 500v.\nIMPACT :\nAs outlined in SNWLID-2021-0026,\nsuccessfully leveraging CVE-2021-20045 against impacted SMA 100 devices could\nallow a remote unauthenticated attacker to cause Heap-based and Stack-based\nBuffer Overflow and would result in code execution as the nobody user in the\nSMA100 appliance.\nImpacted\nPlatforms\nImpacted\nVersions\nSMA\n100 Series\n(SMA\n200, 210, 400, 410, 500v)\n10.2.0.8-37sv, 10.2.1.1-19sv\n·\nImpacted\nPlatform: SMA 100 Series\n(SMA 200, 210, 400, 410, 500v (ESX, Hyper-V, KVM,\nAWS, Azure)\nISSUE\nID\nSummary\nCVSS\nScore\nImpacted\nFirmware\nFixed\nFirmware\nCVE\nSMA\n3217\nCritical\nSMA 100 Series Unauthenticated Stack-based Buffer Overflow\n9.8 High\n10.2.1.0-17sv\n10.2.1.3-27sv\nCVE-2021-20038\n10.2.1.1-19sv\n10.2.1.3-27sv\n10.2.1.2-24sv\n10.2.1.3-27sv\nSMA\n3204\nSMA 100 Series Authenticated Command\nInjection Vulnerability as Root\n7.2\nHigh\n9.0.0.11-31sv*\n10.2.0.9-41sv\nCVE-2021-20039\n10.2.0.8-37sv\n10.2.0.9-41sv\n10.2.1.1\n-19sv\n10.2.1.3-27sv\nSMA\n3206\nUnauthenticated File Upload Path Traversal Vulnerability\n6.5\nMedium\n10.2.0.8-37sv\n10.2.0.9-41sv\nCVE-2021-20040\n10.2.1.1\n-19sv\n10.2.1.3-27sv\nSMA\n3207\nUnauthenticated CPU Exhaustion Vulnerability\n7.5\nHigh\n9.0.0.11-31sv*\n10.2.0.9-41sv\nCVE-2021-20041\n10.2.0.8-37sv\n10.2.0.9-41sv\n10.2.1.1\n-19sv\n10.2.1.3-27sv\nSMA-3208\nUnauthenticated \"Confused Deputy\"\nVulnerability\n6.3\nMedium\n9.0.0.11-31sv*\n10.2.0.9-41sv\nCVE-2021-20042\n10.2.0.8-37sv\n10.2.0.9-41sv\n10.2.1.1\n-19sv\n10.2.1.3-27sv\nSMA-3231\ngetBookmarks\nHeap-based Buffer Overflow\n8.8\nHigh\n10.2.0.8-37sv\n10.2.0.9-41sv\nCVE-2021-20043\n10.2.1.1\n-19sv\n10.2.1.3-27sv\nSMA-3233\nPost-Authentication Remote Code Execution\n(RCE)\n7.2\nHigh\n10.2.0.8-37sv\n10.2.0.9-41sv\nCVE-2021-20044\n10.2.1.1\n-19sv\n10.2.1.3-27sv\nSMA-3235\nMultiple SMA 100 Unauthenticated File\nExplorer Heap-based and Stack-based Buffer Overflows\n9.4\nHigh\n10.2.0.8-37sv\n10.2.0.9-41sv\nCVE-2021-20045\n10.2.1.1 -19sv\n10.2.1.3-27sv",
@@ -1983,6 +2492,7 @@
         "CVE-2022-22278"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicOS is affected by the below listed multiple medium severity vulnerabilities, organizations running previous versions of SonicOS should upgrade to new firmware release versions.\nCVE-2022-22275 - Improper Restriction of TCP Communication Channel Potentially Resulting in DoS\nSeverity 5.3 Medium CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L (CWE-400: Uncontrolled Resource Consumption)\nHTTP/S inbound traffic from WAN to DMZ bypassing security policy until TCP handshake is complete resulting in potential Denial of Service (DoS) vulnerability if a target host is vulnerable.\nCVE-2022-22276 - Exposure of Sensitive Information to an Unauthorized User via SNMP\nSeverity 5.3 Medium CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N (CWE-200: Exposure of Sensitive Information to an Unauthorized Actor)\nConfigured SNMP service is accessible from SonicOS firewall interface even when the SNMP is disabled in firewall interfaces.\nCVE-2022-22277 - Exposure of Wireless Access Point Sensitive Information via SNMP\nSeverity 5.3 Medium CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N (CWE-200: Exposure of Sensitive Information to an Unauthorized Actor)\nSNMP-Reply includes SSID Password in cleartext leading to exposure of sensitive information to an unauthorized user.\nCVE-2022-22278 - Allocation of Resources Without Limits or Throttling Can Potentially Result in HTTP DoS via CFS\nSeverity 5.3 Medium CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L (CWE-770 - Allocation of Resources Without Limits or Throttling)\nCFS (Content filtering service) in SonicOS returns a large 403 forbidden HTTP response message to the source address when users try to access resources prohibited by CFS feature which allows an attacker to cause an HTTP DoS attack .",
@@ -2001,6 +2511,7 @@
         "CVE-2021-20051"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall Global VPN Client 4.10.7 installer (32-bit and 64-bit) and earlier have a DLL Search Order Hijacking vulnerability in one of the installer components. Successful exploitation via a local attacker could result in command execution in the target system.",
@@ -2020,7 +2531,8 @@
         "CVE-2022-22279"
       ],
       "products": [],
-      "exploitation_status": "exploited",
+      "product_status": [],
+      "exploitation_status": "unknown",
       "findings": [],
       "summary": "NOTE: SonicWall PSIRT has continued to observe threat actors targeting EOL SRA devices (i.e., CVE-2021-20028), active exploitation of this vulnerability is likely in chained attacks leveraging CVE-2021-20028.\nThrough SonicWall PSIRT Threat Intelligence gathering, SonicWall has become aware of a ‘Post Authentication Arbitrary File Read’ vulnerability impacting end-of-life Secure Remote Access (SRA) series products, specifically appliances running all 8.x or 9.0.0.5-19sv and earlier versions. And Secure Mobile Access (SMA) 100 series products running old firmware 9.0.0.9-26sv and earlier versions.\nIn February 2021, SonicWall released SMA firmware 10.2.0.7 and 9.0.0.10 to fix a zero-day vulnerability , along with additional comprehensive code-strengthening. This strengthening proactively prevented this newly reported vulnerability in versions 9.0.0.10 and later.\n- - Organizations that previously upgraded to the 9.0.0.10 firmware or later are already protected against this newly reported issue and no action is required.\n- - Organizations with any 10.x versions are not impacted by this vulnerability as the vulnerable feature was deprecated in the 10.x release.\n- - Organizations running any firmware versions of 8.x or older than 9.0.0.10 or 10.2.0.7 should, per our earlier instructions, upgrade immediately. These older versions may potentially be exploited if not patched immediately.\nIMPORTANT: SMA 1000 series products are not affected by this vulnerability.",
       "categories": []
@@ -2038,7 +2550,335 @@
         "CVE-2022-22963",
         "CVE-2022-22965"
       ],
-      "products": [],
+      "products": [
+        "Hosted Email Security",
+        "On-Premise Email Security",
+        "NSM SaaS",
+        "NSM On-Premise",
+        "TZ100/W",
+        "TZ200/W",
+        "TZ210/W",
+        "NSA 220",
+        "NSA W",
+        "NSA 250M",
+        "NSA 250M-W",
+        "NSA 2400",
+        "NSA MX",
+        "NSA 3500",
+        "NSA 4500",
+        "NSA 5500",
+        "NSA E5500",
+        "NSA 6500",
+        "NSA 8500",
+        "NSA 8510",
+        "TZ300/W",
+        "TZ350/W",
+        "TZ400/W",
+        "TZ500/W",
+        "TZ600",
+        "NSA 2600",
+        "NSA 2650",
+        "NSA 3600",
+        "NSA 3650",
+        "NSA 4600",
+        "NSA 4650",
+        "NSA 5600",
+        "NSA 5650",
+        "NSA 6600",
+        "NSA 6650",
+        "SM 9200",
+        "SM 9400",
+        "SM 9600",
+        "SM 9800",
+        "NSA 9250",
+        "NSA 9450",
+        "NSA 9650",
+        "NSSP 12400",
+        "NSSP 12800",
+        "NSV 10",
+        "NSV 25",
+        "NSV 50",
+        "NSV 100",
+        "NSV 200",
+        "NSV 400",
+        "NSV 800",
+        "NSV 1600",
+        "TZ270/W",
+        "TZ370/W",
+        "TZ470/W",
+        "TZ570/W",
+        "TZ670",
+        "NSA 2700",
+        "NSA 3700",
+        "NSA 4700",
+        "NSA 5700",
+        "NSA 6700",
+        "NSSP 10700",
+        "NSSP 11700",
+        "NSSP 13700",
+        "NSSP 15700",
+        "NSV 270",
+        "NSV 470",
+        "NSV 870",
+        "SWS 12-8",
+        "SWS 12-8POE",
+        "SWS 12-10FPOE",
+        "SWS 14-24",
+        "SWS 14-24FPOE",
+        "SWS 14-48",
+        "SWS 14-48FPOE",
+        "SMA 200",
+        "SMA 210",
+        "SMA 400",
+        "SMA 410",
+        "SMA 500v",
+        "SMA 6200",
+        "SMA 7200",
+        "SMA 6210",
+        "SMA 7210",
+        "SMA 8200v",
+        "SRA EX 7000",
+        "WXA 2000",
+        "WXA 4000",
+        "WXA 5000",
+        "WXA 500",
+        "WXA 6000"
+      ],
+      "product_status": [
+        {
+          "family": "Email Security",
+          "products": [
+            "Hosted Email Security",
+            "On-Premise Email Security"
+          ],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the Email Security appliance."
+        },
+        {
+          "family": "NSM",
+          "products": [
+            "NSM SaaS",
+            "NSM On-Premise"
+          ],
+          "status": "Not Impacted",
+          "description": "NSM is not using the vulnerable Spring Framework components and is not impacted."
+        },
+        {
+          "family": "WAF",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the WAF appliance."
+        },
+        {
+          "family": "Gen5 Firewalls (EOS)",
+          "products": [
+            "TZ100/W",
+            "TZ200/W",
+            "TZ210/W",
+            "NSA 220",
+            "NSA W",
+            "NSA 250M",
+            "NSA 250M-W",
+            "NSA 2400",
+            "NSA MX",
+            "NSA 3500",
+            "NSA 4500",
+            "NSA 5500",
+            "NSA E5500",
+            "NSA 6500",
+            "NSA 8500",
+            "NSA 8510"
+          ],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the Gen5 appliance."
+        },
+        {
+          "family": "Gen6 Firewalls",
+          "products": [
+            "TZ300/W",
+            "TZ350/W",
+            "TZ400/W",
+            "TZ500/W",
+            "TZ600",
+            "NSA 2600",
+            "NSA 2650",
+            "NSA 3600",
+            "NSA 3650",
+            "NSA 4600",
+            "NSA 4650",
+            "NSA 5600",
+            "NSA 5650",
+            "NSA 6600",
+            "NSA 6650",
+            "SM 9200",
+            "SM 9400",
+            "SM 9600",
+            "SM 9800",
+            "NSA 9250",
+            "NSA 9450",
+            "NSA 9650",
+            "NSSP 12400",
+            "NSSP 12800",
+            "NSV 10",
+            "NSV 25",
+            "NSV 50",
+            "NSV 100",
+            "NSV 200",
+            "NSV 400",
+            "NSV 800",
+            "NSV 1600"
+          ],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the Gen6 appliance."
+        },
+        {
+          "family": "Gen7 Firewalls",
+          "products": [
+            "TZ270/W",
+            "TZ370/W",
+            "TZ470/W",
+            "TZ570/W",
+            "TZ670",
+            "NSA 2700",
+            "NSA 3700",
+            "NSA 4700",
+            "NSA 5700",
+            "NSA 6700",
+            "NSSP 10700",
+            "NSSP 11700",
+            "NSSP 13700",
+            "NSSP 15700",
+            "NSV 270",
+            "NSV 470",
+            "NSV 870"
+          ],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the Gen7 appliance."
+        },
+        {
+          "family": "SonicWall Switch",
+          "products": [
+            "SWS 12-8",
+            "SWS 12-8POE",
+            "SWS 12-10FPOE",
+            "SWS 14-24",
+            "SWS 14-24FPOE",
+            "SWS 14-48",
+            "SWS 14-48FPOE"
+          ],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the SonicWall Switch."
+        },
+        {
+          "family": "SMA 100",
+          "products": [
+            "SMA 200",
+            "SMA 210",
+            "SMA 400",
+            "SMA 410",
+            "SMA 500v"
+          ],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the SMA100 appliance."
+        },
+        {
+          "family": "SMA 1000",
+          "products": [
+            "SMA 6200",
+            "SMA 7200",
+            "SMA 6210",
+            "SMA 7210",
+            "SMA 8200v",
+            "SRA EX 7000"
+          ],
+          "status": "Not Impacted",
+          "description": "SMA1000 is not using the vulnerable Spring Framework components and is not impacted. ."
+        },
+        {
+          "family": "MSW",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the MSW."
+        },
+        {
+          "family": "Analyzer",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the Analyzer."
+        },
+        {
+          "family": "GMS",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the GMS."
+        },
+        {
+          "family": "Capture Client & Capture Client Portal",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the Capture Client & Capture Client Portal."
+        },
+        {
+          "family": "CAS",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the CAS."
+        },
+        {
+          "family": "Access Points",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the SonicWall Access Points."
+        },
+        {
+          "family": "WNM",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the WNM."
+        },
+        {
+          "family": "Capture Security Appliance",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the appliance."
+        },
+        {
+          "family": "WXA",
+          "products": [
+            "WXA 2000",
+            "WXA 4000",
+            "WXA 5000",
+            "WXA 500",
+            "WXA 6000"
+          ],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the appliance."
+        },
+        {
+          "family": "CSCMA",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the appliance."
+        },
+        {
+          "family": "EPRS",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the EPRS."
+        },
+        {
+          "family": "Cloud Edge",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the Cloud Edge."
+        },
+        {
+          "family": "Analytics",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Spring framework is not used in the Analytics. CVE: CVE-2022-22963, CVE-2022-22965 Last updated: April 2, 2022, 6:13 p.m."
+        }
+      ],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall PSIRT is tracking two critical vulnerabilities impacting the Spring Framework. This advisory is intended to address both.\n1) CVE-2022-22963 : Remote code execution in Spring Cloud Function by malicious Spring Expression\nIn Spring Cloud Function versions 3.1.6, 3.2.2 and older unsupported versions, when using routing functionality it is possible for a user to provide a specially crafted SpEL as a routing-expression that may result in remote code execution and access to local resources.\n2) CVE-2022-22965 : Remote code execution in Spring Framework via Data Binding on JDK9+\nA Spring MVC or Spring WebFlux application running on JDK 9+ may be vulnerable to remote code execution (RCE) via data binding. The specific exploit requires the application to run on Tomcat as a WAR deployment. If the application is deployed as a Spring Boot executable jar, i.e. the default, it is not vulnerable to the exploit. However, the nature of the vulnerability is more general, and there may be other ways to exploit it.\nSonicWall Product (Appliance/Cloud/Virtual/OnPrem)\nStatus\nDescription\nEmail Security\n- Hosted Email Security (HES)\n- On-Premise Email Security\nNot Impacted\nSpring framework is not used in the Email Security appliance.\nNSM\n- NSM SaaS\n- NSM On-Premise\nNot Impacted\nNSM is not using the vulnerable Spring Framework components and is not impacted.\nWAF\nNot Impacted\nSpring framework is not used in the WAF appliance.\nGen5 Firewalls (EOS)\n- TZ100/W\n- TZ200/W\n- TZ210/W\n- NSA 220/W\n- NSA 250M/250M-W\n- NSA 2400/MX/3500/4500/5500\n- NSA E5500/6500/6500/8500/8510\nNot Impacted\nSpring framework is not used in the Gen5 appliance.\nGen6 Firewalls\n- TZ300/W; TZ350/W\n- TZ400/W\n- TZ500/W\n- TZ600\n- NSA 2600/2650/3600/3650/4600\n/4650/5600/5650/6600/6650\n- SM 9200/9400/9600/9800\n- NSa 9250/9450/9650\n- NSSP 12400/12800\n- NSV 10/25/50/100/200/400/800/1600 (ESX, KVM, HYPER-V, AWS, Azure)\nNot Impacted\nSpring framework is not used in the Gen6 appliance.\nGen7 Firewalls\n- TZ270/W\n- TZ370/W\n- TZ470/W\n- TZ570/W\n- TZ670\n- NSA 2700/3700/4700/5700/6700\n- NSSP 10700/11700/13700/15700\n- NSV 270/470/870 (ESX, KVM, HYPER-V, AWS, Azure)\nNot Impacted\nSpring framework is not used in the Gen7 appliance.\nSonicWall Switch\n- SWS 12-8/12-8POE\n- SWS 12-10FPOE\n- SWS 14-24/14-24FPOE\n- SWS 14-48/14-48FPOE\nNot Impacted\nSpring framework is not used in the SonicWall Switch.\nSMA 100\n- SMA 200/210/400/410\n- SMA 500v (ESX, KVM, Hyper-V, AWS, Azure)\nNot Impacted\nSpring framework is not used in the SMA100 appliance.\nSMA 1000\n- SMA 6200/7200/6210/7210\n- SMA 8200v (ESX, KVM, Hyper-V, AWS, Azure)\n- SRA EX 7000\nNot Impacted\nSMA1000 is not using the vulnerable Spring Framework components and is not impacted. .\nMSW\nNot Impacted\nSpring framework is not used in the MSW.\nAnalyzer\nNot Impacted\nSpring framework is not used in the Analyzer.\nGMS\nNot Impacted\nSpring framework is not used in the GMS.\nCapture Client & Capture Client Portal\nNot Impacted\nSpring framework is not used in the Capture Client & Capture Client Portal.\nCAS\nNot Impacted\nSpring framework is not used in the CAS.\nAccess Points\nNot Impacted\nSpring framework is not used in the SonicWall Access Points.\nWNM\nNot Impacted\nSpring framework is not used in the WNM.\nCapture Security Appliance\nNot Impacted\nSpring framework is not used in the appliance.\nWXA\n- WXA 2000/4000\n- Virtual: WXA 5000\n- Software: WXA 500, WXA 6000\nNot Impacted\nSpring framework is not used in the appliance.\nCSCMA\nNot Impacted\nSpring framework is not used in the appliance.\nEPRS\nNot Impacted\nSpring framework is not used in the EPRS.\nCloud Edge\nNot Impacted\nSpring framework is not used in the Cloud Edge.\nAnalytics\nNot Impacted\nSpring framework is not used in the Analytics.",
@@ -2057,7 +2897,8 @@
         "CVE-2022-22274"
       ],
       "products": [],
-      "exploitation_status": "exploited",
+      "product_status": [],
+      "exploitation_status": "no_evidence",
       "findings": [],
       "summary": "A Stack-based buffer overflow vulnerability in the SonicOS via HTTP request allows a remote unauthenticated attacker to cause Denial of Service (DoS) or potentially results in code execution in the firewall.\nSonicWall PSIRT is not aware of active exploitation in the wild. No reports of a PoC have been made public and malicious use of this vulnerability has not been reported to SonicWall.\nAnd SonicWall strongly urges organizations using impacted SonicWall firewalls listed below to follow the provided guidance.\nNOTE: This vulnerability ONLY impacts the \"web management\" interface, the SonicOS SSLVPN interface is not impacted.",
       "categories": []
@@ -2075,6 +2916,7 @@
         "CVE-2022-0778"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability CVE-2022-0778 was found in OpenSSL that allows to trigger an infinite loop by crafting a certificate that has invalid elliptic curve parameters. Since certificate parsing happens before verification of the certificate signature, any process that parses an externally supplied certificate leads to a DoS (Denial of service) attack.\nSonicWall is investigating its product line to determine which products and cloud services may be affected by this vulnerability.",
@@ -2094,7 +2936,8 @@
         "CVE-2022-22273"
       ],
       "products": [],
-      "exploitation_status": "exploited",
+      "product_status": [],
+      "exploitation_status": "unknown",
       "findings": [],
       "summary": "NOTE: SonicWall PSIRT has observed threat actors targeting EOL SRA devices (CVE-2021-20028), and active exploitation of this vulnerability is likely.\nSonicWall is aware of a ‘Post Authentication OS Command Injection’ vulnerability, reported by Compass Security, impacting end-of-life Secure Remote Access (SRA) series products, specifically appliances running all 8.x or 9.0.0.5-19sv and earlier versions. A nd Secure Mobile Access (SMA) 100 series products running old firmware 9.0.0.9-26sv and earlier versions.\nIn February 2021, SonicWall released SMA firmware 10.2.0.7 and 9.0.0.10 to fix a zero-day vulnerability , along with additional comprehensive code-strengthening. This strengthening proactively prevented this newly reported vulnerability in versions 9.0.0.10 and later.\n- - Organizations that previously upgraded to the 9.0.0.10 firmware or later are already protected against this newly reported issue and no action is required.\n- - Organizations with any 10.x versions are not impacted by this vulnerability as the vulnerable feature was deprecated in the 10.x release.\n- - Organizations running any firmware versions of 8.x or older than 9.0.0.10 or 10.2.0.7 should, per our earlier instructions, upgrade immediately. These older versions may potentially be exploited if not patched immediately.\nIMPORTANT: SMA 1000 series products are not affected by this vulnerability.",
       "categories": []
@@ -2110,6 +2953,7 @@
       "severity": null,
       "cves": [],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A Null pointer exception bug in Net-SNMP vendor (5.9.0 and earlier) packet allows a remote authenticated attacker to cause SMA1000 SNMP Denial of Service (DoS) by an insufficient check of null pointer.\nCVE: N/A\nLast updated: Feb. 7, 2022, 6:09 p.m.",
@@ -2128,6 +2972,7 @@
         "CVE-2021-20048"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A Stack-based buffer overflow in the SonicOS SessionID HTTP response header allows a remote authenticated attacker to cause Denial of Service (DoS) and potentially results in code execution in the firewall. This vulnerability affected SonicOS Gen 6 and Gen 7 firmware versions.",
@@ -2146,6 +2991,7 @@
         "CVE-2021-20046"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A Stack-based buffer overflow in the SonicOS HTTP Content-Length response header allows a remote authenticated attacker to cause Denial of Service (DoS) and potentially results in code execution in the firewall. This vulnerability affected SonicOS Gen 6 and Gen 7 firmware versions.",
@@ -2164,7 +3010,335 @@
         "CVE-2021-44228",
         "CVE-2021-4104"
       ],
-      "products": [],
+      "products": [
+        "NSM SaaS",
+        "NSM On-Premise",
+        "SMA 6200",
+        "SMA 7200",
+        "SMA 6210",
+        "SMA 7210",
+        "SMA 8200v",
+        "SRA EX 7000",
+        "WXA 2000",
+        "WXA 4000",
+        "WXA 5000",
+        "WXA 500",
+        "WXA 6000",
+        "Hosted Email Security",
+        "On-Premise Email Security",
+        "TZ100/W",
+        "TZ200/W",
+        "TZ210/W",
+        "NSA 220",
+        "NSA W",
+        "NSA 250M",
+        "NSA 250M-W",
+        "NSA 2400",
+        "NSA MX",
+        "NSA 3500",
+        "NSA 4500",
+        "NSA 5500",
+        "NSA E5500",
+        "NSA 6500",
+        "NSA 8500",
+        "NSA 8510",
+        "TZ300/W",
+        "TZ350/W",
+        "TZ400/W",
+        "TZ500/W",
+        "TZ600",
+        "NSA 2600",
+        "NSA 2650",
+        "NSA 3600",
+        "NSA 3650",
+        "NSA 4600",
+        "NSA 4650",
+        "NSA 5600",
+        "NSA 5650",
+        "NSA 6600",
+        "NSA 6650",
+        "SM 9200",
+        "SM 9400",
+        "SM 9600",
+        "SM 9800",
+        "NSA 9250",
+        "NSA 9450",
+        "NSA 9650",
+        "NSSP 12400",
+        "NSSP 12800",
+        "NSV 10",
+        "NSV 25",
+        "NSV 50",
+        "NSV 100",
+        "NSV 200",
+        "NSV 400",
+        "NSV 800",
+        "NSV 1600",
+        "TZ270/W",
+        "TZ370/W",
+        "TZ470/W",
+        "TZ570/W",
+        "TZ670",
+        "NSA 2700",
+        "NSA 3700",
+        "NSA 4700",
+        "NSA 5700",
+        "NSA 6700",
+        "NSSP 10700",
+        "NSSP 11700",
+        "NSSP 13700",
+        "NSSP 15700",
+        "NSV 270",
+        "NSV 470",
+        "NSV 870",
+        "SWS 12-8",
+        "SWS 12-8POE",
+        "SWS 12-10FPOE",
+        "SWS 14-24",
+        "SWS 14-24FPOE",
+        "SWS 14-48",
+        "SWS 14-48FPOE",
+        "SMA 200",
+        "SMA 210",
+        "SMA 400",
+        "SMA 410",
+        "SMA 500v"
+      ],
+      "product_status": [
+        {
+          "family": "SonicWall Product (Appliance/Cloud/Virtual/OnPrem)",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Vulnerable Component \"JMSAppender\" of log4j version 1.x is not used."
+        },
+        {
+          "family": "Analytics",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Vulnerable Component \"JMSAppender\" of log4j version 1.x is not used."
+        },
+        {
+          "family": "GMS",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Vulnerable Component \"JMSAppender\" of log4j version 1.x is not used."
+        },
+        {
+          "family": "CSCMA",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Vulnerable Component \"JMSAppender\" of log4j version 1.x is not used."
+        },
+        {
+          "family": "EPRS",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Vulnerable Component \"JMSAppender\" of log4j version 1.x is not used."
+        },
+        {
+          "family": "Cloud Edge",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Vulnerable Component \"JMSAppender\" of log4j version 1.x is not used."
+        },
+        {
+          "family": "NSM",
+          "products": [
+            "NSM SaaS",
+            "NSM On-Premise"
+          ],
+          "status": "Not Impacted",
+          "description": "Vulnerable Component \"JMSAppender\" of log4j version 1.x is not used."
+        },
+        {
+          "family": "SMA 1000",
+          "products": [
+            "SMA 6200",
+            "SMA 7200",
+            "SMA 6210",
+            "SMA 7210",
+            "SMA 8200v",
+            "SRA EX 7000"
+          ],
+          "status": "Not Impacted",
+          "description": "Vulnerable Component \"JMSAppender\" of log4j version 1.x is not used."
+        },
+        {
+          "family": "WXA",
+          "products": [
+            "WXA 2000",
+            "WXA 4000",
+            "WXA 5000",
+            "WXA 500",
+            "WXA 6000"
+          ],
+          "status": "Not Impacted",
+          "description": "Vulnerable Component \"JMSAppender\" of log4j version 1.x is not used."
+        },
+        {
+          "family": "WAF",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "WAF 2.x and earlier versions do not use Log4j and are not impacted. WAF3.x is not using Log4j 1.x and is not impacted."
+        },
+        {
+          "family": "Email Security",
+          "products": [
+            "Hosted Email Security",
+            "On-Premise Email Security"
+          ],
+          "status": "Not Applicable",
+          "description": "Log4j 1.x not used in the Email Security."
+        },
+        {
+          "family": "Gen5 Firewalls (EOS)",
+          "products": [
+            "TZ100/W",
+            "TZ200/W",
+            "TZ210/W",
+            "NSA 220",
+            "NSA W",
+            "NSA 250M",
+            "NSA 250M-W",
+            "NSA 2400",
+            "NSA MX",
+            "NSA 3500",
+            "NSA 4500",
+            "NSA 5500",
+            "NSA E5500",
+            "NSA 6500",
+            "NSA 8500",
+            "NSA 8510"
+          ],
+          "status": "Not Applicable",
+          "description": "Log4j not used in the Gen5 appliances."
+        },
+        {
+          "family": "Gen6 Firewalls",
+          "products": [
+            "TZ300/W",
+            "TZ350/W",
+            "TZ400/W",
+            "TZ500/W",
+            "TZ600",
+            "NSA 2600",
+            "NSA 2650",
+            "NSA 3600",
+            "NSA 3650",
+            "NSA 4600",
+            "NSA 4650",
+            "NSA 5600",
+            "NSA 5650",
+            "NSA 6600",
+            "NSA 6650",
+            "SM 9200",
+            "SM 9400",
+            "SM 9600",
+            "SM 9800",
+            "NSA 9250",
+            "NSA 9450",
+            "NSA 9650",
+            "NSSP 12400",
+            "NSSP 12800",
+            "NSV 10",
+            "NSV 25",
+            "NSV 50",
+            "NSV 100",
+            "NSV 200",
+            "NSV 400",
+            "NSV 800",
+            "NSV 1600"
+          ],
+          "status": "Not Applicable",
+          "description": "Log4j not used in the Gen6 appliances."
+        },
+        {
+          "family": "Gen7 Firewalls",
+          "products": [
+            "TZ270/W",
+            "TZ370/W",
+            "TZ470/W",
+            "TZ570/W",
+            "TZ670",
+            "NSA 2700",
+            "NSA 3700",
+            "NSA 4700",
+            "NSA 5700",
+            "NSA 6700",
+            "NSSP 10700",
+            "NSSP 11700",
+            "NSSP 13700",
+            "NSSP 15700",
+            "NSV 270",
+            "NSV 470",
+            "NSV 870"
+          ],
+          "status": "Not Applicable",
+          "description": "Log4j not used in the Gen7 appliances."
+        },
+        {
+          "family": "SonicWall Switch",
+          "products": [
+            "SWS 12-8",
+            "SWS 12-8POE",
+            "SWS 12-10FPOE",
+            "SWS 14-24",
+            "SWS 14-24FPOE",
+            "SWS 14-48",
+            "SWS 14-48FPOE"
+          ],
+          "status": "Not Applicable",
+          "description": "Log4j not used in the SonicWall Switch."
+        },
+        {
+          "family": "SMA 100",
+          "products": [
+            "SMA 200",
+            "SMA 210",
+            "SMA 400",
+            "SMA 410",
+            "SMA 500v"
+          ],
+          "status": "Not Applicable",
+          "description": "Log4j not used in the SMA100 appliances."
+        },
+        {
+          "family": "MSW",
+          "products": [],
+          "status": "Not Applicable",
+          "description": "Log4j not used in the Mysonicwall service."
+        },
+        {
+          "family": "Capture Client & Capture Client Portal",
+          "products": [],
+          "status": "Not Applicable",
+          "description": "Log4j not used in the Capture Client."
+        },
+        {
+          "family": "CAS",
+          "products": [],
+          "status": "Not Applicable",
+          "description": "Log4j not used in the CAS."
+        },
+        {
+          "family": "Access Points",
+          "products": [],
+          "status": "Not Applicable",
+          "description": "Log4j not used in the SonicWall Access Points."
+        },
+        {
+          "family": "WNM",
+          "products": [],
+          "status": "Not Applicable",
+          "description": "Log4j not used in the WNM."
+        },
+        {
+          "family": "Capture Security Appliance",
+          "products": [],
+          "status": "Not Applicable",
+          "description": "Log4j not used in the Capture Security appliance. CVE: CVE-2021-4104 Last updated: Feb. 4, 2022, 8:59 p.m."
+        }
+      ],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "JMSAppender in Log4j 1.2 is vulnerable to deserialization of untrusted data when the attacker has write access to the Log4j configuration. The attacker can provide TopicBindingName and TopicConnectionFactoryBindingName configurations causing JMSAppender to perform JNDI requests that result in remote code execution in a similar fashion to CVE-2021-44228. Note this issue only affects Log4j 1.2 when specifically configured to use JMSAppender, which is not the default.\nThis table will cover the Apache Log4j 1.2 vulnerability impacting the SonicWall products.\nSonicWall Product (Appliance/Cloud/Virtual/OnPrem)\nStatus\nDescription\nAnalyzer\nNot Impacted\nVulnerable Component \"JMSAppender\" of log4j version 1.x is not used.\nAnalytics\nNot Impacted\nVulnerable Component \"JMSAppender\" of log4j version 1.x is not used.\nGMS\nNot Impacted\nVulnerable Component \"JMSAppender\" of log4j version 1.x is not used.\nCSCMA\nNot Impacted\nVulnerable Component \"JMSAppender\" of log4j version 1.x is not used.\nEPRS\nNot Impacted\nVulnerable Component \"JMSAppender\" of log4j version 1.x is not used.\nCloud Edge\nNot Impacted\nVulnerable Component \"JMSAppender\" of log4j version 1.x is not used.\nNSM\n- NSM SaaS\n- NSM On-Premise\nNot Impacted\nVulnerable Component \"JMSAppender\" of log4j version 1.x is not used.\nSMA 1000\n- SMA 6200/7200/6210/7210\n- SMA 8200v (ESX, KVM, Hyper-V, AWS, Azure)\n- SRA EX 7000\nNot Impacted\nVulnerable Component \"JMSAppender\" of log4j version 1.x is not used.\nWXA\n- WXA 2000/4000\n- Virtual: WXA 5000\n- Software: WXA 500, WXA 6000\nNot Impacted\nVulnerable Component \"JMSAppender\" of log4j version 1.x is not used.\nWAF\nNot Impacted\nWAF 2.x and earlier versions do not use Log4j and are not impacted.\nWAF3.x is not using Log4j 1.x and is not impacted.\nEmail Security\n- Hosted Email Security (HES)\n- On-Premise Email Security\nNot Applicable\nLog4j 1.x not used in the Email Security.\nGen5 Firewalls (EOS)\n- TZ100/W\n- TZ200/W\n- TZ210/W\n- NSA 220/W\n- NSA 250M/250M-W\n- NSA 2400/MX/3500/4500/5500\n- NSA E5500/6500/6500/8500/8510\nNot Applicable\nLog4j not used in the Gen5 appliances.\nGen6 Firewalls\n- TZ300/W; TZ350/W\n- TZ400/W\n- TZ500/W\n- TZ600\n- NSA 2600/2650/3600/3650/4600\n/4650/5600/5650/6600/6650\n- SM 9200/9400/9600/9800\n- NSa 9250/9450/9650\n- NSSP 12400/12800\n- NSV 10/25/50/100/200/400/800/1600 (ESX, KVM, HYPER-V, AWS, Azure)\nNot Applicable\nLog4j not used in the Gen6 appliances.\nGen7 Firewalls\n- TZ270/W\n- TZ370/W\n- TZ470/W\n- TZ570/W\n- TZ670\n- NSA 2700/3700/4700/5700/6700\n- NSSP 10700/11700/13700/15700\n- NSV 270/470/870 (ESX, KVM, HYPER-V, AWS, Azure)\nNot Applicable\nLog4j not used in the Gen7 appliances.\nSonicWall Switch\n- SWS 12-8/12-8POE\n- SWS 12-10FPOE\n- SWS 14-24/14-24FPOE\n- SWS 14-48/14-48FPOE\nNot Applicable\nLog4j not used in the SonicWall Switch.\nSMA 100\n- SMA 200/210/400/410\n- SMA 500v (ESX, KVM, Hyper-V, AWS, Azure)\nNot Applicable\nLog4j not used in the SMA100 appliances.\nMSW\nNot Applicable\nLog4j not used in the Mysonicwall service.\nCapture Client & Capture Client Portal\nNot Applicable\nLog4j not used in the Capture Client.\nCAS\nNot Applicable\nLog4j not used in the CAS.\nAccess Points\nNot Applicable\nLog4j not used in the SonicWall Access Points.\nWNM\nNot Applicable\nLog4j not used in the WNM.\nCapture Security Appliance\nNot Applicable\nLog4j not used in the Capture Security appliance.",
@@ -2183,6 +3357,7 @@
         "CVE-2021-20050"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "no_evidence",
       "findings": [],
       "summary": "An Improper Access Control Vulnerability in the SMA100 series leads to multiple restricted management APIs being accessible without a user login, potentially exposing configuration meta-data.\nIMPORTANT: There is no evidence that these vulnerabilities are being exploited in the wild.",
@@ -2201,6 +3376,7 @@
         "CVE-2021-20049"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in SonicWall SMA100 password change API allows a remote unauthenticated attacker to perform SMA100 username enumeration based on the server responses. This vulnerability affected 10.2.1.2-24sv, 10.2.0.8-37sv and earlier 10.x versions.",
@@ -2221,7 +3397,335 @@
         "CVE-2021-45105",
         "CVE-2021-44832"
       ],
-      "products": [],
+      "products": [
+        "Hosted Email Security",
+        "On-Premise Email Security",
+        "NSM SaaS",
+        "NSM On-Premise",
+        "TZ100/W",
+        "TZ200/W",
+        "TZ210/W",
+        "NSA 220",
+        "NSA W",
+        "NSA 250M",
+        "NSA 250M-W",
+        "NSA 2400",
+        "NSA MX",
+        "NSA 3500",
+        "NSA 4500",
+        "NSA 5500",
+        "NSA E5500",
+        "NSA 6500",
+        "NSA 8500",
+        "NSA 8510",
+        "TZ300/W",
+        "TZ350/W",
+        "TZ400/W",
+        "TZ500/W",
+        "TZ600",
+        "NSA 2600",
+        "NSA 2650",
+        "NSA 3600",
+        "NSA 3650",
+        "NSA 4600",
+        "NSA 4650",
+        "NSA 5600",
+        "NSA 5650",
+        "NSA 6600",
+        "NSA 6650",
+        "SM 9200",
+        "SM 9400",
+        "SM 9600",
+        "SM 9800",
+        "NSA 9250",
+        "NSA 9450",
+        "NSA 9650",
+        "NSSP 12400",
+        "NSSP 12800",
+        "NSV 10",
+        "NSV 25",
+        "NSV 50",
+        "NSV 100",
+        "NSV 200",
+        "NSV 400",
+        "NSV 800",
+        "NSV 1600",
+        "TZ270/W",
+        "TZ370/W",
+        "TZ470/W",
+        "TZ570/W",
+        "TZ670",
+        "NSA 2700",
+        "NSA 3700",
+        "NSA 4700",
+        "NSA 5700",
+        "NSA 6700",
+        "NSSP 10700",
+        "NSSP 11700",
+        "NSSP 13700",
+        "NSSP 15700",
+        "NSV 270",
+        "NSV 470",
+        "NSV 870",
+        "SWS 12-8",
+        "SWS 12-8POE",
+        "SWS 12-10FPOE",
+        "SWS 14-24",
+        "SWS 14-24FPOE",
+        "SWS 14-48",
+        "SWS 14-48FPOE",
+        "SMA 200",
+        "SMA 210",
+        "SMA 400",
+        "SMA 410",
+        "SMA 500v",
+        "SMA 6200",
+        "SMA 7200",
+        "SMA 6210",
+        "SMA 7210",
+        "SMA 8200v",
+        "SRA EX 7000",
+        "WXA 2000",
+        "WXA 4000",
+        "WXA 5000",
+        "WXA 500",
+        "WXA 6000"
+      ],
+      "product_status": [
+        {
+          "family": "Email Security",
+          "products": [
+            "Hosted Email Security",
+            "On-Premise Email Security"
+          ],
+          "status": "Impacted",
+          "description": "Log4j 2.17.0: A new ES HotFix 10.0.13 is available for download remediating CVE-2021-44228, CVE-2021-45046 and CVE-2021-45105. Hosted Email Security (HES) has been automatically patched and no action is required by customers. Log4j 2.17.1: SonicWall performed a comprehensive analysis of Email Security resulting in no observable attack vectors for CVE-2021-44832. To remove known or potential risk from customer environments, SonicWall is working to publish an upgraded Email Security patch out of an abundance of caution to include the latest Log4j 2.17.1 version."
+        },
+        {
+          "family": "NSM",
+          "products": [
+            "NSM SaaS",
+            "NSM On-Premise"
+          ],
+          "status": "Impacted",
+          "description": "Log4j 2.17.0: NSM On-Prem HotFix 2.3.2-R12-H2 is available for download with log4j 2.17.0 remediating CVE-2021-44228, CVE-2021-45046 and CVE-2021-45105. Log4j 2.17.1: NSM SaaS 2.3.2-H8 has been automatically patched with log4j 2.17.1 and no action is required by customers. SonicWall performed a comprehensive analysis of NSM that resulted in no observable attack vectors for CVE-2021-44832. To remove known or potential risk from customer environments, SonicWall is working to publish an upgraded NSM (On-Prem) firmware out of an abundance of caution to include the latest Log4j 2.17.1 version."
+        },
+        {
+          "family": "WAF",
+          "products": [],
+          "status": "Partially Impacted",
+          "description": "WAF 3.x uses Log4j, but only when the legacy ‘Cloud Management’ feature is enabled. SonicWall recommends customers disable 'Cloud Management' if enabled. This change will not impact functionality. This feature is disabled by default. WAF 2.x and earlier versions don't use Log4j and are not impacted.."
+        },
+        {
+          "family": "Gen5 Firewalls (EOS)",
+          "products": [
+            "TZ100/W",
+            "TZ200/W",
+            "TZ210/W",
+            "NSA 220",
+            "NSA W",
+            "NSA 250M",
+            "NSA 250M-W",
+            "NSA 2400",
+            "NSA MX",
+            "NSA 3500",
+            "NSA 4500",
+            "NSA 5500",
+            "NSA E5500",
+            "NSA 6500",
+            "NSA 8500",
+            "NSA 8510"
+          ],
+          "status": "Not Impacted",
+          "description": "Log4j2 not used in the appliance."
+        },
+        {
+          "family": "Gen6 Firewalls",
+          "products": [
+            "TZ300/W",
+            "TZ350/W",
+            "TZ400/W",
+            "TZ500/W",
+            "TZ600",
+            "NSA 2600",
+            "NSA 2650",
+            "NSA 3600",
+            "NSA 3650",
+            "NSA 4600",
+            "NSA 4650",
+            "NSA 5600",
+            "NSA 5650",
+            "NSA 6600",
+            "NSA 6650",
+            "SM 9200",
+            "SM 9400",
+            "SM 9600",
+            "SM 9800",
+            "NSA 9250",
+            "NSA 9450",
+            "NSA 9650",
+            "NSSP 12400",
+            "NSSP 12800",
+            "NSV 10",
+            "NSV 25",
+            "NSV 50",
+            "NSV 100",
+            "NSV 200",
+            "NSV 400",
+            "NSV 800",
+            "NSV 1600"
+          ],
+          "status": "Not Impacted",
+          "description": "Log4j2 not used in the appliance."
+        },
+        {
+          "family": "Gen7 Firewalls",
+          "products": [
+            "TZ270/W",
+            "TZ370/W",
+            "TZ470/W",
+            "TZ570/W",
+            "TZ670",
+            "NSA 2700",
+            "NSA 3700",
+            "NSA 4700",
+            "NSA 5700",
+            "NSA 6700",
+            "NSSP 10700",
+            "NSSP 11700",
+            "NSSP 13700",
+            "NSSP 15700",
+            "NSV 270",
+            "NSV 470",
+            "NSV 870"
+          ],
+          "status": "Not Impacted",
+          "description": "Log4j2 not used in the appliance."
+        },
+        {
+          "family": "SonicWall Switch",
+          "products": [
+            "SWS 12-8",
+            "SWS 12-8POE",
+            "SWS 12-10FPOE",
+            "SWS 14-24",
+            "SWS 14-24FPOE",
+            "SWS 14-48",
+            "SWS 14-48FPOE"
+          ],
+          "status": "Not Impacted",
+          "description": "Log4j2 not used in the SonicWall Switch."
+        },
+        {
+          "family": "SMA 100",
+          "products": [
+            "SMA 200",
+            "SMA 210",
+            "SMA 400",
+            "SMA 410",
+            "SMA 500v"
+          ],
+          "status": "Not Impacted",
+          "description": "Log4j2 not used in the SMA100 appliance."
+        },
+        {
+          "family": "SMA 1000",
+          "products": [
+            "SMA 6200",
+            "SMA 7200",
+            "SMA 6210",
+            "SMA 7210",
+            "SMA 8200v",
+            "SRA EX 7000"
+          ],
+          "status": "Not Impacted",
+          "description": "Version 12.x not using vulnerable Log4j version."
+        },
+        {
+          "family": "MSW",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Log4j not used in the Mysonicwall service."
+        },
+        {
+          "family": "Analyzer",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Version Analyzer 1.x is not using the vulnerable Log4j version."
+        },
+        {
+          "family": "GMS",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "GMS version 9.x and 8.x are not using the vulnerable Log4j version."
+        },
+        {
+          "family": "Capture Client & Capture Client Portal",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Log4j2 not used in the Capture Client."
+        },
+        {
+          "family": "CAS",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Log4j2 not used in the CAS."
+        },
+        {
+          "family": "Access Points",
+          "products": [],
+          "status": "Not Impacted",
+          "description": null
+        },
+        {
+          "family": "Log4j2 not used in the SonicWall Access Points",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Log4j2 not used in the WNM."
+        },
+        {
+          "family": "Capture Security Appliance",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Log4j2 not used in the Capture Security appliance."
+        },
+        {
+          "family": "WXA",
+          "products": [
+            "WXA 2000",
+            "WXA 4000",
+            "WXA 5000",
+            "WXA 500",
+            "WXA 6000"
+          ],
+          "status": "Not Impacted",
+          "description": "WXA is not using the vulnerable Log4j version."
+        },
+        {
+          "family": "CSCMA",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "CSCMA is not using the vulnerable Log4j version."
+        },
+        {
+          "family": "EPRS",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "EPRS 1.x and 2.x are not using the vulnerable Log4j version."
+        },
+        {
+          "family": "Cloud Edge",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Cloud Edge is not using the vulnerable Log4j version."
+        },
+        {
+          "family": "Analytics",
+          "products": [],
+          "status": "Not Impacted",
+          "description": "Analytics is not using the vulnerable Log4j version. CVE: CVE-2021-44228, CVE-2021-45046, CVE-2021-45105 Last updated: Jan. 8, 2022, 4:03 a.m."
+        }
+      ],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "This advisory will cover the Apache Log4j suite of vulnerabilities impacting the 2.x branch, CVE-2021-44228 being the most Critical (CVSS 10.0).\n- - On December 10, 2021, Apache released Log4j 2.15.0 for Java 8 users to address a remote code execution (RCE) vulnerability—CVE-2021-44228.\n- - On December 13, 2021, Apache released Log4j 2.12.2 for Java 7 users and Log4j 2.16.0 for Java 8 users to address a RCE vulnerability—CVE-2021-45046.\n- - On December 17, 2021, Apache released Log4j 2.17.0 for Java 8 users to address a denial-of-service (DOS) vulnerability—CVE-2021-45105.\n- - On December 28, 2021, Apache released Log4j 2.17.1 for Java 8 users to address a RCE vulnerability—CVE-2021-44832.\nSonicWall Product (Appliance/Cloud/Virtual/OnPrem)\nStatus\nDescription\nEmail Security\n- Hosted Email Security (HES)\n- On-Premise Email Security\nImpacted\nLog4j 2.17.0: A new ES HotFix 10.0.13 is available for download remediating CVE-2021-44228, CVE-2021-45046 and CVE-2021-45105. Hosted Email Security (HES) has been automatically patched and no action is required by customers.\nLog4j 2.17.1: SonicWall performed a comprehensive analysis of Email Security resulting in no observable attack vectors for CVE-2021-44832. To remove known or potential risk from customer environments, SonicWall is working to publish an upgraded Email Security patch out of an abundance of caution to include the latest Log4j 2.17.1 version.\nNSM\n- NSM SaaS\n- NSM On-Premise\nImpacted\nLog4j 2.17.0: NSM On-Prem HotFix 2.3.2-R12-H2 is available for download with log4j 2.17.0 remediating CVE-2021-44228, CVE-2021-45046 and CVE-2021-45105.\nLog4j 2.17.1: NSM SaaS 2.3.2-H8 has been automatically patched with log4j 2.17.1 and no action is required by customers.\nSonicWall performed a comprehensive analysis of NSM that resulted in no observable attack vectors for CVE-2021-44832. To remove known or potential risk from customer environments, SonicWall is working to publish an upgraded NSM (On-Prem) firmware out of an abundance of caution to include the latest Log4j 2.17.1 version.\nWAF\nPartially Impacted\nWAF 3.x uses Log4j, but only when the legacy ‘Cloud Management’ feature is enabled. SonicWall recommends customers disable 'Cloud Management' if enabled. This change will not impact functionality. This feature is disabled by default.\nWAF 2.x and earlier versions don't use Log4j and are not impacted..\nGen5 Firewalls (EOS)\n- TZ100/W\n- TZ200/W\n- TZ210/W\n- NSA 220/W\n- NSA 250M/250M-W\n- NSA 2400/MX/3500/4500/5500\n- NSA E5500/6500/6500/8500/8510\nNot Impacted\nLog4j2 not used in the appliance.\nGen6 Firewalls\n- TZ300/W; TZ350/W\n- TZ400/W\n- TZ500/W\n- TZ600\n- NSA 2600/2650/3600/3650/4600\n/4650/5600/5650/6600/6650\n- SM 9200/9400/9600/9800\n- NSa 9250/9450/9650\n- NSSP 12400/12800\n- NSV 10/25/50/100/200/400/800/1600 (ESX, KVM, HYPER-V, AWS, Azure)\nNot Impacted\nLog4j2 not used in the appliance.\nGen7 Firewalls\n- TZ270/W\n- TZ370/W\n- TZ470/W\n- TZ570/W\n- TZ670\n- NSA 2700/3700/4700/5700/6700\n- NSSP 10700/11700/13700/15700\n- NSV 270/470/870 (ESX, KVM, HYPER-V, AWS, Azure)\nNot Impacted\nLog4j2 not used in the appliance.\nSonicWall Switch\n- SWS 12-8/12-8POE\n- SWS 12-10FPOE\n- SWS 14-24/14-24FPOE\n- SWS 14-48/14-48FPOE\nNot Impacted\nLog4j2 not used in the SonicWall Switch.\nSMA 100\n- SMA 200/210/400/410\n- SMA 500v (ESX, KVM, Hyper-V, AWS, Azure)\nNot Impacted\nLog4j2 not used in the SMA100 appliance.\nSMA 1000\n- SMA 6200/7200/6210/7210\n- SMA 8200v (ESX, KVM, Hyper-V, AWS, Azure)\n- SRA EX 7000\nNot Impacted\nVersion 12.x not using vulnerable Log4j version.\nMSW\nNot Impacted\nLog4j not used in the Mysonicwall service.\nAnalyzer\nNot Impacted\nVersion Analyzer 1.x is not using the vulnerable Log4j version.\nGMS\nNot Impacted\nGMS version 9.x and 8.x are not using the vulnerable Log4j version.\nCapture Client & Capture Client Portal\nNot Impacted\nLog4j2 not used in the Capture Client.\nCAS\nNot Impacted\nLog4j2 not used in the CAS.\nAccess Points\nNot Impacted\nLog4j2 not used in the SonicWall Access Points\nWNM\nNot Impacted\nLog4j2 not used in the WNM.\nCapture Security Appliance\nNot Impacted\nLog4j2 not used in the Capture Security appliance.\nWXA\n- WXA 2000/4000\n- Virtual: WXA 5000\n- Software: WXA 500, WXA 6000\nNot Impacted\nWXA is not using the vulnerable Log4j version.\nCSCMA\nNot Impacted\nCSCMA is not using the vulnerable Log4j version.\nEPRS\nNot Impacted\nEPRS 1.x and 2.x are not using the vulnerable Log4j version.\nCloud Edge\nNot Impacted\nCloud Edge is not using the vulnerable Log4j version.\nAnalytics\nNot Impacted\nAnalytics is not using the vulnerable Log4j version.",
@@ -2240,6 +3744,7 @@
         "CVE-2021-20047"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "no_evidence",
       "findings": [],
       "summary": "SonicWall Global VPN client version 4.10.6 (32-bit and 64-bit) and earlier have a DLL Search Order Hijacking vulnerability. Successful exploitation via a local attacker could result in remote code execution in the target system.\nIMPORTANT: At the time of advisory, there is no evidence to suggest that this vulnerability is being exploited in the wild.",
@@ -2258,6 +3763,7 @@
         "CVE-2021-20034"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "An improper access control vulnerability in SMA100 allows a remote unauthenticated attacker to bypass the path traversal checks and delete an arbitrary file potentially resulting in a reboot to factory default settings.",
@@ -2274,6 +3780,7 @@
       "severity": null,
       "cves": [],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A weakness in the SMA100 Series exists when High Availability (HA) pair is active, potentially permitting an operation at a privilege's level that is higher than the minimum level required. If a malicious actor obtains a 'nobody' user shell on an impacted SMA100 device, this can potentially lead to commands being executed with root-level privilege. This is a SMA100 series security weakness, not a vulnerability that can be exploited remotely.\nCVE: N/A\nLast updated: Sept. 23, 2021, 9:20 p.m.",
@@ -2292,6 +3799,7 @@
         "CVE-2021-20037"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall Global VPN Client 4.10.5 installer (32-bit and 64-bit) incorrect default file permission vulnerability leads to privilege escalation which potentially allows command execution in the host operating system. This vulnerability impacts 4.10.5 installer and earlier.",
@@ -2310,6 +3818,7 @@
         "CVE-2021-20032"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall Analytics 2.5 On-Prem is vulnerable to Java Debug Wire Protocol (JDWP) interface security misconfiguration vulnerability which potentially leads to Remote Code Execution. This vulnerability impacts Analytics On-Prem 2.5.2518 and earlier.",
@@ -2329,6 +3838,7 @@
         "CVE-2021-3450"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Certain SonicWall products (highlighted below) are affected by the OpenSSL CVE-2021-3449 and CVE-2021-3450 vulnerability.\nProduct\nAffected Version(s)\nSMA100\n10.2.0.x\nSonicOS(Gen7)\n7.0.1\nCapture Client\nCc 3.5\nEmail Security (On-Prem)\nES 10.0.9",
@@ -2347,6 +3857,7 @@
         "CVE-2021-20028"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall is aware of i mproper neutralization of a SQL Command leading to SQL Injection vulnerability, reported by CrowdStrike, impacting end-of-life Secure Remote Access (SRA) products, specifically the SRA appliances running all 8.x firmware or an old version of firmware 9.x (9.0.0.9-26sv or earlier).\nIn February 2021, SonicWall released SMA firmware 10.2.0.7 and 9.0.0.10 to fix a zero-day vulnerability, along with additional comprehensive code-strengthening. This strengthening proactively prevented this newly reported vulnerability in 9.0.0.10.\n- Organizations that already upgraded to the 9.0.0.10 firmware are already protected against this newly reported issue and don’t need to take any action.\n- Organizations with any 10.x version is not subject to this vulnerability as the vulnerable feature was deprecated in the 10.x release.\n- Organizations running any firmware versions of 8.x or older than 9.0.0.10 or 10.2.0.7 should, per our earlier instructions, upgrade immediately. These older versions may potentially be exploited if not patched immediately.\n- SMA 1000 Series products are not affected by this vulnerability.",
@@ -2365,6 +3876,7 @@
         "CVE-2021-20024"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Multiple Out-of-Bound read vulnerability in SonicWall Switch when handling LLDP Protocol allows an attacker to cause a system instability or potentially read sensitive information from the memory locations.",
@@ -2383,6 +3895,7 @@
         "CVE-2021-20019"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in SonicOS where the HTTP server response leaks partial memory by sending a crafted unauthenticated HTTP request. This can potentially lead to an internal sensitive data disclosure vulnerability.",
@@ -2401,7 +3914,8 @@
         "CVE-2021-20027"
       ],
       "products": [],
-      "exploitation_status": "exploited",
+      "product_status": [],
+      "exploitation_status": "no_evidence",
       "findings": [],
       "summary": "A buffer overflow vulnerability in SonicOS allows a remote attacker to cause a Denial of Service (DoS) by sending a specially crafted request. This vulnerability affects SonicOS Gen5, Gen6, Gen7 platforms, and SonicOSv virtual firewalls.\n• SonicWall PSIRT is not aware of any active exploitation of this vulnerability in the wild\n• No reports of a PoC have been made public at the time of this advisory",
       "categories": []
@@ -2425,6 +3939,7 @@
         "CVE-2020-26147"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Vulnerabilities in IEEE 802.11 implementation were found. These vulnerabilities could allow an attacker to inject malicious frames into legitimate WiFi traffic. The discovered vulnerabilities affect all modern security protocols of WiFi, including the latest WPA3. Successful exploitation of these vulnerabilities can result in the extraction of sensitive data and the manipulation of WiFi traffic. In order for an attacker to exploit these vulnerabilities he needs to be in proximity of the WiFi network and trick a user connected to the WiFi network to visit the attacker’s server.",
@@ -2443,6 +3958,7 @@
         "CVE-2021-20026"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in the SonicWall NSM On-Prem product allows an authenticated attacker to perform OS command injection using a crafted HTTP request. This vulnerability affects NSM On-Prem 2.2.0-R10 and earlier versions.",
@@ -2461,6 +3977,7 @@
         "CVE-2021-20025"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall Email Security Virtual Appliance version 10.0.9 and earlier versions contain a default username and a password that is used at initial setup.\nAn attacker could exploit this transitional/temporary user account from the trusted domain to access the Virtual Appliance only when the device is freshly installed and not connected to Mysonicwall.\nA successful exploit could allow the attacker to log in to the appliance remotely with root privilege access over a local area network.",
@@ -2479,6 +3996,7 @@
         "CVE-2021-20023"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall Email Security version 10.0.9.x contains a vulnerability that allows a post-authenticated attacker to read an arbitrary file on the remote host.",
@@ -2497,6 +4015,7 @@
         "CVE-2021-20020"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A command execution vulnerability in SonicWall GMS 9.3 allows a remote unauthenticated attacker to locally escalate privilege to root.",
@@ -2515,6 +4034,7 @@
         "CVE-2021-20022"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall Email Security version 10.0.9.x contains a vulnerability that allows a post-authenticated attacker to upload an arbitrary file to the remote host.",
@@ -2533,6 +4053,7 @@
         "CVE-2021-20021"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in the SonicWall Email Security version 10.0.9.x allows an attacker to create an administrative account by sending a crafted HTTP request to the remote host.",
@@ -2551,6 +4072,7 @@
         "CVE-2021-20018"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A post-authenticated vulnerability in SonicWall SMA100 allows an attacker to export the configuration file to the specified email address. This vulnerability impacts SMA100 version 10.2.0.5 and earlier.",
@@ -2569,6 +4091,7 @@
         "CVE-2021-20017"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A post-authenticated command injection vulnerability in SonicWall SMA100 allows an authenticated attacker to execute OS commands as a 'nobody' user. This vulnerability impacts SMA100 version 10.2.0.5 and earlier.",
@@ -2587,6 +4110,7 @@
         "CVE-2020-5148"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall SSO-agent default configuration uses Microsoft NetAPI to probe the associated IP's in the network, this client probing method allows a potential attacker to capture the password hash of the privileged user and potentially forces the SSO Agent to authenticate allowing an attacker to bypass firewall access controls.\nSonicWall SSO agent is ONLY affected if NetAPI is selected as a client probing method. This is a Microsoft NetAPI vulnerability and NetWkstaUserEnum request that it uses.",
@@ -2605,6 +4129,7 @@
         "CVE-2021-20016"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability resulting in improper SQL command neutralization in the SonicWall SSLVPN SMA100 product allows remote exploitation for credential access by an unauthenticated attacker. This vulnerability impacts SMA100 build version 10.x.",
@@ -2623,6 +4148,7 @@
         "CVE-2020-5147"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall NetExtender Windows client vulnerable to unquoted service path vulnerability, this allows a local attacker to gain elevated privileges in the host operating system. This vulnerability impact SonicWall NetExtender Windows client version 10.2.300 and earlier.",
@@ -2641,6 +4167,7 @@
         "CVE-2020-5146"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in the SonicWall SMA100 appliance allows an authenticated management-user to perform OS command injection using HTTP POST parameters. This vulnerability affected SMA100 build version 10.2.0.2-20sv and earlier.",
@@ -2657,6 +4184,7 @@
       "severity": null,
       "cves": [],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Amnesia 33 vulnerabilities impacts four open source TCP/IP stacks (uIP, FNET, picoTCP and Nut/Net) libraries which are used in millions of smart IOT and embedded devices.\nThese four open source TCP/IP stacks libraries are not used in the SonicWall firewall products.\nCVE: N/A\nLast updated: Jan. 6, 2021, 9:25 p.m.",
@@ -2675,6 +4203,7 @@
         "CVE-2020-28041"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall Firewalls are not vulnerable to the NAT Slipstreaming attack.\nSonicWall Firewall does not open an alternative port set in the SIP packet header, results in an invalid connection, and packets are dropped.",
@@ -2693,6 +4222,7 @@
         "CVE-2020-5145"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall Global VPN client version 4.10.4.0314 and earlier have an insecure library loading (DLL hijacking) vulnerability. Successful exploitation could lead to remote code execution in the target system.",
@@ -2711,6 +4241,7 @@
         "CVE-2020-5144"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall Global VPN client version 4.10.4.0314 and earlier allows unprivileged windows user to elevate privileges to SYSTEM through loaded process hijacking vulnerability.",
@@ -2727,6 +4258,7 @@
       "severity": null,
       "cves": [],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in the SonicWall Capture Security Center - Cloud Security Management Service was allowing users to access managed firewalls without authentication, this issue has been resolved and a security patch has been pushed out to all affected Capture Security Center - Management and Analytics (CSC-MA) servers.\nCVE: N/A\nLast updated: Oct. 22, 2020, 7:56 p.m.",
@@ -2745,6 +4277,7 @@
         "CVE-2020-5143"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicOS SSLVPN login page allows a remote unauthenticated attacker to perform firewall management administrator username enumeration based on the server responses. This vulnerability affected SonicOS Gen 5 version 5.9.1.7, 5.9.1.13, Gen 6 version 6.5.4.7, 6.5.1.12, 6.0.5.3, and SonicOSv 6.5.4.v.",
@@ -2763,6 +4296,7 @@
         "CVE-2020-5142"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A stored cross-site scripting (XSS) vulnerability exists in the SonicOS SSLVPN web interface. A remote unauthenticated attacker is able to store and potentially execute arbitrary JavaScript code in the firewall SSLVPN portal. This vulnerability affected SonicOS Gen 5 version 5.9.1.7, 5.9.1.13, Gen 6 version 6.5.4.7, 6.5.1.12, 6.0.5.3 and SonicOSv 6.5.4.v.",
@@ -2781,6 +4315,7 @@
         "CVE-2020-5141"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in SonicOS allows a remote unauthenticated attacker to brute force Virtual Assist ticket ID in the firewall SSLVPN service. This vulnerability affected SonicOS Gen 5 version 5.9.1.7, 5.9.1.13, Gen 6 version 6.5.4.7, 6.5.1.12, 6.0.5.3 and SonicOSv 6.5.4.v.",
@@ -2799,6 +4334,7 @@
         "CVE-2020-5140"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in SonicOS allows a remote unauthenticated attacker to cause Denial of Service (DoS) on the firewall SSLVPN service by sending a malicious HTTP request that leads to memory addresses leak. This vulnerability affected SonicOS Gen 5 version 5.9.1.7, 5.9.1.13, Gen 6 version 6.5.4.7, 6.5.1.12, 6.0.5.3 and SonicOSv 6.5.4.v.",
@@ -2817,6 +4353,7 @@
         "CVE-2020-5139"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in SonicOS SSLVPN service allows a remote unauthenticated attacker to cause Denial of Service (DoS) due to the release of Invalid pointer and leads to a firewall crash. This vulnerability affected SonicOS Gen 5 version 5.9.1.7, 5.9.1.13, Gen 6 version 6.5.4.7, 6.5.1.12, 6.0.5.3 and SonicOSv 6.5.4.v.",
@@ -2835,6 +4372,7 @@
         "CVE-2020-5138"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A Heap Overflow vulnerability in the SonicOS allows a remote unauthenticated attacker to cause Denial of Service (DoS) on the firewall SSLVPN service and leads to SonicOS crash. This vulnerability affected SonicOS Gen 5 version 5.9.1.7, 5.9.1.13, Gen 6 version 6.5.4.7, 6.5.1.12, 6.0.5.3, and SonicOSv 6.5.4.v.",
@@ -2853,6 +4391,7 @@
         "CVE-2020-5137"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A buffer overflow vulnerability in SonicOS allows a remote unauthenticated attacker to cause Denial of Service (DoS) on the firewall SSLVPN service and leads to a firewall crash. This vulnerability affected SonicOS Gen 5 version 5.9.1.7, 5.9.1.13, Gen 6 version 6.5.4.7, 6.5.1.12, 6.0.5.3 and SonicOSv 6.5.4.v.",
@@ -2871,6 +4410,7 @@
         "CVE-2020-5136"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A buffer overflow vulnerability in SonicOS allows an authenticated attacker to cause Denial of Service (DoS) in the SSL-VPN and virtual assist portal, which leads to a firewall crash. This vulnerability affected SonicOS Gen 5 version 5.9.1.7, 5.9.1.13, Gen 6 version 6.5.4.7, 6.5.1.12, 6.0.5.3 and SonicOSv 6.5.4.v.",
@@ -2889,6 +4429,7 @@
         "CVE-2020-5135"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A buffer overflow vulnerability in SonicOS allows a remote attacker to cause Denial of Service (DoS) and potentially execute arbitrary code by sending a malicious request to the firewall. This vulnerability affected SonicOS Gen 6 version 6.5.4.7, 6.5.1.12, 6.0.5.3 and SonicOSv 6.5.4.v.",
@@ -2907,6 +4448,7 @@
         "CVE-2020-5134"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in SonicOS allows an authenticated attacker to cause out-of-bound invalid file reference leads to a firewall crash. This vulnerability affected SonicOS Gen 6 version 6.5.1.12, 6.0.5.3 and SonicOSv 6.5.4.v.",
@@ -2925,6 +4467,7 @@
         "CVE-2020-5133"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in SonicOS allows a remote unauthenticated attacker to cause Denial of Service due to buffer overflow, which leads to a firewall crash. This vulnerability affected SonicOS Gen 6 version 6.5.1.12, 6.0.5.3 and SonicOSv 6.5.4.v.",
@@ -2941,6 +4484,7 @@
       "severity": null,
       "cves": [],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall On-premise Email Security (ES) 10.0.7, Hosted Email Security (HES) 10.0.7 products and Comprehensive Anti-Spam Service 10.0.7 release allow recipients of emails to potentially view the email addresses included in the “BCC” line if the recipient clicks on the header information of the email.\nCVE: N/A\nLast updated: Sept. 18, 2020, 9:33 p.m.",
@@ -2957,6 +4501,7 @@
       "severity": null,
       "cves": [],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall SSL-VPN products web interface has the option to publicly display their organization’s internal domain names in the Domain drop-down menu. An attacker with knowledge of an organization’s internal domain name can potentially take advantage of a DNS flaw known as domain name collision.\nA domain name collision occurs when an attempt to resolve a name used in a private namespace (e.g. under a non-delegated Top-Level Domain, or a short, unqualified name) results in a query to the public Domain Name System (DNS). When the administrative boundaries of private and public namespaces overlap, name resolution may yield unintended or harmful results. For example, if the organization’s internal domain has a valid Top-Level Domain and is not already publicly registered, an attacker can register the domain publicly, and use the public domain to receive DNS requests that were intended for the internal domain. This gives an attacker the ability to poison the organization’s DNS requests and remotely capture hashes from the organization.\nCVE: N/A\nLast updated: Sept. 8, 2020, 7:12 a.m.",
@@ -2973,6 +4518,7 @@
       "severity": null,
       "cves": [],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "An insecure direct object reference vulnerability has been identified in the users/add-user API endpoint of mysonicwall.com. This could allow a normal authenticated mysonicwall user to manipulate API parameter and gain access to user group of tenant of any other mysonicwall user account.\nCVE: N/A\nLast updated: Aug. 26, 2020, 9:20 p.m.",
@@ -2991,6 +4537,7 @@
         "CVE-2020-5130"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicOS SSLVPN LDAP login request allows remote attackers to cause external service interaction (DNS) due to improper validation of the request. This vulnerability impact SonicOS version 6.5.4.4-44n and earlier.",
@@ -3009,6 +4556,7 @@
         "CVE-2020-5131"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall NetExtender Windows client vulnerable to arbitrary file write vulnerability, this allows attacker to overwrite a DLL and execute code with the same privilege in the host operating system.",
@@ -3027,6 +4575,7 @@
         "CVE-2020-5129"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in the SonicWall SMA1000 HTTP Extraweb server allows an unauthenticated remote attacker to cause HTTP server crash which leads to Denial of Service. This vulnerability affected SMA1000 Version 12.1.0-06411 and earlier.",
@@ -3045,6 +4594,7 @@
         "CVE-2019-7486"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Code injection in SonicWall SMA100 allows an authenticated user to execute arbitrary code in viewcacert CGI script. This vulnerability impacted SMA100 version 9.0.0.4 and earlier.",
@@ -3063,6 +4613,7 @@
         "CVE-2019-7485"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Buffer overflow in SonicWall SMA100 allows an authenticated user to execute arbitrary code in DEARegister CGI script. This vulnerability impacted SMA100 version 9.0.0.3 and earlier.",
@@ -3081,6 +4632,7 @@
         "CVE-2019-7484"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Authenticated SQL Injection in SonicWall SMA100 allow user to gain read-only access to unauthorized resources using viewcacert CGI script. This vulnerability impacted SMA100 version 9.0.0.3 and earlier.",
@@ -3099,6 +4651,7 @@
         "CVE-2019-7483"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "In SonicWall SMA100, an unauthenticated Directory Traversal vulnerability in the handleWAFRedirect CGI allows the user to test for the presence of a file on the server.",
@@ -3117,6 +4670,7 @@
         "CVE-2019-7482"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Stack-based buffer overflow in SonicWall SMA100 allows an unauthenticated user to execute arbitrary code in function libSys.so. This vulnerability impacted SMA100 version 9.0.0.3 and earlier.",
@@ -3135,6 +4689,7 @@
         "CVE-2019-7481"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Vulnerability in SonicWall SMA100 allow unauthenticated user to gain read-only access to unauthorized resources. This vulnerability impacted SMA100 version 9.0.0.3 and earlier.",
@@ -3157,6 +4712,7 @@
         "CVE-2019-15126"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "An issue was discovered on Broadcom Wi-Fi client devices. Specifically timed and handcrafted traffic can cause internal errors (related to state transitions) in a WLAN device that lead to improper layer 2 Wi-Fi encryption with a consequent possibility of information disclosure over the air for a discrete set of traffic, a different vulnerability than CVE-2019-9500, CVE-2019-9501, CVE-2019-9502, and CVE-2019-9503.",
@@ -3175,6 +4731,7 @@
         "CVE-2019-7479"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in SonicOS allow authenticated read-only admin can elevate permissions to configuration mode. This vulnerability affected SonicOS Gen 5 version 5.9.1.12-4o and earlier, Gen 6 version 6.2.7.4-32n, 6.5.1.4-4n, 6.5.2.3-4n, 6.5.3.3-3n, 6.2.7.10-3n, 6.4.1.0-3n, 6.5.3.3-3n, 6.5.1.9-4n and SonicOSv 6.5.0.2-8v_RC363 (VMWARE), 6.5.0.2.8v_RC367 (AZURE), SonicOSv 6.5.0.2.8v_RC368 (AWS), SonicOSv 6.5.0.2.8v_RC366 (HYPER_V).",
@@ -3193,6 +4750,7 @@
         "CVE-2019-7478"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in GMS allow unauthenticated user to SQL injection in Webservice module. This vulnerability affected GMS versions 8.4, 8.5, 8.6, 8.7, 9.0 and 9.1.",
@@ -3211,6 +4769,7 @@
         "CVE-2019-7489"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in SonicWall Email Security appliance allow an unauthenticated user to perform remote code execution. This vulnerability affected Email Security Appliance version 10.0.2 and earlier .",
@@ -3229,6 +4788,7 @@
         "CVE-2019-7488"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Weak default password cause vulnerability in SonicWall Email Security appliance which leads to attacker gain access to appliance database. This vulnerability affected Email Security Appliance up to 10.0.2, 9.2.3 and earlier .",
@@ -3247,6 +4807,7 @@
         "CVE-2019-7487"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Installation of the SonicOS SSLVPN NACagent 3.5 on the Windows operating system, an autorun value is created does not put the path in quotes, so if a malicious binary by an attacker within the parent path could allow code execution.",
@@ -3276,6 +4837,7 @@
         "CVE-2019-13383"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Critical vulnerabilities in enterprise virtual private network (VPN) solutions from Palo Alto Networks, Fortinet and Pulse Secure allow attackers to infiltrate corporate networks, obtain sensitive information, and eavesdrop on communications, researchers warn (SonicWall products are not vulnerable to this vulnerability).",
@@ -3304,7 +4866,8 @@
         "CVE-2019-12265"
       ],
       "products": [],
-      "exploitation_status": "exploited",
+      "product_status": [],
+      "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall physical firewall appliances running certain versions of SonicOS contain vulnerabilities in code utilized for remote management. At this time, there is no indication that the discovered vulnerabilities are being exploited in the wild, however:\nSonicWall STRONGLY advises to apply the SonicOS patch immediately.\nIF you cannot update immediately, as a mitigation please restrict SonicWall management access (HTTPS/HTTP/SSH) to trusted sources and/or disable management access from untrusted Internet sources, then apply the SonicOS patch as soon as possible.\nNote:\nSonicWall will communicate future updates via this Security Advisory and SonicWall PSIRT Advisory SNWLID-2019-0009",
       "categories": []
@@ -3322,6 +4885,7 @@
         "CVE-2019-11479"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Jonathan Looney discovered that the Linux kernel default MSS is hard-coded to 48 bytes. This allows a remote peer to fragment TCP resend queues significantly more than if a larger MSS were enforced. A remote attacker could use this to cause a denial of service. This has been fixed in stable kernel releases 4.4.182, 4.9.182, 4.14.127, 4.19.52, 5.1.11, and is fixed in commits 967c05aee439e6e5d7d805e195b3a20ef5c433d6 and 5f3e2bf008c2221478101ee72f5cb4654b9fc363.",
@@ -3340,6 +4904,7 @@
         "CVE-2019-11478"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Jonathan Looney discovered that the TCP retransmission queue implementation in tcp_fragment in the Linux kernel could be fragmented when handling certain TCP Selective Acknowledgment (SACK) sequences. A remote attacker could use this to cause a denial of service. This has been fixed in stable kernel releases 4.4.182, 4.9.182, 4.14.127, 4.19.52, 5.1.11, and is fixed in commit f070ef2ac66716357066b683fb0baf55f8191a2e.",
@@ -3358,6 +4923,7 @@
         "CVE-2019-11477"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Jonathan Looney discovered that the TCP_SKB_CB(skb)->tcp_gso_segs value was subject to an integer overflow in the Linux kernel when handling TCP Selective Acknowledgments (SACKs). A remote attacker could use this to cause a denial of service. This has been fixed in stable kernel releases 4.4.182, 4.9.182, 4.14.127, 4.19.52, 5.1.11, and is fixed in commit 3b4929f65b0d8249f19a50245cd88ed1a2f78cff.",
@@ -3377,6 +4943,7 @@
         "CVE-2016-8201"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A research of Software Engineering Institute of the Carnegie Mellon University shows that multiple VPN applications store the authentication and/or session cookies insecurely in memory and/or log files.",
@@ -3395,6 +4962,7 @@
         "CVE-2019-7476"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in SonicWall Global Management System (GMS), allow a remote user to gain access to the appliance using existing SSH key. This vulnerability affects GMS versions 9.1, 9.0, 8.7, 8.6, 8.4, 8.3 and earlier.",
@@ -3413,6 +4981,7 @@
         "CVE-2019-7477"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in SonicOS and SonicOSv TLS CBC Cipher allow remote attackers to obtain sensitive plaintext data when CBC cipher suites are enabled. This vulnerability affected SonicOS Gen 5 version 5.9.1.10 and earlier, Gen 6 version 6.2.7.3, 6.5.1.3, 6.5.2.2, 6.5.3.1, 6.2.7.8, 6.4.0.0, 6.5.1.8, 6.0.5.3-86o and SonicOSv 6.5.0.2-8v_RC363 (VMWARE), 6.5.0.2.8v_RC367 (AZURE), SonicOSv 6.5.0.2.8v_RC368 (AWS), SonicOSv 6.5.0.2.8v_RC366 (HYPER_V).",
@@ -3431,6 +5000,7 @@
         "CVE-2019-7475"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in SonicOS with management enabled system on specific configuration allow unprivileged user to access advanced routing services. This vulnerability affected SonicOS Gen 5 version 5.9.1.10 and earlier, Gen 6 version 6.2.7.3, 6.5.1.3, 6.5.2.2, 6.5.3.1, 6.2.7.8, 6.4.0.0, 6.5.1.8, 6.0.5.3-86o and SonicOSv 6.5.0.2-8v_RC363 (VMWARE), 6.5.0.2.8v_RC367 (AZURE), SonicOSv 6.5.0.2.8v_RC368 (AWS), SonicOSv 6.5.0.2.8v_RC366 (HYPER_V).",
@@ -3449,6 +5019,7 @@
         "CVE-2019-7474"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in SonicOS allow authenticated read-only admin to leave the firewall in an unstable state by downloading certificate with specific extension. This vulnerability affected SonicOS Gen 5 version 5.9.1.10 and earlier, Gen 6 version 6.2.7.3, 6.5.1.3, 6.5.2.2, 6.5.3.1, 6.2.7.8, 6.4.0.0, 6.5.1.8, 6.0.5.3-86o and SonicOSv 6.5.0.2-8v_RC363 (VMWARE), 6.5.0.2.8v_RC367 (AZURE), SonicOSv 6.5.0.2.8v_RC368 (AWS), SonicOSv 6.5.0.2.8v_RC366 (HYPER_V).",
@@ -3467,6 +5038,7 @@
         "CVE-2018-9867"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "In SonicWall SonicOS, administrators without full permissions can download imported certificates. Occurs when administrators who are not in the SonicWall Administrators user group attempt to download imported certificates. This vulnerability affected SonicOS Gen 5 version 5.9.1.10 and earlier, Gen 6 version 6.2.7.3, 6.5.1.3, 6.5.2.2, 6.5.3.1, 6.2.7.8, 6.4.0.0, 6.5.1.8, 6.0.5.3-86o and SonicOSv 6.5.0.2-8v_RC363 (VMWARE), 6.5.0.2.8v_RC367 (AZURE), SonicOSv 6.5.0.2.8v_RC368 (AWS), SonicOSv 6.5.0.2.8v_RC366 (HYPER_V).",
@@ -3485,6 +5057,7 @@
         "CVE-2018-10933"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability was found in libssh's server-side state machine before versions 0.7.6 and 0.8.4. A malicious client could create channels without first performing authentication, resulting in unauthorized access.",
@@ -3504,6 +5077,7 @@
         "CVE-2018-14618"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "curl before version 7.61.1 is vulnerable to a buffer overrun in the NTLM authentication code. The internal function Curl_ntlm_core_mk_nt_hash multiplies the length of the password by two (SUM) to figure out how large temporary storage area to allocate from the heap. The length value is then subsequently used to iterate over the password and generate output into the allocated storage buffer. On systems with a 32 bit size_t, the math to calculate SUM triggers an integer overflow when the password length exceeds 2GB (2^31 bytes). This integer overflow usually causes a very small buffer to actually get allocated instead of the intended very huge one, making the use of that buffer end up in a heap buffer overflow. (This bug is almost identical to CVE-2017-8816.)",
@@ -3522,6 +5096,7 @@
         "CVE-2018-14619"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A flaw was found in the crypto subsystem of the Linux kernel before version kernel-4.15-rc4. The \"null skcipher\" was being dropped when each af_alg_ctx was freed instead of when the aead_tfm was freed. This can cause the null skcipher to be freed while it is still in use leading to a local user being able to crash the system or possibly escalate privileges.",
@@ -3540,6 +5115,7 @@
         "CVE-2018-11776"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Apache Struts versions 2.3 to 2.3.34 and 2.5 to 2.5.16 suffer from possible Remote Code Execution when using results with no namespace and in same time, its upper action(s) have no or wildcard namespace. Same possibility when using url tag which doesn't have value and action set and in same time, its upper action(s) have no or wildcard namespace.",
@@ -3558,6 +5134,7 @@
         "CVE-2018-15473"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "OpenSSH through 7.7 is prone to a user enumeration vulnerability due to not delaying bailout for an invalid authenticating user until after the packet containing the request has been fully parsed, related to auth2-gss.c, auth2-hostbased.c, and auth2-pubkey.c.",
@@ -3576,6 +5153,7 @@
         "CVE-2018-3646"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Systems with microprocessors utilizing speculative execution and address translations may allow unauthorized disclosure of information residing in the L1 data cache to an attacker with local user access with guest OS privilege via a terminal page fault and a side-channel analysis.",
@@ -3594,6 +5172,7 @@
         "CVE-2018-3620"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Systems with microprocessors utilizing speculative execution and address translations may allow unauthorized disclosure of information residing in the L1 data cache to an attacker with local user access via a terminal page fault and a side-channel analysis.",
@@ -3612,6 +5191,7 @@
         "CVE-2018-3615"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Systems with microprocessors utilizing speculative execution and Intel® software guard extensions (Intel® SGX) may allow unauthorized disclosure of information residing in the L1 data cache from an enclave to an attacker with local user access via a side-channel analysis.",
@@ -3630,6 +5210,7 @@
         "CVE-2018-9866"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "A vulnerability in lack of validation of user-supplied parameters pass to XML-RPC calls on SonicWall Global Management System (GMS) virtual appliance's, allow remote user to execute arbitrary code. This vulnerability affected GMS version 8.1 and earlier.",
@@ -3648,6 +5229,7 @@
         "CVE-2017-11317"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Telerik.Web.UI in Progress Telerik UI for ASP.NET AJAX before R1 2017 and R2 before R2 2017 SP2 uses weak RadAsyncUpload encryption, which allows remote attackers to perform arbitrary file uploads or execute arbitrary code.",
@@ -3666,6 +5248,7 @@
         "CVE-2018-3640"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Systems with microprocessors utilizing speculative execution and that perform speculative reads of system registers may allow unauthorized disclosure of system parameters to an attacker with local user access via a side-channel analysis, aka Rogue System Register Read (RSRE), Variant 3a.",
@@ -3684,6 +5267,7 @@
         "CVE-2018-3639"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Systems with microprocessors utilizing speculative execution and speculative execution of memory reads before the addresses of all prior memory writes are known may allow unauthorized disclosure of information to an attacker with local user access via a side-channel analysis, aka Speculative Store Bypass (SSB), Variant 4.",
@@ -3702,6 +5286,7 @@
         "CVE-2015-3990"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "The GMS ViewPoint (GMSVP) web application in Dell Sonicwall GMS, Analyzer, and UMA EM5000 before 7.2 SP4 allows remote authenticated users to execute arbitrary commands via vectors related to configuration.",
@@ -3720,6 +5305,7 @@
         "CVE-2018-5691"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall Global Management System (GMS) 8.1 has XSS via the `newName` and `Name` values of the `/sgms/TreeControl` module.",
@@ -3738,6 +5324,7 @@
         "CVE-2016-2397"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "The cliserver implementation in Dell SonicWALL GMS, Analyzer, and UMA EM5000 7.2, 8.0, and 8.1 before Hotfix 168056 allows remote attackers to deserialize and execute arbitrary Java code via crafted XML data.",
@@ -3756,6 +5343,7 @@
         "CVE-2016-2396"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "The GMS ViewPoint (GMSVP) web application in Dell SonicWALL GMS, Analyzer, and UMA EM5000 7.2, 8.0, and 8.1 before Hotfix 168056 allows remote authenticated users to execute arbitrary commands via vectors related to configuration input.",
@@ -3774,6 +5362,7 @@
         "CVE-2015-4173"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Unquoted Windows search path vulnerability in the autorun value in Dell SonicWall NetExtender before 7.5.227 and 8.0.x before 8.0.238, as used in the SRA firmware before 7.5.1.2-40sv and 8.x before 8.0.0.3-23sv, allows local users to gain privileges via a Trojan horse program in the %SYSTEMDRIVE% folder.",
@@ -3792,6 +5381,7 @@
         "CVE-2014-8420"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "The ViewPoint web application in Dell SonicWALL Global Management System (GMS) before 7.2 SP2, SonicWALL Analyzer before 7.2 SP2, and SonicWALL UMA before 7.2 SP2 allows remote authenticated users to execute arbitrary code via unspecified vectors.",
@@ -3810,6 +5400,7 @@
         "CVE-2014-5024"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Cross-site scripting (XSS) vulnerability in sgms/panelManager in Dell SonicWALL GMS, Analyzer, and UMA before 7.2 SP1 allows remote attackers to inject arbitrary web script or HTML via the node_id parameter.",
@@ -3828,6 +5419,7 @@
         "CVE-2014-4977"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Multiple SQL injection vulnerabilities in Dell SonicWall Scrutinizer 11.0.1 allow remote authenticated users to execute arbitrary SQL commands via the (1) selectedUserGroup parameter in a create new user request to cgi-bin/admin.cgi or the (2) user_id parameter in the changeUnit function, (3) methodDetail parameter in the methodDetail function, or (4) xcNetworkDetail parameter in the xcNetworkDetail function in d4d/exporters.php.",
@@ -3846,6 +5438,7 @@
         "CVE-2014-4976"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Dell SonicWall Scrutinizer 11.0.1 allows remote authenticated users to change user passwords via the user ID in the savePrefs parameter in a change password request to cgi-bin/admin.cgi.",
@@ -3864,6 +5457,7 @@
         "CVE-2014-0332"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Cross-site scripting (XSS) vulnerability in mainPage in Dell SonicWALL GMS before 7.1 SP2, SonicWALL Analyzer before 7.1 SP2, and SonicWALL UMA E5000 before 7.1 SP2 might allow remote attackers to inject arbitrary web script or HTML via the node_id parameter in a ScreenDisplayManager genNetwork action.",
@@ -3882,6 +5476,7 @@
         "CVE-2012-3951"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "The MySQL component in Plixer Scrutinizer (aka Dell SonicWALL Scrutinizer) 9.0.1.19899 and earlier has a default password of admin for the (1) scrutinizer and (2) scrutremote accounts, which allows remote attackers to execute arbitrary SQL commands via a TCP session.",
@@ -3900,6 +5495,7 @@
         "CVE-2012-2962"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SQL injection vulnerability in d4d/statusFilter.php in Plixer Scrutinizer (aka Dell SonicWALL Scrutinizer) before 9.5.2 allows remote authenticated users to execute arbitrary SQL commands via the q parameter.",
@@ -3918,6 +5514,7 @@
         "CVE-2012-2627"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "d4d/uploader.php in the web console in Plixer Scrutinizer (aka Dell SonicWALL Scrutinizer) before 9.5.0 allows remote attackers to create or overwrite arbitrary files in %PROGRAMFILES%\\Scrutinizer\\snmp\\mibs\\ via a multipart/form-data POST request.",
@@ -3936,6 +5533,7 @@
         "CVE-2015-2248"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Cross-site request forgery (CSRF) vulnerability in the user portal in Dell SonicWALL Secure Remote Access (SRA) products with firmware before 7.5.1.0-38sv and 8.x before 8.0.0.1-16sv allows remote attackers to hijack the authentication of users for requests that create bookmarks via a crafted request to cgi-bin/editBookmark.",
@@ -3954,6 +5552,7 @@
         "CVE-2014-2589"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Cross-site scripting (XSS) vulnerability in the Dashboard Backend service (stats/dashboard.jsp) in SonicWall Network Security Appliance (NSA) 2400 allows remote attackers to inject arbitrary web script or HTML via the sn parameter.",
@@ -3972,6 +5571,7 @@
         "CVE-2014-2879"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Multiple cross-site scripting (XSS) vulnerabilities in Dell SonicWALL Email Security 7.4.5 and earlier allow remote authenticated administrators to inject arbitrary web script or HTML via (1) the uploadPatch parameter to the System/Advanced page (settings_advanced.html) or (2) the uploadLicenses parameter in the License management (settings_upload_dlicense.html) page.",
@@ -3990,6 +5590,7 @@
         "CVE-2015-3447"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Multiple cross-site scripting (XSS) vulnerabilities in macIpSpoofView.html in Dell SonicWall SonicOS 7.5.0.12 and 6.x allow remote attackers to inject arbitrary web script or HTML via the (1) searchSpoof or (2) searchSpoofIpDet parameter.",
@@ -4008,6 +5609,7 @@
         "CVE-2012-2626"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "cgi-bin/admin.cgi in the web console in Plixer Scrutinizer (aka Dell SonicWALL Scrutinizer) before 9.5.0 does not require token authentication, which allows remote attackers to add administrative accounts via a userprefs action.",
@@ -4026,6 +5628,7 @@
         "CVE-2012-3848"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Multiple cross-site scripting (XSS) vulnerabilities in the web console in Plixer Scrutinizer (aka Dell SonicWALL Scrutinizer) before 9.5.0 allow remote attackers to inject arbitrary web script or HTML via (1) the query string to d4d/exporters.php, (2) the HTTP Referer header to d4d/exporters.php, or (3) unspecified input to d4d/contextMenu.php.",
@@ -4044,6 +5647,7 @@
         "CVE-2018-5281"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall SonicOS on Network Security Appliance (NSA) 2017 Q4 devices has XSS via the CFS Custom Category and Cloud AV DB Exclusion Settings screens.",
@@ -4062,6 +5666,7 @@
         "CVE-2018-5280"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall SonicOS on Network Security Appliance (NSA) 2016 Q4 devices has XSS via the Configure SSO screens.",
@@ -4080,6 +5685,7 @@
         "CVE-2007-5815"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Absolute path traversal vulnerability in the WebCacheCleaner ActiveX control 1.3.0.3 in SonicWall SSL-VPN 200 before 2.1, and SSL-VPN 2000/4000 before 2.5, allows remote attackers to delete arbitrary files via a full pathname in the argument to the FileDelete method.",
@@ -4099,6 +5705,7 @@
         "CVE-2007-5814"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Multiple buffer overflows in the SonicWall SSL-VPN NetExtender NELaunchCtrl ActiveX control before 2.1.0.51, and 2.5.x before 2.5.0.56, allow remote attackers to execute arbitrary code via a long (1) serverAddress, (2) sessionId, (3) clientIPLower, (4) clientIPHigher, (5) userName, (6) domainName, or (7) dnsSuffix Unicode property value. NOTE: the AddRouteEntry vector is covered by CVE-2007-5603.",
@@ -4117,6 +5724,7 @@
         "CVE-2003-1490"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall Pro running firmware 6.4.0.1 allows remote attackers to cause a denial of service (device reset) via a long HTTP POST to the internal interface, possibly due to a buffer overflow.",
@@ -4135,6 +5743,7 @@
         "CVE-2005-1006"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Multiple cross-site scripting (XSS) vulnerabilities in SonicWALL SOHO 5.1.7.0 allow remote attackers to inject arbitrary web script or HTML via (1) the URL or (2) the user login name, which is not filtered when the administrator views the log file.",
@@ -4153,6 +5762,7 @@
         "CVE-2016-9684"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "The SonicWall Secure Remote Access server (version 8.1.0.2-14sv) is vulnerable to a Remote Command Injection vulnerability in its web administrative interface. This vulnerability occurs in the 'viewcert' CGI (/cgi-bin/viewcert) component responsible for processing SSL certificate information. The CGI application doesn't properly escape the information it's passed in the 'CERT' variable before a call to system() is performed - allowing for remote command injection. Exploitation of this vulnerability yields shell access to the remote machine under the nobody user account.",
@@ -4171,6 +5781,7 @@
         "CVE-2016-9683"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "The SonicWall Secure Remote Access server (version 8.1.0.2-14sv) is vulnerable to a Remote Command Injection vulnerability in its web administrative interface. This vulnerability occurs in the 'extensionsettings' CGI (/cgi-bin/extensionsettings) component responsible for handling some of the server's internal configurations. The CGI application doesn't properly escape the information it's passed when processing a particular multi-part form request involving scripts. The filename of the 'scriptname' variable is read in unsanitized before a call to system() is performed - allowing for remote command injection. Exploitation of this vulnerability yields shell access to the remote machine under the nobody user account. This is SonicWall Issue ID 181195.",
@@ -4189,6 +5800,7 @@
         "CVE-2016-9682"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "The SonicWall Secure Remote Access server (version 8.1.0.2-14sv) is vulnerable to two Remote Command Injection vulnerabilities in its web administrative interface. These vulnerabilities occur in the diagnostics CGI (/cgi-bin/diagnostics) component responsible for emailing out information about the state of the system. The application doesn't properly escape the information passed in the 'tsrDeleteRestartedFile' or 'currentTSREmailTo' variables before making a call to system(), allowing for remote command injection. Exploitation of this vulnerability yields shell access to the remote machine under the nobody user account.",
@@ -4207,6 +5819,7 @@
         "CVE-2015-7770"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Dell SonicWall TotalSecure TZ 100 devices with firmware before 5.9.1.0-22o allow remote attackers to cause a denial of service via a crafted packet.",
@@ -4225,6 +5838,7 @@
         "CVE-2011-5262"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SQL injection vulnerability in prodpage.cfm in SonicWALL Aventail allows remote attackers to execute arbitrary SQL commands via the CategoryID parameter.",
@@ -4243,6 +5857,7 @@
         "CVE-2011-5169"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SQL injection vulnerability in sgms/reports/scheduledreports/configure/scheduleProps.jsp in SonicWall ViewPoint 6.0 SP2 allows remote attackers to execute arbitrary SQL commands via the scheduleID parameter.",
@@ -4261,6 +5876,7 @@
         "CVE-2007-6273"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Multiple format string vulnerabilities in the configuration file in SonicWALL GLobal VPN Client 3.1.556 and 4.0.0.810 allow user-assisted remote attackers to execute arbitrary code via format string specifiers in the (1) Hostname tag or the (2) name attribute in the Connection tag. NOTE: there might not be any realistic circumstances in which this issue crosses privilege boundaries.",
@@ -4279,6 +5895,7 @@
         "CVE-2010-2583"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Stack-based buffer overflow in SonicWALL SSL-VPN End-Point Interrogator/Installer ActiveX control (Aventail.EPInstaller) before 10.5.2 and 10.0.5 hotfix 3 allows remote attackers to execute arbitrary code via long (1) CabURL and (2) Location arguments to the Install3rdPartyComponent method.",
@@ -4297,6 +5914,7 @@
         "CVE-2009-2631"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Multiple clientless SSL VPN products that run in web browsers, including Stonesoft StoneGate; Cisco ASA; SonicWALL E-Class SSL VPN and SonicWALL SSL VPN; SafeNet SecureWire Access Gateway; Juniper Networks Secure Access; Nortel CallPilot; Citrix Access Gateway; and other products, when running in configurations that do not restrict access to the same domain as the VPN, retrieve the content of remote URLs from one domain and rewrite them so they originate from the VPN's domain, which violates the same origin policy and allows remote attackers to conduct cross-site scripting attacks, read cookies that originated from other domains, access the Web VPN session to gain access to internal resources, perform key logging, and conduct other attacks. NOTE: it could be argued that this is a fundamental design problem in any clientless VPN solution, as opposed to a commonly-introduced error that can be fixed in separate implementations. Therefore a single CVE has been assigned for all products that have this design.",
@@ -4315,6 +5933,7 @@
         "CVE-2008-4918"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Cross-site scripting (XSS) vulnerability in SonicWALL SonicOS Enhanced before 4.0.1.1, as used in SonicWALL Pro 2040 and TZ 180 and 190, allows remote attackers to inject arbitrary web script or HTML into arbitrary web sites via a URL to a site that is blocked based on content filtering, which is not properly handled in the CFS block page, aka \"universal website hijacking.\"\"\"",
@@ -4333,6 +5952,7 @@
         "CVE-2008-2162"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Cross-site scripting (XSS) vulnerability in SonicWall Email Security 6.1.1 allows remote attackers to inject arbitrary web script or HTML via the Host header in a request to a non-existent web page, which is not properly sanitized in an error page.",
@@ -4351,6 +5971,7 @@
         "CVE-2007-5603"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Stack-based buffer overflow in the SonicWall SSL-VPN NetExtender NELaunchCtrl ActiveX control before 2.1.0.51, and 2.5.x before 2.5.0.56, allows remote attackers to execute arbitrary code via a long string in the second argument to the AddRouteEntry method.",
@@ -4369,6 +5990,7 @@
         "CVE-2003-1320"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWALL firmware before 6.4.0.1 allows remote attackers to cause a denial of service and possibly execute arbitrary code via crafted Internet Key Exchange (IKE) response packets, possibly including (1) a large Security Parameter Index (SPI) field, (2) a large number of payloads, or (3) a long payload.",
@@ -4387,6 +6009,7 @@
         "CVE-2002-2341"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "Cross-site scripting (XSS) vulnerability in content blocking in SonicWALL SOHO3 6.3.0.0 allows remote attackers to inject arbitrary web script or HTML via a blocked URL.",
@@ -4405,6 +6028,7 @@
         "CVE-2002-2181"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWall Content Filtering allows local users to access prohibited web sites via requests to the web site's IP address instead of the domain name.",
@@ -4423,6 +6047,7 @@
         "CVE-2001-1104"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWALL SOHO uses easily predictable TCP sequence numbers, which allows remote attackers to spoof or hijack sessions.",
@@ -4441,6 +6066,7 @@
         "CVE-2001-0376"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "SonicWALL Tele2 and SOHO firewalls with 6.0.0.0 firmware using IPSEC with IKE pre-shared keys do not allow for the use of full 128 byte IKE pre-shared keys, which is the intended design of the IKE pre-shared key, and only support 48 byte keys. This allows a remote attacker to brute force attack the pre-shared keys with significantly less resources than if the full 128 byte IKE pre-shared keys were used.",
@@ -4459,6 +6085,7 @@
         "CVE-2000-1098"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "The web server for the SonicWALL SOHO firewall allows remote attackers to cause a denial of service via an empty GET or POST request.",
@@ -4477,6 +6104,7 @@
         "CVE-2000-1097"
       ],
       "products": [],
+      "product_status": [],
       "exploitation_status": "unknown",
       "findings": [],
       "summary": "The web server for the SonicWALL SOHO firewall allows remote attackers to cause a denial of service via a long username in the authentication page.",
