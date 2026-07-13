@@ -4,14 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=3.0">
 <title>SonicWall PSIRT Intelligence · Technology Advisory</title>
-<meta name="description" content="Explorador técnico de advisories oficiales SonicWall.">
+<meta name="description" content="Explorador técnico de advisories oficiales SonicWall PSIRT.">
 <meta name="theme-color" content="#059669">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<<<<<<< Updated upstream
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+=======
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+>>>>>>> Stashed changes
 <link rel="stylesheet" href="../../css/global.css">
 <link rel="stylesheet" href="../../css/dossier-core.css">
+
 <style>
+<<<<<<< Updated upstream
 :root{--ink:#151915;--muted:#64748b;--line:#dce3e8;--paper:#fff;--canvas:#f4f3ee;--surface:#f8faf9;--accent:#059669;--accent-dark:#047857;--accent-soft:#ecfdf5;--red:#b91c1c;--red-soft:#fef2f2;--amber:#b45309;--amber-soft:#fffbeb;--blue:#0369a1;--blue-soft:#eff6ff;--slate:#475569;--slate-soft:#f8fafc}
 *{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);font-family:Inter,Arial,sans-serif}.wrap{width:100%;max-width:none;margin:0 auto;padding:24px 32px 32px}.vendor-card{background:#fff;border:1px solid #d8d4c8}.top{padding:30px 34px 26px;border-bottom:1px solid var(--line)}.back{display:inline-block;margin-bottom:18px;color:var(--ink);text-decoration:none;font:700 12px 'IBM Plex Mono',monospace}.eyebrow{font:700 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.14em;color:var(--accent)}h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(34px,5vw,54px);line-height:1.02;margin:10px 0 12px}.accent{color:var(--accent)}.lead{font-size:17px;line-height:1.68;color:#475569;max-width:1100px}.meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:19px;padding-top:14px;border-top:1px solid var(--line);font:500 12px 'IBM Plex Mono',monospace;color:var(--muted)}
 .stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px;padding:20px 34px;border-bottom:1px solid var(--line)}.stat{border:1px solid var(--line);padding:15px 16px;background:#fbfcfb}.stat b{display:block;font:700 28px 'Space Grotesk',sans-serif}.stat span{display:block;margin-top:5px;font-size:12px;color:var(--muted)}.filters{display:grid;grid-template-columns:2.2fr repeat(5,1fr);gap:10px;padding:20px 34px;border-bottom:1px solid var(--line);background:#fafbf9}.filters input,.filters select{width:100%;padding:11px 12px;border:1px solid #cbd5df;background:#fff;font:500 13px Inter;border-radius:6px}.filter-note{padding:10px 34px;border-bottom:1px solid var(--line);font:500 11px 'IBM Plex Mono',monospace;color:var(--muted)}
@@ -19,9 +27,512 @@
 .content{padding:24px 34px}.list{display:grid;gap:15px}.item{border:1px solid var(--line);border-left:4px solid var(--accent);background:#fff}.item.critical{border-left-color:var(--red)}.item.high{border-left-color:var(--amber)}.item.medium{border-left-color:var(--blue)}.item-head{display:flex;justify-content:space-between;gap:22px;padding:18px 18px 14px}.advisory-id{font:700 13px 'IBM Plex Mono',monospace;color:var(--accent)}.title{font:700 20px 'Space Grotesk',sans-serif;margin-top:7px;line-height:1.28}.title a{color:var(--ink);text-decoration:none}.cves{font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:7px;line-height:1.5}.badges{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}.badge{font:700 10px 'IBM Plex Mono',monospace;text-transform:uppercase;padding:6px 8px;border-radius:999px;border:1px solid var(--line);white-space:nowrap}.badge.red{background:var(--red-soft);color:var(--red);border-color:#fecaca}.badge.amber{background:var(--amber-soft);color:var(--amber);border-color:#fde68a}.badge.blue{background:var(--blue-soft);color:var(--blue);border-color:#bfdbfe}.badge.green{background:var(--accent-soft);color:var(--accent-dark);border-color:#a7f3d0}.badge.slate{background:var(--slate-soft);color:var(--slate);border-color:#cbd5e1}
 .body{padding:0 18px 18px}.quick-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-bottom:14px}.quick{padding:10px 11px;background:var(--surface);border:1px solid var(--line)}.quick small,.fact small,.matrix td small{display:block;color:var(--muted);font:500 10px 'IBM Plex Mono',monospace;text-transform:uppercase;margin-bottom:5px}.quick strong,.fact strong{display:block;font-size:13px;line-height:1.42;word-break:break-word}.section-label{margin:0 0 8px;font:700 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em}.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{padding:5px 7px;border:1px solid #dbe2ea;border-radius:5px;background:#fff;font:600 10px 'IBM Plex Mono',monospace;color:#334155}.chip.match{background:#d1fae5;border-color:#34d399;color:#065f46;box-shadow:0 0 0 1px #6ee7b7 inset}.scope{padding:12px 13px;border:1px solid var(--line);background:#fafbf9;margin-bottom:14px}.scope-row{display:grid;grid-template-columns:220px 150px minmax(0,1fr);border-top:1px solid var(--line)}.scope-row:first-child{border-top:0}.scope-row>div{padding:10px 12px}.scope-row .family{font:700 14px 'Space Grotesk',sans-serif;background:#fafbf9;border-right:1px solid var(--line)}.scope-row .status{border-right:1px solid var(--line)}.matrix-wrap{overflow-x:auto;margin-bottom:14px;border:1px solid var(--line)}.matrix{width:100%;border-collapse:collapse;font-size:13px}.matrix th{text-align:left;padding:10px 12px;background:#f8faf9;border-bottom:1px solid var(--line);font:700 10px 'IBM Plex Mono',monospace;text-transform:uppercase;color:var(--muted)}.matrix td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top;line-height:1.5}.summary{padding:13px 14px;border:1px solid var(--line);background:#fafbf9;color:#475569;font-size:14px;line-height:1.65;white-space:pre-line;margin:0 0 14px}details{margin-bottom:14px}details summary{cursor:pointer;font:700 11px 'IBM Plex Mono',monospace;text-transform:uppercase;color:var(--accent-dark)}.fact-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.fact{padding:10px;background:#fafbf9;border:1px solid var(--line)}.pagination{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:28px 0 6px}.pagination button{border:1px solid #cbd5e1;background:#fff;padding:9px 12px;cursor:pointer;border-radius:5px}.pagination button.active{background:var(--ink);color:#fff}.pagination span{padding:9px 4px;color:var(--muted)}.source-note{margin-top:28px;padding:22px 0 4px;border-top:1px solid var(--line);font-size:13px;line-height:1.7;color:#475569}.empty{padding:24px;border:1px solid var(--line);background:#fafbf9}
 @media(max-width:1200px){.filters{grid-template-columns:1fr 1fr 1fr}.stats,.quick-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.wrap{padding:12px}.top,.stats,.filters,.content{padding-left:18px;padding-right:18px}.filters,.stats,.quick-grid,.fact-grid{grid-template-columns:1fr}.item-head{display:block}.badges{justify-content:flex-start;margin-top:12px}.scope-row{display:block}}
+=======
+:root{
+  --ink:#151915;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --paper:#ffffff;
+  --canvas:#f4f3ee;
+  --accent:#059669;
+  --accent-dark:#047857;
+  --accent-soft:#ecfdf5;
+  --red:#b91c1c;
+  --red-soft:#fef2f2;
+  --amber:#b45309;
+  --amber-soft:#fffbeb;
+  --blue:#0369a1;
+  --blue-soft:#eff6ff;
+  --slate:#475569;
+  --slate-soft:#f8fafc;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--canvas);
+  color:var(--ink);
+  font-family:Inter,Arial,sans-serif;
+}
+
+.wrap{
+  width:100%;
+  max-width:none;
+  margin:0 auto;
+  padding:24px 32px 32px;
+}
+
+.vendor-card{
+  width:100%;
+  background:var(--paper);
+  border:1px solid #d8d4c8;
+}
+
+.top{
+  padding:28px 32px;
+  border-bottom:1px solid var(--line);
+}
+
+.back{
+  display:inline-block;
+  margin-bottom:18px;
+  color:var(--ink);
+  text-decoration:none;
+  font:700 12px 'IBM Plex Mono',monospace;
+}
+
+.eyebrow{
+  font:700 11px 'IBM Plex Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:var(--accent);
+}
+
+h1{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(32px,5vw,52px);
+  line-height:1.05;
+  margin:10px 0 12px;
+}
+
+.accent{color:var(--accent)}
+
+.lead{
+  font-size:17px;
+  line-height:1.7;
+  color:#475569;
+  max-width:1020px;
+}
+
+.meta{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+  font:500 12px 'IBM Plex Mono',monospace;
+  color:var(--muted);
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:12px;
+  padding:20px 32px;
+  border-bottom:1px solid var(--line);
+}
+
+.stat{
+  border:1px solid var(--line);
+  padding:16px;
+  background:#fafaf8;
+}
+
+.stat b{
+  display:block;
+  font:700 28px 'Space Grotesk',sans-serif;
+}
+
+.stat span{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.filters{
+  display:grid;
+  grid-template-columns:2fr 1.15fr 1fr 1fr 1fr 1fr;
+  gap:10px;
+  padding:20px 32px;
+  border-bottom:1px solid var(--line);
+  background:#fafaf8;
+}
+
+.filters input,
+.filters select{
+  width:100%;
+  padding:11px 12px;
+  border:1px solid #cbd5e1;
+  background:#fff;
+  font:500 13px Inter;
+  border-radius:6px;
+}
+
+.filter-note{
+  padding:10px 32px;
+  border-bottom:1px solid var(--line);
+  background:#fff;
+  font:500 11px 'IBM Plex Mono',monospace;
+  color:var(--muted);
+}
+
+.content{
+  padding:24px 32px;
+}
+
+.list{
+  display:grid;
+  gap:16px;
+}
+
+.item{
+  border:1px solid var(--line);
+  border-left:4px solid var(--accent);
+  background:#fff;
+}
+
+.item.critical{border-left-color:var(--red)}
+.item.high{border-left-color:var(--amber)}
+.item.medium{border-left-color:var(--blue)}
+.item.low{border-left-color:var(--accent)}
+
+.item-head{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  align-items:flex-start;
+  padding:18px 18px 14px;
+}
+
+.advisory-id{
+  font:700 14px 'IBM Plex Mono',monospace;
+  color:var(--accent);
+}
+
+.title{
+  font:700 20px 'Space Grotesk',sans-serif;
+  margin-top:8px;
+  line-height:1.3;
+}
+
+.title a{
+  color:var(--ink);
+  text-decoration:none;
+}
+
+.title a:hover{color:var(--accent)}
+
+.cves{
+  font:500 11px 'IBM Plex Mono',monospace;
+  color:var(--muted);
+  margin-top:7px;
+  line-height:1.5;
+}
+
+.badges{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.badge{
+  font:700 10px 'IBM Plex Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  padding:6px 8px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  white-space:nowrap;
+}
+
+.badge.red{
+  background:var(--red-soft);
+  color:var(--red);
+  border-color:#fecaca;
+}
+
+.badge.amber{
+  background:var(--amber-soft);
+  color:var(--amber);
+  border-color:#fde68a;
+}
+
+.badge.blue{
+  background:var(--blue-soft);
+  color:var(--blue);
+  border-color:#bfdbfe;
+}
+
+.badge.green{
+  background:var(--accent-soft);
+  color:var(--accent-dark);
+  border-color:#a7f3d0;
+}
+
+.badge.slate{
+  background:#f8fafc;
+  color:#475569;
+  border-color:#cbd5e1;
+}
+
+.body{
+  padding:0 18px 18px;
+}
+
+.overview-grid{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:8px;
+  margin-bottom:14px;
+}
+
+.overview-box{
+  padding:11px;
+  background:#f8fafc;
+  border:1px solid var(--line);
+}
+
+.overview-box small,
+.fact small,
+.meta-box small{
+  display:block;
+  color:var(--muted);
+  font:500 10px 'IBM Plex Mono',monospace;
+  text-transform:uppercase;
+  margin-bottom:5px;
+}
+
+.overview-box strong,
+.fact strong,
+.meta-box strong{
+  display:block;
+  font-size:13px;
+  line-height:1.45;
+  word-break:break-word;
+}
+
+.product-status-wrap{
+  margin:0 0 14px;
+}
+
+.section-label{
+  margin:0 0 8px;
+  font:700 11px 'IBM Plex Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--ink);
+}
+
+.product-status-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+
+.product-card{
+  border:1px solid var(--line);
+  background:#fcfcfb;
+}
+
+.product-card-head{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:flex-start;
+  padding:11px 13px;
+  border-bottom:1px solid var(--line);
+  background:#fafaf8;
+}
+
+.product-family{
+  font:700 15px 'Space Grotesk',sans-serif;
+}
+
+.product-list{
+  padding:11px 13px;
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+}
+
+.product-chip{
+  padding:5px 7px;
+  border:1px solid #dbe2ea;
+  border-radius:5px;
+  background:#fff;
+  font:600 11px 'IBM Plex Mono',monospace;
+  color:#334155;
+}
+
+.product-chip.match{
+  background:var(--accent-soft);
+  border-color:#6ee7b7;
+  color:var(--accent-dark);
+}
+
+.product-description{
+  padding:0 13px 12px;
+  font-size:12px;
+  line-height:1.6;
+  color:#64748b;
+}
+
+.vuln-list{
+  display:grid;
+  gap:12px;
+  margin:0 0 14px;
+}
+
+.vuln-card{
+  border:1px solid var(--line);
+  background:#fcfcfb;
+}
+
+.vuln-head{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:flex-start;
+  padding:12px 14px;
+  border-bottom:1px solid var(--line);
+  background:#fafaf8;
+}
+
+.vuln-cve{
+  font:700 11px 'IBM Plex Mono',monospace;
+  color:var(--accent);
+  margin-bottom:5px;
+}
+
+.vuln-title{
+  font:700 16px 'Space Grotesk',sans-serif;
+  line-height:1.35;
+}
+
+.vuln-desc{
+  padding:12px 14px 0;
+  color:#475569;
+  font-size:14px;
+  line-height:1.65;
+  white-space:pre-line;
+}
+
+.vuln-meta{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  padding:12px 14px 14px;
+}
+
+.meta-box{
+  padding:10px;
+  background:#fff;
+  border:1px solid var(--line);
+}
+
+.summary{
+  padding:13px 14px;
+  border:1px solid var(--line);
+  background:#fafaf8;
+  color:#475569;
+  font-size:14px;
+  line-height:1.65;
+  white-space:pre-line;
+  margin:0 0 14px;
+}
+
+.fact-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+}
+
+.fact{
+  padding:10px;
+  background:#fafaf8;
+  border:1px solid var(--line);
+}
+
+.pagination{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  justify-content:center;
+  margin:28px 0 6px;
+}
+
+.pagination button{
+  border:1px solid #cbd5e1;
+  background:#fff;
+  padding:9px 12px;
+  cursor:pointer;
+  border-radius:5px;
+}
+
+.pagination button.active{
+  background:var(--ink);
+  color:#fff;
+}
+
+.pagination span{
+  padding:9px 4px;
+  color:var(--muted);
+}
+
+.source-note{
+  margin-top:28px;
+  padding:22px 0 4px;
+  border-top:1px solid var(--line);
+  font-size:13px;
+  line-height:1.7;
+  color:#475569;
+}
+
+.empty{
+  padding:22px;
+  border:1px solid var(--line);
+  background:#fafaf8;
+  color:#475569;
+}
+
+@media(max-width:1200px){
+  .filters{grid-template-columns:1fr 1fr 1fr}
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .overview-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+@media(max-width:850px){
+  .stats,
+  .overview-grid,
+  .product-status-grid,
+  .fact-grid,
+  .vuln-meta{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:700px){
+  .wrap{padding:12px}
+  .top,.stats,.filters,.content{
+    padding-left:18px;
+    padding-right:18px;
+  }
+  .filters,
+  .stats,
+  .overview-grid,
+  .product-status-grid,
+  .fact-grid,
+  .vuln-meta{
+    grid-template-columns:1fr;
+  }
+  .item-head,
+  .vuln-head,
+  .product-card-head{
+    display:block;
+  }
+  .badges{
+    justify-content:flex-start;
+    margin-top:12px;
+  }
+}
+>>>>>>> Stashed changes
 </style>
 </head>
+
 <body>
+<<<<<<< Updated upstream
 <div class="card-wrapper ds-page"><div class="card">
 <div id="menu-container"></div><div class="accent-bar" style="background:#059669"></div>
 <div class="wrap"><div class="vendor-card">
@@ -69,5 +580,721 @@ function renderPagination(pages){const el=$('pagination');el.innerHTML='';if(pag
 function render(){const pages=Math.max(1,Math.ceil(filtered.length/PAGE_SIZE));if(page>pages)page=pages;$('filterNote').textContent=`${filtered.length} resultados · ${catalog.length} advisories cargados · 7 por página · filtros acumulativos`;const start=(page-1)*PAGE_SIZE,rows=filtered.slice(start,start+PAGE_SIZE);$('list').innerHTML=rows.length?rows.map(renderItem).join(''):'<div class="empty">No hay advisories que coincidan con los filtros.</div>';renderPagination(pages);}
 async function load(){try{const response=await fetch('../../data/sonicwall-psirt.json',{cache:'no-store'});if(!response.ok)throw new Error(`HTTP ${response.status}`);const data=await response.json();catalog=data.advisories||[];populateProducts(data);$('statTotal').textContent=Number(data.total_advisories||catalog.length).toLocaleString('es-ES');$('statVulns').textContent=Number(data.total_vulnerabilities||0).toLocaleString('es-ES');$('statHigh').textContent=Number(data.total_high||0).toLocaleString('es-ES');$('statCve').textContent=Number(data.total_with_cve||0).toLocaleString('es-ES');$('statProducts').textContent=Number(data.total_products||0).toLocaleString('es-ES');$('sourceMeta').textContent=data.source||'SonicWall PSIRT';$('updatedMeta').textContent=`Actualizado ${fmtDate(data.last_updated_at)}`;apply();}catch(error){$('filterNote').textContent='Error de carga';$('list').innerHTML=`<div class="empty">No se pudo cargar SonicWall PSIRT Intelligence: ${esc(error.message)}</div>`;}}
 ['q','product','status','severity','exploitation','order'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',apply));load();
+=======
+<div class="card-wrapper ds-page">
+  <div class="card">
+
+    <div id="menu-container"></div>
+    <div class="accent-bar" style="background:#059669;"></div>
+
+    <div class="wrap">
+      <div class="vendor-card">
+
+        <section class="top">
+          <a class="back" href="../index.html">← VOLVER A TOOLS</a>
+
+          <div class="eyebrow">Tools · Vendor PSIRT Intelligence</div>
+
+          <h1>SonicWall <span class="accent">PSIRT Intelligence</span></h1>
+
+          <p class="lead">
+            Explorador técnico de advisories publicados por SonicWall PSIRT.
+            Los datos se reconstruyen desde el XML oficial y se normalizan para
+            consultar advisories, CVE, productos, familias y estado de impacto.
+          </p>
+
+          <div class="meta">
+            <span>Ámbito: catálogo completo disponible en el XML oficial</span>
+            <span id="sourceMeta">Fuente cargando…</span>
+            <span id="updatedMeta">Actualización cargando…</span>
+          </div>
+        </section>
+
+        <section class="stats">
+          <div class="stat">
+            <b id="statTotal">—</b>
+            <span>Advisories</span>
+          </div>
+          <div class="stat">
+            <b id="statFindings">—</b>
+            <span>Hallazgos CVE estructurados</span>
+          </div>
+          <div class="stat">
+            <b id="statHigh">—</b>
+            <span>Severidad alta</span>
+          </div>
+          <div class="stat">
+            <b id="statCve">—</b>
+            <span>Advisories con CVE</span>
+          </div>
+          <div class="stat">
+            <b id="statProducts">—</b>
+            <span>Productos detectados</span>
+          </div>
+        </section>
+
+        <section class="filters">
+          <input
+            id="q"
+            type="search"
+            placeholder="Buscar advisory, CVE, NSA 4700, producto, descripción…"
+          >
+
+          <select id="product">
+            <option value="">Producto / modelo: todos</option>
+          </select>
+
+          <select id="status">
+            <option value="">Impacto: todos</option>
+            <option value="Impacted">Impactado</option>
+            <option value="Affected">Afectado</option>
+            <option value="Partially Impacted">Parcialmente impactado</option>
+            <option value="Not Impacted">No impactado</option>
+            <option value="Not Applicable">No aplicable</option>
+            <option value="Under Investigation">En investigación</option>
+            <option value="TBD">Pendiente / TBD</option>
+          </select>
+
+          <select id="severity">
+            <option value="">Severidad: todas</option>
+            <option value="critical">Crítica</option>
+            <option value="high">Alta</option>
+            <option value="medium">Media</option>
+            <option value="low">Baja</option>
+            <option value="unknown">Sin clasificar</option>
+          </select>
+
+          <select id="exploitation">
+            <option value="">Explotación: todas</option>
+            <option value="exploited">Explotación detectada</option>
+            <option value="no_evidence">Sin evidencia</option>
+            <option value="unknown">Sin determinar</option>
+          </select>
+
+          <select id="order">
+            <option value="desc">Actualización: más reciente primero</option>
+            <option value="asc">Actualización: más antigua primero</option>
+          </select>
+        </section>
+
+        <div id="filterNote" class="filter-note">
+          Cargando catálogo…
+        </div>
+
+        <section class="content">
+          <div id="list" class="list"></div>
+          <div id="pagination" class="pagination"></div>
+
+          <div class="source-note">
+            <strong>Fuente oficial:</strong> SonicWall Product Security Incident Response Team.
+            Technology Advisory descarga y normaliza el XML oficial para consulta técnica.
+            La autoridad del advisory, el estado de impacto y su contenido corresponden al fabricante.
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+  </div>
+</div>
+
+<script src="../../js/menu.js"></script>
+<script src="../../js/footer.js"></script>
+
+<script>
+const $ = id => document.getElementById(id);
+const PAGE_SIZE = 7;
+
+let catalog = [];
+let filtered = [];
+let page = 1;
+
+function esc(value){
+  return String(value ?? '').replace(
+    /[&<>"']/g,
+    char => ({
+      '&':'&amp;',
+      '<':'&lt;',
+      '>':'&gt;',
+      '"':'&quot;',
+      "'":'&#039;'
+    })[char]
+  );
+}
+
+function parseDate(value){
+  const date = value ? new Date(value) : null;
+  return !date || Number.isNaN(date.getTime()) ? null : date;
+}
+
+function fmtDate(value){
+  const date = parseDate(value);
+
+  return date
+    ? new Intl.DateTimeFormat(
+        'es-ES',
+        {dateStyle:'medium', timeStyle:'short'}
+      ).format(date)
+    : 'Sin fecha';
+}
+
+function effectiveDate(item){
+  return item.updated_at || item.published_at || null;
+}
+
+function severityLabel(value){
+  return ({
+    critical:'Crítica',
+    high:'Alta',
+    medium:'Media',
+    low:'Baja'
+  })[value] || 'Sin clasificar';
+}
+
+function severityBadge(value){
+  return ({
+    critical:'red',
+    high:'amber',
+    medium:'blue',
+    low:'green'
+  })[value] || 'slate';
+}
+
+function exploitationLabel(value){
+  return ({
+    exploited:'Explotación detectada',
+    no_evidence:'Sin evidencia',
+    unknown:'Sin determinar'
+  })[value] || 'Sin determinar';
+}
+
+function exploitationBadge(value){
+  return ({
+    exploited:'red',
+    no_evidence:'green',
+    unknown:'slate'
+  })[value] || 'slate';
+}
+
+function statusLabel(value){
+  return ({
+    'Impacted':'Impactado',
+    'Affected':'Afectado',
+    'Partially Impacted':'Parcialmente impactado',
+    'Not Impacted':'No impactado',
+    'Not Applicable':'No aplicable',
+    'Under Investigation':'En investigación',
+    'TBD':'Pendiente / TBD'
+  })[value] || value || 'Sin estado';
+}
+
+function statusBadge(value){
+  return ({
+    'Impacted':'red',
+    'Affected':'red',
+    'Partially Impacted':'amber',
+    'Not Impacted':'green',
+    'Not Applicable':'slate',
+    'Under Investigation':'blue',
+    'TBD':'amber'
+  })[value] || 'slate';
+}
+
+function allSearchText(item){
+  const productBlocks = (item.product_status || []).flatMap(block => [
+    block.family,
+    block.status,
+    block.description,
+    ...(block.products || [])
+  ]);
+
+  return [
+    item.advisory_id,
+    item.title,
+    item.summary,
+    ...(item.cves || []),
+    ...(item.products || []),
+    ...(item.categories || []),
+    ...productBlocks,
+    ...(item.findings || []).flatMap(finding => [
+      finding.cve,
+      finding.title,
+      finding.description,
+      finding.cwe,
+      finding.cvss_vector
+    ])
+  ]
+  .filter(Boolean)
+  .join(' ')
+  .toLowerCase();
+}
+
+function populateProducts(data){
+  const current = $('product').value;
+  const products = [...new Set(data.products || [])]
+    .filter(Boolean)
+    .sort((a,b) => a.localeCompare(b, 'es', {numeric:true}));
+
+  $('product').innerHTML =
+    '<option value="">Producto / modelo: todos</option>' +
+    products
+      .map(product => `<option value="${esc(product)}">${esc(product)}</option>`)
+      .join('');
+
+  if(products.includes(current)){
+    $('product').value = current;
+  }
+}
+
+function itemMatchesProduct(item, product){
+  if(!product){
+    return true;
+  }
+
+  if((item.products || []).includes(product)){
+    return true;
+  }
+
+  return (item.product_status || []).some(
+    block => (block.products || []).includes(product)
+  );
+}
+
+function itemMatchesStatus(item, status){
+  if(!status){
+    return true;
+  }
+
+  return (item.product_status || []).some(
+    block => block.status === status
+  );
+}
+
+function apply(){
+  const term = $('q').value.trim().toLowerCase();
+  const product = $('product').value;
+  const status = $('status').value;
+  const severity = $('severity').value;
+  const exploitation = $('exploitation').value;
+  const order = $('order').value;
+
+  filtered = catalog.filter(item => {
+    if(term && !allSearchText(item).includes(term)){
+      return false;
+    }
+
+    if(!itemMatchesProduct(item, product)){
+      return false;
+    }
+
+    if(!itemMatchesStatus(item, status)){
+      return false;
+    }
+
+    if(severity === 'unknown' && item.severity){
+      return false;
+    }
+
+    if(
+      severity &&
+      severity !== 'unknown' &&
+      item.severity !== severity
+    ){
+      return false;
+    }
+
+    if(
+      exploitation &&
+      (item.exploitation_status || 'unknown') !== exploitation
+    ){
+      return false;
+    }
+
+    return true;
+  });
+
+  filtered.sort((a,b) => {
+    const dateA = parseDate(effectiveDate(a))?.getTime() || 0;
+    const dateB = parseDate(effectiveDate(b))?.getTime() || 0;
+
+    return order === 'asc'
+      ? dateA - dateB
+      : dateB - dateA;
+  });
+
+  page = 1;
+  render();
+}
+
+function renderPagination(pages){
+  const container = $('pagination');
+  container.innerHTML = '';
+
+  if(pages <= 1){
+    return;
+  }
+
+  const visible = new Set([1, pages]);
+
+  for(let current = page - 2; current <= page + 2; current++){
+    if(current >= 1 && current <= pages){
+      visible.add(current);
+    }
+  }
+
+  const sorted = [...visible].sort((a,b) => a - b);
+  let previous = 0;
+
+  sorted.forEach(number => {
+    if(previous && number - previous > 1){
+      const dots = document.createElement('span');
+      dots.textContent = '···';
+      container.appendChild(dots);
+    }
+
+    const button = document.createElement('button');
+    button.textContent = number;
+
+    if(number === page){
+      button.className = 'active';
+    }
+
+    button.addEventListener('click', () => {
+      page = number;
+      render();
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+
+    container.appendChild(button);
+    previous = number;
+  });
+}
+
+function renderProductStatus(item){
+  const blocks = item.product_status || [];
+
+  if(!blocks.length){
+    return '';
+  }
+
+  const selectedProduct = $('product').value;
+
+  return `
+    <div class="product-status-wrap">
+      <div class="section-label">Producto / familia · estado del fabricante</div>
+
+      <div class="product-status-grid">
+        ${blocks.map(block => `
+          <div class="product-card">
+            <div class="product-card-head">
+              <div class="product-family">${esc(block.family || 'Producto')}</div>
+              <span class="badge ${statusBadge(block.status)}">
+                ${esc(statusLabel(block.status))}
+              </span>
+            </div>
+
+            ${
+              (block.products || []).length
+                ? `
+                  <div class="product-list">
+                    ${(block.products || []).map(product => `
+                      <span class="product-chip ${product === selectedProduct ? 'match' : ''}">
+                        ${esc(product)}
+                      </span>
+                    `).join('')}
+                  </div>
+                `
+                : ''
+            }
+
+            ${
+              block.description && block.description !== 'N/A'
+                ? `<div class="product-description">${esc(block.description)}</div>`
+                : ''
+            }
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function renderFinding(finding){
+  return `
+    <div class="vuln-card">
+      <div class="vuln-head">
+        <div>
+          <div class="vuln-cve">${esc(finding.cve || 'CVE sin identificar')}</div>
+          <div class="vuln-title">${esc(finding.title || 'Hallazgo')}</div>
+        </div>
+
+        <div class="badges">
+          ${
+            finding.cvss != null
+              ? `<span class="badge ${severityBadge(finding.severity)}">CVSS ${esc(finding.cvss)}</span>`
+              : ''
+          }
+        </div>
+      </div>
+
+      <div class="vuln-desc">
+        ${esc(finding.description || 'Sin descripción detallada.')}
+      </div>
+
+      <div class="vuln-meta">
+        <div class="meta-box">
+          <small>CVSS Score</small>
+          <strong>${esc(finding.cvss ?? 'Sin dato')}</strong>
+        </div>
+
+        <div class="meta-box">
+          <small>CVSS Vector</small>
+          <strong>${esc(finding.cvss_vector || 'Sin dato')}</strong>
+        </div>
+
+        <div class="meta-box">
+          <small>CWE</small>
+          <strong>${esc(finding.cwe || 'Sin dato')}</strong>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderItem(item){
+  const findings = item.findings || [];
+  const productBlocks = item.product_status || [];
+
+  const productCount = new Set([
+    ...(item.products || []),
+    ...productBlocks.flatMap(block => block.products || [])
+  ]).size;
+
+  const families = [
+    ...new Set(
+      productBlocks
+        .map(block => block.family)
+        .filter(Boolean)
+    )
+  ];
+
+  return `
+    <article class="item ${esc(item.severity || '')}">
+      <div class="item-head">
+        <div>
+          <div class="advisory-id">
+            ${esc(item.advisory_id || 'Advisory oficial')}
+          </div>
+
+          <div class="title">
+            <a
+              href="${esc(item.url || '#')}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ${esc(item.title || 'Sin título')}
+            </a>
+          </div>
+
+          <div class="cves">
+            ${
+              (item.cves || []).length
+                ? esc((item.cves || []).join(' · '))
+                : 'Sin CVE identificado'
+            }
+          </div>
+        </div>
+
+        <div class="badges">
+          <span class="badge ${severityBadge(item.severity)}">
+            ${esc(severityLabel(item.severity))}
+          </span>
+
+          ${
+            item.max_cvss != null
+              ? `<span class="badge blue">CVSS MAX ${esc(item.max_cvss)}</span>`
+              : ''
+          }
+
+          <span class="badge ${exploitationBadge(item.exploitation_status)}">
+            ${esc(exploitationLabel(item.exploitation_status))}
+          </span>
+        </div>
+      </div>
+
+      <div class="body">
+        <div class="overview-grid">
+          <div class="overview-box">
+            <small>Familias</small>
+            <strong>${esc(families.join(' · ') || 'Sin familia estructurada')}</strong>
+          </div>
+
+          <div class="overview-box">
+            <small>Productos detectados</small>
+            <strong>${esc(productCount)}</strong>
+          </div>
+
+          <div class="overview-box">
+            <small>Hallazgos</small>
+            <strong>${esc(findings.length)}</strong>
+          </div>
+
+          <div class="overview-box">
+            <small>CVSS máximo</small>
+            <strong>${esc(item.max_cvss ?? 'Sin dato')}</strong>
+          </div>
+
+          <div class="overview-box">
+            <small>Explotación</small>
+            <strong>${esc(exploitationLabel(item.exploitation_status))}</strong>
+          </div>
+        </div>
+
+        ${renderProductStatus(item)}
+
+        ${
+          findings.length
+            ? `
+              <div class="section-label">Hallazgos técnicos</div>
+              <div class="vuln-list">
+                ${findings.map(renderFinding).join('')}
+              </div>
+            `
+            : `
+              <div class="section-label">Resumen técnico</div>
+              <div class="summary">
+                ${esc(item.summary || 'Sin resumen disponible en el XML oficial.')}
+              </div>
+            `
+        }
+
+        <div class="fact-grid">
+          <div class="fact">
+            <small>Publicado</small>
+            <strong>${esc(fmtDate(item.published_at))}</strong>
+          </div>
+
+          <div class="fact">
+            <small>Actualizado</small>
+            <strong>${esc(fmtDate(item.updated_at))}</strong>
+          </div>
+
+          <div class="fact">
+            <small>Severidad agregada</small>
+            <strong>${esc(severityLabel(item.severity))}</strong>
+          </div>
+
+          <div class="fact">
+            <small>Advisory ID</small>
+            <strong>${esc(item.advisory_id || 'No identificado')}</strong>
+          </div>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function render(){
+  const pages = Math.max(
+    1,
+    Math.ceil(filtered.length / PAGE_SIZE)
+  );
+
+  if(page > pages){
+    page = pages;
+  }
+
+  $('filterNote').textContent =
+    `${filtered.length} resultados · ` +
+    `${catalog.length} advisories cargados · ` +
+    `7 por página · filtros acumulativos`;
+
+  const start = (page - 1) * PAGE_SIZE;
+  const rows = filtered.slice(start, start + PAGE_SIZE);
+
+  $('list').innerHTML = rows.length
+    ? rows.map(renderItem).join('')
+    : '<div class="empty">No hay advisories que coincidan con los filtros seleccionados.</div>';
+
+  renderPagination(pages);
+}
+
+async function load(){
+  try{
+    const response = await fetch(
+      '../../data/sonicwall-psirt.json',
+      {cache:'no-store'}
+    );
+
+    if(!response.ok){
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    catalog = data.advisories || [];
+
+    $('statTotal').textContent =
+      Number(data.total_advisories || catalog.length)
+        .toLocaleString('es-ES');
+
+    $('statFindings').textContent =
+      Number(data.total_findings || 0)
+        .toLocaleString('es-ES');
+
+    $('statHigh').textContent =
+      Number(data.total_high || 0)
+        .toLocaleString('es-ES');
+
+    $('statCve').textContent =
+      Number(data.total_with_cve || 0)
+        .toLocaleString('es-ES');
+
+    $('statProducts').textContent =
+      Number(data.total_products || 0)
+        .toLocaleString('es-ES');
+
+    $('sourceMeta').textContent =
+      data.source || 'SonicWall PSIRT';
+
+    $('updatedMeta').textContent =
+      `Actualizado ${fmtDate(data.last_updated_at)}`;
+
+    populateProducts(data);
+    apply();
+
+  }catch(error){
+    $('filterNote').textContent = 'Error de carga';
+
+    $('list').innerHTML = `
+      <div
+        style="
+          padding:22px;
+          border:1px solid #fecaca;
+          background:#fef2f2;
+          color:#b91c1c;
+        "
+      >
+        No se pudo cargar SonicWall PSIRT Intelligence:
+        ${esc(error.message)}
+      </div>
+    `;
+  }
+}
+
+['q','product','status','severity','exploitation','order']
+  .forEach(id => {
+    $(id).addEventListener(
+      id === 'q' ? 'input' : 'change',
+      apply
+    );
+  });
+
+load();
+>>>>>>> Stashed changes
 </script>
-</body></html>
+
+</body>
+</html>
