@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "title": "SonicWall PSIRT Intelligence",
+  "last_updated_at": "2026-07-13T14:29:37.327436Z",
+  "window_days": 180,
+  "total_advisories": 4,
+  "total_critical": 0,
+  "total_high": 2,
+  "total_with_cve": 4,
+  "source": "SonicWall Product Security Incident Response Team",
+  "source_url": "https://psirt.global.sonicwall.com/",
+  "feed_url": "https://psirtapi.global.sonicwall.com/api/v1/feed/rss.xml",
+  "advisories": [
+    {
+      "id": "a3f0552baa04e735c053f062",
+      "advisory_id": null,
+      "title": "SonicOS affected by multiple vulnerabilities",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0004",
+      "summary": "<span style=\"color: rgb(181, 99, 8);\">1) CVE-2026-0204 - SonicOS Improper Access Control Vulnerability</span><br><br>A vulnerability in the access control mechanism of SonicOS may allow certain management interface functions to be accessible under specific conditions.<br><br>CVSS Score: 8.0<br>CVSS Vector: CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H<br>CWE-1390: Weak Authentication<br><br><span style=\"color: rgb(181, 99, 8);\">2) CVE-2026-0205 - SonicOS post-authentication Path Traversal vulnerability</span><br><br>A post-authentication Path Traversal vulnerability in SonicOS allows an attacker to interact with usually restricted services.<br><br>CVSS Score: 6.8<br>CVSS Vector: CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:H<br>CWE-35: Path Traversal<br><br><span style=\"color: rgb(181, 99, 8);\">3) CVE-2026-0206 - SonicOS post-authentication Stack-based Buffer Overflow vulnerability</span><br><br>A post-authentication Stack-based Buffer Overflow vulnerabilities in SonicOS allows a remote attacker to crash a firewall.<br><br>CVSS Score: 4.9<br>CVSS Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H<br>CWE-121: Stack-based Buffer Overflow CVE: CVE-2026-0204, CVE-2026-0205, CVE-2026-0206 Last updated: May 4, 2026, 10:17 a.m.",
+      "published_at": "2026-04-29T13:48:39Z",
+      "updated_at": "2026-04-29T13:48:39Z",
+      "cvss": 8.0,
+      "severity": "high",
+      "cves": [
+        "CVE-2026-0204",
+        "CVE-2026-0205",
+        "CVE-2026-0206"
+      ],
+      "categories": []
+    },
+    {
+      "id": "54e4b4328ee795ae4193a2db",
+      "advisory_id": null,
+      "title": "SonicWall SMA1000 Series Appliances Affected By Multiple Vulnerabilities",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0003",
+      "summary": "<p> </p><p><span style=\"font-size: 11pt; color: rgb(181, 99, 8);\">1) CVE-2026-4112 - Privilege Escalation via SQL Injection</span></p><p>Improper neutralization of special elements used in an SQL command (“SQL Injection”) in SonicWall SMA1000 series appliances allows a remote authenticated attacker with read-only administrator privileges to escalate privileges to primary administrator. <br></p><p>CVSS Score: 7.2<br> CVSS Vector: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H<br> CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') </p><p> </p><p><span style=\"font-size: 11pt; color: rgb(181, 99, 8);\">2) CVE-2026-4113 - Authentication Response Discrepancy Allows User Credential Enumeration</span></p><p>An observable response discrepancy vulnerability in the SonicWall SMA1000 series appliances allows a remote attacker to enumerate SSL VPN user credentials. <br></p><p>CVSS Score: 5.3<br> CVSS Vector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N<br> CWE-204: Observable Response Discrepancy </p><p> </p><p><span style=\"color: rgb(196, 89, 17); font-size: 11pt;\">3) CVE-2026-4114 - Unicode Possible AMC TOTP Bypass vulnerability</span><br></p><p>Improper handling of Unicode encoding in SonicWall SMA1000 series appliances allows a remote authenticated SSLVPN admin to bypass AMC TOTP authentication. <br></p><p>CVSS Score: 6.6<br> CVSS Vector: CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H<br> CWE-176: Improper Handling of Unicode Encoding </p> <p><span style=\"color: rgb(196, 89, 17); font-size: 11pt;\">4) CVE-2026-4116 - Unicode Possible Workplace/Connect Tunnel TOTP Bypass vulnerability</span><br></p><p>Improper handling of Unicode encoding in SonicWall SMA1000 series appliances allows a remote authenticated SSLVPN user to bypass Workplace/Connect Tunnel TOTP authentication. <br></p><p>CVSS Score: 6.0<br> CVSS Vector: CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:L<br> CWE-176: Improper Handling of Unicode Encoding </p> <p></p><p> </p> <p>SonicWall strongly advises users of the SMA1000 series appliances to upgrade to the mentioned fixed release version to address these vulnerabilities.<br><br>There is currently no evidence any of the vulnerabilities addressed in this release are being exploited in the wild. Please note that SSL-VPN running on SonicWall Firewall products are not affected by this vulnerability.</p> CVE: CVE-2026-4112, CVE-2026-4113, CVE-2026-4114, CVE-2026-4116 Last updated: April 8, 2026, 11:47 a.m.",
+      "published_at": "2026-04-08T11:47:22Z",
+      "updated_at": "2026-04-08T11:47:22Z",
+      "cvss": 7.2,
+      "severity": "high",
+      "cves": [
+        "CVE-2026-4112",
+        "CVE-2026-4113",
+        "CVE-2026-4114",
+        "CVE-2026-4116"
+      ],
+      "categories": []
+    },
+    {
+      "id": "303f0af1c4c605a3719991fc",
+      "advisory_id": null,
+      "title": "SonicWall Email Security Affected By Multiple Vulnerabilities",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0002",
+      "summary": "<p><span style=\"font-size: 11pt; color: rgb(181, 99, 8);\">1) CVE-2026-3468 - Stored Cross-Site Scripting (XSS) Vulnerability</span></p><p>A stored Cross-Site Scripting (XSS) vulnerability has been identified in the SonicWall Email Security appliance due to improper neutralization of user-supplied input during web page generation, allowing a remote authenticated attacker as admin user to potentially execute arbitrary JavaScript code. <br></p><p>CVSS Score: 3.5<br> CVSS Vector: CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:U/C:L/I:L/A:N<br> CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') </p><p> </p><p><span style=\"font-size: 11pt; color: rgb(181, 99, 8);\">2) CVE-2026-3469 - Denial of Service (DoS) via Malformed Input</span></p><p>A denial-of-service (DoS) vulnerability exists due to improper input validation in the SonicWall Email Security appliance, allowing a remote authenticated attacker as admin user to cause the application to become unresponsive. <br></p><p>CVSS Score: 2.7<br> CVSS Vector: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:L<br> CWE-20 – Improper Input Validation </p><p> </p><p><span style=\"color: rgb(196, 89, 17); font-size: 11pt;\">3) CVE-2026-3470 - Lack of Proper Input Sanitization leading to data corruption</span><br></p><p>A vulnerability exists in the SonicWall Email Security appliance due to improper input sanitization that may lead to data corruption, allowing a remote authenticated attacker as admin user could exploit this issue by providing crafted input that corrupts application database. <br></p><p>CVSS Score: 3.8<br> CVSS Vector: CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:L<br> CWE-20 – Improper Input Validation </p> <p></p><p> </p> <p>SonicWall strongly advises users of the Email Security products (ES Appliance 5000, 5050, 7000, 7050, 9000, VMWare and Hyper-V) to upgrade to the mentioned fixed release version to address these vulnerabilities. <br>There is currently no evidence any of the vulnerabilities addressed in this release are being exploited in the wild.</p> CVE: CVE-2026-3468, CVE-2026-3469, CVE-2026-3470 Last updated: March 31, 2026, 11:58 a.m.",
+      "published_at": "2026-03-31T11:58:45Z",
+      "updated_at": "2026-03-31T11:58:45Z",
+      "cvss": 3.5,
+      "severity": "low",
+      "cves": [
+        "CVE-2026-3468",
+        "CVE-2026-3469",
+        "CVE-2026-3470"
+      ],
+      "categories": []
+    },
+    {
+      "id": "84e90db9c50e2157d74cf23e",
+      "advisory_id": null,
+      "title": "SonicOS multiple post-authentication vulnerabilities",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0001",
+      "summary": "<p><span style=\"color: rgb(181, 99, 8);\">1) CVE-2026-0399 - Multiple SonicOS post-authentication Stack-based Buffer Overflow vulnerabilities</span><span style=\"color: rgb(255, 156, 0);\"><br></span><br>Multiple post-authentication Stack-based Buffer Overflow vulnerabilities in SonicOS allows a remote attacker to crash a firewall.</p><p>CVSS Score: 4.9<br> CVSS Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H<br> CWE-121: Stack-based Buffer Overflow<br><br><span style=\"color: rgb(181, 99, 8);\">2) CVE-2026-0400 - SonicOS post-authentication Format String vulnerability</span><span style=\"color: rgb(255, 156, 0);\"><br></span><br>A post-authentication Format String vulnerability in SonicOS allows a remote attacker to crash a firewall.</p><p>CVSS Score: 4.9<br> CVSS Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H<br>CWE-134: Use of Externally-Controlled Format String <br><br><span style=\"color: rgb(181, 99, 8);\">3) CVE-2026-0401 - SonicOS post-authentication NULL Pointer Dereference vulnerability</span><span style=\"color: rgb(255, 156, 0);\"><br></span><br>A post-authentication NULL Pointer Dereference vulnerability in SonicOS allows a remote attacker to crash a firewall.</p><p>CVSS Score: 4.9<br> CVSS Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H<br>CWE-476: NULL Pointer Dereference&nbsp;<br><br><span style=\"color: rgb(181, 99, 8);\">4) CVE-2026-0402 - SonicOS post-authentication Out-of-bounds Read vulnerability</span><span style=\"color: rgb(255, 156, 0);\"><br></span><br>A post-authentication Out-of-bounds Read vulnerability in SonicOS allows a remote attacker to crash a firewall.</p><p>CVSS Score: 4.9<br> CVSS Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H<br>CWE-125: Out-of-bounds Read&nbsp;<br><br><span style=\"color: rgb(181, 99, 8);\">5) CVE-2026-3439 - SonicOS post-authentication Stack-based Buffer Overflow in certificate handling</span><span style=\"color: rgb(255, 156, 0);\"><br></span><br>A post-authentication Stack-based Buffer Overflow vulnerability in SonicOS certificate handling allows a remote attacker to crash a firewall.</p><p>CVSS Score: 4.9<br> CVSS Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H<br>CWE-121: Stack-based Buffer Overflow&nbsp;</p> CVE: CVE-2026-0399, CVE-2026-0400, CVE-2026-0401, CVE-2026-0402, CVE-2026-3439 Last updated: March 11, 2026, 9:23 a.m.",
+      "published_at": "2026-02-24T11:46:22Z",
+      "updated_at": "2026-02-24T11:46:22Z",
+      "cvss": 4.9,
+      "severity": "medium",
+      "cves": [
+        "CVE-2026-0399",
+        "CVE-2026-0400",
+        "CVE-2026-0401",
+        "CVE-2026-0402",
+        "CVE-2026-3439"
+      ],
+      "categories": []
+    }
+  ]
+}
