@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>Fortinet PSIRT Intelligence · Technology Advisory</title>
+<meta name="description" content="Explorador técnico de advisories oficiales Fortinet.">
+<meta name="theme-color" content="#059669">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<style>
+:root{--ink:#151915;--muted:#64748b;--line:#e2e8f0;--paper:#fff;--canvas:#f4f3ee;--accent:#059669;--accent-soft:#ecfdf5;--amber:#b45309;--red:#b91c1c;--red-soft:#fef2f2;--amber-soft:#fffbeb;--blue:#0369a1;--blue-soft:#eff6ff}
+*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);font-family:Inter,Arial,sans-serif}.wrap{width:100%;max-width:none;margin:0 auto;padding:24px 32px 32px}.vendor-card{width:100%;background:var(--paper);border:1px solid #d8d4c8}.top{padding:28px 32px;border-bottom:1px solid var(--line)}.eyebrow{font:700 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.14em;color:var(--accent)}h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,5vw,52px);line-height:1.05;margin:10px 0 12px}.accent{color:var(--accent)}.lead{font-size:17px;line-height:1.7;color:#475569;max-width:960px}.meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font:500 12px 'IBM Plex Mono',monospace;color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:20px 32px;border-bottom:1px solid var(--line)}.stat{border:1px solid var(--line);padding:16px;background:#fafaf8}.stat b{display:block;font:700 28px 'Space Grotesk',sans-serif}.stat span{font-size:12px;color:var(--muted)}.filters{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:10px;padding:20px 32px;border-bottom:1px solid var(--line);background:#fafaf8}.filters input,.filters select{width:100%;padding:11px 12px;border:1px solid #cbd5e1;background:#fff;font:500 13px Inter;border-radius:6px}.filter-note{padding:10px 32px;border-bottom:1px solid var(--line);background:#fff;font:500 11px 'IBM Plex Mono',monospace;color:var(--muted)}.content{padding:24px 32px}.list{display:grid;gap:14px}.item{border:1px solid var(--line);border-left:4px solid var(--accent);background:#fff}.item.critical{border-left-color:var(--red)}.item.high{border-left-color:var(--amber)}.item.medium{border-left-color:var(--blue)}.item-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding:18px 18px 12px}.advisory-id{font:700 14px 'IBM Plex Mono',monospace;color:var(--accent)}.cves{font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:5px}.title{font:700 19px 'Space Grotesk',sans-serif;margin-top:8px}.title a{color:var(--ink);text-decoration:none}.title a:hover{color:var(--accent)}.badges{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}.badge{font:700 10px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.04em;padding:6px 8px;border-radius:999px;border:1px solid var(--line);white-space:nowrap}.badge.red{background:var(--red-soft);color:var(--red);border-color:#fecaca}.badge.amber{background:var(--amber-soft);color:var(--amber);border-color:#fde68a}.badge.blue{background:var(--blue-soft);color:var(--blue);border-color:#bfdbfe}.badge.green{background:var(--accent-soft);color:#047857;border-color:#a7f3d0}.body{padding:0 18px 18px}.summary{font-size:14px;line-height:1.65;color:#475569;margin:0 0 14px}.fact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.fact{padding:10px;background:#fafaf8;border:1px solid var(--line)}.fact small{display:block;color:var(--muted);font:500 10px 'IBM Plex Mono',monospace;text-transform:uppercase;margin-bottom:5px}.fact strong{font-size:13px;line-height:1.35;word-break:break-word}.pagination{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:28px 0 6px}.pagination button{border:1px solid #cbd5e1;background:#fff;padding:9px 12px;cursor:pointer;border-radius:5px}.pagination button.active{background:var(--ink);color:#fff}.pagination span{padding:9px 4px;color:var(--muted)}.source-note{margin-top:28px;padding:22px 0 4px;border-top:1px solid var(--line);font-size:13px;line-height:1.7;color:#475569}.back{display:inline-block;margin-bottom:18px;color:var(--ink);text-decoration:none;font:700 12px 'IBM Plex Mono',monospace}@media(max-width:1050px){.filters{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}}@media(max-width:700px){.wrap{padding:12px}.top,.stats,.filters,.content{padding-left:18px;padding-right:18px}.filters,.stats,.fact-grid{grid-template-columns:1fr}.item-head{display:block}.badges{justify-content:flex-start;margin-top:12px}}
+</style>
+</head>
+<body>
+<div class="card-wrapper ds-page"><div class="card">
+<div id="menu-container"></div>
+<div class="accent-bar" style="background:#059669;"></div>
+<div class="wrap"><div class="vendor-card">
+<section class="top">
+<a class="back" href="../index.html">← VOLVER A TOOLS</a>
+<div class="eyebrow">Tools · Vendor PSIRT Intelligence</div>
+<h1>Fortinet <span class="accent">PSIRT Intelligence</span></h1>
+<p class="lead">Explorador técnico de advisories de seguridad publicados por Fortinet. La vista conserva una ventana móvil de 180 días sobre los elementos disponibles en el RSS oficial y acumula histórico local mediante merge incremental.</p>
+<div class="meta"><span>Ámbito local: últimos 180 días / 6 meses</span><span id="sourceMeta">Fuente cargando…</span><span id="updatedMeta">Actualización cargando…</span></div>
+</section>
+<section class="stats">
+<div class="stat"><b id="statTotal">—</b><span>Advisories en catálogo local</span></div>
+<div class="stat"><b id="statCritical">—</b><span>Severidad crítica</span></div>
+<div class="stat"><b id="statHigh">—</b><span>Severidad alta</span></div>
+<div class="stat"><b id="statCve">—</b><span>Advisories con CVE</span></div>
+</section>
+<section class="filters">
+<input id="q" type="search" placeholder="Buscar advisory, CVE, producto o descripción…">
+<select id="severity"><option value="">Severidad: todas</option><option value="critical">Crítica</option><option value="high">Alta</option><option value="medium">Media</option><option value="low">Baja</option><option value="unknown">Sin clasificar</option></select>
+<select id="cve"><option value="">CVE: todos</option><option value="yes">Con CVE</option><option value="no">Sin CVE</option></select>
+<select id="month"><option value="">Mes de actualización: todos</option></select>
+<select id="order"><option value="desc">Actualización: más reciente primero</option><option value="asc">Actualización: más antigua primero</option></select>
+</section>
+<div id="filterNote" class="filter-note">Cargando catálogo…</div>
+<section class="content"><div id="list" class="list"></div><div id="pagination" class="pagination"></div>
+<div class="source-note"><strong>Fuente oficial:</strong> Fortinet PSIRT / FortiGuard. Technology Advisory normaliza el RSS oficial para consulta y filtrado. La autoridad del advisory y su contenido corresponden al fabricante.</div>
+</section>
+</div></div>
+<div id="footer-container"></div>
+</div></div>
+<script src="../../js/menu.js"></script><script src="../../js/footer.js"></script>
+<script>
+const $=id=>document.getElementById(id),PAGE_SIZE=7;let catalog=[],filtered=[],page=1;
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));}
+function parseDate(v){const d=v?new Date(v):null;return !d||Number.isNaN(d.getTime())?null:d;}
+function fmtDate(v){const d=parseDate(v);return d?new Intl.DateTimeFormat('es-ES',{dateStyle:'medium',timeStyle:'short'}).format(d):'Sin fecha';}
+function monthKey(v){const d=parseDate(v);return d?`${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,'0')}`:'';}
+function monthLabel(k){const [y,m]=k.split('-').map(Number);return new Intl.DateTimeFormat('es-ES',{month:'long',year:'numeric'}).format(new Date(y,m-1,1));}
+function effectiveDate(v){return v.updated_at||v.published_at||null;}
+function sevClass(v){return ['critical','high','medium'].includes(v.severity)?v.severity:'';}
+function sevBadge(v){return ({critical:'red',high:'amber',medium:'blue',low:'green'})[v.severity]||'green';}
+function sevLabel(v){return ({critical:'Crítica',high:'Alta',medium:'Media',low:'Baja'})[v.severity]||'Sin clasificar';}
+function populateMonths(){const current=$('month').value;const months=[...new Set(catalog.map(v=>monthKey(effectiveDate(v))).filter(Boolean))].sort().reverse();$('month').innerHTML='<option value="">Mes de actualización: todos</option>'+months.map(k=>`<option value="${k}">${monthLabel(k)}</option>`).join('');if(months.includes(current))$('month').value=current;}
+function apply(){const term=$('q').value.trim().toLowerCase(),severity=$('severity').value,cve=$('cve').value,month=$('month').value,order=$('order').value;filtered=catalog.filter(v=>{const text=[v.advisory_id,v.title,v.summary,...(v.cves||[]),...(v.categories||[])].join(' ').toLowerCase();if(term&&!text.includes(term))return false;if(severity==='unknown'&&v.severity)return false;if(severity&&severity!=='unknown'&&v.severity!==severity)return false;if(cve==='yes'&&!(v.cves||[]).length)return false;if(cve==='no'&&(v.cves||[]).length)return false;if(month&&monthKey(effectiveDate(v))!==month)return false;return true;});filtered.sort((a,b)=>{const da=parseDate(effectiveDate(a))?.getTime()||0,db=parseDate(effectiveDate(b))?.getTime()||0;return order==='asc'?da-db:db-da;});page=1;render();}
+function renderPagination(pages){const el=$('pagination');el.innerHTML='';if(pages<=1)return;const visible=new Set([1,pages]);for(let i=page-2;i<=page+2;i++)if(i>=1&&i<=pages)visible.add(i);const sorted=[...visible].sort((a,b)=>a-b);let previous=0;sorted.forEach(n=>{if(previous&&n-previous>1){const dots=document.createElement('span');dots.textContent='···';el.appendChild(dots)}const button=document.createElement('button');button.textContent=n;if(n===page)button.className='active';button.addEventListener('click',()=>{page=n;render();window.scrollTo({top:0,behavior:'smooth'})});el.appendChild(button);previous=n});}
+function render(){const pages=Math.max(1,Math.ceil(filtered.length/PAGE_SIZE));if(page>pages)page=pages;$('filterNote').textContent=`${filtered.length} resultados · ${catalog.length} advisories cargados · ventana operativa de 180 días · filtros acumulativos`;const start=(page-1)*PAGE_SIZE,rows=filtered.slice(start,start+PAGE_SIZE);$('list').innerHTML=rows.map(v=>`<article class="item ${sevClass(v)}"><div class="item-head"><div><div class="advisory-id">${esc(v.advisory_id||'Advisory oficial')}</div><div class="title"><a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">${esc(v.title)}</a></div><div class="cves">${esc((v.cves||[]).length?(v.cves||[]).join(' · '):'Sin CVE identificado en el RSS')}</div></div><div class="badges"><span class="badge ${sevBadge(v)}">${esc(sevLabel(v))}</span>${v.cvss!=null?`<span class="badge blue">CVSS ${esc(v.cvss)}</span>`:''}</div></div><div class="body"><p class="summary">${esc(v.summary||'Sin resumen disponible en el RSS oficial.')}</p><div class="fact-grid"><div class="fact"><small>Publicado</small><strong>${esc(fmtDate(v.published_at))}</strong></div><div class="fact"><small>Actualizado</small><strong>${esc(fmtDate(v.updated_at))}</strong></div><div class="fact"><small>Identificadores</small><strong>${esc((v.cves||[]).slice(0,5).join(' · ')||'No identificados')}</strong></div></div></div></article>`).join('');renderPagination(pages);}
+async function load(){try{const response=await fetch('../../data/fortinet-psirt.json',{cache:'no-store'});if(!response.ok)throw new Error(`HTTP ${response.status}`);const data=await response.json();catalog=data.advisories||[];$('statTotal').textContent=Number(data.total_advisories||catalog.length).toLocaleString('es-ES');$('statCritical').textContent=Number(data.total_critical||0).toLocaleString('es-ES');$('statHigh').textContent=Number(data.total_high||0).toLocaleString('es-ES');$('statCve').textContent=Number(data.total_with_cve||0).toLocaleString('es-ES');$('sourceMeta').textContent=data.source||'Fortinet PSIRT / FortiGuard';$('updatedMeta').textContent=`Actualizado ${fmtDate(data.last_updated_at)}`;populateMonths();apply()}catch(error){$('filterNote').textContent='Error de carga';$('list').innerHTML=`<div style="padding:22px;border:1px solid #fecaca;background:#fef2f2;color:#b91c1c;">No se pudo cargar Fortinet PSIRT Intelligence: ${esc(error.message)}</div>`}}
+['q','severity','cve','month','order'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',apply));load();
+</script>
+</body></html>

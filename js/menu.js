@@ -122,6 +122,14 @@ document.addEventListener("DOMContentLoaded", function() {
                             <span class="sub-num">T.3</span>
                             <span class="sub-name">INCIBE-CERT Intelligence</span>
                         </a>
+                        <a class="sub-item" href="${basePath}tools/sonicwall-psirt/index.html">
+                            <span class="sub-num">T.4</span>
+                            <span class="sub-name">SonicWall PSIRT Intelligence</span>
+                        </a>
+                        <a class="sub-item" href="${basePath}tools/fortinet-psirt/index.html">
+                            <span class="sub-num">T.5</span>
+                            <span class="sub-name">Fortinet PSIRT Intelligence</span>
+                        </a>
                     </div>
                 </div>
             </li>`;
