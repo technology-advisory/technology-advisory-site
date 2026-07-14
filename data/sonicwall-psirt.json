@@ -1,15 +1,15 @@
 {
   "schema_version": 6,
   "title": "SonicWall PSIRT Intelligence",
-  "last_updated_at": "2026-07-14T11:50:21.666557Z",
+  "last_updated_at": "2026-07-14T14:28:00.125017Z",
   "source": "SonicWall Product Security Incident Response Team",
   "source_url": "https://psirt.global.sonicwall.com/",
   "feed_url": "https://psirtapi.global.sonicwall.com/api/v1/feed/rss.xml",
   "raw_xml_file": "data/raw/sonicwall-psirt/rss.xml",
   "raw_xml_sha256": "7965d41db4e509198f3da297da8fdfca3d18ef042e6b2e1fc1227084d585b7aa",
   "total_advisories": 212,
-  "total_critical": 2,
-  "total_high": 11,
+  "total_critical": 1,
+  "total_high": 13,
   "total_with_cve": 202,
   "total_products": 114,
   "products": [
@@ -225,6 +225,7 @@
       "cves": [
         "CVE-2024-12802"
       ],
+      "findings": [],
       "products": [
         "SSL-VPN",
         "SonicOS",
@@ -336,6 +337,38 @@
         "CVE-2026-0205",
         "CVE-2026-0206"
       ],
+      "findings": [
+        {
+          "cve": "CVE-2026-0204",
+          "title": "SonicOS Improper Access Control Vulnerability",
+          "description": "A vulnerability in the access control mechanism of SonicOS may allow certain management interface functions to be accessible under specific conditions.",
+          "cvss": 8.0,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          "cwe": "CWE-1390",
+          "cwe_description": "Weak Authentication"
+        },
+        {
+          "cve": "CVE-2026-0205",
+          "title": "SonicOS post-authentication Path Traversal vulnerability",
+          "description": "A post-authentication Path Traversal vulnerability in SonicOS allows an attacker to interact with usually restricted services.",
+          "cvss": 6.8,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:H",
+          "cwe": "CWE-35",
+          "cwe_description": "Path Traversal"
+        },
+        {
+          "cve": "CVE-2026-0206",
+          "title": "SonicOS post-authentication Stack-based Buffer Overflow vulnerability",
+          "description": "A post-authentication Stack-based Buffer Overflow vulnerabilities in SonicOS allows a remote attacker to crash a firewall.",
+          "cvss": 4.9,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+          "cwe": "CWE-121",
+          "cwe_description": "Stack-based Buffer Overflow"
+        }
+      ],
       "products": [
         "SonicOS",
         "TZ 280W",
@@ -374,6 +407,48 @@
         "CVE-2026-4114",
         "CVE-2026-4116"
       ],
+      "findings": [
+        {
+          "cve": "CVE-2026-4112",
+          "title": "Privilege Escalation via SQL Injection",
+          "description": "Improper neutralization of special elements used in an SQL command (“SQL Injection”) in SonicWall SMA1000 series appliances allows a remote authenticated attacker with read-only administrator privileges to escalate privileges to primary administrator.",
+          "cvss": 7.2,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+          "cwe": "CWE-89",
+          "cwe_description": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+        },
+        {
+          "cve": "CVE-2026-4113",
+          "title": "Authentication Response Discrepancy Allows User Credential Enumeration",
+          "description": "An observable response discrepancy vulnerability in the SonicWall SMA1000 series appliances allows a remote attacker to enumerate SSL VPN user credentials.",
+          "cvss": 5.3,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+          "cwe": "CWE-204",
+          "cwe_description": "Observable Response Discrepancy"
+        },
+        {
+          "cve": "CVE-2026-4114",
+          "title": "Unicode Possible AMC TOTP Bypass vulnerability",
+          "description": "Improper handling of Unicode encoding in SonicWall SMA1000 series appliances allows a remote authenticated SSLVPN admin to bypass AMC TOTP authentication.",
+          "cvss": 6.6,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+          "cwe": "CWE-176",
+          "cwe_description": "Improper Handling of Unicode Encoding"
+        },
+        {
+          "cve": "CVE-2026-4116",
+          "title": "Unicode Possible Workplace/Connect Tunnel TOTP Bypass vulnerability",
+          "description": "Improper handling of Unicode encoding in SonicWall SMA1000 series appliances allows a remote authenticated SSLVPN user to bypass Workplace/Connect Tunnel TOTP authentication.",
+          "cvss": 6.0,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:L",
+          "cwe": "CWE-176",
+          "cwe_description": "Improper Handling of Unicode Encoding"
+        }
+      ],
       "products": [
         "SSL-VPN",
         "Connect Tunnel",
@@ -410,6 +485,38 @@
         "CVE-2026-3469",
         "CVE-2026-3470"
       ],
+      "findings": [
+        {
+          "cve": "CVE-2026-3468",
+          "title": "Stored Cross-Site Scripting (XSS) Vulnerability",
+          "description": "A stored Cross-Site Scripting (XSS) vulnerability has been identified in the SonicWall Email Security appliance due to improper neutralization of user-supplied input during web page generation, allowing a remote authenticated attacker as admin user to potentially execute arbitrary JavaScript code.",
+          "cvss": 3.5,
+          "severity": "low",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:U/C:L/I:L/A:N",
+          "cwe": "CWE-79",
+          "cwe_description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+        },
+        {
+          "cve": "CVE-2026-3469",
+          "title": "Denial of Service (DoS) via Malformed Input",
+          "description": "A denial-of-service (DoS) vulnerability exists due to improper input validation in the SonicWall Email Security appliance, allowing a remote authenticated attacker as admin user to cause the application to become unresponsive.",
+          "cvss": 2.7,
+          "severity": "low",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:L",
+          "cwe": "CWE-20",
+          "cwe_description": "– Improper Input Validation"
+        },
+        {
+          "cve": "CVE-2026-3470",
+          "title": "Lack of Proper Input Sanitization leading to data corruption",
+          "description": "A vulnerability exists in the SonicWall Email Security appliance due to improper input sanitization that may lead to data corruption, allowing a remote authenticated attacker as admin user could exploit this issue by providing crafted input that corrupts application database.",
+          "cvss": 3.8,
+          "severity": "low",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:L",
+          "cwe": "CWE-20",
+          "cwe_description": "– Improper Input Validation"
+        }
+      ],
       "products": [
         "Email Security"
       ],
@@ -420,7 +527,7 @@
       "affected_versions": [],
       "fixed_versions": [],
       "revision_history": "Version\n1.0\nDate\n31-Mar-2026\nDescription\nInitial Release.",
-      "max_cvss": 3.5,
+      "max_cvss": 3.8,
       "severity": "low",
       "exploitation_status": "no_evidence",
       "detail_text_sha256": "b3d90f5bd3c623eba531d8287b9034d31ed9a62ddd5d3acf3c8effaaddf70170",
@@ -443,6 +550,58 @@
         "CVE-2026-0401",
         "CVE-2026-0402",
         "CVE-2026-3439"
+      ],
+      "findings": [
+        {
+          "cve": "CVE-2026-0399",
+          "title": "Multiple SonicOS post-authentication Stack-based Buffer Overflow vulnerabilities",
+          "description": "Multiple post-authentication Stack-based Buffer Overflow vulnerabilities in SonicOS allows a remote attacker to crash a firewall.",
+          "cvss": 4.9,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+          "cwe": "CWE-121",
+          "cwe_description": "Stack-based Buffer Overflow"
+        },
+        {
+          "cve": "CVE-2026-0400",
+          "title": "SonicOS post-authentication Format String vulnerability",
+          "description": "A post-authentication Format String vulnerability in SonicOS allows a remote attacker to crash a firewall.",
+          "cvss": 4.9,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+          "cwe": "CWE-134",
+          "cwe_description": "Use of Externally-Controlled Format String"
+        },
+        {
+          "cve": "CVE-2026-0401",
+          "title": "SonicOS post-authentication NULL Pointer Dereference vulnerability",
+          "description": "A post-authentication NULL Pointer Dereference vulnerability in SonicOS allows a remote attacker to crash a firewall.",
+          "cvss": 4.9,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+          "cwe": "CWE-476",
+          "cwe_description": "NULL Pointer Dereference"
+        },
+        {
+          "cve": "CVE-2026-0402",
+          "title": "SonicOS post-authentication Out-of-bounds Read vulnerability",
+          "description": "A post-authentication Out-of-bounds Read vulnerability in SonicOS allows a remote attacker to crash a firewall.",
+          "cvss": 4.9,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+          "cwe": "CWE-125",
+          "cwe_description": "Out-of-bounds Read"
+        },
+        {
+          "cve": "CVE-2026-3439",
+          "title": "SonicOS post-authentication Stack-based Buffer Overflow in certificate handling",
+          "description": "A post-authentication Stack-based Buffer Overflow vulnerability in SonicOS certificate handling allows a remote attacker to crash a firewall.",
+          "cvss": 4.9,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+          "cwe": "CWE-121",
+          "cwe_description": "Stack-based Buffer Overflow"
+        }
       ],
       "products": [
         "SonicOS"
@@ -474,6 +633,7 @@
       "cves": [
         "CVE-2025-40602"
       ],
+      "findings": [],
       "products": [
         "SMA 1000"
       ],
@@ -506,6 +666,7 @@
       "cves": [
         "CVE-2025-40601"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -538,6 +699,28 @@
         "CVE-2025-40604",
         "CVE-2025-40605"
       ],
+      "findings": [
+        {
+          "cve": "CVE-2025-40604",
+          "title": "Download of Code Without Integrity Check Vulnerability",
+          "description": "Download of Code Without Integrity Check Vulnerability in the SonicWall Email Security appliance loads root filesystem images without verifying signatures, allowing attackers with VMDK or datastore access to modify system files and gain persistent arbitrary code execution.",
+          "cvss": 7.2,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+          "cwe": "CWE-494",
+          "cwe_description": "Download of Code Without Integrity Check"
+        },
+        {
+          "cve": "CVE-2025-40605",
+          "title": "Path Traversal Vulnerability",
+          "description": "A Path Traversal vulnerability has been identified in the Email Security appliance allows an attacker to manipulate file system paths by injecting crafted directory-traversal sequences (such as ../) and may access files and directories outside the intended restricted path.",
+          "cvss": 4.9,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+          "cwe": "CWE-23",
+          "cwe_description": "Relative Path Traversal"
+        }
+      ],
       "products": [
         "Email Security"
       ],
@@ -568,6 +751,7 @@
       "cves": [
         "CVE-2025-40603"
       ],
+      "findings": [],
       "products": [
         "SMA 100",
         "SMA 210"
@@ -602,6 +786,7 @@
       "cves": [
         "CVE-2016-9682"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -628,6 +813,7 @@
       "published_at": "2025-09-22T18:27:38Z",
       "updated_at": "2025-09-29T11:58:11Z",
       "cves": [],
+      "findings": [],
       "products": [
         "SMA 100",
         "SMA 210"
@@ -662,6 +848,7 @@
       "cves": [
         "CVE-2025-40599"
       ],
+      "findings": [],
       "products": [
         "SMA 100",
         "SMA 210",
@@ -698,6 +885,7 @@
       "cves": [
         "CVE-2025-40600"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -734,6 +922,58 @@
         "CVE-2024-53702",
         "CVE-2024-53703"
       ],
+      "findings": [
+        {
+          "cve": "CVE-2024-40763",
+          "title": "SonicWALL SMA100 Heap-based buffer overflow vulnerability",
+          "description": "Heap-based buffer overflow vulnerability in the SonicWall SMA100 SSLVPN due to the use of strcpy. This allows remote authenticated attackers to cause Heap-based buffer overflow and potentially lead to code execution.",
+          "cvss": 7.5,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "cwe": "CWE-122",
+          "cwe_description": "Heap-based Buffer Overflow"
+        },
+        {
+          "cve": "CVE-2024-45318",
+          "title": "Stack-based buffer overflow vulnerability",
+          "description": "A vulnerability in the SonicWall SMA100 SSLVPN web management interface allows remote attackers to cause Stack-based buffer overflow and potentially lead to code execution.",
+          "cvss": 8.1,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "cwe": "CWE-121",
+          "cwe_description": "Stack-based Buffer Overflow"
+        },
+        {
+          "cve": "CVE-2024-45319",
+          "title": "Certificate-based authentication bypass",
+          "description": "A vulnerability in the SonicWall SMA100 SSLVPN allows a remote authenticated attacker can circumvent the certificate requirement during authentication.",
+          "cvss": 6.3,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+          "cwe": "CWE-798",
+          "cwe_description": "Use of Hard-coded Credentials"
+        },
+        {
+          "cve": "CVE-2024-53702",
+          "title": "Insecure randomness",
+          "description": "Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG) in the SonicWall SMA100 SSLVPN backup code generator that, in certain cases, can be predicted by an attacker, potentially exposing the generated secret.",
+          "cvss": 5.3,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+          "cwe": "CWE-338",
+          "cwe_description": "Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)"
+        },
+        {
+          "cve": "CVE-2024-53703",
+          "title": "Stack-based buffer overflow vulnerability",
+          "description": "A vulnerability in the SonicWall SMA100 SSLVPN mod_httprp library loaded by the Apache web server allows remote attackers to cause Stack-based buffer overflow and potentially lead to code execution.",
+          "cvss": 8.1,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "cwe": "CWE-121",
+          "cwe_description": "Stack-based Buffer Overflow"
+        }
+      ],
       "products": [
         "SSL-VPN",
         "SMA 100",
@@ -749,8 +989,8 @@
       "affected_versions": [],
       "fixed_versions": [],
       "revision_history": "Version\n1.0\nDate\n04-Dec-2024\nDescription\nInitial Release.\n---------------------------------------\nVersion\n1.1\nDate\n05-Dec-2024\nDescription\nUpdated credit(s) section - Included vulnerability researcher name.\n---------------------------------------\nVersion\n1.2\nDate\n29-Apr-2025\nDescription\nComment added - During further analysis, SonicWall and trusted security partners identified an additional exploitation technique using CVE-2024-38475, through which unauthorized access to certain files could enable session hijacking. SMA100 devices updated with the fixed firmware version 10.2.1.14-75sv are not vulnerable to CVE-2024-38475 or the related session hijacking technique described\n---------------------------------------\nVersion\n1.3\nDate\n13-Jun-2025\nDescription\nComment section updated - \"As an added security measure, we strongly advise customers to reset the OTP (One-Time Password) binding for all users. This step ensures that any potentially compromised or stale OTP secrets are invalidated, thereby mitigating unauthorized access risks.\" Please follow steps mentioned in the comment section.\n---------------------------------------\nVersion\n1.4\nDate\n31-Jul-2025\nDescription\nComments updated: KB article URL link added.",
-      "max_cvss": 9.8,
-      "severity": "critical",
+      "max_cvss": 8.1,
+      "severity": "high",
       "exploitation_status": "unknown",
       "detail_text_sha256": "b3d90f5bd3c623eba531d8287b9034d31ed9a62ddd5d3acf3c8effaaddf70170",
       "product_status": [],
@@ -770,6 +1010,38 @@
         "CVE-2025-40596",
         "CVE-2025-40597",
         "CVE-2025-40598"
+      ],
+      "findings": [
+        {
+          "cve": "CVE-2025-40596",
+          "title": "Pre-Authentication Stack-Based Buffer Overflow Vulnerability",
+          "description": "A Stack-based buffer overflow vulnerability in the SMA100 series web interface allows remote, unauthenticated attacker to cause Denial of Service (DoS) or potentially results in code execution.",
+          "cvss": 7.3,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+          "cwe": "CWE-121",
+          "cwe_description": "Stack-based Buffer Overflow"
+        },
+        {
+          "cve": "CVE-2025-40597",
+          "title": "Pre-Authentication Heap-Based Buffer Overflow Vulnerability",
+          "description": "A Heap-based buffer overflow vulnerability in the SMA100 series web interface allows remote, unauthenticated attacker to cause Denial of Service (DoS) or potentially results in code execution.",
+          "cvss": 7.3,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+          "cwe": "CWE-122",
+          "cwe_description": "Heap-based Buffer Overflow"
+        },
+        {
+          "cve": "CVE-2025-40598",
+          "title": "Reflected Cross-Site Scripting (XSS) Vulnerability",
+          "description": "A Reflected cross-site scripting (XSS) vulnerability exists in the SMA100 series web interface, allowing a remote unauthenticated attacker to potentially execute arbitrary JavaScript code.",
+          "cvss": 6.3,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L",
+          "cwe": "CWE-79",
+          "cwe_description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+        }
       ],
       "products": [
         "SSL-VPN",
@@ -808,6 +1080,38 @@
         "CVE-2025-32820",
         "CVE-2025-32821"
       ],
+      "findings": [
+        {
+          "cve": "CVE-2025-32819",
+          "title": "Post-Authentication SSLVPN user arbitrary file delete vulnerability",
+          "description": "A vulnerability in SMA100 allows a remote authenticated attacker with SSLVPN user privileges to bypass the path traversal checks and delete an arbitrary file potentially resulting in a reboot to factory default settings.",
+          "cvss": 8.8,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "cwe": "CWE-552",
+          "cwe_description": "Files or Directories Accessible to External Parties"
+        },
+        {
+          "cve": "CVE-2025-32820",
+          "title": "Post-Authentication SSLVPN user Path Traversal vulnerability",
+          "description": "A vulnerability in SMA100 allows a remote authenticated attacker with SSLVPN user privileges can inject a path traversal sequence to make any directory on the SMA appliance writable.",
+          "cvss": 8.3,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:H",
+          "cwe": "CWE-22",
+          "cwe_description": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+        },
+        {
+          "cve": "CVE-2025-32821",
+          "title": "Post-Authentication SSLVPN admin remote command injection vulnerability",
+          "description": "A vulnerability in SMA100 allows a remote authenticated attacker with SSLVPN admin privileges can with admin privileges can inject shell command arguments to upload a file on the appliance.",
+          "cvss": 6.7,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:H/A:H",
+          "cwe": "CWE-78",
+          "cwe_description": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+        }
+      ],
       "products": [
         "SSL-VPN",
         "SMA 100",
@@ -843,6 +1147,7 @@
       "cves": [
         "CVE-2025-40595"
       ],
+      "findings": [],
       "products": [
         "SMA 1000"
       ],
@@ -875,6 +1180,7 @@
       "cves": [
         "CVE-2025-2170"
       ],
+      "findings": [],
       "products": [
         "SMA 1000"
       ],
@@ -907,6 +1213,28 @@
       "cves": [
         "CVE-2023-44221",
         "CVE-2023-5970"
+      ],
+      "findings": [
+        {
+          "cve": "CVE-2023-44221",
+          "title": "Post Authentication OS Command Injection Vulnerability",
+          "description": "Improper neutralization of special elements in the SMA100 SSL-VPN management interface allows a remote authenticated attacker with administrative privilege to inject arbitrary commands as a 'nobody' user, potentially leading to OS Command Injection Vulnerability.",
+          "cvss": 7.2,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+          "cwe": "CWE-78",
+          "cwe_description": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+        },
+        {
+          "cve": "CVE-2023-5970",
+          "title": "Post Authentication External User MFA Bypass Vulnerability",
+          "description": "Improper authentication in the SMA100 SSL-VPN virtual office portal allows a remote authenticated attacker to create an identical external domain user, resulting in an MFA bypass.",
+          "cvss": 6.3,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+          "cwe": "CWE-287",
+          "cwe_description": "Improper Authentication"
+        }
       ],
       "products": [
         "SSL-VPN",
@@ -946,6 +1274,48 @@
         "CVE-2024-53705",
         "CVE-2024-53706"
       ],
+      "findings": [
+        {
+          "cve": "CVE-2024-40762",
+          "title": "SonicOS SSLVPN Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG).",
+          "description": "Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG) in the SonicOS SSLVPN authentication token generator that, in certain cases, can be predicted by an attacker potentially resulting in authentication bypass.",
+          "cvss": 7.1,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:H",
+          "cwe": "CWE-338",
+          "cwe_description": "Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)"
+        },
+        {
+          "cve": "CVE-2024-53704",
+          "title": "SonicOS SSLVPN Authentication Bypass Vulnerability",
+          "description": "An Improper Authentication vulnerability in the SSLVPN authentication mechanism allows a remote attacker to bypass authentication.",
+          "cvss": 8.2,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
+          "cwe": "CWE-287",
+          "cwe_description": "Improper Authentication"
+        },
+        {
+          "cve": "CVE-2024-53705",
+          "title": "SonicOS SSH Management Server-Side Request Forgery Vulnerability",
+          "description": "A Server-Side Request Forgery vulnerability in the SonicOS SSH management interface allows a remote attacker to establish a TCP connection to an IP address on any port when the user is logged in to the firewall.",
+          "cvss": 6.5,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+          "cwe": "CWE-918",
+          "cwe_description": "Server-Side Request Forgery (SSRF)"
+        },
+        {
+          "cve": "CVE-2024-53706",
+          "title": "Gen7 SonicOS Cloud NSv SSH Config Function Local Privilege Escalation Vulnerability",
+          "description": "A vulnerability in the Gen7 SonicOS Cloud platform NSv (AWS and Azure editions only), allows a remote authenticated local low-privileged attacker to elevate privileges to `root` and potentially lead to code execution.",
+          "cvss": 7.8,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          "cwe": "CWE-269",
+          "cwe_description": "- Improper Privilege Management"
+        }
+      ],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -957,7 +1327,7 @@
       "affected_versions": [],
       "fixed_versions": [],
       "revision_history": "Version\n1.0\nDate\n07-Jan-2025\nDescription\nInitial Release.\n---------------------------------------\nVersion\n1.1\nDate\n30-Jan-2025\nDescription\nSummary section updated: Proof-of-Concepts (PoCs) for the SonicOS SSLVPN Authentication Bypass Vulnerability (CVE-2024-53704) are now publicly available. Customers must immediately update.\n---------------------------------------\nVersion\n1.2\nDate\n10-Feb-2025\nDescription\nComments added: Added Indicators of Compromise (IoCs).\n---------------------------------------\nVersion\n1.3\nDate\n24-Apr-2025\nDescription\nAffected version updated for clarity: Now specified as '7.1.1-7058 and older versions of 7.1.x only'",
-      "max_cvss": 7.1,
+      "max_cvss": 8.2,
       "severity": "high",
       "exploitation_status": "unknown",
       "detail_text_sha256": "b3d90f5bd3c623eba531d8287b9034d31ed9a62ddd5d3acf3c8effaaddf70170",
@@ -977,6 +1347,7 @@
       "cves": [
         "CVE-2025-32818"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -1008,6 +1379,7 @@
       "cves": [
         "CVE-2025-32817"
       ],
+      "findings": [],
       "products": [
         "Connect Tunnel"
       ],
@@ -1038,6 +1410,7 @@
       "cves": [
         "CVE-2021-20035"
       ],
+      "findings": [],
       "products": [
         "SMA 100"
       ],
@@ -1072,6 +1445,38 @@
         "CVE-2025-23009",
         "CVE-2025-23010"
       ],
+      "findings": [
+        {
+          "cve": "CVE-2025-23008",
+          "title": "SonicWall NetExtender Improper Privilege Management Vulnerability",
+          "description": "An improper privilege management vulnerability in the SonicWall NetExtender Windows (32 and 64 bit) client allows a low privileged attacker to modify configurations.",
+          "cvss": 7.2,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:P/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H",
+          "cwe": "CWE-250",
+          "cwe_description": "Execution with Unnecessary Privileges"
+        },
+        {
+          "cve": "CVE-2025-23009",
+          "title": "SonicWall NetExtender Local Privilege Escalation Vulnerability",
+          "description": "A local privilege escalation vulnerability in SonicWall NetExtender Windows (32 and 64 bit) client which allows an attacker to trigger an arbitrary file deletion.",
+          "cvss": 5.9,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:C/C:N/I:H/A:N",
+          "cwe": "CWE-250",
+          "cwe_description": "Execution with Unnecessary Privileges"
+        },
+        {
+          "cve": "CVE-2025-23010",
+          "title": "SonicWall NetExtender Improper Link Resolution Before File Access ('Link Following')",
+          "description": "An Improper Link Resolution Before File Access ('Link Following') vulnerability in SonicWall NetExtender Windows (32 and 64 bit) client which allows an attacker to manipulate file paths.",
+          "cvss": 6.5,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+          "cwe": "CWE-59",
+          "cwe_description": "Improper Link Resolution Before File Access ('Link Following')"
+        }
+      ],
       "products": [
         "NetExtender"
       ],
@@ -1102,6 +1507,7 @@
       "cves": [
         "CVE-2025-23007"
       ],
+      "findings": [],
       "products": [
         "NetExtender"
       ],
@@ -1132,6 +1538,7 @@
       "cves": [
         "CVE-2025-23006"
       ],
+      "findings": [],
       "products": [
         "SMA 1000"
       ],
@@ -1164,6 +1571,7 @@
       "cves": [
         "CVE-2024-40765"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -1196,6 +1604,38 @@
         "CVE-2024-12805",
         "CVE-2024-12806"
       ],
+      "findings": [
+        {
+          "cve": "CVE-2024-12803",
+          "title": "SonicOS Post-authentication Stack-based buffer overflow vulnerability",
+          "description": "A post-authentication stack-based buffer overflow vulnerability in SonicOS management allows a remote attacker to crash a firewall and potentially leads to code execution.",
+          "cvss": 6.0,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:H",
+          "cwe": "CWE-121",
+          "cwe_description": "Stack-based Buffer Overflow"
+        },
+        {
+          "cve": "CVE-2024-12805",
+          "title": "SonicOS Post-authentication format string vulnerability",
+          "description": "A post-authentication format string vulnerability in SonicOS management allows a remote attacker to crash a firewall and potentially leads to code execution.",
+          "cvss": 6.0,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:H",
+          "cwe": "CWE-134",
+          "cwe_description": "Use of Externally-Controlled Format String"
+        },
+        {
+          "cve": "CVE-2024-12806",
+          "title": "SonicOS Post-authentication arbitrary file read vulnerability",
+          "description": "A post-authentication absolute path traversal vulnerability in SonicOS management allows a remote attacker to read an arbitrary file.",
+          "cvss": 4.9,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+          "cwe": "CWE-36",
+          "cwe_description": "Absolute Path Traversal"
+        }
+      ],
       "products": [
         "SonicOS"
       ],
@@ -1226,6 +1666,7 @@
       "cves": [
         "CVE-2024-40766"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN",
@@ -1325,6 +1766,38 @@
         "CVE-2024-45316",
         "CVE-2024-45317"
       ],
+      "findings": [
+        {
+          "cve": "CVE-2024-45315",
+          "title": "SonicWALL SMA1000 Connect Tunnel Windows Client Link Following Denial-of-Service Vulnerability",
+          "description": "The Improper link resolution before file access ('Link Following') vulnerability in SonicWall Connect Tunnel (version 12.4.3.271 and earlier of Windows client) allows users with standard privileges to create arbitrary folders and files, potentially leading to local Denial of Service (DoS) attack.",
+          "cvss": 6.1,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H",
+          "cwe": "CWE-59",
+          "cwe_description": "Improper Link Resolution Before File Access ('Link Following')"
+        },
+        {
+          "cve": "CVE-2024-45316",
+          "title": "SonicWALL SMA1000 Connect Tunnel Windows Client Link Following Local Privilege Escalation Vulnerability",
+          "description": "The Improper link resolution before file access ('Link Following') vulnerability in SonicWall Connect Tunnel (version 12.4.3.271 and earlier of Windows client) allows users with standard privileges to delete arbitrary folders and files, potentially leading to local privilege escalation attack.",
+          "cvss": 7.8,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "cwe": "CWE-59",
+          "cwe_description": "Improper Link Resolution Before File Access ('Link Following')"
+        },
+        {
+          "cve": "CVE-2024-45317",
+          "title": "Unauthenticated SMA1000 12.4.x Server-Side Request Forgery (SSRF) Vulnerability",
+          "description": "Unauthenticated SMA1000 12.4.x Server-Side Request Forgery (SSRF) Vulnerability allows a remote unauthenticated attacker to cause the server-side application to make requests to an unintended IP address.",
+          "cvss": 7.2,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
+          "cwe": "CWE-918",
+          "cwe_description": "Server-Side Request Forgery (SSRF)"
+        }
+      ],
       "products": [
         "Connect Tunnel",
         "SSL-VPN",
@@ -1339,8 +1812,8 @@
       "affected_versions": [],
       "fixed_versions": [],
       "revision_history": "Version\n1.0\nDate\n10-Oct-2024\nDescription\nInitial Release.\n---------------------------------------\nVersion\n1.1\nDate\n11-Oct-2024\nDescription\nCorrected version number in the Summary section, 12.4.271 to 12.4.3.271.",
-      "max_cvss": 6.1,
-      "severity": "medium",
+      "max_cvss": 7.8,
+      "severity": "high",
       "exploitation_status": "no_evidence",
       "detail_text_sha256": "b3d90f5bd3c623eba531d8287b9034d31ed9a62ddd5d3acf3c8effaaddf70170",
       "product_status": [],
@@ -1359,6 +1832,7 @@
       "cves": [
         "CVE-2024-6387"
       ],
+      "findings": [],
       "products": [
         "NSM",
         "SMA 1000"
@@ -1395,6 +1869,7 @@
         "CVE-2024-47175",
         "CVE-2024-47176"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -1423,6 +1898,7 @@
       "cves": [
         "CVE-2024-40764"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -1453,6 +1929,7 @@
       "cves": [
         "CVE-2024-29012"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -1483,6 +1960,7 @@
       "cves": [
         "CVE-2024-29013"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -1514,6 +1992,7 @@
       "cves": [
         "CVE-2024-3596"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -1542,6 +2021,7 @@
       "cves": [
         "CVE-2024-29014"
       ],
+      "findings": [],
       "products": [
         "NetExtender",
         "SMA 100"
@@ -1575,6 +2055,7 @@
       "cves": [
         "CVE-2023-48795"
       ],
+      "findings": [],
       "products": [
         "NSM",
         "SMA 100"
@@ -1609,6 +2090,28 @@
         "CVE-2024-29010",
         "CVE-2024-29011"
       ],
+      "findings": [
+        {
+          "cve": "CVE-2024-29010",
+          "title": "GMS ECM Policy XML External Entity Processing Information Disclosure Vulnerability.",
+          "description": "The XML document processed in the GMS ECM endpoint is vulnerable to XML external entity (XXE) injection vulnerability leading to information disclosure.",
+          "cvss": 7.1,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N",
+          "cwe": "CWE-611",
+          "cwe_description": "Improper Restriction of XML External Entity Reference"
+        },
+        {
+          "cve": "CVE-2024-29011",
+          "title": "GMS ECM Hard-Coded Credential Authentication Bypass Vulnerability.",
+          "description": "Use of hard-coded password in the GMS ECM endpoint leading to authentication bypass vulnerability.",
+          "cvss": 7.5,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          "cwe": "CWE-259",
+          "cwe_description": "Use of Hard-coded Password"
+        }
+      ],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -1617,7 +2120,7 @@
       "affected_versions": [],
       "fixed_versions": [],
       "revision_history": "Version\n1.0\nDate\n30-Apr-2024\nDescription\nInitial Release.",
-      "max_cvss": 7.1,
+      "max_cvss": 7.5,
       "severity": "high",
       "exploitation_status": "exploited",
       "detail_text_sha256": "b3d90f5bd3c623eba531d8287b9034d31ed9a62ddd5d3acf3c8effaaddf70170",
@@ -1637,6 +2140,7 @@
       "cves": [
         "CVE-2024-22398"
       ],
+      "findings": [],
       "products": [
         "Email Security"
       ],
@@ -1667,6 +2171,7 @@
       "cves": [
         "CVE-2024-22397"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -1698,6 +2203,7 @@
       "cves": [
         "CVE-2024-22396"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -1728,6 +2234,7 @@
       "cves": [
         "CVE-2021-20031"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -1758,6 +2265,7 @@
       "cves": [
         "CVE-2024-22395"
       ],
+      "findings": [],
       "products": [
         "SSL-VPN",
         "SMA 100",
@@ -1793,6 +2301,7 @@
       "cves": [
         "CVE-2024-22394"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -1824,6 +2333,7 @@
       "cves": [
         "CVE-2023-6340"
       ],
+      "findings": [],
       "products": [
         "NetExtender",
         "Capture Client"
@@ -1858,6 +2368,7 @@
         "CVE-2023-35838",
         "CVE-2023-36673"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -1886,6 +2397,7 @@
       "cves": [
         "CVE-2023-44219"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -1914,6 +2426,7 @@
       "cves": [
         "CVE-2023-44220"
       ],
+      "findings": [],
       "products": [
         "NetExtender"
       ],
@@ -1952,6 +2465,98 @@
         "CVE-2023-41713",
         "CVE-2023-41715"
       ],
+      "findings": [
+        {
+          "cve": "CVE-2023-39276",
+          "title": "Post-authentication Stack-Based Buffer Overflow Vulnerability in the getBookmarkList.json URL endpoint leads to a firewall crash.",
+          "description": "",
+          "cvss": 7.7,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+          "cwe": "CWE-121",
+          "cwe_description": "Stack-based Buffer Overflow"
+        },
+        {
+          "cve": "CVE-2023-39277",
+          "title": "Post-authentication Stack-Based Buffer Overflow Vulnerability in the sonicflow.csv, appflowsessions.csv endpoints leads to a firewall crash.",
+          "description": "",
+          "cvss": 7.7,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+          "cwe": "CWE-121",
+          "cwe_description": "Stack-based Buffer Overflow"
+        },
+        {
+          "cve": "CVE-2023-39278",
+          "title": "Post-authentication user assertion failure leads to Stack-Based Buffer Overflow vulnerability via main.cgi leads to a firewall crash.",
+          "description": "",
+          "cvss": 7.7,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+          "cwe": "CWE-121",
+          "cwe_description": "Stack-based Buffer Overflow"
+        },
+        {
+          "cve": "CVE-2023-39279",
+          "title": "Post-Authentication Stack-Based Buffer Overflow Vulnerability in the getPacketReplayData.json URL endpoint leads to a firewall crash.",
+          "description": "",
+          "cvss": 7.7,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+          "cwe": "CWE-121",
+          "cwe_description": "Stack-based Buffer Overflow"
+        },
+        {
+          "cve": "CVE-2023-39280",
+          "title": "Post-authentication Stack-Based Buffer Overflow Vulnerability in the ssoStats-s.xml, ssoStats-s.wri endpoints leads to a firewall crash.",
+          "description": "",
+          "cvss": 7.7,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+          "cwe": "CWE-121",
+          "cwe_description": "Stack-based Buffer Overflow"
+        },
+        {
+          "cve": "CVE-2023-41711",
+          "title": "Post-authentication Stack-Based Buffer Overflow Vulnerability in the sonicwall.exp, prefs.exp endpoints leads to a firewall crash.",
+          "description": "",
+          "cvss": 7.7,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+          "cwe": "CWE-121",
+          "cwe_description": "Stack-based Buffer Overflow"
+        },
+        {
+          "cve": "CVE-2023-41712",
+          "title": "Post-authentication Stack-Based Buffer Overflow Vulnerability in the SSL VPN's plainprefs.exp URL endpoint leads to a firewall crash",
+          "description": ".",
+          "cvss": 7.7,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+          "cwe": "CWE-121",
+          "cwe_description": "Stack-based Buffer Overflow"
+        },
+        {
+          "cve": "CVE-2023-41713",
+          "title": "Use of Hard-coded Password in 'dynHandleBuyToolbar' demo function.",
+          "description": "",
+          "cvss": 4.3,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+          "cwe": "CWE-259",
+          "cwe_description": "Use of Hard-coded Password"
+        },
+        {
+          "cve": "CVE-2023-41715",
+          "title": "Post-authentication Improper Privilege Management vulnerability in the SonicOS SSL VPN Tunnel allows users to elevate their privileges inside the tunnel.",
+          "description": "",
+          "cvss": 6.4,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:L/A:L",
+          "cwe": "CWE-269",
+          "cwe_description": "Improper Privilege Management"
+        }
+      ],
       "products": [
         "SonicOS",
         "SSL-VPN",
@@ -1988,6 +2593,7 @@
       "cves": [
         "CVE-2023-44218"
       ],
+      "findings": [],
       "products": [
         "NetExtender"
       ],
@@ -2018,6 +2624,7 @@
       "cves": [
         "CVE-2023-44217"
       ],
+      "findings": [],
       "products": [
         "NetExtender"
       ],
@@ -2062,6 +2669,7 @@
         "CVE-2023-34136",
         "CVE-2023-34137"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -2090,6 +2698,7 @@
       "cves": [
         "CVE-2023-2650"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -2125,6 +2734,7 @@
         "CVE-2023-0217",
         "CVE-2023-0401"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -2153,6 +2763,7 @@
       "cves": [
         "CVE-2022-47522"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -2181,6 +2792,7 @@
       "cves": [
         "CVE-2023-1101"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -2212,6 +2824,7 @@
       "cves": [
         "CVE-2023-0656"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -2242,6 +2855,7 @@
       "cves": [
         "CVE-2023-0655"
       ],
+      "findings": [],
       "products": [
         "Email Security"
       ],
@@ -2272,6 +2886,7 @@
       "cves": [
         "CVE-2023-0126"
       ],
+      "findings": [],
       "products": [
         "SMA 1000"
       ],
@@ -2302,6 +2917,7 @@
       "published_at": "2022-12-13T19:24:44Z",
       "updated_at": "2022-12-13T19:24:44Z",
       "cves": [],
+      "findings": [],
       "products": [
         "Capture Client"
       ],
@@ -2334,6 +2950,7 @@
         "CVE-2022-3602",
         "CVE-2022-3786"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -2362,6 +2979,7 @@
       "cves": [
         "CVE-2022-42889"
       ],
+      "findings": [],
       "products": [
         "Email Security",
         "NSM",
@@ -2513,6 +3131,7 @@
       "cves": [
         "CVE-2022-1292"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -2541,6 +3160,7 @@
       "cves": [
         "CVE-2022-0778"
       ],
+      "findings": [],
       "products": [
         "Mobile Connect",
         "NetExtender",
@@ -2581,6 +3201,7 @@
       "cves": [
         "CVE-2022-22280"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -2609,6 +3230,7 @@
       "cves": [
         "CVE-2021-20030"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -2635,6 +3257,7 @@
       "published_at": "2022-08-24T15:57:13Z",
       "updated_at": "2022-08-24T15:57:13Z",
       "cves": [],
+      "findings": [],
       "products": [
         "SMA 100"
       ],
@@ -2667,6 +3290,7 @@
       "cves": [
         "CVE-2022-2915"
       ],
+      "findings": [],
       "products": [
         "SMA 100"
       ],
@@ -2700,6 +3324,7 @@
         "CVE-2021-33909",
         "CVE-2022-0847"
       ],
+      "findings": [],
       "products": [
         "SMA 1000"
       ],
@@ -2734,6 +3359,7 @@
         "CVE-2022-1701",
         "CVE-2022-1702"
       ],
+      "findings": [],
       "products": [
         "SSL-VPN",
         "SMA 1000"
@@ -2767,6 +3393,7 @@
       "cves": [
         "CVE-2022-2323"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -2795,6 +3422,7 @@
       "cves": [
         "CVE-2022-2324"
       ],
+      "findings": [],
       "products": [
         "Email Security"
       ],
@@ -2825,6 +3453,7 @@
       "cves": [
         "CVE-2022-1703"
       ],
+      "findings": [],
       "products": [
         "SSL-VPN",
         "SMA 100"
@@ -2858,6 +3487,7 @@
       "cves": [
         "CVE-2022-22281"
       ],
+      "findings": [],
       "products": [
         "NetExtender",
         "SSL-VPN"
@@ -2896,6 +3526,7 @@
         "CVE-2021-20044",
         "CVE-2021-20045"
       ],
+      "findings": [],
       "products": [
         "SSL-VPN",
         "SMA 100",
@@ -2947,6 +3578,7 @@
       "cves": [
         "CVE-2021-20051"
       ],
+      "findings": [],
       "products": [
         "Global VPN Client"
       ],
@@ -2980,6 +3612,7 @@
         "CVE-2022-22277",
         "CVE-2022-22278"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -3011,6 +3644,7 @@
         "CVE-2022-22279",
         "CVE-2021-20028"
       ],
+      "findings": [],
       "products": [
         "Secure Mobile Access",
         "SMA 100"
@@ -3045,6 +3679,7 @@
         "CVE-2022-22963",
         "CVE-2022-22965"
       ],
+      "findings": [],
       "products": [
         "Email Security",
         "NSM",
@@ -3196,6 +3831,7 @@
       "cves": [
         "CVE-2022-22274"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -3227,6 +3863,7 @@
         "CVE-2022-22273",
         "CVE-2021-20028"
       ],
+      "findings": [],
       "products": [
         "Secure Mobile Access",
         "SMA 100"
@@ -3258,6 +3895,7 @@
       "published_at": "2022-02-07T18:09:11Z",
       "updated_at": "2022-02-07T18:09:11Z",
       "cves": [],
+      "findings": [],
       "products": [
         "SMA 1000"
       ],
@@ -3291,6 +3929,7 @@
         "CVE-2021-4104",
         "CVE-2021-44228"
       ],
+      "findings": [],
       "products": [
         "Cloud Secure Edge",
         "NSM",
@@ -3449,6 +4088,7 @@
         "CVE-2020-26146",
         "CVE-2020-26147"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -3481,6 +4121,7 @@
         "CVE-2021-44832",
         "CVE-2021-45228"
       ],
+      "findings": [],
       "products": [
         "Email Security",
         "NSM",
@@ -3633,6 +4274,7 @@
       "cves": [
         "CVE-2021-20048"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -3663,6 +4305,7 @@
       "cves": [
         "CVE-2021-20046"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -3693,6 +4336,7 @@
       "cves": [
         "CVE-2021-20050"
       ],
+      "findings": [],
       "products": [
         "SMA 100"
       ],
@@ -3725,6 +4369,7 @@
       "cves": [
         "CVE-2021-20049"
       ],
+      "findings": [],
       "products": [
         "SMA 100"
       ],
@@ -3757,6 +4402,7 @@
       "cves": [
         "CVE-2021-20047"
       ],
+      "findings": [],
       "products": [
         "Global VPN Client"
       ],
@@ -3788,6 +4434,7 @@
         "CVE-2021-3449",
         "CVE-2021-3450"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "Capture Client",
@@ -3832,6 +4479,7 @@
       "cves": [
         "CVE-2021-20034"
       ],
+      "findings": [],
       "products": [
         "SMA 100"
       ],
@@ -3862,6 +4510,7 @@
       "published_at": "2021-09-23T21:20:54Z",
       "updated_at": "2021-09-23T21:20:54Z",
       "cves": [],
+      "findings": [],
       "products": [
         "SMA 100"
       ],
@@ -3894,6 +4543,7 @@
       "cves": [
         "CVE-2021-20037"
       ],
+      "findings": [],
       "products": [
         "Global VPN Client"
       ],
@@ -3924,6 +4574,7 @@
       "cves": [
         "CVE-2021-20019"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "NSSP 12K"
@@ -3957,6 +4608,7 @@
       "cves": [
         "CVE-2021-20032"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -3985,6 +4637,7 @@
       "cves": [
         "CVE-2021-20028"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -4013,6 +4666,7 @@
       "cves": [
         "CVE-2021-20024"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -4041,6 +4695,7 @@
       "cves": [
         "CVE-2021-20027"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "GEN6 Firewalls",
@@ -4133,6 +4788,7 @@
       "cves": [
         "CVE-2021-20026"
       ],
+      "findings": [],
       "products": [
         "NSM"
       ],
@@ -4163,6 +4819,7 @@
       "cves": [
         "CVE-2021-20025"
       ],
+      "findings": [],
       "products": [
         "Email Security",
         "MySonicWall"
@@ -4194,6 +4851,7 @@
       "cves": [
         "CVE-2021-20023"
       ],
+      "findings": [],
       "products": [
         "Email Security"
       ],
@@ -4224,6 +4882,7 @@
       "cves": [
         "CVE-2021-20020"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -4252,6 +4911,7 @@
       "cves": [
         "CVE-2021-20022"
       ],
+      "findings": [],
       "products": [
         "Email Security"
       ],
@@ -4282,6 +4942,7 @@
       "cves": [
         "CVE-2021-20021"
       ],
+      "findings": [],
       "products": [
         "Email Security"
       ],
@@ -4312,6 +4973,7 @@
       "cves": [
         "CVE-2021-20018"
       ],
+      "findings": [],
       "products": [
         "SMA 100"
       ],
@@ -4344,6 +5006,7 @@
       "cves": [
         "CVE-2021-20017"
       ],
+      "findings": [],
       "products": [
         "SMA 100"
       ],
@@ -4376,6 +5039,7 @@
       "cves": [
         "CVE-2020-5148"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -4404,6 +5068,7 @@
       "cves": [
         "CVE-2021-20016"
       ],
+      "findings": [],
       "products": [
         "SSL-VPN",
         "SMA 100"
@@ -4437,6 +5102,7 @@
       "cves": [
         "CVE-2020-5146"
       ],
+      "findings": [],
       "products": [
         "SSL-VPN",
         "SMA 100"
@@ -4470,6 +5136,7 @@
       "cves": [
         "CVE-2020-5147"
       ],
+      "findings": [],
       "products": [
         "NetExtender"
       ],
@@ -4498,6 +5165,7 @@
       "published_at": "2021-01-06T21:25:16Z",
       "updated_at": "2021-01-06T21:25:16Z",
       "cves": [],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -4526,6 +5194,7 @@
       "cves": [
         "CVE-2020-28041"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -4554,6 +5223,7 @@
       "cves": [
         "CVE-2020-5145"
       ],
+      "findings": [],
       "products": [
         "Global VPN Client"
       ],
@@ -4584,6 +5254,7 @@
       "cves": [
         "CVE-2020-5144"
       ],
+      "findings": [],
       "products": [
         "Global VPN Client"
       ],
@@ -4612,6 +5283,7 @@
       "published_at": "2020-10-22T19:56:34Z",
       "updated_at": "2020-10-22T19:56:34Z",
       "cves": [],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -4640,6 +5312,7 @@
       "cves": [
         "CVE-2020-5143"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -4671,6 +5344,7 @@
       "cves": [
         "CVE-2020-5142"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -4702,6 +5376,7 @@
       "cves": [
         "CVE-2020-5141"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -4733,6 +5408,7 @@
       "cves": [
         "CVE-2020-5140"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -4764,6 +5440,7 @@
       "cves": [
         "CVE-2020-5139"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -4795,6 +5472,7 @@
       "cves": [
         "CVE-2020-5138"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -4826,6 +5504,7 @@
       "cves": [
         "CVE-2020-5137"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -4857,6 +5536,7 @@
       "cves": [
         "CVE-2020-5136"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -4888,6 +5568,7 @@
       "cves": [
         "CVE-2020-5135"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -4918,6 +5599,7 @@
       "cves": [
         "CVE-2020-5134"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -4948,6 +5630,7 @@
       "cves": [
         "CVE-2020-5133"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -4976,6 +5659,7 @@
       "published_at": "2020-09-18T21:33:28Z",
       "updated_at": "2020-09-18T21:33:28Z",
       "cves": [],
+      "findings": [],
       "products": [
         "Email Security"
       ],
@@ -5004,6 +5688,7 @@
       "published_at": "2020-09-08T07:12:25Z",
       "updated_at": "2020-09-08T07:12:25Z",
       "cves": [],
+      "findings": [],
       "products": [
         "SSL-VPN"
       ],
@@ -5032,6 +5717,7 @@
       "published_at": "2020-08-25T19:30:16Z",
       "updated_at": "2020-08-26T21:20:16Z",
       "cves": [],
+      "findings": [],
       "products": [
         "MySonicWall"
       ],
@@ -5062,6 +5748,7 @@
       "cves": [
         "CVE-2020-5130"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -5093,6 +5780,7 @@
       "cves": [
         "CVE-2020-5131"
       ],
+      "findings": [],
       "products": [
         "NetExtender"
       ],
@@ -5123,6 +5811,7 @@
       "cves": [
         "CVE-2020-5129"
       ],
+      "findings": [],
       "products": [
         "SMA 1000"
       ],
@@ -5155,6 +5844,7 @@
       "cves": [
         "CVE-2019-7486"
       ],
+      "findings": [],
       "products": [
         "SMA 100"
       ],
@@ -5187,6 +5877,7 @@
       "cves": [
         "CVE-2019-7481"
       ],
+      "findings": [],
       "products": [
         "SMA 100"
       ],
@@ -5219,6 +5910,7 @@
       "cves": [
         "CVE-2019-7482"
       ],
+      "findings": [],
       "products": [
         "SMA 100"
       ],
@@ -5251,6 +5943,7 @@
       "cves": [
         "CVE-2019-7483"
       ],
+      "findings": [],
       "products": [
         "SMA 100"
       ],
@@ -5283,6 +5976,7 @@
       "cves": [
         "CVE-2019-7484"
       ],
+      "findings": [],
       "products": [
         "SMA 100"
       ],
@@ -5315,6 +6009,7 @@
       "cves": [
         "CVE-2019-7485"
       ],
+      "findings": [],
       "products": [
         "SMA 100"
       ],
@@ -5351,6 +6046,7 @@
         "CVE-2019-9502",
         "CVE-2019-9503"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -5379,6 +6075,7 @@
       "cves": [
         "CVE-2019-7478"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -5407,6 +6104,7 @@
       "cves": [
         "CVE-2019-7479"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -5437,6 +6135,7 @@
       "cves": [
         "CVE-2019-7488"
       ],
+      "findings": [],
       "products": [
         "Email Security"
       ],
@@ -5467,6 +6166,7 @@
       "cves": [
         "CVE-2019-7489"
       ],
+      "findings": [],
       "products": [
         "Email Security"
       ],
@@ -5497,6 +6197,7 @@
       "cves": [
         "CVE-2019-7487"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "SSL-VPN"
@@ -5539,6 +6240,7 @@
         "CVE-2019-13382",
         "CVE-2019-13383"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -5577,6 +6279,7 @@
         "CVE-2019-12264",
         "CVE-2019-12265"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -5607,6 +6310,7 @@
       "cves": [
         "CVE-2019-11477"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -5635,6 +6339,7 @@
       "cves": [
         "CVE-2019-11478"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -5663,6 +6368,7 @@
       "cves": [
         "CVE-2019-11479"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -5691,6 +6397,7 @@
       "cves": [
         "CVE-2019-7476"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -5720,6 +6427,7 @@
         "CVE-2019-1573",
         "CVE-2016-8201"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -5748,6 +6456,7 @@
       "cves": [
         "CVE-2018-9867"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -5778,6 +6487,7 @@
       "cves": [
         "CVE-2019-7475"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -5808,6 +6518,7 @@
       "cves": [
         "CVE-2019-7477"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -5838,6 +6549,7 @@
       "cves": [
         "CVE-2019-7474"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -5868,6 +6580,7 @@
       "cves": [
         "CVE-2018-10933"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -5897,6 +6610,7 @@
         "CVE-2018-14618",
         "CVE-2017-8816"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -5925,6 +6639,7 @@
       "cves": [
         "CVE-2018-14619"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -5953,6 +6668,7 @@
       "cves": [
         "CVE-2018-11776"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -5981,6 +6697,7 @@
       "cves": [
         "CVE-2018-15473"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6009,6 +6726,7 @@
       "cves": [
         "CVE-2018-3620"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6037,6 +6755,7 @@
       "cves": [
         "CVE-2018-3646"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6065,6 +6784,7 @@
       "cves": [
         "CVE-2018-3615"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6093,6 +6813,7 @@
       "cves": [
         "CVE-2018-9866"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6121,6 +6842,7 @@
       "cves": [
         "CVE-2017-11317"
       ],
+      "findings": [],
       "products": [
         "MySonicWall"
       ],
@@ -6151,6 +6873,7 @@
       "cves": [
         "CVE-2018-3639"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6179,6 +6902,7 @@
       "cves": [
         "CVE-2018-3640"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6207,6 +6931,7 @@
       "cves": [
         "CVE-2015-3990"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6235,6 +6960,7 @@
       "cves": [
         "CVE-2016-2397"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6263,6 +6989,7 @@
       "cves": [
         "CVE-2018-5691"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6291,6 +7018,7 @@
       "cves": [
         "CVE-2015-4173"
       ],
+      "findings": [],
       "products": [
         "NetExtender"
       ],
@@ -6321,6 +7049,7 @@
       "cves": [
         "CVE-2016-2396"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6349,6 +7078,7 @@
       "cves": [
         "CVE-2014-8420"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6377,6 +7107,7 @@
       "cves": [
         "CVE-2014-5024"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6405,6 +7136,7 @@
       "cves": [
         "CVE-2014-0332"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6433,6 +7165,7 @@
       "cves": [
         "CVE-2014-4976"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6461,6 +7194,7 @@
       "cves": [
         "CVE-2014-4977"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6489,6 +7223,7 @@
       "cves": [
         "CVE-2012-2627"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6517,6 +7252,7 @@
       "cves": [
         "CVE-2012-2962"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6545,6 +7281,7 @@
       "cves": [
         "CVE-2012-3951"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6573,6 +7310,7 @@
       "cves": [
         "CVE-2015-2248"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6601,6 +7339,7 @@
       "cves": [
         "CVE-2014-2589"
       ],
+      "findings": [],
       "products": [
         "NSA 2400"
       ],
@@ -6633,6 +7372,7 @@
       "cves": [
         "CVE-2014-2879"
       ],
+      "findings": [],
       "products": [
         "Email Security"
       ],
@@ -6663,6 +7403,7 @@
       "cves": [
         "CVE-2015-3447"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -6693,6 +7434,7 @@
       "cves": [
         "CVE-2012-2626"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6721,6 +7463,7 @@
       "cves": [
         "CVE-2012-3848"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6749,6 +7492,7 @@
       "cves": [
         "CVE-2018-5281"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -6779,6 +7523,7 @@
       "cves": [
         "CVE-2018-5280"
       ],
+      "findings": [],
       "products": [
         "SonicOS"
       ],
@@ -6809,6 +7554,7 @@
       "cves": [
         "CVE-2001-0376"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6837,6 +7583,7 @@
       "cves": [
         "CVE-2000-1097"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6865,6 +7612,7 @@
       "cves": [
         "CVE-2007-5603"
       ],
+      "findings": [],
       "products": [
         "NetExtender",
         "SSL-VPN"
@@ -6896,6 +7644,7 @@
       "cves": [
         "CVE-2010-2583"
       ],
+      "findings": [],
       "products": [
         "SSL-VPN"
       ],
@@ -6926,6 +7675,7 @@
       "cves": [
         "CVE-2009-2631"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -6954,6 +7704,7 @@
       "cves": [
         "CVE-2008-4918"
       ],
+      "findings": [],
       "products": [
         "SonicOS",
         "TZ 180"
@@ -6987,6 +7738,7 @@
       "cves": [
         "CVE-2008-2162"
       ],
+      "findings": [],
       "products": [
         "Email Security"
       ],
@@ -7018,6 +7770,7 @@
         "CVE-2007-5814",
         "CVE-2007-5603"
       ],
+      "findings": [],
       "products": [
         "NetExtender",
         "SSL-VPN"
@@ -7049,6 +7802,7 @@
       "cves": [
         "CVE-2007-5815"
       ],
+      "findings": [],
       "products": [
         "SSL-VPN"
       ],
@@ -7079,6 +7833,7 @@
       "cves": [
         "CVE-2003-1490"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -7107,6 +7862,7 @@
       "cves": [
         "CVE-2005-1006"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -7135,6 +7891,7 @@
       "cves": [
         "CVE-2016-9683"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -7163,6 +7920,7 @@
       "cves": [
         "CVE-2016-9684"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -7191,6 +7949,7 @@
       "cves": [
         "CVE-2015-7770"
       ],
+      "findings": [],
       "products": [
         "TZ 100"
       ],
@@ -7223,6 +7982,7 @@
       "cves": [
         "CVE-2011-5262"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -7251,6 +8011,7 @@
       "cves": [
         "CVE-2011-5169"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -7279,6 +8040,7 @@
       "cves": [
         "CVE-2007-6273"
       ],
+      "findings": [],
       "products": [
         "Global VPN Client"
       ],
@@ -7309,6 +8071,7 @@
       "cves": [
         "CVE-2003-1320"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -7337,6 +8100,7 @@
       "cves": [
         "CVE-2002-2181"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -7365,6 +8129,7 @@
       "cves": [
         "CVE-2002-2341"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -7393,6 +8158,7 @@
       "cves": [
         "CVE-2001-1104"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
@@ -7421,6 +8187,7 @@
       "cves": [
         "CVE-2000-1098"
       ],
+      "findings": [],
       "products": [],
       "product_families": [],
       "explicit_product_models": [],
