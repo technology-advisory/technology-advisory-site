@@ -1,30 +1,30 @@
 {
   "schema_version": 2,
   "title": "INCIBE-CERT Intelligence",
-  "last_updated_at": "2026-07-13T14:58:35.748862Z",
+  "last_updated_at": "2026-07-14T00:10:32.361477Z",
   "window_days": 180,
   "bootstrap_complete": true,
   "bootstrap_next_page": null,
-  "total_alerts": 243,
-  "total_critical": 165,
+  "total_alerts": 242,
+  "total_critical": 164,
   "total_high": 37,
   "total_exploited": 7,
-  "total_with_cve": 229,
+  "total_with_cve": 228,
   "importance_counts": {
     "1": 0,
     "2": 0,
     "3": 37,
     "4": 37,
-    "5": 165
+    "5": 164
   },
   "top_tags": [
     {
       "tag": "Vulnerabilidad",
-      "count": 224
+      "count": 223
     },
     {
       "tag": "Actualización",
-      "count": 179
+      "count": 178
     },
     {
       "tag": "0day",
@@ -36,7 +36,7 @@
     },
     {
       "tag": "RCE",
-      "count": 59
+      "count": 58
     },
     {
       "tag": "Inyección",
@@ -8607,43 +8607,6 @@
       ],
       "exploited": false,
       "manufacturers": []
-    },
-    {
-      "id": "8ae58c195faa5e56f75789e3",
-      "incibe_id": "INCIBE-2026-029",
-      "title": "Múltiples vulnerabilidades en productos de Juniper",
-      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-vulnerabilidad-en-productos-de-juniper",
-      "summary": "Juniper Networks ha publicado 23 boletines de seguridad, 2 de ellos de severidad crítica que resuelven un total de 15 vulnerabilidades, 2 de severidad crítica, 8 alta, 4 media y 1 baja. La explotación de estas vulnerabilidades podría dar lugar, principalmente, a la explotación de código en remoto.",
-      "affected_resources": "Juniper Networks Junos Space, versiones anteriores a la 24.1R5. Juniper Networks Policy Enforcer, versiones anteriores a la 24.1R3.",
-      "solution": "Actualizar los productos a su última versión.",
-      "detail": "Las vulnerabilidades de severidad crítica son: CVE-2021-3177 : El uso de sprintf de forma insegura provoca un desbordamiento del búfer que puede permitir la ejecución de código en remoto en algunas aplicaciones de Python que aceptan números en punto flotante como entrada no confiable. CVE-2024-46981 : Un usuario autenticado puede usar en Redis un script Lua especialmente diseñado que manipule el recolector de basura de la base de datos y, potencialmente, ejecutar código en remoto. CVE Explotación No Fabricante juniper Identificador CVE CVE-2021-3177 Severidad Crítica Explotación No Fabricante juniper Identificador CVE CVE-2024-46981 Severidad Crítica",
-      "published_at": "2026-01-15T00:00:00Z",
-      "importance": 5,
-      "tags": [
-        "Actualización",
-        "RCE",
-        "Vulnerabilidad"
-      ],
-      "cves": [
-        "CVE-2021-3177",
-        "CVE-2024-46981"
-      ],
-      "cve_details": [
-        {
-          "cve": "CVE-2021-3177",
-          "cvss": null,
-          "cvss_version": null
-        },
-        {
-          "cve": "CVE-2024-46981",
-          "cvss": null,
-          "cvss_version": null
-        }
-      ],
-      "exploited": false,
-      "manufacturers": [
-        "juniper Identificador CVE"
-      ]
     },
     {
       "id": "e422e9e0a5702503dce38036",
