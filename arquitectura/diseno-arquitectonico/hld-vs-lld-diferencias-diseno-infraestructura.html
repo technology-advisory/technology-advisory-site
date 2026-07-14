@@ -44,6 +44,43 @@
   .ta-table-wrap{margin-left:0;margin-right:0}
   .ta-table th,.ta-table td{padding:12px 13px;font-size:13px}
 }
+
+@media(max-width:760px){
+  .ta-table-wrap{overflow:visible;margin:20px 0 28px}
+  .ta-table{min-width:0;width:100%;border:0;background:transparent}
+  .ta-table thead{display:none}
+  .ta-table tbody,.ta-table tr,.ta-table td{display:block;width:100%}
+  .ta-table tr{
+    margin:0 0 14px;
+    border:1px solid #dbe5df;
+    border-radius:10px;
+    overflow:hidden;
+    background:#fff;
+  }
+  .ta-table tbody tr:nth-child(even),.ta-table tbody tr:hover{background:#fff}
+  .ta-table td{
+    box-sizing:border-box;
+    border:0;
+    border-bottom:1px solid #e2e8f0;
+    padding:12px 14px;
+    font-size:13px;
+    line-height:1.5;
+  }
+  .ta-table td:last-child{border-bottom:0}
+  .ta-table td::before{
+    content:attr(data-label);
+    display:block;
+    margin-bottom:5px;
+    font-family:monospace;
+    font-size:10px;
+    line-height:1.2;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:#059669;
+    font-weight:800;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -116,16 +153,16 @@
 <tr><th>Aspecto</th><th>HLD (High-Level Design)</th><th>LLD (Low-Level Design)</th></tr>
 </thead>
 <tbody>
-<tr><td>Propósito</td><td>Definir la arquitectura global</td><td>Definir la implementación específica</td></tr>
-<tr><td>Pregunta clave</td><td>¿Qué construimos y por qué?</td><td>¿Cómo lo construimos exactamente?</td></tr>
-<tr><td>Nivel de detalle</td><td>Conceptual y estratégico</td><td>Técnico y operacional</td></tr>
-<tr><td>Audiencia</td><td>Arquitectos, dirección, auditores, stakeholders</td><td>Equipos de implementación y operación</td></tr>
-<tr><td>Independiente de tecnología</td><td>Sí, en gran medida</td><td>No, especifica tecnologías concretas</td></tr>
-<tr><td>Frecuencia de cambio</td><td>Cambia poco (cada 12–18 meses)</td><td>Cambia con frecuencia (semanal/mensual)</td></tr>
-<tr><td>Lenguaje</td><td>Componentes, flujos, topología</td><td>Modelos, versiones, configuraciones</td></tr>
-<tr><td>Quién lo aprueba</td><td>Arquitecto principal / CTO</td><td>Responsable de infraestructura</td></tr>
-<tr><td>Documentación</td><td>Diagramas + decisiones documentadas</td><td>Especificaciones + procedimientos + IaC</td></tr>
-<tr><td>Validez</td><td>Estratégica (largo plazo)</td><td>Táctica (medio plazo)</td></tr>
+<tr><td data-label="Aspecto">Propósito</td><td data-label="HLD">Definir la arquitectura global</td><td data-label="LLD">Definir la implementación específica</td></tr>
+<tr><td data-label="Aspecto">Pregunta clave</td><td data-label="HLD">¿Qué construimos y por qué?</td><td data-label="LLD">¿Cómo lo construimos exactamente?</td></tr>
+<tr><td data-label="Aspecto">Nivel de detalle</td><td data-label="HLD">Conceptual y estratégico</td><td data-label="LLD">Técnico y operacional</td></tr>
+<tr><td data-label="Aspecto">Audiencia</td><td data-label="HLD">Arquitectos, dirección, auditores, stakeholders</td><td data-label="LLD">Equipos de implementación y operación</td></tr>
+<tr><td data-label="Aspecto">Independiente de tecnología</td><td data-label="HLD">Sí, en gran medida</td><td data-label="LLD">No, especifica tecnologías concretas</td></tr>
+<tr><td data-label="Aspecto">Frecuencia de cambio</td><td data-label="HLD">Cambia poco (cada 12–18 meses)</td><td data-label="LLD">Cambia con frecuencia (semanal/mensual)</td></tr>
+<tr><td data-label="Aspecto">Lenguaje</td><td data-label="HLD">Componentes, flujos, topología</td><td data-label="LLD">Modelos, versiones, configuraciones</td></tr>
+<tr><td data-label="Aspecto">Quién lo aprueba</td><td data-label="HLD">Arquitecto principal / CTO</td><td data-label="LLD">Responsable de infraestructura</td></tr>
+<tr><td data-label="Aspecto">Documentación</td><td data-label="HLD">Diagramas + decisiones documentadas</td><td data-label="LLD">Especificaciones + procedimientos + IaC</td></tr>
+<tr><td data-label="Aspecto">Validez</td><td data-label="HLD">Estratégica (largo plazo)</td><td data-label="LLD">Táctica (medio plazo)</td></tr>
 </tbody>
 </table>
 </div>
@@ -206,12 +243,12 @@
 <tr><th>Error</th><th>Por qué ocurre</th><th>Cómo evitarlo</th></tr>
 </thead>
 <tbody>
-<tr><td>Saltarse el HLD</td><td>Urgencia o falta de cultura arquitectónica</td><td>Hacer del HLD un paso obligatorio antes del LLD</td></tr>
-<tr><td>HLD con detalles técnicos</td><td>Confusión sobre el propósito</td><td>Validar que el HLD sea independiente de vendors</td></tr>
-<tr><td>LLD sin referenciar HLD</td><td>Falta de disciplina documental</td><td>Plantilla de LLD que obligue a referenciar HLD</td></tr>
-<tr><td>LLD contradice HLD</td><td>Decisiones operacionales sin supervisión</td><td>Revisión de arquitectura antes de implementar</td></tr>
-<tr><td>Documentos desactualizados</td><td>Falta de proceso de cambio</td><td>Cualquier cambio requiere actualizar documentación</td></tr>
-<tr><td>Audiencia equivocada</td><td>Falta de comunicación</td><td>Definir audiencia clara para cada documento</td></tr>
+<tr><td data-label="Error">Saltarse el HLD</td><td data-label="Por qué ocurre">Urgencia o falta de cultura arquitectónica</td><td data-label="Cómo evitarlo">Hacer del HLD un paso obligatorio antes del LLD</td></tr>
+<tr><td data-label="Error">HLD con detalles técnicos</td><td data-label="Por qué ocurre">Confusión sobre el propósito</td><td data-label="Cómo evitarlo">Validar que el HLD sea independiente de vendors</td></tr>
+<tr><td data-label="Error">LLD sin referenciar HLD</td><td data-label="Por qué ocurre">Falta de disciplina documental</td><td data-label="Cómo evitarlo">Plantilla de LLD que obligue a referenciar HLD</td></tr>
+<tr><td data-label="Error">LLD contradice HLD</td><td data-label="Por qué ocurre">Decisiones operacionales sin supervisión</td><td data-label="Cómo evitarlo">Revisión de arquitectura antes de implementar</td></tr>
+<tr><td data-label="Error">Documentos desactualizados</td><td data-label="Por qué ocurre">Falta de proceso de cambio</td><td data-label="Cómo evitarlo">Cualquier cambio requiere actualizar documentación</td></tr>
+<tr><td data-label="Error">Audiencia equivocada</td><td data-label="Por qué ocurre">Falta de comunicación</td><td data-label="Cómo evitarlo">Definir audiencia clara para cada documento</td></tr>
 </tbody>
 </table>
 </div>
