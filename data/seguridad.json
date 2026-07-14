@@ -4,579 +4,637 @@
     "cat": "zero-trust",
     "meta": "Zero Trust · Seguridad",
     "title": "Principios de diseño: el perímetro ha muerto, la identidad es el nuevo control",
-    "date": "01 Enero 2026",
+    "date": "08 Abril 2026",
     "desc": "Zero Trust no es un producto que se compra — es un principio arquitectónico definido en NIST SP 800-207.",
-    "url": "zero-trust/zero-trust-diseno-principios.html",
-    "published": true
+    "url": "seguridad/zero-trust/zero-trust-diseno-principios.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 2,
     "cat": "zero-trust",
     "meta": "Zero Trust · Seguridad",
     "title": "Modelo operativo: Conditional Access sin romper la vida a todo el mundo",
-    "date": "02 Febrero 2026",
+    "date": "17 Junio 2026",
     "desc": "Desplegar Conditional Access sin fase de report-only es desplegar a ciegas, con los usuarios como conejillos de indias.",
-    "url": "zero-trust/zero-trust-modelo-operativo.html",
-    "published": true
+    "url": "seguridad/zero-trust/zero-trust-modelo-operativo.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 3,
     "cat": "zero-trust",
     "meta": "Zero Trust · Seguridad",
     "title": "Controles y evidencias: MFA activado no significa MFA resistente a phishing",
-    "date": "03 Marzo 2026",
+    "date": "18 Junio 2026",
     "desc": "MFA activado no significa MFA resistente a phishing. SMS y push simple no protegen igual que FIDO2.",
-    "url": "zero-trust/zero-trust-controles-evidencias.html",
-    "published": true
+    "url": "seguridad/zero-trust/zero-trust-controles-evidencias.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 4,
     "cat": "zero-trust",
     "meta": "Zero Trust · Seguridad",
     "title": "Madurez y roadmap: de VPN plana a evaluación continua de riesgo",
-    "date": "04 Abril 2026",
+    "date": "15 Abril 2026",
     "desc": "Los 4 niveles reales de madurez Zero Trust — decir \"somos Zero Trust\" sin evaluación continua es marketing.",
-    "url": "zero-trust/zero-trust-madurez-roadmap.html",
-    "published": true
+    "url": "seguridad/zero-trust/zero-trust-madurez-roadmap.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 5,
     "cat": "security-design",
     "meta": "Security by Design · Seguridad",
     "title": "Principios de diseño: la seguridad al final del proyecto ya llega tarde",
-    "date": "05 Febrero 2026",
+    "date": "10 Abril 2026",
     "desc": "Añadir seguridad después del diseño es parchear, no diseñar. El coste de corregir crece exponencialmente con el tiempo.",
-    "url": "security-design/security-design-diseno-principios.html",
-    "published": true
+    "url": "seguridad/security-design/security-design-diseno-principios.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 6,
     "cat": "security-design",
     "meta": "Security by Design · Seguridad",
     "title": "Modelo operativo: quién revisa el diseño antes de que se construya",
-    "date": "06 Marzo 2026",
+    "date": "10 Junio 2026",
     "desc": "Sin checkpoints tempranos, la revisión de seguridad se vuelve un obstáculo de última hora que todos esquivan.",
-    "url": "security-design/security-design-modelo-operativo.html",
-    "published": true
+    "url": "seguridad/security-design/security-design-modelo-operativo.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 7,
     "cat": "security-design",
     "meta": "Security by Design · Seguridad",
     "title": "Controles y evidencias: el hardening que se aplicó una vez y nunca se verificó de nuevo",
-    "date": "07 Abril 2026",
+    "date": "01 Mayo 2026",
     "desc": "Un servidor endurecido una vez se desvía silenciosamente del baseline con cada cambio posterior.",
-    "url": "security-design/security-design-controles-evidencias.html",
-    "published": true
+    "url": "seguridad/security-design/security-design-controles-evidencias.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 8,
     "cat": "security-design",
     "meta": "Security by Design · Seguridad",
     "title": "Madurez y roadmap: de \"lo revisamos al final\" a seguridad como requisito de aceptación",
-    "date": "08 Mayo 2026",
+    "date": "14 Mayo 2026",
     "desc": "Los 4 niveles de madurez en Security by Design: de parchear al final a seguridad como requisito de aceptación.",
-    "url": "security-design/security-design-madurez-roadmap.html",
-    "published": true
+    "url": "seguridad/security-design/security-design-madurez-roadmap.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 9,
     "cat": "iso-compliance",
     "meta": "Auditoría y Cumplimiento · Seguridad",
     "title": "Principios de diseño: la ISO 27001 no certifica seguridad, certifica un proceso de gestión",
-    "date": "09 Marzo 2026",
+    "date": "05 Mayo 2026",
     "desc": "ISO 27001 certifica un proceso de gestión de riesgo, no la ausencia de vulnerabilidades o incidentes.",
-    "url": "iso-compliance/iso-compliance-diseno-principios.html",
-    "published": true
+    "url": "seguridad/iso-compliance/iso-compliance-diseno-principios.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 10,
     "cat": "iso-compliance",
     "meta": "Auditoría y Cumplimiento · Seguridad",
     "title": "Modelo operativo: quién es dueño de cada control, y quién lo audita internamente",
-    "date": "10 Abril 2026",
+    "date": "01 Junio 2026",
     "desc": "Un control sin propietario asignado se degrada en silencio entre auditorías externas.",
-    "url": "iso-compliance/iso-compliance-modelo-operativo.html",
-    "published": true
+    "url": "seguridad/iso-compliance/iso-compliance-modelo-operativo.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 11,
     "cat": "iso-compliance",
     "meta": "Auditoría y Cumplimiento · Seguridad",
     "title": "Controles y evidencias: la carpeta de evidencias que se arma la semana antes",
-    "date": "11 Mayo 2026",
+    "date": "18 Junio 2026",
     "desc": "Si preparar la evidencia de un control lleva semanas, el sistema de gestión no está realmente vivo.",
-    "url": "iso-compliance/iso-compliance-controles-evidencias.html",
-    "published": true
+    "url": "seguridad/iso-compliance/iso-compliance-controles-evidencias.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 12,
     "cat": "iso-compliance",
     "meta": "Auditoría y Cumplimiento · Seguridad",
     "title": "Madurez y roadmap: del certificado en la pared al SGSI que mejora solo",
-    "date": "12 Junio 2026",
+    "date": "08 Junio 2026",
     "desc": "Los 4 niveles de madurez del SGSI: el certificado en la pared no dice nada sobre si mejora de verdad.",
-    "url": "iso-compliance/iso-compliance-madurez-roadmap.html",
-    "published": true
+    "url": "seguridad/iso-compliance/iso-compliance-madurez-roadmap.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 13,
     "cat": "firewalls-perimetro",
     "meta": "Firewalls y Perímetro · Seguridad",
     "title": "Principios de diseño: la regla any-any-permit al final que cuesta 200.000€",
-    "date": "13 Abril 2026",
+    "date": "02 Julio 2026",
     "desc": "Un NGFW mal configurado es un switch caro con luces bonitas. El diseño empieza por zonas, no por la marca.",
-    "url": "firewalls-perimetro/firewalls-perimetro-diseno-principios.html",
-    "published": true
+    "url": "seguridad/firewalls-perimetro/firewalls-perimetro-diseno-principios.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 14,
     "cat": "firewalls-perimetro",
     "meta": "Firewalls y Perímetro · Seguridad",
     "title": "Modelo operativo: la regla \"temporal\" y quién tiene autoridad para el cambio de emergencia",
-    "date": "14 Mayo 2026",
+    "date": "21 Abril 2026",
     "desc": "El proceso de gestión de reglas determina si tu perímetro protege de verdad o es un colador con buena reputación.",
-    "url": "firewalls-perimetro/firewalls-perimetro-modelo-operativo.html",
-    "published": true
+    "url": "seguridad/firewalls-perimetro/firewalls-perimetro-modelo-operativo.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 15,
     "cat": "firewalls-perimetro",
     "meta": "Firewalls y Perímetro · Seguridad",
     "title": "Controles y evidencias: contar las reglas any-any es el primer test honesto",
-    "date": "15 Junio 2026",
+    "date": "05 Junio 2026",
     "desc": "Contar las reglas any-any activas es el primer test honesto de madurez de tu perímetro.",
-    "url": "firewalls-perimetro/firewalls-perimetro-controles-evidencias.html",
-    "published": true
+    "url": "seguridad/firewalls-perimetro/firewalls-perimetro-controles-evidencias.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 16,
     "cat": "firewalls-perimetro",
     "meta": "Firewalls y Perímetro · Seguridad",
     "title": "Madurez y roadmap: del any-any olvidado al firewalling este-oeste distribuido",
-    "date": "16 Julio 2026",
+    "date": "18 Abril 2026",
     "desc": "Los 4 niveles de madurez de perímetro: del any-any olvidado al firewalling este-oeste distribuido.",
-    "url": "firewalls-perimetro/firewalls-perimetro-madurez-roadmap.html",
-    "published": true
+    "url": "seguridad/firewalls-perimetro/firewalls-perimetro-madurez-roadmap.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 17,
     "cat": "siem-deteccion",
     "meta": "SIEM y Detección · Seguridad",
     "title": "Principios de diseño: el SIEM que ingesta 500GB al día y detecta cero incidentes reales",
-    "date": "17 Mayo 2026",
+    "date": "02 Junio 2026",
     "desc": "Un SIEM que ingesta 500GB/día y detecta cero incidentes reales no es un SIEM efectivo, es un cementerio de logs.",
-    "url": "siem-deteccion/siem-deteccion-diseno-principios.html",
-    "published": true
+    "url": "seguridad/siem-deteccion/siem-deteccion-diseno-principios.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 18,
     "cat": "siem-deteccion",
     "meta": "SIEM y Detección · Seguridad",
     "title": "Modelo operativo: triaje de alertas antes de que se acumulen sin revisar",
-    "date": "18 Junio 2026",
+    "date": "08 Junio 2026",
     "desc": "Una alerta que nadie responde es peor que no tener alerta: da falsa sensación de vigilancia.",
-    "url": "siem-deteccion/siem-deteccion-modelo-operativo.html",
-    "published": true
+    "url": "seguridad/siem-deteccion/siem-deteccion-modelo-operativo.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 19,
     "cat": "siem-deteccion",
     "meta": "SIEM y Detección · Seguridad",
     "title": "Controles y evidencias: la regla de correlación que nunca disparó ni una vez",
-    "date": "19 Julio 2026",
+    "date": "18 Mayo 2026",
     "desc": "Una regla que nunca disparó puede ser buena o mala señal — sin pruebas periódicas no lo sabrás.",
-    "url": "siem-deteccion/siem-deteccion-controles-evidencias.html",
-    "published": true
+    "url": "seguridad/siem-deteccion/siem-deteccion-controles-evidencias.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 20,
     "cat": "siem-deteccion",
     "meta": "SIEM y Detección · Seguridad",
     "title": "Madurez y roadmap: de ingestar logs a threat hunting proactivo",
-    "date": "20 Agosto 2026",
+    "date": "04 Junio 2026",
     "desc": "Los 4 niveles de madurez en detección: de acumular logs sin analizar al threat hunting proactivo.",
-    "url": "siem-deteccion/siem-deteccion-madurez-roadmap.html",
-    "published": true
+    "url": "seguridad/siem-deteccion/siem-deteccion-madurez-roadmap.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 21,
     "cat": "gestion-vulnerabilidades",
     "meta": "Gestión de Vulnerabilidades · Seguridad",
     "title": "Principios de diseño: el CVSS 9.8 en un servidor de test importa menos que el 7.5 expuesto",
-    "date": "21 Junio 2026",
+    "date": "20 Junio 2026",
     "desc": "CVSS 9.8 aislado importa menos que CVSS 7.5 expuesto con exploit activo. La priorización cruza tres variables, no una.",
-    "url": "gestion-vulnerabilidades/gestion-vulnerabilidades-diseno-principios.html",
-    "published": true
+    "url": "seguridad/gestion-vulnerabilidades/gestion-vulnerabilidades-diseno-principios.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 22,
     "cat": "gestion-vulnerabilidades",
     "meta": "Gestión de Vulnerabilidades · Seguridad",
     "title": "Modelo operativo: quién es dueño de remediar, y qué pasa si no lo hace a tiempo",
-    "date": "22 Julio 2026",
+    "date": "06 Junio 2026",
     "desc": "Seguridad detecta, pero sistemas remedia. Sin ownership claro por activo, el hallazgo se queda documentado sin resolver.",
-    "url": "gestion-vulnerabilidades/gestion-vulnerabilidades-modelo-operativo.html",
-    "published": true
+    "url": "seguridad/gestion-vulnerabilidades/gestion-vulnerabilidades-modelo-operativo.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 23,
     "cat": "gestion-vulnerabilidades",
     "meta": "Gestión de Vulnerabilidades · Seguridad",
     "title": "Controles y evidencias: el MTTR que nadie calcula por severidad",
-    "date": "23 Agosto 2026",
+    "date": "04 Junio 2026",
     "desc": "El recuento total de vulnerabilidades es una métrica de vanidad. El MTTR por severidad es el indicador real.",
-    "url": "gestion-vulnerabilidades/gestion-vulnerabilidades-controles-evidencias.html",
-    "published": true
+    "url": "seguridad/gestion-vulnerabilidades/gestion-vulnerabilidades-controles-evidencias.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 24,
     "cat": "gestion-vulnerabilidades",
     "meta": "Gestión de Vulnerabilidades · Seguridad",
     "title": "Madurez y roadmap: del escaneo trimestral al parcheo continuo automatizado",
-    "date": "24 Septiembre 2026",
+    "date": "12 Julio 2026",
     "desc": "Los 4 niveles de madurez: de saber que existe una vulnerabilidad a remediarla dentro de un SLA medido.",
-    "url": "gestion-vulnerabilidades/gestion-vulnerabilidades-madurez-roadmap.html",
-    "published": true
+    "url": "seguridad/gestion-vulnerabilidades/gestion-vulnerabilidades-madurez-roadmap.html",
+    "published": true,
+    "nuevo": true
   },
   {
     "id": 25,
     "cat": "respuesta-incidentes",
     "meta": "Respuesta a Incidentes · Seguridad",
     "title": "Principios de diseño: el playbook que se escribe durante el incidente ya llega tarde",
-    "date": "25 Julio 2026",
+    "date": "03 Junio 2026",
     "desc": "Improvisar la respuesta durante el incidente es la peor combinación de estrés y falta de criterio. El playbook se escribe en calma.",
-    "url": "respuesta-incidentes/respuesta-incidentes-diseno-principios.html",
-    "published": true
+    "url": "seguridad/respuesta-incidentes/respuesta-incidentes-diseno-principios.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 26,
     "cat": "respuesta-incidentes",
     "meta": "Respuesta a Incidentes · Seguridad",
     "title": "Modelo operativo: quién declara \"esto es un incidente\", y con qué autoridad",
-    "date": "26 Agosto 2026",
+    "date": "19 Abril 2026",
     "desc": "Sin criterio explícito de activación, un incidente real puede tratarse como ruido durante horas críticas.",
-    "url": "respuesta-incidentes/respuesta-incidentes-modelo-operativo.html",
-    "published": true
+    "url": "seguridad/respuesta-incidentes/respuesta-incidentes-modelo-operativo.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 27,
     "cat": "respuesta-incidentes",
     "meta": "Respuesta a Incidentes · Seguridad",
     "title": "Controles y evidencias: el playbook que nunca se ha probado en un simulacro",
-    "date": "27 Septiembre 2026",
+    "date": "11 Abril 2026",
     "desc": "Un playbook nunca probado en simulacro es una hipótesis, no una capacidad de respuesta verificada.",
-    "url": "respuesta-incidentes/respuesta-incidentes-controles-evidencias.html",
-    "published": true
+    "url": "seguridad/respuesta-incidentes/respuesta-incidentes-controles-evidencias.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 28,
     "cat": "respuesta-incidentes",
     "meta": "Respuesta a Incidentes · Seguridad",
     "title": "Madurez y roadmap: de apagar el servidor por instinto a la respuesta orquestada",
-    "date": "28 Octubre 2026",
+    "date": "16 Mayo 2026",
     "desc": "Los 4 niveles de madurez en respuesta: de apagar el servidor por instinto a la orquestación con SOAR.",
-    "url": "respuesta-incidentes/respuesta-incidentes-madurez-roadmap.html",
-    "published": true
+    "url": "seguridad/respuesta-incidentes/respuesta-incidentes-madurez-roadmap.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 29,
     "cat": "cifrado-identidad-digital",
     "meta": "Cifrado e Identidad Digital · Seguridad",
     "title": "Principios de diseño: la clave privada en el mismo servidor que protege es un candado con la llave puesta",
-    "date": "29 Agosto 2026",
+    "date": "07 Abril 2026",
     "desc": "El cifrado es tan fuerte como la protección de sus claves. Un algoritmo perfecto con clave descuidada es seguridad de fachada.",
-    "url": "cifrado-identidad-digital/cifrado-identidad-digital-diseno-principios.html",
-    "published": true
+    "url": "seguridad/cifrado-identidad-digital/cifrado-identidad-digital-diseno-principios.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 30,
     "cat": "cifrado-identidad-digital",
     "meta": "Cifrado e Identidad Digital · Seguridad",
     "title": "Modelo operativo: el certificado que caduca un domingo y nadie lo ve venir",
-    "date": "30 Septiembre 2026",
+    "date": "20 Junio 2026",
     "desc": "Un certificado caducado sin previo aviso puede tumbar un servicio completo — es un incidente totalmente evitable.",
-    "url": "cifrado-identidad-digital/cifrado-identidad-digital-modelo-operativo.html",
-    "published": true
+    "url": "seguridad/cifrado-identidad-digital/cifrado-identidad-digital-modelo-operativo.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 31,
     "cat": "cifrado-identidad-digital",
     "meta": "Cifrado e Identidad Digital · Seguridad",
     "title": "Controles y evidencias: qué algoritmo usas, y desde cuándo no lo revisas",
-    "date": "31 Octubre 2026",
+    "date": "29 Abril 2026",
     "desc": "TLS 1.0 sigue activo como fallback en más organizaciones de las que admitirían. Hay que verificar, no confiar en la documentación.",
-    "url": "cifrado-identidad-digital/cifrado-identidad-digital-controles-evidencias.html",
-    "published": true
+    "url": "seguridad/cifrado-identidad-digital/cifrado-identidad-digital-controles-evidencias.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 32,
     "cat": "cifrado-identidad-digital",
     "meta": "Cifrado e Identidad Digital · Seguridad",
     "title": "Madurez y roadmap: de HTTPS activado a gestión de claves como disciplina",
-    "date": "32 Noviembre 2026",
+    "date": "09 Julio 2026",
     "desc": "Los 4 niveles de madurez en cifrado: activar HTTPS es el mínimo de 2010, la madurez real está en la gestión de claves.",
-    "url": "cifrado-identidad-digital/cifrado-identidad-digital-madurez-roadmap.html",
-    "published": true
+    "url": "seguridad/cifrado-identidad-digital/cifrado-identidad-digital-madurez-roadmap.html",
+    "published": true,
+    "nuevo": true
   },
   {
     "id": 33,
     "cat": "iso-compliance",
     "meta": "Auditoría y Cumplimiento · Seguridad",
     "title": "Gobernanza SGSI (Sistema de Gestión de Seguridad de la Información): Garantía ISO/IEC 27001",
-    "date": "12 Julio 2026",
+    "date": "14 Junio 2026",
     "desc": "Análisis técnico de Gobernanza SGSI (Sistema de Gestión de Seguridad de la Información): Garantía ISO/IEC 27001.",
-    "url": "iso-compliance/auditoria-iso27001.html",
-    "published": true
+    "url": "seguridad/iso-compliance/auditoria-iso27001.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 34,
     "cat": "security-design",
     "meta": "Security by Design · Seguridad",
     "title": "Security by Design: Bastionado Estructural",
-    "date": "12 Julio 2026",
+    "date": "18 Abril 2026",
     "desc": "Análisis técnico de Security by Design: Bastionado Estructural.",
-    "url": "security-design/seguridad-diseno.html",
-    "published": true
+    "url": "seguridad/security-design/seguridad-diseno.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 35,
     "cat": "zero-trust",
     "meta": "Zero Trust · Seguridad",
     "title": "Modelos de Confianza Cero: Validación Contextual",
-    "date": "12 Julio 2026",
+    "date": "21 Mayo 2026",
     "desc": "Análisis técnico de Modelos de Confianza Cero: Validación Contextual.",
-    "url": "zero-trust/arquitectura-zerotrust.html",
-    "published": true
+    "url": "seguridad/zero-trust/arquitectura-zerotrust.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 36,
     "cat": "firewalls-perimetro",
     "meta": "Firewalls y Perímetro · Seguridad",
     "title": "Clúster NGFW en alta disponibilidad: el failover no es la prueba",
-    "date": "12 Julio 2026",
+    "date": "01 Junio 2026",
     "desc": "Diseñar HA perimetral exige validar estado, sincronización, sesiones, routing y retorno al nodo preferido; dos appliances encendidos no forman una arquitectura resiliente.",
-    "url": "firewalls-perimetro/arquitectura-ngfw-ha.html",
-    "published": true
+    "url": "seguridad/firewalls-perimetro/arquitectura-ngfw-ha.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 37,
     "cat": "firewalls-perimetro",
     "meta": "Firewalls y Perímetro · Seguridad",
     "title": "Segmentación por zonas y flujos: de la VLAN al límite de confianza",
-    "date": "12 Julio 2026",
+    "date": "06 Abril 2026",
     "desc": "La segmentación útil se diseña desde flujos autorizados, identidad del servicio y dependencia real; una colección de VLAN no demuestra aislamiento.",
-    "url": "firewalls-perimetro/segmentacion-zonas-flujos.html",
-    "published": true
+    "url": "seguridad/firewalls-perimetro/segmentacion-zonas-flujos.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 38,
     "cat": "firewalls-perimetro",
     "meta": "Firewalls y Perímetro · Seguridad",
     "title": "Gobierno de reglas de firewall: cada excepción acaba convirtiéndose en arquitectura",
-    "date": "12 Julio 2026",
+    "date": "24 Mayo 2026",
     "desc": "Un firewall enterprise no se degrada por falta de capacidad sino por años de reglas temporales, objetos duplicados, owners desaparecidos y cambios sin caducidad.",
-    "url": "firewalls-perimetro/gestion-reglas-firewall-empresa.html",
-    "published": true
+    "url": "seguridad/firewalls-perimetro/gestion-reglas-firewall-empresa.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 39,
     "cat": "gestion-vulnerabilidades",
     "meta": "Gestión de Vulnerabilidades · Seguridad",
     "title": "CISA KEV y EPSS: priorizar vulnerabilidades con evidencia de amenaza",
-    "date": "12 Julio 2026",
+    "date": "10 Junio 2026",
     "desc": "CVSS explica severidad técnica, pero la operación necesita incorporar explotación conocida, probabilidad y exposición real para decidir qué se corrige primero.",
-    "url": "gestion-vulnerabilidades/cisa-kev-epss-priorizacion.html",
-    "published": true
+    "url": "seguridad/gestion-vulnerabilidades/cisa-kev-epss-priorizacion.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 40,
     "cat": "gestion-vulnerabilidades",
     "meta": "Gestión de Vulnerabilidades · Seguridad",
     "title": "Explotación conocida frente a CVSS: por qué 9.8 no siempre va primero",
-    "date": "12 Julio 2026",
+    "date": "18 Mayo 2026",
     "desc": "La severidad base no modela por sí sola si existe explotación, si el activo está expuesto, si hay control compensatorio o si el sistema soporta una función crítica.",
-    "url": "gestion-vulnerabilidades/vulnerabilidades-explotadas-vs-cvss.html",
-    "published": true
+    "url": "seguridad/gestion-vulnerabilidades/vulnerabilidades-explotadas-vs-cvss.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 41,
     "cat": "gestion-vulnerabilidades",
     "meta": "Gestión de Vulnerabilidades · Seguridad",
     "title": "Ciclo de remediación: del hallazgo al cierre verificable",
-    "date": "12 Julio 2026",
+    "date": "25 Mayo 2026",
     "desc": "Escanear no es gestionar vulnerabilidades. El ciclo termina cuando la corrección se valida sobre el activo correcto y la evidencia demuestra que el riesgo cambió.",
-    "url": "gestion-vulnerabilidades/ciclo-remediacion-vulnerabilidades.html",
-    "published": true
+    "url": "seguridad/gestion-vulnerabilidades/ciclo-remediacion-vulnerabilidades.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 42,
     "cat": "respuesta-incidentes",
     "meta": "Respuesta a Incidentes · Seguridad",
     "title": "Triage DFIR en Windows: qué recoger antes de tocar el sistema",
-    "date": "12 Julio 2026",
+    "date": "18 Junio 2026",
     "desc": "El primer objetivo no es limpiar; es preservar suficiente contexto para reconstruir ejecución, persistencia, identidad, red y alcance sin destruir la evidencia volátil.",
-    "url": "respuesta-incidentes/triage-dfir-windows.html",
-    "published": true
+    "url": "seguridad/respuesta-incidentes/triage-dfir-windows.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 43,
     "cat": "respuesta-incidentes",
     "meta": "Respuesta a Incidentes · Seguridad",
     "title": "Adquisición de memoria y disco: orden, integridad y cadena de custodia",
-    "date": "12 Julio 2026",
+    "date": "29 Mayo 2026",
     "desc": "Memoria y almacenamiento responden preguntas distintas. El orden de adquisición debe considerar volatilidad, riesgo operativo y capacidad de reproducir el análisis.",
-    "url": "respuesta-incidentes/adquisicion-evidencias-memoria-disco.html",
-    "published": true
+    "url": "seguridad/respuesta-incidentes/adquisicion-evidencias-memoria-disco.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 44,
     "cat": "respuesta-incidentes",
     "meta": "Respuesta a Incidentes · Seguridad",
     "title": "Contener sin destruir evidencia: el equilibrio difícil de un incidente real",
-    "date": "12 Julio 2026",
+    "date": "17 Junio 2026",
     "desc": "Aislar demasiado pronto puede perder contexto; esperar demasiado puede ampliar el impacto. La decisión debe estar ligada al objetivo de contención y a la evidencia mínima necesaria.",
-    "url": "respuesta-incidentes/contencion-sin-destruir-evidencia.html",
-    "published": true
+    "url": "seguridad/respuesta-incidentes/contencion-sin-destruir-evidencia.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 45,
     "cat": "respuesta-incidentes",
     "meta": "Respuesta a Incidentes · Seguridad",
     "title": "Timeline forense: convertir miles de eventos en una secuencia defendible",
-    "date": "12 Julio 2026",
+    "date": "26 Junio 2026",
     "desc": "La cronología no es una lista ordenada de logs; es una hipótesis temporal donde cada hito debe vincularse a una fuente, precisión de reloj y grado de confianza.",
-    "url": "respuesta-incidentes/timeline-forense-incidente.html",
-    "published": true
+    "url": "seguridad/respuesta-incidentes/timeline-forense-incidente.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 46,
     "cat": "siem-deteccion",
     "meta": "SIEM y Detección · Seguridad",
     "title": "Arquitectura SIEM enterprise: ingestión, normalización, correlación y retención",
-    "date": "12 Julio 2026",
+    "date": "28 Abril 2026",
     "desc": "Un SIEM debe diseñarse como una plataforma de datos de seguridad: fuentes, parsing, calidad, coste, latencia y uso operativo antes que dashboards.",
-    "url": "siem-deteccion/arquitectura-siem-enterprise.html",
-    "published": true
+    "url": "seguridad/siem-deteccion/arquitectura-siem-enterprise.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 47,
     "cat": "siem-deteccion",
     "meta": "SIEM y Detección · Seguridad",
     "title": "Normalización y correlación de logs: cuando un campo mal parseado rompe la detección",
-    "date": "12 Julio 2026",
+    "date": "19 Abril 2026",
     "desc": "Las detecciones dependen de semántica consistente. `src_ip`, usuario, host, proceso y acción deben conservar significado aunque cambie el fabricante.",
-    "url": "siem-deteccion/normalizacion-correlacion-logs.html",
-    "published": true
+    "url": "seguridad/siem-deteccion/normalizacion-correlacion-logs.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 48,
     "cat": "siem-deteccion",
     "meta": "SIEM y Detección · Seguridad",
     "title": "Sigma y YARA: detección portable sin confundir regla con cobertura",
-    "date": "12 Julio 2026",
+    "date": "05 Abril 2026",
     "desc": "Sigma expresa patrones sobre eventos; YARA identifica contenido o artefactos. Ninguna regla compensa una telemetría ausente ni una colección mal diseñada.",
-    "url": "siem-deteccion/sigma-yara-deteccion.html",
-    "published": true
+    "url": "seguridad/siem-deteccion/sigma-yara-deteccion.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 49,
     "cat": "siem-deteccion",
     "meta": "SIEM y Detección · Seguridad",
     "title": "Ingeniería de detección: construir casos de uso que sobrevivan a producción",
-    "date": "12 Julio 2026",
+    "date": "21 Junio 2026",
     "desc": "Un caso de uso debe declarar amenaza, comportamiento observable, fuentes, lógica, respuesta y criterio de calidad. El nombre de una técnica ATT&CK no es una detección.",
-    "url": "siem-deteccion/ingenieria-deteccion-casos-uso.html",
-    "published": true
+    "url": "seguridad/siem-deteccion/ingenieria-deteccion-casos-uso.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 50,
     "cat": "zero-trust",
     "meta": "Zero Trust · Seguridad",
     "title": "Conditional Access y Zero Trust: la sesión también es un perímetro",
-    "date": "12 Julio 2026",
+    "date": "01 Junio 2026",
     "desc": "La autenticación inicial no puede conceder confianza permanente. Riesgo, dispositivo, ubicación, aplicación y sensibilidad deben reevaluarse durante la sesión.",
-    "url": "zero-trust/conditional-access-zero-trust.html",
-    "published": true
+    "url": "seguridad/zero-trust/conditional-access-zero-trust.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 51,
     "cat": "zero-trust",
     "meta": "Zero Trust · Seguridad",
     "title": "Microsegmentación Zero Trust: controlar el movimiento lateral por identidad de servicio",
-    "date": "12 Julio 2026",
+    "date": "01 Abril 2026",
     "desc": "La red deja de ser la unidad mínima de confianza cuando workloads dinámicos, contenedores y servicios comparten segmentos pero no deberían comunicarse entre sí.",
-    "url": "zero-trust/microsegmentacion-zero-trust.html",
-    "published": true
+    "url": "seguridad/zero-trust/microsegmentacion-zero-trust.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 52,
     "cat": "zero-trust",
     "meta": "Zero Trust · Seguridad",
     "title": "Sesiones, tokens y reautenticación: el punto ciego de muchas estrategias Zero Trust",
-    "date": "12 Julio 2026",
+    "date": "16 Junio 2026",
     "desc": "Revocar una cuenta no siempre invalida inmediatamente todos los tokens, sesiones web, refresh tokens o credenciales de aplicación.",
-    "url": "zero-trust/sesiones-tokens-reautenticacion.html",
-    "published": true
+    "url": "seguridad/zero-trust/sesiones-tokens-reautenticacion.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 53,
     "cat": "cifrado-identidad-digital",
     "meta": "Cifrado e Identidad Digital · Seguridad",
     "title": "PKI corporativa: diseñar raíces, emisoras y confianza antes de emitir certificados",
-    "date": "12 Julio 2026",
+    "date": "19 Abril 2026",
     "desc": "La PKI es una arquitectura de confianza. El error no suele estar en el algoritmo sino en jerarquías mal separadas, CA online sin necesidad y plantillas demasiado permisivas.",
-    "url": "cifrado-identidad-digital/pki-corporativa-arquitectura.html",
-    "published": true
+    "url": "seguridad/cifrado-identidad-digital/pki-corporativa-arquitectura.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 54,
     "cat": "cifrado-identidad-digital",
     "meta": "Cifrado e Identidad Digital · Seguridad",
     "title": "Ciclo de vida de certificados: descubrir antes de que caduque producción",
-    "date": "12 Julio 2026",
+    "date": "06 Junio 2026",
     "desc": "La gestión de certificados incluye descubrimiento, ownership, emisión, despliegue, renovación, revocación y retirada. Un calendario manual no escala.",
-    "url": "cifrado-identidad-digital/gestion-certificados-ciclo-vida.html",
-    "published": true
+    "url": "seguridad/cifrado-identidad-digital/gestion-certificados-ciclo-vida.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 55,
     "cat": "cifrado-identidad-digital",
     "meta": "Cifrado e Identidad Digital · Seguridad",
     "title": "HSM y gestión de claves: separar criptografía de administración ordinaria",
-    "date": "12 Julio 2026",
+    "date": "01 Julio 2026",
     "desc": "Las claves que sostienen identidad, firma o cifrado crítico requieren controles de generación, custodia, uso, rotación y destrucción distintos a un secreto de aplicación.",
-    "url": "cifrado-identidad-digital/hsm-gestion-claves.html",
-    "published": true
+    "url": "seguridad/cifrado-identidad-digital/hsm-gestion-claves.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 56,
     "cat": "security-design",
     "meta": "Security by Design · Seguridad",
     "title": "Threat Modeling para arquitectos: convertir un diagrama en hipótesis de ataque",
-    "date": "12 Julio 2026",
+    "date": "19 Abril 2026",
     "desc": "El modelado de amenazas debe producir decisiones de arquitectura y controles verificables, no una sesión de post-its que termina archivada.",
-    "url": "security-design/threat-modeling-arquitectura.html",
-    "published": true
+    "url": "seguridad/security-design/threat-modeling-arquitectura.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 57,
     "cat": "security-design",
     "meta": "Security by Design · Seguridad",
     "title": "Security & Privacy by Design en sistemas de IA corporativa",
-    "date": "12 Julio 2026",
+    "date": "19 Abril 2026",
     "desc": "En IA, seguridad y privacidad convergen sobre los mismos flujos de datos, identidades, prompts, contexto recuperado, logs y outputs.",
-    "url": "security-design/security-privacy-by-design.html",
-    "published": true
+    "url": "seguridad/security-design/security-privacy-by-design.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 58,
     "cat": "security-design",
     "meta": "Security by Design · Seguridad",
     "title": "Patrones de seguridad arquitectónica: controles repetibles, límites explícitos",
-    "date": "12 Julio 2026",
+    "date": "21 Junio 2026",
     "desc": "Los patrones permiten repetir decisiones buenas, pero deben declarar contexto, fuerzas, límites y anti-patrones; copiar una referencia cloud no es aplicar un patrón.",
-    "url": "security-design/patrones-seguridad-arquitectura.html",
-    "published": true
+    "url": "seguridad/security-design/patrones-seguridad-arquitectura.html",
+    "published": true,
+    "nuevo": false
   }
 ]

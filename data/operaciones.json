@@ -4,30 +4,33 @@
     "cat": "automatizacion-orquestacion",
     "meta": "Automatización y Orquestación · Operaciones",
     "title": "Principios de diseño: automatizar un proceso roto solo lo rompe más rápido",
-    "date": "01 Enero 2026",
+    "date": "25 Junio 2026",
     "desc": "Automatizar un proceso confuso no lo arregla — lo convierte en un script que falla de forma más rápida.",
-    "url": "automatizacion-orquestacion/automatizacion-orquestacion-diseno-principios.html",
-    "published": true
+    "url": "operaciones/automatizacion-orquestacion/automatizacion-orquestacion-diseno-principios.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 2,
     "cat": "automatizacion-orquestacion",
     "meta": "Automatización y Orquestación · Operaciones",
     "title": "Modelo operativo: quién es dueño del script cuando su autor ya no está",
-    "date": "02 Febrero 2026",
+    "date": "25 Abril 2026",
     "desc": "Un script que solo entiende quien lo escribió es automatización frágil, no automatización madura.",
-    "url": "automatizacion-orquestacion/automatizacion-orquestacion-modelo-operativo.html",
-    "published": true
+    "url": "operaciones/automatizacion-orquestacion/automatizacion-orquestacion-modelo-operativo.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 3,
     "cat": "automatizacion-orquestacion",
     "meta": "Automatización y Orquestación · Operaciones",
     "title": "Controles y evidencias: el script con credenciales hardcodeadas que nadie audita",
-    "date": "03 Marzo 2026",
+    "date": "13 Junio 2026",
     "desc": "Un script con credenciales hardcodeadas es tan sensible como una cuenta admin, pero mucho menos auditado.",
-    "url": "automatizacion-orquestacion/automatizacion-orquestacion-controles-evidencias.html",
-    "published": true
+    "url": "operaciones/automatizacion-orquestacion/automatizacion-orquestacion-controles-evidencias.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 4,
@@ -36,507 +39,514 @@
     "title": "Madurez y roadmap: del script heredado a la orquestación con self-service seguro",
     "date": "04 Abril 2026",
     "desc": "Los 4 niveles de madurez en automatización: del zoo de scripts sueltos al self-service seguro orquestado.",
-    "url": "automatizacion-orquestacion/automatizacion-orquestacion-madurez-roadmap.html",
-    "published": true
+    "url": "operaciones/automatizacion-orquestacion/automatizacion-orquestacion-madurez-roadmap.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 5,
     "cat": "continuidad-negocio",
     "meta": "Continuidad de Negocio · Operaciones",
     "title": "Principios de diseño: RTO y RPO no son términos técnicos, son decisiones de negocio",
-    "date": "05 Febrero 2026",
+    "date": "01 Abril 2026",
     "desc": "RTO y RPO no son términos técnicos, son decisiones de negocio que IT no debería tomar en solitario.",
-    "url": "continuidad-negocio/continuidad-negocio-diseno-principios.html",
-    "published": true
+    "url": "operaciones/continuidad-negocio/continuidad-negocio-diseno-principios.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 6,
     "cat": "continuidad-negocio",
     "meta": "Continuidad de Negocio · Operaciones",
     "title": "Modelo operativo: el DRP que solo existe en un PDF que nadie ha abierto en dos años",
-    "date": "06 Marzo 2026",
+    "date": "16 Mayo 2026",
     "desc": "Un DRP sin ejercicio periódico es un documento de buenas intenciones, no una capacidad probada.",
-    "url": "continuidad-negocio/continuidad-negocio-modelo-operativo.html",
-    "published": true
+    "url": "operaciones/continuidad-negocio/continuidad-negocio-modelo-operativo.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 7,
     "cat": "continuidad-negocio",
     "meta": "Continuidad de Negocio · Operaciones",
     "title": "Controles y evidencias: el RTO prometido de 4 horas que en la prueba tardó 14",
-    "date": "07 Abril 2026",
+    "date": "19 Abril 2026",
     "desc": "Un RTO prometido de 4 horas que en la prueba real tardó 14 revela lo que un diseño sin probar esconde.",
-    "url": "continuidad-negocio/continuidad-negocio-controles-evidencias.html",
-    "published": true
+    "url": "operaciones/continuidad-negocio/continuidad-negocio-controles-evidencias.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 8,
     "cat": "continuidad-negocio",
     "meta": "Continuidad de Negocio · Operaciones",
     "title": "Madurez y roadmap: del plan en un cajón a la resiliencia probada continuamente",
-    "date": "08 Mayo 2026",
+    "date": "27 Mayo 2026",
     "desc": "Los 4 niveles de madurez en continuidad: del plan en un cajón a la resiliencia probada continuamente.",
-    "url": "continuidad-negocio/continuidad-negocio-madurez-roadmap.html",
-    "published": true
+    "url": "operaciones/continuidad-negocio/continuidad-negocio-madurez-roadmap.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 9,
     "cat": "gobierno-identidades",
     "meta": "Gobierno de Identidades · Operaciones",
     "title": "Principios de diseño: la cuenta del ex-empleado que sigue activa seis meses después",
-    "date": "09 Marzo 2026",
+    "date": "27 Abril 2026",
     "desc": "El ciclo de vida de una identidad es donde más riesgo silencioso se acumula. No es un trámite de RRHH, es un control de seguridad.",
-    "url": "gobierno-identidades/gobierno-identidades-diseno-principios.html",
-    "published": true
+    "url": "operaciones/gobierno-identidades/gobierno-identidades-diseno-principios.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 10,
     "cat": "gobierno-identidades",
     "meta": "Gobierno de Identidades · Operaciones",
     "title": "Modelo operativo: quién aprueba una solicitud de acceso, y en cuánto tiempo",
-    "date": "10 Abril 2026",
+    "date": "30 Abril 2026",
     "desc": "Un proceso de aprobación de acceso demasiado lento empuja a la gente a compartir credenciales como atajo.",
-    "url": "gobierno-identidades/gobierno-identidades-modelo-operativo.html",
-    "published": true
+    "url": "operaciones/gobierno-identidades/gobierno-identidades-modelo-operativo.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 11,
     "cat": "gobierno-identidades",
     "meta": "Gobierno de Identidades · Operaciones",
     "title": "Controles y evidencias: la revisión de accesos que se aprueba sin mirar de verdad",
-    "date": "11 Mayo 2026",
+    "date": "05 Junio 2026",
     "desc": "Una recertificación de accesos con 0% de revocaciones probablemente no se está revisando de verdad.",
-    "url": "gobierno-identidades/gobierno-identidades-controles-evidencias.html",
-    "published": true
+    "url": "operaciones/gobierno-identidades/gobierno-identidades-controles-evidencias.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 12,
     "cat": "gobierno-identidades",
     "meta": "Gobierno de Identidades · Operaciones",
     "title": "Madurez y roadmap: de Excel de accesos a gobierno automatizado del ciclo de vida",
-    "date": "12 Junio 2026",
+    "date": "14 Junio 2026",
     "desc": "Los 4 niveles de madurez: del Excel de accesos al gobierno automatizado conectado directamente a RRHH.",
-    "url": "gobierno-identidades/gobierno-identidades-madurez-roadmap.html",
-    "published": true
+    "url": "operaciones/gobierno-identidades/gobierno-identidades-madurez-roadmap.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 13,
     "cat": "monitorizacion-observabilidad",
     "meta": "Monitorización y Observabilidad · Operaciones",
     "title": "Principios de diseño: si te enteras por el usuario, no estás monitorizando",
-    "date": "13 Abril 2026",
+    "date": "08 Mayo 2026",
     "desc": "Si te enteras del problema porque llama un usuario, no estás monitorizando — estás rezando.",
-    "url": "monitorizacion-observabilidad/monitorizacion-observabilidad-diseno-principios.html",
-    "published": true
+    "url": "operaciones/monitorizacion-observabilidad/monitorizacion-observabilidad-diseno-principios.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 14,
     "cat": "monitorizacion-observabilidad",
     "meta": "Monitorización y Observabilidad · Operaciones",
     "title": "Modelo operativo: quién responde la alerta a las 3 AM, y por qué canal",
-    "date": "14 Mayo 2026",
+    "date": "12 Junio 2026",
     "desc": "Una alerta crítica por email a las 3 AM es, en la práctica, casi lo mismo que no enviarla.",
-    "url": "monitorizacion-observabilidad/monitorizacion-observabilidad-modelo-operativo.html",
-    "published": true
+    "url": "operaciones/monitorizacion-observabilidad/monitorizacion-observabilidad-modelo-operativo.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 15,
     "cat": "monitorizacion-observabilidad",
     "meta": "Monitorización y Observabilidad · Operaciones",
     "title": "Controles y evidencias: el dashboard bonito que nadie ha mirado en meses",
-    "date": "15 Junio 2026",
+    "date": "19 Junio 2026",
     "desc": "Un dashboard con 47 paneles que nadie mira no es observabilidad, es decoración con gráficas.",
-    "url": "monitorizacion-observabilidad/monitorizacion-observabilidad-controles-evidencias.html",
-    "published": true
+    "url": "operaciones/monitorizacion-observabilidad/monitorizacion-observabilidad-controles-evidencias.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 16,
     "cat": "monitorizacion-observabilidad",
     "meta": "Monitorización y Observabilidad · Operaciones",
     "title": "Madurez y roadmap: de mirar Grafana de vez en cuando a la observabilidad predictiva",
-    "date": "16 Julio 2026",
+    "date": "29 Abril 2026",
     "desc": "Los 4 niveles de madurez: de reaccionar a la queja de un usuario a la detección predictiva de anomalías.",
-    "url": "monitorizacion-observabilidad/monitorizacion-observabilidad-madurez-roadmap.html",
-    "published": true
+    "url": "operaciones/monitorizacion-observabilidad/monitorizacion-observabilidad-madurez-roadmap.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 17,
     "cat": "gestion-cambios",
     "meta": "Gestión de Cambios · Operaciones",
     "title": "Principios de diseño: el CAB que aprueba todo en 5 minutos no está evaluando riesgo",
-    "date": "17 Mayo 2026",
+    "date": "12 Abril 2026",
     "desc": "Un CAB que aprueba 40 cambios en 30 minutos no está evaluando riesgo, es un sello de goma.",
-    "url": "gestion-cambios/gestion-cambios-diseno-principios.html",
-    "published": true
+    "url": "operaciones/gestion-cambios/gestion-cambios-diseno-principios.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 18,
     "cat": "gestion-cambios",
     "meta": "Gestión de Cambios · Operaciones",
     "title": "Modelo operativo: el cambio de emergencia que se hizo sin CAB y salió bien esta vez",
-    "date": "18 Junio 2026",
+    "date": "23 Mayo 2026",
     "desc": "El camino de emergencia sin control se convierte fácilmente en la ruta habitual para saltarse el proceso.",
-    "url": "gestion-cambios/gestion-cambios-modelo-operativo.html",
-    "published": true
+    "url": "operaciones/gestion-cambios/gestion-cambios-modelo-operativo.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 19,
     "cat": "gestion-cambios",
     "meta": "Gestión de Cambios · Operaciones",
     "title": "Controles y evidencias: el cambio que causó el incidente y nadie relacionó con nada",
-    "date": "19 Julio 2026",
+    "date": "02 Julio 2026",
     "desc": "Sin registro trazable de cambios, correlacionar un incidente con su causa real es arqueología manual.",
-    "url": "gestion-cambios/gestion-cambios-controles-evidencias.html",
-    "published": true
+    "url": "operaciones/gestion-cambios/gestion-cambios-controles-evidencias.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 20,
     "cat": "gestion-cambios",
     "meta": "Gestión de Cambios · Operaciones",
     "title": "Madurez y roadmap: del cambio a mano un viernes por la tarde al despliegue continuo controlado",
-    "date": "20 Agosto 2026",
+    "date": "11 Abril 2026",
     "desc": "Los 4 niveles de madurez: del cambio de viernes sin avisar al despliegue continuo con control automatizado.",
-    "url": "gestion-cambios/gestion-cambios-madurez-roadmap.html",
-    "published": true
+    "url": "operaciones/gestion-cambios/gestion-cambios-madurez-roadmap.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 21,
     "cat": "backup-recuperacion",
     "meta": "Backup y Recuperación · Operaciones",
     "title": "Principios de diseño: si el ransomware cifra tus backups, no tienes backups",
-    "date": "21 Junio 2026",
+    "date": "29 Junio 2026",
     "desc": "El ransomware moderno busca y destruye los backups antes de cifrar el resto. La regla 3-2-1 clásica ya no basta sola.",
-    "url": "backup-recuperacion/backup-recuperacion-diseno-principios.html",
-    "published": true
+    "url": "operaciones/backup-recuperacion/backup-recuperacion-diseno-principios.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 22,
     "cat": "backup-recuperacion",
     "meta": "Backup y Recuperación · Operaciones",
     "title": "Modelo operativo: quién prueba la restauración, y con qué frecuencia real",
-    "date": "22 Julio 2026",
+    "date": "14 Mayo 2026",
     "desc": "Un backup nunca restaurado en un entorno de prueba es una esperanza, no una capacidad verificada.",
-    "url": "backup-recuperacion/backup-recuperacion-modelo-operativo.html",
-    "published": true
+    "url": "operaciones/backup-recuperacion/backup-recuperacion-modelo-operativo.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 23,
     "cat": "backup-recuperacion",
     "meta": "Backup y Recuperación · Operaciones",
     "title": "Controles y evidencias: la prueba de restauración con fecha, resultado y tiempo real",
-    "date": "23 Agosto 2026",
+    "date": "07 Julio 2026",
     "desc": "\"Creo que funciona\" no es una evidencia de backup. Se necesita fecha, resultado y tiempo real medido.",
-    "url": "backup-recuperacion/backup-recuperacion-controles-evidencias.html",
-    "published": true
+    "url": "operaciones/backup-recuperacion/backup-recuperacion-controles-evidencias.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 24,
     "cat": "backup-recuperacion",
     "meta": "Backup y Recuperación · Operaciones",
     "title": "Madurez y roadmap: de \"hacemos backup\" a resiliencia verificada frente a ransomware",
-    "date": "24 Septiembre 2026",
+    "date": "05 Junio 2026",
     "desc": "Los 4 niveles de madurez en backup: de copiar archivos sin verificar a resiliencia diseñada contra ransomware.",
-    "url": "backup-recuperacion/backup-recuperacion-madurez-roadmap.html",
-    "published": true
-  },
-  {
-    "id": 25,
-    "cat": "patch-management",
-    "meta": "Patch Management · Operaciones",
-    "title": "Principios de diseño y criterios de arquitectura",
-    "date": "25 Julio 2026",
-    "desc": "Parchear sin ventana de prueba cambia un riesgo teórico de seguridad por un riesgo real de disponibilidad.",
-    "url": "patch-management/patch-management-diseno-principios.html",
-    "published": true
-  },
-  {
-    "id": 26,
-    "cat": "patch-management",
-    "meta": "Patch Management · Operaciones",
-    "title": "Modelo operativo, roles y gobierno técnico",
-    "date": "26 Agosto 2026",
-    "desc": "Posponer un parche crítico puede ser correcto — pero necesita justificación documentada, no silencio indefinido.",
-    "url": "patch-management/patch-management-modelo-operativo.html",
-    "published": true
-  },
-  {
-    "id": 27,
-    "cat": "patch-management",
-    "meta": "Patch Management · Operaciones",
-    "title": "Controles, evidencias y trazabilidad",
-    "date": "27 Septiembre 2026",
-    "desc": "\"95% parcheado\" suena bien hasta que preguntas qué hay exactamente en ese 5% restante.",
-    "url": "patch-management/patch-management-controles-evidencias.html",
-    "published": true
-  },
-  {
-    "id": 28,
-    "cat": "patch-management",
-    "meta": "Patch Management · Operaciones",
-    "title": "Madurez, roadmap y mejora continua",
-    "date": "28 Octubre 2026",
-    "desc": "Los 4 niveles de madurez: del parcheo esporádico al despliegue continuo con rollback automatizado.",
-    "url": "patch-management/patch-management-madurez-roadmap.html",
-    "published": true
+    "url": "operaciones/backup-recuperacion/backup-recuperacion-madurez-roadmap.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 29,
     "cat": "gestion-incidencias",
     "meta": "Gestión de Incidencias · Operaciones",
     "title": "Principios de diseño: la incidencia \"resuelta\" que vuelve a las dos semanas",
-    "date": "29 Agosto 2026",
+    "date": "29 Abril 2026",
     "desc": "Cerrar una incidencia sin causa raíz no la resuelve — la pospone hasta que vuelva disfrazada de caso nuevo.",
-    "url": "gestion-incidencias/gestion-incidencias-diseno-principios.html",
-    "published": true
+    "url": "operaciones/gestion-incidencias/gestion-incidencias-diseno-principios.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 30,
     "cat": "gestion-incidencias",
     "meta": "Gestión de Incidencias · Operaciones",
     "title": "Modelo operativo: el escalado que tarda más que resolver el problema uno mismo",
-    "date": "30 Septiembre 2026",
+    "date": "12 Abril 2026",
     "desc": "Un escalado más lento que resolverlo uno mismo empuja a atajos sin visibilidad ni aprendizaje compartido.",
-    "url": "gestion-incidencias/gestion-incidencias-modelo-operativo.html",
-    "published": true
+    "url": "operaciones/gestion-incidencias/gestion-incidencias-modelo-operativo.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 31,
     "cat": "gestion-incidencias",
     "meta": "Gestión de Incidencias · Operaciones",
     "title": "Controles y evidencias: el post-mortem que se escribe y nadie vuelve a leer",
-    "date": "31 Octubre 2026",
+    "date": "25 Mayo 2026",
     "desc": "Un post-mortem sin acciones de seguimiento verificadas es documentación, no mejora real.",
-    "url": "gestion-incidencias/gestion-incidencias-controles-evidencias.html",
-    "published": true
+    "url": "operaciones/gestion-incidencias/gestion-incidencias-controles-evidencias.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 32,
     "cat": "gestion-incidencias",
     "meta": "Gestión de Incidencias · Operaciones",
     "title": "Madurez y roadmap: de apagar fuegos a la gestión proactiva de problemas",
-    "date": "32 Noviembre 2026",
+    "date": "04 Julio 2026",
     "desc": "Los 4 niveles de madurez: de apagar fuegos aislados a la gestión proactiva que anticipa problemas.",
-    "url": "gestion-incidencias/gestion-incidencias-madurez-roadmap.html",
-    "published": true
+    "url": "operaciones/gestion-incidencias/gestion-incidencias-madurez-roadmap.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 33,
     "cat": "automation-workflows",
     "meta": "Automation Workflows · Operaciones",
     "title": "Automatización Avanzada: Orquestación y Flujos de Sistemas",
-    "date": "12 Julio 2026",
+    "date": "07 Abril 2026",
     "desc": "Análisis exhaustivo sobre optimización operativa y Site Reliability Engineering. Implementación de flujos corporativos con PowerShell, Python e integración en n8n.",
-    "url": "automation-workflows/automatizacion-avanzada.html",
-    "published": true
+    "url": "operaciones/automation-workflows/automatizacion-avanzada.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 34,
     "cat": "backup-recuperacion",
     "meta": "Backup y Recuperación · Operaciones",
     "title": "Arquitectura 3-2-1-1-0: la regla empieza donde termina el marketing",
-    "date": "12 Julio 2026",
+    "date": "13 Mayo 2026",
     "desc": "La estrategia de backup debe convertir copias en capacidad de recuperación: múltiples dominios de fallo, copia aislada o inmutable y verificación sin errores.",
-    "url": "backup-recuperacion/arquitectura-backup-3-2-1-1-0.html",
-    "published": true
+    "url": "operaciones/backup-recuperacion/arquitectura-backup-3-2-1-1-0.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 35,
     "cat": "backup-recuperacion",
     "meta": "Backup y Recuperación · Operaciones",
     "title": "Repositorios inmutables: retención bloqueada no significa aislamiento",
-    "date": "12 Julio 2026",
+    "date": "23 Mayo 2026",
     "desc": "Object Lock, hardened repositories y WORM reducen el riesgo de borrado, pero la arquitectura depende también de identidad, administración y recuperación de claves.",
-    "url": "backup-recuperacion/repositorios-inmutables.html",
-    "published": true
+    "url": "operaciones/backup-recuperacion/repositorios-inmutables.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 36,
     "cat": "backup-recuperacion",
     "meta": "Backup y Recuperación · Operaciones",
     "title": "Pruebas de restauración: medir RTO real y demostrar que la copia sirve",
-    "date": "12 Julio 2026",
+    "date": "04 Mayo 2026",
     "desc": "El job verde demuestra escritura, no recuperación. Una prueba válida define objeto, punto de recuperación, dependencia, tiempo y criterio de aceptación.",
-    "url": "backup-recuperacion/pruebas-restauracion-evidencias.html",
-    "published": true
+    "url": "operaciones/backup-recuperacion/pruebas-restauracion-evidencias.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 37,
     "cat": "backup-recuperacion",
     "meta": "Backup y Recuperación · Operaciones",
     "title": "Backup frente a ransomware: diseñar para un administrador comprometido",
-    "date": "12 Julio 2026",
+    "date": "14 Junio 2026",
     "desc": "El adversario moderno intenta borrar catálogo, jobs y repositorios. El diseño debe asumir que una identidad privilegiada del entorno productivo puede caer.",
-    "url": "backup-recuperacion/backup-ransomware.html",
-    "published": true
+    "url": "operaciones/backup-recuperacion/backup-ransomware.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 38,
     "cat": "continuidad-negocio",
     "meta": "Continuidad de Negocio · Operaciones",
     "title": "RTO y RPO: convertir objetivos de negocio en arquitectura técnica",
-    "date": "12 Julio 2026",
+    "date": "07 Mayo 2026",
     "desc": "RTO y RPO no son etiquetas de un BIA; condicionan replicación, backup, capacidad, dependencias, runbooks y coste.",
-    "url": "continuidad-negocio/rto-rpo-diseno-tecnico.html",
-    "published": true
+    "url": "operaciones/continuidad-negocio/rto-rpo-diseno-tecnico.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 39,
     "cat": "continuidad-negocio",
     "meta": "Continuidad de Negocio · Operaciones",
     "title": "Disaster Recovery multi-site: replicar datos no recupera un servicio",
-    "date": "12 Julio 2026",
+    "date": "24 Abril 2026",
     "desc": "Un diseño DR debe resolver identidad, red, DNS, seguridad, capacidad y orden de arranque además de mover datos al segundo sitio.",
-    "url": "continuidad-negocio/disaster-recovery-multi-site.html",
-    "published": true
+    "url": "operaciones/continuidad-negocio/disaster-recovery-multi-site.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 40,
     "cat": "continuidad-negocio",
     "meta": "Continuidad de Negocio · Operaciones",
     "title": "Simulacros DR: probar la organización además de la tecnología",
-    "date": "12 Julio 2026",
+    "date": "05 Junio 2026",
     "desc": "Una prueba de continuidad debe introducir incertidumbre, medir decisiones y verificar comunicaciones; ejecutar un runbook conocido paso a paso solo valida el runbook.",
-    "url": "continuidad-negocio/pruebas-dr-simulacros.html",
-    "published": true
+    "url": "operaciones/continuidad-negocio/pruebas-dr-simulacros.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 41,
     "cat": "monitorizacion-observabilidad",
     "meta": "Monitorización y Observabilidad · Operaciones",
     "title": "Métricas, logs y trazas: tres señales para preguntas distintas",
-    "date": "12 Julio 2026",
+    "date": "08 Mayo 2026",
     "desc": "La observabilidad emerge al poder explicar el estado interno a partir de señales externas correlacionadas; acumular telemetría no garantiza diagnóstico.",
-    "url": "monitorizacion-observabilidad/metricas-logs-traces.html",
-    "published": true
+    "url": "operaciones/monitorizacion-observabilidad/metricas-logs-traces.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 42,
     "cat": "monitorizacion-observabilidad",
     "meta": "Monitorización y Observabilidad · Operaciones",
     "title": "Alert fatigue: cuando la monitorización entrena al equipo para ignorar alertas",
-    "date": "12 Julio 2026",
+    "date": "10 Mayo 2026",
     "desc": "Una alerta sin acción clara, owner, umbral defendible y ventana adecuada degrada la capacidad de respuesta aunque técnicamente sea correcta.",
-    "url": "monitorizacion-observabilidad/alert-fatigue.html",
-    "published": true
+    "url": "operaciones/monitorizacion-observabilidad/alert-fatigue.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 43,
     "cat": "monitorizacion-observabilidad",
     "meta": "Monitorización y Observabilidad · Operaciones",
     "title": "Observabilidad de infraestructura híbrida: unificar contexto sin borrar diferencias",
-    "date": "12 Julio 2026",
+    "date": "10 Julio 2026",
     "desc": "On-prem, cloud y SaaS producen señales distintas. La capa común debe normalizar servicio, owner, entorno y criticidad sin perder atributos nativos.",
-    "url": "monitorizacion-observabilidad/observabilidad-infraestructura-hibrida.html",
-    "published": true
+    "url": "operaciones/monitorizacion-observabilidad/observabilidad-infraestructura-hibrida.html",
+    "published": true,
+    "nuevo": true
   },
   {
     "id": 44,
     "cat": "monitorizacion-observabilidad",
     "meta": "Monitorización y Observabilidad · Operaciones",
     "title": "Golden Signals, SLI y SLO: medir experiencia de servicio, no solo infraestructura",
-    "date": "12 Julio 2026",
+    "date": "08 Abril 2026",
     "desc": "Latencia, tráfico, errores y saturación ayudan a observar sistemas, pero deben transformarse en indicadores y objetivos ligados al servicio.",
-    "url": "monitorizacion-observabilidad/golden-signals-sli-slo.html",
-    "published": true
+    "url": "operaciones/monitorizacion-observabilidad/golden-signals-sli-slo.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 45,
     "cat": "automatizacion-orquestacion",
     "meta": "Automatización y Orquestación · Operaciones",
     "title": "PowerShell enterprise: automatizar sin convertir scripts en deuda operativa",
-    "date": "12 Julio 2026",
+    "date": "13 Julio 2026",
     "desc": "Un script que funciona en la consola del autor no es una automatización operable. Necesita parámetros, validación, logging, idempotencia y manejo de secretos.",
-    "url": "automatizacion-orquestacion/powershell-automatizacion-enterprise.html",
-    "published": true
+    "url": "operaciones/automatizacion-orquestacion/powershell-automatizacion-enterprise.html",
+    "published": true,
+    "nuevo": true
   },
   {
     "id": 46,
     "cat": "automatizacion-orquestacion",
     "meta": "Automatización y Orquestación · Operaciones",
     "title": "GitHub Actions para operaciones: pipelines que modifican producción necesitan gobierno",
-    "date": "12 Julio 2026",
+    "date": "02 Mayo 2026",
     "desc": "CI/CD también puede ser una plataforma operativa. Secrets, permisos, runners, concurrency y rollback forman parte de su arquitectura de control.",
-    "url": "automatizacion-orquestacion/github-actions-operaciones.html",
-    "published": true
+    "url": "operaciones/automatizacion-orquestacion/github-actions-operaciones.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 47,
     "cat": "automatizacion-orquestacion",
     "meta": "Automatización y Orquestación · Operaciones",
     "title": "Idempotencia: ejecutar dos veces sin romper dos veces",
-    "date": "12 Julio 2026",
+    "date": "16 Abril 2026",
     "desc": "La automatización robusta converge al estado deseado. Repetir una ejecución no debería duplicar objetos, reglas, usuarios o cambios irreversibles.",
-    "url": "automatizacion-orquestacion/idempotencia-automatizacion.html",
-    "published": true
+    "url": "operaciones/automatizacion-orquestacion/idempotencia-automatizacion.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 48,
     "cat": "automatizacion-orquestacion",
     "meta": "Automatización y Orquestación · Operaciones",
     "title": "Secretos en automatización: eliminar contraseñas del script no resuelve el problema",
-    "date": "12 Julio 2026",
+    "date": "06 Julio 2026",
     "desc": "Mover una contraseña a una variable de entorno es un avance, pero la arquitectura debe controlar emisión, alcance, rotación, exposición y auditoría.",
-    "url": "automatizacion-orquestacion/secretos-credenciales-automatizacion.html",
-    "published": true
+    "url": "operaciones/automatizacion-orquestacion/secretos-credenciales-automatizacion.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 49,
     "cat": "gestion-incidencias",
     "meta": "Gestión de Incidencias · Operaciones",
     "title": "Major Incident Management: gobernar el caos técnico sin frenar la recuperación",
-    "date": "12 Julio 2026",
+    "date": "19 Mayo 2026",
     "desc": "Un incidente mayor necesita roles, cadencia, canal, timeline y autoridad de decisión. Sin estructura, diez expertos generan diez líneas de trabajo incompatibles.",
-    "url": "gestion-incidencias/major-incident-management.html",
-    "published": true
+    "url": "operaciones/gestion-incidencias/major-incident-management.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 50,
     "cat": "gestion-incidencias",
     "meta": "Gestión de Incidencias · Operaciones",
     "title": "War room técnica: una sala no es un modelo operativo",
-    "date": "12 Julio 2026",
+    "date": "18 Abril 2026",
     "desc": "La war room debe reducir latencia de coordinación. Necesita un único timeline, hipótesis visibles, acciones con owner y disciplina para evitar investigación paralela duplicada.",
-    "url": "gestion-incidencias/war-room-tecnica.html",
-    "published": true
+    "url": "operaciones/gestion-incidencias/war-room-tecnica.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 51,
     "cat": "gestion-incidencias",
     "meta": "Gestión de Incidencias · Operaciones",
     "title": "Postmortem sin culpa: eliminar condiciones sistémicas, no buscar al último que hizo clic",
-    "date": "12 Julio 2026",
+    "date": "24 Mayo 2026",
     "desc": "El análisis útil reconstruye decisiones bajo el contexto disponible y convierte causas contribuyentes en cambios verificables del sistema.",
-    "url": "gestion-incidencias/postmortem-sin-culpa.html",
-    "published": true
+    "url": "operaciones/gestion-incidencias/postmortem-sin-culpa.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 52,
     "cat": "gestion-cambios",
     "meta": "Gestión de Cambios · Operaciones",
     "title": "Cambios en infraestructura crítica: la ventana no sustituye al diseño",
-    "date": "12 Julio 2026",
+    "date": "06 Abril 2026",
     "desc": "Un cambio de red, almacenamiento, clúster o identidad debe declarar impacto, dependencias, validación y condición de aborto antes de tocar producción.",
-    "url": "gestion-cambios/cambios-infraestructura-critica.html",
-    "published": true
+    "url": "operaciones/gestion-cambios/cambios-infraestructura-critica.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 53,
     "cat": "gestion-cambios",
     "meta": "Gestión de Cambios · Operaciones",
     "title": "Rollback y validación técnica: volver atrás también es un cambio",
-    "date": "12 Julio 2026",
+    "date": "04 Julio 2026",
     "desc": "El rollback debe ensayarse o al menos diseñarse con el mismo rigor que la implementación; restaurar configuración no siempre restaura estado, datos o sesiones.",
-    "url": "gestion-cambios/rollback-validacion-tecnica.html",
-    "published": true
+    "url": "operaciones/gestion-cambios/rollback-validacion-tecnica.html",
+    "published": true,
+    "nuevo": false
   },
   {
     "id": 54,
     "cat": "gestion-cambios",
     "meta": "Gestión de Cambios · Operaciones",
     "title": "Cambios de emergencia: velocidad con trazabilidad, no ausencia de control",
-    "date": "12 Julio 2026",
+    "date": "10 Abril 2026",
     "desc": "La emergencia reduce tiempos de aprobación, pero no elimina owner, alcance, registro, validación ni revisión posterior.",
-    "url": "gestion-cambios/cambios-emergencia.html",
-    "published": true
+    "url": "operaciones/gestion-cambios/cambios-emergencia.html",
+    "published": true,
+    "nuevo": false
   }
 ]
