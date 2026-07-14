@@ -1,19 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport"/>
 <title>INCIBE-CERT Intelligence · Technology Advisory</title>
-<meta name="description" content="Explorador técnico de avisos de alerta temprana publicados por INCIBE-CERT.">
-<meta name="theme-color" content="#059669">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="../../css/global.css">
-<link rel="stylesheet" href="../../css/dossier-core.css">
-
+<meta content="Explorador técnico de avisos de alerta temprana publicados por INCIBE-CERT." name="description"/>
+<meta content="#059669" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../css/global.css" rel="stylesheet"/>
+<link href="../../css/dossier-core.css" rel="stylesheet"/>
 <style>
 :root{
   --ink:#151915;
@@ -85,75 +83,69 @@ h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,5vw,52px);line-he
   .item-head{display:block}.badges{justify-content:flex-start;margin-top:12px}
 }
 </style>
-</head>
+<link href="https://technology-advisory.es/tools/incibe-cert/" rel="canonical"/></head>
 <body>
 <div class="card-wrapper ds-page"><div class="card">
 <div id="menu-container"></div>
 <div class="accent-bar" style="background:#059669;"></div>
 <div class="wrap"><div class="incibe-card">
-    <section class="top">
-      <a class="back" href="../index.html">← VOLVER A TOOLS</a>
-      <div class="eyebrow">Tools · National Cybersecurity Intelligence</div>
-      <h1>INCIBE-CERT <span class="accent">Intelligence</span></h1>
-      <p class="lead">
+<section class="top">
+<a class="back" href="../index.html">← VOLVER A TOOLS</a>
+<div class="eyebrow">Tools · National Cybersecurity Intelligence</div>
+<h1>INCIBE-CERT <span class="accent">Intelligence</span></h1>
+<p class="lead">
         Explorador técnico de avisos de alerta temprana publicados por INCIBE-CERT.
         La vista normaliza severidad, identificadores CVE, explotación declarada y evolución temporal
         sobre el histórico disponible en el JSON local.
       </p>
-      <div class="meta">
-        <span id="scopeMeta">Ámbito local cargando…</span>
-        <span id="sourceMeta">INCIBE-CERT cargando…</span>
-        <span id="updatedMeta">Actualización cargando…</span>
-      </div>
-    </section>
-
-    <section class="stats">
-      <div class="stat"><b id="statTotal">—</b><span>Avisos en catálogo local</span></div>
-      <div class="stat"><b id="statCritical">—</b><span>Importancia crítica</span></div>
-      <div class="stat"><b id="statHigh">—</b><span>Importancia alta</span></div>
-      <div class="stat"><b id="statExploited">—</b><span>Con explotación indicada</span></div>
-    </section>
-
-    <section class="filters">
-      <input id="q" type="search" placeholder="Buscar aviso, CVE, fabricante o tecnología…">
-      <select id="importance">
-        <option value="">Importancia: todas</option>
-        <option value="5">5 · Crítica</option>
-        <option value="4">4 · Alta</option>
-        <option value="3">3 · Media</option>
-        <option value="2">2 · Baja</option>
-        <option value="unknown">Sin clasificar</option>
-      </select>
-      <select id="exploited">
-        <option value="">Explotación: todas</option>
-        <option value="yes">Explotación indicada</option>
-        <option value="no">No indicada</option>
-      </select>
-      <select id="month"><option value="">Mes: todos</option></select>
-      <select id="order">
-        <option value="desc">Publicación: más reciente primero</option>
-        <option value="asc">Publicación: más antigua primero</option>
-      </select>
-    </section>
-
-    <div id="filterNote" class="filter-note">Cargando catálogo…</div>
-
-    <section class="content">
-      <div id="list" class="list"></div>
-      <div id="pagination" class="pagination"></div>
-
-      <div class="source-note">
-        <strong>Fuente oficial:</strong> INCIBE-CERT · Alerta temprana · Avisos.
+<div class="meta">
+<span id="scopeMeta">Ámbito local cargando…</span>
+<span id="sourceMeta">INCIBE-CERT cargando…</span>
+<span id="updatedMeta">Actualización cargando…</span>
+</div>
+</section>
+<section class="stats">
+<div class="stat"><b id="statTotal">—</b><span>Avisos en catálogo local</span></div>
+<div class="stat"><b id="statCritical">—</b><span>Importancia crítica</span></div>
+<div class="stat"><b id="statHigh">—</b><span>Importancia alta</span></div>
+<div class="stat"><b id="statExploited">—</b><span>Con explotación indicada</span></div>
+</section>
+<section class="filters">
+<input id="q" placeholder="Buscar aviso, CVE, fabricante o tecnología…" type="search"/>
+<select id="importance">
+<option value="">Importancia: todas</option>
+<option value="5">5 · Crítica</option>
+<option value="4">4 · Alta</option>
+<option value="3">3 · Media</option>
+<option value="2">2 · Baja</option>
+<option value="unknown">Sin clasificar</option>
+</select>
+<select id="exploited">
+<option value="">Explotación: todas</option>
+<option value="yes">Explotación indicada</option>
+<option value="no">No indicada</option>
+</select>
+<select id="month"><option value="">Mes: todos</option></select>
+<select id="order">
+<option value="desc">Publicación: más reciente primero</option>
+<option value="asc">Publicación: más antigua primero</option>
+</select>
+</section>
+<div class="filter-note" id="filterNote">Cargando catálogo…</div>
+<section class="content">
+<div class="list" id="list"></div>
+<div class="pagination" id="pagination"></div>
+<div class="source-note">
+<strong>Fuente oficial:</strong> INCIBE-CERT · Alerta temprana · Avisos.
         Technology Advisory presenta una vista técnica normalizada para facilitar consulta y filtrado.
         El contenido y la autoridad del aviso corresponden a INCIBE-CERT.
       </div>
-    </section>
+</section>
 </div></div>
 <div id="footer-container"></div>
 </div></div>
 <script src="../../js/menu.js"></script>
 <script src="../../js/footer.js"></script>
-
 <script>
 const $=id=>document.getElementById(id);
 const PAGE_SIZE=7;
