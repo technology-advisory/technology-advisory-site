@@ -1,38 +1,38 @@
 {
   "schema_version": 2,
   "title": "INCIBE-CERT Intelligence",
-  "last_updated_at": "2026-07-14T00:10:32.361477Z",
+  "last_updated_at": "2026-07-14T10:27:24.604390Z",
   "window_days": 180,
   "bootstrap_complete": true,
   "bootstrap_next_page": null,
-  "total_alerts": 242,
+  "total_alerts": 243,
   "total_critical": 164,
-  "total_high": 37,
+  "total_high": 38,
   "total_exploited": 7,
-  "total_with_cve": 228,
+  "total_with_cve": 229,
   "importance_counts": {
     "1": 0,
     "2": 0,
     "3": 37,
-    "4": 37,
+    "4": 38,
     "5": 164
   },
   "top_tags": [
     {
       "tag": "Vulnerabilidad",
-      "count": 223
+      "count": 224
     },
     {
       "tag": "Actualización",
-      "count": 178
+      "count": 179
     },
     {
       "tag": "0day",
-      "count": 80
+      "count": 81
     },
     {
       "tag": "CNA",
-      "count": 76
+      "count": 77
     },
     {
       "tag": "RCE",
@@ -8607,6 +8607,40 @@
       ],
       "exploited": false,
       "manufacturers": []
+    },
+    {
+      "id": "21d4edf46894dee9680f92a4",
+      "incibe_id": "INCIBE-2026-487",
+      "title": "Control de acceso insuficiente en la gestión de sesiones de Sesame Time",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/avisos/control-de-acceso-insuficiente-en-la-gestion-de-sesiones-de-sesame-time",
+      "summary": "INCIBE ha coordinado la publicación de una vulnerabilidad de severidad alta que afecta a la aplicación web de Sesame Time, un software de gestión de recursos humanos y control horario. La vulnerabilidad ha sido descubierta por Miguel Jiménez Cámara. A esta vulnerabilidad se le ha asignado el siguiente código, puntuación base CVSS v4.0, vector del CVSS y el tipo de vulnerabilidad CWE: CVE-2026-15389: CVSS v4.0: 8.7 | CVSS AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N | CWE-639",
+      "affected_resources": "Los siguientes endopoints de la aplicación web Sesame Time están afectados: api/v3/security/login (creación de USID); /api/v3/security/me (exposición de datos según USID); otros endpoints privados como /private/notification/v1/ (aceptan USID).",
+      "solution": "La vulnerabilidad ha sido solucionada por el equipo de Sesame Time en la última versión disponible. La actualización incorpora mejoras en el mecanismo de autenticación y refuerza las validaciones de autorización en el servidor para garantizar que cada sesión únicamente pueda acceder a la información asociada al usuario autenticado.",
+      "detail": "CVE-2026-15389 : se ha identificado una vulnerabilidad de control de acceso insuficiente en la gestión de sesiones de la aplicación web de Sesame Time y su API REST v3. El fallo radica en que el sistema utiliza el identificador de sesión (USID) como único mecanismo de validación, sin verificar si dicho identificador pertenece legítimamente al usuario que realiza la petición. Como consecuencia, un atacante que obtenga un USID válido puede suplantar la sesión de una víctima y acceder a su información confidencial, incluyendo correos electrónicos, identificadores de usuario, roles y datos corporativos. Esta vulnerabilidad se ve agravada por una deficiente gestión del ciclo de vida de las sesiones: los nuevos inicios de sesión generan identificadores USID adicionales sin revocar los anteriores, lo que permite la coexistencia de múltiples sesiones activas y amplía la superficie de ataque. CVE Identificador CVE Severidad Explotación Fabricante CVE-2026-15389 Alta No Sesame",
+      "published_at": null,
+      "importance": 4,
+      "tags": [
+        "0day",
+        "Actualización",
+        "CNA",
+        "Control de acceso",
+        "Recursos humanos",
+        "Vulnerabilidad"
+      ],
+      "cves": [
+        "CVE-2026-15389"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-15389",
+          "cvss": 8.7,
+          "cvss_version": "4.0"
+        }
+      ],
+      "exploited": false,
+      "manufacturers": [
+        "CVE-2026-15389"
+      ]
     },
     {
       "id": "e422e9e0a5702503dce38036",
