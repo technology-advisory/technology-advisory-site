@@ -107,7 +107,7 @@
     "desc": "Si aplicar el código de infraestructura depende de que alguien ejecute un comando a mano, tienes IaC de nombre, no de práctica.",
     "url": "arquitectura/infraestructura-codigo/infraestructura-codigo-modelo-operativo.html",
     "published": true,
-    "nuevo": false
+    "nuevo": true
   },
   {
     "id": 11,
@@ -217,7 +217,7 @@
     "desc": "Los 4 niveles reales de madurez de almacenamiento, del disco suelto al gobierno del dato como código.",
     "url": "arquitectura/almacenamiento-datos/almacenamiento-datos-madurez-roadmap.html",
     "published": true,
-    "nuevo": false
+    "nuevo": true
   },
   {
     "id": 21,
@@ -294,7 +294,7 @@
     "desc": "Un benchmark de hace dos años no es evidencia de la capacidad actual: caduca con cada cambio.",
     "url": "arquitectura/capacidad-rendimiento/capacidad-rendimiento-controles-evidencias.html",
     "published": true,
-    "nuevo": false
+    "nuevo": true
   },
   {
     "id": 28,
@@ -404,7 +404,7 @@
     "desc": "Estrategia de onboarding de recursos on-prem en Azure Arc. Landing Zones y compliance cross-cloud.",
     "url": "arquitectura/cloud-hibrido/azure-arc-landing-zones.html",
     "published": true,
-    "nuevo": false
+    "nuevo": true
   },
   {
     "id": 38,
