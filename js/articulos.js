@@ -338,4 +338,4 @@ async function cargarArticulos(jsonPath) {
 // ==============================
 function initArticulos(jsonPath) {
     cargarArticulos(jsonPath);
-}
+} 
