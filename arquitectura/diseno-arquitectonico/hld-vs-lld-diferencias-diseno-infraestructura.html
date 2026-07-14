@@ -30,6 +30,20 @@
 .ta-card p{color:#475569;line-height:1.7}
 .ta-callout{margin:28px 0;padding:22px 24px;border:1px solid #a7d7bf;border-radius:10px;background:#effaf4;color:#174c37;line-height:1.7}
 @media(max-width:760px){.ta-compare{grid-template-columns:1fr}}
+.ta-table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0 32px}
+.ta-table{width:100%;min-width:760px;border-collapse:separate;border-spacing:0;border:1px solid #dbe5df;border-radius:12px;overflow:hidden;background:#fff}
+.ta-table th,.ta-table td{padding:14px 16px;text-align:left;vertical-align:top;border-bottom:1px solid #e2e8f0;border-right:1px solid #e2e8f0;font-size:14px;line-height:1.55}
+.ta-table th:last-child,.ta-table td:last-child{border-right:0}
+.ta-table tr:last-child td{border-bottom:0}
+.ta-table thead th{background:#ecf8f2;color:#0f3d2d;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.04em;font-weight:800}
+.ta-table tbody tr:nth-child(even){background:#f8fafc}
+.ta-table tbody tr:hover{background:#f0fdf6}
+.ta-table td:first-child{font-weight:700;color:#0f172a}
+.ta-table strong{color:#0f172a}
+@media(max-width:760px){
+  .ta-table-wrap{margin-left:0;margin-right:0}
+  .ta-table th,.ta-table td{padding:12px 13px;font-size:13px}
+}
 </style>
 </head>
 <body>
@@ -76,7 +90,7 @@
 <rect x="755" y="105" width="110" height="72" rx="10" fill="#fff" stroke="#d8ded9"/><text x="810" y="133" text-anchor="middle" font-size="13" font-weight="700">OPERAR</text><text x="810" y="154" text-anchor="middle" font-size="11" fill="#64748b">medir y mantener</text>
 <path d="M810 190 C810 235,300 235,292 195" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ah)"/>
 <text x="550" y="253" text-anchor="middle" font-size="11" font-weight="700" fill="#059669">la realidad operativa retroalimenta el diseño</text>
-</g></svg>14 Julio 2026</span>
+</g></svg>
 </figure>
 
 <div class="ta-compare">
@@ -95,7 +109,26 @@
 <p>El LLD es el documento que define cómo se implementa específicamente la infraestructura. Es el detalle técnico. El plano de la casa. La especificación constructiva. Un LLD responde preguntas como:</p>
 <div class="ta-point">→ ¿Qué hardware específico usaremos? (modelo, configuración)</div>
 <p>¿Qué sistema operativo y versión? ¿Qué hypervisor? ¿Qué vendor de storage y qué configuración? ¿Qué equipamiento de red exacto? ¿Qué configuraciones de seguridad concretas? ¿Cómo se configura cada componente en detalle? ¿Qué scripts de automatización utilizamos? ¿Qué runbooks y procedimientos operacionales? Un buen LLD permite al equipo operacional construir, configurar y mantener la infraestructura sin ambigüedad. Debe ser tan específico que un ingeniero pueda implementarlo siguiendo las indicaciones, sin necesidad de tomar decisiones de arquitectura por su cuenta. El LLD describe el cómo.</p>
-<h3>Tabla Comparativa: HLD vs LL</h3>
+<h3>Tabla Comparativa: HLD vs LLD</h3>
+<div class="ta-table-wrap">
+<table class="ta-table" aria-label="Comparativa entre HLD y LLD">
+<thead>
+<tr><th>Aspecto</th><th>HLD (High-Level Design)</th><th>LLD (Low-Level Design)</th></tr>
+</thead>
+<tbody>
+<tr><td>Propósito</td><td>Definir la arquitectura global</td><td>Definir la implementación específica</td></tr>
+<tr><td>Pregunta clave</td><td>¿Qué construimos y por qué?</td><td>¿Cómo lo construimos exactamente?</td></tr>
+<tr><td>Nivel de detalle</td><td>Conceptual y estratégico</td><td>Técnico y operacional</td></tr>
+<tr><td>Audiencia</td><td>Arquitectos, dirección, auditores, stakeholders</td><td>Equipos de implementación y operación</td></tr>
+<tr><td>Independiente de tecnología</td><td>Sí, en gran medida</td><td>No, especifica tecnologías concretas</td></tr>
+<tr><td>Frecuencia de cambio</td><td>Cambia poco (cada 12–18 meses)</td><td>Cambia con frecuencia (semanal/mensual)</td></tr>
+<tr><td>Lenguaje</td><td>Componentes, flujos, topología</td><td>Modelos, versiones, configuraciones</td></tr>
+<tr><td>Quién lo aprueba</td><td>Arquitecto principal / CTO</td><td>Responsable de infraestructura</td></tr>
+<tr><td>Documentación</td><td>Diagramas + decisiones documentadas</td><td>Especificaciones + procedimientos + IaC</td></tr>
+<tr><td>Validez</td><td>Estratégica (largo plazo)</td><td>Táctica (medio plazo)</td></tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="defensa-divider"><span class="label"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
@@ -166,7 +199,22 @@
 <p>Cambiar la infraestructura real sin actualizar HLD ni LLD. Consecuencia: la documentación se vuelve obsoleta. Nuevos miembros del equipo se confunden. Decisiones futuras se toman con información incorrecta.</p>
 <h3>Error 6: Confundir Audiencia</h3>
 <p>Presentar el LLD a stakeholders no técnicos, o presentar el HLD al equipo de implementación esperando que sea suficiente. Consecuencia: comunicación rota. Los stakeholders no entienden, el equipo técnico no tiene suficiente detalle.</p>
-<h3>Tabla de Errores y Solucione</h3>
+<h3>Tabla de Errores y Soluciones</h3>
+<div class="ta-table-wrap">
+<table class="ta-table" aria-label="Errores comunes en HLD y LLD y cómo evitarlos">
+<thead>
+<tr><th>Error</th><th>Por qué ocurre</th><th>Cómo evitarlo</th></tr>
+</thead>
+<tbody>
+<tr><td>Saltarse el HLD</td><td>Urgencia o falta de cultura arquitectónica</td><td>Hacer del HLD un paso obligatorio antes del LLD</td></tr>
+<tr><td>HLD con detalles técnicos</td><td>Confusión sobre el propósito</td><td>Validar que el HLD sea independiente de vendors</td></tr>
+<tr><td>LLD sin referenciar HLD</td><td>Falta de disciplina documental</td><td>Plantilla de LLD que obligue a referenciar HLD</td></tr>
+<tr><td>LLD contradice HLD</td><td>Decisiones operacionales sin supervisión</td><td>Revisión de arquitectura antes de implementar</td></tr>
+<tr><td>Documentos desactualizados</td><td>Falta de proceso de cambio</td><td>Cualquier cambio requiere actualizar documentación</td></tr>
+<tr><td>Audiencia equivocada</td><td>Falta de comunicación</td><td>Definir audiencia clara para cada documento</td></tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="defensa-divider"><span class="label"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
