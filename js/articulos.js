@@ -121,26 +121,20 @@ function poblarMeses(category) {
         select.appendChild(opt);
     });
     
-    // Respetar un mes explícito válido.
-    // Si no hay mes seleccionado, usar siempre el mes más nuevo disponible.
+    // Respetar únicamente un mes elegido explícitamente.
+    // Por defecto, mostrar todos los meses.
     const state = getStateFromURL();
 
     if (state.mes && state.mes !== 'all') {
         const optionExists = Array.from(select.options).some(opt => opt.value === state.mes);
+
         if (optionExists) {
             select.value = state.mes;
             return;
         }
     }
 
-    if (ordenadas.length) {
-        const latestMonth = ordenadas[0];
-        select.value = latestMonth;
-        const url = buildURL(category, 1, latestMonth);
-        history.replaceState(null, '', url);
-    } else {
-        select.value = 'all';
-    }
+    select.value = 'all';
 }
 
 // ==============================
