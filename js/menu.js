@@ -96,6 +96,35 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 
+    function referencesItem() {
+        return `
+            <li class="has-sub">
+                <a href="${basePath}referencias/index.html" class="nav-link${A('referencias')}">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="6" rx="1"/><rect x="14" y="4" width="7" height="6" rx="1"/><rect x="8.5" y="14" width="7" height="6" rx="1"/><path d="M6.5 10v2h11v-2M12 12v2"/></svg>
+                    Referencias
+                    <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </a>
+                <div class="sub-panel">
+                    <div class="sub-header">
+                        <span class="sub-area-label">Arquitecturas de referencia</span>
+                        <a href="${basePath}referencias/index.html" class="sub-see-all">Ver todas →</a>
+                    </div>
+                    <div class="sub-grid">
+                        <a class="sub-item" href="${basePath}referencias/index.html#segmentacion-red-corporativa"><span class="sub-num">R.1</span><span class="sub-name">Segmentación de red corporativa</span></a>
+                        <a class="sub-item" href="${basePath}referencias/index.html#dmz-doble-capa"><span class="sub-num">R.2</span><span class="sub-name">DMZ de doble capa</span></a>
+                        <a class="sub-item" href="${basePath}referencias/index.html#acceso-remoto-ztna"><span class="sub-num">R.3</span><span class="sub-name">Acceso remoto ZTNA</span></a>
+                        <a class="sub-item" href="${basePath}referencias/index.html#red-hibrida-hub-spoke"><span class="sub-num">R.4</span><span class="sub-name">Red híbrida hub-spoke</span></a>
+                        <a class="sub-item" href="${basePath}referencias/index.html#pipeline-devsecops"><span class="sub-num">R.5</span><span class="sub-name">Pipeline DevSecOps</span></a>
+                        <a class="sub-item" href="${basePath}referencias/index.html#service-mesh-mtls"><span class="sub-num">R.6</span><span class="sub-name">Service Mesh con mTLS</span></a>
+                        <a class="sub-item" href="${basePath}referencias/index.html#cluster-ngfw-ha"><span class="sub-num">R.7</span><span class="sub-name">Cluster NGFW en HA</span></a>
+                        <a class="sub-item" href="${basePath}referencias/index.html#inspeccion-ssl-tls"><span class="sub-num">R.8</span><span class="sub-name">Inspección SSL/TLS</span></a>
+                        <a class="sub-item" href="${basePath}referencias/index.html#core-l3-redundante"><span class="sub-num">R.9</span><span class="sub-name">Core L3 redundante</span></a>
+                        <a class="sub-item" href="${basePath}referencias/index.html#estrategia-multisitio-3dc"><span class="sub-num">R.10</span><span class="sub-name">Estrategia multisitio 3DC</span></a>
+                    </div>
+                </div>
+            </li>`;
+    }
+
     function toolsItem() {
         return `
             <li class="has-sub">
@@ -407,9 +436,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     ${areaItem('seguridad', 'Seguridad', '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>', true)}
                     ${areaItem('operaciones', 'Operaciones', '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>', true)}
                     ${areaItem('gobernanza', 'Gobernanza', '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>', true)}
-                    <li><a href="${basePath}referencias/index.html" class="nav-link${A('referencias')}">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="6" rx="1"/><rect x="14" y="4" width="7" height="6" rx="1"/><rect x="8.5" y="14" width="7" height="6" rx="1"/><path d="M6.5 10v2h11v-2M12 12v2"/></svg>
-                        Referencias</a></li>
+                    ${referencesItem()}
                     ${toolsItem()}
                     <li><a href="${basePath}sobre-mi/sobre-mi.html" class="nav-link${A('sobre-mi')}">
                         <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>

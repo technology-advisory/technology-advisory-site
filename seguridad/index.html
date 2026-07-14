@@ -1,94 +1,75 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport"/>
 <title>Seguridad Corporativa · Technology Advisory</title>
-
-<meta name="description" content="Artículos sobre ciberseguridad, Zero Trust, Security by Design y auditorías ISO 27001.">
-<meta name="robots" content="index, follow">
-<meta name="author" content="Miguel Ángel Carriazo">
-<meta name="theme-color" content="#059669">
-
-<link rel="canonical" href="https://technology-advisory.es/seguridad/">
-
-<link rel="stylesheet" href="../css/global.css">
-<link rel="stylesheet" href="../css/dossier-core.css">
-<link rel="stylesheet" href="../css/index.css">
-<link rel="stylesheet" href="../css/articulos-index.css">
+<meta content="Artículos sobre ciberseguridad, Zero Trust, Security by Design y auditorías ISO 27001." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Miguel Ángel Carriazo" name="author"/>
+<meta content="#059669" name="theme-color"/>
+<link rel="canonical" href="https://technology-advisory.es/seguridad/"/>
+<link href="../css/global.css" rel="stylesheet"/>
+<link href="../css/dossier-core.css" rel="stylesheet"/>
+<link href="../css/index.css" rel="stylesheet"/>
+<link href="../css/articulos-index.css" rel="stylesheet"/>
 </head>
 <body>
-
 <div class="card-wrapper ds-page">
 <div class="card">
-
-    <div id="menu-container"></div>
-    <div class="accent-bar" style="background: #059669;"></div>
-
-    <div class="ds-meta">
-        <span><span class="dot" style="background:#059669;"></span>Technology Advisory // seguridad</span>
-        <span>archivo: <strong id="total-articulos">Cargando...</strong></span>
-    </div>
-
-    <header class="header" style="padding: 40px 48px 20px; border-bottom: 1px solid #ededea;">
-        <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.1em; font-weight:700; margin-bottom:8px;">Dimensión 02 · Ciberseguridad</div>
-        <h1 class="headline" style="font-size: clamp(32px, 5vw, 44px); font-weight: 800; color: #151915; margin: 0 0 12px; letter-spacing: -0.02em;">
+<div id="menu-container"></div>
+<div class="accent-bar" style="background: #059669;"></div>
+<div class="ds-meta">
+<span><span class="dot" style="background:#059669;"></span>Technology Advisory // seguridad</span>
+<span>archivo: <strong id="total-articulos">Cargando...</strong></span>
+</div>
+<header class="header" style="padding: 40px 48px 20px; border-bottom: 1px solid #ededea;">
+<div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.1em; font-weight:700; margin-bottom:8px;">Dimensión 02 · Ciberseguridad</div>
+<h1 class="headline" style="font-size: clamp(32px, 5vw, 44px); font-weight: 800; color: #151915; margin: 0 0 12px; letter-spacing: -0.02em;">
             Seguridad <span class="accent" style="color:#059669;">que protege</span>
-        </h1>
-        <p class="subline" style="font-size: 18px; color: #4a4a44; max-width: 750px; line-height: 1.6; margin: 0;">
+</h1>
+<p class="subline" style="font-size: 18px; color: #4a4a44; max-width: 750px; line-height: 1.6; margin: 0;">
             Diseño perimetral avanzado, confianza cero y auditorías de sistemas bajo estándares internacionales.
         </p>
-    </header>
-
-    <div class="articulos-body">
-
-        <div id="filters">
-            <button class="filter-btn active" data-filter="all" onclick="filterArticles('all', this)">Todo</button>
-            <button class="filter-btn" data-filter="zero-trust" onclick="filterArticles('zero-trust', this)">Zero Trust</button>
-            <button class="filter-btn" data-filter="security-design" onclick="filterArticles('security-design', this)">Security by Design</button>
-            <button class="filter-btn" data-filter="iso-compliance" onclick="filterArticles('iso-compliance', this)">Auditoría y Cumplimiento</button>
-            <button class="filter-btn" data-filter="firewalls-perimetro" onclick="filterArticles('firewalls-perimetro', this)">Firewalls y Perímetro</button>
-            <button class="filter-btn" data-filter="siem-deteccion" onclick="filterArticles('siem-deteccion', this)">SIEM y Detección</button>
-            <button class="filter-btn" data-filter="gestion-vulnerabilidades" onclick="filterArticles('gestion-vulnerabilidades', this)">Gestión de Vulnerabilidades</button>
-            <button class="filter-btn" data-filter="respuesta-incidentes" onclick="filterArticles('respuesta-incidentes', this)">Respuesta a Incidentes</button>
-            <button class="filter-btn" data-filter="cifrado-identidad-digital" onclick="filterArticles('cifrado-identidad-digital', this)">Cifrado e Identidad Digital</button>
-
-            <div style="width:100%; height:0; margin:0; padding:0;"></div>
-
-            <div style="display:flex; gap:6px; align-items:center;">
-                <span style="font-family:monospace; font-size:10px;">Más filtros:</span>
-                <select id="monthFilter" class="ctrl-btn" onchange="applyFilters()">
-                    <option value="all">Mes</option>
-                </select>
-                <button class="ctrl-btn" id="sortBtn" onclick="toggleSort()">↓ Nuevos</button>
-            </div>
-        </div>
-
-        <div class="articles-grid" id="articlesGrid">
-            <div class="no-results show" id="noResults">
+</header>
+<div class="articulos-body">
+<div id="filters">
+<button class="filter-btn active" data-filter="all" onclick="filterArticles('all', this)">Todo</button>
+<button class="filter-btn" data-filter="zero-trust" onclick="filterArticles('zero-trust', this)">Zero Trust</button>
+<button class="filter-btn" data-filter="security-design" onclick="filterArticles('security-design', this)">Security by Design</button>
+<button class="filter-btn" data-filter="iso-compliance" onclick="filterArticles('iso-compliance', this)">Auditoría y Cumplimiento</button>
+<button class="filter-btn" data-filter="firewalls-perimetro" onclick="filterArticles('firewalls-perimetro', this)">Firewalls y Perímetro</button>
+<button class="filter-btn" data-filter="siem-deteccion" onclick="filterArticles('siem-deteccion', this)">SIEM y Detección</button>
+<button class="filter-btn" data-filter="gestion-vulnerabilidades" onclick="filterArticles('gestion-vulnerabilidades', this)">Gestión de Vulnerabilidades</button>
+<button class="filter-btn" data-filter="respuesta-incidentes" onclick="filterArticles('respuesta-incidentes', this)">Respuesta a Incidentes</button>
+<button class="filter-btn" data-filter="cifrado-identidad-digital" onclick="filterArticles('cifrado-identidad-digital', this)">Cifrado e Identidad Digital</button>
+<div style="width:100%; height:0; margin:0; padding:0;"></div>
+<div style="display:flex; gap:6px; align-items:center;">
+<span style="font-family:monospace; font-size:10px;">Más filtros:</span>
+<select class="ctrl-btn" id="monthFilter" onchange="applyFilters()">
+<option value="all">Mes</option>
+</select>
+<button class="ctrl-btn" id="sortBtn" onclick="toggleSort()">↓ Nuevos</button>
+</div>
+</div>
+<div class="articles-grid" id="articlesGrid">
+<div class="no-results show" id="noResults">
                 No hay artículos en esta categoría todavía.
             </div>
-        </div>
-
-        <nav class="articles-pagination" id="articlesPagination"></nav>
-
-    </div>
-
-    <div id="footer-container"></div>
-
+</div>
+<nav class="articles-pagination" id="articlesPagination"></nav>
+</div>
+<div id="footer-container"></div>
 </div>
 </div>
-
 <script src="../js/menu.js"></script>
 <script src="../js/footer.js"></script>
 <script src="../js/articulos.js"></script>
-
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     initArticulos('../data/seguridad.json');
 });
 </script>
-
 </body>
 </html>

@@ -1,22 +1,22 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport"/>
 <title>ExpressRoute vs VPN: Eligiendo la Conectividad Híbrida Correcta | Technology Advisory</title>
-<meta name="description" content="Comparativa técnica entre VPN site-to-site, ExpressRoute y Direct Connect: latencia, coste, resiliencia y cuándo cada una es la decisión correcta.">
-<meta name="author" content="Miguel Ángel Carriazo">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#059669">
-<link rel="stylesheet" href="../../css/global.css">
-<link rel="stylesheet" href="../../css/dossier-core.css">
-<link rel="stylesheet" href="../../css/articulo.css">
-<link rel="stylesheet" href="../../css/index.css">
-<link rel="stylesheet" href="../../css/articulo-diagramas.css">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Parche automático de optimización móvil para Technology Advisory -->
-    <style>
+<meta content="Comparativa técnica entre VPN site-to-site, ExpressRoute y Direct Connect: latencia, coste, resiliencia y cuándo cada una es la decisión correcta." name="description"/>
+<meta content="Miguel Ángel Carriazo" name="author"/>
+<meta name="robots" content="index, follow"/>
+<meta content="#059669" name="theme-color"/>
+<link href="../../css/global.css" rel="stylesheet"/>
+<link href="../../css/dossier-core.css" rel="stylesheet"/>
+<link href="../../css/articulo.css" rel="stylesheet"/>
+<link href="../../css/index.css" rel="stylesheet"/>
+<link href="../../css/articulo-diagramas.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Parche automático de optimización móvil para Technology Advisory -->
+<style>
         @media (max-width: 1024px) {
             .defensa-layout {
                 display: block !important;
@@ -32,259 +32,234 @@
             }
         }
     </style>
-</head>
+<link rel="canonical" href="https://technology-advisory.es/arquitectura/cloud-hibrido/expressroute-vpn.html"/></head>
 <body>
-
 <div class="card-wrapper ds-page">
 <div class="card">
-
 <div id="menu-container"></div>
 <div class="accent-bar" style="background: #059669;"></div>
-
 <div class="ds-meta">
-    <span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: arquitectura</span>
-    <span>categoría: <strong>Cloud Híbrido</strong></span>
+<span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: arquitectura</span>
+<span>categoría: <strong>Cloud Híbrido</strong></span>
 </div>
-
 <div style="padding: 16px 48px 0;">
-    <a href="../index.html?cat=cloud-hibrido" class="defensa-btn-back" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Cloud Híbrido</a>
+<a class="defensa-btn-back" href="../index.html?cat=cloud-hibrido" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Cloud Híbrido</a>
 </div>
-
 <div style="padding: 40px 48px 24px; border-bottom: 1px solid #ededea;">
-    <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Caso Práctico · Conectividad</div>
-    <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">ExpressRoute vs VPN (Virtual Private Network): <span style="color:#059669;">La Decisión Correcta</span></h1>
-    <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">VPN site-to-site, ExpressRoute y Direct Connect no son intercambiables. Latencia, coste y resiliencia real de cada opción, sin el filtro de ventas del proveedor.</p>
-
-    <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
-        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
-        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>Conectividad Híbrida</span>
-        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>Lectura Avanzada (14 min)</span>
-    </div>
+<div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Caso Práctico · Conectividad</div>
+<h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">ExpressRoute vs VPN (Virtual Private Network): <span style="color:#059669;">La Decisión Correcta</span></h1>
+<p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">VPN site-to-site, ExpressRoute y Direct Connect no son intercambiables. Latencia, coste y resiliencia real de cada opción, sin el filtro de ventas del proveedor.</p>
+<div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="6" r="2.6"></circle><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"></path></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+<span class="article-date" data-article-date="true" style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;">04 Junio 2026</span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><rect height="12.5" rx="1.3" width="13" x="2.5" y="3"></rect><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"></path></svg>04 Junio 2026</span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="9" r="6.8"></circle><path d="M9 5.3V9l2.8 1.7"></path></svg>Lectura Avanzada (14 min)</span>
 </div>
-
+</div>
 <div class="defensa-layout" style="display:grid; grid-template-columns:1fr 340px; gap:48px; align-items:start; padding:0 48px 40px;">
-    <div class="defensa-main" style="min-width:0;">
-
-        <!-- GRÁFICO 1: COMPARATIVA VPN VS EXPRESSROUTE -->
-        <figure class="article-diagram" aria-label="Comparativa VPN vs ExpressRoute" onclick="toggleZoom(this)">
-            <div class="diagram-desktop">
-                <svg viewBox="0 0 940 260" xmlns="http://www.w3.org/2000/svg" role="img">
-                    <rect width="940" height="260" rx="14" fill="#fafaf8"/>
-                    <text x="40" y="38" font-size="17" font-weight="800" fill="#151915">VPN vs ExpressRoute: el trade-off real</text>
-                    <line x1="120" y1="200" x2="880" y2="200" stroke="#ededea" stroke-width="2"/>
-                    <line x1="120" y1="70" x2="120" y2="200" stroke="#ededea" stroke-width="2"/>
-                    <text x="60" y="205" font-size="11" fill="#77776f">Coste ↓</text>
-                    <text x="60" y="80" font-size="11" fill="#77776f">Coste ↑</text>
-                    <rect x="180" y="150" width="110" height="50" rx="8" fill="#fff" stroke="#059669" stroke-width="2"/><text x="235" y="180" font-size="12" font-weight="700" fill="#151915" text-anchor="middle">VPN S2S</text>
-                    <rect x="420" y="100" width="130" height="50" rx="8" fill="#fff" stroke="#059669" stroke-width="2"/><text x="485" y="130" font-size="12" font-weight="700" fill="#151915" text-anchor="middle">ExpressRoute</text>
-                    <rect x="670" y="80" width="170" height="50" rx="8" fill="url(#gArc2)" /><defs><linearGradient id="gArc2" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs><text x="755" y="110" font-size="11.5" font-weight="700" fill="#fff" text-anchor="middle">Direct Connect</text>
-                    <text x="235" y="222" font-size="10" fill="#77776f" text-anchor="middle">latencia variable</text>
-                    <text x="485" y="222" font-size="10" fill="#77776f" text-anchor="middle">latencia predecible</text>
-                    <text x="755" y="222" font-size="10" fill="#77776f" text-anchor="middle">latencia mínima garantizada</text>
-                </svg>
-            </div>
-            <div class="diagram-mobile">
-                <svg viewBox="0 0 330 420" xmlns="http://www.w3.org/2000/svg" role="img">
-                    <rect width="330" height="420" rx="12" fill="#fafaf8"/>
-                    <text x="18" y="34" font-size="16" font-weight="800" fill="#151915">VPN vs conexión dedicada</text>
-                    <rect x="18" y="60" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="44" cy="94" r="14" fill="#059669"/><text x="44" y="99" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">1</text>
-                    <text x="68" y="85" font-size="14" font-weight="800" fill="#151915">VPN S2S</text><text x="68" y="104" font-size="11" fill="#77776f">Barata, latencia variable</text>
-                    <rect x="18" y="130" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="44" cy="192" r="14" fill="#059669"/><text x="44" y="197" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">2</text>
-                    <text x="68" y="183" font-size="14" font-weight="800" fill="#151915">ExpressRoute</text><text x="68" y="202" font-size="11" fill="#77776f">Predecible, con SLA</text>
-                    <rect x="18" y="200" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="44" cy="290" r="14" fill="#059669"/><text x="44" y="295" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">3</text>
-                    <text x="68" y="281" font-size="14" font-weight="800" fill="#151915">Direct Connect</text><text x="68" y="300" font-size="11" fill="#77776f">Latencia mínima garantizada</text>
-                    <rect x="18" y="270" width="294" height="58" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="44" cy="388" r="14" fill="#059669"/><text x="44" y="393" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">4</text>
-                    <text x="68" y="379" font-size="14" font-weight="800" fill="#151915">Combinación recomendada</text><text x="68" y="398" font-size="11" fill="#77776f">Dedicada + VPN de respaldo</text>
-                    <defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
-                    <rect x="18" y="340" width="294" height="60" rx="10" fill="url(#gm)"/>
-                    <text x="32" y="362" font-size="11.5" font-weight="700" fill="#fff">El patrón maduro combina las dos: dedicada</text>
-                    <text x="32" y="379" font-size="11.5" font-weight="700" fill="#fff">primaria, VPN de respaldo</text>
-                </svg>
-            </div>
-            <figcaption class="diagram-caption">Figura 1: Comparativa del trade-off entre coste y latencia en las opciones de conectividad híbrida.</figcaption>
-            <span class="zoom-hint">🔍 Clic para ampliar</span>
-        </figure>
-
-        <!-- GRÁFICO 2: MATRIZ DE DECISIÓN DE CONECTIVIDAD -->
-        <figure class="article-diagram" aria-label="Matriz de decisión de conectividad" onclick="toggleZoom(this)">
-            <svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" role="img">
-                <rect width="820" height="260" rx="14" fill="#fafaf8"/>
-                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Matriz de decisión de conectividad</text>
-                <text x="40" y="58" font-size="12" fill="#77776f">qué elegir según tus requisitos</text>
-                <rect x="40" y="80" width="170" height="40" rx="4" fill="#059669"/><text x="125" y="105" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Caso de uso</text>
-                <rect x="210" y="80" width="180" height="40" rx="4" fill="#059669"/><text x="300" y="105" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Opción recomendada</text>
-                <rect x="390" y="80" width="190" height="40" rx="4" fill="#059669"/><text x="485" y="105" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Ventajas</text>
-                <rect x="580" y="80" width="200" height="40" rx="4" fill="#059669"/><text x="680" y="105" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Desventajas</text>
-                <rect x="40" y="120" width="170" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
-                <text x="125" y="140" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Backups</text>
-                <rect x="210" y="120" width="180" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
-                <text x="300" y="140" font-size="11" fill="#059669" text-anchor="middle">VPN S2S</text>
-                <rect x="390" y="120" width="190" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
-                <text x="485" y="135" font-size="10" fill="#151915" text-anchor="middle">Bajo coste</text>
-                <rect x="580" y="120" width="200" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
-                <text x="680" y="135" font-size="10" fill="#94a3b8" text-anchor="middle">Latencia variable</text>
-                <rect x="40" y="160" width="170" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
-                <text x="125" y="180" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Producción crítica</text>
-                <rect x="210" y="160" width="180" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
-                <text x="300" y="180" font-size="11" fill="#059669" text-anchor="middle">ExpressRoute</text>
-                <rect x="390" y="160" width="190" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
-                <text x="485" y="175" font-size="10" fill="#151915" text-anchor="middle">SLA de latencia</text>
-                <rect x="580" y="160" width="200" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
-                <text x="680" y="175" font-size="10" fill="#94a3b8" text-anchor="middle">Coste alto</text>
-                <rect x="40" y="200" width="170" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
-                <text x="125" y="220" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Multi-cloud</text>
-                <rect x="210" y="200" width="180" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
-                <text x="300" y="220" font-size="11" fill="#059669" text-anchor="middle">Combinación</text>
-                <rect x="390" y="200" width="190" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
-                <text x="485" y="215" font-size="10" fill="#151915" text-anchor="middle">Resiliencia</text>
-                <rect x="580" y="200" width="200" height="40" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/>
-                <text x="680" y="215" font-size="10" fill="#94a3b8" text-anchor="middle">Complejidad</text>
-            </svg>
-            <figcaption class="diagram-caption">Figura 2: Matriz de decisión para elegir la conectividad híbrida correcta.</figcaption>
-            <span class="zoom-hint">🔍 Clic para ampliar</span>
-        </figure>
-
-        <!-- CONTENIDO -->
-        <div class="block" id="s1">
-            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — VPN</div>
-            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">VPN site-to-site: barata, flexible, impredecible</h2>
-            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>Una VPN IPsec site-to-site sobre internet público es la opción de entrada casi universal: coste mínimo, despliegue en horas, sin dependencia de un circuito físico dedicado. Es perfectamente adecuada para cargas que toleran variabilidad de latencia — backups, replicación asíncrona, entornos de desarrollo.</p>
-                <p>Lo que la VPN no puede prometer es latencia consistente, porque el tráfico viaja por la internet pública compartida, sujeta a la congestión y las rutas que decidan los proveedores de tránsito en cada momento. Para una aplicación que necesita latencia predecible bajo 10ms, una VPN estándar es una apuesta, no una garantía.</p>
-                <div class="defensa-box-tech"><strong>Cuándo basta con VPN:</strong> replicación de backups, DR (Disaster Recovery) con RPO (Recovery Point Objective) en horas, entornos no productivos, conectividad de contingencia sobre la línea principal.</div>
-                <p>La VPN también puede ser una excelente opción de respaldo para una conexión dedicada. En caso de fallo del circuito principal, la VPN puede mantener la conectividad con una latencia mayor pero suficiente para mantener los servicios críticos.</p>
-            </div>
-        </div>
-
-        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
-
-        <div class="block" id="s2">
-            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Conexión Dedicada</div>
-            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">ExpressRoute / Direct Connect: predecible, pero no barata</h2>
-            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>ExpressRoute (Azure) y Direct Connect (AWS) ofrecen una conexión privada, fuera de la internet pública, con un SLA (Service Level Agreement) de latencia y disponibilidad que la VPN simplemente no puede igualar. El tráfico va por un circuito dedicado o semi-dedicado contratado con un proveedor de telecomunicaciones, sin compartir ruta con tráfico de terceros.</p>
-                <p>El coste no es solo el circuito en sí — incluye el puerto en el datacenter de interconexión (Equinix, por ejemplo), el circuito hasta tu CPD (Centro de Procesamiento de Datos), y el propio servicio cloud. Para cargas con SLA estricto de latencia (trading, aplicaciones industriales en tiempo real, VoIP corporativo entre sites), es la única opción defendible.</p>
-                <div class="defensa-box-warning"><strong>⚠️ No olvides la redundancia</strong><p>Un único circuito ExpressRoute es, de nuevo, un punto único de fallo — aunque sea uno muy fiable. Los diseños críticos contratan dos circuitos por rutas físicas distintas, o combinan ExpressRoute como primario con VPN como respaldo automático.</p></div>
-                <p>El tiempo de despliegue de una conexión dedicada suele ser de varias semanas, ya que requiere la instalación física de un circuito en el datacenter de interconexión. Planifica este tiempo en el proyecto.</p>
-            </div>
-        </div>
-
-        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
-
-        <div class="block" id="s3">
-            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Decisión</div>
-            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Cómo decidir sin dejarte llevar por el marketing</h2>
-            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>La decisión entre VPN y conexión dedicada no es técnica pura — es de negocio. La pregunta clave es: ¿cuánto cuesta una hora de indisponibilidad o degradación de la conectividad? Si el coste es alto, la inversión en una conexión dedicada se amortiza rápidamente. Si el coste es bajo, la VPN puede ser suficiente.</p>
-                <table class="matrix">
-                    <thead><tr><th>Criterio</th><th>VPN S2S</th><th>ExpressRoute/Direct Connect</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>Coste inicial</strong></td><td>Bajo</td><td>Medio-alto (puerto + circuito)</td></tr>
-                        <tr><td><strong>Latencia</strong></td><td>Variable</td><td>Predecible, con SLA</td></tr>
-                        <tr><td><strong>Tiempo de despliegue</strong></td><td>Horas</td><td>Semanas (aprovisionamiento físico)</td></tr>
-                        <tr><td><strong>Caso de uso ideal</strong></td><td>Backup, DR, no crítico</td><td>Producción crítica, baja latencia</td></tr>
-                    </tbody>
-                </table>
-                <p>También hay opciones intermedias, como ExpressRoute Direct, que permite conectar directamente a los routers de Microsoft en los puntos de presencia sin pasar por un proveedor de telecomunicaciones. Esta opción reduce la latencia aún más, pero requiere que tu CPD esté cerca de un punto de presencia de Azure.</p>
-            </div>
-        </div>
-
-        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
-
-        <div class="block" id="s4">
-            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Híbrido de Conectividades</div>
-            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La combinación que usan los diseños maduros</h2>
-            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>El patrón más robusto en producción no es "elegir uno", sino combinarlos: ExpressRoute como ruta primaria para el tráfico crítico, con una VPN configurada como respaldo automático que entra en juego si el circuito dedicado falla. El coste incremental de la VPN de respaldo es mínimo comparado con el de una indisponibilidad total de conectividad híbrida.</p>
-                <p>Esta combinación exige configurar correctamente las métricas de enrutamiento (BGP (Border Gateway Protocol) local preference, por ejemplo) para que el tráfico prefiera siempre ExpressRoute cuando está disponible, y solo caiga a VPN cuando el circuito dedicado deja de responder — sin intervención manual en el momento del fallo.</p>
-                <p>La conmutación automática entre la ruta primaria y la de respaldo debe probarse periódicamente, simulando la caída del circuito dedicado para verificar que la VPN toma el relevo correctamente. Sin estas pruebas, la redundancia es teórica, no real.</p>
-            </div>
-        </div>
-
-        <!-- MÓDULO 5: NUEVO - MONITORIZACIÓN -->
-        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
-
-        <div class="block" id="s5">
-            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Monitorización</div>
-            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Monitorización y alertas de conectividad</h2>
-            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>La conectividad híbrida debe monitorizarse de forma proactiva. La latencia, el jitter y la pérdida de paquetes deben medirse continuamente desde ambos extremos. Herramientas como Azure Network Watcher, CloudWatch o soluciones de terceros pueden proporcionar esta visibilidad.</p>
-                <p>Las alertas deben configurarse para detectar degradaciones antes de que se conviertan en incidentes. Por ejemplo, una alerta cuando la latencia supera un umbral durante más de 5 minutos puede indicar un problema en el circuito que hay que investigar.</p>
-                <div class="defensa-box-tech"><strong>Recomendación:</strong> establece un dashboard de salud de conectividad visible para ambos equipos (on-prem y cloud). Incluye latencia, disponibilidad del túnel VPN, estado de BGP y tráfico en ambas direcciones.</div>
-                <p>La monitorización de la conectividad debe incluir también la verificación de las rutas de respaldo. Si la VPN de respaldo no se prueba periódicamente, puede no funcionar cuando se necesite.</p>
-            </div>
-        </div>
-
-        <!-- PIE DE AUTOR -->
-        <div class="defensa-foot">
-            <div class="defensa-author">
-                <div class="defensa-foot-label">Autor</div>
-                <div class="defensa-author-name">Miguel Ángel Carriazo</div>
-                <p class="defensa-author-bio">vCISO &amp; Arquitecto de Infraestructura con más de 25 años diseñando, asegurando y operando sistemas críticos. ISO 27001 &amp; 42001 Lead Auditor.</p>
-            </div>
-        </div>
-
-    </div>
-
-    <aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
-        <div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
-            <div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
-            <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
-                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Opciones</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">VPN / ExpressRoute / DC (Data Center)</td></tr>
-                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Latencia</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">SLA con dedicada</td></tr>
-                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Redundancia</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Doble circuito recomendado</td></tr>
-                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Fallback</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">VPN automática por BGP</td></tr>
-                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Monitorización</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Proactiva</td></tr>
-            </table>
-        </div>
-        <div>
-            <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
-            <nav class="defensa-toc-nav" id="artTocNav6" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
-                <a href="#s1" class="active" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px; color:#059669; border-left:2px solid #059669; font-weight:700;">01. VPN</a>
-                <a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Conexión Dedicada</a>
-                <a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Decisión</a>
-                <a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Combinación</a>
-                <a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Monitorización</a>
-            </nav>
-        </div>
-    </aside>
-
+<div class="defensa-main" style="min-width:0;">
+<!-- GRÁFICO 1: COMPARATIVA VPN VS EXPRESSROUTE -->
+<figure aria-label="Comparativa VPN vs ExpressRoute" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 940 260" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="260" rx="14" width="940"></rect>
+<text fill="#151915" font-size="17" font-weight="800" x="40" y="38">VPN vs ExpressRoute: el trade-off real</text>
+<line stroke="#ededea" stroke-width="2" x1="120" x2="880" y1="200" y2="200"></line>
+<line stroke="#ededea" stroke-width="2" x1="120" x2="120" y1="70" y2="200"></line>
+<text fill="#77776f" font-size="11" x="60" y="205">Coste ↓</text>
+<text fill="#77776f" font-size="11" x="60" y="80">Coste ↑</text>
+<rect fill="#fff" height="50" rx="8" stroke="#059669" stroke-width="2" width="110" x="180" y="150"></rect><text fill="#151915" font-size="12" font-weight="700" text-anchor="middle" x="235" y="180">VPN S2S</text>
+<rect fill="#fff" height="50" rx="8" stroke="#059669" stroke-width="2" width="130" x="420" y="100"></rect><text fill="#151915" font-size="12" font-weight="700" text-anchor="middle" x="485" y="130">ExpressRoute</text>
+<rect fill="url(#gArc2)" height="50" rx="8" width="170" x="670" y="80"></rect><defs><lineargradient id="gArc2" x1="0" x2="1"><stop offset="0" stop-color="#059669"></stop><stop offset="1" stop-color="#151915"></stop></lineargradient></defs><text fill="#fff" font-size="11.5" font-weight="700" text-anchor="middle" x="755" y="110">Direct Connect</text>
+<text fill="#77776f" font-size="10" text-anchor="middle" x="235" y="222">latencia variable</text>
+<text fill="#77776f" font-size="10" text-anchor="middle" x="485" y="222">latencia predecible</text>
+<text fill="#77776f" font-size="10" text-anchor="middle" x="755" y="222">latencia mínima garantizada</text>
+</svg>
 </div>
-
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 420" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="420" rx="12" width="330"></rect>
+<text fill="#151915" font-size="16" font-weight="800" x="18" y="34">VPN vs conexión dedicada</text>
+<rect fill="#fff" height="58" rx="10" stroke="#ededea" stroke-width="1.5" width="294" x="18" y="60"></rect>
+<circle cx="44" cy="94" fill="#059669" r="14"></circle><text fill="#fff" font-size="12" font-weight="800" text-anchor="middle" x="44" y="99">1</text>
+<text fill="#151915" font-size="14" font-weight="800" x="68" y="85">VPN S2S</text><text fill="#77776f" font-size="11" x="68" y="104">Barata, latencia variable</text>
+<rect fill="#fff" height="58" rx="10" stroke="#ededea" stroke-width="1.5" width="294" x="18" y="130"></rect>
+<circle cx="44" cy="192" fill="#059669" r="14"></circle><text fill="#fff" font-size="12" font-weight="800" text-anchor="middle" x="44" y="197">2</text>
+<text fill="#151915" font-size="14" font-weight="800" x="68" y="183">ExpressRoute</text><text fill="#77776f" font-size="11" x="68" y="202">Predecible, con SLA</text>
+<rect fill="#fff" height="58" rx="10" stroke="#ededea" stroke-width="1.5" width="294" x="18" y="200"></rect>
+<circle cx="44" cy="290" fill="#059669" r="14"></circle><text fill="#fff" font-size="12" font-weight="800" text-anchor="middle" x="44" y="295">3</text>
+<text fill="#151915" font-size="14" font-weight="800" x="68" y="281">Direct Connect</text><text fill="#77776f" font-size="11" x="68" y="300">Latencia mínima garantizada</text>
+<rect fill="#fff" height="58" rx="10" stroke="#ededea" stroke-width="1.5" width="294" x="18" y="270"></rect>
+<circle cx="44" cy="388" fill="#059669" r="14"></circle><text fill="#fff" font-size="12" font-weight="800" text-anchor="middle" x="44" y="393">4</text>
+<text fill="#151915" font-size="14" font-weight="800" x="68" y="379">Combinación recomendada</text><text fill="#77776f" font-size="11" x="68" y="398">Dedicada + VPN de respaldo</text>
+<defs><lineargradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"></stop><stop offset="1" stop-color="#151915"></stop></lineargradient></defs>
+<rect fill="url(#gm)" height="60" rx="10" width="294" x="18" y="340"></rect>
+<text fill="#fff" font-size="11.5" font-weight="700" x="32" y="362">El patrón maduro combina las dos: dedicada</text>
+<text fill="#fff" font-size="11.5" font-weight="700" x="32" y="379">primaria, VPN de respaldo</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 1: Comparativa del trade-off entre coste y latencia en las opciones de conectividad híbrida.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- GRÁFICO 2: MATRIZ DE DECISIÓN DE CONECTIVIDAD -->
+<figure aria-label="Matriz de decisión de conectividad" class="article-diagram" onclick="toggleZoom(this)">
+<svg role="img" viewbox="0 0 820 260" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="260" rx="14" width="820"></rect>
+<text fill="#151915" font-size="16" font-weight="800" x="40" y="36">Matriz de decisión de conectividad</text>
+<text fill="#77776f" font-size="12" x="40" y="58">qué elegir según tus requisitos</text>
+<rect fill="#059669" height="40" rx="4" width="170" x="40" y="80"></rect><text fill="#fff" font-size="11" font-weight="700" text-anchor="middle" x="125" y="105">Caso de uso</text>
+<rect fill="#059669" height="40" rx="4" width="180" x="210" y="80"></rect><text fill="#fff" font-size="11" font-weight="700" text-anchor="middle" x="300" y="105">Opción recomendada</text>
+<rect fill="#059669" height="40" rx="4" width="190" x="390" y="80"></rect><text fill="#fff" font-size="11" font-weight="700" text-anchor="middle" x="485" y="105">Ventajas</text>
+<rect fill="#059669" height="40" rx="4" width="200" x="580" y="80"></rect><text fill="#fff" font-size="11" font-weight="700" text-anchor="middle" x="680" y="105">Desventajas</text>
+<rect fill="#fff" height="40" rx="4" stroke="#ededea" stroke-width="1" width="170" x="40" y="120"></rect>
+<text fill="#151915" font-size="11" font-weight="600" text-anchor="middle" x="125" y="140">Backups</text>
+<rect fill="#fff" height="40" rx="4" stroke="#ededea" stroke-width="1" width="180" x="210" y="120"></rect>
+<text fill="#059669" font-size="11" text-anchor="middle" x="300" y="140">VPN S2S</text>
+<rect fill="#fff" height="40" rx="4" stroke="#ededea" stroke-width="1" width="190" x="390" y="120"></rect>
+<text fill="#151915" font-size="10" text-anchor="middle" x="485" y="135">Bajo coste</text>
+<rect fill="#fff" height="40" rx="4" stroke="#ededea" stroke-width="1" width="200" x="580" y="120"></rect>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="680" y="135">Latencia variable</text>
+<rect fill="#fff" height="40" rx="4" stroke="#ededea" stroke-width="1" width="170" x="40" y="160"></rect>
+<text fill="#151915" font-size="11" font-weight="600" text-anchor="middle" x="125" y="180">Producción crítica</text>
+<rect fill="#fff" height="40" rx="4" stroke="#ededea" stroke-width="1" width="180" x="210" y="160"></rect>
+<text fill="#059669" font-size="11" text-anchor="middle" x="300" y="180">ExpressRoute</text>
+<rect fill="#fff" height="40" rx="4" stroke="#ededea" stroke-width="1" width="190" x="390" y="160"></rect>
+<text fill="#151915" font-size="10" text-anchor="middle" x="485" y="175">SLA de latencia</text>
+<rect fill="#fff" height="40" rx="4" stroke="#ededea" stroke-width="1" width="200" x="580" y="160"></rect>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="680" y="175">Coste alto</text>
+<rect fill="#fff" height="40" rx="4" stroke="#ededea" stroke-width="1" width="170" x="40" y="200"></rect>
+<text fill="#151915" font-size="11" font-weight="600" text-anchor="middle" x="125" y="220">Multi-cloud</text>
+<rect fill="#fff" height="40" rx="4" stroke="#ededea" stroke-width="1" width="180" x="210" y="200"></rect>
+<text fill="#059669" font-size="11" text-anchor="middle" x="300" y="220">Combinación</text>
+<rect fill="#fff" height="40" rx="4" stroke="#ededea" stroke-width="1" width="190" x="390" y="200"></rect>
+<text fill="#151915" font-size="10" text-anchor="middle" x="485" y="215">Resiliencia</text>
+<rect fill="#fff" height="40" rx="4" stroke="#ededea" stroke-width="1" width="200" x="580" y="200"></rect>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="680" y="215">Complejidad</text>
+</svg>
+<figcaption class="diagram-caption">Figura 2: Matriz de decisión para elegir la conectividad híbrida correcta.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- CONTENIDO -->
+<div class="block" id="s1">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — VPN</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">VPN site-to-site: barata, flexible, impredecible</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>Una VPN IPsec site-to-site sobre internet público es la opción de entrada casi universal: coste mínimo, despliegue en horas, sin dependencia de un circuito físico dedicado. Es perfectamente adecuada para cargas que toleran variabilidad de latencia — backups, replicación asíncrona, entornos de desarrollo.</p>
+<p>Lo que la VPN no puede prometer es latencia consistente, porque el tráfico viaja por la internet pública compartida, sujeta a la congestión y las rutas que decidan los proveedores de tránsito en cada momento. Para una aplicación que necesita latencia predecible bajo 10ms, una VPN estándar es una apuesta, no una garantía.</p>
+<div class="defensa-box-tech"><strong>Cuándo basta con VPN:</strong> replicación de backups, DR (Disaster Recovery) con RPO (Recovery Point Objective) en horas, entornos no productivos, conectividad de contingencia sobre la línea principal.</div>
+<p>La VPN también puede ser una excelente opción de respaldo para una conexión dedicada. En caso de fallo del circuito principal, la VPN puede mantener la conectividad con una latencia mayor pero suficiente para mantener los servicios críticos.</p>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+<div class="block" id="s2">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Conexión Dedicada</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">ExpressRoute / Direct Connect: predecible, pero no barata</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>ExpressRoute (Azure) y Direct Connect (AWS) ofrecen una conexión privada, fuera de la internet pública, con un SLA (Service Level Agreement) de latencia y disponibilidad que la VPN simplemente no puede igualar. El tráfico va por un circuito dedicado o semi-dedicado contratado con un proveedor de telecomunicaciones, sin compartir ruta con tráfico de terceros.</p>
+<p>El coste no es solo el circuito en sí — incluye el puerto en el datacenter de interconexión (Equinix, por ejemplo), el circuito hasta tu CPD (Centro de Procesamiento de Datos), y el propio servicio cloud. Para cargas con SLA estricto de latencia (trading, aplicaciones industriales en tiempo real, VoIP corporativo entre sites), es la única opción defendible.</p>
+<div class="defensa-box-warning"><strong>⚠️ No olvides la redundancia</strong><p>Un único circuito ExpressRoute es, de nuevo, un punto único de fallo — aunque sea uno muy fiable. Los diseños críticos contratan dos circuitos por rutas físicas distintas, o combinan ExpressRoute como primario con VPN como respaldo automático.</p></div>
+<p>El tiempo de despliegue de una conexión dedicada suele ser de varias semanas, ya que requiere la instalación física de un circuito en el datacenter de interconexión. Planifica este tiempo en el proyecto.</p>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+<div class="block" id="s3">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Decisión</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Cómo decidir sin dejarte llevar por el marketing</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>La decisión entre VPN y conexión dedicada no es técnica pura — es de negocio. La pregunta clave es: ¿cuánto cuesta una hora de indisponibilidad o degradación de la conectividad? Si el coste es alto, la inversión en una conexión dedicada se amortiza rápidamente. Si el coste es bajo, la VPN puede ser suficiente.</p>
+<table class="matrix">
+<thead><tr><th>Criterio</th><th>VPN S2S</th><th>ExpressRoute/Direct Connect</th></tr></thead>
+<tbody>
+<tr><td><strong>Coste inicial</strong></td><td>Bajo</td><td>Medio-alto (puerto + circuito)</td></tr>
+<tr><td><strong>Latencia</strong></td><td>Variable</td><td>Predecible, con SLA</td></tr>
+<tr><td><strong>Tiempo de despliegue</strong></td><td>Horas</td><td>Semanas (aprovisionamiento físico)</td></tr>
+<tr><td><strong>Caso de uso ideal</strong></td><td>Backup, DR, no crítico</td><td>Producción crítica, baja latencia</td></tr>
+</tbody>
+</table>
+<p>También hay opciones intermedias, como ExpressRoute Direct, que permite conectar directamente a los routers de Microsoft en los puntos de presencia sin pasar por un proveedor de telecomunicaciones. Esta opción reduce la latencia aún más, pero requiere que tu CPD esté cerca de un punto de presencia de Azure.</p>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+<div class="block" id="s4">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Híbrido de Conectividades</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La combinación que usan los diseños maduros</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>El patrón más robusto en producción no es "elegir uno", sino combinarlos: ExpressRoute como ruta primaria para el tráfico crítico, con una VPN configurada como respaldo automático que entra en juego si el circuito dedicado falla. El coste incremental de la VPN de respaldo es mínimo comparado con el de una indisponibilidad total de conectividad híbrida.</p>
+<p>Esta combinación exige configurar correctamente las métricas de enrutamiento (BGP (Border Gateway Protocol) local preference, por ejemplo) para que el tráfico prefiera siempre ExpressRoute cuando está disponible, y solo caiga a VPN cuando el circuito dedicado deja de responder — sin intervención manual en el momento del fallo.</p>
+<p>La conmutación automática entre la ruta primaria y la de respaldo debe probarse periódicamente, simulando la caída del circuito dedicado para verificar que la VPN toma el relevo correctamente. Sin estas pruebas, la redundancia es teórica, no real.</p>
+</div>
+</div>
+<!-- MÓDULO 5: NUEVO - MONITORIZACIÓN -->
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+<div class="block" id="s5">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Monitorización</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Monitorización y alertas de conectividad</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>La conectividad híbrida debe monitorizarse de forma proactiva. La latencia, el jitter y la pérdida de paquetes deben medirse continuamente desde ambos extremos. Herramientas como Azure Network Watcher, CloudWatch o soluciones de terceros pueden proporcionar esta visibilidad.</p>
+<p>Las alertas deben configurarse para detectar degradaciones antes de que se conviertan en incidentes. Por ejemplo, una alerta cuando la latencia supera un umbral durante más de 5 minutos puede indicar un problema en el circuito que hay que investigar.</p>
+<div class="defensa-box-tech"><strong>Recomendación:</strong> establece un dashboard de salud de conectividad visible para ambos equipos (on-prem y cloud). Incluye latencia, disponibilidad del túnel VPN, estado de BGP y tráfico en ambas direcciones.</div>
+<p>La monitorización de la conectividad debe incluir también la verificación de las rutas de respaldo. Si la VPN de respaldo no se prueba periódicamente, puede no funcionar cuando se necesite.</p>
+</div>
+</div>
+<!-- PIE DE AUTOR -->
+<div class="defensa-foot">
+<div class="defensa-author">
+<div class="defensa-foot-label">Autor</div>
+<div class="defensa-author-name">Miguel Ángel Carriazo</div>
+<p class="defensa-author-bio">vCISO &amp; Arquitecto de Infraestructura con más de 25 años diseñando, asegurando y operando sistemas críticos. ISO 27001 &amp; 42001 Lead Auditor.</p>
+</div>
+</div>
+</div>
+<aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+<div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+<div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+<table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Opciones</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">VPN / ExpressRoute / DC (Data Center)</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Latencia</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">SLA con dedicada</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Redundancia</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Doble circuito recomendado</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Fallback</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">VPN automática por BGP</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Monitorización</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Proactiva</td></tr>
+</table>
+</div>
+<div>
+<div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+<nav class="defensa-toc-nav" id="artTocNav6" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+<a class="active" href="#s1" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px; color:#059669; border-left:2px solid #059669; font-weight:700;">01. VPN</a>
+<a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Conexión Dedicada</a>
+<a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Decisión</a>
+<a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Combinación</a>
+<a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Monitorización</a>
+</nav>
+</div>
+</aside>
+</div>
 <!-- ARTÍCULOS RELACIONADOS -->
 <div class="related-section">
-    <div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
-    <div class="related-grid">
-        <a class="related-card" href="azure-arc-landing-zones.html">
-            <div class="r-meta">Cloud Híbrido · Azure Arc</div>
-            <div class="r-title">Azure Arc: Un Plano de Control para Todo</div>
-            <div class="r-desc">Una vez resuelta la conectividad, este es el siguiente paso de gobierno.</div>
-            <span class="r-link">Leer artículo →</span>
-        </a>
-        <a class="related-card" href="cloud-hibrido-controles-evidencias.html">
-            <div class="r-meta">Cloud Híbrido · Controles</div>
-            <div class="r-title">Controles y evidencias: demostrar que el puente es seguro</div>
-            <div class="r-desc">Qué evidencia exigir sobre el cifrado de cualquiera de estas conexiones.</div>
-            <span class="r-link">Leer artículo →</span>
-        </a>
-        <a class="related-card" href="cloud-hibrido-diseno-principios.html">
-            <div class="r-meta">Cloud Híbrido · Principios</div>
-            <div class="r-title">Principios de diseño: qué vive dónde, y por qué</div>
-            <div class="r-desc">La conectividad híbrida es solo una pieza más del diseño de arquitectura completo.</div>
-            <span class="r-link">Leer artículo →</span>
-        </a>
-    </div>
+<div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+<div class="related-grid">
+<a class="related-card" href="azure-arc-landing-zones.html">
+<div class="r-meta">Cloud Híbrido · Azure Arc</div>
+<div class="r-title">Azure Arc: Un Plano de Control para Todo</div>
+<div class="r-desc">Una vez resuelta la conectividad, este es el siguiente paso de gobierno.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+<a class="related-card" href="cloud-hibrido-controles-evidencias.html">
+<div class="r-meta">Cloud Híbrido · Controles</div>
+<div class="r-title">Controles y evidencias: demostrar que el puente es seguro</div>
+<div class="r-desc">Qué evidencia exigir sobre el cifrado de cualquiera de estas conexiones.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+<a class="related-card" href="cloud-hibrido-diseno-principios.html">
+<div class="r-meta">Cloud Híbrido · Principios</div>
+<div class="r-title">Principios de diseño: qué vive dónde, y por qué</div>
+<div class="r-desc">La conectividad híbrida es solo una pieza más del diseño de arquitectura completo.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
 </div>
-
+</div>
 <div id="footer-container"></div>
-
 </div>
 </div>
-
 <script src="../../js/menu.js"></script>
 <script src="../../js/footer.js"></script>
 <script>
@@ -309,6 +284,5 @@ function toggleZoom(element) {
     }
 }
 </script>
-
 </body>
 </html>

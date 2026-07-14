@@ -1,3 +1,16 @@
+
+function taParseArticleDate(value){
+  if(!value) return 0;
+  const months={enero:0,febrero:1,marzo:2,abril:3,mayo:4,junio:5,julio:6,agosto:7,septiembre:8,setiembre:8,octubre:9,noviembre:10,diciembre:11};
+  const clean=String(value).trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  const match=clean.match(/^(\d{1,2})\s+([a-z]+)\s+(\d{4})$/);
+  if(match && months[match[2]]!==undefined){
+    return new Date(Number(match[3]),months[match[2]],Number(match[1])).getTime();
+  }
+  const parsed=Date.parse(value);
+  return Number.isNaN(parsed)?0:parsed;
+}
+
 // ==============================
 // ARTÍCULOS - LÓGICA COMPARTIDA
 // ==============================
@@ -108,20 +121,25 @@ function poblarMeses(category) {
         select.appendChild(opt);
     });
     
-    // Seleccionar el mes actual de la URL si existe y está disponible
+    // Respetar un mes explícito válido.
+    // Si no hay mes seleccionado, usar siempre el mes más nuevo disponible.
     const state = getStateFromURL();
+
     if (state.mes && state.mes !== 'all') {
-        // Verificar si el mes existe en las opciones
         const optionExists = Array.from(select.options).some(opt => opt.value === state.mes);
         if (optionExists) {
             select.value = state.mes;
-        } else {
-            // Si no existe, resetear a "all"
-            select.value = 'all';
-            // Actualizar URL sin el mes
-            const url = buildURL(category, state.page, 'all');
-            history.replaceState(null, '', url);
+            return;
         }
+    }
+
+    if (ordenadas.length) {
+        const latestMonth = ordenadas[0];
+        select.value = latestMonth;
+        const url = buildURL(category, 1, latestMonth);
+        history.replaceState(null, '', url);
+    } else {
+        select.value = 'all';
     }
 }
 
@@ -137,14 +155,30 @@ function renderArticles() {
     const grid = document.getElementById("articlesGrid");
     const noResults = document.getElementById("noResults");
 
+    // Algunos índices legacy no incluyen todos los contenedores.
+    // Si no existe la rejilla principal, no hay nada que renderizar.
+    if (!grid) return;
+
     // Obtener artículos filtrados
     let filtered = getFilteredArticles(currentCategory, selectedMonth);
 
     // Ordenar
     filtered.sort((a, b) => {
-        const dateA = parseSpanishDate(a.date);
-        const dateB = parseSpanishDate(b.date);
-        return sortMode === "newest" ? dateB - dateA : dateA - dateB;
+        const dateA = taParseArticleDate(a.date);
+        const dateB = taParseArticleDate(b.date);
+
+        if (sortMode === "newest") {
+            const newA = a.nuevo === true || a.badge === 'Nuevo';
+            const newB = b.nuevo === true || b.badge === 'Nuevo';
+
+            // En "Más recientes", los marcados como Nuevo tienen prioridad.
+            if (newA !== newB) return newB - newA;
+
+            return dateB - dateA;
+        }
+
+        // En "Más antiguos", manda exclusivamente la fecha.
+        return dateA - dateB;
     });
 
     // Paginación
@@ -155,19 +189,19 @@ function renderArticles() {
 
     if (filtered.length === 0) {
         grid.innerHTML = '';
-        noResults.classList.add('show');
+        if (noResults) noResults.classList.add('show');
         renderPagination(totalPages);
         return;
     }
 
-    noResults.classList.remove('show');
+    if (noResults) noResults.classList.remove('show');
     grid.innerHTML = pageItems.map(articulo => `
-        <div class="article-card" data-cat="${articulo.cat}" onclick="location.href='${articulo.url}'">
+        <div class="article-card" data-cat="${articulo.cat}" onclick="location.href='/${String(articulo.url || '').replace(/^\/+/, '')}'">
             <div class="article-meta">${articulo.meta}</div>
-            <div class="article-title">${articulo.title}${articulo.badge ? `<span class="article-badge">${articulo.badge}</span>` : ''}</div>
+            <div class="article-title">${articulo.title}${(articulo.nuevo === true || articulo.badge === 'Nuevo') ? `<span class="article-badge">Nuevo</span>` : ''}</div>
             <div class="article-date">${articulo.date}</div>
             <div class="article-desc">${articulo.desc}</div>
-            <a href="${articulo.url}" class="article-link">Leer artículo →</a>
+            <a href="/${String(articulo.url || '').replace(/^\/+/, '')}" class="article-link">Leer artículo →</a>
         </div>
     `).join('');
 
@@ -224,8 +258,13 @@ function filterArticles(cat, btn) {
 function toggleSort() {
     const btn = document.getElementById("sortBtn");
     sortMode = sortMode === "newest" ? "oldest" : "newest";
-    btn.innerText = sortMode === "newest" ? "↓ Nuevos" : "↑ Más antiguos";
-    sessionStorage.setItem('sortMode', sortMode);
+
+    if (btn) {
+        btn.innerText = sortMode === "newest"
+            ? "↓ Más recientes"
+            : "↑ Más antiguos";
+    }
+
     renderArticles();
 }
 
@@ -262,11 +301,10 @@ async function cargarArticulos(jsonPath) {
             `fuente=${jsonPath}`
         );
 
-        // Recuperar modo de orden desde sessionStorage
-        const savedSort = sessionStorage.getItem('sortMode');
-        if (savedSort) sortMode = savedSort;
+        // Siempre arrancar por los más recientes.
+        sortMode = "newest";
         const btn = document.getElementById("sortBtn");
-        if (btn) btn.innerText = sortMode === "newest" ? "↓ Nuevos" : "↑ Más antiguos";
+        if (btn) btn.innerText = "↓ Más recientes";
 
         // Leer estado desde URL
         const state = getStateFromURL();

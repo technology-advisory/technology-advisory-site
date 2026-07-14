@@ -1,21 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport"/>
 <title>Windows Failover Clustering: Quorum, CSV y el Detalle que Nadie Revisa | Technology Advisory</title>
-<meta name="description" content="Configuración real de Failover Clustering en Windows Server: modelos de quorum, Cluster Shared Volumes y validación previa al despliegue.">
-<meta name="author" content="Miguel Ángel Carriazo">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#059669">
-<link rel="stylesheet" href="../../css/global.css">
-<link rel="stylesheet" href="../../css/dossier-core.css">
-<link rel="stylesheet" href="../../css/articulo.css">
-<link rel="stylesheet" href="../../css/index.css">
-<link rel="stylesheet" href="../../css/articulo-diagramas.css">
-
-    <!-- Parche automático de optimización móvil para Technology Advisory -->
-    <style>
+<meta content="Configuración real de Failover Clustering en Windows Server: modelos de quorum, Cluster Shared Volumes y validación previa al despliegue." name="description"/>
+<meta content="Miguel Ángel Carriazo" name="author"/>
+<meta name="robots" content="index, follow"/>
+<meta content="#059669" name="theme-color"/>
+<link href="../../css/global.css" rel="stylesheet"/>
+<link href="../../css/dossier-core.css" rel="stylesheet"/>
+<link href="../../css/articulo.css" rel="stylesheet"/>
+<link href="../../css/index.css" rel="stylesheet"/>
+<link href="../../css/articulo-diagramas.css" rel="stylesheet"/>
+<!-- Parche automático de optimización móvil para Technology Advisory -->
+<style>
         @media (max-width: 1024px) {
             .defensa-layout {
                 display: block !important;
@@ -31,347 +31,320 @@
             }
         }
     </style>
-</head>
+<link rel="canonical" href="https://technology-advisory.es/arquitectura/alta-disponibilidad/windows-failover-clustering.html"/></head>
 <body>
-
 <div class="card-wrapper ds-page">
 <div class="card">
-
 <div id="menu-container"></div>
 <div class="accent-bar" style="background: #059669;"></div>
-
 <div class="ds-meta">
-    <span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: arquitectura</span>
-    <span>categoría: <strong>Alta Disponibilidad</strong></span>
+<span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: arquitectura</span>
+<span>categoría: <strong>Alta Disponibilidad</strong></span>
 </div>
-
 <div style="padding: 16px 48px 0;">
-    <a href="../index.html?cat=alta-disponibilidad" class="defensa-btn-back" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Alta Disponibilidad</a>
+<a class="defensa-btn-back" href="../index.html?cat=alta-disponibilidad" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Alta Disponibilidad</a>
 </div>
-
 <div style="padding: 40px 48px 24px; border-bottom: 1px solid #ededea;">
-    <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Caso Práctico · Windows Server</div>
-    <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Windows Failover Clustering: <span style="color:#059669;">El Detalle que Nadie Revisa</span></h1>
-    <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Modelos de quorum, Cluster Shared Volumes y la validación previa que evita el clúster que "funciona" hasta el primer fallo real.</p>
-    <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
-        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
-        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>Windows Failover Clustering</span>
-        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>Lectura Avanzada (14 min)</span>
-    </div>
+<div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Caso Práctico · Windows Server</div>
+<h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Windows Failover Clustering: <span style="color:#059669;">El Detalle que Nadie Revisa</span></h1>
+<p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">Modelos de quorum, Cluster Shared Volumes y la validación previa que evita el clúster que "funciona" hasta el primer fallo real.</p>
+<div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="6" r="2.6"></circle><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"></path></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+<span class="article-date" data-article-date="true" style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;">22 Junio 2026</span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><rect height="12.5" rx="1.3" width="13" x="2.5" y="3"></rect><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"></path></svg>22 Junio 2026</span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="9" r="6.8"></circle><path d="M9 5.3V9l2.8 1.7"></path></svg>Lectura Avanzada (14 min)</span>
 </div>
-
+</div>
 <div class="defensa-layout" style="display:grid; grid-template-columns:1fr 340px; gap:48px; align-items:start; padding:0 48px 40px;">
-    <div class="defensa-main" style="min-width:0;">
-
-        <!-- GRÁFICO 1: MODELOS DE QUORUM -->
-        <figure class="article-diagram" aria-label="Modelos de quorum en Windows" onclick="toggleZoom(this)">
-            <div class="diagram-desktop">
-                <svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" role="img">
-                    <rect width="900" height="430" rx="14" fill="#fafaf8"/>
-                    <text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Modelos de quorum en Windows Clustering</text>
-                    <text x="40" y="66" font-size="12" fill="#77776f">elegir mal aquí invalida todo lo demás</text>
-                    <defs>
-                        <marker id="arrow-w" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#77776f"/>
-                        </marker>
-                    </defs>
-                    <rect x="40" y="100" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="70" cy="147" r="18" fill="#059669"/>
-                    <text x="70" y="153" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">1</text>
-                    <text x="100" y="135" font-size="15" font-weight="800" fill="#151915">Node Majority</text>
-                    <text x="100" y="158" font-size="12" fill="#77776f">Nº impar de nodos, sin testigo</text>
-                    <text x="100" y="176" font-size="11" fill="#94a3b8">Uso: 3+ nodos · multi-site</text>
-                    <line x1="430" y1="147" x2="468" y2="147" stroke="#77776f" stroke-width="2" marker-end="url(#arrow-w)"/>
-                    <rect x="470" y="100" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="500" cy="147" r="18" fill="#059669"/>
-                    <text x="500" y="153" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">2</text>
-                    <text x="530" y="135" font-size="15" font-weight="800" fill="#151915">Node + Disk Majority</text>
-                    <text x="530" y="158" font-size="12" fill="#77776f">Nodos pares + testigo en disco</text>
-                    <text x="530" y="176" font-size="11" fill="#94a3b8">Uso: 2 nodos con SAN</text>
-                    <line x1="430" y1="212" x2="468" y2="212" stroke="#77776f" stroke-width="2" marker-end="url(#arrow-w)"/>
-                    <rect x="40" y="230" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="70" cy="277" r="18" fill="#059669"/>
-                    <text x="70" y="283" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">3</text>
-                    <text x="100" y="265" font-size="15" font-weight="800" fill="#151915">Cloud Witness</text>
-                    <text x="100" y="288" font-size="12" fill="#77776f">Testigo en Azure Storage</text>
-                    <text x="100" y="306" font-size="11" fill="#94a3b8">Uso: 2 nodos · sin infra adicional</text>
-                    <line x1="430" y1="277" x2="468" y2="277" stroke="#77776f" stroke-width="2" marker-end="url(#arrow-w)"/>
-                    <rect x="470" y="230" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="500" cy="277" r="18" fill="#059669"/>
-                    <text x="500" y="283" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">4</text>
-                    <text x="530" y="265" font-size="15" font-weight="800" fill="#151915">File Share Witness</text>
-                    <text x="530" y="288" font-size="12" fill="#77776f">Testigo en recurso de red</text>
-                    <text x="530" y="306" font-size="11" fill="#94a3b8">Uso: 2 nodos · tercer servidor</text>
-                    <defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
-                    <rect x="40" y="360" width="820" height="46" rx="14" fill="url(#gbar)" opacity=".95"/>
-                    <text x="68" y="388" font-size="13" font-weight="700" fill="#fff">Un clúster de 2 nodos SIEMPRE necesita un tercer voto (witness)</text>
-                </svg>
-            </div>
-            <div class="diagram-mobile">
-                <svg viewBox="0 0 330 480" xmlns="http://www.w3.org/2000/svg" role="img">
-                    <rect width="330" height="480" rx="12" fill="#fafaf8"/>
-                    <text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Modelos de quorum Windows</text>
-                    <rect x="18" y="60" width="294" height="60" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="44" cy="90" r="14" fill="#059669"/>
-                    <text x="44" y="95" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">1</text>
-                    <text x="68" y="83" font-size="13" font-weight="800" fill="#151915">Node Majority</text>
-                    <text x="68" y="102" font-size="11" fill="#77776f">Nº impar de nodos, sin testigo</text>
-                    <rect x="18" y="132" width="294" height="60" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="44" cy="162" r="14" fill="#059669"/>
-                    <text x="44" y="167" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">2</text>
-                    <text x="68" y="155" font-size="13" font-weight="800" fill="#151915">Node + Disk Majority</text>
-                    <text x="68" y="174" font-size="11" fill="#77776f">Nodos pares + testigo en disco</text>
-                    <rect x="18" y="204" width="294" height="60" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="44" cy="234" r="14" fill="#059669"/>
-                    <text x="44" y="239" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">3</text>
-                    <text x="68" y="227" font-size="13" font-weight="800" fill="#151915">Cloud Witness</text>
-                    <text x="68" y="246" font-size="11" fill="#77776f">Testigo en Azure Storage</text>
-                    <rect x="18" y="276" width="294" height="60" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="44" cy="306" r="14" fill="#059669"/>
-                    <text x="44" y="311" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">4</text>
-                    <text x="68" y="299" font-size="13" font-weight="800" fill="#151915">File Share Witness</text>
-                    <text x="68" y="318" font-size="11" fill="#77776f">Testigo en recurso de red</text>
-                    <defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
-                    <rect x="18" y="355" width="294" height="50" rx="10" fill="url(#gm)"/>
-                    <text x="32" y="376" font-size="11" font-weight="700" fill="#fff">2 nodos SIEMPRE necesitan</text>
-                    <text x="32" y="393" font-size="11" font-weight="700" fill="#fff">un tercer voto (witness)</text>
-                </svg>
-            </div>
-            <figcaption class="diagram-caption">Figura 1: Los cuatro modelos de quorum soportados por Windows Failover Clustering.</figcaption>
-            <span class="zoom-hint">🔍 Clic para ampliar</span>
-        </figure>
-
-        <!-- GRÁFICO 2: TOPOLOGÍA DE RED -->
-        <figure class="article-diagram" aria-label="Topología de red" onclick="toggleZoom(this)">
-            <svg viewBox="0 0 820 320" xmlns="http://www.w3.org/2000/svg" role="img">
-                <rect width="820" height="320" rx="14" fill="#fafaf8"/>
-                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Topología de red recomendada</text>
-                <text x="40" y="58" font-size="12" fill="#77776f">adaptadores separados por función</text>
-                <rect x="40" y="80" width="140" height="40" rx="8" fill="#059669"/><text x="110" y="106" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">Nodo 1</text>
-                <rect x="40" y="135" width="140" height="24" rx="4" fill="#f0fdf4" stroke="#059669" stroke-width="1"/><text x="110" y="152" font-size="10" fill="#059669" text-anchor="middle">Heartbeat</text>
-                <rect x="40" y="165" width="140" height="24" rx="4" fill="#fff" stroke="#94a3b8" stroke-width="1"/><text x="110" y="182" font-size="10" fill="#94a3b8" text-anchor="middle">Storage iSCSI</text>
-                <rect x="40" y="195" width="140" height="24" rx="4" fill="#fff" stroke="#94a3b8" stroke-width="1"/><text x="110" y="212" font-size="10" fill="#94a3b8" text-anchor="middle">Management</text>
-                <rect x="340" y="135" width="160" height="24" rx="4" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/><text x="420" y="152" font-size="11" font-weight="600" fill="#059669" text-anchor="middle">Switch Heartbeat (redundante)</text>
-                <rect x="340" y="165" width="160" height="24" rx="4" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/><text x="420" y="182" font-size="11" fill="#94a3b8" text-anchor="middle">Switch Storage (SAN)</text>
-                <rect x="340" y="195" width="160" height="24" rx="4" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/><text x="420" y="212" font-size="11" fill="#94a3b8" text-anchor="middle">Switch Management</text>
-                <rect x="640" y="80" width="140" height="40" rx="8" fill="#059669"/><text x="710" y="106" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">Nodo 2</text>
-                <rect x="640" y="135" width="140" height="24" rx="4" fill="#f0fdf4" stroke="#059669" stroke-width="1"/><text x="710" y="152" font-size="10" fill="#059669" text-anchor="middle">Heartbeat</text>
-                <rect x="640" y="165" width="140" height="24" rx="4" fill="#fff" stroke="#94a3b8" stroke-width="1"/><text x="710" y="182" font-size="10" fill="#94a3b8" text-anchor="middle">Storage iSCSI</text>
-                <rect x="640" y="195" width="140" height="24" rx="4" fill="#fff" stroke="#94a3b8" stroke-width="1"/><text x="710" y="212" font-size="10" fill="#94a3b8" text-anchor="middle">Management</text>
-                <line x1="180" y1="147" x2="340" y2="147" stroke="#059669" stroke-width="2"/>
-                <line x1="500" y1="147" x2="640" y2="147" stroke="#059669" stroke-width="2"/>
-                <line x1="180" y1="177" x2="340" y2="177" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4"/>
-                <line x1="500" y1="177" x2="640" y2="177" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4"/>
-                <line x1="180" y1="207" x2="340" y2="207" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4"/>
-                <line x1="500" y1="207" x2="640" y2="207" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4"/>
-                <rect x="40" y="255" width="12" height="12" fill="#f0fdf4" stroke="#059669" stroke-width="1"/><text x="58" y="265" font-size="10" fill="#77776f">Cluster Heartbeat</text>
-                <rect x="180" y="255" width="12" height="12" fill="#fff" stroke="#94a3b8" stroke-width="1"/><text x="198" y="265" font-size="10" fill="#77776f">Storage / Management</text>
-            </svg>
-            <figcaption class="diagram-caption">Figura 2: Cada función de red debe tener su propio adaptador y switch dedicado.</figcaption>
-            <span class="zoom-hint">🔍 Clic para ampliar</span>
-        </figure>
-
-        <!-- GRÁFICO 3: MATRIZ DE DECISIÓN -->
-        <figure class="article-diagram" aria-label="Matriz de decisión" onclick="toggleZoom(this)">
-            <svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" role="img">
-                <rect width="820" height="260" rx="14" fill="#fafaf8"/>
-                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Matriz de decisión: ¿qué quorum elegir?</text>
-                <rect x="40" y="60" width="160" height="40" rx="20" fill="#059669"/><text x="120" y="85" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">¿Nº de nodos par?</text>
-                <line x1="200" y1="80" x2="250" y2="80" stroke="#77776f" stroke-width="2"/>
-                <text x="225" y="74" font-size="11" fill="#059669" font-weight="700">No</text>
-                <rect x="252" y="60" width="160" height="40" rx="20" fill="#059669"/><text x="332" y="85" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Node Majority</text>
-                <text x="332" y="120" font-size="10" fill="#94a3b8" text-anchor="middle">3+ nodos</text>
-                <line x1="120" y1="100" x2="120" y2="160" stroke="#77776f" stroke-width="2"/>
-                <text x="110" y="140" font-size="11" fill="#f59e0b" font-weight="700">Sí</text>
-                <rect x="40" y="162" width="160" height="40" rx="20" fill="#f59e0b"/><text x="120" y="187" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">¿Conectividad a Azure?</text>
-                <line x1="200" y1="182" x2="250" y2="182" stroke="#77776f" stroke-width="2"/>
-                <rect x="252" y="162" width="160" height="40" rx="20" fill="#059669"/><text x="332" y="187" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Cloud Witness</text>
-                <text x="332" y="220" font-size="10" fill="#94a3b8" text-anchor="middle">Azure Storage</text>
-                <line x1="120" y1="202" x2="120" y2="240" stroke="#77776f" stroke-width="2"/>
-                <line x1="120" y1="240" x2="332" y2="240" stroke="#77776f" stroke-width="2"/>
-                <line x1="332" y1="220" x2="332" y2="240" stroke="#77776f" stroke-width="2"/>
-                <text x="225" y="236" font-size="11" fill="#ef4444" font-weight="700">No</text>
-                <rect x="252" y="162" width="160" height="40" rx="20" fill="#059669"/><text x="332" y="187" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">File Share Witness</text>
-                <text x="332" y="220" font-size="10" fill="#94a3b8" text-anchor="middle">Tercer servidor</text>
-            </svg>
-            <figcaption class="diagram-caption">Figura 3: Guía de decisión para elegir el modelo de quorum correcto.</figcaption>
-            <span class="zoom-hint">🔍 Clic para ampliar</span>
-        </figure>
-
-        <!-- GRÁFICO 4: ARQUITECTURA CSV -->
-        <figure class="article-diagram" aria-label="Cluster Shared Volumes" onclick="toggleZoom(this)">
-            <svg viewBox="0 0 820 310" xmlns="http://www.w3.org/2000/svg" role="img">
-                <rect width="820" height="310" rx="14" fill="#fafaf8"/>
-                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Cluster Shared Volumes: flujo de I/O</text>
-                <rect x="40" y="60" width="180" height="50" rx="8" fill="#059669"/><text x="130" y="90" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">Nodo 1 (Coordinador)</text>
-                <rect x="600" y="60" width="180" height="50" rx="8" fill="#f59e0b"/><text x="690" y="90" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">Nodo 2 (No coordinador)</text>
-                <line x1="220" y1="85" x2="280" y2="85" stroke="#059669" stroke-width="3"/><text x="250" y="78" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Directo</text>
-                <rect x="282" y="60" width="240" height="50" rx="8" fill="#ededea" stroke="#94a3b8" stroke-width="1.5"/>
-                <text x="402" y="82" font-size="14" font-weight="700" fill="#151915" text-anchor="middle">Cluster Shared Volume</text>
-                <text x="402" y="100" font-size="11" fill="#77776f" text-anchor="middle">NTFS / ReFS</text>
-                <line x1="522" y1="85" x2="600" y2="85" stroke="#f59e0b" stroke-width="3" stroke-dasharray="6,4"/>
-                <text x="560" y="78" font-size="10" font-weight="700" fill="#f59e0b" text-anchor="middle">Red (redirected)</text>
-                <rect x="282" y="135" width="240" height="30" rx="6" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/><text x="402" y="155" font-size="11" font-weight="600" fill="#059669" text-anchor="middle">SAN / Almacenamiento compartido</text>
-                <line x1="402" y1="110" x2="402" y2="135" stroke="#94a3b8" stroke-width="2"/>
-                <text x="412" y="124" font-size="10" fill="#94a3b8">↓</text>
-                <rect x="40" y="190" width="740" height="80" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
-                <text x="60" y="215" font-size="12" font-weight="700" fill="#b45309">⚠️ Ojo: el nodo coordinador (que escribe metadatos) cambia</text>
-                <text x="60" y="237" font-size="11" fill="#78350f">Si el Nodo 1 falla, el Nodo 2 se convierte en coordinador — hay un impacto breve en I/O</text>
-                <text x="60" y="256" font-size="11" fill="#78350f">durante la transición. No es "cero", aunque lo parezca en el 99% de las operaciones.</text>
-            </svg>
-            <figcaption class="diagram-caption">Figura 4: Flujo de I/O en Cluster Shared Volumes.</figcaption>
-            <span class="zoom-hint">🔍 Clic para ampliar</span>
-        </figure>
-
-        <!-- GRÁFICO 5: FLUJO DE FAILOVER -->
-        <figure class="article-diagram" aria-label="Flujo de failover" onclick="toggleZoom(this)">
-            <svg viewBox="0 0 820 310" xmlns="http://www.w3.org/2000/svg" role="img">
-                <rect width="820" height="310" rx="14" fill="#fafaf8"/>
-                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Flujo de failover en Windows Clustering</text>
-                <rect x="40" y="55" width="180" height="36" rx="6" fill="#059669"/><text x="130" y="78" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">1. Heartbeat falla</text>
-                <line x1="220" y1="73" x2="255" y2="73" stroke="#77776f" stroke-width="2"/>
-                <rect x="258" y="55" width="180" height="36" rx="6" fill="#059669"/><text x="348" y="78" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">2. ¿Quorum válido?</text>
-                <line x1="438" y1="73" x2="473" y2="73" stroke="#77776f" stroke-width="2"/>
-                <rect x="476" y="55" width="180" height="36" rx="6" fill="#f59e0b"/><text x="566" y="78" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">3. Fencing (STONITH)</text>
-                <line x1="656" y1="73" x2="691" y2="73" stroke="#77776f" stroke-width="2"/>
-                <rect x="694" y="55" width="100" height="36" rx="6" fill="#059669"/><text x="744" y="78" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">4. Failover</text>
-                <line x1="744" y1="91" x2="744" y2="130" stroke="#77776f" stroke-width="2" marker-end="url(#arrow-fo)"/>
-                <rect x="250" y="135" width="320" height="50" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
-                <text x="410" y="158" font-size="12" font-weight="600" fill="#151915" text-anchor="middle">5. El recurso (VM / rol) arranca en otro nodo</text>
-                <text x="410" y="176" font-size="11" fill="#77776f" text-anchor="middle">Tiempo: depende del RTO configurado</text>
-                <line x1="410" y1="185" x2="410" y2="210" stroke="#77776f" stroke-width="2" marker-end="url(#arrow-fo)"/>
-                <rect x="280" y="215" width="260" height="36" rx="6" fill="#ededea" stroke="#94a3b8" stroke-width="1"/>
-                <text x="410" y="238" font-size="12" font-weight="600" fill="#151915" text-anchor="middle">6. Quorum restaurado</text>
-                <text x="410" y="270" font-size="10" fill="#94a3b8" text-anchor="middle">El nodo caído vuelve, recupera su voto, el clúster se reequilibra</text>
-                <defs>
-                    <marker id="arrow-fo" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#77776f"/>
-                    </marker>
-                </defs>
-            </svg>
-            <figcaption class="diagram-caption">Figura 5: Flujo de failover secuencial en un clúster Windows.</figcaption>
-            <span class="zoom-hint">🔍 Clic para ampliar</span>
-        </figure>
-
-        <div class="block" id="s1">
-            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — Validación Previa</div>
-            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El asistente de validación que casi nadie ejecuta bien</h2>
-            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>Windows Server incluye un Cluster Validation Wizard que comprueba red, storage y configuración antes de crear el clúster. Muchos administradores lo ejecutan, ven advertencias amarillas (no rojas) y las ignoran porque "el asistente permite continuar". Ese es exactamente el momento donde se siembra el problema que aparecerá seis meses después, en producción, sin previo aviso.</p>
-                <p>El objetivo de conmutación debe relacionarse con el RTO (Recovery Time Objective) definido para el servicio: medir únicamente si el clúster mueve el rol oculta el tiempo real hasta que la aplicación vuelve a prestar servicio de forma aceptable para negocio.</p>
-                <div class="defensa-box-warning"><strong>⚠️ Regla no negociable</strong><p>Un clúster de producción no se despliega con ninguna advertencia de red o storage sin resolver o documentar explícitamente por qué se acepta el riesgo.</p></div>
-            </div>
-        </div>
-
-        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
-
-        <div class="block" id="s2">
-            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Modelos de Quorum</div>
-            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Elegir el modelo de quorum correcto</h2>
-            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>Windows Failover Clustering soporta varios modelos de quorum: Node Majority, Node and Disk Majority, Node and File Share Majority y Cloud Witness. El error más común es usar Node Majority en un clúster de dos nodos sin ningún testigo.</p>
-                <div class="defensa-box-tech"><strong>Recomendación para 2 nodos:</strong> Cloud Witness si tienes conectividad a Azure. Si no, File Share Witness en un tercer servidor fuera del dominio de fallo de ambos nodos.</div>
-            </div>
-        </div>
-
-        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
-
-        <div class="block" id="s3">
-            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Almacenamiento Compartido</div>
-            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Cluster Shared Volumes: el matiz que confunde a todos</h2>
-            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>CSV (Cluster Shared Volume) permite que múltiples nodos accedan simultáneamente al mismo volumen NTFS (New Technology File System)/ReFS. El matiz que confunde: sigue existiendo un "nodo coordinador" para las operaciones de metadatos. Si ese nodo coordinador falla, hay un breve pero real impacto en I/O.</p>
-                <div class="defensa-box-success"><strong>✔ Buena práctica</strong><p>Monitoriza específicamente los eventos de "CSV redirected mode" — indican que el I/O está pasando por la red del clúster en vez de la ruta directa a storage.</p></div>
-            </div>
-        </div>
-
-        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
-
-        <div class="block" id="s4">
-            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Operación</div>
-            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Prioridad de arranque y Preferred Owners</h2>
-            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>Cuando un clúster completo se reinicia, el orden en que los roles y VMs arrancan importa. Un controlador de dominio virtualizado que depende de sí mismo para autenticar, o una base de datos que arranca antes que su storage, generan fallos en cascada.</p>
-            </div>
-        </div>
-
-        <!-- MÓDULO 5: NUEVO - MONITORIZACIÓN -->
-        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
-
-        <div class="block" id="s5">
-            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Monitorización</div>
-            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Monitorización proactiva y alertas del clúster</h2>
-            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>Un clúster correctamente configurado puede seguir funcionando durante años sin incidentes — y precisamente por eso, cuando algo empieza a ir mal, es fácil que pase desapercibido. La monitorización proactiva es la diferencia entre resolver un problema antes de que afecte a la producción y descubrirlo durante un incidente real.</p>
-                <div class="defensa-box-tech"><strong>Eventos críticos:</strong> ID 1135 (pérdida de nodo), ID 1146 (fallo de recurso), ID 1576 (red de clúster degradada).</div>
-            </div>
-        </div>
-
-        <div class="defensa-foot">
-            <div class="defensa-author">
-                <div class="defensa-foot-label">Autor</div>
-                <div class="defensa-author-name">Miguel Ángel Carriazo</div>
-                <p class="defensa-author-bio">vCISO &amp; Arquitecto de Infraestructura con más de 25 años diseñando, asegurando y operando sistemas críticos. ISO 27001 &amp; 42001 Lead Auditor.</p>
-            </div>
-        </div>
-
-    </div>
-
-    <aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
-        <div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
-            <div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
-            <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
-                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Plataforma</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Windows Server 2022</td></tr>
-                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Storage</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">CSV / ReFS</td></tr>
-                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Quorum</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Cloud Witness</td></tr>
-                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Uso típico</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Hyper-V / SQL (Structured Query Language) FCI (Failover Cluster Instance)</td></tr>
-                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Monitorización</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Proactiva</td></tr>
-            </table>
-        </div>
-        <div>
-            <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
-            <nav class="defensa-toc-nav" id="artTocNav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
-                <a href="#s1" class="active" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px; color:#059669; border-left:2px solid #059669; font-weight:700;">01. Validación Previa</a>
-                <a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Modelos de Quorum</a>
-                <a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Almacenamiento Compartido</a>
-                <a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Operación</a>
-                <a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Monitorización</a>
-            </nav>
-        </div>
-    </aside>
-
+<div class="defensa-main" style="min-width:0;">
+<!-- GRÁFICO 1: MODELOS DE QUORUM -->
+<figure aria-label="Modelos de quorum en Windows" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 430" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="430" rx="14" width="900"></rect>
+<text fill="#151915" font-size="19" font-weight="800" x="40" y="42">Modelos de quorum en Windows Clustering</text>
+<text fill="#77776f" font-size="12" x="40" y="66">elegir mal aquí invalida todo lo demás</text>
+<defs>
+<marker id="arrow-w" markerheight="6" markerwidth="6" orient="auto" refx="5" refy="5" viewbox="0 0 10 10">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#77776f"></path>
+</marker>
+</defs>
+<rect fill="#fff" height="95" rx="14" stroke="#ededea" stroke-width="1.5" width="390" x="40" y="100"></rect>
+<circle cx="70" cy="147" fill="#059669" r="18"></circle>
+<text fill="#fff" font-size="14" font-weight="800" text-anchor="middle" x="70" y="153">1</text>
+<text fill="#151915" font-size="15" font-weight="800" x="100" y="135">Node Majority</text>
+<text fill="#77776f" font-size="12" x="100" y="158">Nº impar de nodos, sin testigo</text>
+<text fill="#94a3b8" font-size="11" x="100" y="176">Uso: 3+ nodos · multi-site</text>
+<line marker-end="url(#arrow-w)" stroke="#77776f" stroke-width="2" x1="430" x2="468" y1="147" y2="147"></line>
+<rect fill="#fff" height="95" rx="14" stroke="#ededea" stroke-width="1.5" width="390" x="470" y="100"></rect>
+<circle cx="500" cy="147" fill="#059669" r="18"></circle>
+<text fill="#fff" font-size="14" font-weight="800" text-anchor="middle" x="500" y="153">2</text>
+<text fill="#151915" font-size="15" font-weight="800" x="530" y="135">Node + Disk Majority</text>
+<text fill="#77776f" font-size="12" x="530" y="158">Nodos pares + testigo en disco</text>
+<text fill="#94a3b8" font-size="11" x="530" y="176">Uso: 2 nodos con SAN</text>
+<line marker-end="url(#arrow-w)" stroke="#77776f" stroke-width="2" x1="430" x2="468" y1="212" y2="212"></line>
+<rect fill="#fff" height="95" rx="14" stroke="#ededea" stroke-width="1.5" width="390" x="40" y="230"></rect>
+<circle cx="70" cy="277" fill="#059669" r="18"></circle>
+<text fill="#fff" font-size="14" font-weight="800" text-anchor="middle" x="70" y="283">3</text>
+<text fill="#151915" font-size="15" font-weight="800" x="100" y="265">Cloud Witness</text>
+<text fill="#77776f" font-size="12" x="100" y="288">Testigo en Azure Storage</text>
+<text fill="#94a3b8" font-size="11" x="100" y="306">Uso: 2 nodos · sin infra adicional</text>
+<line marker-end="url(#arrow-w)" stroke="#77776f" stroke-width="2" x1="430" x2="468" y1="277" y2="277"></line>
+<rect fill="#fff" height="95" rx="14" stroke="#ededea" stroke-width="1.5" width="390" x="470" y="230"></rect>
+<circle cx="500" cy="277" fill="#059669" r="18"></circle>
+<text fill="#fff" font-size="14" font-weight="800" text-anchor="middle" x="500" y="283">4</text>
+<text fill="#151915" font-size="15" font-weight="800" x="530" y="265">File Share Witness</text>
+<text fill="#77776f" font-size="12" x="530" y="288">Testigo en recurso de red</text>
+<text fill="#94a3b8" font-size="11" x="530" y="306">Uso: 2 nodos · tercer servidor</text>
+<defs><lineargradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"></stop><stop offset="1" stop-color="#151915" stop-opacity=".88"></stop></lineargradient></defs>
+<rect fill="url(#gbar)" height="46" opacity=".95" rx="14" width="820" x="40" y="360"></rect>
+<text fill="#fff" font-size="13" font-weight="700" x="68" y="388">Un clúster de 2 nodos SIEMPRE necesita un tercer voto (witness)</text>
+</svg>
 </div>
-
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 480" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="480" rx="12" width="330"></rect>
+<text fill="#151915" font-size="16" font-weight="800" x="18" y="34">Modelos de quorum Windows</text>
+<rect fill="#fff" height="60" rx="10" stroke="#ededea" stroke-width="1.5" width="294" x="18" y="60"></rect>
+<circle cx="44" cy="90" fill="#059669" r="14"></circle>
+<text fill="#fff" font-size="12" font-weight="800" text-anchor="middle" x="44" y="95">1</text>
+<text fill="#151915" font-size="13" font-weight="800" x="68" y="83">Node Majority</text>
+<text fill="#77776f" font-size="11" x="68" y="102">Nº impar de nodos, sin testigo</text>
+<rect fill="#fff" height="60" rx="10" stroke="#ededea" stroke-width="1.5" width="294" x="18" y="132"></rect>
+<circle cx="44" cy="162" fill="#059669" r="14"></circle>
+<text fill="#fff" font-size="12" font-weight="800" text-anchor="middle" x="44" y="167">2</text>
+<text fill="#151915" font-size="13" font-weight="800" x="68" y="155">Node + Disk Majority</text>
+<text fill="#77776f" font-size="11" x="68" y="174">Nodos pares + testigo en disco</text>
+<rect fill="#fff" height="60" rx="10" stroke="#ededea" stroke-width="1.5" width="294" x="18" y="204"></rect>
+<circle cx="44" cy="234" fill="#059669" r="14"></circle>
+<text fill="#fff" font-size="12" font-weight="800" text-anchor="middle" x="44" y="239">3</text>
+<text fill="#151915" font-size="13" font-weight="800" x="68" y="227">Cloud Witness</text>
+<text fill="#77776f" font-size="11" x="68" y="246">Testigo en Azure Storage</text>
+<rect fill="#fff" height="60" rx="10" stroke="#ededea" stroke-width="1.5" width="294" x="18" y="276"></rect>
+<circle cx="44" cy="306" fill="#059669" r="14"></circle>
+<text fill="#fff" font-size="12" font-weight="800" text-anchor="middle" x="44" y="311">4</text>
+<text fill="#151915" font-size="13" font-weight="800" x="68" y="299">File Share Witness</text>
+<text fill="#77776f" font-size="11" x="68" y="318">Testigo en recurso de red</text>
+<defs><lineargradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"></stop><stop offset="1" stop-color="#151915"></stop></lineargradient></defs>
+<rect fill="url(#gm)" height="50" rx="10" width="294" x="18" y="355"></rect>
+<text fill="#fff" font-size="11" font-weight="700" x="32" y="376">2 nodos SIEMPRE necesitan</text>
+<text fill="#fff" font-size="11" font-weight="700" x="32" y="393">un tercer voto (witness)</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 1: Los cuatro modelos de quorum soportados por Windows Failover Clustering.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- GRÁFICO 2: TOPOLOGÍA DE RED -->
+<figure aria-label="Topología de red" class="article-diagram" onclick="toggleZoom(this)">
+<svg role="img" viewbox="0 0 820 320" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="320" rx="14" width="820"></rect>
+<text fill="#151915" font-size="16" font-weight="800" x="40" y="36">Topología de red recomendada</text>
+<text fill="#77776f" font-size="12" x="40" y="58">adaptadores separados por función</text>
+<rect fill="#059669" height="40" rx="8" width="140" x="40" y="80"></rect><text fill="#fff" font-size="14" font-weight="700" text-anchor="middle" x="110" y="106">Nodo 1</text>
+<rect fill="#f0fdf4" height="24" rx="4" stroke="#059669" stroke-width="1" width="140" x="40" y="135"></rect><text fill="#059669" font-size="10" text-anchor="middle" x="110" y="152">Heartbeat</text>
+<rect fill="#fff" height="24" rx="4" stroke="#94a3b8" stroke-width="1" width="140" x="40" y="165"></rect><text fill="#94a3b8" font-size="10" text-anchor="middle" x="110" y="182">Storage iSCSI</text>
+<rect fill="#fff" height="24" rx="4" stroke="#94a3b8" stroke-width="1" width="140" x="40" y="195"></rect><text fill="#94a3b8" font-size="10" text-anchor="middle" x="110" y="212">Management</text>
+<rect fill="#f0fdf4" height="24" rx="4" stroke="#059669" stroke-width="1.5" width="160" x="340" y="135"></rect><text fill="#059669" font-size="11" font-weight="600" text-anchor="middle" x="420" y="152">Switch Heartbeat (redundante)</text>
+<rect fill="#fff" height="24" rx="4" stroke="#94a3b8" stroke-width="1.5" width="160" x="340" y="165"></rect><text fill="#94a3b8" font-size="11" text-anchor="middle" x="420" y="182">Switch Storage (SAN)</text>
+<rect fill="#fff" height="24" rx="4" stroke="#94a3b8" stroke-width="1.5" width="160" x="340" y="195"></rect><text fill="#94a3b8" font-size="11" text-anchor="middle" x="420" y="212">Switch Management</text>
+<rect fill="#059669" height="40" rx="8" width="140" x="640" y="80"></rect><text fill="#fff" font-size="14" font-weight="700" text-anchor="middle" x="710" y="106">Nodo 2</text>
+<rect fill="#f0fdf4" height="24" rx="4" stroke="#059669" stroke-width="1" width="140" x="640" y="135"></rect><text fill="#059669" font-size="10" text-anchor="middle" x="710" y="152">Heartbeat</text>
+<rect fill="#fff" height="24" rx="4" stroke="#94a3b8" stroke-width="1" width="140" x="640" y="165"></rect><text fill="#94a3b8" font-size="10" text-anchor="middle" x="710" y="182">Storage iSCSI</text>
+<rect fill="#fff" height="24" rx="4" stroke="#94a3b8" stroke-width="1" width="140" x="640" y="195"></rect><text fill="#94a3b8" font-size="10" text-anchor="middle" x="710" y="212">Management</text>
+<line stroke="#059669" stroke-width="2" x1="180" x2="340" y1="147" y2="147"></line>
+<line stroke="#059669" stroke-width="2" x1="500" x2="640" y1="147" y2="147"></line>
+<line stroke="#94a3b8" stroke-dasharray="4,4" stroke-width="2" x1="180" x2="340" y1="177" y2="177"></line>
+<line stroke="#94a3b8" stroke-dasharray="4,4" stroke-width="2" x1="500" x2="640" y1="177" y2="177"></line>
+<line stroke="#94a3b8" stroke-dasharray="4,4" stroke-width="2" x1="180" x2="340" y1="207" y2="207"></line>
+<line stroke="#94a3b8" stroke-dasharray="4,4" stroke-width="2" x1="500" x2="640" y1="207" y2="207"></line>
+<rect fill="#f0fdf4" height="12" stroke="#059669" stroke-width="1" width="12" x="40" y="255"></rect><text fill="#77776f" font-size="10" x="58" y="265">Cluster Heartbeat</text>
+<rect fill="#fff" height="12" stroke="#94a3b8" stroke-width="1" width="12" x="180" y="255"></rect><text fill="#77776f" font-size="10" x="198" y="265">Storage / Management</text>
+</svg>
+<figcaption class="diagram-caption">Figura 2: Cada función de red debe tener su propio adaptador y switch dedicado.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- GRÁFICO 3: MATRIZ DE DECISIÓN -->
+<figure aria-label="Matriz de decisión" class="article-diagram" onclick="toggleZoom(this)">
+<svg role="img" viewbox="0 0 820 260" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="260" rx="14" width="820"></rect>
+<text fill="#151915" font-size="16" font-weight="800" x="40" y="36">Matriz de decisión: ¿qué quorum elegir?</text>
+<rect fill="#059669" height="40" rx="20" width="160" x="40" y="60"></rect><text fill="#fff" font-size="12" font-weight="700" text-anchor="middle" x="120" y="85">¿Nº de nodos par?</text>
+<line stroke="#77776f" stroke-width="2" x1="200" x2="250" y1="80" y2="80"></line>
+<text fill="#059669" font-size="11" font-weight="700" x="225" y="74">No</text>
+<rect fill="#059669" height="40" rx="20" width="160" x="252" y="60"></rect><text fill="#fff" font-size="12" font-weight="700" text-anchor="middle" x="332" y="85">Node Majority</text>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="332" y="120">3+ nodos</text>
+<line stroke="#77776f" stroke-width="2" x1="120" x2="120" y1="100" y2="160"></line>
+<text fill="#f59e0b" font-size="11" font-weight="700" x="110" y="140">Sí</text>
+<rect fill="#f59e0b" height="40" rx="20" width="160" x="40" y="162"></rect><text fill="#fff" font-size="12" font-weight="700" text-anchor="middle" x="120" y="187">¿Conectividad a Azure?</text>
+<line stroke="#77776f" stroke-width="2" x1="200" x2="250" y1="182" y2="182"></line>
+<rect fill="#059669" height="40" rx="20" width="160" x="252" y="162"></rect><text fill="#fff" font-size="12" font-weight="700" text-anchor="middle" x="332" y="187">Cloud Witness</text>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="332" y="220">Azure Storage</text>
+<line stroke="#77776f" stroke-width="2" x1="120" x2="120" y1="202" y2="240"></line>
+<line stroke="#77776f" stroke-width="2" x1="120" x2="332" y1="240" y2="240"></line>
+<line stroke="#77776f" stroke-width="2" x1="332" x2="332" y1="220" y2="240"></line>
+<text fill="#ef4444" font-size="11" font-weight="700" x="225" y="236">No</text>
+<rect fill="#059669" height="40" rx="20" width="160" x="252" y="162"></rect><text fill="#fff" font-size="12" font-weight="700" text-anchor="middle" x="332" y="187">File Share Witness</text>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="332" y="220">Tercer servidor</text>
+</svg>
+<figcaption class="diagram-caption">Figura 3: Guía de decisión para elegir el modelo de quorum correcto.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- GRÁFICO 4: ARQUITECTURA CSV -->
+<figure aria-label="Cluster Shared Volumes" class="article-diagram" onclick="toggleZoom(this)">
+<svg role="img" viewbox="0 0 820 310" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="310" rx="14" width="820"></rect>
+<text fill="#151915" font-size="16" font-weight="800" x="40" y="36">Cluster Shared Volumes: flujo de I/O</text>
+<rect fill="#059669" height="50" rx="8" width="180" x="40" y="60"></rect><text fill="#fff" font-size="14" font-weight="700" text-anchor="middle" x="130" y="90">Nodo 1 (Coordinador)</text>
+<rect fill="#f59e0b" height="50" rx="8" width="180" x="600" y="60"></rect><text fill="#fff" font-size="14" font-weight="700" text-anchor="middle" x="690" y="90">Nodo 2 (No coordinador)</text>
+<line stroke="#059669" stroke-width="3" x1="220" x2="280" y1="85" y2="85"></line><text fill="#059669" font-size="10" font-weight="700" text-anchor="middle" x="250" y="78">Directo</text>
+<rect fill="#ededea" height="50" rx="8" stroke="#94a3b8" stroke-width="1.5" width="240" x="282" y="60"></rect>
+<text fill="#151915" font-size="14" font-weight="700" text-anchor="middle" x="402" y="82">Cluster Shared Volume</text>
+<text fill="#77776f" font-size="11" text-anchor="middle" x="402" y="100">NTFS / ReFS</text>
+<line stroke="#f59e0b" stroke-dasharray="6,4" stroke-width="3" x1="522" x2="600" y1="85" y2="85"></line>
+<text fill="#f59e0b" font-size="10" font-weight="700" text-anchor="middle" x="560" y="78">Red (redirected)</text>
+<rect fill="#f0fdf4" height="30" rx="6" stroke="#059669" stroke-width="1.5" width="240" x="282" y="135"></rect><text fill="#059669" font-size="11" font-weight="600" text-anchor="middle" x="402" y="155">SAN / Almacenamiento compartido</text>
+<line stroke="#94a3b8" stroke-width="2" x1="402" x2="402" y1="110" y2="135"></line>
+<text fill="#94a3b8" font-size="10" x="412" y="124">↓</text>
+<rect fill="#fffbeb" height="80" rx="8" stroke="#f59e0b" stroke-width="1.5" width="740" x="40" y="190"></rect>
+<text fill="#b45309" font-size="12" font-weight="700" x="60" y="215">⚠️ Ojo: el nodo coordinador (que escribe metadatos) cambia</text>
+<text fill="#78350f" font-size="11" x="60" y="237">Si el Nodo 1 falla, el Nodo 2 se convierte en coordinador — hay un impacto breve en I/O</text>
+<text fill="#78350f" font-size="11" x="60" y="256">durante la transición. No es "cero", aunque lo parezca en el 99% de las operaciones.</text>
+</svg>
+<figcaption class="diagram-caption">Figura 4: Flujo de I/O en Cluster Shared Volumes.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- GRÁFICO 5: FLUJO DE FAILOVER -->
+<figure aria-label="Flujo de failover" class="article-diagram" onclick="toggleZoom(this)">
+<svg role="img" viewbox="0 0 820 310" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="310" rx="14" width="820"></rect>
+<text fill="#151915" font-size="16" font-weight="800" x="40" y="36">Flujo de failover en Windows Clustering</text>
+<rect fill="#059669" height="36" rx="6" width="180" x="40" y="55"></rect><text fill="#fff" font-size="12" font-weight="700" text-anchor="middle" x="130" y="78">1. Heartbeat falla</text>
+<line stroke="#77776f" stroke-width="2" x1="220" x2="255" y1="73" y2="73"></line>
+<rect fill="#059669" height="36" rx="6" width="180" x="258" y="55"></rect><text fill="#fff" font-size="12" font-weight="700" text-anchor="middle" x="348" y="78">2. ¿Quorum válido?</text>
+<line stroke="#77776f" stroke-width="2" x1="438" x2="473" y1="73" y2="73"></line>
+<rect fill="#f59e0b" height="36" rx="6" width="180" x="476" y="55"></rect><text fill="#fff" font-size="12" font-weight="700" text-anchor="middle" x="566" y="78">3. Fencing (STONITH)</text>
+<line stroke="#77776f" stroke-width="2" x1="656" x2="691" y1="73" y2="73"></line>
+<rect fill="#059669" height="36" rx="6" width="100" x="694" y="55"></rect><text fill="#fff" font-size="12" font-weight="700" text-anchor="middle" x="744" y="78">4. Failover</text>
+<line marker-end="url(#arrow-fo)" stroke="#77776f" stroke-width="2" x1="744" x2="744" y1="91" y2="130"></line>
+<rect fill="#f0fdf4" height="50" rx="8" stroke="#059669" stroke-width="1.5" width="320" x="250" y="135"></rect>
+<text fill="#151915" font-size="12" font-weight="600" text-anchor="middle" x="410" y="158">5. El recurso (VM / rol) arranca en otro nodo</text>
+<text fill="#77776f" font-size="11" text-anchor="middle" x="410" y="176">Tiempo: depende del RTO configurado</text>
+<line marker-end="url(#arrow-fo)" stroke="#77776f" stroke-width="2" x1="410" x2="410" y1="185" y2="210"></line>
+<rect fill="#ededea" height="36" rx="6" stroke="#94a3b8" stroke-width="1" width="260" x="280" y="215"></rect>
+<text fill="#151915" font-size="12" font-weight="600" text-anchor="middle" x="410" y="238">6. Quorum restaurado</text>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="410" y="270">El nodo caído vuelve, recupera su voto, el clúster se reequilibra</text>
+<defs>
+<marker id="arrow-fo" markerheight="6" markerwidth="6" orient="auto" refx="5" refy="5" viewbox="0 0 10 10">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#77776f"></path>
+</marker>
+</defs>
+</svg>
+<figcaption class="diagram-caption">Figura 5: Flujo de failover secuencial en un clúster Windows.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<div class="block" id="s1">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — Validación Previa</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">El asistente de validación que casi nadie ejecuta bien</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>Windows Server incluye un Cluster Validation Wizard que comprueba red, storage y configuración antes de crear el clúster. Muchos administradores lo ejecutan, ven advertencias amarillas (no rojas) y las ignoran porque "el asistente permite continuar". Ese es exactamente el momento donde se siembra el problema que aparecerá seis meses después, en producción, sin previo aviso.</p>
+<p>El objetivo de conmutación debe relacionarse con el RTO (Recovery Time Objective) definido para el servicio: medir únicamente si el clúster mueve el rol oculta el tiempo real hasta que la aplicación vuelve a prestar servicio de forma aceptable para negocio.</p>
+<div class="defensa-box-warning"><strong>⚠️ Regla no negociable</strong><p>Un clúster de producción no se despliega con ninguna advertencia de red o storage sin resolver o documentar explícitamente por qué se acepta el riesgo.</p></div>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+<div class="block" id="s2">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Modelos de Quorum</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Elegir el modelo de quorum correcto</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>Windows Failover Clustering soporta varios modelos de quorum: Node Majority, Node and Disk Majority, Node and File Share Majority y Cloud Witness. El error más común es usar Node Majority en un clúster de dos nodos sin ningún testigo.</p>
+<div class="defensa-box-tech"><strong>Recomendación para 2 nodos:</strong> Cloud Witness si tienes conectividad a Azure. Si no, File Share Witness en un tercer servidor fuera del dominio de fallo de ambos nodos.</div>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+<div class="block" id="s3">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Almacenamiento Compartido</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Cluster Shared Volumes: el matiz que confunde a todos</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>CSV (Cluster Shared Volume) permite que múltiples nodos accedan simultáneamente al mismo volumen NTFS (New Technology File System)/ReFS. El matiz que confunde: sigue existiendo un "nodo coordinador" para las operaciones de metadatos. Si ese nodo coordinador falla, hay un breve pero real impacto en I/O.</p>
+<div class="defensa-box-success"><strong>✔ Buena práctica</strong><p>Monitoriza específicamente los eventos de "CSV redirected mode" — indican que el I/O está pasando por la red del clúster en vez de la ruta directa a storage.</p></div>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+<div class="block" id="s4">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — Operación</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Prioridad de arranque y Preferred Owners</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>Cuando un clúster completo se reinicia, el orden en que los roles y VMs arrancan importa. Un controlador de dominio virtualizado que depende de sí mismo para autenticar, o una base de datos que arranca antes que su storage, generan fallos en cascada.</p>
+</div>
+</div>
+<!-- MÓDULO 5: NUEVO - MONITORIZACIÓN -->
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+<div class="block" id="s5">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Monitorización</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Monitorización proactiva y alertas del clúster</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>Un clúster correctamente configurado puede seguir funcionando durante años sin incidentes — y precisamente por eso, cuando algo empieza a ir mal, es fácil que pase desapercibido. La monitorización proactiva es la diferencia entre resolver un problema antes de que afecte a la producción y descubrirlo durante un incidente real.</p>
+<div class="defensa-box-tech"><strong>Eventos críticos:</strong> ID 1135 (pérdida de nodo), ID 1146 (fallo de recurso), ID 1576 (red de clúster degradada).</div>
+</div>
+</div>
+<div class="defensa-foot">
+<div class="defensa-author">
+<div class="defensa-foot-label">Autor</div>
+<div class="defensa-author-name">Miguel Ángel Carriazo</div>
+<p class="defensa-author-bio">vCISO &amp; Arquitecto de Infraestructura con más de 25 años diseñando, asegurando y operando sistemas críticos. ISO 27001 &amp; 42001 Lead Auditor.</p>
+</div>
+</div>
+</div>
+<aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+<div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+<div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+<table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Plataforma</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Windows Server 2022</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Storage</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">CSV / ReFS</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Quorum</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Cloud Witness</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Uso típico</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Hyper-V / SQL (Structured Query Language) FCI (Failover Cluster Instance)</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Monitorización</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Proactiva</td></tr>
+</table>
+</div>
+<div>
+<div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+<nav class="defensa-toc-nav" id="artTocNav" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+<a class="active" href="#s1" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px; color:#059669; border-left:2px solid #059669; font-weight:700;">01. Validación Previa</a>
+<a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. Modelos de Quorum</a>
+<a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Almacenamiento Compartido</a>
+<a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. Operación</a>
+<a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Monitorización</a>
+</nav>
+</div>
+</aside>
+</div>
 <!-- ARTÍCULOS RELACIONADOS -->
 <div class="related-section">
-    <div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
-    <div class="related-grid">
-        <a class="related-card" href="vsphere-ha-drs.html">
-            <div class="r-meta">Alta Disponibilidad · VMware</div>
-            <div class="r-title">vSphere HA (High Availability) y DRS (Distributed Resource Scheduler): Clústeres que se Curan Solos</div>
-            <div class="r-desc">El mismo problema de quorum y fencing, resuelto del lado VMware en vez de Windows.</div>
-            <span class="r-link">Leer artículo →</span>
-        </a>
-        <a class="related-card" href="ha-kubernetes.html">
-            <div class="r-meta">Alta Disponibilidad · Kubernetes</div>
-            <div class="r-title">HA en Kubernetes: PodDisruptionBudgets y el mito de la autocuración</div>
-            <div class="r-desc">Si tus cargas ya van hacia contenedores, este es el quorum del mundo cloud-native.</div>
-            <span class="r-link">Leer artículo →</span>
-        </a>
-        <a class="related-card" href="multi-az-cloud.html">
-            <div class="r-meta">Alta Disponibilidad · Multi-Cloud</div>
-            <div class="r-title">Multi-AZ (Availability Zone) en AWS, Azure y GCP (Google Cloud Platform): lo que cada proveedor no te cuenta</div>
-            <div class="r-desc">Cuando la HA no vive en tu CPD (Centro de Procesamiento de Datos) sino en la nube, las reglas cambian.</div>
-            <span class="r-link">Leer artículo →</span>
-        </a>
-    </div>
+<div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+<div class="related-grid">
+<a class="related-card" href="vsphere-ha-drs.html">
+<div class="r-meta">Alta Disponibilidad · VMware</div>
+<div class="r-title">vSphere HA (High Availability) y DRS (Distributed Resource Scheduler): Clústeres que se Curan Solos</div>
+<div class="r-desc">El mismo problema de quorum y fencing, resuelto del lado VMware en vez de Windows.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+<a class="related-card" href="ha-kubernetes.html">
+<div class="r-meta">Alta Disponibilidad · Kubernetes</div>
+<div class="r-title">HA en Kubernetes: PodDisruptionBudgets y el mito de la autocuración</div>
+<div class="r-desc">Si tus cargas ya van hacia contenedores, este es el quorum del mundo cloud-native.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+<a class="related-card" href="multi-az-cloud.html">
+<div class="r-meta">Alta Disponibilidad · Multi-Cloud</div>
+<div class="r-title">Multi-AZ (Availability Zone) en AWS, Azure y GCP (Google Cloud Platform): lo que cada proveedor no te cuenta</div>
+<div class="r-desc">Cuando la HA no vive en tu CPD (Centro de Procesamiento de Datos) sino en la nube, las reglas cambian.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
 </div>
-
+</div>
 <div id="footer-container"></div>
-
 </div>
 </div>
-
 <script src="../../js/menu.js"></script>
 <script src="../../js/footer.js"></script>
 <script>
@@ -396,6 +369,5 @@ function toggleZoom(element) {
     }
 }
 </script>
-
 </body>
 </html>

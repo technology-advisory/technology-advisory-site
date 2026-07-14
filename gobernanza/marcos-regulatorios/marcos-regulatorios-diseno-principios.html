@@ -7,7 +7,7 @@
 <title>Principios de diseño: NIS2 ya no es solo para operadores críticos clásicos | Marcos Regulatorios | Technology Advisory</title>
 <meta content="NIS2 amplió drásticamente el alcance de la directiva original. Ya no habla solo de energía, transporte o salud — incluye proveedores IT, fabricantes, correo, gestión de residuos. Cómo saber si aplica, qué diferencia a esenciales de importantes, y qué arriesga la dirección si no se toma en serio." name="description"/>
 <meta content="Miguel Ángel Carriazo" name="author"/>
-<meta content="index, follow" name="robots"/>
+<meta name="robots" content="index, follow"/>
 <meta content="#059669" name="theme-color"/>
 <link href="../../css/global.css" rel="stylesheet"/>
 <link href="../../css/dossier-core.css" rel="stylesheet"/>
@@ -22,7 +22,7 @@
             div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding: 40px 4% 24px !important; }
         }
     </style>
-</head>
+<link rel="canonical" href="https://technology-advisory.es/gobernanza/marcos-regulatorios/marcos-regulatorios-diseno-principios.html"/></head>
 <body>
 <div class="card-wrapper ds-page">
 <div class="card">
@@ -41,7 +41,8 @@
 <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">NIS2 amplió drásticamente el alcance de la directiva original. Ya no habla solo de energía, transporte o salud — incluye proveedores IT (Information Technology), fabricantes, correo, gestión de residuos. Cómo saber si aplica, qué diferencia a esenciales de importantes, y qué arriesga la dirección si no se toma en serio.</p>
 <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
 <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="6" r="2.6"></circle><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"></path></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
-<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><rect height="12.5" rx="1.3" width="13" x="2.5" y="3"></rect><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"></path></svg>Marcos Regulatorios</span>
+<span class="article-date" data-article-date="true" style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;">21 Abril 2026</span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><rect height="12.5" rx="1.3" width="13" x="2.5" y="3"></rect><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"></path></svg>21 Abril 2026</span>
 <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="9" r="6.8"></circle><path d="M9 5.3V9l2.8 1.7"></path></svg>Lectura Avanzada (16-20 min)</span>
 </div>
 </div>
@@ -259,9 +260,8 @@
 <div class="defensa-box-tech"><strong>Práctica recomendada:</strong> documenta el análisis de aplicabilidad aunque la conclusión sea "no aplica". Si la interpretación cambia con el tiempo —por crecimiento de la organización o por guías de interpretación posteriores de la autoridad—, tener el análisis original documentado protege frente a la acusación de negligencia por no haberlo evaluado nunca.</div>
 </div>
 </div>
-
-                    <div class="defensa-box-info ta-reference-box" style="margin:34px 0;">
-                        <strong>🔎 Correspondencia normativa concreta.</strong> En diseño, estas referencias deben convertirse en principios, límites, dependencias y decisiones de arquitectura. NIS2 sitúa la responsabilidad de los órganos de dirección en el artículo 20, las medidas de gestión de riesgos de ciberseguridad en el 21 y la notificación de incidentes en el 23. DORA articula el gobierno y el marco de riesgo TIC en los artículos 5 y 6, la protección y prevención en el 9, la respuesta y recuperación en el 11, la gestión de incidentes en el 17 y el riesgo de terceros en los artículos 28 a 30. El RGPD (Reglamento General de Protección de Datos) exige conectar principios, responsabilidad, diseño, registro, seguridad y evaluación de impacto mediante los artículos 5, 24, 25, 30, 32 y 35. La matriz de correspondencia puede mantenerse en ServiceNow IRM (Integrated Risk Management), Archer, MetricStream u otra plataforma GRC (Governance, Risk and Compliance), pero las evidencias deben proceder de los sistemas que ejecutan el control: IAM (Identity and Access Management), CMDB (Configuration Management Database), SIEM (Security Information and Event Management), ticketing, repositorios de configuración, contratos y plataformas de continuidad.
+<div class="defensa-box-info ta-reference-box" style="margin:34px 0;">
+<strong>🔎 Correspondencia normativa concreta.</strong> En diseño, estas referencias deben convertirse en principios, límites, dependencias y decisiones de arquitectura. NIS2 sitúa la responsabilidad de los órganos de dirección en el artículo 20, las medidas de gestión de riesgos de ciberseguridad en el 21 y la notificación de incidentes en el 23. DORA articula el gobierno y el marco de riesgo TIC en los artículos 5 y 6, la protección y prevención en el 9, la respuesta y recuperación en el 11, la gestión de incidentes en el 17 y el riesgo de terceros en los artículos 28 a 30. El RGPD (Reglamento General de Protección de Datos) exige conectar principios, responsabilidad, diseño, registro, seguridad y evaluación de impacto mediante los artículos 5, 24, 25, 30, 32 y 35. La matriz de correspondencia puede mantenerse en ServiceNow IRM (Integrated Risk Management), Archer, MetricStream u otra plataforma GRC (Governance, Risk and Compliance), pero las evidencias deben proceder de los sistemas que ejecutan el control: IAM (Identity and Access Management), CMDB (Configuration Management Database), SIEM (Security Information and Event Management), ticketing, repositorios de configuración, contratos y plataformas de continuidad.
                     </div>
 <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 06</span></div>
 <!-- SECCIÓN 6: CHECKLIST -->
@@ -303,7 +303,6 @@
 </div>
 </div>
 <!-- PIE DE AUTOR -->
-
 <div class="defensa-foot">
 <div class="defensa-author">
 <div class="defensa-foot-label">Autor</div>

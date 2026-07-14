@@ -1,22 +1,22 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport"/>
 <title>Multi-AZ en AWS, Azure y GCP: Lo que Cada Proveedor No Te Cuenta | Technology Advisory</title>
-<meta name="description" content="Comparativa práctica de alta disponibilidad multi-zona en los tres grandes clouds: qué es automático, qué hay que diseñar tú.">
-<meta name="author" content="Miguel Ángel Carriazo">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#059669">
-<link rel="stylesheet" href="../../css/global.css">
-<link rel="stylesheet" href="../../css/dossier-core.css">
-<link rel="stylesheet" href="../../css/articulo.css">
-<link rel="stylesheet" href="../../css/index.css">
-<link rel="stylesheet" href="../../css/articulo-diagramas.css">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Parche automático de optimización móvil para Technology Advisory -->
-    <style>
+<meta content="Comparativa práctica de alta disponibilidad multi-zona en los tres grandes clouds: qué es automático, qué hay que diseñar tú." name="description"/>
+<meta content="Miguel Ángel Carriazo" name="author"/>
+<meta name="robots" content="index, follow"/>
+<meta content="#059669" name="theme-color"/>
+<link href="../../css/global.css" rel="stylesheet"/>
+<link href="../../css/dossier-core.css" rel="stylesheet"/>
+<link href="../../css/articulo.css" rel="stylesheet"/>
+<link href="../../css/index.css" rel="stylesheet"/>
+<link href="../../css/articulo-diagramas.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Parche automático de optimización móvil para Technology Advisory -->
+<style>
         @media (max-width: 1024px) {
             .defensa-layout {
                 display: block !important;
@@ -32,315 +32,289 @@
             }
         }
     </style>
-</head>
+<link rel="canonical" href="https://technology-advisory.es/arquitectura/alta-disponibilidad/multi-az-cloud.html"/></head>
 <body>
-
 <div class="card-wrapper ds-page">
 <div class="card">
-
 <div id="menu-container"></div>
 <div class="accent-bar" style="background: #059669;"></div>
-
 <div class="ds-meta">
-    <span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: arquitectura</span>
-    <span>categoría: <strong>Alta Disponibilidad</strong></span>
+<span><span class="dot" style="background:#059669;"></span>Technology Advisory // área técnica: arquitectura</span>
+<span>categoría: <strong>Alta Disponibilidad</strong></span>
 </div>
-
 <div style="padding: 16px 48px 0;">
-    <a href="../index.html?cat=alta-disponibilidad" class="defensa-btn-back" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Alta Disponibilidad</a>
+<a class="defensa-btn-back" href="../index.html?cat=alta-disponibilidad" style="display:inline-block; background:#059669; color:#ffffff !important; font-weight:700; font-size:14px; padding:8px 20px; border-radius:30px; text-decoration:none; transition:background 0.2s ease; border:none;">← Volver a Alta Disponibilidad</a>
 </div>
-
 <div style="padding: 40px 48px 24px; border-bottom: 1px solid #ededea;">
-    <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Caso Práctico · Multi-Cloud</div>
-    <h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Multi-AZ (Availability Zone) en AWS, Azure y GCP (Google Cloud Platform): <span style="color:#059669;">Lo que Cada Proveedor No Te Cuenta</span></h1>
-    <p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">"Multi-zona" no significa lo mismo en AWS, Azure y GCP. Comparativa práctica de qué es automático y qué exige diseño explícito de tu parte.</p>
-    <div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
-        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="6" r="2.6"/><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"/></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
-        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><rect x="2.5" y="3" width="13" height="12.5" rx="1.3"/><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"/></svg>AWS · Azure · GCP</span>
-        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;"><circle cx="9" cy="9" r="6.8"/><path d="M9 5.3V9l2.8 1.7"/></svg>Lectura Avanzada (14 min)</span>
-    </div>
+<div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.15em; font-weight:700; margin-bottom:8px;">Caso Práctico · Multi-Cloud</div>
+<h1 style="font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #151915; margin: 0 0 12px; line-height: 1.1; letter-spacing: -0.02em;">Multi-AZ (Availability Zone) en AWS, Azure y GCP (Google Cloud Platform): <span style="color:#059669;">Lo que Cada Proveedor No Te Cuenta</span></h1>
+<p style="font-size: 18px; color: #4a4a44; line-height: 1.65; margin: 0; max-width: 950px; padding-bottom: 16px;">"Multi-zona" no significa lo mismo en AWS, Azure y GCP. Comparativa práctica de qué es automático y qué exige diseño explícito de tu parte.</p>
+<div class="defensa-meta" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px; padding:14px 0; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; margin:8px 0 0 0;">
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="6" r="2.6"></circle><path d="M3.5 15c0-2.6 2.5-4.6 5.5-4.6s5.5 2 5.5 4.6"></path></svg><strong style="color:#0f172a;">Miguel Ángel Carriazo</strong></span>
+<span class="article-date" data-article-date="true" style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;">24 Abril 2026</span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><rect height="12.5" rx="1.3" width="13" x="2.5" y="3"></rect><path d="M2.5 6.5h13M6 2v2.4M12 2v2.4"></path></svg>24 Abril 2026</span>
+<span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#5b6670;"><svg fill="none" stroke="currentColor" style="width:15px;height:15px;color:#059669;stroke:#059669;stroke-width:1.6;" viewbox="0 0 18 18"><circle cx="9" cy="9" r="6.8"></circle><path d="M9 5.3V9l2.8 1.7"></path></svg>Lectura Avanzada (14 min)</span>
 </div>
-
+</div>
 <div class="defensa-layout" style="display:grid; grid-template-columns:1fr 340px; gap:48px; align-items:start; padding:0 48px 40px;">
-    <div class="defensa-main" style="min-width:0;">
-
-        <!-- GRÁFICO 1: COMPARATIVA MULTI-ZONA -->
-        <figure class="article-diagram" aria-label="Multi-zona por proveedor" onclick="toggleZoom(this)">
-            <div class="diagram-desktop">
-                <svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" role="img">
-                    <rect width="900" height="430" rx="14" fill="#fafaf8"/>
-                    <text x="40" y="42" font-size="19" font-weight="800" fill="#151915">Multi-zona: lo que cada nube resuelve distinto</text>
-                    <text x="40" y="66" font-size="12" fill="#77776f">misma idea, implementación muy distinta</text>
-                    <rect x="40" y="100" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="70" cy="147" r="18" fill="#059669"/>
-                    <text x="70" y="153" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">1</text>
-                    <text x="100" y="135" font-size="15" font-weight="800" fill="#151915">AWS</text>
-                    <text x="100" y="158" font-size="12" fill="#77776f">AZs físicas + RDS Multi-AZ</text>
-                    <text x="100" y="176" font-size="11" fill="#94a3b8">Auto Scaling + ALB</text>
-                    <rect x="470" y="100" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="500" cy="147" r="18" fill="#059669"/>
-                    <text x="500" y="153" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">2</text>
-                    <text x="530" y="135" font-size="15" font-weight="800" fill="#151915">Azure</text>
-                    <text x="530" y="158" font-size="12" fill="#77776f">Zones ≠ Availability Sets</text>
-                    <text x="530" y="176" font-size="11" fill="#94a3b8">Solo zonas habilitadas</text>
-                    <rect x="40" y="230" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="70" cy="277" r="18" fill="#059669"/>
-                    <text x="70" y="283" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">3</text>
-                    <text x="100" y="265" font-size="15" font-weight="800" fill="#151915">GCP</text>
-                    <text x="100" y="288" font-size="12" fill="#77776f">Regional MIG, cross-zone</text>
-                    <text x="100" y="306" font-size="11" fill="#94a3b8">Tráfico entre zonas gratis</text>
-                    <rect x="470" y="230" width="390" height="95" rx="14" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="500" cy="277" r="18" fill="#059669"/>
-                    <text x="500" y="283" font-size="14" font-weight="800" fill="#fff" text-anchor="middle">4</text>
-                    <text x="530" y="265" font-size="15" font-weight="800" fill="#151915">Los 3 proveedores</text>
-                    <text x="530" y="288" font-size="12" fill="#77776f">Dan piezas — el diseño es tuyo</text>
-                    <text x="530" y="306" font-size="11" fill="#94a3b8">HA no viene de fábrica</text>
-                    <defs><linearGradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"/><stop offset="1" stop-color="#151915" stop-opacity=".88"/></linearGradient></defs>
-                    <rect x="40" y="360" width="820" height="46" rx="14" fill="url(#gbar)" opacity=".95"/>
-                    <text x="68" y="388" font-size="13" font-weight="700" fill="#fff">Ningún proveedor vende HA de fábrica, vende infraestructura para construirla</text>
-                </svg>
-            </div>
-            <div class="diagram-mobile">
-                <svg viewBox="0 0 330 480" xmlns="http://www.w3.org/2000/svg" role="img">
-                    <rect width="330" height="480" rx="12" fill="#fafaf8"/>
-                    <text x="18" y="34" font-size="16" font-weight="800" fill="#151915">Multi-zona por proveedor</text>
-                    <rect x="18" y="60" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="44" cy="94" r="14" fill="#059669"/>
-                    <text x="44" y="99" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">1</text>
-                    <text x="68" y="85" font-size="14" font-weight="800" fill="#151915">AWS</text>
-                    <text x="68" y="104" font-size="11" fill="#77776f">AZs + RDS Multi-AZ</text>
-                    <text x="68" y="120" font-size="10" fill="#94a3b8">ASG + ALB</text>
-                    <line x1="165" y1="128" x2="165" y2="148" stroke="#77776f" stroke-width="2"/>
-                    <polygon points="160,146 165,156 170,146" fill="#77776f"/>
-                    <rect x="18" y="158" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="44" cy="192" r="14" fill="#059669"/>
-                    <text x="44" y="197" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">2</text>
-                    <text x="68" y="183" font-size="14" font-weight="800" fill="#151915">Azure</text>
-                    <text x="68" y="202" font-size="11" fill="#77776f">Zones ≠ Availability Sets</text>
-                    <text x="68" y="218" font-size="10" fill="#94a3b8">Solo zonas habilitadas</text>
-                    <line x1="165" y1="226" x2="165" y2="246" stroke="#77776f" stroke-width="2"/>
-                    <polygon points="160,244 165,254 170,244" fill="#77776f"/>
-                    <rect x="18" y="256" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="44" cy="290" r="14" fill="#059669"/>
-                    <text x="44" y="295" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">3</text>
-                    <text x="68" y="281" font-size="14" font-weight="800" fill="#151915">GCP</text>
-                    <text x="68" y="300" font-size="11" fill="#77776f">Regional MIG, cross-zone</text>
-                    <text x="68" y="316" font-size="10" fill="#94a3b8">Tráfico entre zonas gratis</text>
-                    <line x1="165" y1="324" x2="165" y2="344" stroke="#77776f" stroke-width="2"/>
-                    <polygon points="160,342 165,352 170,342" fill="#77776f"/>
-                    <rect x="18" y="354" width="294" height="68" rx="10" fill="#fff" stroke="#ededea" stroke-width="1.5"/>
-                    <circle cx="44" cy="388" r="14" fill="#059669"/>
-                    <text x="44" y="393" font-size="12" font-weight="800" fill="#fff" text-anchor="middle">4</text>
-                    <text x="68" y="379" font-size="14" font-weight="800" fill="#151915">Los 3 proveedores</text>
-                    <text x="68" y="398" font-size="11" fill="#77776f">Piezas, el diseño es tuyo</text>
-                    <text x="68" y="414" font-size="10" fill="#94a3b8">HA no viene de fábrica</text>
-                    <defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#151915"/></linearGradient></defs>
-                    <rect x="18" y="435" width="294" height="32" rx="10" fill="url(#gm)"/>
-                    <text x="32" y="455" font-size="11" font-weight="700" fill="#fff">Ningún proveedor vende HA de fábrica</text>
-                </svg>
-            </div>
-            <figcaption class="diagram-caption">Figura 1: Comparativa de enfoques multi-zona en los tres grandes proveedores cloud.</figcaption>
-            <span class="zoom-hint">🔍 Clic para ampliar</span>
-        </figure>
-
-        <!-- GRÁFICO 2: COMPARATIVA DE SERVICIOS -->
-        <figure class="article-diagram" aria-label="Comparativa de servicios multi-AZ" onclick="toggleZoom(this)">
-            <svg viewBox="0 0 820 280" xmlns="http://www.w3.org/2000/svg" role="img">
-                <rect width="820" height="280" rx="14" fill="#fafaf8"/>
-                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Comparativa de servicios multi-AZ</text>
-                <rect x="40" y="55" width="200" height="30" rx="4" fill="#059669"/><text x="140" y="75" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Servicio</text>
-                <rect x="240" y="55" width="180" height="30" rx="4" fill="#059669"/><text x="330" y="75" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">AWS</text>
-                <rect x="420" y="55" width="180" height="30" rx="4" fill="#059669"/><text x="510" y="75" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Azure</text>
-                <rect x="600" y="55" width="180" height="30" rx="4" fill="#059669"/><text x="690" y="75" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">GCP</text>
-                <rect x="40" y="85" width="200" height="36" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/><text x="140" y="100" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Cómputo</text><text x="140" y="114" font-size="10" fill="#94a3b8" text-anchor="middle">(VM / instancias)</text>
-                <rect x="240" y="85" width="180" height="36" rx="4" fill="#f0fdf4" stroke="#059669" stroke-width="1"/><text x="330" y="100" font-size="11" fill="#151915" text-anchor="middle">ASG multi-AZ</text><text x="330" y="114" font-size="10" fill="#94a3b8" text-anchor="middle">Auto Scaling</text>
-                <rect x="420" y="85" width="180" height="36" rx="4" fill="#f0fdf4" stroke="#059669" stroke-width="1"/><text x="510" y="100" font-size="11" fill="#151915" text-anchor="middle">VMSS con zonas</text><text x="510" y="114" font-size="10" fill="#94a3b8" text-anchor="middle">Virtual Machine Scale Sets</text>
-                <rect x="600" y="85" width="180" height="36" rx="4" fill="#f0fdf4" stroke="#059669" stroke-width="1"/><text x="690" y="100" font-size="11" fill="#151915" text-anchor="middle">Regional MIG</text><text x="690" y="114" font-size="10" fill="#94a3b8" text-anchor="middle">Managed Instance Group</text>
-                <rect x="40" y="121" width="200" height="36" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/><text x="140" y="136" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Base de datos</text><text x="140" y="150" font-size="10" fill="#94a3b8" text-anchor="middle">(relacional)</text>
-                <rect x="240" y="121" width="180" height="36" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/><text x="330" y="136" font-size="11" fill="#151915" text-anchor="middle">RDS Multi-AZ</text><text x="330" y="150" font-size="10" fill="#94a3b8" text-anchor="middle">Standby síncrono</text>
-                <rect x="420" y="121" width="180" height="36" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/><text x="510" y="136" font-size="11" fill="#151915" text-anchor="middle">SQL Managed</text><text x="510" y="150" font-size="10" fill="#94a3b8" text-anchor="middle">Zona redundante</text>
-                <rect x="600" y="121" width="180" height="36" rx="4" fill="#f0fdf4" stroke="#059669" stroke-width="1"/><text x="690" y="136" font-size="11" fill="#151915" text-anchor="middle">Cloud SQL HA</text><text x="690" y="150" font-size="10" fill="#94a3b8" text-anchor="middle">Multi-zona flag</text>
-                <rect x="40" y="157" width="200" height="36" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/><text x="140" y="172" font-size="11" fill="#151915" text-anchor="middle" font-weight="600">Load Balancer</text><text x="140" y="186" font-size="10" fill="#94a3b8" text-anchor="middle">(distribución)</text>
-                <rect x="240" y="157" width="180" height="36" rx="4" fill="#f0fdf4" stroke="#059669" stroke-width="1"/><text x="330" y="172" font-size="11" fill="#151915" text-anchor="middle">ALB / NLB</text><text x="330" y="186" font-size="10" fill="#94a3b8" text-anchor="middle">Cross-zone LB</text>
-                <rect x="420" y="157" width="180" height="36" rx="4" fill="#f0fdf4" stroke="#059669" stroke-width="1"/><text x="510" y="172" font-size="11" fill="#151915" text-anchor="middle">Azure Load Balancer</text><text x="510" y="186" font-size="10" fill="#94a3b8" text-anchor="middle">Zona redundante</text>
-                <rect x="600" y="157" width="180" height="36" rx="4" fill="#f0fdf4" stroke="#059669" stroke-width="1"/><text x="690" y="172" font-size="11" fill="#151915" text-anchor="middle">Cloud Load Balancing</text><text x="690" y="186" font-size="10" fill="#94a3b8" text-anchor="middle">Global / regional</text>
-                <rect x="40" y="193" width="740" height="30" rx="4" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
-                <text x="410" y="213" font-size="10" fill="#94a3b8" text-anchor="middle">🟢 Automático / fácil · 🟡 Atención al diseño · ⚪ Depende del servicio</text>
-            </svg>
-            <figcaption class="diagram-caption">Figura 2: Comparativa de servicios multi-AZ por proveedor.</figcaption>
-            <span class="zoom-hint">🔍 Clic para ampliar</span>
-        </figure>
-
-        <!-- GRÁFICO 3: AZ VS AVAILABILITY SET -->
-        <figure class="article-diagram" aria-label="Azure Availability Zone vs Availability Set" onclick="toggleZoom(this)">
-            <svg viewBox="0 0 820 240" xmlns="http://www.w3.org/2000/svg" role="img">
-                <rect width="820" height="240" rx="14" fill="#fafaf8"/>
-                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Azure: Availability Zone vs Availability Set</text>
-                <text x="40" y="58" font-size="12" fill="#77776f">protegen contra niveles de fallo muy distintos</text>
-                <rect x="40" y="80" width="350" height="70" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
-                <text x="215" y="102" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">Availability Zone</text>
-                <text x="215" y="122" font-size="11" fill="#151915" text-anchor="middle">Datacenter físicamente separado</text>
-                <text x="215" y="140" font-size="10" fill="#94a3b8" text-anchor="middle">Protege contra fallo de datacenter completo</text>
-                <rect x="430" y="80" width="350" height="70" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
-                <text x="605" y="102" font-size="13" font-weight="700" fill="#b45309" text-anchor="middle">Availability Set</text>
-                <text x="605" y="122" font-size="11" fill="#78350f" text-anchor="middle">Mismo datacenter, diferentes racks</text>
-                <text x="605" y="140" font-size="10" fill="#94a3b8" text-anchor="middle">Protege contra fallo de rack / PDU</text>
-                <rect x="40" y="175" width="740" height="30" rx="4" fill="#f8fafc" stroke="#ededea" stroke-width="1"/>
-                <text x="410" y="195" font-size="10" fill="#94a3b8" text-anchor="middle">No todas las regiones de Azure tienen Availability Zones. Verifica antes de diseñar.</text>
-            </svg>
-            <figcaption class="diagram-caption">Figura 3: Diferencia clave entre Availability Zone y Availability Set en Azure.</figcaption>
-            <span class="zoom-hint">🔍 Clic para ampliar</span>
-        </figure>
-
-        <!-- GRÁFICO 4: ARQUITECTURA MULTI-AZ -->
-        <figure class="article-diagram" aria-label="Arquitectura multi-AZ" onclick="toggleZoom(this)">
-            <svg viewBox="0 0 820 280" xmlns="http://www.w3.org/2000/svg" role="img">
-                <rect width="820" height="280" rx="14" fill="#fafaf8"/>
-                <text x="40" y="36" font-size="16" font-weight="800" fill="#151915">Arquitectura multi-AZ genérica</text>
-                <text x="40" y="58" font-size="12" fill="#77776f">los tres proveedores tienen el mismo patrón, diferentes nombres</text>
-                <rect x="40" y="80" width="220" height="140" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
-                <text x="150" y="105" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">AZ 1</text>
-                <rect x="60" y="115" width="180" height="30" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/><text x="150" y="135" font-size="11" fill="#151915" text-anchor="middle">Instancia / VM</text>
-                <rect x="60" y="150" width="180" height="30" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/><text x="150" y="170" font-size="11" fill="#151915" text-anchor="middle">Almacenamiento</text>
-                <rect x="60" y="185" width="180" height="28" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/><text x="150" y="204" font-size="10" fill="#94a3b8" text-anchor="middle">Load Balancer</text>
-                <rect x="300" y="80" width="220" height="140" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
-                <text x="410" y="105" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">AZ 2</text>
-                <rect x="320" y="115" width="180" height="30" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/><text x="410" y="135" font-size="11" fill="#151915" text-anchor="middle">Instancia / VM</text>
-                <rect x="320" y="150" width="180" height="30" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/><text x="410" y="170" font-size="11" fill="#151915" text-anchor="middle">Almacenamiento</text>
-                <rect x="320" y="185" width="180" height="28" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/><text x="410" y="204" font-size="10" fill="#94a3b8" text-anchor="middle">Load Balancer</text>
-                <rect x="560" y="80" width="220" height="140" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="1.5"/>
-                <text x="670" y="105" font-size="13" font-weight="700" fill="#059669" text-anchor="middle">AZ 3</text>
-                <rect x="580" y="115" width="180" height="30" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/><text x="670" y="135" font-size="11" fill="#151915" text-anchor="middle">Instancia / VM</text>
-                <rect x="580" y="150" width="180" height="30" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/><text x="670" y="170" font-size="11" fill="#151915" text-anchor="middle">Almacenamiento</text>
-                <rect x="580" y="185" width="180" height="28" rx="4" fill="#fff" stroke="#ededea" stroke-width="1"/><text x="670" y="204" font-size="10" fill="#94a3b8" text-anchor="middle">Load Balancer</text>
-                <text x="410" y="258" font-size="11" fill="#94a3b8" text-anchor="middle">Cada proveedor llama "AZ" a algo distinto, pero el patrón es el mismo</text>
-            </svg>
-            <figcaption class="diagram-caption">Figura 4: Patrón común de arquitectura multi-AZ en los tres proveedores.</figcaption>
-            <span class="zoom-hint">🔍 Clic para ampliar</span>
-        </figure>
-
-        <div class="block" id="s1">
-            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — El Supuesto Peligroso</div>
-            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Desplegar en una región no es tener HA (High Availability)</h2>
-            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>El supuesto más caro que he visto en migraciones a cloud es asumir que, por estar en AWS/Azure/GCP, la alta disponibilidad "viene incluida". No viene incluida: viene <strong>disponible</strong>, como capacidad de la plataforma, pero activarla y usarla correctamente sigue siendo trabajo de diseño tuyo. Una instancia EC2 única en una sola AZ tiene exactamente el mismo riesgo de punto único de fallo que un servidor físico único en tu CPD (Centro de Procesamiento de Datos).</p>
-                <div class="defensa-box-warning"><strong>⚠️ El error más caro</strong><p>Configurar un Auto Scaling Group con <code>min=1, max=1</code> no da HA — da reemplazo automático tras fallo, con el mismo hueco de indisponibilidad que un reinicio manual, solo que sin intervención humana.</p></div>
-            </div>
-        </div>
-
-        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
-
-        <div class="block" id="s2">
-            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — AWS</div>
-            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">AWS: Availability Zones y el matiz de RDS (Relational Database Service) Multi-AZ</h2>
-            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>AWS estructura cada región en múltiples Availability Zones, físicamente separadas con su propia alimentación y conectividad, pero unidas por red de baja latencia. Para EC2, la HA es responsabilidad tuya: Auto Scaling Groups distribuidos entre AZs, con un Load Balancer delante repartiendo tráfico.</p>
-                <p>El matiz que sorprende a mucha gente: RDS Multi-AZ no es lo mismo que tener réplicas de lectura en otra AZ. Multi-AZ mantiene una réplica <em>en standby síncrono</em>, invisible y no consultable directamente, que solo se promociona a primaria en caso de fallo.</p>
-                <div class="defensa-box-tech"><strong>Diferencia clave:</strong> Multi-AZ = disponibilidad (failover automático, standby no consultable). Read Replicas = escalabilidad de lectura (consultables, sin failover automático salvo que promociones manualmente).</div>
-            </div>
-        </div>
-
-        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
-
-        <div class="block" id="s3">
-            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Azure</div>
-            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Azure: Availability Zones vs Availability Sets</h2>
-            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>Azure tiene dos mecanismos que se confunden con frecuencia. Los Availability Sets distribuyen VMs entre distintos dominios de fallo y actualización <strong>dentro del mismo datacenter</strong> — protegen contra fallos de hardware local y mantenimiento planificado, pero no contra la pérdida de un datacenter completo. Las Availability Zones son físicamente distintas dentro de una región, y solo están disponibles en un subconjunto de regiones de Azure.</p>
-                <div class="defensa-box-success"><strong>✔ Verifica antes de diseñar</strong><p>No todas las regiones de Azure tienen Availability Zones habilitadas. Verifica en la documentación de la región concreta antes de comprometer un diseño de HA que las asuma.</p></div>
-            </div>
-        </div>
-
-        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
-
-        <div class="block" id="s4">
-            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — GCP</div>
-            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">GCP: el enfoque más simple, con su propia letra pequeña</h2>
-            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>Google Cloud tiene, en general, el modelo más simple de los tres: los Managed Instance Groups distribuyen automáticamente entre zonas dentro de una región cuando configuras el grupo como regional (no zonal). Cloud SQL (Structured Query Language) ofrece HA multi-zona con un simple flag de configuración, con failover automático gestionado por la plataforma.</p>
-                <p>La letra pequeña de GCP está en el networking: por defecto, el tráfico entre zonas de la misma región es gratuito y de baja latencia, lo que facilita mucho el diseño multi-zona — pero eso no elimina la necesidad de diseñar explícitamente para que tu aplicación tolere que una zona completa desaparezca.</p>
-                <p>La conclusión que aplica a los tres proveedores por igual: la plataforma te da las piezas, pero el diseño de qué debe sobrevivir a qué tipo de fallo sigue siendo tuyo. Ningún proveedor cloud vende HA "de fábrica".</p>
-            </div>
-        </div>
-
-        <!-- MÓDULO 5: NUEVO - COSTE Y ESTRATEGIA -->
-        <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
-
-        <div class="block" id="s5">
-            <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Coste y Estrategia de Multi-Zona</div>
-            <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">No todo necesita multi-AZ</h2>
-            <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
-                <p>Multi-AZ tiene un coste directo (instancias duplicadas, tráfico entre zonas) y un coste indirecto (complejidad operativa). No todas las cargas de trabajo justifican este coste. La decisión debe basarse en el análisis de impacto de negocio: si una zona cae, ¿qué servicios no pueden esperar?</p>
-                <p>Una estrategia común es: servicios críticos → multi-AZ con failover automático. Servicios importantes → multi-AZ con failover manual. Servicios no críticos → una sola AZ con reemplazo automático.</p>
-                <div class="defensa-box-tech"><strong>Recomendación:</strong> revisa trimestralmente la asignación de servicios a AZs. Lo que era crítico hace un año puede no serlo ahora, y viceversa.</div>
-            </div>
-        </div>
-
-        <div class="defensa-foot">
-            <div class="defensa-author">
-                <div class="defensa-foot-label">Autor</div>
-                <div class="defensa-author-name">Miguel Ángel Carriazo</div>
-                <p class="defensa-author-bio">vCISO &amp; Arquitecto de Infraestructura con más de 25 años diseñando, asegurando y operando sistemas críticos. ISO 27001 &amp; 42001 Lead Auditor.</p>
-            </div>
-        </div>
-
-    </div>
-
-    <aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
-        <div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
-            <div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
-            <table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
-                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">AWS</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Multi-AZ RDS</td></tr>
-                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Azure</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Availability Zones</td></tr>
-                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">GCP</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Regional MIG (Managed Instance Group)</td></tr>
-                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Coste extra</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">~2x</td></tr>
-                <tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Estrategia</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Por criticidad</td></tr>
-            </table>
-        </div>
-        <div>
-            <div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
-            <nav class="defensa-toc-nav" id="artTocNav2" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
-                <a href="#s1" class="active" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px; color:#059669; border-left:2px solid #059669; font-weight:700;">01. El Supuesto Peligroso</a>
-                <a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. AWS</a>
-                <a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Azure</a>
-                <a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. GCP</a>
-                <a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Coste y Estrategia</a>
-            </nav>
-        </div>
-    </aside>
-
+<div class="defensa-main" style="min-width:0;">
+<!-- GRÁFICO 1: COMPARATIVA MULTI-ZONA -->
+<figure aria-label="Multi-zona por proveedor" class="article-diagram" onclick="toggleZoom(this)">
+<div class="diagram-desktop">
+<svg role="img" viewbox="0 0 900 430" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="430" rx="14" width="900"></rect>
+<text fill="#151915" font-size="19" font-weight="800" x="40" y="42">Multi-zona: lo que cada nube resuelve distinto</text>
+<text fill="#77776f" font-size="12" x="40" y="66">misma idea, implementación muy distinta</text>
+<rect fill="#fff" height="95" rx="14" stroke="#ededea" stroke-width="1.5" width="390" x="40" y="100"></rect>
+<circle cx="70" cy="147" fill="#059669" r="18"></circle>
+<text fill="#fff" font-size="14" font-weight="800" text-anchor="middle" x="70" y="153">1</text>
+<text fill="#151915" font-size="15" font-weight="800" x="100" y="135">AWS</text>
+<text fill="#77776f" font-size="12" x="100" y="158">AZs físicas + RDS Multi-AZ</text>
+<text fill="#94a3b8" font-size="11" x="100" y="176">Auto Scaling + ALB</text>
+<rect fill="#fff" height="95" rx="14" stroke="#ededea" stroke-width="1.5" width="390" x="470" y="100"></rect>
+<circle cx="500" cy="147" fill="#059669" r="18"></circle>
+<text fill="#fff" font-size="14" font-weight="800" text-anchor="middle" x="500" y="153">2</text>
+<text fill="#151915" font-size="15" font-weight="800" x="530" y="135">Azure</text>
+<text fill="#77776f" font-size="12" x="530" y="158">Zones ≠ Availability Sets</text>
+<text fill="#94a3b8" font-size="11" x="530" y="176">Solo zonas habilitadas</text>
+<rect fill="#fff" height="95" rx="14" stroke="#ededea" stroke-width="1.5" width="390" x="40" y="230"></rect>
+<circle cx="70" cy="277" fill="#059669" r="18"></circle>
+<text fill="#fff" font-size="14" font-weight="800" text-anchor="middle" x="70" y="283">3</text>
+<text fill="#151915" font-size="15" font-weight="800" x="100" y="265">GCP</text>
+<text fill="#77776f" font-size="12" x="100" y="288">Regional MIG, cross-zone</text>
+<text fill="#94a3b8" font-size="11" x="100" y="306">Tráfico entre zonas gratis</text>
+<rect fill="#fff" height="95" rx="14" stroke="#ededea" stroke-width="1.5" width="390" x="470" y="230"></rect>
+<circle cx="500" cy="277" fill="#059669" r="18"></circle>
+<text fill="#fff" font-size="14" font-weight="800" text-anchor="middle" x="500" y="283">4</text>
+<text fill="#151915" font-size="15" font-weight="800" x="530" y="265">Los 3 proveedores</text>
+<text fill="#77776f" font-size="12" x="530" y="288">Dan piezas — el diseño es tuyo</text>
+<text fill="#94a3b8" font-size="11" x="530" y="306">HA no viene de fábrica</text>
+<defs><lineargradient id="gbar" x1="0" x2="1"><stop offset="0" stop-color="#059669" stop-opacity=".92"></stop><stop offset="1" stop-color="#151915" stop-opacity=".88"></stop></lineargradient></defs>
+<rect fill="url(#gbar)" height="46" opacity=".95" rx="14" width="820" x="40" y="360"></rect>
+<text fill="#fff" font-size="13" font-weight="700" x="68" y="388">Ningún proveedor vende HA de fábrica, vende infraestructura para construirla</text>
+</svg>
 </div>
-
+<div class="diagram-mobile">
+<svg role="img" viewbox="0 0 330 480" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="480" rx="12" width="330"></rect>
+<text fill="#151915" font-size="16" font-weight="800" x="18" y="34">Multi-zona por proveedor</text>
+<rect fill="#fff" height="68" rx="10" stroke="#ededea" stroke-width="1.5" width="294" x="18" y="60"></rect>
+<circle cx="44" cy="94" fill="#059669" r="14"></circle>
+<text fill="#fff" font-size="12" font-weight="800" text-anchor="middle" x="44" y="99">1</text>
+<text fill="#151915" font-size="14" font-weight="800" x="68" y="85">AWS</text>
+<text fill="#77776f" font-size="11" x="68" y="104">AZs + RDS Multi-AZ</text>
+<text fill="#94a3b8" font-size="10" x="68" y="120">ASG + ALB</text>
+<line stroke="#77776f" stroke-width="2" x1="165" x2="165" y1="128" y2="148"></line>
+<polygon fill="#77776f" points="160,146 165,156 170,146"></polygon>
+<rect fill="#fff" height="68" rx="10" stroke="#ededea" stroke-width="1.5" width="294" x="18" y="158"></rect>
+<circle cx="44" cy="192" fill="#059669" r="14"></circle>
+<text fill="#fff" font-size="12" font-weight="800" text-anchor="middle" x="44" y="197">2</text>
+<text fill="#151915" font-size="14" font-weight="800" x="68" y="183">Azure</text>
+<text fill="#77776f" font-size="11" x="68" y="202">Zones ≠ Availability Sets</text>
+<text fill="#94a3b8" font-size="10" x="68" y="218">Solo zonas habilitadas</text>
+<line stroke="#77776f" stroke-width="2" x1="165" x2="165" y1="226" y2="246"></line>
+<polygon fill="#77776f" points="160,244 165,254 170,244"></polygon>
+<rect fill="#fff" height="68" rx="10" stroke="#ededea" stroke-width="1.5" width="294" x="18" y="256"></rect>
+<circle cx="44" cy="290" fill="#059669" r="14"></circle>
+<text fill="#fff" font-size="12" font-weight="800" text-anchor="middle" x="44" y="295">3</text>
+<text fill="#151915" font-size="14" font-weight="800" x="68" y="281">GCP</text>
+<text fill="#77776f" font-size="11" x="68" y="300">Regional MIG, cross-zone</text>
+<text fill="#94a3b8" font-size="10" x="68" y="316">Tráfico entre zonas gratis</text>
+<line stroke="#77776f" stroke-width="2" x1="165" x2="165" y1="324" y2="344"></line>
+<polygon fill="#77776f" points="160,342 165,352 170,342"></polygon>
+<rect fill="#fff" height="68" rx="10" stroke="#ededea" stroke-width="1.5" width="294" x="18" y="354"></rect>
+<circle cx="44" cy="388" fill="#059669" r="14"></circle>
+<text fill="#fff" font-size="12" font-weight="800" text-anchor="middle" x="44" y="393">4</text>
+<text fill="#151915" font-size="14" font-weight="800" x="68" y="379">Los 3 proveedores</text>
+<text fill="#77776f" font-size="11" x="68" y="398">Piezas, el diseño es tuyo</text>
+<text fill="#94a3b8" font-size="10" x="68" y="414">HA no viene de fábrica</text>
+<defs><lineargradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="#059669"></stop><stop offset="1" stop-color="#151915"></stop></lineargradient></defs>
+<rect fill="url(#gm)" height="32" rx="10" width="294" x="18" y="435"></rect>
+<text fill="#fff" font-size="11" font-weight="700" x="32" y="455">Ningún proveedor vende HA de fábrica</text>
+</svg>
+</div>
+<figcaption class="diagram-caption">Figura 1: Comparativa de enfoques multi-zona en los tres grandes proveedores cloud.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- GRÁFICO 2: COMPARATIVA DE SERVICIOS -->
+<figure aria-label="Comparativa de servicios multi-AZ" class="article-diagram" onclick="toggleZoom(this)">
+<svg role="img" viewbox="0 0 820 280" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="280" rx="14" width="820"></rect>
+<text fill="#151915" font-size="16" font-weight="800" x="40" y="36">Comparativa de servicios multi-AZ</text>
+<rect fill="#059669" height="30" rx="4" width="200" x="40" y="55"></rect><text fill="#fff" font-size="11" font-weight="700" text-anchor="middle" x="140" y="75">Servicio</text>
+<rect fill="#059669" height="30" rx="4" width="180" x="240" y="55"></rect><text fill="#fff" font-size="11" font-weight="700" text-anchor="middle" x="330" y="75">AWS</text>
+<rect fill="#059669" height="30" rx="4" width="180" x="420" y="55"></rect><text fill="#fff" font-size="11" font-weight="700" text-anchor="middle" x="510" y="75">Azure</text>
+<rect fill="#059669" height="30" rx="4" width="180" x="600" y="55"></rect><text fill="#fff" font-size="11" font-weight="700" text-anchor="middle" x="690" y="75">GCP</text>
+<rect fill="#fff" height="36" rx="4" stroke="#ededea" stroke-width="1" width="200" x="40" y="85"></rect><text fill="#151915" font-size="11" font-weight="600" text-anchor="middle" x="140" y="100">Cómputo</text><text fill="#94a3b8" font-size="10" text-anchor="middle" x="140" y="114">(VM / instancias)</text>
+<rect fill="#f0fdf4" height="36" rx="4" stroke="#059669" stroke-width="1" width="180" x="240" y="85"></rect><text fill="#151915" font-size="11" text-anchor="middle" x="330" y="100">ASG multi-AZ</text><text fill="#94a3b8" font-size="10" text-anchor="middle" x="330" y="114">Auto Scaling</text>
+<rect fill="#f0fdf4" height="36" rx="4" stroke="#059669" stroke-width="1" width="180" x="420" y="85"></rect><text fill="#151915" font-size="11" text-anchor="middle" x="510" y="100">VMSS con zonas</text><text fill="#94a3b8" font-size="10" text-anchor="middle" x="510" y="114">Virtual Machine Scale Sets</text>
+<rect fill="#f0fdf4" height="36" rx="4" stroke="#059669" stroke-width="1" width="180" x="600" y="85"></rect><text fill="#151915" font-size="11" text-anchor="middle" x="690" y="100">Regional MIG</text><text fill="#94a3b8" font-size="10" text-anchor="middle" x="690" y="114">Managed Instance Group</text>
+<rect fill="#fff" height="36" rx="4" stroke="#ededea" stroke-width="1" width="200" x="40" y="121"></rect><text fill="#151915" font-size="11" font-weight="600" text-anchor="middle" x="140" y="136">Base de datos</text><text fill="#94a3b8" font-size="10" text-anchor="middle" x="140" y="150">(relacional)</text>
+<rect fill="#fffbeb" height="36" rx="4" stroke="#f59e0b" stroke-width="1" width="180" x="240" y="121"></rect><text fill="#151915" font-size="11" text-anchor="middle" x="330" y="136">RDS Multi-AZ</text><text fill="#94a3b8" font-size="10" text-anchor="middle" x="330" y="150">Standby síncrono</text>
+<rect fill="#fffbeb" height="36" rx="4" stroke="#f59e0b" stroke-width="1" width="180" x="420" y="121"></rect><text fill="#151915" font-size="11" text-anchor="middle" x="510" y="136">SQL Managed</text><text fill="#94a3b8" font-size="10" text-anchor="middle" x="510" y="150">Zona redundante</text>
+<rect fill="#f0fdf4" height="36" rx="4" stroke="#059669" stroke-width="1" width="180" x="600" y="121"></rect><text fill="#151915" font-size="11" text-anchor="middle" x="690" y="136">Cloud SQL HA</text><text fill="#94a3b8" font-size="10" text-anchor="middle" x="690" y="150">Multi-zona flag</text>
+<rect fill="#fff" height="36" rx="4" stroke="#ededea" stroke-width="1" width="200" x="40" y="157"></rect><text fill="#151915" font-size="11" font-weight="600" text-anchor="middle" x="140" y="172">Load Balancer</text><text fill="#94a3b8" font-size="10" text-anchor="middle" x="140" y="186">(distribución)</text>
+<rect fill="#f0fdf4" height="36" rx="4" stroke="#059669" stroke-width="1" width="180" x="240" y="157"></rect><text fill="#151915" font-size="11" text-anchor="middle" x="330" y="172">ALB / NLB</text><text fill="#94a3b8" font-size="10" text-anchor="middle" x="330" y="186">Cross-zone LB</text>
+<rect fill="#f0fdf4" height="36" rx="4" stroke="#059669" stroke-width="1" width="180" x="420" y="157"></rect><text fill="#151915" font-size="11" text-anchor="middle" x="510" y="172">Azure Load Balancer</text><text fill="#94a3b8" font-size="10" text-anchor="middle" x="510" y="186">Zona redundante</text>
+<rect fill="#f0fdf4" height="36" rx="4" stroke="#059669" stroke-width="1" width="180" x="600" y="157"></rect><text fill="#151915" font-size="11" text-anchor="middle" x="690" y="172">Cloud Load Balancing</text><text fill="#94a3b8" font-size="10" text-anchor="middle" x="690" y="186">Global / regional</text>
+<rect fill="#f8fafc" height="30" rx="4" stroke="#ededea" stroke-width="1" width="740" x="40" y="193"></rect>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="410" y="213">🟢 Automático / fácil · 🟡 Atención al diseño · ⚪ Depende del servicio</text>
+</svg>
+<figcaption class="diagram-caption">Figura 2: Comparativa de servicios multi-AZ por proveedor.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- GRÁFICO 3: AZ VS AVAILABILITY SET -->
+<figure aria-label="Azure Availability Zone vs Availability Set" class="article-diagram" onclick="toggleZoom(this)">
+<svg role="img" viewbox="0 0 820 240" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="240" rx="14" width="820"></rect>
+<text fill="#151915" font-size="16" font-weight="800" x="40" y="36">Azure: Availability Zone vs Availability Set</text>
+<text fill="#77776f" font-size="12" x="40" y="58">protegen contra niveles de fallo muy distintos</text>
+<rect fill="#f0fdf4" height="70" rx="8" stroke="#059669" stroke-width="1.5" width="350" x="40" y="80"></rect>
+<text fill="#059669" font-size="13" font-weight="700" text-anchor="middle" x="215" y="102">Availability Zone</text>
+<text fill="#151915" font-size="11" text-anchor="middle" x="215" y="122">Datacenter físicamente separado</text>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="215" y="140">Protege contra fallo de datacenter completo</text>
+<rect fill="#fffbeb" height="70" rx="8" stroke="#f59e0b" stroke-width="1.5" width="350" x="430" y="80"></rect>
+<text fill="#b45309" font-size="13" font-weight="700" text-anchor="middle" x="605" y="102">Availability Set</text>
+<text fill="#78350f" font-size="11" text-anchor="middle" x="605" y="122">Mismo datacenter, diferentes racks</text>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="605" y="140">Protege contra fallo de rack / PDU</text>
+<rect fill="#f8fafc" height="30" rx="4" stroke="#ededea" stroke-width="1" width="740" x="40" y="175"></rect>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="410" y="195">No todas las regiones de Azure tienen Availability Zones. Verifica antes de diseñar.</text>
+</svg>
+<figcaption class="diagram-caption">Figura 3: Diferencia clave entre Availability Zone y Availability Set en Azure.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<!-- GRÁFICO 4: ARQUITECTURA MULTI-AZ -->
+<figure aria-label="Arquitectura multi-AZ" class="article-diagram" onclick="toggleZoom(this)">
+<svg role="img" viewbox="0 0 820 280" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fafaf8" height="280" rx="14" width="820"></rect>
+<text fill="#151915" font-size="16" font-weight="800" x="40" y="36">Arquitectura multi-AZ genérica</text>
+<text fill="#77776f" font-size="12" x="40" y="58">los tres proveedores tienen el mismo patrón, diferentes nombres</text>
+<rect fill="#f0fdf4" height="140" rx="8" stroke="#059669" stroke-width="1.5" width="220" x="40" y="80"></rect>
+<text fill="#059669" font-size="13" font-weight="700" text-anchor="middle" x="150" y="105">AZ 1</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="180" x="60" y="115"></rect><text fill="#151915" font-size="11" text-anchor="middle" x="150" y="135">Instancia / VM</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="180" x="60" y="150"></rect><text fill="#151915" font-size="11" text-anchor="middle" x="150" y="170">Almacenamiento</text>
+<rect fill="#fff" height="28" rx="4" stroke="#ededea" stroke-width="1" width="180" x="60" y="185"></rect><text fill="#94a3b8" font-size="10" text-anchor="middle" x="150" y="204">Load Balancer</text>
+<rect fill="#f0fdf4" height="140" rx="8" stroke="#059669" stroke-width="1.5" width="220" x="300" y="80"></rect>
+<text fill="#059669" font-size="13" font-weight="700" text-anchor="middle" x="410" y="105">AZ 2</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="180" x="320" y="115"></rect><text fill="#151915" font-size="11" text-anchor="middle" x="410" y="135">Instancia / VM</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="180" x="320" y="150"></rect><text fill="#151915" font-size="11" text-anchor="middle" x="410" y="170">Almacenamiento</text>
+<rect fill="#fff" height="28" rx="4" stroke="#ededea" stroke-width="1" width="180" x="320" y="185"></rect><text fill="#94a3b8" font-size="10" text-anchor="middle" x="410" y="204">Load Balancer</text>
+<rect fill="#f0fdf4" height="140" rx="8" stroke="#059669" stroke-width="1.5" width="220" x="560" y="80"></rect>
+<text fill="#059669" font-size="13" font-weight="700" text-anchor="middle" x="670" y="105">AZ 3</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="180" x="580" y="115"></rect><text fill="#151915" font-size="11" text-anchor="middle" x="670" y="135">Instancia / VM</text>
+<rect fill="#fff" height="30" rx="4" stroke="#ededea" stroke-width="1" width="180" x="580" y="150"></rect><text fill="#151915" font-size="11" text-anchor="middle" x="670" y="170">Almacenamiento</text>
+<rect fill="#fff" height="28" rx="4" stroke="#ededea" stroke-width="1" width="180" x="580" y="185"></rect><text fill="#94a3b8" font-size="10" text-anchor="middle" x="670" y="204">Load Balancer</text>
+<text fill="#94a3b8" font-size="11" text-anchor="middle" x="410" y="258">Cada proveedor llama "AZ" a algo distinto, pero el patrón es el mismo</text>
+</svg>
+<figcaption class="diagram-caption">Figura 4: Patrón común de arquitectura multi-AZ en los tres proveedores.</figcaption>
+<span class="zoom-hint">🔍 Clic para ampliar</span>
+</figure>
+<div class="block" id="s1">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 01 — El Supuesto Peligroso</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Desplegar en una región no es tener HA (High Availability)</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>El supuesto más caro que he visto en migraciones a cloud es asumir que, por estar en AWS/Azure/GCP, la alta disponibilidad "viene incluida". No viene incluida: viene <strong>disponible</strong>, como capacidad de la plataforma, pero activarla y usarla correctamente sigue siendo trabajo de diseño tuyo. Una instancia EC2 única en una sola AZ tiene exactamente el mismo riesgo de punto único de fallo que un servidor físico único en tu CPD (Centro de Procesamiento de Datos).</p>
+<div class="defensa-box-warning"><strong>⚠️ El error más caro</strong><p>Configurar un Auto Scaling Group con <code>min=1, max=1</code> no da HA — da reemplazo automático tras fallo, con el mismo hueco de indisponibilidad que un reinicio manual, solo que sin intervención humana.</p></div>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
+<div class="block" id="s2">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — AWS</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">AWS: Availability Zones y el matiz de RDS (Relational Database Service) Multi-AZ</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>AWS estructura cada región en múltiples Availability Zones, físicamente separadas con su propia alimentación y conectividad, pero unidas por red de baja latencia. Para EC2, la HA es responsabilidad tuya: Auto Scaling Groups distribuidos entre AZs, con un Load Balancer delante repartiendo tráfico.</p>
+<p>El matiz que sorprende a mucha gente: RDS Multi-AZ no es lo mismo que tener réplicas de lectura en otra AZ. Multi-AZ mantiene una réplica <em>en standby síncrono</em>, invisible y no consultable directamente, que solo se promociona a primaria en caso de fallo.</p>
+<div class="defensa-box-tech"><strong>Diferencia clave:</strong> Multi-AZ = disponibilidad (failover automático, standby no consultable). Read Replicas = escalabilidad de lectura (consultables, sin failover automático salvo que promociones manualmente).</div>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
+<div class="block" id="s3">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Azure</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Azure: Availability Zones vs Availability Sets</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>Azure tiene dos mecanismos que se confunden con frecuencia. Los Availability Sets distribuyen VMs entre distintos dominios de fallo y actualización <strong>dentro del mismo datacenter</strong> — protegen contra fallos de hardware local y mantenimiento planificado, pero no contra la pérdida de un datacenter completo. Las Availability Zones son físicamente distintas dentro de una región, y solo están disponibles en un subconjunto de regiones de Azure.</p>
+<div class="defensa-box-success"><strong>✔ Verifica antes de diseñar</strong><p>No todas las regiones de Azure tienen Availability Zones habilitadas. Verifica en la documentación de la región concreta antes de comprometer un diseño de HA que las asuma.</p></div>
+</div>
+</div>
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
+<div class="block" id="s4">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 04 — GCP</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">GCP: el enfoque más simple, con su propia letra pequeña</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>Google Cloud tiene, en general, el modelo más simple de los tres: los Managed Instance Groups distribuyen automáticamente entre zonas dentro de una región cuando configuras el grupo como regional (no zonal). Cloud SQL (Structured Query Language) ofrece HA multi-zona con un simple flag de configuración, con failover automático gestionado por la plataforma.</p>
+<p>La letra pequeña de GCP está en el networking: por defecto, el tráfico entre zonas de la misma región es gratuito y de baja latencia, lo que facilita mucho el diseño multi-zona — pero eso no elimina la necesidad de diseñar explícitamente para que tu aplicación tolere que una zona completa desaparezca.</p>
+<p>La conclusión que aplica a los tres proveedores por igual: la plataforma te da las piezas, pero el diseño de qué debe sobrevivir a qué tipo de fallo sigue siendo tuyo. Ningún proveedor cloud vende HA "de fábrica".</p>
+</div>
+</div>
+<!-- MÓDULO 5: NUEVO - COSTE Y ESTRATEGIA -->
+<div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 05</span></div>
+<div class="block" id="s5">
+<div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Coste y Estrategia de Multi-Zona</div>
+<h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">No todo necesita multi-AZ</h2>
+<div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;">
+<p>Multi-AZ tiene un coste directo (instancias duplicadas, tráfico entre zonas) y un coste indirecto (complejidad operativa). No todas las cargas de trabajo justifican este coste. La decisión debe basarse en el análisis de impacto de negocio: si una zona cae, ¿qué servicios no pueden esperar?</p>
+<p>Una estrategia común es: servicios críticos → multi-AZ con failover automático. Servicios importantes → multi-AZ con failover manual. Servicios no críticos → una sola AZ con reemplazo automático.</p>
+<div class="defensa-box-tech"><strong>Recomendación:</strong> revisa trimestralmente la asignación de servicios a AZs. Lo que era crítico hace un año puede no serlo ahora, y viceversa.</div>
+</div>
+</div>
+<div class="defensa-foot">
+<div class="defensa-author">
+<div class="defensa-foot-label">Autor</div>
+<div class="defensa-author-name">Miguel Ángel Carriazo</div>
+<p class="defensa-author-bio">vCISO &amp; Arquitecto de Infraestructura con más de 25 años diseñando, asegurando y operando sistemas críticos. ISO 27001 &amp; 42001 Lead Auditor.</p>
+</div>
+</div>
+</div>
+<aside class="defensa-toc" style="position:sticky; top:24px; display:flex; flex-direction:column; gap:40px; min-width:0;">
+<div class="defensa-control" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:24px;">
+<div class="title" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#0f172a; border-bottom:2px solid #e2e8f0; padding-bottom:6px; margin-bottom:16px; font-weight:700; letter-spacing:0.05em;">Ficha Técnica</div>
+<table style="width:100%; table-layout:fixed; border-collapse:collapse; font-size:13px;">
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">AWS</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Multi-AZ RDS</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Azure</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">Availability Zones</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">GCP</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Regional MIG (Managed Instance Group)</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Coste extra</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#059669; font-weight:700; text-align:right;">~2x</td></tr>
+<tr><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#64748b; font-weight:700; text-align:left;">Estrategia</td><td style="padding:10px 0; border-bottom:1px solid #e2e8f0; vertical-align:middle; color:#0f172a; font-weight:600; text-align:right;">Por criticidad</td></tr>
+</table>
+</div>
+<div>
+<div class="defensa-toc-label" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; letter-spacing:0.1em; margin-bottom:14px; font-weight:700;">Secciones</div>
+<nav class="defensa-toc-nav" id="artTocNav2" style="display:flex; flex-direction:column; gap:12px; border-left:2px solid #e2e8f0; padding-left:14px;">
+<a class="active" href="#s1" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px; color:#059669; border-left:2px solid #059669; font-weight:700;">01. El Supuesto Peligroso</a>
+<a href="#s2" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">02. AWS</a>
+<a href="#s3" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">03. Azure</a>
+<a href="#s4" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">04. GCP</a>
+<a href="#s5" style="text-decoration:none; color:#64748b; font-size:14px; font-weight:600; transition:all 0.2s; border-left:2px solid transparent; margin-left:-16px; padding-left:14px;">05. Coste y Estrategia</a>
+</nav>
+</div>
+</aside>
+</div>
 <!-- ARTÍCULOS RELACIONADOS -->
 <div class="related-section">
-    <div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
-    <div class="related-grid">
-        <a class="related-card" href="ha-kubernetes.html">
-            <div class="r-meta">Alta Disponibilidad · Kubernetes</div>
-            <div class="r-title">HA en Kubernetes: PodDisruptionBudgets y el mito de la autocuración</div>
-            <div class="r-desc">Si tus clústeres K8s viven en estos mismos clouds, la distribución multi-zona se combina directamente con esto.</div>
-            <span class="r-link">Leer artículo →</span>
-        </a>
-        <a class="related-card" href="vsphere-ha-drs.html">
-            <div class="r-meta">Alta Disponibilidad · VMware</div>
-            <div class="r-title">vSphere HA y DRS (Distributed Resource Scheduler): Clústeres que se Curan Solos</div>
-            <div class="r-desc">Para comparar: así es el mismo problema resuelto on-premises, sin la capa de abstracción del cloud provider.</div>
-            <span class="r-link">Leer artículo →</span>
-        </a>
-        <a class="related-card" href="windows-failover-clustering.html">
-            <div class="r-meta">Alta Disponibilidad · Windows Server</div>
-            <div class="r-title">Windows Failover Clustering: quorum, CSV (Cluster Shared Volume) y el detalle que nadie revisa</div>
-            <div class="r-desc">Configuración real de Failover Clustering en Windows Server, sin la parte que solo sale mal en producción.</div>
-            <span class="r-link">Leer artículo →</span>
-        </a>
-    </div>
+<div class="related-label">Sigue Leyendo — Artículos Relacionados</div>
+<div class="related-grid">
+<a class="related-card" href="ha-kubernetes.html">
+<div class="r-meta">Alta Disponibilidad · Kubernetes</div>
+<div class="r-title">HA en Kubernetes: PodDisruptionBudgets y el mito de la autocuración</div>
+<div class="r-desc">Si tus clústeres K8s viven en estos mismos clouds, la distribución multi-zona se combina directamente con esto.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+<a class="related-card" href="vsphere-ha-drs.html">
+<div class="r-meta">Alta Disponibilidad · VMware</div>
+<div class="r-title">vSphere HA y DRS (Distributed Resource Scheduler): Clústeres que se Curan Solos</div>
+<div class="r-desc">Para comparar: así es el mismo problema resuelto on-premises, sin la capa de abstracción del cloud provider.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
+<a class="related-card" href="windows-failover-clustering.html">
+<div class="r-meta">Alta Disponibilidad · Windows Server</div>
+<div class="r-title">Windows Failover Clustering: quorum, CSV (Cluster Shared Volume) y el detalle que nadie revisa</div>
+<div class="r-desc">Configuración real de Failover Clustering en Windows Server, sin la parte que solo sale mal en producción.</div>
+<span class="r-link">Leer artículo →</span>
+</a>
 </div>
-
+</div>
 <div id="footer-container"></div>
-
 </div>
 </div>
-
 <script src="../../js/menu.js"></script>
 <script src="../../js/footer.js"></script>
 <script>
@@ -365,6 +339,5 @@ function toggleZoom(element) {
     }
 }
 </script>
-
 </body>
 </html>
