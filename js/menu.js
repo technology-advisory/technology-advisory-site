@@ -465,7 +465,7 @@ document.addEventListener("DOMContentLoaded", function() {
     /* --- Móvil: acordeón para submenús --- */
     document.querySelectorAll('.has-sub > .nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
-            if (window.innerWidth <= 1040) {
+            if (window.innerWidth <= 760) {
                 e.preventDefault();
                 e.stopPropagation();
                 const panel = this.nextElementSibling;
