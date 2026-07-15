@@ -337,7 +337,7 @@ document.addEventListener("DOMContentLoaded", function() {
             /* ---- HAMBURGER ---- */
             .hamburger {
                 display: none; background: none; border: none; cursor: pointer;
-                padding: 8px; color: var(--ink); flex-shrink: 0; width: 40px; height: 40px;
+                padding: 6px; color: var(--ink); flex-shrink: 0; width: 34px; height: 34px;
             }
             .hamburger svg {
                 width: 100%; height: 100%; stroke: var(--ink); stroke-width: 2;
