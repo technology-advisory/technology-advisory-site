@@ -1,4 +1,4 @@
-/* Menu.js - Technology Advisory - Dossier técnico + submenús por área */
+/* Menu.js - Technology Advisory - Dossier técnico + submenús por área (CORREGIDO) */
 
 document.addEventListener("DOMContentLoaded", function() {
     const menuContainer = document.getElementById("menu-container");
@@ -345,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             /* ---- RESPONSIVE ---- */
-            @media (max-width: 760px) {
+            @media (max-width: 1024px) { /* --- CORRECCIÓN: Breakpoint subido --- */
                 .hamburger { display: block; }
                 .logo-link { flex: 1; }
                 .nav-list {
@@ -465,7 +465,7 @@ document.addEventListener("DOMContentLoaded", function() {
     /* --- Móvil: acordeón para submenús --- */
     document.querySelectorAll('.has-sub > .nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
-            if (window.innerWidth <= 760) {
+            if (window.innerWidth <= 1024) { /* --- CORRECCIÓN: Breakpoint subido --- */
                 e.preventDefault();
                 e.stopPropagation();
                 const panel = this.nextElementSibling;
