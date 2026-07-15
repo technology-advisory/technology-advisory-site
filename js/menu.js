@@ -345,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             /* ---- RESPONSIVE ---- */
-            @media (max-width: 1040px) {
+            @media (max-width: 760px) {
                 .hamburger { display: block; }
                 .logo-link { flex: 1; }
                 .nav-list {
