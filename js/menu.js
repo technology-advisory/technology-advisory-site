@@ -180,29 +180,29 @@ document.addEventListener("DOMContentLoaded", function() {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                gap: 0.75rem;
-                padding: 0.78rem 1.25rem;
+                gap: 0.55rem;
+                padding: 0.62rem 1rem;
             }
             .logo-link {
                 font-family: var(--font-display);
-                font-size: 0.98rem;
+                font-size: 0.90rem;
                 font-weight: 700;
                 color: var(--ink);
                 text-decoration: none;
                 display: flex;
                 align-items: center;
-                gap: 0.42rem;
+                gap: 0.34rem;
                 white-space: nowrap;
                 letter-spacing: -0.01em;
             }
             .logo-link svg {
-                width: 22px; height: 22px;
-                min-width: 22px; flex: 0 0 22px;
+                width: 20px; height: 20px;
+                min-width: 20px; flex: 0 0 20px;
                 stroke: var(--accent); stroke-width: 2.2; fill: none;
                 stroke-linecap: round; stroke-linejoin: round;
             }
             .nav-list {
-                display: flex; gap: 0.78rem;
+                display: flex; gap: 0.52rem;
                 list-style: none; padding: 0; margin: 0;
                 align-items: center;
             }
@@ -212,22 +212,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 text-decoration: none;
                 color: var(--text-muted);
                 font-weight: 400;
-                font-size: 0.66rem;
+                font-size: 0.68rem;
                 letter-spacing: 0.02em;
                 text-transform: uppercase;
                 transition: color 0.2s;
                 cursor: pointer;
-                display: flex; align-items: center; gap: 5px;
-                padding: 6px 0;
+                display: flex; align-items: center; gap: 4px;
+                padding: 5px 0;
             }
             .nav-link svg:not(.chevron) {
-                width: 13px; height: 13px;
+                width: 12px; height: 12px;
                 stroke: currentColor; fill: none; stroke-width: 2;
                 stroke-linecap: round; stroke-linejoin: round;
                 flex-shrink: 0;
             }
             .chevron {
-                width: 9px !important; height: 9px !important;
+                width: 8px !important; height: 8px !important;
                 stroke: currentColor; fill: none; stroke-width: 2.5;
                 stroke-linecap: round; stroke-linejoin: round;
                 transition: transform 0.2s;
@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 color: #ffffff;
                 background: var(--accent);
                 border: 1px solid var(--accent);
-                padding: 6px 10px;
+                padding: 5px 9px;
                 border-radius: 6px;
                 font-weight: 500;
             }
@@ -337,7 +337,7 @@ document.addEventListener("DOMContentLoaded", function() {
             /* ---- HAMBURGER ---- */
             .hamburger {
                 display: none; background: none; border: none; cursor: pointer;
-                padding: 6px; color: var(--ink); flex-shrink: 0; width: 34px; height: 34px;
+                padding: 8px; color: var(--ink); flex-shrink: 0; width: 40px; height: 40px;
             }
             .hamburger svg {
                 width: 100%; height: 100%; stroke: var(--ink); stroke-width: 2;
@@ -401,8 +401,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 .sub-item:hover { padding-left: 2.8rem; }
             }
             @media (max-width: 480px) {
-                .nav-container { padding: 0.8rem 1.1rem; }
-                .logo-link { font-size: 0.98rem; }
+                .nav-container { padding: 0.65rem 0.9rem; }
+                .logo-link { font-size: 0.90rem; }
             }
         </style>
 
