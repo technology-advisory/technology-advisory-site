@@ -345,7 +345,32 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             /* ---- RESPONSIVE ---- */
-            @media (max-width: 1024px) { /* --- CORRECCIÓN: Breakpoint subido --- */
+            
+@media (min-width: 769px) and (max-width: 1250px) {
+  .main-nav a,
+  .main-nav button,
+  .nav-link,
+  .nav-item > a {
+    font-size: 11px !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  .main-nav,
+  .main-nav ul,
+  .nav-menu {
+    gap: 7px !important;
+  }
+
+  .main-nav a,
+  .main-nav button,
+  .nav-link,
+  .nav-item > a {
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+  }
+}
+
+@media (max-width: 768px) {
                 .hamburger { display: block; }
                 .logo-link { flex: 1; }
                 .nav-list {
@@ -465,7 +490,7 @@ document.addEventListener("DOMContentLoaded", function() {
     /* --- Móvil: acordeón para submenús --- */
     document.querySelectorAll('.has-sub > .nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
-            if (window.innerWidth <= 1024) { /* --- CORRECCIÓN: Breakpoint subido --- */
+            if (window.innerWidth <= 768) {
                 e.preventDefault();
                 e.stopPropagation();
                 const panel = this.nextElementSibling;
