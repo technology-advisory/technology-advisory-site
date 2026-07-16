@@ -1,4 +1,4 @@
-/* Menu.js - Technology Advisory - Dossier técnico + submenús por área (CORREGIDO) */
+/* Menu.js - Technology Advisory - Dossier técnico + submenús por área */
 
 document.addEventListener("DOMContentLoaded", function() {
     const menuContainer = document.getElementById("menu-container");
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 stroke-linecap: round; stroke-linejoin: round;
             }
             .nav-list {
-                display: flex; gap: 0.52rem;
+                display: flex; gap: 0.35rem;
                 list-style: none; padding: 0; margin: 0;
                 align-items: center;
             }
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 text-decoration: none;
                 color: var(--text-muted);
                 font-weight: 400;
-                font-size: 0.68rem;
+                font-size: 0.60rem;
                 letter-spacing: 0.02em;
                 text-transform: uppercase;
                 transition: color 0.2s;
@@ -345,32 +345,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             /* ---- RESPONSIVE ---- */
-            
-@media (min-width: 769px) and (max-width: 1250px) {
-  .main-nav a,
-  .main-nav button,
-  .nav-link,
-  .nav-item > a {
-    font-size: 11px !important;
-    letter-spacing: 0.02em !important;
-  }
-
-  .main-nav,
-  .main-nav ul,
-  .nav-menu {
-    gap: 7px !important;
-  }
-
-  .main-nav a,
-  .main-nav button,
-  .nav-link,
-  .nav-item > a {
-    padding-left: 2px !important;
-    padding-right: 2px !important;
-  }
-}
-
-@media (max-width: 768px) {
+            @media (max-width: 760px) {
                 .hamburger { display: block; }
                 .logo-link { flex: 1; }
                 .nav-list {
@@ -490,7 +465,7 @@ document.addEventListener("DOMContentLoaded", function() {
     /* --- Móvil: acordeón para submenús --- */
     document.querySelectorAll('.has-sub > .nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 760) {
                 e.preventDefault();
                 e.stopPropagation();
                 const panel = this.nextElementSibling;
