@@ -1,12 +1,12 @@
 {
   "schema_version": 4,
   "title": "Fortinet PSIRT Intelligence",
-  "last_updated_at": "2026-07-16T23:39:09.622072Z",
+  "last_updated_at": "2026-07-17T07:04:34.370719Z",
   "source": "Fortinet Product Security Incident Response Team",
   "source_url": "https://www.fortiguard.com/psirt",
   "feed_url": "https://filestore.fortinet.com/fortiguard/rss/ir.xml",
   "raw_xml_file": "data/raw/fortinet-psirt/rss.xml",
-  "raw_xml_sha256": "984744a1a868196ef1ab165722736856ab43869bdb264ffc2f2dd272ca9fdaa2",
+  "raw_xml_sha256": "30f59259d630b22725c5c696b3f063aa16741da0131916ad2c25e9cf35a8d9ef",
   "total_advisories": 61,
   "total_critical": 6,
   "total_high": 9,
@@ -90,7 +90,7 @@
         },
         {
           "Version": "FortiOS 7.6",
-          "Affected": "7.6.0 through 7.6.2",
+          "Affected": "7.6.0 through 7.6.3",
           "Solution": "Upgrade to 7.6.4 or above"
         },
         {
@@ -101,6 +101,16 @@
         {
           "Version": "FortiOS 7.2",
           "Affected": "7.2 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiOS 7.0",
+          "Affected": "7.0 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiOS 6.4",
+          "Affected": "6.4 all versions",
           "Solution": "Migrate to a fixed release"
         },
         {
@@ -117,6 +127,11 @@
           "Version": "FortiProxy 7.2",
           "Affected": "7.2 all versions",
           "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiProxy 7.0",
+          "Affected": "7.0 all versions",
+          "Solution": "Migrate to a fixed release"
         }
       ],
       "workaround": null,
@@ -124,7 +139,7 @@
       "timeline": [
         "2026-07-14: Initial publication"
       ],
-      "detail_text_sha256": "34540d545612f99ba1d79809a9bcb6e8aec7b81c734e879d0a9128a254382807"
+      "detail_text_sha256": "d083abb633d396f6d03c62793f1b08e69b09bf07d4f5a561fadbdc87eb858e18"
     },
     {
       "id": "d04ed05f95c3fdcc0d0fb389",
