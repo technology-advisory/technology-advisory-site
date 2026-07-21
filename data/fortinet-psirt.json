@@ -1,16 +1,16 @@
 {
   "schema_version": 4,
   "title": "Fortinet PSIRT Intelligence",
-  "last_updated_at": "2026-07-21T12:12:18.741917Z",
+  "last_updated_at": "2026-07-21T18:01:16.481786Z",
   "source": "Fortinet Product Security Incident Response Team",
   "source_url": "https://www.fortiguard.com/psirt",
   "feed_url": "https://filestore.fortinet.com/fortiguard/rss/ir.xml",
   "raw_xml_file": "data/raw/fortinet-psirt/rss.xml",
-  "raw_xml_sha256": "d4def9a6df25765a5c530fd27ac05f7b3f9f6ebd48d75dc56e5d7a22667c6db2",
+  "raw_xml_sha256": "3addf82c1fb92d9d071404e07949ac7f99fe082ef5b6e033f6ce808f06be6c69",
   "total_advisories": 61,
   "total_critical": 6,
   "total_high": 9,
-  "total_with_cve": 59,
+  "total_with_cve": 60,
   "total_known_exploited": 2,
   "total_products": 37,
   "products": [
@@ -4099,25 +4099,61 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-096",
       "published_at": "2026-03-10T07:00:00Z",
       "updated_at": "2026-03-10T07:00:00Z",
-      "summary": "CVSSv3 Score:\n6.7\nAn Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability [CWE-78] in FortiSandbox Cloud and FortiSandbox PaaS WEB UI may allow a privileged attacker with super-admin profile and CLI access to execute unauthorized code or commands via crafted HTTP requests.\nRevised on 2026-03-26 00:00:00",
-      "cves": [],
+      "summary": "An Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability [CWE-78] in FortiSandbox Cloud and FortiSandbox PaaS WEB UI may allow a privileged attacker with super-admin profile and CLI access to execute unauthorized code or commands via crafted HTTP requests.",
+      "cves": [
+        "CVE-2026-25836"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
+      "ir_number": "FG-IR-26-096",
+      "summary_detail": "An Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability [CWE-78] in FortiSandbox Cloud and FortiSandbox PaaS WEB UI may allow a privileged attacker with super-admin profile and CLI access to execute unauthorized code or commands via crafted HTTP requests.",
+      "component": "GUI",
+      "severity": "medium",
+      "cvss": 6.7,
+      "attack_type": "Authenticated",
+      "known_exploited": false,
+      "impact": "Execute unauthorized code or commands",
+      "discovered": "Internal",
+      "cwes": [
+        "CWE-78"
+      ],
+      "products": [
+        "FortiSandbox Cloud",
+        "FortiSandbox PaaS"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiSandbox Cloud 5.0",
+          "Affected": "5.0.4",
+          "Solution": "Upgrade to 5.0.5 or above"
+        },
+        {
+          "Version": "FortiSandbox Cloud 4.4",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiSandbox PaaS 23.4",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiSandbox PaaS 5.0",
+          "Affected": "5.0.4",
+          "Solution": "Upgrade to 5.0.5 or above"
+        },
+        {
+          "Version": "FortiSandbox PaaS 4.4",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        }
+      ],
       "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "acknowledgement": "Internally discovered and reported by Adham El karn of Fortinet Product Security team.",
+      "timeline": [
+        "2026-03-10: Initial publication",
+        "2026-03-26: PaaS added"
+      ],
+      "detail_text_sha256": "f2b6563639b1b0c45a8fcdeafc84791956f0777cc007ee37d271fb4cd89a23a7"
     },
     {
       "id": "f2e488903fd01dcd6aa67474",
