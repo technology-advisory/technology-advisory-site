@@ -139,26 +139,11 @@ document.addEventListener("DOMContentLoaded", function() {
                         <a href="${basePath}tools/index.html" class="sub-see-all">Ver todos →</a>
                     </div>
                     <div class="sub-grid">
-                        <a class="sub-item" href="${basePath}tools/cisa-kev/index.html">
-                            <span class="sub-num">T.1</span>
-                            <span class="sub-name">CISA KEV Intelligence</span>
-                        </a>
-                        <a class="sub-item" href="${basePath}tools/euvd/index.html">
-                            <span class="sub-num">T.2</span>
-                            <span class="sub-name">EUVD Intelligence</span>
-                        </a>
-                        <a class="sub-item" href="${basePath}tools/incibe-cert/index.html">
-                            <span class="sub-num">T.3</span>
-                            <span class="sub-name">INCIBE-CERT Intelligence</span>
-                        </a>
-                        <a class="sub-item" href="${basePath}tools/sonicwall-psirt/index.html">
-                            <span class="sub-num">T.4</span>
-                            <span class="sub-name">SonicWall PSIRT Intelligence</span>
-                        </a>
-                        <a class="sub-item" href="${basePath}tools/fortinet-psirt/index.html">
-                            <span class="sub-num">T.5</span>
-                            <span class="sub-name">Fortinet PSIRT Intelligence</span>
-                        </a>
+                        <a class="sub-item" href="${basePath}tools/threat-intelligence/index.html"><span class="sub-num">TI</span><span class="sub-name">Threat Intelligence</span></a>
+                        <a class="sub-item" href="${basePath}tools/vulnerabilities/index.html"><span class="sub-num">TI.1</span><span class="sub-name">Vulnerabilidades</span></a>
+                        <a class="sub-item" href="${basePath}tools/vendor-advisories/index.html"><span class="sub-num">TI.2</span><span class="sub-name">Vendor Advisories</span></a>
+                        <a class="sub-item" href="${basePath}tools/cloud-security/index.html"><span class="sub-num">TI.3</span><span class="sub-name">Cloud Security</span></a>
+                        <a class="sub-item" href="${basePath}tools/vulnerability-intelligence/index.html"><span class="sub-num">TI.4</span><span class="sub-name">Vulnerability Intelligence</span></a>
                     </div>
                 </div>
             </li>`;

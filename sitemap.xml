@@ -651,4 +651,8 @@
   <url>
     <loc>https://technology-advisory.es/tools/sonicwall-psirt/</loc>
   </url>
+
+<url><loc>https://technology-advisory.es/tools/vendor-advisories/</loc></url>
+<url><loc>https://technology-advisory.es/tools/cloud-security/</loc></url>
+<url><loc>https://technology-advisory.es/tools/vulnerability-intelligence/</loc></url>
 </urlset>

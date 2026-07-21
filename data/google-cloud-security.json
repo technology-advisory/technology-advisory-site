@@ -1,0 +1,1894 @@
+{
+  "schema_version": 2,
+  "source_id": "google-cloud-security",
+  "generated_at": "2026-07-21T17:55:01.930511Z",
+  "total": 30,
+  "items": [
+    {
+      "advisory_id": "GCP-2026-048",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-048",
+      "title": "GCP-2026-048",
+      "description": "A privilege escalation vulnerability was addressed in Developer Connect. Previously, for GitLab Enterprise and Bitbucket Data Center connections, when Secret Manager secrets were retrieved, permissions were checked against the Developer Connect service agent (P4SA) credentials only. Developer Connect now validates that both the calling principal and the P4SA have the required permissions on the referenced secrets. For instructions and more details, see the Developer Connect security bulletin .",
+      "published_at": "2026-07-13",
+      "updated_at": "2026-07-13",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-048",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [],
+      "cwes": [],
+      "severity": "medium",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": null,
+      "products": [
+        "Developer Connect"
+      ],
+      "affected_products": [
+        "Developer Connect"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "vulnerability was addressed in Developer Connect. Developer Connect now validates that both the calling principal and the P4SA have the required permissions on the referenced secrets.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/developer-connect/docs/security-bulletins#gcp-2026-048",
+          "title": "Developer Connect security bulletin"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.320640Z",
+      "quality_score": 79,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "c7c813e41753957bd4c1e168c35cb01e655404f943fb569d5259cb8dd3233bf1"
+    },
+    {
+      "advisory_id": "GCP-2026-047",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-047",
+      "title": "GCP-2026-047",
+      "description": "A Missing Authorization vulnerability was discovered in repositories in BigQuery, Dataform, and Colab Enterprise. What should I do? No customer action is required. Google has already applied mitigations to all impacted products and services. What vulnerabilities are being addressed? During repository creation, an authenticated attacker could potentially escalate their permissions and perform cross-tenant repository takeover.",
+      "published_at": "2026-07-13",
+      "updated_at": "2026-07-13",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-047",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-14934"
+      ],
+      "cwes": [],
+      "severity": "critical",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "BigQuery"
+      ],
+      "affected_products": [
+        "BigQuery"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "No customer action is required.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-14934",
+          "title": "CVE-2026-14934"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.321628Z",
+      "quality_score": 93,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "60b8286d0efbe7d99d2a206b28efa7303ede0f107604f655adbd5f2c45274034"
+    },
+    {
+      "advisory_id": "GCP-2026-046",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-046",
+      "title": "GCP-2026-046",
+      "description": "A virtualization vulnerability has been identified in the KVM x86 shadow paging and nested virtualization configurations. Because an attacker operating a virtual machine with nested virtualization could escape hypervisor boundary isolation to compromise the underlying physical host, any x86 virtual machine (whether nested or non-nested) hosted on an Intel-based server supporting nested virtualization is potentially exposed. What should I do? Google is deploying live hypervisor hotpatches across all managed Compute Engine host servers globally. No action is required for managed Compute Engine virtual machines or Google Kubernetes Engine clusters. Because remediation is performed transparently at the physical host hypervisor level, customer VM downtime, reboots, or manual upgrades are not required. Customers operating self-managed virtualized environments or custom host hypervisors outside standard managed Compute Engine infrastructure should ensure their host Linux kernel is updated with the upstream patch as soon as it is made available by their operating system vendor. What vulnerabilities are being addressed? The vulnerability (CVE-2026-53359) exploits a use-after-free error in the x86 shadow paging and nested page table translation routines. Google has observed no evidence of active customer exploitation in production environments. Live patching and host-level monitoring have been implemented globally to mitigate risk and detect exploit attempts. High/S0 CVE-2026-53359 (Januscape)",
+      "published_at": "2026-07-06",
+      "updated_at": "2026-07-06",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-046",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-53359"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [],
+      "affected_products": [],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "No action is required for managed Compute Engine virtual machines or Google Kubernetes Engine clusters. Customers operating self-managed virtualized environments or custom host hypervisors outside standard managed Compute Engine infrastructure should ensure their host Linux kernel is updated with the upstream patch as soon as it is made available by their operating system vendor.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-53359",
+          "title": "CVE-2026-53359"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.324299Z",
+      "quality_score": 79,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "products",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "9183936b5314bfe389fa1afbd5d5a2940f6c8be5e2df90e183cd148969df77c1"
+    },
+    {
+      "advisory_id": "GCP-2026-045",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-045",
+      "title": "GCP-2026-045",
+      "description": "A vulnerability was detected in Envoy Proxy where blocked QPACK decoding can cause a Denial-of-Service Attack against the HTTP/3 stack. For instructions and more details, see the Cloud Service Mesh security bulletin . High GHSA-p7c7-7c47-pwch",
+      "published_at": "2026-06-29",
+      "updated_at": "2026-06-29",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-045",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": null,
+      "products": [
+        "Cloud Service Mesh",
+        "Envoy Proxy"
+      ],
+      "affected_products": [
+        "Cloud Service Mesh",
+        "Envoy Proxy"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/service-mesh/docs/security-bulletins#gcp-2026-045",
+          "title": "Cloud Service Mesh security bulletin"
+        },
+        {
+          "url": "https://github.com/envoyproxy/envoy/security/advisories/GHSA-p7c7-7c47-pwch",
+          "title": "GHSA-p7c7-7c47-pwch"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.325170Z",
+      "quality_score": 65,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "solution",
+        "cves",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "869977abf26247f29d4b5928595eb14a22618a6732bbbafd006c0723c3879323"
+    },
+    {
+      "advisory_id": "GCP-2026-044",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-044",
+      "title": "GCP-2026-044",
+      "description": "A vulnerability was detected in Application Integration's JavaScript task, which was using the Rhino JavaScript engine. This only impacted tasks published before January 2025. For details and instructions, see the Application Integration security bulletin .",
+      "published_at": "2026-06-25",
+      "updated_at": "2026-06-25",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-044",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2025-0982"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "Application Integration"
+      ],
+      "affected_products": [
+        "Application Integration"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/application-integration/docs/security-bulletins#gcp-2026-044",
+          "title": "Application Integration security bulletin"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-0982",
+          "title": "CVE-2025-0982"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.325855Z",
+      "quality_score": 79,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "solution",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "9b7c447b411706f30dd53582d705ca4d9ac618a7512bca3bd5f339cdee9a1717"
+    },
+    {
+      "advisory_id": "GCP-2026-043",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-043",
+      "title": "GCP-2026-043",
+      "description": "A vulnerability was found in Firebase Studio where the GetSignedGcsUrl RPC allowed authenticated users to list buckets and download deployment source code of other tenants. No action is required to mitigate this vulnerability as the fix has been deployed to the backend service. As a precautionary measure, users who stored sensitive information, such as API keys (for example, GEMINI_API_KEY ), within their Firebase Studio workspace may choose to rotate these keys. For instructions, see the Firebase Studio troubleshooting guide .",
+      "published_at": "2026-06-24",
+      "updated_at": "2026-06-24",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-043",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-12715"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "Firebase Studio"
+      ],
+      "affected_products": [
+        "Firebase Studio"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "No action is required to mitigate this vulnerability as the fix has been deployed to the backend service. As a precautionary measure, users who stored sensitive information, such as API keys (for example, GEMINI_API_KEY ), within their Firebase Studio workspace may choose to rotate these keys.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://firebase.google.com/docs/studio/troubleshooting#rotate-gemini-key",
+          "title": "Firebase Studio troubleshooting guide"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-12715",
+          "title": "CVE-2026-12715"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.326688Z",
+      "quality_score": 93,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "6d634318dbedf49a9f54372b2b2d2cc0f28cc04db7366aa748cfb0a8a9889862"
+    },
+    {
+      "advisory_id": "GCP-2026-042",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-042",
+      "title": "GCP-2026-042",
+      "description": "A privilege escalation vulnerability was addressed in Cloud Build. Previously, for GitLab Enterprise and Bitbucket Data Center connections, when Secret Manager secrets were retrieved, permissions were checked against the Cloud Build service agent (P4SA) credentials only. Cloud Build now validates that both the calling principal and the P4SA have the required permissions on the referenced secrets. For instructions and more details, see the Cloud Build security bulletin .",
+      "published_at": "2026-06-24",
+      "updated_at": "2026-06-24",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-042",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [],
+      "cwes": [],
+      "severity": "low",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": null,
+      "products": [
+        "Cloud Build"
+      ],
+      "affected_products": [
+        "Cloud Build"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "vulnerability was addressed in Cloud Build. Cloud Build now validates that both the calling principal and the P4SA have the required permissions on the referenced secrets.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/build/docs/security-bulletins#gcp-2026-042",
+          "title": "Cloud Build security bulletin"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.327549Z",
+      "quality_score": 79,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "f6ecd3ae0f194444a7c60aad37df6a908456f0c92b0e4a6a83951bc56dbab467"
+    },
+    {
+      "advisory_id": "GCP-2026-041",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-041",
+      "title": "GCP-2026-041",
+      "description": "A recent security investigation was conducted regarding log4j vulnerabilities (CVE-2026-34480 and CVE-2026-34477) reported in Apigee Edge for Private Cloud. Google has determined that Apigee Edge for Private Cloud is not vulnerable to these CVEs. No customer action is required. For more information, see the Apigee security bulletin .",
+      "published_at": "2026-06-24",
+      "updated_at": "2026-06-24",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-041",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-34477",
+        "CVE-2026-34480"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "Apigee",
+        "Apigee Edge for Private Cloud"
+      ],
+      "affected_products": [
+        "Apigee",
+        "Apigee Edge for Private Cloud"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "No customer action is required.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/security-bulletins/security-bulletins#gcp-2026-041",
+          "title": "Apigee security bulletin"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-34480",
+          "title": "CVE-2026-34480"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-34477",
+          "title": "CVE-2026-34477"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.328442Z",
+      "quality_score": 93,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "9bda7c76a0a30abb5739eeb916c6bc5e4ebecdfbae92b6293917ea217794f8b8"
+    },
+    {
+      "advisory_id": "GCP-2026-040",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-040",
+      "title": "GCP-2026-040",
+      "description": "A series of vulnerabilities were discovered in Envoy Proxy. For instructions and more details, see the Cloud Service Mesh security bulletin . Moderate to",
+      "published_at": "2026-06-23",
+      "updated_at": "2026-06-23",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-040",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-47204",
+        "CVE-2026-47205",
+        "CVE-2026-47207",
+        "CVE-2026-47220",
+        "CVE-2026-47221",
+        "CVE-2026-47692",
+        "CVE-2026-47775",
+        "CVE-2026-47778",
+        "CVE-2026-48042",
+        "CVE-2026-48044",
+        "CVE-2026-48090",
+        "CVE-2026-48497",
+        "CVE-2026-48706",
+        "CVE-2026-48743"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "Cloud Service Mesh",
+        "Envoy Proxy"
+      ],
+      "affected_products": [
+        "Cloud Service Mesh",
+        "Envoy Proxy"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/service-mesh/docs/security-bulletins#gcp-2026-039",
+          "title": "Cloud Service Mesh security bulletin"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-47692",
+          "title": "CVE-2026-47692"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-47207",
+          "title": "CVE-2026-47207"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-47205",
+          "title": "CVE-2026-47205"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-47220",
+          "title": "CVE-2026-47220"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-47221",
+          "title": "CVE-2026-47221"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-48044",
+          "title": "CVE-2026-48044"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-48090",
+          "title": "CVE-2026-48090"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-47778",
+          "title": "CVE-2026-47778"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-47204",
+          "title": "CVE-2026-47204"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-48497",
+          "title": "CVE-2026-48497"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-48706",
+          "title": "CVE-2026-48706"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-48743",
+          "title": "CVE-2026-48743"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-47775",
+          "title": "CVE-2026-47775"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-48042",
+          "title": "CVE-2026-48042"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.329343Z",
+      "quality_score": 79,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "solution",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "6cabce97d4ea22b39cacf78cb8f4df643746e9afdf14d279a7278ea9cf438176"
+    },
+    {
+      "advisory_id": "GCP-2026-039",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-039",
+      "title": "GCP-2026-039",
+      "description": "A vulnerability in Cloud Logging could have allowed attackers to hijack log sink destinations by recreating the target Cloud Storage bucket in a project controlled by the attacker. This issue could have resulted in the continuous routing of sensitive logs to an unauthorized third party. For more information, see the Google Cloud Observability security bulletin .",
+      "published_at": "2026-06-22",
+      "updated_at": "2026-06-22",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-039",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [],
+      "cwes": [],
+      "severity": "medium",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": null,
+      "products": [
+        "Google Cloud Observability"
+      ],
+      "affected_products": [
+        "Google Cloud Observability"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/stackdriver/security-bulletins#GCP-2026-039",
+          "title": "Google Cloud Observability security bulletin"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.330259Z",
+      "quality_score": 65,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "solution",
+        "cves",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "31c7d5b19c242fe4fcb568c3e1a959558404bfacdf69ff1580348351392abcb5"
+    },
+    {
+      "advisory_id": "GCP-2026-038",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-038",
+      "title": "GCP-2026-038",
+      "description": "A vulnerability was found in App Engine where the GetDashboardAppStats GraphQL private API operation in the Google Cloud console leaked cross-tenant request logs. No action is required. This vulnerability has been fixed.",
+      "published_at": "2026-06-22",
+      "updated_at": "2026-06-22",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-038",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-8934"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "App Engine"
+      ],
+      "affected_products": [
+        "App Engine"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "No action is required. This vulnerability has been fixed.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8934",
+          "title": "CVE-2026-8934"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.330889Z",
+      "quality_score": 93,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "0e0e77530fa3a2794f7a0b5878166185d5c31ec5a4068b9339cd4c63ba9072b3"
+    },
+    {
+      "advisory_id": "GCP-2026-037",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-037",
+      "title": "GCP-2026-037",
+      "description": "2026-06-20 Update: Added GKE patch versions containing the fixes for Container-Optimized OS node images for minor versions 1.35 and 1.36. Patches for Ubuntu node images are still pending and in progress. 2026-06-19 Update: Added GKE patch versions containing the fixes for Container-Optimized OS node images for minor versions from 1.30 to 1.34. Patches for Ubuntu node images and for minor version 1.35 and 1.36 for Container-Optimized OS node images are in progress. Multiple vulnerabilities have been discovered in containerd (the GKE container runtime). These vulnerabilities allow attackers with permissions to create pods to bypass Kubernetes security boundaries and perform host compromise, cache poisoning, and denial of service. For instructions and more details, see the GKE security bulletin",
+      "published_at": "2026-06-18",
+      "updated_at": "2026-06-20",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-037",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-47262",
+        "CVE-2026-50195",
+        "CVE-2026-53488",
+        "CVE-2026-53489",
+        "CVE-2026-53492"
+      ],
+      "cwes": [],
+      "severity": "critical",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "GKE"
+      ],
+      "affected_products": [
+        "GKE"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "2026-06-20 Update: Added GKE patch versions containing the fixes for Container-Optimized OS node images for minor versions 1. 2026-06-19 Update: Added GKE patch versions containing the fixes for Container-Optimized OS node images for minor versions from 1.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-037",
+          "title": "GKE security bulletin"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-50195",
+          "title": "CVE-2026-50195"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-53488",
+          "title": "CVE-2026-53488"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-53492",
+          "title": "CVE-2026-53492"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-53489",
+          "title": "CVE-2026-53489"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-47262",
+          "title": "CVE-2026-47262"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.332377Z",
+      "quality_score": 93,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "4c368d9ca85e5a78b9bc0e96da82afca515ddf349ead7063deed136abb7fd899"
+    },
+    {
+      "advisory_id": "GCP-2026-036",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-036",
+      "title": "GCP-2026-036",
+      "description": "ARM has announced CVE-2025-10263, an architectural issue affecting some Arm cores which lets an attacker bypass translation stages or GPT protections under certain conditions. This vulnerability lets an attacker at a lower exception level to write to memory owned by a higher exception level, thereby escalating privileges. This issue does not affect memory reads. For more information, see the following bulletins: Compute Engine security bulletin",
+      "published_at": "2026-06-09",
+      "updated_at": "2026-06-09",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-036",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2025-10263"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "Compute Engine"
+      ],
+      "affected_products": [
+        "Compute Engine"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/compute/docs/security-bulletins#gcp-2026-036",
+          "title": "Compute Engine security bulletin"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-10263",
+          "title": "CVE-2025-10263"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.333684Z",
+      "quality_score": 79,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "solution",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "67afd19cb7c7bc6a8566914e26da2733c968af53d0c2544fe14eceb95999372c"
+    },
+    {
+      "advisory_id": "GCP-2026-035",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-035",
+      "title": "GCP-2026-035",
+      "description": "A vulnerability was found in Envoy where HTTP/2 downstream request processing allow an unauthenticated remote client to trigger excessive memory consumption, potentially resulting in OOM termination of the Envoy process and denial of service. For instructions and more details, see the Cloud Service Mesh security bulletin .",
+      "published_at": "2026-06-08",
+      "updated_at": "2026-06-08",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-035",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-47774"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "Cloud Service Mesh",
+        "Envoy"
+      ],
+      "affected_products": [
+        "Cloud Service Mesh",
+        "Envoy"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/service-mesh/docs/security-bulletins#gcp-2026-035",
+          "title": "Cloud Service Mesh security bulletin"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2026-47774",
+          "title": "CVE-2026-47774"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.334779Z",
+      "quality_score": 79,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "solution",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "f6c04f5d72e72e577b0701b2034b25050269551c61d202e5c9c9cd31092df5c2"
+    },
+    {
+      "advisory_id": "GCP-2026-034",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-034",
+      "title": "GCP-2026-034",
+      "description": "A vulnerability was found in Apigee where the IntegrationRegion parameter in the SetIntegrationRequest policy lacks validation, allowing for Server-Side Request Forgery (SSRF) and service account token exfiltration. The issue arises when an attacker can control a flow variable used for IntegrationRegion , leading to requests being sent to an attacker-controlled host with the service account token.",
+      "published_at": "2026-05-20",
+      "updated_at": "2026-05-20",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-034",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-2264"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "Apigee"
+      ],
+      "affected_products": [
+        "Apigee"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-2264",
+          "title": "CVE-2026-2264"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.336238Z",
+      "quality_score": 79,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "solution",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "6154effe980c22de4438bedd8ee7f504a128a90fafabe4b79987b3793e422f6b"
+    },
+    {
+      "advisory_id": "GCP-2026-033",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-033",
+      "title": "GCP-2026-033",
+      "description": "2026-07-16 Update: The following versions of GKE are updated with code to fix this vulnerability on Ubuntu. Upgrade your Ubuntu node pools to the following versions or later: 1.30.14-gke.2710000 1.31.14-gke.2116000 1.32.13-gke.1829000 1.33.13-gke.1011000 1.34.9-gke.1131000 1.35.6-gke.1127000 1.36.2-gke.1346000 A container breakout vulnerability CVE-2026-46300 has been found in the Linux kernel, known as Fragnesia. It allows an unprivileged local attacker to escalate to root on the host. For instructions and more details, see the following bulletins: GKE security bulletin GDC software for VMware security bulletin GKE on AWS security bulletin GKE on Azure security bulletin GDC software for bare metal security bulletin",
+      "published_at": "2026-05-14",
+      "updated_at": "2026-07-16",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-033",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-46300"
+      ],
+      "cwes": [],
+      "severity": "medium",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "2026-07-16 Update: The following versions of GKE are updated with code to fix this vulnerability on Ubuntu. Upgrade your Ubuntu node pools to the following versions or later: 1.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-033-gke",
+          "title": "GKE security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-033-gdcvmware",
+          "title": "GDC software for VMware security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-033-gkeaws",
+          "title": "GKE on AWS security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-033-gkeazure",
+          "title": "GKE on Azure security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-033-gdcbm",
+          "title": "GDC software for bare metal security bulletin"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-46300",
+          "title": "CVE-2026-46300"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.338127Z",
+      "quality_score": 93,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "bbf16e2f9a17234bed6b3dbcfba73722ea88bea2943be6d140b9c32ab604f398"
+    },
+    {
+      "advisory_id": "GCP-2026-032",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-032",
+      "title": "GCP-2026-032",
+      "description": "AMD has identified a hardware-level vulnerability in Zen 2 microarchitecture processors (including EPYC and Ryzen series) involving potential corruption within the micro-operation (OP) cache. Under specific conditions, this issue (AMD-SN-7052 / CVE-2025-54518) could lead to security boundary bypasses or unauthorized data access. We have deployed fixes across Google infrastructure to mitigate these issues. For more information, see the Compute Engine security bulletin .",
+      "published_at": "2026-05-12",
+      "updated_at": "2026-05-12",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-032",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2025-54518"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "Compute Engine"
+      ],
+      "affected_products": [
+        "Compute Engine"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "We have deployed fixes across Google infrastructure to mitigate these issues.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/compute/docs/security-bulletins#gcp-2026-032",
+          "title": "Compute Engine security bulletin"
+        },
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-54518",
+          "title": "CVE-2025-54518"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.339492Z",
+      "quality_score": 93,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "bdc5f84f9220e93b7aa60d6e632028e389456d5f25793c0bffe8b7fdd872c7c2"
+    },
+    {
+      "advisory_id": "GCP-2026-031",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-031",
+      "title": "GCP-2026-031",
+      "description": "Researchers discovered a vulnerability in AMD firmware that, due to missing protection, could allow a malicious hypervisor to execute arbitrary code on the AMD Secure Processor (ASP). This allows for the escalation of Memory Mapped I/O (MMIO) read and write permissions, which compromises the confidentiality and integrity of SEV-SNP guests. For more information, see the Compute Engine security bulletin .",
+      "published_at": "2026-05-12",
+      "updated_at": "2026-05-12",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-031",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2024-36315",
+        "CVE-2025-61971",
+        "CVE-2025-61972"
+      ],
+      "cwes": [],
+      "severity": "medium",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "Compute Engine",
+        "AMD firmware"
+      ],
+      "affected_products": [
+        "Compute Engine",
+        "AMD firmware"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/compute/docs/security-bulletins#gcp-2026-031",
+          "title": "Compute Engine security bulletin"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61971",
+          "title": "CVE-2025-61971"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61972",
+          "title": "CVE-2025-61972"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-36315",
+          "title": "CVE-2024-36315"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.340756Z",
+      "quality_score": 79,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "solution",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "22a08668f8f7a87c0311f825408efcdecfa3bfe7c175c6c72bac76e0b39da7b8"
+    },
+    {
+      "advisory_id": "GCP-2026-030",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-030",
+      "title": "GCP-2026-030",
+      "description": "2026-06-24 Update: Added patch versions for GKE. 2026-05-20 Update: Added CVE-2026-43500 and added CVE IDs to exploit paths. The following vulnerabilities were discovered in the Linux kernel that can lead to a privilege escalation on Container-Optimized OS and Ubuntu nodes: CVE-2026-43284 CVE-2026-43500 For instructions and more details, see the following bulletins: GKE security bulletin GDC software for VMware security bulletin GKE on AWS security bulletin GKE on Azure security bulletin GDC software for bare metal security bulletin",
+      "published_at": "2026-05-11",
+      "updated_at": "2026-06-24",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-030",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-43284",
+        "CVE-2026-43500"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "2026-06-24 Update: Added patch versions for GKE. 2026-05-20 Update: Added CVE-2026-43500 and added CVE IDs to exploit paths.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-030-gke",
+          "title": "GKE security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-030-gdcvmware",
+          "title": "GDC software for VMware security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-030-gkeaws",
+          "title": "GKE on AWS security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-030-gkeazure",
+          "title": "GKE on Azure security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-030-gdcbm",
+          "title": "GDC software for bare metal security bulletin"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-43284",
+          "title": "CVE-2026-43284"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.343529Z",
+      "quality_score": 93,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "fc7eaff3ee0a067ab0e40cdf6dcf8dbf714fe5fe1c5bc11eda86b03a4ceb13a9"
+    },
+    {
+      "advisory_id": "GCP-2026-029",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-029",
+      "title": "GCP-2026-029",
+      "description": "Microsoft is updating the Secure Boot certificates originally issued in 2011 to ensure Windows devices continue to verify trusted boot software. These older certificates begin expiring in June 2026. Devices that haven't received the newer 2023 certificates will continue to start and operate normally, and standard Windows updates will continue to install. However, these devices will no longer be able to receive new security protections for the early boot process, including updates to Windows Boot Manager, Secure Boot databases, revocation lists, or mitigations for newly discovered boot-level vulnerabilities. Also, Secure Boot certificate expirations starting in June 2026 affect Linux systems that use Secure Boot. What should I do? Google recommends that customers update their Windows VMs by taking appropriate actions as recommended by Microsoft. Distributions like Ubuntu, Red Hat, and Fedora are already working to provide updated packages signed with the new 2023 key. Refer also to the Broadcom documentation to resolve errors and warnings in VMware virtual machines as Secure Boot certificates approach expiration. After June 2026, systems lacking the 2023 certificate updates may experience failures during new operating system installations or while updating the existing bootloader firmware. Informational Broadcom KB 423893",
+      "published_at": "2026-05-07",
+      "updated_at": "2026-05-07",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-029",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [],
+      "cwes": [],
+      "severity": "informational",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": null,
+      "products": [
+        "June 2026"
+      ],
+      "affected_products": [
+        "June 2026"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "What should I do? Google recommends that customers update their Windows VMs by taking appropriate actions as recommended by Microsoft.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://knowledge.broadcom.com/external/article/423893/secure-boot-certificate-expirations-and.html",
+          "title": "Broadcom documentation"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.346259Z",
+      "quality_score": 79,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "b4bf7de025b59c95323fe6c6a60ce849ed50e9f5e01bda499fcf157c9e066dd5"
+    },
+    {
+      "advisory_id": "GCP-2026-028",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-028",
+      "title": "GCP-2026-028",
+      "description": "CVE-2026-31431 , also known as \"Copy Fail,\" is a high-severity local privilege escalation (LPE) vulnerability in the Linux kernel that allows an unprivileged user to gain root access. Disclosed in late April 2026, it stems from a logic flaw in the kernel's cryptographic subsystem (algif_aead) introduced in 2017. What should I do? Google recommends that customers protect their Linux Guest VMs by updating the kernel on all Linux VMs. Major distributions have released or are rolling out fixes.",
+      "published_at": "2026-05-05",
+      "updated_at": "2026-05-27",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-028",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-31431"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [],
+      "affected_products": [],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://knowledge.broadcom.com/external/article?articleNumber=439189",
+          "title": "CVE-2026-31431"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.347584Z",
+      "quality_score": 65,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "products",
+        "solution",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "38deacaa0263b3e744801cba9dde381d5bbec58da81d446b7566d950cc5c7ca3"
+    },
+    {
+      "advisory_id": "GCP-2026-027",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-027",
+      "title": "GCP-2026-027",
+      "description": "The following vulnerabilities were discovered in the Linux kernel that can lead to a privilege escalation on Container-Optimized OS nodes: CVE-2026-23351 For instructions and more details, see the following bulletins: GKE security bulletin GDC software for VMware security bulletin GKE on AWS security bulletin GKE on Azure security bulletin GDC software for bare metal security bulletin",
+      "published_at": "2026-05-01",
+      "updated_at": "2026-05-01",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-027",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-23351"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-027-gke",
+          "title": "GKE security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-027-gdcvmware",
+          "title": "GDC software for VMware security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-027-gkeaws",
+          "title": "GKE on AWS security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-027-gkeazure",
+          "title": "GKE on Azure security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-027-gdcbm",
+          "title": "GDC software for bare metal security bulletin"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-23351",
+          "title": "CVE-2026-23351"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.350202Z",
+      "quality_score": 79,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "solution",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "c6704ac9856061b6ae76f3352778a3c610377b3947a19d517099a1ff834d0f15"
+    },
+    {
+      "advisory_id": "GCP-2026-026",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-026",
+      "title": "GCP-2026-026",
+      "description": "2026-05-04 Update: Added patch versions for GKE. A vulnerability in the Linux kernel ( CVE-2026-31431 ) allows an unprivileged local attacker to write to the system page cache, potentially leading to local privilege escalation and container escape. For instructions and more details, see the following bulletins: GKE security bulletin GDC software for VMware security bulletin GKE on AWS security bulletin GKE on Azure security bulletin GDC software for bare metal security bulletin",
+      "published_at": "2026-04-30",
+      "updated_at": "2026-05-04",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-026",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-31431"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "2026-05-04 Update: Added patch versions for GKE.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-31431",
+          "title": "CVE-2026-31431"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-026-gke",
+          "title": "GKE security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-026-gdcvmware",
+          "title": "GDC software for VMware security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-026-gkeaws",
+          "title": "GKE on AWS security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-026-gkeazure",
+          "title": "GKE on Azure security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-026-gdcbm",
+          "title": "GDC software for bare metal security bulletin"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.351824Z",
+      "quality_score": 93,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "aaead480357c45e244b8e60b8d0a520c087545ea019ef47cc44632581ec7355b"
+    },
+    {
+      "advisory_id": "GCP-2026-025",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-025",
+      "title": "GCP-2026-025",
+      "description": "The following vulnerabilities were discovered in the Linux kernel that can lead to a privilege escalation on Container-Optimized OS nodes: CVE-2026-23274 For instructions and more details, see the following bulletins: GKE security bulletin GDC software for VMware security bulletin GKE on AWS security bulletin GKE on Azure security bulletin GDC software for bare metal security bulletin",
+      "published_at": "2026-04-30",
+      "updated_at": "2026-04-30",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-025",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-23274"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-025-gke",
+          "title": "GKE security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-025-gdcvmware",
+          "title": "GDC software for VMware security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-025-gkeaws",
+          "title": "GKE on AWS security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-025-gkeazure",
+          "title": "GKE on Azure security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-025-gdcbm",
+          "title": "GDC software for bare metal security bulletin"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-23274",
+          "title": "CVE-2026-23274"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.353768Z",
+      "quality_score": 79,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "solution",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "a53d7481068aa45c70c0acb1eed70a78f6194799dcbde98ea524ae007dabfb1e"
+    },
+    {
+      "advisory_id": "GCP-2026-024",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-024",
+      "title": "GCP-2026-024",
+      "description": "The following vulnerabilities were discovered in the Linux kernel that can lead to a privilege escalation on Container-Optimized OS and Ubuntu nodes: CVE-2025-38248 For instructions and more details, see the following bulletins: GKE security bulletin GDC software for VMware security bulletin GKE on AWS security bulletin GKE on Azure security bulletin GDC software for bare metal security bulletin",
+      "published_at": "2026-04-28",
+      "updated_at": "2026-04-28",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-024",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2025-38248"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-024-gke",
+          "title": "GKE security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-024-gdcvmware",
+          "title": "GDC software for VMware security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-024-gkeaws",
+          "title": "GKE on AWS security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-024-gkeazure",
+          "title": "GKE on Azure security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-024-gdcbm",
+          "title": "GDC software for bare metal security bulletin"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-38248",
+          "title": "CVE-2025-38248"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.356017Z",
+      "quality_score": 79,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "solution",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "7ddc11d1dc69304221f8d9a37fb1965c40f1de84cdce7a548c2811e9b8a709a0"
+    },
+    {
+      "advisory_id": "GCP-2026-023",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-023",
+      "title": "GCP-2026-023",
+      "description": "2026-05-07 Update: Added patch versions for Ubuntu node pools on GKE The following vulnerabilities were discovered in the Linux kernel that can lead to a privilege escalation on Container-Optimized OS nodes: CVE-2026-23074 For instructions and more details, see the following bulletins: GKE security bulletin GDC software for VMware security bulletin GKE on AWS security bulletin GKE on Azure security bulletin GDC software for bare metal security bulletin",
+      "published_at": "2026-04-28",
+      "updated_at": "2026-05-07",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-023",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-23074"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-023-gke",
+          "title": "GKE security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-023-gdcvmware",
+          "title": "GDC software for VMware security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-023-gkeaws",
+          "title": "GKE on AWS security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-023-gkeazure",
+          "title": "GKE on Azure security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-023-gdcbm",
+          "title": "GDC software for bare metal security bulletin"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-23074",
+          "title": "CVE-2026-23074"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.358839Z",
+      "quality_score": 79,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "solution",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "68781bde735473f353511621efb1cd6cdac2b5e26b013f17a91c2ec8a9f6aec7"
+    },
+    {
+      "advisory_id": "GCP-2026-022",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-022",
+      "title": "GCP-2026-022",
+      "description": "The following vulnerabilities were discovered in the Linux kernel that can lead to a privilege escalation on Container-Optimized OS nodes: CVE-2026-23209 For instructions and more details, see the following bulletins: GKE security bulletin GDC software for VMware security bulletin GKE on AWS security bulletin GKE on Azure security bulletin GDC software for bare metal security bulletin",
+      "published_at": "2026-04-16",
+      "updated_at": "2026-04-16",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-022",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-23209"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-022-gke",
+          "title": "GKE security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-022-gdcvmware",
+          "title": "GDC software for VMware security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-022-gkeaws",
+          "title": "GKE on AWS security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-022-gkeazure",
+          "title": "GKE on Azure security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-022-gdcbm",
+          "title": "GDC software for bare metal security bulletin"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-23209",
+          "title": "CVE-2026-23209"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.360844Z",
+      "quality_score": 79,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "solution",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "a6173f3b52a92803cc8e5069499e01fc8ff726397bf0e0a8acf793e5e59ff802"
+    },
+    {
+      "advisory_id": "GCP-2026-021",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-021",
+      "title": "GCP-2026-021",
+      "description": "AMD reported a vulnerability in its firmware that could have allowed a malicious hypervisor to direct the IOMMU to write into the guest memory of AMD SEV-SNP enabled instances, compromising guest data integrity. Google rolled out a mitigation to vulnerable Confidential VM instances with AMD SEV-SNP enabled. What should I do? No customer action is needed. The mitigation has already been applied to Confidential VM instances with AMD SEV-SNP enabled. For more information, see AMD advisory AMD-SB-3016 .",
+      "published_at": "2026-04-14",
+      "updated_at": "2026-04-14",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-021",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2023-20585"
+      ],
+      "cwes": [],
+      "severity": "medium",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [],
+      "affected_products": [],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://www.amd.com/en/resources/product-security/bulletin/amd-sb-3016.html",
+          "title": "AMD-SB-3016"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-20585",
+          "title": "CVE-2023-20585"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.362046Z",
+      "quality_score": 65,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "products",
+        "solution",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "ed8c74a7d2c886b240a58b84373464f3db6e45f0253f03abfe760e62b516d967"
+    },
+    {
+      "advisory_id": "GCP-2026-020",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-020",
+      "title": "GCP-2026-020",
+      "description": "The following vulnerabilities were discovered in the Linux kernel that can lead to a privilege escalation on Container-Optimized OS nodes: CVE-2026-23231 For instructions and more details, see the following bulletins: GKE security bulletin GDC software for VMware security bulletin GKE on AWS security bulletin GKE on Azure security bulletin GDC software for bare metal security bulletin",
+      "published_at": "2026-04-14",
+      "updated_at": "2026-04-14",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-020",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2026-23231"
+      ],
+      "cwes": [],
+      "severity": "high",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_products": [
+        "GKE",
+        "GDC software for VMware",
+        "GKE on AWS",
+        "GKE on Azure",
+        "GDC software for bare metal"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-020-gke",
+          "title": "GKE security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-020-gdcvmware",
+          "title": "GDC software for VMware security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-020-gkeaws",
+          "title": "GKE on AWS security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-020-gkeazure",
+          "title": "GKE on Azure security bulletin"
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/security-bulletins#gcp-2026-020-gdcbm",
+          "title": "GDC software for bare metal security bulletin"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-23231",
+          "title": "CVE-2026-23231"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.363989Z",
+      "quality_score": 79,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "solution",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "5960a783dc5e58f748f2ba6a240c266e4f9d05f3eb92bdb5f64f7daf51712b5b"
+    },
+    {
+      "advisory_id": "GCP-2026-019",
+      "record_id": "tag:google.com,2016:google-cloud-security-bulletins#gcp-2026-019",
+      "title": "GCP-2026-019",
+      "description": "Researchers discovered a vulnerability in AMD firmware that could allow a malicious hypervisor to alter BIOS settings and Memory Mapped I/O (MMIO) routing configurations, compromising the confidentiality and integrity of Confidential VMs with AMD SEV-SNP guests. For more information, see the Compute Engine security bulletin .",
+      "published_at": "2026-04-14",
+      "updated_at": "2026-04-14",
+      "url": "https://docs.cloud.google.com/support/bulletins/index#gcp-2026-019",
+      "vendor": "Google Cloud",
+      "source_id": "google-cloud-security",
+      "source_name": "Google Cloud Security Bulletins",
+      "source_category": "cloud_security",
+      "cves": [
+        "CVE-2025-54510"
+      ],
+      "cwes": [],
+      "severity": "medium",
+      "cvss": null,
+      "cvss_vector": "",
+      "epss": null,
+      "known_exploited": false,
+      "products": [
+        "Compute Engine",
+        "AMD firmware"
+      ],
+      "affected_products": [
+        "Compute Engine",
+        "AMD firmware"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "",
+      "due_date": "",
+      "references": [
+        {
+          "url": "https://docs.cloud.google.com/compute/docs/security-bulletins#gcp-2026-019",
+          "title": "Compute Engine security bulletin"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-54510",
+          "title": "CVE-2025-54510"
+        }
+      ],
+      "last_checked_at": "2026-07-21T17:55:01.365093Z",
+      "quality_score": 79,
+      "enrichment_status": "complete",
+      "missing_fields": [
+        "solution",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "a375021da72ef5c9a7989313d184a06d82d6bd7f8e700d35391e381c709a4ec7"
+    }
+  ]
+}

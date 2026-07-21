@@ -1,0 +1,1973 @@
+{
+  "schema_version": 2,
+  "source_id": "ivanti-security",
+  "generated_at": "2026-07-19T15:39:04.668217Z",
+  "total": 33,
+  "items": [
+    {
+      "record_id": "Security-Advisory-Ivanti-Endpoint-Manager-EPM-October-2025",
+      "advisory_id": "Security-Advisory-Ivanti-Endpoint-Manager-EPM-October-2025",
+      "title": "Ivanti Endpoint Manager (EPM)",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Endpoint Manager (EPM). Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. Our vulnerability management program is central to our commitment to maintaining secure products. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. We believe that responsible transparency helps protect our customers, and that CVE disclosures are an essential and effective tool to communicate software vulnerabilities. The purpose of assigning a CVE is to provide a beacon to security teams and signal the need for urgent updates. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Endpoint Manager Mobile (EPMM) and Neurons for MDM. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in these Security Advisories: Ivanti Endpoint Manager Mobile (EPMM) Ivanti Neurons for MDM In addition, Ivanti has issued a Security Advisory for Ivanti Endpoint Manager , which provides mitigation options for vulnerabilities disclosed October 7, 2025. It is important for cus",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-EPM-October-2025",
+      "published_at": "Tue, 14 Oct 2025 14:20:14 Z",
+      "updated_at": "Tue, 14 Oct 2025 14:20:14 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [],
+      "cwes": [],
+      "products": [
+        "Ivanti Endpoint Manager (EPM)"
+      ],
+      "affected_products": [
+        "Ivanti Endpoint Manager (EPM)"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-EPM-October-2025",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/october-2025-security-update",
+          "title": "October 2025 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "October 2025 Security Update",
+        "url": "https://www.ivanti.com/blog/october-2025-security-update",
+        "record_id": "6c83705e-b3f7-4d2f-af07-1be17da7e339"
+      },
+      "last_checked_at": "2026-07-19T15:39:03.787754Z",
+      "quality_score": 53,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "2e788bf2c5c683f804179c06c00278aba7f8d429f63b543d5e8cb0bba4174e4e"
+    },
+    {
+      "record_id": "Security-Advisory-Endpoint-Manager-Mobile-EPMM-10-2025-Multiple-CVEs",
+      "advisory_id": "Security-Advisory-Endpoint-Manager-Mobile-EPMM-10-2025-Multiple-CVEs",
+      "title": "Ivanti Endpoint Manager Mobile (EPMM)",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Endpoint Manager Mobile (EPMM). Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. Our vulnerability management program is central to our commitment to maintaining secure products. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. We believe that responsible transparency helps protect our customers, and that CVE disclosures are an essential and effective tool to communicate software vulnerabilities. The purpose of assigning a CVE is to provide a beacon to security teams and signal the need for urgent updates. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Endpoint Manager Mobile (EPMM) and Neurons for MDM. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in these Security Advisories: Ivanti Endpoint Manager Mobile (EPMM) Ivanti Neurons for MDM In addition, Ivanti has issued a Security Advisory for Ivanti Endpoint Manager , which provides mitigation options for vulnerabilities disclosed October 7, 2025. It is important for cus",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-Endpoint-Manager-Mobile-EPMM-10-2025-Multiple-CVEs?language=en_US",
+      "published_at": "Tue, 14 Oct 2025 14:20:14 Z",
+      "updated_at": "Tue, 14 Oct 2025 14:20:14 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [],
+      "cwes": [],
+      "products": [
+        "Ivanti Endpoint Manager Mobile (EPMM)"
+      ],
+      "affected_products": [
+        "Ivanti Endpoint Manager Mobile (EPMM)"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-Endpoint-Manager-Mobile-EPMM-10-2025-Multiple-CVEs?language=en_US",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/october-2025-security-update",
+          "title": "October 2025 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "October 2025 Security Update",
+        "url": "https://www.ivanti.com/blog/october-2025-security-update",
+        "record_id": "6c83705e-b3f7-4d2f-af07-1be17da7e339"
+      },
+      "last_checked_at": "2026-07-19T15:39:03.787238Z",
+      "quality_score": 53,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "48efc55a74b218c2918c7e8e966e480ffedaea0dc1781706894bb70661243043"
+    },
+    {
+      "record_id": "October-2025-Security-Advisory-Ivanti-Neurons-for-MDM",
+      "advisory_id": "October-2025-Security-Advisory-Ivanti-Neurons-for-MDM",
+      "title": "Ivanti Neurons for MDM",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Neurons for MDM. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. Our vulnerability management program is central to our commitment to maintaining secure products. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. We believe that responsible transparency helps protect our customers, and that CVE disclosures are an essential and effective tool to communicate software vulnerabilities. The purpose of assigning a CVE is to provide a beacon to security teams and signal the need for urgent updates. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Endpoint Manager Mobile (EPMM) and Neurons for MDM. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in these Security Advisories: Ivanti Endpoint Manager Mobile (EPMM) Ivanti Neurons for MDM In addition, Ivanti has issued a Security Advisory for Ivanti Endpoint Manager , which provides mitigation options for vulnerabilities disclosed October 7, 2025. It is important for cus",
+      "url": "https://forums.ivanti.com/s/article/October-2025-Security-Advisory-Ivanti-Neurons-for-MDM",
+      "published_at": "Tue, 14 Oct 2025 14:20:14 Z",
+      "updated_at": "Tue, 14 Oct 2025 14:20:14 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [],
+      "cwes": [],
+      "products": [
+        "Ivanti Neurons for MDM"
+      ],
+      "affected_products": [
+        "Ivanti Neurons for MDM"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/October-2025-Security-Advisory-Ivanti-Neurons-for-MDM",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/october-2025-security-update",
+          "title": "October 2025 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "October 2025 Security Update",
+        "url": "https://www.ivanti.com/blog/october-2025-security-update",
+        "record_id": "6c83705e-b3f7-4d2f-af07-1be17da7e339"
+      },
+      "last_checked_at": "2026-07-19T15:39:03.787511Z",
+      "quality_score": 53,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "d396d3c58b0d69293f6d665071a798560030c59d73833d8e35d72773df5dea2b"
+    },
+    {
+      "record_id": "Security-Advisory-Ivanti-Xtraction-CVE-2026-14902-CVE-2026-14903",
+      "advisory_id": "Security-Advisory-Ivanti-Xtraction-CVE-2026-14902-CVE-2026-14903",
+      "title": "Ivanti Xtraction CVE 2026 14902 CVE 2026 14903 — CVE-2026-14902, CVE-2026-14903",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Xtraction CVE 2026 14902 CVE 2026 14903 relacionado con CVE-2026-14902, CVE-2026-14903. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. In today’s rapidly evolving technology and threat landscape, we believe responsible transparency should be a cornerstone of any product security program. AI is compressing the time-to-exploit , and Ivanti uses leading technologies to proactively find and fix issues ––including integrating advanced LLMs into our Engineering and product security to enhance the capabilities of our teams. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Xtraction. It is important for customers to know: We have no evidence of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in the Security Advisories: Xtraction How AI will affect vulnerability disclosures in our products Ivanti continues to explore, test,",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Xtraction-CVE-2026-14902-CVE-2026-14903",
+      "published_at": "Tue, 14 Jul 2026 14:15:30 Z",
+      "updated_at": "Tue, 14 Jul 2026 14:15:30 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2026-14902",
+        "CVE-2026-14903"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti Xtraction CVE 2026 14902 CVE 2026 14903"
+      ],
+      "affected_products": [
+        "Ivanti Xtraction CVE 2026 14902 CVE 2026 14903"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [
+        "2026.2.1"
+      ],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 2026.2.1.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 2026.2.1.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Xtraction-CVE-2026-14902-CVE-2026-14903",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/july-2026-security-update",
+          "title": "July 2026 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "July 2026 Security Update",
+        "url": "https://www.ivanti.com/blog/july-2026-security-update",
+        "record_id": "c6eece21-9cea-4fdd-a585-75fdec54dc39"
+      },
+      "last_checked_at": "2026-07-19T15:39:01.984296Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "b85db2b0b8dc6948eae9630f044fd85f9b43de117b5e8c10d1bc81fa34fbd609"
+    },
+    {
+      "record_id": "Security-Advisory-Ivanti-Neurons-for-ITSM-CVE-2026-4913-CVE-2026-4914",
+      "advisory_id": "Security-Advisory-Ivanti-Neurons-for-ITSM-CVE-2026-4913-CVE-2026-4914",
+      "title": "Ivanti Neurons for ITSM — CVE-2026-4913, CVE-2026-4914",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Neurons for ITSM relacionado con CVE-2026-4913, CVE-2026-4914. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. Our vulnerability management program is central to our commitment to maintaining secure products. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. We believe that responsible transparency helps protect our customers, and that CVE disclosures are an essential and effective tool to communicate software vulnerabilities. The purpose of assigning a CVE is to provide a beacon to security teams and signal the need for urgent updates. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Neurons for ITSM (on-premises and cloud). It is important for customers to know: We have no evidence of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. Customers using the cloud version of Ivanti Neurons for ITSM do not need to take any action as the fix was applied on 12 December 2025 to all cloud environments. More information on these vulnerabilities and detailed inst",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Neurons-for-ITSM-CVE-2026-4913-CVE-2026-4914",
+      "published_at": "Tue, 14 Apr 2026 14:08:24 Z",
+      "updated_at": "Tue, 14 Apr 2026 14:08:24 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2026-4913",
+        "CVE-2026-4914"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti Neurons for ITSM"
+      ],
+      "affected_products": [
+        "Ivanti Neurons for ITSM"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [
+        "2025.4"
+      ],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 2025.4.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 2025.4.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Neurons-for-ITSM-CVE-2026-4913-CVE-2026-4914",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/april-2026-security-update",
+          "title": "April 2026 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "April 2026 Security Update",
+        "url": "https://www.ivanti.com/blog/april-2026-security-update",
+        "record_id": "bb18f48d-02e3-4447-ae10-01f3dd87efd8"
+      },
+      "last_checked_at": "2026-07-19T15:39:02.589345Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "8fa4e5a03a6e49e0042f600d15a0365ee7d2f81df54966edad4fcb52a073fda5"
+    },
+    {
+      "record_id": "Security-Advisory-May-2025-Ivanti-Neurons-for-MDM-N-MDM",
+      "advisory_id": "Security-Advisory-May-2025-Ivanti-Neurons-for-MDM-N-MDM",
+      "title": "Ivanti Neurons for MDM N MDM",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Neurons for MDM N MDM. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. For many of our customers, the predictable schedule facilitates better planning and management of IT resources, allowing them to allocate time and personnel efficiently for the timely updates. Today, Ivanti is disclosing vulnerabilities in Ivanti ITSM (on-premises only), Cloud Security Application (CSA) and Neurons for MDM. It is important for customers to know: We have no evidence of any of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in these Security Advisories: Ivanti Neurons for ITSM (on-premises only) Cloud Security Application (CSA) Ivanti Neurons for MDM Our Support team is always available to help customers and partners should they have any questions. Cases can be logged via the Success portal (login credentials required). Want to stay up to date on Ivanti Security Advisories? Paste https://www.ivanti.com/blog/topics/security-advisory/rss into your preferred RSS reader / functionality in your email program.",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-May-2025-Ivanti-Neurons-for-MDM-N-MDM",
+      "published_at": "Tue, 13 May 2025 15:02:59 Z",
+      "updated_at": "Tue, 13 May 2025 15:02:59 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [],
+      "cwes": [],
+      "products": [
+        "Ivanti Neurons for MDM N MDM"
+      ],
+      "affected_products": [
+        "Ivanti Neurons for MDM N MDM"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-May-2025-Ivanti-Neurons-for-MDM-N-MDM",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/may-2025-security-update",
+          "title": "May Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "May Security Update",
+        "url": "https://www.ivanti.com/blog/may-2025-security-update",
+        "record_id": "6ff2c0c7-08d8-44b9-9420-2d4113224412"
+      },
+      "last_checked_at": "2026-07-19T15:39:04.432422Z",
+      "quality_score": 53,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "26ba591f41e9388cf50455328e123d596bb2db38777e6876e81db016ffaef6db"
+    },
+    {
+      "record_id": "Security-Advisory-Ivanti-Neurons-for-ITSM-on-premises-only-CVE-2025-22462",
+      "advisory_id": "Security-Advisory-Ivanti-Neurons-for-ITSM-on-premises-only-CVE-2025-22462",
+      "title": "Ivanti Neurons for ITSM — CVE-2025-22462",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Neurons for ITSM relacionado con CVE-2025-22462. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. For many of our customers, the predictable schedule facilitates better planning and management of IT resources, allowing them to allocate time and personnel efficiently for the timely updates. Today, Ivanti is disclosing vulnerabilities in Ivanti ITSM (on-premises only), Cloud Security Application (CSA) and Neurons for MDM. It is important for customers to know: We have no evidence of any of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in these Security Advisories: Ivanti Neurons for ITSM (on-premises only) Cloud Security Application (CSA) Ivanti Neurons for MDM Our Support team is always available to help customers and partners should they have any questions. Cases can be logged via the Success portal (login credentials required). Want to stay up to date on Ivanti Security Advisories? Paste https://www.ivanti.com/blog/topics/security-advisory/rss into your preferred RSS reader / functionality in your email program.",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Neurons-for-ITSM-on-premises-only-CVE-2025-22462",
+      "published_at": "Tue, 13 May 2025 15:02:59 Z",
+      "updated_at": "Tue, 13 May 2025 15:02:59 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2025-22462"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti Neurons for ITSM"
+      ],
+      "affected_products": [
+        "Ivanti Neurons for ITSM"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Neurons-for-ITSM-on-premises-only-CVE-2025-22462",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/may-2025-security-update",
+          "title": "May Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "May Security Update",
+        "url": "https://www.ivanti.com/blog/may-2025-security-update",
+        "record_id": "6ff2c0c7-08d8-44b9-9420-2d4113224412"
+      },
+      "last_checked_at": "2026-07-19T15:39:04.431871Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "433140083653c9ce5c78cb3bb33ac8a0849e3e1fdfe361ef7547def7664b7002"
+    },
+    {
+      "record_id": "Security-Advisory-Ivanti-Cloud-Services-Application-CVE-2025-22460",
+      "advisory_id": "Security-Advisory-Ivanti-Cloud-Services-Application-CVE-2025-22460",
+      "title": "Ivanti Cloud Services Application CVE 2025 22460 — CVE-2025-22460",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Cloud Services Application CVE 2025 22460 relacionado con CVE-2025-22460. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. For many of our customers, the predictable schedule facilitates better planning and management of IT resources, allowing them to allocate time and personnel efficiently for the timely updates. Today, Ivanti is disclosing vulnerabilities in Ivanti ITSM (on-premises only), Cloud Security Application (CSA) and Neurons for MDM. It is important for customers to know: We have no evidence of any of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in these Security Advisories: Ivanti Neurons for ITSM (on-premises only) Cloud Security Application (CSA) Ivanti Neurons for MDM Our Support team is always available to help customers and partners should they have any questions. Cases can be logged via the Success portal (login credentials required). Want to stay up to date on Ivanti Security Advisories? Paste https://www.ivanti.com/blog/topics/security-advisory/rss into your preferred RSS reader / functionality in your email program.",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Cloud-Services-Application-CVE-2025-22460",
+      "published_at": "Tue, 13 May 2025 15:02:59 Z",
+      "updated_at": "Tue, 13 May 2025 15:02:59 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2025-22460"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti Cloud Services Application CVE 2025 22460"
+      ],
+      "affected_products": [
+        "Ivanti Cloud Services Application CVE 2025 22460"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Cloud-Services-Application-CVE-2025-22460",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/may-2025-security-update",
+          "title": "May Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "May Security Update",
+        "url": "https://www.ivanti.com/blog/may-2025-security-update",
+        "record_id": "6ff2c0c7-08d8-44b9-9420-2d4113224412"
+      },
+      "last_checked_at": "2026-07-19T15:39:04.432183Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "fc9e6d4dae4f4cc46c7d586414beae368d8c500fe34900f353571e4668a015d6"
+    },
+    {
+      "record_id": "Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM",
+      "advisory_id": "Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM",
+      "title": "Ivanti Endpoint Manager Mobile (EPMM)",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Endpoint Manager Mobile (EPMM). Contexto del fabricante: At Ivanti, transparency is a cornerstone of our commitment to customer security and trust. It is through such transparency that vulnerabilities are swiftly addressed, allowing our customers and the broader ecosystem to take proactive measures to safeguard their environments amidst a rapidly evolving and highly sophisticated threat landscape. To this end, we are issuing an important security update addressing vulnerabilities associated with open-source libraries used in Ivanti Endpoint Manager Mobile (EPMM). We have provided an FAQ below and in the Security Advisory . At the time of disclosure, we are aware of a very limited number of customers whose solution has been exploited. The issue only affects the on-prem EPMM product. It is not present in Ivanti Neurons for MDM, Ivanti’s cloud-based unified endpoint management solution, Ivanti Sentry, or any other Ivanti products. We urge all customers using the on-prem EPMM product to promptly install the patch. We have made additional resources and support teams available to assist customers in implementing the patch and addressing any concerns. Detailed information is available in our Security Advisory so that customers can protect their environment. Thank you to our customers and security partners for their engagement and support, which enabled our swift response to this issue. We remain committed to continuously improving our produ",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM",
+      "published_at": "Tue, 13 May 2025 14:05:45 Z",
+      "updated_at": "Tue, 13 May 2025 14:05:45 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [],
+      "cwes": [],
+      "products": [
+        "Ivanti Endpoint Manager Mobile (EPMM)"
+      ],
+      "affected_products": [
+        "Ivanti Endpoint Manager Mobile (EPMM)"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/epmm-security-update",
+          "title": "EPMM Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "EPMM Security Update",
+        "url": "https://www.ivanti.com/blog/epmm-security-update",
+        "record_id": "decc6d13-1d63-4712-8f32-bac883ee7f60"
+      },
+      "last_checked_at": "2026-07-19T15:39:04.551111Z",
+      "quality_score": 53,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "fe583d6fff0373520cda6fcb61b8a87667ff18effb1d817091cb9d8d39b8045f"
+    },
+    {
+      "record_id": "Security-Advisory-Ivanti-Endpoint-Manager-EPM-May-2026",
+      "advisory_id": "Security-Advisory-Ivanti-Endpoint-Manager-EPM-May-2026",
+      "title": "Ivanti Endpoint Manager (EPM)",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Endpoint Manager (EPM). Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. In today’s rapidly evolving technology and threat landscape, we believe responsible transparency should be a cornerstone of any product security program. AI is compressing the time-to-exploit , and Ivanti uses leading technologies to proactively find and fix issues ––including integrating advanced LLMs into our Engineering and product security to enhance the capabilities of our teams. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Secure Access Client, Xtraction, Virtual Traffic Manager and Endpoint Manager (EPM). It is important for customers to know: We have no evidence of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in the Security Advisories: Ivanti Secure Access Client Ivan",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-EPM-May-2026",
+      "published_at": "Tue, 12 May 2026 14:11:21 Z",
+      "updated_at": "Tue, 12 May 2026 14:11:21 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [],
+      "cwes": [],
+      "products": [
+        "Ivanti Endpoint Manager (EPM)"
+      ],
+      "affected_products": [
+        "Ivanti Endpoint Manager (EPM)"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [
+        "22.9r4"
+      ],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 22.9r4.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 22.9r4.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-EPM-May-2026",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/may-2026-security-update",
+          "title": "May 2026 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "May 2026 Security Update",
+        "url": "https://www.ivanti.com/blog/may-2026-security-update",
+        "record_id": "6d5e27b8-d74b-40b2-a546-4670546b0080"
+      },
+      "last_checked_at": "2026-07-19T15:39:02.349181Z",
+      "quality_score": 53,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "ffadb21ba541b7a54d4e30cefd46eac17505045362efbc0ab7ee7545bf8bc1d4"
+    },
+    {
+      "record_id": "Security-Advisory---Ivanti-Xtraction-CVE-2026-8043",
+      "advisory_id": "Security-Advisory---Ivanti-Xtraction-CVE-2026-8043",
+      "title": "Ivanti Xtraction CVE 2026 8043 — CVE-2026-8043",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Xtraction CVE 2026 8043 relacionado con CVE-2026-8043. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. In today’s rapidly evolving technology and threat landscape, we believe responsible transparency should be a cornerstone of any product security program. AI is compressing the time-to-exploit , and Ivanti uses leading technologies to proactively find and fix issues ––including integrating advanced LLMs into our Engineering and product security to enhance the capabilities of our teams. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Secure Access Client, Xtraction, Virtual Traffic Manager and Endpoint Manager (EPM). It is important for customers to know: We have no evidence of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in the Security Advisories: Ivanti Secure Access Client Ivan",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory---Ivanti-Xtraction-CVE-2026-8043",
+      "published_at": "Tue, 12 May 2026 14:11:21 Z",
+      "updated_at": "Tue, 12 May 2026 14:11:21 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2026-8043"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti Xtraction CVE 2026 8043"
+      ],
+      "affected_products": [
+        "Ivanti Xtraction CVE 2026 8043"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [
+        "2026.2"
+      ],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 2026.2.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 2026.2.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory---Ivanti-Xtraction-CVE-2026-8043",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/may-2026-security-update",
+          "title": "May 2026 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "May 2026 Security Update",
+        "url": "https://www.ivanti.com/blog/may-2026-security-update",
+        "record_id": "6d5e27b8-d74b-40b2-a546-4670546b0080"
+      },
+      "last_checked_at": "2026-07-19T15:39:02.348428Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "803d65b4535b63375ff08ba4a1261bde95dc360ba89dd2545948f457b91ee690"
+    },
+    {
+      "record_id": "May-2026-Security-Advisory-Ivanti-Virtual-Traffic-Manager-vTM-CVE-2026-8051",
+      "advisory_id": "May-2026-Security-Advisory-Ivanti-Virtual-Traffic-Manager-vTM-CVE-2026-8051",
+      "title": "Ivanti Virtual Traffic Manager (vTM) — CVE-2026-8051",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Virtual Traffic Manager (vTM) relacionado con CVE-2026-8051. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. In today’s rapidly evolving technology and threat landscape, we believe responsible transparency should be a cornerstone of any product security program. AI is compressing the time-to-exploit , and Ivanti uses leading technologies to proactively find and fix issues ––including integrating advanced LLMs into our Engineering and product security to enhance the capabilities of our teams. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Secure Access Client, Xtraction, Virtual Traffic Manager and Endpoint Manager (EPM). It is important for customers to know: We have no evidence of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in the Security Advisories: Ivanti Secure Access Client Ivan",
+      "url": "https://forums.ivanti.com/s/article/May-2026-Security-Advisory-Ivanti-Virtual-Traffic-Manager-vTM-CVE-2026-8051",
+      "published_at": "Tue, 12 May 2026 14:11:21 Z",
+      "updated_at": "Tue, 12 May 2026 14:11:21 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2026-8051"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti Virtual Traffic Manager (vTM)"
+      ],
+      "affected_products": [
+        "Ivanti Virtual Traffic Manager (vTM)"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [
+        "22.9r4"
+      ],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 22.9r4.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 22.9r4.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/May-2026-Security-Advisory-Ivanti-Virtual-Traffic-Manager-vTM-CVE-2026-8051",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/may-2026-security-update",
+          "title": "May 2026 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "May 2026 Security Update",
+        "url": "https://www.ivanti.com/blog/may-2026-security-update",
+        "record_id": "6d5e27b8-d74b-40b2-a546-4670546b0080"
+      },
+      "last_checked_at": "2026-07-19T15:39:02.348815Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "8e1c03a8e6080d297992665cf2bb35fda0a6ddc3f7eb36e99479db528103c636"
+    },
+    {
+      "record_id": "May-2026-Security-Advisory-Ivanti-Secure-Access-Client-CVE-2026-7431-CVE-2026-7432",
+      "advisory_id": "May-2026-Security-Advisory-Ivanti-Secure-Access-Client-CVE-2026-7431-CVE-2026-7432",
+      "title": "Ivanti Secure Access Client — CVE-2026-7431, CVE-2026-7432",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Secure Access Client relacionado con CVE-2026-7431, CVE-2026-7432. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. In today’s rapidly evolving technology and threat landscape, we believe responsible transparency should be a cornerstone of any product security program. AI is compressing the time-to-exploit , and Ivanti uses leading technologies to proactively find and fix issues ––including integrating advanced LLMs into our Engineering and product security to enhance the capabilities of our teams. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Secure Access Client, Xtraction, Virtual Traffic Manager and Endpoint Manager (EPM). It is important for customers to know: We have no evidence of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in the Security Advisories: Ivanti Secure Access Client Ivan",
+      "url": "https://forums.ivanti.com/s/article/May-2026-Security-Advisory-Ivanti-Secure-Access-Client-CVE-2026-7431-CVE-2026-7432",
+      "published_at": "Tue, 12 May 2026 14:11:21 Z",
+      "updated_at": "Tue, 12 May 2026 14:11:21 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2026-7431",
+        "CVE-2026-7432"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti Secure Access Client"
+      ],
+      "affected_products": [
+        "Ivanti Secure Access Client"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [
+        "22.8R6"
+      ],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 22.8R6.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 22.8R6.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/May-2026-Security-Advisory-Ivanti-Secure-Access-Client-CVE-2026-7431-CVE-2026-7432",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/may-2026-security-update",
+          "title": "May 2026 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "May 2026 Security Update",
+        "url": "https://www.ivanti.com/blog/may-2026-security-update",
+        "record_id": "6d5e27b8-d74b-40b2-a546-4670546b0080"
+      },
+      "last_checked_at": "2026-07-19T15:39:02.347971Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "ff295e999425f42aa36ed9752758c6f71af7018c85d8f4d08613845dbf31d8d9"
+    },
+    {
+      "record_id": "Security-Advisory-Ivanti-Avalanche-CVE-2025-8296-CVE-2025-8297",
+      "advisory_id": "Security-Advisory-Ivanti-Avalanche-CVE-2025-8296-CVE-2025-8297",
+      "title": "Ivanti Avalanche CVE 2025 8296 CVE 2025 8297 — CVE-2025-8296, CVE-2025-8297",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Avalanche CVE 2025 8296 CVE 2025 8297 relacionado con CVE-2025-8296, CVE-2025-8297. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. Our vulnerability management program is central to our commitment to maintaining secure products. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. At the core, we believe that responsible transparency helps protect our customers. We believe that responsible transparency helps protect our customers, and that CVE disclosures are an essential and effective tool to communicate software vulnerabilities. The purpose of assigning a CVE is to provide a beacon to security teams and signal the need for urgent updates. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Avalanche, Ivanti Virtual Application Delivery Control (vADC) (previously known as vTM) and Ivanti Connect Secure, Policy Secure, ZTA Gateways and Neurons for Secure Access. It is important for customers to know: We have no evidence of any of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions.",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Avalanche-CVE-2025-8296-CVE-2025-8297",
+      "published_at": "Tue, 12 Aug 2025 14:16:05 Z",
+      "updated_at": "Tue, 12 Aug 2025 14:16:05 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2025-8296",
+        "CVE-2025-8297"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti Avalanche CVE 2025 8296 CVE 2025 8297"
+      ],
+      "affected_products": [
+        "Ivanti Avalanche CVE 2025 8296 CVE 2025 8297"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [
+        "6.4.8.8008"
+      ],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 6.4.8.8008.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 6.4.8.8008.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Avalanche-CVE-2025-8296-CVE-2025-8297",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/august-2025-security-update",
+          "title": "August 2025 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "August 2025 Security Update",
+        "url": "https://www.ivanti.com/blog/august-2025-security-update",
+        "record_id": "9e7807bc-1f70-4a3f-9e21-bdd705346407"
+      },
+      "last_checked_at": "2026-07-19T15:39:04.064454Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "674ed058be8f98e4d0427bf01890ad6e5ef0e4df516ece15ef8999cbcccceb4b"
+    },
+    {
+      "record_id": "August-Security-Advisory-Ivanti-Virtual-Application-Delivery-Controller-vADC-previously-vTM-CVE-2025-8310",
+      "advisory_id": "August-Security-Advisory-Ivanti-Virtual-Application-Delivery-Controller-vADC-previously-vTM-CVE-2025-8310",
+      "title": "Ivanti August Virtual Application Delivery Controller vADC previously vTM CVE 2025 8310 — CVE-2025-8310",
+      "description": "Ivanti publicó un advisory técnico para Ivanti August Virtual Application Delivery Controller vADC previously vTM CVE 2025 8310 relacionado con CVE-2025-8310. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. Our vulnerability management program is central to our commitment to maintaining secure products. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. At the core, we believe that responsible transparency helps protect our customers. We believe that responsible transparency helps protect our customers, and that CVE disclosures are an essential and effective tool to communicate software vulnerabilities. The purpose of assigning a CVE is to provide a beacon to security teams and signal the need for urgent updates. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Avalanche, Ivanti Virtual Application Delivery Control (vADC) (previously known as vTM) and Ivanti Connect Secure, Policy Secure, ZTA Gateways and Neurons for Secure Access. It is important for customers to know: We have no evidence of any of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions.",
+      "url": "https://forums.ivanti.com/s/article/August-Security-Advisory-Ivanti-Virtual-Application-Delivery-Controller-vADC-previously-vTM-CVE-2025-8310",
+      "published_at": "Tue, 12 Aug 2025 14:16:05 Z",
+      "updated_at": "Tue, 12 Aug 2025 14:16:05 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2025-8310"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti August Virtual Application Delivery Controller vADC previously vTM CVE 2025 8310"
+      ],
+      "affected_products": [
+        "Ivanti August Virtual Application Delivery Controller vADC previously vTM CVE 2025 8310"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [
+        "22.9"
+      ],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 22.9.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 22.9.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/August-Security-Advisory-Ivanti-Virtual-Application-Delivery-Controller-vADC-previously-vTM-CVE-2025-8310",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/august-2025-security-update",
+          "title": "August 2025 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "August 2025 Security Update",
+        "url": "https://www.ivanti.com/blog/august-2025-security-update",
+        "record_id": "9e7807bc-1f70-4a3f-9e21-bdd705346407"
+      },
+      "last_checked_at": "2026-07-19T15:39:04.064783Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "b6447b6aa8f13fe292eba182c15c7ec93127235b6bdb0aad3fe8580256879fc3"
+    },
+    {
+      "record_id": "August-Security-Advisory-Ivanti-Connect-Secure-Policy-Secure-ZTA-Gateways-Multiple-CVEs",
+      "advisory_id": "August-Security-Advisory-Ivanti-Connect-Secure-Policy-Secure-ZTA-Gateways-Multiple-CVEs",
+      "title": "Ivanti Connect Secure",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Connect Secure. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. Our vulnerability management program is central to our commitment to maintaining secure products. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. At the core, we believe that responsible transparency helps protect our customers. We believe that responsible transparency helps protect our customers, and that CVE disclosures are an essential and effective tool to communicate software vulnerabilities. The purpose of assigning a CVE is to provide a beacon to security teams and signal the need for urgent updates. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Avalanche, Ivanti Virtual Application Delivery Control (vADC) (previously known as vTM) and Ivanti Connect Secure, Policy Secure, ZTA Gateways and Neurons for Secure Access. It is important for customers to know: We have no evidence of any of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions.",
+      "url": "https://forums.ivanti.com/s/article/August-Security-Advisory-Ivanti-Connect-Secure-Policy-Secure-ZTA-Gateways-Multiple-CVEs",
+      "published_at": "Tue, 12 Aug 2025 14:16:05 Z",
+      "updated_at": "Tue, 12 Aug 2025 14:16:05 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [],
+      "cwes": [],
+      "products": [
+        "Ivanti Connect Secure"
+      ],
+      "affected_products": [
+        "Ivanti Connect Secure"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/August-Security-Advisory-Ivanti-Connect-Secure-Policy-Secure-ZTA-Gateways-Multiple-CVEs",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/august-2025-security-update",
+          "title": "August 2025 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "August 2025 Security Update",
+        "url": "https://www.ivanti.com/blog/august-2025-security-update",
+        "record_id": "9e7807bc-1f70-4a3f-9e21-bdd705346407"
+      },
+      "last_checked_at": "2026-07-19T15:39:04.065062Z",
+      "quality_score": 53,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "bf23ac1b4d484159b9748603ff60cb676018cf8165beb474e3c42652d2839bd6"
+    },
+    {
+      "record_id": "Security-Advisory-EPM-November-2025-for-EPM-2024",
+      "advisory_id": "Security-Advisory-EPM-November-2025-for-EPM-2024",
+      "title": "Ivanti EPM November 2025 for EPM 2024",
+      "description": "Ivanti publicó un advisory técnico para Ivanti EPM November 2025 for EPM 2024. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. Our vulnerability management program is central to our commitment to maintaining secure products. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. We believe that responsible transparency helps protect our customers, and that CVE disclosures are an essential and effective tool to communicate software vulnerabilities. The purpose of assigning a CVE is to provide a beacon to security teams and signal the need for urgent updates. To that end, today Ivanti is disclosing a vulnerability in Ivanti Endpoint Manager (EPM). It is important for customers to know: We have no evidence of this vulnerability being exploited in the wild. This vulnerability does not impact any other Ivanti solutions. More information on this vulnerability and detailed instructions on how to remediate the issues can be found in this Security Advisory . Our Support team is always available to help customers and partners should they have any questions. Cases",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-EPM-November-2025-for-EPM-2024",
+      "published_at": "Tue, 11 Nov 2025 15:12:04 Z",
+      "updated_at": "Tue, 11 Nov 2025 15:12:04 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [],
+      "cwes": [],
+      "products": [
+        "Ivanti EPM November 2025 for EPM 2024"
+      ],
+      "affected_products": [
+        "Ivanti EPM November 2025 for EPM 2024"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-EPM-November-2025-for-EPM-2024",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/november-2025-security-update",
+          "title": "November 2025 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "November 2025 Security Update",
+        "url": "https://www.ivanti.com/blog/november-2025-security-update",
+        "record_id": "b14d098a-fef6-4307-a3c8-c508857c1c0d"
+      },
+      "last_checked_at": "2026-07-19T15:39:03.175340Z",
+      "quality_score": 53,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "7cec72e1ea12f42e196ab7a252ba39e9ec55e065cb8bb22bce9e3846aecb1d3e"
+    },
+    {
+      "record_id": "Security-Advisory-Ivanti-DSM-CVE-2026-3483",
+      "advisory_id": "Security-Advisory-Ivanti-DSM-CVE-2026-3483",
+      "title": "Ivanti DSM CVE 2026 3483 — CVE-2026-3483",
+      "description": "Ivanti publicó un advisory técnico para Ivanti DSM CVE 2026 3483 relacionado con CVE-2026-3483. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. Our vulnerability management program is central to our commitment to maintaining secure products. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. We believe that responsible transparency helps protect our customers, and that CVE disclosures are an essential and effective tool to communicate software vulnerabilities. The purpose of assigning a CVE is to provide a beacon to security teams and signal the need for urgent updates. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Desktop and Server Management (DSM). It is important for customers to know: We have no evidence of this vulnerability being exploited in the wild. This vulnerability does not impact any other Ivanti solutions. More information on this vulnerability and detailed instructions on how to remediate the issues can be found in this Security Advisory . Our Support team is always available to help customers and partners should they have any ques",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-DSM-CVE-2026-3483",
+      "published_at": "Tue, 10 Mar 2026 14:13:58 Z",
+      "updated_at": "Tue, 10 Mar 2026 14:13:58 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2026-3483"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti DSM CVE 2026 3483"
+      ],
+      "affected_products": [
+        "Ivanti DSM CVE 2026 3483"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-DSM-CVE-2026-3483",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/march-2026-security-update",
+          "title": "March 2026 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "March 2026 Security Update",
+        "url": "https://www.ivanti.com/blog/march-2026-security-update",
+        "record_id": "1bc1b6b1-a480-4f6a-88b0-749da8241d7d"
+      },
+      "last_checked_at": "2026-07-19T15:39:02.699382Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "630eb6d729ca44c70b223647c88959c30771816b9b766f3eb1d56528bb71e777"
+    },
+    {
+      "record_id": "Security-Advisory-Ivanti-Workspace-Control-CVE-2025-5353-CVE-CVE-2025-22463-CVE-2025-22455",
+      "advisory_id": "Security-Advisory-Ivanti-Workspace-Control-CVE-2025-5353-CVE-CVE-2025-22463-CVE-2025-22455",
+      "title": "Ivanti Workspace Control CVE 2025 5353 CVE CVE 2025 22463 CVE 2025 22455 — CVE-2025-22455, CVE-2025-22463, CVE-2025-5353",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Workspace Control CVE 2025 5353 CVE CVE 2025 22463 CVE 2025 22455 relacionado con CVE-2025-22455, CVE-2025-22463, CVE-2025-5353. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. It is our philosophy that responsible transparency helps protect our customers. CVE disclosures are an essential and effective tool for communicating software vulnerabilities and necessary actions to customers. A CVE serves as a beacon to security teams and signals the need for urgent updates. Today, Ivanti is disclosing vulnerabilities in Ivanti Workspace Control. It is important for customers to know: We have no evidence of any of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in these Security Advisories: Ivanti Workspace Control (IWC) Our Support team is always available to help customers and partners should they have any questions. Cases can be logged via the Success portal (login credentials required). Want to stay up to date on Ivanti Security Advisories? Paste https://www.ivanti.com/blog/topics/security-advisory/rss into your preferred RSS reader / functionality in your email program.",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Workspace-Control-CVE-2025-5353-CVE-CVE-2025-22463-CVE-2025-22455",
+      "published_at": "Tue, 10 Jun 2025 14:06:36 Z",
+      "updated_at": "Tue, 10 Jun 2025 14:06:36 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2025-22455",
+        "CVE-2025-22463",
+        "CVE-2025-5353"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti Workspace Control CVE 2025 5353 CVE CVE 2025 22463 CVE 2025 22455"
+      ],
+      "affected_products": [
+        "Ivanti Workspace Control CVE 2025 5353 CVE CVE 2025 22463 CVE 2025 22455"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Workspace-Control-CVE-2025-5353-CVE-CVE-2025-22463-CVE-2025-22455",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/june-security-update",
+          "title": "June Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "June Security Update",
+        "url": "https://www.ivanti.com/blog/june-security-update",
+        "record_id": "52882483-4dbe-4b07-ad9d-999d081a2233"
+      },
+      "last_checked_at": "2026-07-19T15:39:04.314273Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "c0c40c19a4c886b7ede7d545200e547aacf9d5cca4be9794a235ff2ac5fc1a43"
+    },
+    {
+      "record_id": "Security-Advisory-EPM-February-2026-for-EPM-2024",
+      "advisory_id": "Security-Advisory-EPM-February-2026-for-EPM-2024",
+      "title": "Ivanti EPM February 2026 for EPM 2024",
+      "description": "Ivanti publicó un advisory técnico para Ivanti EPM February 2026 for EPM 2024. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. Our vulnerability management program is central to our commitment to maintaining secure products. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. We believe that responsible transparency helps protect our customers, and that CVE disclosures are an essential and effective tool to communicate software vulnerabilities. The purpose of assigning a CVE is to provide a beacon to security teams and signal the need for urgent updates. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Endpoint Manager (EPM). It is important for customers to know: We have no evidence of this vulnerability being exploited in the wild. This vulnerability does not impact any other Ivanti solutions. More information on this vulnerability and detailed instructions on how to remediate the issues can be found in this Security Advisory . Our Support team is always available to help customers and partners should they have any questions. Cases",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-EPM-February-2026-for-EPM-2024",
+      "published_at": "Tue, 10 Feb 2026 15:05:16 Z",
+      "updated_at": "Tue, 10 Feb 2026 15:05:16 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [],
+      "cwes": [],
+      "products": [
+        "Ivanti EPM February 2026 for EPM 2024"
+      ],
+      "affected_products": [
+        "Ivanti EPM February 2026 for EPM 2024"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-EPM-February-2026-for-EPM-2024",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/february-2026-security-update",
+          "title": "February 2026 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "February 2026 Security Update",
+        "url": "https://www.ivanti.com/blog/february-2026-security-update",
+        "record_id": "0cda8b94-e9d7-478c-9f58-afc9c44664fe"
+      },
+      "last_checked_at": "2026-07-19T15:39:02.813304Z",
+      "quality_score": 53,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "1633bc5f5e00931390f49174eb37c6bbf8b91c37c7491e4c0079c23736d570a8"
+    },
+    {
+      "record_id": "September-Security-Advisory-Ivanti-Connect-Secure-Policy-Secure-ZTA-Gateways-and-Neurons-for-Secure-Access-Multiple-CVEs",
+      "advisory_id": "September-Security-Advisory-Ivanti-Connect-Secure-Policy-Secure-ZTA-Gateways-and-Neurons-for-Secure-Access-Multiple-CVEs",
+      "title": "Ivanti Connect Secure",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Connect Secure. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. Our vulnerability management program is central to our commitment to maintaining secure products. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. At the core, we believe that responsible transparency helps protect our customers. We believe that responsible transparency helps protect our customers, and that CVE disclosures are an essential and effective tool to communicate software vulnerabilities. The purpose of assigning a CVE is to provide a beacon to security teams and signal the need for urgent updates. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Endpoint Manager (EPM) and Ivanti Connect Secure, Policy Secure, ZTA Gateways and Neurons for Secure Access. It is important for customers to know: We have no evidence of any of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. More information on these vulnerabilities and detailed instructi",
+      "url": "https://forums.ivanti.com/s/article/September-Security-Advisory-Ivanti-Connect-Secure-Policy-Secure-ZTA-Gateways-and-Neurons-for-Secure-Access-Multiple-CVEs",
+      "published_at": "Tue, 09 Sep 2025 14:16:12 Z",
+      "updated_at": "Tue, 09 Sep 2025 14:16:12 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [],
+      "cwes": [],
+      "products": [
+        "Ivanti Connect Secure"
+      ],
+      "affected_products": [
+        "Ivanti Connect Secure"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/September-Security-Advisory-Ivanti-Connect-Secure-Policy-Secure-ZTA-Gateways-and-Neurons-for-Secure-Access-Multiple-CVEs",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/september-2025-security-update",
+          "title": "September 2025 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "September 2025 Security Update",
+        "url": "https://www.ivanti.com/blog/september-2025-security-update",
+        "record_id": "f6a082d9-98ad-4456-8bb3-dcd1c2f45fb6"
+      },
+      "last_checked_at": "2026-07-19T15:39:03.936196Z",
+      "quality_score": 53,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "8a430c366a8ba97c5f4a2192fcaf4fe690158613472de862e1db5b58ad1a2aa2"
+    },
+    {
+      "record_id": "Security-Advisory-September-2025-for-Ivanti-EPM-2024-SU3-and-EPM-2022-SU8",
+      "advisory_id": "Security-Advisory-September-2025-for-Ivanti-EPM-2024-SU3-and-EPM-2022-SU8",
+      "title": "Ivanti for EPM 2024 SU3 and EPM 2022 SU8",
+      "description": "Ivanti publicó un advisory técnico para Ivanti for EPM 2024 SU3 and EPM 2022 SU8. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. Our vulnerability management program is central to our commitment to maintaining secure products. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. At the core, we believe that responsible transparency helps protect our customers. We believe that responsible transparency helps protect our customers, and that CVE disclosures are an essential and effective tool to communicate software vulnerabilities. The purpose of assigning a CVE is to provide a beacon to security teams and signal the need for urgent updates. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Endpoint Manager (EPM) and Ivanti Connect Secure, Policy Secure, ZTA Gateways and Neurons for Secure Access. It is important for customers to know: We have no evidence of any of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. More information on these vulnerabilities and detailed instructi",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-September-2025-for-Ivanti-EPM-2024-SU3-and-EPM-2022-SU8",
+      "published_at": "Tue, 09 Sep 2025 14:16:12 Z",
+      "updated_at": "Tue, 09 Sep 2025 14:16:12 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [],
+      "cwes": [],
+      "products": [
+        "Ivanti for EPM 2024 SU3 and EPM 2022 SU8"
+      ],
+      "affected_products": [
+        "Ivanti for EPM 2024 SU3 and EPM 2022 SU8"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-September-2025-for-Ivanti-EPM-2024-SU3-and-EPM-2022-SU8",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/september-2025-security-update",
+          "title": "September 2025 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "September 2025 Security Update",
+        "url": "https://www.ivanti.com/blog/september-2025-security-update",
+        "record_id": "f6a082d9-98ad-4456-8bb3-dcd1c2f45fb6"
+      },
+      "last_checked_at": "2026-07-19T15:39:03.935807Z",
+      "quality_score": 53,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "cc41be005d72f8b93ab4dde65d31e8ae9f820200a36a6fea0b11deabf25d7cbc"
+    },
+    {
+      "record_id": "Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523",
+      "advisory_id": "Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523",
+      "title": "Ivanti Sentry CVE 2026 10520 CVE 2026 10523 — CVE-2026-10520, CVE-2026-10523",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Sentry CVE 2026 10520 CVE 2026 10523 relacionado con CVE-2026-10520, CVE-2026-10523. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. In today’s rapidly evolving technology and threat landscape, we believe responsible transparency should be a cornerstone of any product security program. AI is compressing the time-to-exploit , and Ivanti uses leading technologies to proactively find and fix issues ––including integrating advanced LLMs into our Engineering and product security to enhance the capabilities of our teams. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Endpoint Manager Mobile (EPMM) and Ivanti Sentry. It is important for customers to know: We have no evidence of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in the Security Advisories: Ivanti Endpoint Manager Mobile Ivanti Sentry How AI will affect vul",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523",
+      "published_at": "Tue, 09 Jun 2026 14:06:32 Z",
+      "updated_at": "Tue, 09 Jun 2026 14:06:32 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2026-10520",
+        "CVE-2026-10523"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti Sentry CVE 2026 10520 CVE 2026 10523"
+      ],
+      "affected_products": [
+        "Ivanti Sentry CVE 2026 10520 CVE 2026 10523"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [
+        "R10.5.2",
+        "R10.7.1",
+        "R10.6.2"
+      ],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti: patch: R10.5.2, patch: R10.7.1, patch: R10.6.2.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti: patch: R10.5.2, patch: R10.7.1, patch: R10.6.2.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/june-2026-security-update",
+          "title": "June 2026 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "June 2026 Security Update",
+        "url": "https://www.ivanti.com/blog/june-2026-security-update",
+        "record_id": "b27adb18-ced1-4714-99e7-8913ee4e7cd7"
+      },
+      "last_checked_at": "2026-07-19T15:39:02.103071Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "85d2c59416f9601d4a0395514c4d7b3beaa6b7e74e77eb7302b125a79b7d74d4"
+    },
+    {
+      "record_id": "Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2026-6973-CVE-2026-10727",
+      "advisory_id": "Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2026-6973-CVE-2026-10727",
+      "title": "Ivanti Endpoint Manager Mobile (EPMM) — CVE-2026-10727, CVE-2026-6973",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Endpoint Manager Mobile (EPMM) relacionado con CVE-2026-10727, CVE-2026-6973. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. In today’s rapidly evolving technology and threat landscape, we believe responsible transparency should be a cornerstone of any product security program. AI is compressing the time-to-exploit , and Ivanti uses leading technologies to proactively find and fix issues ––including integrating advanced LLMs into our Engineering and product security to enhance the capabilities of our teams. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Endpoint Manager Mobile (EPMM) and Ivanti Sentry. It is important for customers to know: We have no evidence of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in the Security Advisories: Ivanti Endpoint Manager Mobile Ivanti Sentry How AI will affect vul",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2026-6973-CVE-2026-10727",
+      "published_at": "Tue, 09 Jun 2026 14:06:32 Z",
+      "updated_at": "Tue, 09 Jun 2026 14:06:32 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2026-10727",
+        "CVE-2026-6973"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti Endpoint Manager Mobile (EPMM)"
+      ],
+      "affected_products": [
+        "Ivanti Endpoint Manager Mobile (EPMM)"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [
+        "12.7.0.2",
+        "12.9.0.1",
+        "12.8.0.3",
+        "12.8.0.1",
+        "12.6.1.1",
+        "12.7.0.1"
+      ],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 12.7.0.2, patch: 12.9.0.1, patch: 12.8.0.3, patch: 12.8.0.1, patch: 12.6.1.1, patch: 12.7.0.1.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 12.7.0.2, patch: 12.9.0.1, patch: 12.8.0.3, patch: 12.8.0.1, patch: 12.6.1.1, patch: 12.7.0.1.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2026-6973-CVE-2026-10727",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/june-2026-security-update",
+          "title": "June 2026 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "June 2026 Security Update",
+        "url": "https://www.ivanti.com/blog/june-2026-security-update",
+        "record_id": "b27adb18-ced1-4714-99e7-8913ee4e7cd7"
+      },
+      "last_checked_at": "2026-07-19T15:39:02.102527Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "9dc0f84a2aa3b14fb3a8b35cfee7f36535db02dbf45a0a96aa7bd88e902028ce"
+    },
+    {
+      "record_id": "Security-Advisory-EPM-December-2025-for-EPM-2024",
+      "advisory_id": "Security-Advisory-EPM-December-2025-for-EPM-2024",
+      "title": "Ivanti EPM December 2025 for EPM 2024",
+      "description": "Ivanti publicó un advisory técnico para Ivanti EPM December 2025 for EPM 2024. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. Our vulnerability management program is central to our commitment to maintaining secure products. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. We believe that responsible transparency helps protect our customers, and that CVE disclosures are an essential and effective tool to communicate software vulnerabilities. The purpose of assigning a CVE is to provide a beacon to security teams and signal the need for urgent updates. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Endpoint Manager (EPM). It is important for customers to know: We have no evidence of this vulnerability being exploited in the wild. This vulnerability does not impact any other Ivanti solutions. More information on this vulnerability and detailed instructions on how to remediate the issues can be found in this Security Advisory . Our Support team is always available to help customers and partners should they have any questions. Cases",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-EPM-December-2025-for-EPM-2024",
+      "published_at": "Tue, 09 Dec 2025 16:11:25 Z",
+      "updated_at": "Tue, 09 Dec 2025 16:11:25 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [],
+      "cwes": [],
+      "products": [
+        "Ivanti EPM December 2025 for EPM 2024"
+      ],
+      "affected_products": [
+        "Ivanti EPM December 2025 for EPM 2024"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-EPM-December-2025-for-EPM-2024",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/december-2025-security-update",
+          "title": "December 2025 Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "December 2025 Security Update",
+        "url": "https://www.ivanti.com/blog/december-2025-security-update",
+        "record_id": "d3c4d335-4c29-435e-ac7f-405e86cf33cc"
+      },
+      "last_checked_at": "2026-07-19T15:39:03.048599Z",
+      "quality_score": 53,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "651895ff16b4aa11a0167624ed2e7cf0791c5a7025c519b04b18ad62a492631d"
+    },
+    {
+      "record_id": "Security-Advisory-July-2025-for-Ivanti-EPM-2024-SU2-and-EPM-2022-SU8",
+      "advisory_id": "Security-Advisory-July-2025-for-Ivanti-EPM-2024-SU2-and-EPM-2022-SU8",
+      "title": "Ivanti for EPM 2024 SU2 and EPM 2022 SU8",
+      "description": "Ivanti publicó un advisory técnico para Ivanti for EPM 2024 SU2 and EPM 2022 SU8. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. Our vulnerability management program is central to our commitment to maintaining secure products. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. We believe that responsible transparency helps protect our customers, and that CVE disclosures are an essential and effective tool to communicate software vulnerabilities. The purpose of assigning a CVE is to provide a beacon to security teams and signal the need for urgent updates. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Connect Secure and Policy Secure, Ivanti EPM, and Ivanti EPMM. It is important for customers to know: We have no evidence of any of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in these Security Advisories: Ivanti Connect Secure and Policy Secure Ivanti EPMM",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-July-2025-for-Ivanti-EPM-2024-SU2-and-EPM-2022-SU8",
+      "published_at": "Tue, 08 Jul 2025 14:45:10 Z",
+      "updated_at": "Tue, 08 Jul 2025 14:45:10 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [],
+      "cwes": [],
+      "products": [
+        "Ivanti for EPM 2024 SU2 and EPM 2022 SU8"
+      ],
+      "affected_products": [
+        "Ivanti for EPM 2024 SU2 and EPM 2022 SU8"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-July-2025-for-Ivanti-EPM-2024-SU2-and-EPM-2022-SU8",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/july-security-update-2025",
+          "title": "July Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "July Security Update",
+        "url": "https://www.ivanti.com/blog/july-security-update-2025",
+        "record_id": "ab3d75ba-d2f9-489f-a4fe-58ac719c6455"
+      },
+      "last_checked_at": "2026-07-19T15:39:04.183634Z",
+      "quality_score": 53,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "c52efff1662693d34186af28e19ef4a3170688b81cfae957d700d7ada6b3620a"
+    },
+    {
+      "record_id": "Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2025-6770-CVE-2025-6771",
+      "advisory_id": "Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2025-6770-CVE-2025-6771",
+      "title": "Ivanti Endpoint Manager Mobile (EPMM) — CVE-2025-6770, CVE-2025-6771",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Endpoint Manager Mobile (EPMM) relacionado con CVE-2025-6770, CVE-2025-6771. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. Our vulnerability management program is central to our commitment to maintaining secure products. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. We believe that responsible transparency helps protect our customers, and that CVE disclosures are an essential and effective tool to communicate software vulnerabilities. The purpose of assigning a CVE is to provide a beacon to security teams and signal the need for urgent updates. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Connect Secure and Policy Secure, Ivanti EPM, and Ivanti EPMM. It is important for customers to know: We have no evidence of any of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in these Security Advisories: Ivanti Connect Secure and Policy Secure Ivanti EPMM",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2025-6770-CVE-2025-6771",
+      "published_at": "Tue, 08 Jul 2025 14:45:10 Z",
+      "updated_at": "Tue, 08 Jul 2025 14:45:10 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2025-6770",
+        "CVE-2025-6771"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti Endpoint Manager Mobile (EPMM)"
+      ],
+      "affected_products": [
+        "Ivanti Endpoint Manager Mobile (EPMM)"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2025-6770-CVE-2025-6771",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/july-security-update-2025",
+          "title": "July Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "July Security Update",
+        "url": "https://www.ivanti.com/blog/july-security-update-2025",
+        "record_id": "ab3d75ba-d2f9-489f-a4fe-58ac719c6455"
+      },
+      "last_checked_at": "2026-07-19T15:39:04.183386Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "7d4584f29d80a2314d6741f36d5d953a643fefc56af729c50a0e71fd1b8645e8"
+    },
+    {
+      "record_id": "July-Security-Advisory-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Multiple-CVEs",
+      "advisory_id": "July-Security-Advisory-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Multiple-CVEs",
+      "title": "Ivanti Connect Secure",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Connect Secure. Contexto del fabricante: Ivanti releases standard security patches on the second Tuesday of every month. Our vulnerability management program is central to our commitment to maintaining secure products. Our philosophy is simple: discovering and communicating vulnerabilities, and sharing that information with defenders, is not an indication of weakness; rather it is evidence of rigorous scrutiny and a proactive vulnerability management program. By aggressively seeking to identify and address vulnerabilities, our aim is to get ahead of threat actors to ensure our customers can take the steps needed to protect their environments. We believe that responsible transparency helps protect our customers, and that CVE disclosures are an essential and effective tool to communicate software vulnerabilities. The purpose of assigning a CVE is to provide a beacon to security teams and signal the need for urgent updates. To that end, today Ivanti is disclosing vulnerabilities in Ivanti Connect Secure and Policy Secure, Ivanti EPM, and Ivanti EPMM. It is important for customers to know: We have no evidence of any of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in these Security Advisories: Ivanti Connect Secure and Policy Secure Ivanti EPMM",
+      "url": "https://forums.ivanti.com/s/article/July-Security-Advisory-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Multiple-CVEs",
+      "published_at": "Tue, 08 Jul 2025 14:45:10 Z",
+      "updated_at": "Tue, 08 Jul 2025 14:45:10 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [],
+      "cwes": [],
+      "products": [
+        "Ivanti Connect Secure"
+      ],
+      "affected_products": [
+        "Ivanti Connect Secure"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/July-Security-Advisory-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Multiple-CVEs",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/july-security-update-2025",
+          "title": "July Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "July Security Update",
+        "url": "https://www.ivanti.com/blog/july-security-update-2025",
+        "record_id": "ab3d75ba-d2f9-489f-a4fe-58ac719c6455"
+      },
+      "last_checked_at": "2026-07-19T15:39:04.183096Z",
+      "quality_score": 53,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "8d34a48894c6826d66e5f8fe7588e65d04223b7122d777117725c587b6f1ac28"
+    },
+    {
+      "record_id": "Security-Advisory-EPM-April-2025-for-EPM-2024-and-EPM-2022-SU6",
+      "advisory_id": "Security-Advisory-EPM-April-2025-for-EPM-2024-and-EPM-2022-SU6",
+      "title": "Ivanti EPM April 2025 for EPM 2024 and EPM 2022 SU6",
+      "description": "Ivanti publicó un advisory técnico para Ivanti EPM April 2025 for EPM 2024 and EPM 2022 SU6. Contexto del fabricante: Ivanti’s vulnerability management program is a central part of our commitment to security. We employ rigorous testing and validation methodologies to enable swift identification, patching, and disclosure of vulnerabilities in collaboration with the broader security ecosystem. Our priority is to provide responsible and transparent communication to our customers, so they are empowered to defend their environments. In recent months, we have intensified our internal scanning, manual exploitation and testing capabilities, and have also made enhancements to our responsible disclosure process so that we promptly discover and address potential issues, and so that our customers are best equipped to take action. Ivanti releases standard security patches on the second Tuesday of every month. For many of our customers, the predictable schedule facilitates better planning and management of IT resources, allowing them to allocate time and personnel efficiently for the timely updates. Today, Ivanti is disclosing vulnerabilities in Ivanti Endpoint Manager (EPM). It is important for customers to know: We have no evidence of any of these vulnerabilities being exploited in the wild. These vulnerabilities do not impact any other Ivanti solutions. More information on these vulnerabilities and detailed instructions on how to remediate the issues can be found in these Security Advisory . Our Support",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-EPM-April-2025-for-EPM-2024-and-EPM-2022-SU6",
+      "published_at": "Tue, 08 Apr 2025 14:07:40 Z",
+      "updated_at": "Tue, 08 Apr 2025 14:07:40 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [],
+      "cwes": [],
+      "products": [
+        "Ivanti EPM April 2025 for EPM 2024 and EPM 2022 SU6"
+      ],
+      "affected_products": [
+        "Ivanti EPM April 2025 for EPM 2024 and EPM 2022 SU6"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti en el advisory técnico oficial.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-EPM-April-2025-for-EPM-2024-and-EPM-2022-SU6",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/april-security-update",
+          "title": "April Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "April Security Update",
+        "url": "https://www.ivanti.com/blog/april-security-update",
+        "record_id": "551a890c-a769-44cc-b35c-8c31702a63f9"
+      },
+      "last_checked_at": "2026-07-19T15:39:04.667743Z",
+      "quality_score": 53,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "cves",
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "1ec38d56e677c883fe119f76d04a91dd24e9e5f8abbec35de851073ed863f0e2"
+    },
+    {
+      "record_id": "Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2026-1281-CVE-2026-1340",
+      "advisory_id": "Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2026-1281-CVE-2026-1340",
+      "title": "Ivanti Endpoint Manager Mobile (EPMM) — CVE-2026-1281, CVE-2026-1340",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Endpoint Manager Mobile (EPMM) relacionado con CVE-2026-1281, CVE-2026-1340. Contexto del fabricante: At Ivanti, responsible transparency is a cornerstone of our commitment to customer security and trust. We have a long-standing commitment to provide information that allows our customers and the broader security ecosystem to take proactive measures to safeguard their environments, while mitigating the risks of a rapidly evolving and highly sophisticated threat landscape. To this end, we are issuing an important security update addressing vulnerabilities in Ivanti Endpoint Manager Mobile (EPMM). More information can be found in the Security Advisory. At the time of disclosure, we are aware of a very limited number of customers whose solution has been exploited. The issue affects only the on-prem EPMM product. It is not present in Ivanti Neurons for MDM, Ivanti’s cloud-based unified endpoint management solution, Ivanti EPM (a similarly named, but different product), Ivanti Sentry, or any other Ivanti products. We urge all customers using the on-prem EPMM product to promptly install the Security Update. As we respond to this situation, we are making the following information available to defenders now: Our Security Advisory , which describes the nature of the vulnerabilities and detailed remediation instructions for customers. A Technical Analysis that includes affected endpoint specifics and log analysis guidance to support investigation and forensics. We have a longstanding comm",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2026-1281-CVE-2026-1340",
+      "published_at": "Thu, 29 Jan 2026 19:05:22 Z",
+      "updated_at": "Thu, 29 Jan 2026 19:05:22 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2026-1281",
+        "CVE-2026-1340"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti Endpoint Manager Mobile (EPMM)"
+      ],
+      "affected_products": [
+        "Ivanti Endpoint Manager Mobile (EPMM)"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [
+        "12.x.1.x RPM",
+        "12.x.0.x RPM"
+      ],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 12.x.1.x RPM, patch: 12.x.0.x RPM.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 12.x.1.x RPM, patch: 12.x.0.x RPM.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2026-1281-CVE-2026-1340",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/january-2026-epmm-security-update",
+          "title": "January 2026 EPMM Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "January 2026 EPMM Security Update",
+        "url": "https://www.ivanti.com/blog/january-2026-epmm-security-update",
+        "record_id": "43dda94c-f09c-472c-a7a4-ab75944d5b69"
+      },
+      "last_checked_at": "2026-07-19T15:39:02.937213Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "66b797d03803db44f7cee0a564f0f047656b1d6ea7c21d2df7c932d1be619eb0"
+    },
+    {
+      "record_id": "Analysis-Guidance-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2026-1281-CVE-2026-1340",
+      "advisory_id": "Analysis-Guidance-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2026-1281-CVE-2026-1340",
+      "title": "Ivanti Endpoint Manager Mobile (EPMM) — CVE-2026-1281, CVE-2026-1340",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Endpoint Manager Mobile (EPMM) relacionado con CVE-2026-1281, CVE-2026-1340. Contexto del fabricante: At Ivanti, responsible transparency is a cornerstone of our commitment to customer security and trust. We have a long-standing commitment to provide information that allows our customers and the broader security ecosystem to take proactive measures to safeguard their environments, while mitigating the risks of a rapidly evolving and highly sophisticated threat landscape. To this end, we are issuing an important security update addressing vulnerabilities in Ivanti Endpoint Manager Mobile (EPMM). More information can be found in the Security Advisory. At the time of disclosure, we are aware of a very limited number of customers whose solution has been exploited. The issue affects only the on-prem EPMM product. It is not present in Ivanti Neurons for MDM, Ivanti’s cloud-based unified endpoint management solution, Ivanti EPM (a similarly named, but different product), Ivanti Sentry, or any other Ivanti products. We urge all customers using the on-prem EPMM product to promptly install the Security Update. As we respond to this situation, we are making the following information available to defenders now: Our Security Advisory , which describes the nature of the vulnerabilities and detailed remediation instructions for customers. A Technical Analysis that includes affected endpoint specifics and log analysis guidance to support investigation and forensics. We have a longstanding comm",
+      "url": "https://forums.ivanti.com/s/article/Analysis-Guidance-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2026-1281-CVE-2026-1340",
+      "published_at": "Thu, 29 Jan 2026 19:05:22 Z",
+      "updated_at": "Thu, 29 Jan 2026 19:05:22 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2026-1281",
+        "CVE-2026-1340"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti Endpoint Manager Mobile (EPMM)"
+      ],
+      "affected_products": [
+        "Ivanti Endpoint Manager Mobile (EPMM)"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [
+        "12.x.1.x RPM",
+        "12.x.0.x RPM"
+      ],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 12.x.1.x RPM, patch: 12.x.0.x RPM.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 12.x.1.x RPM, patch: 12.x.0.x RPM.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Analysis-Guidance-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2026-1281-CVE-2026-1340",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/january-2026-epmm-security-update",
+          "title": "January 2026 EPMM Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "January 2026 EPMM Security Update",
+        "url": "https://www.ivanti.com/blog/january-2026-epmm-security-update",
+        "record_id": "43dda94c-f09c-472c-a7a4-ab75944d5b69"
+      },
+      "last_checked_at": "2026-07-19T15:39:02.937581Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "8a773216e3bdc2165888cd485d10f15deb0c45bb5d38e86794fea9d6a969d495"
+    },
+    {
+      "record_id": "May-2026-Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-Multiple-CVEs",
+      "advisory_id": "May-2026-Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-Multiple-CVEs",
+      "title": "Ivanti Endpoint Manager Mobile (EPMM) — CVE-2026-6973",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Endpoint Manager Mobile (EPMM) relacionado con CVE-2026-6973. Contexto del fabricante: In today’s rapidly evolving technology and threat landscape, responsible transparency should be a cornerstone of any product security program. Especially with the advancements in AI, we believe it is important to respond quickly when a new risk is discovered. Ivanti’s efforts integrating AI into our development and product security process have increased the capabilities of our Engineering and Product Security Red Teams to identify and fix vulnerabilities. Our objective in proactively discovering issues is to increase the resilience of our products in today’s threat environment and reduce the likelihood of exploited-in-the-wild Zero Days. We have already successfully identified vulnerabilities traditional tools missed, including some that are being disclosed today. Importantly, we are committed to using AI responsibly in product security, including keeping a human in the loop to verify automated or agentic work. Our top priority is the security of our customers, and we expect that this work will naturally increase the number of vulnerabilities found, fixed, and disclosed. While this will result in an uptick in disclosures, we see this as a good thing, and an important part of ensuring our products keep pace with modern security requirements as they change. To this end, we are issuing an important security update addressing vulnerabilities in Ivanti Endpoint Manager Mobile (EPMM",
+      "url": "https://forums.ivanti.com/s/article/May-2026-Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-Multiple-CVEs",
+      "published_at": "Thu, 07 May 2026 14:23:06 Z",
+      "updated_at": "Thu, 07 May 2026 14:23:06 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2026-6973"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti Endpoint Manager Mobile (EPMM)"
+      ],
+      "affected_products": [
+        "Ivanti Endpoint Manager Mobile (EPMM)"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [
+        "12.8.0.3",
+        "12.8.0.1",
+        "12.6.1.1",
+        "12.7.0.1",
+        "12.7.0.2",
+        "12.9.0.1"
+      ],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 12.8.0.3, patch: 12.8.0.1, patch: 12.6.1.1, patch: 12.7.0.1, patch: 12.7.0.2, patch: 12.9.0.1.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 12.8.0.3, patch: 12.8.0.1, patch: 12.6.1.1, patch: 12.7.0.1, patch: 12.7.0.2, patch: 12.9.0.1.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/May-2026-Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-Multiple-CVEs",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/may-2026-epmm-security-update",
+          "title": "May 2026 EPMM Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "May 2026 EPMM Security Update",
+        "url": "https://www.ivanti.com/blog/may-2026-epmm-security-update",
+        "record_id": "fee9b979-fd63-4fe1-825a-89bdb3bbb17f"
+      },
+      "last_checked_at": "2026-07-19T15:39:02.471596Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "51f8ce942cf066be5186a587c24ecf690c30339b2a7531f10692c65875ff570a"
+    },
+    {
+      "record_id": "Security-Advisory-Ivanti-Neurons-for-ITSM-CVE-2026-9614",
+      "advisory_id": "Security-Advisory-Ivanti-Neurons-for-ITSM-CVE-2026-9614",
+      "title": "Ivanti Neurons for ITSM — CVE-2026-9614",
+      "description": "Ivanti publicó un advisory técnico para Ivanti Neurons for ITSM relacionado con CVE-2026-9614. Contexto del fabricante: In today’s rapidly evolving technology and threat landscape, responsible transparency should be a cornerstone of any product security program. As part of our ongoing product security program, we continually assess, investigate, and address vulnerabilities. When an issue is found, we communicate relevant information as quickly and responsibly as possible. To this end, we are issuing an important security update addressing vulnerabilities in Ivanti Neurons for ITSM (cloud and on-premises). Customers should review the Security Advisory for more information and version specific details. Customers using the on-premises Ivanti Neurons for ITSM solution should review the Security advisory and apply fix as soon as possible. At the time of this publication, we are not aware of any customers being exploited through the vulnerability disclosed today. Our top priority is the security of our customers and believe the increase in identified, resolved, and transparently communicated vulnerabilities demonstrates that commitment. Customers and partners with questions about their environment or remediation steps can contact Ivanti Support. Cases can be logged via the Ivanti Innovators Hub (login credentials required). Want to stay up to date on Ivanti Security Advisories? Paste https://www.ivanti.com/blog/topics/security-advisory/rss into your preferred RSS reader / functionality in your email p",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Neurons-for-ITSM-CVE-2026-9614",
+      "published_at": "Mon, 01 Jun 2026 14:00:44 Z",
+      "updated_at": "Mon, 01 Jun 2026 14:00:44 Z",
+      "severity": "unknown",
+      "cvss": null,
+      "cvss_vector": "",
+      "cves": [
+        "CVE-2026-9614"
+      ],
+      "cwes": [],
+      "products": [
+        "Ivanti Neurons for ITSM"
+      ],
+      "affected_products": [
+        "Ivanti Neurons for ITSM"
+      ],
+      "affected_versions": [],
+      "fixed_versions": [
+        "2026.2 Patch 1",
+        "2025.2 Patch 1",
+        "2026.1 Patch 9",
+        "2025.3 Patch 1",
+        "2025.4 Patch 1"
+      ],
+      "solution": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 2026.2 Patch 1, patch: 2025.2 Patch 1, patch: 2026.1 Patch 9, patch: 2025.3 Patch 1, patch: 2025.4 Patch 1.",
+      "workaround": "",
+      "mitigation": "",
+      "required_action": "Aplicar las versiones corregidas indicadas por Ivanti: patch: 2026.2 Patch 1, patch: 2025.2 Patch 1, patch: 2026.1 Patch 9, patch: 2025.3 Patch 1, patch: 2025.4 Patch 1.",
+      "known_exploited": null,
+      "epss": null,
+      "vendor": "Ivanti",
+      "source_id": "ivanti-security",
+      "source_name": "Ivanti Security Advisories",
+      "source_category": "vendor_advisory",
+      "references": [
+        {
+          "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Neurons-for-ITSM-CVE-2026-9614",
+          "title": "Ivanti Security Advisory"
+        },
+        {
+          "url": "https://www.ivanti.com/blog/june-2026-ivanti-neurons-for-itsm-security-update",
+          "title": "June 2026 Ivanti Neurons for ITSM Security Update"
+        }
+      ],
+      "parent_update": {
+        "title": "June 2026 Ivanti Neurons for ITSM Security Update",
+        "url": "https://www.ivanti.com/blog/june-2026-ivanti-neurons-for-itsm-security-update",
+        "record_id": "4b5e8789-4afd-423a-bb03-824e079ec5f1"
+      },
+      "last_checked_at": "2026-07-19T15:39:02.217386Z",
+      "quality_score": 68,
+      "enrichment_status": "partial",
+      "missing_fields": [
+        "severity",
+        "cvss"
+      ],
+      "publishable": true,
+      "content_hash": "e19eddb8f09bc181d896f52d778a6cbbada815a3fd3e21d73ae18b3af97e9cc1"
+    }
+  ],
+  "enrichment": {
+    "strategy": "split_by_official_technical_advisory",
+    "parent_updates": 19
+  },
+  "normalization": {
+    "strategy": "clean_products_versions_and_common_quality",
+    "cleaned_products": 0,
+    "cleaned_versions": 0
+  }
+}
