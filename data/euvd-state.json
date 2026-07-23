@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "bootstrap_complete": true,
+  "bootstrap_next_from": null,
+  "bootstrap_target_to": "2026-07-18",
+  "last_incremental_from": "2026-07-15",
+  "last_incremental_to": "2026-07-18",
+  "updated_at": "2026-07-18T16:03:21.159525Z"
+}

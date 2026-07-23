@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "source_id": "juniper-mist",
+  "generated_at": "2026-07-18T16:50:25.604527Z",
+  "total": 1,
+  "items": [
+    {
+      "advisory_id": "https://www.mist.com/?post_type=site_documentation&p=16511",
+      "content_hash": "85dde7d980a7ffbe3e7301586daf182e447907b6d0c96ec7fc86a9aa1e67e7fc",
+      "cves": [],
+      "description": "What is AirSnitch? In February 2026, security researchers at the Network and Distributed System Security (NDSS) Symposium presented a research paper entitled “AirSnitch: Demystifying and Breaking Client Isolation in Wi-Fi Networks.” AirSnitch is a collection of attacks meant to defeat client isolation. There are several distinct attacks relying on protocol level behavior or assistance from... The post AirSnitch Overview appeared first on Mist .",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-03-13T02:34:53Z",
+      "record_id": "https://www.mist.com/?post_type=site_documentation&p=16511",
+      "references": [
+        {
+          "url": "https://www.mist.com/documentation/airsnitch-overview/"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "vendor_psirt",
+      "source_id": "juniper-mist",
+      "source_name": "Juniper Mist Security Alerts",
+      "title": "AirSnitch Overview",
+      "updated_at": "2026-03-13T02:34:53Z",
+      "url": "https://www.mist.com/documentation/airsnitch-overview/",
+      "vendor": "Juniper Networks"
+    }
+  ]
+}

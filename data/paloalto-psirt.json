@@ -2330,7 +2330,7 @@
   ],
   "enrichment": {
     "schema_version": 1,
-    "updated_at": "2026-07-21T17:54:49.220454Z",
+    "updated_at": "2026-07-23T14:28:24.907625Z",
     "source_id": "paloalto-psirt",
     "records": 25,
     "complete": 25,

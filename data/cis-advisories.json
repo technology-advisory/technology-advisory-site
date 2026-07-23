@@ -1,0 +1,1258 @@
+{
+  "schema_version": 1,
+  "source_id": "cis-advisories",
+  "generated_at": "2026-07-18T16:50:25.600902Z",
+  "total": 50,
+  "items": [
+    {
+      "advisory_id": "9e8eb7ed-5730-3b51-8df2-6181435be9bc",
+      "content_hash": "a0399321825856e7fb87d4d0ec24d2fee887924264cad4e9fb190a617b9df634",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Google Chrome, the most severe of which could allow for arbitrary code execution. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution in the context of the logged on user. Depending on the privileges associated with the user an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-07-15T19:03:00Z",
+      "record_id": "9e8eb7ed-5730-3b51-8df2-6181435be9bc",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-google-chrome-could-allow-for-arbitrary-code-execution_2026-069"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Google Chrome Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-07-15T19:03:00Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-google-chrome-could-allow-for-arbitrary-code-execution_2026-069",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "070a701b-c381-2d15-c0ae-cde893735395",
+      "content_hash": "8fdd36dffaa30ed670b1f3afa33a214f7eb49e29c2a25eda1249f9158f43c131",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Adobe products, the most severe of which could allow for arbitrary code execution. Adobe After Effects is a digital visual effects and motion graphics application used for creating cinematic movie titles, transitions, and complex animation sequences. Adobe Animate is a professional vector animation software used to design interactive animations and multimedia content for games, television, and websites. Adobe Audition is a professional audio workstation and editing toolset designed for mixing, restoring, and precisely engineering audio content for film, broadcast, and podcasts. Adobe Bridge is a powerful asset management tool that allows creative professionals to preview, organize, edit, and publish multiple creative assets efficiently across the Creative Cloud ecosystem. Adobe ColdFusion is a commercial rapid web application development platform used to build and deploy dynamic web and mobile applications. Adobe Commerce is an enterprise-level e-commerce platform that allows businesses to build, manage, and scale secure online storefronts for both B2B and B2C audiences. Adobe Content Credentials SDK (Software Development Kit) is a developer toolset that allows applications to attach secure, tamper-evident metadata to digital content like images, video, and audio. Adobe Creative Cloud Desktop Application is a central hub that allows users to download, update, and manage their Adobe software, manage cloud storage, and access shared creative assets and fonts. Adobe Experience Manager (AEM) is an enterprise-grade digital experience platform that combines a Content Management System (CMS) and a Digital Asset Management (DAM) system. Adobe Illustrator is the industry-standard vector graphics software used by designers to create scalable logos, icons, typography, and complex illustrations. Adobe Media Encoder is a robust background processing application used to automate the ingest, transcoding, proxy creation, and output of video and audio files across various formats and devices. Adobe Premiere Pro is a timeline-based, industry-leading video editing software program designed for professional filmmakers, broadcasters, and content creators. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution in the context of the logged on user. Depending on the privileges associated with the user, an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-07-14T18:30:28Z",
+      "record_id": "070a701b-c381-2d15-c0ae-cde893735395",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-adobe-products-could-allow-for-arbitrary-code-execution_2026-067"
+        }
+      ],
+      "required_action": "",
+      "severity": "medium",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Adobe Products Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-07-14T18:30:28Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-adobe-products-could-allow-for-arbitrary-code-execution_2026-067",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "36148731-2806-4f16-bc06-43a98b02e5bc",
+      "content_hash": "73912391d254eb4b15a780bf27a8f3e9dbb5929b7445c10c7d6bf6e0d81837cc",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Microsoft products, the most severe of which could allow for remote code execution. Successful exploitation of the most severe of these vulnerabilities could result in an attacker gaining the same privileges as the logged-on user. Depending on the privileges associated with the user, an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-07-14T18:28:52Z",
+      "record_id": "36148731-2806-4f16-bc06-43a98b02e5bc",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/critical-patches-issued-for-microsoft-products-july-14-2026_2026-068"
+        }
+      ],
+      "required_action": "",
+      "severity": "critical",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Critical Patches Issued for Microsoft Products, July 14, 2026",
+      "updated_at": "2026-07-14T18:28:52Z",
+      "url": "https://www.cisecurity.org/advisory/critical-patches-issued-for-microsoft-products-july-14-2026_2026-068",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "c32acbb6-2038-c576-8eaf-75048b791e03",
+      "content_hash": "8ca9884cfede607549ce1d364808d7e488fedf8db4e994e31dae46ab64b3f60b",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Adobe products, the most severe of which could allow for arbitrary code execution. Adobe Campaign Classic is an enterprise-grade marketing automation platform that helps organizations design, automate, and track complex, personalized cross-channel marketing campaigns. Adobe ColdFusion is a commercial rapid web application development platform used to build and deploy dynamic web and mobile applications. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution in the context of the logged on user. Depending on the privileges associated with the user, an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-07-01T19:09:27Z",
+      "record_id": "c32acbb6-2038-c576-8eaf-75048b791e03",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-adobe-products-could-allow-for-arbitrary-code-execution_2026-066"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Adobe Products Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-07-01T19:09:27Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-adobe-products-could-allow-for-arbitrary-code-execution_2026-066",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "4416991a-cbb2-d21b-9e66-68762f00da0d",
+      "content_hash": "2f7270ccd068e93abada0eaca47e23c8c8554ebfe33f238d31cf5421fbb1f871",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Mozilla products, the most severe of which could allow for arbitrary code execution. Mozilla Firefox is a web browser used to access the Internet. Thunderbird is a free, open-source email, calendar, and chat application. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution. Depending on the privileges associated with the user an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-07-01T18:48:04Z",
+      "record_id": "4416991a-cbb2-d21b-9e66-68762f00da0d",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-mozilla-products-could-allow-for-arbitrary-code-execution_2026-065"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Mozilla Products Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-07-01T18:48:04Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-mozilla-products-could-allow-for-arbitrary-code-execution_2026-065",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "908220be-c6ef-b593-909d-a87773c33bc6",
+      "content_hash": "db9686268f736e16e32ade3953cd7846f71c11906227b53a7c5dd78dd9b95d36",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Google Chrome, the most severe of which could allow for arbitrary code execution. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution in the context of the logged on user. Depending on the privileges associated with the user an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-07-01T04:41:22Z",
+      "record_id": "908220be-c6ef-b593-909d-a87773c33bc6",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-google-chrome-could-allow-for-arbitrary-code-execution_2026-064"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Google Chrome Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-07-01T04:41:22Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-google-chrome-could-allow-for-arbitrary-code-execution_2026-064",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "f5864726-29f9-17dd-eef3-fc2d2c801ac1",
+      "content_hash": "2af08c8a63ed6136a29b153c3fc7c32f8a885440573c12e4e3525afedafe00e0",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Google Chrome, the most severe of which could allow for arbitrary code execution. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution in the context of the logged on user. Depending on the privileges associated with the user an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-06-26T04:39:02Z",
+      "record_id": "f5864726-29f9-17dd-eef3-fc2d2c801ac1",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-google-chrome-could-allow-for-arbitrary-code-execution_2026-063"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Google Chrome Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-06-26T04:39:02Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-google-chrome-could-allow-for-arbitrary-code-execution_2026-063",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "01017607-b627-ce77-7e76-79f42ad8e4ba",
+      "content_hash": "bda54a2cc30b485d9b31ff18df18a684f6bb034c81024991b7bc684905f3aecc",
+      "cves": [],
+      "description": "A vulnerability has been discovered in the GlobalProtect portal and gateway of PAN-OS which could allow for authentication bypass. The PAN-OS GlobalProtect Portal acts as the central control plane for Palo Alto Networks VPN infrastructure. Successful exploitation of the vulnerability allows the attacker to bypass security restrictions and establish an unauthorized VPN connection.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-06-22T17:39:44Z",
+      "record_id": "01017607-b627-ce77-7e76-79f42ad8e4ba",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-pan-os-could-allow-for-authentication-bypass_2026-062"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "A Vulnerability in PAN-OS Could Allow for Authentication Bypass",
+      "updated_at": "2026-06-22T17:39:44Z",
+      "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-pan-os-could-allow-for-authentication-bypass_2026-062",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "19ec4bd7-4291-1585-61cf-0c81a2b459ae",
+      "content_hash": "aed9ff70fb06c8f12e20c1895edfd3f6672c1271ec085bb91a899b0dc6d0e9d7",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Mozilla products, the most severe of which could allow for arbitrary code execution. Mozilla Firefox is a web browser used to access the Internet. Mozilla Firefox ESR is a version of the web browser intended to be deployed in large organizations. Thunderbird is a free, open-source email, calendar, and chat application. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution. Depending on the privileges associated with the user an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-06-16T19:30:19Z",
+      "record_id": "19ec4bd7-4291-1585-61cf-0c81a2b459ae",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-mozilla-products-could-allow-for-arbitrary-code-execution_2026-060"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Mozilla Products Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-06-16T19:30:19Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-mozilla-products-could-allow-for-arbitrary-code-execution_2026-060",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "c33b4ac3-8a29-9e24-0a58-a82108813d62",
+      "content_hash": "eb72a8ac2edfb20560cd54aa9c45175428f87f966a9d174d7924c153f6c99942",
+      "cves": [],
+      "description": "A vulnerability has been discovered in SimpleHelp, which could allow for authentication bypass. SimpleHelp is a self-hosted remote support, access, and monitoring software used by IT teams, managed service providers (MSPs), and helpdesks. It enables technicians to securely connect to, troubleshoot, and manage client computers and servers. Successful exploitation of the vulnerability could allow unauthenticated attackers to create a new “Technician” account and use it to remote into managed endpoints, execute scripts, install programs; or view, change, or delete data.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-06-16T19:23:16Z",
+      "record_id": "c33b4ac3-8a29-9e24-0a58-a82108813d62",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-simplehelp-could-allow-for-authentication-bypass_2026-061"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "A Vulnerability in SimpleHelp Could Allow for Authentication Bypass",
+      "updated_at": "2026-06-16T19:23:16Z",
+      "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-simplehelp-could-allow-for-authentication-bypass_2026-061",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "a6fb8191-4f43-f7ea-dcd1-c5f86b8de331",
+      "content_hash": "e063506d6d2fa03ed275a9cea93a53f4e62507b2767b8b26338cbe16e7af5576",
+      "cves": [],
+      "description": "A vulnerability has been discovered in the Updates Environment Management component of PeopleSoft Enterprise PeopleTools that could allow an attacker with network access via HTTP to completely takeover the software. PeopleSoft is an integrated enterprise resource planning (ERP) software suite widely used by large organizations for managing core business functions, including HR, payroll, finance, supply chain, and campus operations. Successful exploitation of this vulnerability can result in remote code execution, potentially leading to full system compromise.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-06-11T18:29:38Z",
+      "record_id": "a6fb8191-4f43-f7ea-dcd1-c5f86b8de331",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-oracle-peoplesoft-peopletools-could-allow-for-remote-code-execution_2026-059"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "A Vulnerability in Oracle PeopleSoft PeopleTools Could Allow for Remote Code Execution",
+      "updated_at": "2026-06-11T18:29:38Z",
+      "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-oracle-peoplesoft-peopletools-could-allow-for-remote-code-execution_2026-059",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "6ba928c4-bd8a-6269-f56a-690f538696e1",
+      "content_hash": "ab6d7c9390e858c5b8a59ba2918e4f829f44384a21461ca889a57f7569733bb0",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Microsoft products, the most severe of which could allow for remote code execution. Successful exploitation of the most severe of these vulnerabilities could result in an attacker gaining the same privileges as the logged-on user. Depending on the privileges associated with the user, an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-06-09T17:53:16Z",
+      "record_id": "6ba928c4-bd8a-6269-f56a-690f538696e1",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/critical-patches-issued-for-microsoft-products-june-9-2026_2026-056"
+        }
+      ],
+      "required_action": "",
+      "severity": "critical",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Critical Patches Issued for Microsoft Products, June 9, 2026",
+      "updated_at": "2026-06-09T17:53:16Z",
+      "url": "https://www.cisecurity.org/advisory/critical-patches-issued-for-microsoft-products-june-9-2026_2026-056",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "74acc656-3a15-03da-eb9a-94ea7afdde8b",
+      "content_hash": "2ed419ea71000858b266b8c72e704ee180e82dd0b6e566c2c95f250868cfc172",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Check Point products the most severe of which could allow for authentication bypass. Check Point VPN Remote Access provides remote and mobile employees with secure, encrypted connections to corporate networks. Check Point Mobile Access enables secure remote access to enterprise applications through client-based or clientless solutions. Check Point Spark Firewall is an enterprise-grade security gateway providing all-in-one threat prevention. Successful exploitation of the most severe of these vulnerabilities could allow an unauthenticated remote attacker to bypass authentication and gain unauthorized access to network resources. Depending on the privileges associated with the user an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-06-09T17:00:56Z",
+      "record_id": "74acc656-3a15-03da-eb9a-94ea7afdde8b",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-check-point-products-could-allow-for-authentication-bypass_2026-055"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Check Point Products Could Allow for Authentication Bypass",
+      "updated_at": "2026-06-09T17:00:56Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-check-point-products-could-allow-for-authentication-bypass_2026-055",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "07a0cf72-7d5e-af6d-6035-63e703cab65a",
+      "content_hash": "09dd79a7db572bc8e86423dc1d223e5d12d6b9f45bf78bb4763dab7e220f7835",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Google Chrome, the most severe of which could allow for arbitrary code execution. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution in the context of the logged on user. Depending on the privileges associated with the user an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-06-09T13:45:52Z",
+      "record_id": "07a0cf72-7d5e-af6d-6035-63e703cab65a",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-google-chrome-could-allow-for-arbitrary-code-execution_2026-054"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Google Chrome Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-06-09T13:45:52Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-google-chrome-could-allow-for-arbitrary-code-execution_2026-054",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "610bd64e-46ea-ae8e-b00c-c7e33e2081be",
+      "content_hash": "f19803ae9d582efe0a65040102c6f4ab8f01731867cf396ec0014a68ae23b084",
+      "cves": [],
+      "description": "A vulnerability has been discovered in Cisco products that could allow for Server-Side Request Forgery. Cisco Unified Communications Manager (Unified CM) / Cisco Unified Communications Manager Session Management Edition (Unified CM SME) is Cisco’s central, software-based call control and session management platform for enterprise communication. Successful exploitation of this vulnerability could allow for Server-Side Request Forgery, where an attacker could write files to the underlying operating system that could be used later to elevate to root. Depending on the location the attacker is able to write files to, they may be able to execute commands or remotely access the affected device.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-06-05T13:13:22Z",
+      "record_id": "610bd64e-46ea-ae8e-b00c-c7e33e2081be",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-cisco-products-could-allow-for-server-side-request-forgery_2026-053"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "A Vulnerability in Cisco Products Could Allow for Server-Side Request Forgery",
+      "updated_at": "2026-06-05T13:13:22Z",
+      "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-cisco-products-could-allow-for-server-side-request-forgery_2026-053",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "cfcb3773-6c37-62a5-d39d-64f71f3accdf",
+      "content_hash": "36b10f80081ed464602b984c40b5111297ad8c8a7e089e6395ba4f7474717551",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Mozilla products, the most severe of which could allow for arbitrary code execution. Mozilla Firefox is a web browser used to access the Internet. Mozilla Firefox ESR is a version of the web browser intended to be deployed in large organizations. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution. Depending on the privileges associated with the user an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-05-20T00:37:44Z",
+      "record_id": "cfcb3773-6c37-62a5-d39d-64f71f3accdf",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-mozilla-products-could-allow-for-arbitrary-code-execution_2026-052"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Mozilla Products Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-05-20T00:37:44Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-mozilla-products-could-allow-for-arbitrary-code-execution_2026-052",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "00ff5205-ef18-9e40-4545-ca11a9b4e4cd",
+      "content_hash": "35dd5c36c7fb04fdd711606cf758b2bd9f43acc2cb5f3cd54e9c9ec54b3ee426",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in NGINX, the most severe of which could allow for remote code execution. NGINX is a software used for web serving, reverse proxying, caching, and load balancing. Successful exploitation of the most severe of these vulnerabilities may allow an unauthenticated threat actor to crash vulnerable NGINX worker processes by sending crafted HTTP requests. Additionally, for systems with Address Space Layout Randomization (ASLR) disabled, exploitation may result in remote code execution. Depending on the privileges associated with the user, an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have less rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-05-18T20:17:57Z",
+      "record_id": "00ff5205-ef18-9e40-4545-ca11a9b4e4cd",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-nginx-could-allow-for-remote-code-execution_2026-051"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in NGINX Could Allow for Remote Code Execution",
+      "updated_at": "2026-05-18T20:17:57Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-nginx-could-allow-for-remote-code-execution_2026-051",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "0881e375-a6a3-9e64-01e9-34d25a1e33dd",
+      "content_hash": "822ff9178a1f72d2ab7c7d31878211823090bc9fac21eff1958bc9d557600aae",
+      "cves": [],
+      "description": "A vulnerability has been discovered in Microsoft Exchange Server that could allow for arbitrary code execution. Microsoft Exchange Server is an enterprise-level email and collaboration platform developed by Microsoft that runs on Windows Server. Successful exploitation could allow for arbitrary JavaScript to be executed in the browser context. The malicious code would run with the same permissions as your browser, allowing attackers to steal data, install malware, or hijack your computer.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-05-15T19:48:37Z",
+      "record_id": "0881e375-a6a3-9e64-01e9-34d25a1e33dd",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-microsoft-exchange-server-could-allow-for-arbitrary-code-execution_2026-050"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "A Vulnerability in Microsoft Exchange Server Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-05-15T19:48:37Z",
+      "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-microsoft-exchange-server-could-allow-for-arbitrary-code-execution_2026-050",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "664850f0-bdee-4ac4-0c3b-6c19547839bc",
+      "content_hash": "9adde36c216731c8eee42d16ff1e0772d45b6095fea39c1b0fe08f0f65a2ed24",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Fortinet products, the most severe of which could allow for remote code execution. * FortiAuthenticator is a centralized identity and access management (IAM) solution that secures network access by managing user identities, Multi-Factor Authentication (MFA), and certificate management. * FortiSandbox is an advanced threat detection solution from Fortinet that uses sandboxing to analyze suspicious files and network traffic for advanced threats like zero-day malware and ransomware. Successful exploitation of these vulnerabilities could lead to remote code execution. Depending on the privileges associated with the user, an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have less rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-05-12T19:45:05Z",
+      "record_id": "664850f0-bdee-4ac4-0c3b-6c19547839bc",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-fortinet-products-could-allow-for-remote-code-execution_2026-049"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Fortinet Products Could Allow for Remote Code Execution",
+      "updated_at": "2026-05-12T19:45:05Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-fortinet-products-could-allow-for-remote-code-execution_2026-049",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "9d769b35-841a-66bd-374b-4ebe7e023860",
+      "content_hash": "937d2d2efbc52ee2b88e93962fe9b81fa410e2172d276a42e1c1cb1aeb23af01",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Microsoft products, the most severe of which could allow for remote code execution. Successful exploitation of the most severe of these vulnerabilities could result in an attacker gaining the same privileges as the logged-on user. Depending on the privileges associated with the user, an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-05-12T18:15:21Z",
+      "record_id": "9d769b35-841a-66bd-374b-4ebe7e023860",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/critical-patches-issued-for-microsoft-products-may-12-2026_2026-048"
+        }
+      ],
+      "required_action": "",
+      "severity": "critical",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Critical Patches Issued for Microsoft Products, May 12, 2026",
+      "updated_at": "2026-05-12T18:15:21Z",
+      "url": "https://www.cisecurity.org/advisory/critical-patches-issued-for-microsoft-products-may-12-2026_2026-048",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "83288a83-ad90-b1b5-c6c6-0a90b7ed9666",
+      "content_hash": "ca3cf3010f0fe3d0693485ba88a4732fb549b6d7177cb95ff3ab1ca6e1db8011",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Apple products, the most severe of which could allow for arbitrary code execution. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution. Depending on the privileges associated with the user an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-05-12T18:13:34Z",
+      "record_id": "83288a83-ad90-b1b5-c6c6-0a90b7ed9666",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-apple-products-could-allow-for-arbitrary-code-execution_2026-047"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Apple Products Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-05-12T18:13:34Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-apple-products-could-allow-for-arbitrary-code-execution_2026-047",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "ecc180f2-4a80-763a-859f-3ee2c17e5b30",
+      "content_hash": "566db2e5295606ab9e4b709212b8a06c6a39bc6bb4a758d16cc538c5be24cb6f",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Adobe products, the most severe of which could allow for arbitrary code execution. Adobe After Effects is a digital effects, motion graphics, and compositing application. Adobe Commerce is a composable ecommerce solution that lets you quickly create global, multi-brand B2C and B2B experiences all from one cloud-native platform. Adobe Connect is a secure, highly customizable web conferencing and virtual training platform used for webinars, online meetings, and e-learning. Adobe Media Encoder is a transcoding and rendering application that lets you deliver audio and video files in a broad variety of formats. Adobe Premiere Pro is a subscription-based timeline video editing software for film, TV, and web. Adobe Substance 3D is a suite of tools for creating 3D content, including modeling, texturing, and rendering. Content Authenticity SDK contains Rust and JavaScript libraries, enabling web pages to read, validate, create, and sign manifest data, and embed it in supported asset files. Adobe Illustrator is vector graphics software used by designers to create scalable, high-resolution artwork such as logos, icons, illustrations, and typography. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution in the context of the logged on user. Depending on the privileges associated with the user, an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-05-12T18:10:50Z",
+      "record_id": "ecc180f2-4a80-763a-859f-3ee2c17e5b30",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-adobe-products-could-allow-for-arbitrary-code-execution_2026-046"
+        }
+      ],
+      "required_action": "",
+      "severity": "medium",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Adobe Products Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-05-12T18:10:50Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-adobe-products-could-allow-for-arbitrary-code-execution_2026-046",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "af61ccf3-3e41-dcfd-0e49-5ea18587195b",
+      "content_hash": "73eada22be05eaee4978db7f9333bd0c046f05788139a48c8d3aaf419f6c17b8",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Mozilla products, the most severe of which could allow for arbitrary code execution. Mozilla Firefox is a web browser used to access the Internet. Mozilla Firefox ESR is a version of the web browser intended to be deployed in large organizations. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution. Depending on the privileges associated with the user an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-05-07T16:18:47Z",
+      "record_id": "af61ccf3-3e41-dcfd-0e49-5ea18587195b",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-mozilla-products-could-allow-for-arbitrary-code-execution_2026-045"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Mozilla Products Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-05-07T16:18:47Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-mozilla-products-could-allow-for-arbitrary-code-execution_2026-045",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "01491282-c447-1591-1665-818e6eaf23a9",
+      "content_hash": "f9062cd5675d897276bc8eb4ac76d7eacea2f1e6b6db39734a2ba831d8bb77ad",
+      "cves": [],
+      "description": "A vulnerability has been discovered in the PAN-OS Authentication Portal (aka Captive Portal) service that could allow for remote code execution. PAN-OS is the operating system that runs Palo Alto Networks next-generation firewalls. Successful exploitation could allow an unauthenticated remote attacker to execute arbitrary code with root privileges on the PA-Series and VM-Series firewalls by sending specially crafted packets.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-05-06T22:07:33Z",
+      "record_id": "01491282-c447-1591-1665-818e6eaf23a9",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-pan-os-could-allow-for-remote-code-execution_2026-043"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "A Vulnerability in PAN-OS Could Allow for Remote Code Execution",
+      "updated_at": "2026-05-06T22:07:33Z",
+      "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-pan-os-could-allow-for-remote-code-execution_2026-043",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "9861dce5-9876-2315-ec35-aa9aad96d08e",
+      "content_hash": "23a67b11a54964a164b7452e2330ba08f837aff75d0f2f007dff47d66bf4da4e",
+      "cves": [],
+      "description": "A vulnerability has been discovered in Apache HTTP Server with the HTTP/2 protocol that could allow for remote code execution. Apache is a free, open-source web server software that enables the delivery of web content over the internet. Successful exploitation could result in denial of service, crashing worker processes with minimal effort. In certain setups, especially those using APR with mmap (common on Debian systems and official Docker images), it may also be exploited for remote code execution.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-05-06T19:22:10Z",
+      "record_id": "9861dce5-9876-2315-ec35-aa9aad96d08e",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-apache-http-server-could-allow-for-remote-code-execution_2026-044"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "A Vulnerability in Apache HTTP Server Could Allow for Remote Code Execution",
+      "updated_at": "2026-05-06T19:22:10Z",
+      "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-apache-http-server-could-allow-for-remote-code-execution_2026-044",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "47d05bbc-7a0f-fbf0-b0bb-a544800e7eac",
+      "content_hash": "038fa1b39e03e2219f328386d8e3b3e1c81638dd862ac3a1598451e7ebbb93f1",
+      "cves": [],
+      "description": "A vulnerability has been discovered in WHM, cPanel, and WP Squared that could allow for remote code execution. WHM, cPanel, and WP Squared are Linux-based web hosting control panels for server and website management. While WHM provides server-level control, cPanel provides administrator access to the website backend, webmail, and databases. Successful exploitation could allow unauthenticated remote attackers to bypass authentication and gain unauthorized administrative access to the affected systems, ultimately leading to remote code execution.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-05-04T16:20:57Z",
+      "record_id": "47d05bbc-7a0f-fbf0-b0bb-a544800e7eac",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-whm-cpanel-and-wp-squared-could-allow-for-remote-code-execution_2026-042"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "A Vulnerability in WHM cPanel and WP Squared Could Allow for Remote Code Execution",
+      "updated_at": "2026-05-04T16:20:57Z",
+      "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-whm-cpanel-and-wp-squared-could-allow-for-remote-code-execution_2026-042",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "ab99b930-d3ab-968d-7f53-2c5679107e0d",
+      "content_hash": "6e0de95ba04624b9b7a46cd1aae571d64a45473b7a569beb225797d3f40798c9",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Mozilla products, the most severe of which could allow for arbitrary code execution. Mozilla Firefox is a web browser used to access the Internet. Mozilla Firefox ESR is a version of the web browser intended to be deployed in large organizations. Mozilla Thunderbird is an email client. Mozilla Thunderbird ESR is a version of the email client intended to be deployed in large organizations. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution. Depending on the privileges associated with the user an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-04-28T17:52:32Z",
+      "record_id": "ab99b930-d3ab-968d-7f53-2c5679107e0d",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-mozilla-products-could-allow-for-arbitrary-code-execution_2026-039"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Mozilla Products Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-04-28T17:52:32Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-mozilla-products-could-allow-for-arbitrary-code-execution_2026-039",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "01df2f1d-4fbd-b451-6cd4-018212f9f31c",
+      "content_hash": "3dba777a760b4a1a4cc69b67417aa186ff002ac137f15bf86b9d22da7867341f",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Oracle products, the most severe of which could allow for remote code execution. Successful exploitation of the most severe of these vulnerabilities could result in an attacker gaining the same privileges as the logged-on user. Depending on the privileges associated with the user, an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-04-28T17:50:40Z",
+      "record_id": "01df2f1d-4fbd-b451-6cd4-018212f9f31c",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/oracle-quarterly-critical-patches-issued-april-21-2026_2026-041"
+        }
+      ],
+      "required_action": "",
+      "severity": "critical",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Oracle Quarterly Critical Patches Issued April 21, 2026",
+      "updated_at": "2026-04-28T17:50:40Z",
+      "url": "https://www.cisecurity.org/advisory/oracle-quarterly-critical-patches-issued-april-21-2026_2026-041",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "2fa2bfea-9a7c-d3d2-023d-421bc456c61b",
+      "content_hash": "6d6c3cfa1c43a660b5f737fd9023600c7b923f6e0b2246d65853f62e4beb1aee",
+      "cves": [],
+      "description": "A vulnerability has been discovered in OpenSSH which could allow for authentication bypass. OpenSSH (Open Secdure Shell) is an open-source suite of secure networking utilities based on the SSH protocol. It provides encrypted communication sessions over unsecured networks in a client-server architecture, primarily used for remote login and secure file transfers. Successful exploitation of the vulnerability could provide an attacker with root access to all the servers an organization has, if the vulnerable protocol runs on them.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-04-28T15:45:38Z",
+      "record_id": "2fa2bfea-9a7c-d3d2-023d-421bc456c61b",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-openssh-could-allow-for-authentication-bypass_2026-040"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "A Vulnerability in OpenSSH Could Allow for Authentication Bypass",
+      "updated_at": "2026-04-28T15:45:38Z",
+      "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-openssh-could-allow-for-authentication-bypass_2026-040",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "67ac3f81-f43e-4ee3-6a49-8dd6a951282c",
+      "content_hash": "141febca0e11d02e47c7f347bdc51560e04868fdbb06e13c0373cc24a4f792fd",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Mozilla products, the most severe of which could allow for arbitrary code execution. Mozilla Firefox is a web browser used to access the Internet. Mozilla Firefox ESR is a version of the web browser intended to be deployed in large organizations. Mozilla Thunderbird is an email client. Mozilla Thunderbird ESR is a version of the email client intended to be deployed in large organizations. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution. Depending on the privileges associated with the user an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-04-21T20:40:14Z",
+      "record_id": "67ac3f81-f43e-4ee3-6a49-8dd6a951282c",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-mozilla-products-could-allow-for-arbitrary-code-execution_2026-038"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Mozilla Products Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-04-21T20:40:14Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-mozilla-products-could-allow-for-arbitrary-code-execution_2026-038",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "35c89c9a-7912-8e7b-8a39-1caf93cae6f0",
+      "content_hash": "81f42a1e2ac09b5f4c4bd0d5524a57b489235c5f3da5dd1136d4195a70002388",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Google Chrome, the most severe of which could allow for arbitrary code execution. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution in the context of the logged on user. Depending on the privileges associated with the user an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-04-16T14:40:14Z",
+      "record_id": "35c89c9a-7912-8e7b-8a39-1caf93cae6f0",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-google-chrome-could-allow-for-arbitrary-code-execution_2026-037"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Google Chrome Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-04-16T14:40:14Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-google-chrome-could-allow-for-arbitrary-code-execution_2026-037",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "a550f01d-d1ec-f0e3-4b41-3544857c7ade",
+      "content_hash": "1425948334e832e2975a8f70f5ffb4d7bdd4921fa01e8fa9b4bf817001d94575",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Microsoft products, the most severe of which could allow for remote code execution. Successful exploitation of the most severe of these vulnerabilities could result in an attacker gaining the same privileges as the logged-on user. Depending on the privileges associated with the user, an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-04-14T18:18:30Z",
+      "record_id": "a550f01d-d1ec-f0e3-4b41-3544857c7ade",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/critical-patches-issued-for-microsoft-products-april-14-2026_2026-036"
+        }
+      ],
+      "required_action": "",
+      "severity": "critical",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Critical Patches Issued for Microsoft Products, April 14, 2026",
+      "updated_at": "2026-04-14T18:18:30Z",
+      "url": "https://www.cisecurity.org/advisory/critical-patches-issued-for-microsoft-products-april-14-2026_2026-036",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "c113eb90-e69e-30a0-cbb6-d070a1033944",
+      "content_hash": "47dbfa5126dc4e71f126566cb6057cd5dc73766ab0dbd181a906b6101328bb02",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Fortinet products, the most severe of which could allow for arbitrary code execution. FortiAnalyzer is a unified security operations platform that consolidates telemetry across networks, endpoints, and cloud environments. FortiClientEMS is a centralized management platform for deploying, configuring, monitoring, and enforcing security policies across numerous endpoints (computers) running the FortiClient agent. FortiDDoS is an inline, purpose-built solution that protects organizations against disruptions caused by attacks that flood a target with packets and exhaust resources, causing the network, applications, or services to be unavailable to legitimate traffic. FortiManager is a centralized management platform that lets you configure, monitor, and control multiple Fortinet security devices from a single interface. FortiNAC-F is a zero-trust network access solution that provides users with enhanced visibility into the Internet of Things (IoT) devices on their enterprise networks. FortiNDR is Fortinet's Network Detection and Response product. FortiOS is the Fortinet’s proprietary Operation System which is utilized across multiple product lines. FortiPAM provides privileged access management and control for elevated and privileged accounts, processes, and systems across the entire IT environment. FortiProxy is a secure web gateway product from Fortinet that protects users from internet-borne attacks, enforces compliance, and improves network performance. FortiSandbox is an advanced threat detection solution from Fortinet that uses sandboxing to analyze suspicious files and network traffic for advanced threats like zero-day malware and ransomware. FortiSOAR is a security orchestration, automation, and response (SOAR) solution that aims to simplify security operations for organizations. FortiSwitchManager is Fortinet's dedicated, on-premise platform for centrally managing FortiSwitch devices in large deployments. FortiVoice is a unified communications solution that combines voice, chat, conferencing, and fax into a single, secure platform for businesses and schools. FortiWeb is a web application firewall (WAF) that protects web applications and APIs from cyberattacks like SQL injection and cross-site scripting, while also helping to meet compliance requirements. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution in the context of the affected service account. Depending on the privileges associated with the service account an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Service accounts that are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-04-14T17:41:33Z",
+      "record_id": "c113eb90-e69e-30a0-cbb6-d070a1033944",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-fortinet-products-could-allow-for-arbitrary-code-execution_2026-035"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Fortinet Products Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-04-14T17:41:33Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-fortinet-products-could-allow-for-arbitrary-code-execution_2026-035",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "1ed5b44c-d380-a931-f464-45e4530085af",
+      "content_hash": "fdad0c7f9c3a3d4fdabd9ff6c039eaf7d01e0dc963ba6d13ba747fbd185920fa",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Adobe products, the most severe of which could allow for arbitrary code execution. Adobe Acrobat Reader is a free, widely used software application from Adobe that allows users to view, print, sign, share, and annotate PDF documents. Adobe InDesign is desktop publishing software used to create, pre-flight, and publish professional page layouts for print and digital media. Adobe InCopy is professional writing and editing software that integrates directly with Adobe InDesign to enable collaborative workflows between editors, copywriters, and designers. Adobe Experience Manager (AEM) Screens is a cloud-based digital signage solution that extends AEM’s content management capabilities to physical, in-venue displays. Adobe FrameMaker is a powerful, industry-standard desktop publishing software designed for authoring, managing, and publishing complex, long-form technical documentation. Adobe Connect is a secure, highly customizable web conferencing and virtual training platform used for webinars, online meetings, and e-learning. Adobe ColdFusion is a commercial rapid web application development platform and server-side technology used to build, deploy, and manage dynamic websites and internet applications. Adobe Bridge is a free, powerful digital asset management (DAM) application designed to organize, browse, locate, and view creative assets. Adobe Photoshop is software for raster image editing, graphic design, and digital art. The Adobe DNG Software Development Kit (SDK) is a set of tools and libraries for developers to read, write, and manipulate Digital Negative (DNG) files, an open, lossless raw image format. Adobe Illustrator is vector graphics software used by designers to create scalable, high-resolution artwork such as logos, icons, illustrations, and typography. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution in the context of the logged on user. Depending on the privileges associated with the user, an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-04-14T17:23:05Z",
+      "record_id": "1ed5b44c-d380-a931-f464-45e4530085af",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-adobe-products-could-allow-for-arbitrary-code-execution_2026-034"
+        }
+      ],
+      "required_action": "",
+      "severity": "medium",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Adobe Products Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-04-14T17:23:05Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-adobe-products-could-allow-for-arbitrary-code-execution_2026-034",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "b88de572-0fa5-4649-cf6f-2166f7971d05",
+      "content_hash": "46b18f894e1e628b9eae98c0d11f82e8f2b057e62bc7ef62a356e1a9197b98e3",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Mozilla products, the most severe of which could allow for arbitrary code execution. Mozilla Firefox is a web browser used to access the Internet. Mozilla Firefox ESR is a version of the web browser intended to be deployed in large organizations. Mozilla Thunderbird is an email client. Mozilla Thunderbird ESR is a version of the email client intended to be deployed in large organizations. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution. Depending on the privileges associated with the user an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-04-07T20:32:19Z",
+      "record_id": "b88de572-0fa5-4649-cf6f-2166f7971d05",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-mozilla-products-could-allow-for-arbitrary-code-execution_2026-032"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Mozilla Products Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-04-07T20:32:19Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-mozilla-products-could-allow-for-arbitrary-code-execution_2026-032",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "d2d2d78e-a00c-c34c-5137-749861854645",
+      "content_hash": "798f05073fa43e7028aea8074400518298ffdd260350de752be450e9778ef17a",
+      "cves": [],
+      "description": "A Vulnerability has been discovered in Fortinet FortiClientEMS that could allow for arbitrary code execution. FortiClientEMS is a centralized management platform for deploying, configuring, monitoring, and enforcing security policies across numerous endpoints (computers) running the FortiClient agent. Successful exploitation of this vulnerability could allow for arbitrary code execution in the context of the affected service account. Depending on the privileges associated with the service account an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Service accounts that are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-04-04T08:49:05Z",
+      "record_id": "d2d2d78e-a00c-c34c-5137-749861854645",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-fortinet-forticlientemscould-allow-for-arbitrary-code-execution_2026-031"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "A Vulnerability in Fortinet FortiClientEMS Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-04-04T08:49:05Z",
+      "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-fortinet-forticlientemscould-allow-for-arbitrary-code-execution_2026-031",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "bd082ec9-a753-3cff-3476-01eebab43859",
+      "content_hash": "abd833210802641b96632aadfa79e177907f2c8d9318560600ccb3a641f71d4f",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Progress ShareFile, which when chained together, could allow for remote code execution. Progress ShareFile is a secure, cloud-based content collaboration and file-sharing platform. It enables businesses to securely exchange documents, manage client workflows, and obtain electronic signatures, with a focus on compliance for industries like finance and healthcare. Successful exploitation of the vulnerabilities when chained together could allow attackers to abuse the file upload and extraction functionality to place malicious ASPX webshells in the application’s webroot.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-04-02T18:10:22Z",
+      "record_id": "bd082ec9-a753-3cff-3476-01eebab43859",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-progress-sharefile-could-allow-for-remote-code-execution_2026-030"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Progress ShareFile Could Allow for Remote Code Execution",
+      "updated_at": "2026-04-02T18:10:22Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-progress-sharefile-could-allow-for-remote-code-execution_2026-030",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "5cb849f2-f289-bc82-448f-3982fe454945",
+      "content_hash": "3fcf149e64c4b962402087873ffeb0e34849e5862d6ed5648cf1d15b58fb5367",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Cisco products, the most severe of which could allow for arbitrary code execution. Cisco Smart Software Manager On‑Prem is a centralized Cisco tool used by organizations to manage software licenses, entitlements, and compliance for Cisco products within their own network environment. Cisco Integrated Management Controller (IMC) is embedded server management software that allows administrators to remotely monitor, configure, and control Cisco servers without needing an operating system installed. Cisco Evolved Programmable Network Manager (EPNM) is a network management platform used to provision, monitor, and automate large‑scale Cisco network infrastructures. Cisco Nexus Dashboard is a centralized management and operations platform that provides visibility, policy management, and analytics across Cisco Nexus data center networks. Cisco Nexus Dashboard Insights is an analytics and assurance application that runs on Nexus Dashboard to detect configuration issues, performance problems, and network anomalies in data center environments. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution, which may lead to the complete compromise of the affected device.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-04-02T15:17:11Z",
+      "record_id": "5cb849f2-f289-bc82-448f-3982fe454945",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-cisco-products-could-allow-for-arbitrary-code-execution_2026-029"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Cisco Products Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-04-02T15:17:11Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-cisco-products-could-allow-for-arbitrary-code-execution_2026-029",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "87f87d77-1bd3-15fb-ae89-d64256526078",
+      "content_hash": "f53f01d8a6fdf5c2611dfb67ec345a53fd1b29f28403e3391b46c7bb675e56a7",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Google Chrome, the most severe of which could allow for arbitrary code execution. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution in the context of the logged on user. Depending on the privileges associated with the user an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-04-02T01:18:45Z",
+      "record_id": "87f87d77-1bd3-15fb-ae89-d64256526078",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-google-chrome-could-allow-for-arbitrary-code-execution_2026-028"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Google Chrome Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-04-02T01:18:45Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-google-chrome-could-allow-for-arbitrary-code-execution_2026-028",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "53c48243-d2bc-5a23-f2f9-361d0b8b5ddd",
+      "content_hash": "718b233ef6bed8af8fab4fb12e2f5245d6fb9dc9cc51a7761f1951dc5d66b475",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Apple products, the most severe of which could allow for privilege escalation. Successful exploitation of the most severe of these vulnerabilities could allow a user to elevate privileges. Depending on the privileges associated with the user, they may be able to modify protected system files.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-04-01T03:45:20Z",
+      "record_id": "53c48243-d2bc-5a23-f2f9-361d0b8b5ddd",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-apple-products-could-allow-for-privilege-escalation_2026-027"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Apple Products Could Allow for Privilege Escalation",
+      "updated_at": "2026-04-01T03:45:20Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-apple-products-could-allow-for-privilege-escalation_2026-027",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "5b11ba91-8512-1bd6-71f3-5e67f73694c2",
+      "content_hash": "c67add66881c708b3f5e822adfcd49c3c8150a2230d5abb557b9232b4b9b3a8f",
+      "cves": [],
+      "description": "A vulnerability has been discovered in F5 Products that could allow for remote code execution. F5 BIG IP APM is an access policy management solution designed to enforce secure access to applications, APIs, and sensitive data. It is commonly deployed by enterprises, financial institutions, and government or public sector organizations to centrally control authentication, authorization, and user access across internal and remote environments. Successful exploitation of this vulnerability could lead to remote code execution. Depending on the privileges associated with the user, an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have less rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-03-30T15:40:33Z",
+      "record_id": "5b11ba91-8512-1bd6-71f3-5e67f73694c2",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-f5-products-could-allow-for-remote-code-execution_2026-026"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "A Vulnerability in F5 Products Could Allow for Remote Code Execution",
+      "updated_at": "2026-03-30T15:40:33Z",
+      "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-f5-products-could-allow-for-remote-code-execution_2026-026",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "21d66800-b280-00ce-5e49-eb7f09ba8a8a",
+      "content_hash": "bf05d0ef0570f16ae0b3921291b0fba52f1a3f8448bfbb663bf369dfd06ff6bc",
+      "cves": [],
+      "description": "Multiple Vulnerabilities have been discovered in NetScaler ADC and NetScaler Gateway, the most severe of which could allow for memory overread. NetScaler ADC is a networking product that functions as an Application Delivery Controller (ADC), a tool that optimizes, secures, and ensures the reliable availability of applications for businesses. NetScaler Gateway is a secure remote access solution that provides users with single sign-on (SSO) to applications and resources from any device, anywhere. Successful exploitation of these vulnerabilities could lead to memory overread of potentially sensitive data from the appliance memory.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-03-30T15:09:49Z",
+      "record_id": "21d66800-b280-00ce-5e49-eb7f09ba8a8a",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-netscaler-adc-and-netscaler-gateway-could-allow-for-memory-overread_2026-025"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in NetScaler ADC and NetScaler Gateway Could Allow for Memory Overread",
+      "updated_at": "2026-03-30T15:09:49Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-netscaler-adc-and-netscaler-gateway-could-allow-for-memory-overread_2026-025",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "e3221ab8-471d-126a-573d-f391a0d34c85",
+      "content_hash": "fe9a6c2c11dcf4d30c83b56760b3a26a189e86b953352f753fed880d72ca2356",
+      "cves": [],
+      "description": "A vulnerability has been discovered in Oracle Products that could allow for remote code execution. Oracle Identity Manager is an identity management product that automates user provisioning, identity administration, and password management, integrated in a comprehensive workflow engine. Oracle Web Services Manager is a comprehensive security and policy management framework within Oracle Fusion Middleware that allows enterprises to secure, manage, and monitor web services. Successful exploitation of this vulnerability could allow for remote code execution. Depending on the privileges associated with the user, an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have less rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-03-23T20:17:34Z",
+      "record_id": "e3221ab8-471d-126a-573d-f391a0d34c85",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-oracle-products-could-allow-for-remote-code-execution_2026-024"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "A Vulnerability in Oracle Products Could Allow for Remote Code Execution",
+      "updated_at": "2026-03-23T20:17:34Z",
+      "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-oracle-products-could-allow-for-remote-code-execution_2026-024",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "58652627-b1ff-1d65-4dbf-7a1a52be39e5",
+      "content_hash": "c57ded1b6c2493b05cd14b07842582865ca0df4bc0d0d07745a63023d1bd8f29",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Google Chrome, the most severe of which could allow for arbitrary code execution. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution in the context of the logged on user. Depending on the privileges associated with the user an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-03-13T17:32:53Z",
+      "record_id": "58652627-b1ff-1d65-4dbf-7a1a52be39e5",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-google-chrome-could-allow-for-arbitrary-code-execution_2026-023"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Google Chrome Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-03-13T17:32:53Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-google-chrome-could-allow-for-arbitrary-code-execution_2026-023",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "63228c6e-cd38-7f5e-140a-33b398f2b4d4",
+      "content_hash": "c8ddbc960dd12f158e1c762cb0647bd20edf970492d3cf1736d1a29adeb339f9",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Mozilla Firefox, the most severe of which could allow for arbitrary code execution. Mozilla Firefox is a web browser used to access the Internet. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution. Depending on the privileges associated with the user an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-03-10T20:01:26Z",
+      "record_id": "63228c6e-cd38-7f5e-140a-33b398f2b4d4",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-mozilla-firefox-could-allow-for-arbitrary-code-execution_2026-022"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Mozilla Firefox Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-03-10T20:01:26Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-mozilla-firefox-could-allow-for-arbitrary-code-execution_2026-022",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "91832acf-20cc-9486-cad0-ffec9f6d561e",
+      "content_hash": "af93f6a8b0b1d6fbe0ea0955bf9c10989fbd59e37e8984d2f6da712093b63f3e",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Microsoft products, the most severe of which could allow for remote code execution. Successful exploitation of the most severe of these vulnerabilities could result in an attacker gaining the same privileges as the logged-on user. Depending on the privileges associated with the user, an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-03-10T18:43:02Z",
+      "record_id": "91832acf-20cc-9486-cad0-ffec9f6d561e",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/critical-patches-issued-for-microsoft-products-march-10-2026_2026-021"
+        }
+      ],
+      "required_action": "",
+      "severity": "critical",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Critical Patches Issued for Microsoft Products, March 10, 2026",
+      "updated_at": "2026-03-10T18:43:02Z",
+      "url": "https://www.cisecurity.org/advisory/critical-patches-issued-for-microsoft-products-march-10-2026_2026-021",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "4eed773b-e75f-947a-8142-e15e13f48931",
+      "content_hash": "1179368b26f292b2a520eb05ae5031375da6d251a4bcfd7978435e3d055d4594",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Adobe products, the most severe of which could allow for arbitrary code execution. Adobe Acrobat is a comprehensive software family designed to create, edit, manage, and sign PDF documents across desktop, web, and mobile devices. Adobe Commerce is a composable ecommerce solution that lets you quickly create global, multi-brand B2C and B2B experiences all from one cloud-native platform. Adobe DNG Software Development Kit (SDK) is a free set of tools and code that helps developers add support for Adobe's Digital Negative (DNG) universal RAW file format into their own applications and cameras. Adobe Experience Manager (AEM) is a comprehensive content management solution for building websites, mobile apps, and forms. Adobe Premiere Pro is a subscription-based timeline video editing software for film, TV, and web. Adobe Substance 3D is a suite of tools for creating 3D content, including modeling, texturing, and rendering. Adobe Illustrator is a software for creating vector-based graphics, such as logos, icons, illustrations, and typography. Successful exploitation of the most severe of these vulnerabilities could allow for arbitrary code execution in the context of the logged on user. Depending on the privileges associated with the user, an attacker could then install programs; view, change, or delete data; or create new accounts with full user rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than those who operate with administrative user rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-03-10T18:34:20Z",
+      "record_id": "4eed773b-e75f-947a-8142-e15e13f48931",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-adobe-products-could-allow-for-arbitrary-code-execution_2026-020"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Adobe Products Could Allow for Arbitrary Code Execution",
+      "updated_at": "2026-03-10T18:34:20Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-adobe-products-could-allow-for-arbitrary-code-execution_2026-020",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "76686176-c861-0b56-d19c-7c583b5ea670",
+      "content_hash": "635ecbf45aebfb526e16cdcced73b5a3fe82c06104029ad97e7c08a6607f0da3",
+      "cves": [],
+      "description": "A vulnerability has been discovered in pac4j-jwt (JwtAuthenticator) which could allow for authentication bypass. pac4j-jwt is a Java module within the pac4j security framework designed for generating, validating, and managing JSON Web Tokens (JWT) to secure web applications and services. It supports signed and encrypted tokens, primarily using the Nimbus JOSE+JWT library to handle authentication, profile generation, and signature configuration. Successful exploitation of this vulnerability could allow an unauthenticated, remote attacker to bypass authentication and authenticate as any user (including administrator), with any role, without knowing a single secret.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-03-05T17:47:04Z",
+      "record_id": "76686176-c861-0b56-d19c-7c583b5ea670",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-pac4j-jwt-jwtauthenticator-could-allow-for-authentication-bypass_2026-019"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "A Vulnerability in pac4j-jwt (JwtAuthenticator) Could Allow for Authentication Bypass",
+      "updated_at": "2026-03-05T17:47:04Z",
+      "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-pac4j-jwt-jwtauthenticator-could-allow-for-authentication-bypass_2026-019",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "372aaab5-98fa-124e-b776-fdbfd448439e",
+      "content_hash": "0f92fc2191ce609ebc8a10db90df5c190f937589f9b4c6ad6c4d0d1c7b78f732",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Cisco products, the most severe of which could allow for remote code execution. Cisco Secure Firewall Management Center (FMC) is a centralized management platform for Cisco firewalls. Cisco Secure Firewall Adaptive Security Appliance (ASA) Software is the core operating system that powers the Cisco ASA family of firewalls. Cisco Secure Firewall Threat Defense (FTD) is a unified software image for Cisco Firepower appliances that combines ASA firewall functionality with Snort IPS, URL filtering, and advanced malware protection (AMP). Successful exploitation of the most severe of these vulnerabilities could allow for remote code execution as root, which may lead to the complete compromise of the affected device.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-03-05T17:32:56Z",
+      "record_id": "372aaab5-98fa-124e-b776-fdbfd448439e",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-cisco-products-could-allow-for-remote-code-execution_2026-018"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Cisco Products Could Allow for Remote Code Execution",
+      "updated_at": "2026-03-05T17:32:56Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-cisco-products-could-allow-for-remote-code-execution_2026-018",
+      "vendor": "Center for Internet Security"
+    },
+    {
+      "advisory_id": "28ad39b5-5378-d838-ee1a-6de9f9dafff3",
+      "content_hash": "3beff979ec90b5d11dcb05e6b2b62caa635da5970b852cefa648597796c0eb39",
+      "cves": [],
+      "description": "Multiple vulnerabilities have been discovered in Google Android OS, the most severe of which could allow for remote code execution. Android is an operating system developed by Google for mobile devices, including, but not limited to, smartphones, tablets, and watches. Successful exploitation of the most severe of these vulnerabilities could allow for remote code execution. Depending on the privileges associated with the exploited component, an attacker could then install programs; view, change, or delete data; or create new accounts with full rights.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-03-04T04:39:35Z",
+      "record_id": "28ad39b5-5378-d838-ee1a-6de9f9dafff3",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-google-android-os-could-allow-for-remote-code-execution_2026-017"
+        }
+      ],
+      "required_action": "",
+      "severity": "unknown",
+      "source_category": "security_advisory",
+      "source_id": "cis-advisories",
+      "source_name": "CIS Advisories",
+      "title": "Multiple Vulnerabilities in Google Android OS Could Allow for Remote Code Execution",
+      "updated_at": "2026-03-04T04:39:35Z",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-google-android-os-could-allow-for-remote-code-execution_2026-017",
+      "vendor": "Center for Internet Security"
+    }
+  ]
+}

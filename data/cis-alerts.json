@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "source_id": "cis-alerts",
+  "generated_at": "2026-07-18T16:50:25.602734Z",
+  "total": 1,
+  "items": [
+    {
+      "advisory_id": "a2b3d6ff-dd6a-411a-b3d9-bbcd6ef49a9c",
+      "content_hash": "7e7a795df2649ab9fb2961d1e972e087f649af36060a4b636036a9fe4d4a3436",
+      "cves": [],
+      "description": "This threat level is based on analysis by the Center for Internet Security® (CIS®) Operations, Intelligence, and Services (OIS) department covering the cyber threat landscape for Quarter 2 (Q2) of 2026. In calendar year 2026Q2, OIS published 32 Cybersecurity Advisories for critical severity high risk vulnerabilities in popular software applications known to be in use in U.S. State, Local, Tribal, and Territorial (SLTT) environments. A significant upward trend in AI-enhanced attacks is fueling high volumes of social engineering and phishing, lateral movement, credential dumping, and web shell activity. Organizations and users are advised to update and apply all appropriate vendor security patches to vulnerable systems and to continue to update their antimalware detections daily. Organizations should also provide updated user awareness training on malicious attachments and links contained in emails especially from un-trusted sources.",
+      "due_date": "",
+      "known_exploited": null,
+      "products": [],
+      "published_at": "2026-07-13T18:46:50Z",
+      "record_id": "a2b3d6ff-dd6a-411a-b3d9-bbcd6ef49a9c",
+      "references": [
+        {
+          "url": "https://www.cisecurity.org/cybersecurity-threats"
+        }
+      ],
+      "required_action": "",
+      "severity": "critical",
+      "source_category": "security_alert",
+      "source_id": "cis-alerts",
+      "source_name": "CIS Alerts",
+      "title": "Threat Level - GUARDED",
+      "updated_at": "2026-07-13T18:46:50Z",
+      "url": "https://www.cisecurity.org/cybersecurity-threats",
+      "vendor": "Center for Internet Security"
+    }
+  ]
+}

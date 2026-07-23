@@ -19,10 +19,102 @@
         "CVE-2025-20205"
       ],
       "products": [
-        "Cisco Identity Services Engine"
+        "Cisco Identity Services Engine",
+        "Cisco Identity Services Engine Software · 3.2 Patch 9",
+        "Cisco Identity Services Engine Software · 3.4 Patch 4",
+        "Cisco Identity Services Engine Software · 3.2.0 p1",
+        "Cisco Identity Services Engine Software · 3.5.0",
+        "Cisco Identity Services Engine Software · 3.3 Patch 4",
+        "Cisco Identity Services Engine Software · 3.2.0 p4",
+        "Cisco Identity Services Engine Software · 3.1.0 p3",
+        "Cisco Identity Services Engine Software · 3.3 Patch 2",
+        "Cisco Identity Services Engine Software · 3.1.0 p11",
+        "Cisco Identity Services Engine Software · 3.4 Patch 5",
+        "Cisco Identity Services Engine Software · 3.1.0 p2",
+        "Cisco Identity Services Engine Software · 3.3.0",
+        "Cisco Identity Services Engine Software · 3.1.0 p4",
+        "Cisco Identity Services Engine Software · 3.4 Patch 3",
+        "Cisco Identity Services Engine Software · 3.4 Patch 1",
+        "Cisco Identity Services Engine Software · 3.2.0",
+        "Cisco Identity Services Engine Software · 3.4 Patch 2",
+        "Cisco Identity Services Engine Software · 3.4 Patch 6",
+        "Cisco Identity Services Engine Software · 3.1.0 p6",
+        "Cisco Identity Services Engine Software · 3.2 Patch 8",
+        "Cisco Identity Services Engine Software · 3.4.0",
+        "Cisco Identity Services Engine Software · 3.2.0 p6",
+        "Cisco Identity Services Engine Software · 3.1.0",
+        "Cisco Identity Services Engine Software · 3.3 Patch 6",
+        "Cisco Identity Services Engine Software · 3.3 Patch 8",
+        "Cisco Identity Services Engine Software · 3.1.0 p1",
+        "Cisco Identity Services Engine Software · 3.3 Patch 7",
+        "Cisco Identity Services Engine Software · 3.1.0 p9",
+        "Cisco Identity Services Engine Software · 3.2.0 p7",
+        "Cisco Identity Services Engine Software · 3.2.0 p5",
+        "Cisco Identity Services Engine Software · 3.3 Patch 9",
+        "Cisco Identity Services Engine Software · 3.3 Patch 3",
+        "Cisco Identity Services Engine Software · 3.1.0 p5",
+        "Cisco Identity Services Engine Software · 3.1.0 p10",
+        "Cisco Identity Services Engine Software · 3.3 Patch 1",
+        "Cisco Identity Services Engine Software · 3.1.0 p8",
+        "Cisco Identity Services Engine Software · 3.5 Patch 1",
+        "Cisco Identity Services Engine Software · 3.1.0 p7",
+        "Cisco Identity Services Engine Software · 3.2.0 p2",
+        "Cisco Identity Services Engine Software · 3.5 Patch 2",
+        "Cisco Identity Services Engine Software · 3.2.0 p3",
+        "Cisco Identity Services Engine Software · 3.2 Patch 10",
+        "Cisco Identity Services Engine Software · 3.3 Patch 5",
+        "Cisco Identity Services Engine Software · 3.3 Patch 10",
+        "Cisco Identity Services Engine Software · 3.5 Patch 3",
+        "Cisco Identity Services Engine Software · 3.3 Patch 11"
       ],
       "affected_products": [
-        "Cisco Identity Services Engine"
+        "Cisco Identity Services Engine",
+        "Cisco Identity Services Engine Software · 3.2 Patch 9",
+        "Cisco Identity Services Engine Software · 3.4 Patch 4",
+        "Cisco Identity Services Engine Software · 3.2.0 p1",
+        "Cisco Identity Services Engine Software · 3.5.0",
+        "Cisco Identity Services Engine Software · 3.3 Patch 4",
+        "Cisco Identity Services Engine Software · 3.2.0 p4",
+        "Cisco Identity Services Engine Software · 3.1.0 p3",
+        "Cisco Identity Services Engine Software · 3.3 Patch 2",
+        "Cisco Identity Services Engine Software · 3.1.0 p11",
+        "Cisco Identity Services Engine Software · 3.4 Patch 5",
+        "Cisco Identity Services Engine Software · 3.1.0 p2",
+        "Cisco Identity Services Engine Software · 3.3.0",
+        "Cisco Identity Services Engine Software · 3.1.0 p4",
+        "Cisco Identity Services Engine Software · 3.4 Patch 3",
+        "Cisco Identity Services Engine Software · 3.4 Patch 1",
+        "Cisco Identity Services Engine Software · 3.2.0",
+        "Cisco Identity Services Engine Software · 3.4 Patch 2",
+        "Cisco Identity Services Engine Software · 3.4 Patch 6",
+        "Cisco Identity Services Engine Software · 3.1.0 p6",
+        "Cisco Identity Services Engine Software · 3.2 Patch 8",
+        "Cisco Identity Services Engine Software · 3.4.0",
+        "Cisco Identity Services Engine Software · 3.2.0 p6",
+        "Cisco Identity Services Engine Software · 3.1.0",
+        "Cisco Identity Services Engine Software · 3.3 Patch 6",
+        "Cisco Identity Services Engine Software · 3.3 Patch 8",
+        "Cisco Identity Services Engine Software · 3.1.0 p1",
+        "Cisco Identity Services Engine Software · 3.3 Patch 7",
+        "Cisco Identity Services Engine Software · 3.1.0 p9",
+        "Cisco Identity Services Engine Software · 3.2.0 p7",
+        "Cisco Identity Services Engine Software · 3.2.0 p5",
+        "Cisco Identity Services Engine Software · 3.3 Patch 9",
+        "Cisco Identity Services Engine Software · 3.3 Patch 3",
+        "Cisco Identity Services Engine Software · 3.1.0 p5",
+        "Cisco Identity Services Engine Software · 3.1.0 p10",
+        "Cisco Identity Services Engine Software · 3.3 Patch 1",
+        "Cisco Identity Services Engine Software · 3.1.0 p8",
+        "Cisco Identity Services Engine Software · 3.5 Patch 1",
+        "Cisco Identity Services Engine Software · 3.1.0 p7",
+        "Cisco Identity Services Engine Software · 3.2.0 p2",
+        "Cisco Identity Services Engine Software · 3.5 Patch 2",
+        "Cisco Identity Services Engine Software · 3.2.0 p3",
+        "Cisco Identity Services Engine Software · 3.2 Patch 10",
+        "Cisco Identity Services Engine Software · 3.3 Patch 5",
+        "Cisco Identity Services Engine Software · 3.3 Patch 10",
+        "Cisco Identity Services Engine Software · 3.5 Patch 3",
+        "Cisco Identity Services Engine Software · 3.3 Patch 11"
       ],
       "solution": "Aplicar la versión corregida indicada por Cisco.",
       "workaround": "No existen workarounds que mitiguen esta vulnerabilidad.",
@@ -46,12 +138,13 @@
         "3.4",
         "3.5"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.015913Z",
+      "last_checked_at": "2026-07-23T14:28:27.587038Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
       "publishable": true,
-      "content_hash": "3cf2aac6cb32eecd142e45dc20589674c433cd13e4b9a729c1cca25e87855101"
+      "content_hash": "0db1bd49459a56e9f4a5c622623dfd8d6e9a76360168c23de25cc87eba816525",
+      "epss": 0.31
     },
     {
       "record_id": "cisco-sa-sdwan-privesc-4uxFrdzx",
@@ -1156,7 +1249,7 @@
         "26.1.1.1",
         "26.1.1.2"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.051311Z",
+      "last_checked_at": "2026-07-23T14:28:27.625067Z",
       "quality_score": 100,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -1441,7 +1534,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-07-21T17:54:52.071748Z",
+      "last_checked_at": "2026-07-23T14:28:27.652890Z",
       "quality_score": 88,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -1639,7 +1732,7 @@
         "26.7.1.7",
         "9.15"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.093208Z",
+      "last_checked_at": "2026-07-23T14:28:27.688474Z",
       "quality_score": 100,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -1783,7 +1876,7 @@
         "3.4",
         "3.5"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.111803Z",
+      "last_checked_at": "2026-07-23T14:28:27.709241Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -1938,7 +2031,7 @@
         "3.4",
         "3.5"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.134884Z",
+      "last_checked_at": "2026-07-23T14:28:27.735466Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -2024,7 +2117,7 @@
         "2.3.7.11-VA",
         "1.4.1"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.155514Z",
+      "last_checked_at": "2026-07-23T14:28:27.755678Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -2388,7 +2481,7 @@
         "8.6.2",
         "4.2.8"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.190837Z",
+      "last_checked_at": "2026-07-23T14:28:27.789870Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -2770,7 +2863,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-07-21T17:54:52.211559Z",
+      "last_checked_at": "2026-07-23T14:28:27.810846Z",
       "quality_score": 88,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -2862,7 +2955,7 @@
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N/E:X/RL:X/RC:X",
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-07-21T17:54:52.233288Z",
+      "last_checked_at": "2026-07-23T14:28:27.832037Z",
       "quality_score": 100,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -3092,7 +3185,7 @@
       "fixed_versions": [
         "15.0"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.253896Z",
+      "last_checked_at": "2026-07-23T14:28:27.863595Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -3218,7 +3311,7 @@
         "12.6",
         "15.0"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.274656Z",
+      "last_checked_at": "2026-07-23T14:28:27.897158Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -3412,7 +3505,7 @@
       "fixed_versions": [
         "3.8.5"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.293898Z",
+      "last_checked_at": "2026-07-23T14:28:27.914780Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -3537,7 +3630,7 @@
         "7.2",
         "7.2.1"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.313952Z",
+      "last_checked_at": "2026-07-23T14:28:27.933129Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -3585,7 +3678,7 @@
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N/E:X/RL:X/RC:X",
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-07-21T17:54:52.330444Z",
+      "last_checked_at": "2026-07-23T14:28:27.950045Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -4316,7 +4409,7 @@
         "20.18.2.1",
         "20.18"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.362436Z",
+      "last_checked_at": "2026-07-23T14:28:27.982684Z",
       "quality_score": 100,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -4717,7 +4810,7 @@
         "26.1.1.1",
         "20.15.506"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.394483Z",
+      "last_checked_at": "2026-07-23T14:28:28.014408Z",
       "quality_score": 100,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -5528,7 +5621,7 @@
         "26.1.1.1",
         "26.1.1.2"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.426416Z",
+      "last_checked_at": "2026-07-23T14:28:28.044281Z",
       "quality_score": 100,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -5686,7 +5779,7 @@
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N/E:X/RL:X/RC:X",
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-07-21T17:54:52.454904Z",
+      "last_checked_at": "2026-07-23T14:28:28.063999Z",
       "quality_score": 81,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -5835,7 +5928,7 @@
         "10.0.0.2"
       ],
       "fixed_versions": [],
-      "last_checked_at": "2026-07-21T17:54:52.481394Z",
+      "last_checked_at": "2026-07-23T14:28:28.098061Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -6085,7 +6178,7 @@
         "4.0",
         "4.0.3.17"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.501493Z",
+      "last_checked_at": "2026-07-23T14:28:28.117355Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -6136,7 +6229,7 @@
         "0.262",
         "0.262.0"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.519787Z",
+      "last_checked_at": "2026-07-23T14:28:28.134748Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -6202,7 +6295,7 @@
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L/E:X/RL:X/RC:X",
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-07-21T17:54:52.536781Z",
+      "last_checked_at": "2026-07-23T14:28:28.151511Z",
       "quality_score": 81,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -7602,7 +7695,7 @@
       ],
       "cwes": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-07-21T17:54:52.590258Z",
+      "last_checked_at": "2026-07-23T14:28:28.199893Z",
       "quality_score": 85,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -8403,7 +8496,7 @@
         "26.1.1.1",
         "20.15.506"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.628596Z",
+      "last_checked_at": "2026-07-23T14:28:28.239599Z",
       "quality_score": 100,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -8647,7 +8740,7 @@
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N/E:X/RL:X/RC:X",
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-07-21T17:54:52.647160Z",
+      "last_checked_at": "2026-07-23T14:28:28.261016Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -8746,7 +8839,7 @@
         "14.0",
         "15.0"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.667214Z",
+      "last_checked_at": "2026-07-23T14:28:28.281610Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -8992,7 +9085,7 @@
       "fixed_versions": [
         "15.0"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.686599Z",
+      "last_checked_at": "2026-07-23T14:28:28.300234Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -9091,7 +9184,7 @@
         "3.5",
         "3.6"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.707086Z",
+      "last_checked_at": "2026-07-23T14:28:28.320821Z",
       "quality_score": 100,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -9271,7 +9364,7 @@
         "3.10",
         "3.10.6"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.725716Z",
+      "last_checked_at": "2026-07-23T14:28:28.340718Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -9377,7 +9470,7 @@
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N/E:X/RL:X/RC:X",
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-07-21T17:54:52.743162Z",
+      "last_checked_at": "2026-07-23T14:28:28.357822Z",
       "quality_score": 81,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -9495,7 +9588,7 @@
         "5.0.0-117",
         "4.12"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.768622Z",
+      "last_checked_at": "2026-07-23T14:28:28.378384Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -9548,7 +9641,7 @@
         "2.5.9.55"
       ],
       "fixed_versions": [],
-      "last_checked_at": "2026-07-21T17:54:52.789181Z",
+      "last_checked_at": "2026-07-23T14:28:28.398147Z",
       "quality_score": 81,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -9695,7 +9788,7 @@
         "3.4",
         "3.5"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.812968Z",
+      "last_checked_at": "2026-07-23T14:28:28.420884Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -9744,7 +9837,7 @@
         "172.16.200.200"
       ],
       "fixed_versions": [],
-      "last_checked_at": "2026-07-21T17:54:52.836641Z",
+      "last_checked_at": "2026-07-23T14:28:28.439582Z",
       "quality_score": 81,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -10342,7 +10435,7 @@
         "4.3.6.img",
         "4.2.5"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.883399Z",
+      "last_checked_at": "2026-07-23T14:28:28.492807Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -10936,7 +11029,7 @@
         "4.3.6.img",
         "4.2.5"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.936215Z",
+      "last_checked_at": "2026-07-23T14:28:28.534777Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -11682,7 +11775,7 @@
         "20.18.2.1",
         "20.18"
       ],
-      "last_checked_at": "2026-07-21T17:54:52.978342Z",
+      "last_checked_at": "2026-07-23T14:28:28.580020Z",
       "quality_score": 100,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -11843,7 +11936,7 @@
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:X/RL:X/RC:X",
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-07-21T17:54:52.998855Z",
+      "last_checked_at": "2026-07-23T14:28:28.600985Z",
       "quality_score": 81,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -12014,7 +12107,7 @@
         "15.5",
         "16.0"
       ],
-      "last_checked_at": "2026-07-21T17:54:53.019178Z",
+      "last_checked_at": "2026-07-23T14:28:28.621341Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -12133,7 +12226,7 @@
         "3.4",
         "3.5"
       ],
-      "last_checked_at": "2026-07-21T17:54:53.038273Z",
+      "last_checked_at": "2026-07-23T14:28:28.641310Z",
       "quality_score": 100,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -12265,7 +12358,7 @@
         "3.4",
         "3.5"
       ],
-      "last_checked_at": "2026-07-21T17:54:53.056636Z",
+      "last_checked_at": "2026-07-23T14:28:28.660635Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -12369,7 +12462,7 @@
         "3.4",
         "3.5"
       ],
-      "last_checked_at": "2026-07-21T17:54:53.074768Z",
+      "last_checked_at": "2026-07-23T14:28:28.679393Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -12436,7 +12529,7 @@
         "1.2",
         "1.234.0"
       ],
-      "last_checked_at": "2026-07-21T17:54:53.092170Z",
+      "last_checked_at": "2026-07-23T14:28:28.697419Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -12529,7 +12622,7 @@
       "fixed_versions": [
         "12.5"
       ],
-      "last_checked_at": "2026-07-21T17:54:53.110815Z",
+      "last_checked_at": "2026-07-23T14:28:28.716359Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -12608,7 +12701,7 @@
       "fixed_versions": [
         "12.5"
       ],
-      "last_checked_at": "2026-07-21T17:54:53.141395Z",
+      "last_checked_at": "2026-07-23T14:28:28.742518Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -12656,7 +12749,7 @@
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N/E:X/RL:X/RC:X",
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-07-21T17:54:53.158218Z",
+      "last_checked_at": "2026-07-23T14:28:28.759842Z",
       "quality_score": 81,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -13167,7 +13260,7 @@
       "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H/E:X/RL:X/RC:X",
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-07-21T17:54:53.182355Z",
+      "last_checked_at": "2026-07-23T14:28:28.783600Z",
       "quality_score": 100,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -13221,7 +13314,7 @@
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:X/RL:X/RC:X",
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-07-21T17:54:53.202136Z",
+      "last_checked_at": "2026-07-23T14:28:28.814553Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -13299,7 +13392,7 @@
         "8.1",
         "8.1.2"
       ],
-      "last_checked_at": "2026-07-21T17:54:53.218747Z",
+      "last_checked_at": "2026-07-23T14:28:28.832628Z",
       "quality_score": 96,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -13309,7 +13402,7 @@
   ],
   "enrichment": {
     "schema_version": 1,
-    "updated_at": "2026-07-21T17:54:53.219351Z",
+    "updated_at": "2026-07-23T14:28:28.833120Z",
     "source_id": "cisco-psirt",
     "records": 50,
     "complete": 50,

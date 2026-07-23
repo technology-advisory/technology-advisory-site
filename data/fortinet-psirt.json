@@ -1,12 +1,12 @@
 {
   "schema_version": 4,
   "title": "Fortinet PSIRT Intelligence",
-  "last_updated_at": "2026-07-21T17:52:06.888299Z",
+  "last_updated_at": "2026-07-23T14:28:09.465237Z",
   "source": "Fortinet Product Security Incident Response Team",
   "source_url": "https://www.fortiguard.com/psirt",
   "feed_url": "https://filestore.fortinet.com/fortiguard/rss/ir.xml",
   "raw_xml_file": "data/raw/fortinet-psirt/rss.xml",
-  "raw_xml_sha256": "3addf82c1fb92d9d071404e07949ac7f99fe082ef5b6e033f6ce808f06be6c69",
+  "raw_xml_sha256": "43fdd694546530900521843893f7a1d3bc49a2af9e6d45f57dc6a2361853abcd",
   "total_advisories": 61,
   "total_critical": 6,
   "total_high": 9,
@@ -467,8 +467,8 @@
         },
         {
           "Version": "FortiAuthenticator 6.5",
-          "Affected": "6.5.0 through 6.5.7",
-          "Solution": "Upgrade to upcoming 6.5.8 or above"
+          "Affected": "6.5 all versions",
+          "Solution": "Migrate to a fixed release"
         }
       ],
       "workaround": null,
@@ -476,7 +476,7 @@
       "timeline": [
         "2026-07-14: Initial publication"
       ],
-      "detail_text_sha256": "23dde383544827b16335bb5d0a14b339053be1b4bdef7dc3cff3c2148bdce5b4"
+      "detail_text_sha256": "ef91a039479004b3a11b0619825ef496d084ca9515d8b3f3d9c0f81c25304164"
     },
     {
       "id": "25db64826375574031c7ba78",
