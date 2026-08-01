@@ -1,12 +1,12 @@
 {
   "schema_version": 4,
   "title": "Fortinet PSIRT Intelligence",
-  "last_updated_at": "2026-07-23T14:28:09.465237Z",
+  "last_updated_at": "2026-08-01T11:38:41.932384Z",
   "source": "Fortinet Product Security Incident Response Team",
   "source_url": "https://www.fortiguard.com/psirt",
   "feed_url": "https://filestore.fortinet.com/fortiguard/rss/ir.xml",
   "raw_xml_file": "data/raw/fortinet-psirt/rss.xml",
-  "raw_xml_sha256": "43fdd694546530900521843893f7a1d3bc49a2af9e6d45f57dc6a2361853abcd",
+  "raw_xml_sha256": "90289d0ae565259d566bc4e36e4a91eb89a4e335a2bc4c02343cf20e1e311cec",
   "total_advisories": 61,
   "total_critical": 6,
   "total_high": 9,
@@ -139,7 +139,7 @@
       "timeline": [
         "2026-07-14: Initial publication"
       ],
-      "detail_text_sha256": "d083abb633d396f6d03c62793f1b08e69b09bf07d4f5a561fadbdc87eb858e18"
+      "detail_text_sha256": "8ac573f438c23e08f59d572127cc3c015f640c205007ace56b19ef2e7973a46e"
     },
     {
       "id": "d04ed05f95c3fdcc0d0fb389",
@@ -225,7 +225,7 @@
       "timeline": [
         "2026-07-14: Initial publication"
       ],
-      "detail_text_sha256": "ed2e6739b07ea0755871e51e804eeda10e90b481e43b8950c549ee283ff32cc8"
+      "detail_text_sha256": "c8de4fe12fa9db70358ccc9b4f6520c2cfdf7544249010f073827c81b4fe2285"
     },
     {
       "id": "19f1ec395978df8444658aac",
@@ -297,7 +297,7 @@
       "timeline": [
         "2026-07-14: Initial publication"
       ],
-      "detail_text_sha256": "1b1ad02d6fe5020c82f813198f24138725690c7472fd73a58f3d090ea9503e8f"
+      "detail_text_sha256": "4c67560b67eba4a379e32bec7a2a3b83b81e671aa30e710712a7dbccd953cf16"
     },
     {
       "id": "7511f698b848e8a21d0437fe",
@@ -369,7 +369,7 @@
       "timeline": [
         "2026-07-14: Initial publication"
       ],
-      "detail_text_sha256": "c1dbe48d61fc94745b6709d0080ae158264c49353d282d2b3d73eeaa03041c48"
+      "detail_text_sha256": "882f133d377fe0fd5b7acef7af7b74ba01040e3c1f2b71162d9da4f3bf4e684f"
     },
     {
       "id": "f762db76839981a1b7fe0957",
@@ -425,7 +425,7 @@
       "timeline": [
         "2026-07-14: Initial publication"
       ],
-      "detail_text_sha256": "4fc73afe7a4b0585161c6c77b64877c2dc29e926e944d885c2bf09ad0294c65d"
+      "detail_text_sha256": "30ae9ab01ee35ce3738525d7ebefe08e72e8ea19e2cdd1be13a7746151fd8cb6"
     },
     {
       "id": "7ff92645a5b90897dd08a053",
@@ -476,7 +476,7 @@
       "timeline": [
         "2026-07-14: Initial publication"
       ],
-      "detail_text_sha256": "ef91a039479004b3a11b0619825ef496d084ca9515d8b3f3d9c0f81c25304164"
+      "detail_text_sha256": "884536180b39c00ad311084119225eb683328a547b8e31f42a9b72d4cbfe54c0"
     },
     {
       "id": "25db64826375574031c7ba78",
@@ -611,7 +611,7 @@
         "References",
         "Fortinet is pleased to thank The UK's National Cyber Security Centre (NCSC) for reporting this vulnerability under responsible disclosure."
       ],
-      "detail_text_sha256": "03bcb26f0ab7a3e52b466f2f2ce4a5c01254202c3986b6622ff07322e015e60c"
+      "detail_text_sha256": "36dbb069e221b06ba5906ded06f0cb6dc6844dca32cabec58acec37a4814d76c"
     },
     {
       "id": "dcee9fa0149f75a40f5eeec6",
@@ -734,7 +734,7 @@
       "timeline": [
         "2026-07-14: Initial publication"
       ],
-      "detail_text_sha256": "782a722c002c82c1024532bef9fbf6b00f66c2e73b1ee546c14d872300e42b03"
+      "detail_text_sha256": "d66f53343bb0bcc227b07acc1b76be36be96775231853183bb9cd12a0e4d0818"
     },
     {
       "id": "3e484850af19f8d697dcec60",
@@ -857,7 +857,7 @@
       "timeline": [
         "2026-07-14: Initial publication"
       ],
-      "detail_text_sha256": "09ea64896961861b45193a61a7c0f0eb3d852910ed74d45cc8c7f093f0078b51"
+      "detail_text_sha256": "858368a2ff32c019aed830c76d73c5bd325153d719fcbcf3c697f10ac61f86cf"
     },
     {
       "id": "1d7d603a45319152ecb4e19b",
@@ -938,7 +938,7 @@
       "timeline": [
         "2026-07-14: Initial publication"
       ],
-      "detail_text_sha256": "319578e46c870214db55190336f5edcaf85286b25b2209b9f891ed2a4926d682"
+      "detail_text_sha256": "0fe59c89d9e7adf5ee3e889f328da52f0b580a1945424367611eafde85a915ed"
     },
     {
       "id": "dd296ac6a17225f4bd821182",
@@ -989,7 +989,7 @@
       "timeline": [
         "2026-07-14: Initial publication"
       ],
-      "detail_text_sha256": "8bd104ed4f5dcf6b071a23558413514427e3d4e99bfc98dfbc134a9f304509bd"
+      "detail_text_sha256": "ea677cf5461ef9d6f7b54969e0793cdb9323349b64d4997971ab7d29ce2670a9"
     },
     {
       "id": "759687b9caadc9cf7892ee61",
@@ -1040,7 +1040,7 @@
       "timeline": [
         "2026-06-09: Initial publication"
       ],
-      "detail_text_sha256": "8a44f5fbad72ffe788cefb4e7c6e95f27ca73917069c6cf0a0b84b7a95cd5a93"
+      "detail_text_sha256": "abd3a092610ad43a4e13de418cc6bf9a94ffb0acbe7d5e4dd36e53243bd46cf6"
     },
     {
       "id": "00bf1e9179eb3a7ba62c20ff",
@@ -1107,7 +1107,7 @@
       "timeline": [
         "2026-06-09: Initial publication"
       ],
-      "detail_text_sha256": "70a7f9225864892457ed2b6a82edfa237c86bf8f05a32762e759d09de02e1189"
+      "detail_text_sha256": "f3681ab886d502bdf20e42ce8706ec84af1509c8f04c76587d4359b2732249d2"
     },
     {
       "id": "af1d4777465ec336f9ff6b19",
@@ -1195,7 +1195,7 @@
       "timeline": [
         "2026-06-09: Initial publication"
       ],
-      "detail_text_sha256": "5f2ec737b5baef4e8d01f18e5ecc2cf51d6bb4761a83075d1b35f05e5e137d5b"
+      "detail_text_sha256": "421b5ea0cc9d1a95699b53927f6d07665a780297d5b20f43b2da716316d6f6ab"
     },
     {
       "id": "365c264b9911efd352db6838",
@@ -1230,7 +1230,7 @@
         "https://nvd.nist.gov/vuln/detail/CVE-2026-43500",
         "https://nvd.nist.gov/vuln/detail/CVE-2026-43284"
       ],
-      "detail_text_sha256": "88d3540f1759c37ef77a728a28a829b52cf0950b6df22ba6edab3679af7618ef"
+      "detail_text_sha256": "9979277611ae0fe400d4b867c3fedab0cef051b1cce88cf192bcd6dce248b4cf"
     },
     {
       "id": "3b11fbb62d415cf40ba3b240",
@@ -1263,7 +1263,7 @@
         "References",
         "https://nvd.nist.gov/vuln/detail/CVE-2026-31431"
       ],
-      "detail_text_sha256": "051e46bee65de9ae66ea1c54323c8b0918a6ec6f0d54f11e114b2374828a5193"
+      "detail_text_sha256": "d7efad59eb88bfae96bd4deba3d397957b494c55016d11c5dffa82c6c876b03e"
     },
     {
       "id": "a28865a2aae932ceea56fe71",
@@ -1354,7 +1354,7 @@
       "timeline": [
         "2026-05-12: Initial publication"
       ],
-      "detail_text_sha256": "a560424d5cdfa32d9ea931cfc54b365b1d894070b2ec8b4cd11d5cedbcf54af4"
+      "detail_text_sha256": "3485f0232c44e34729e2b185273bf048e6ec1ca2fa87566dffa0d62014be0077"
     },
     {
       "id": "5401f0a10c9ae3a3a8772a4f",
@@ -1442,7 +1442,7 @@
       "timeline": [
         "2026-05-12: Initial publication"
       ],
-      "detail_text_sha256": "85b80f54293495308a3794b61c59cd0971ec7bd936cde595d540f261a8764a12"
+      "detail_text_sha256": "f7c112ab29d8d55e7f5e203e8735d0fff73e6878bdaab5ac9762bd8bbe40f0ed"
     },
     {
       "id": "94313b03f2fe13666f1afc62",
@@ -1539,7 +1539,7 @@
       "timeline": [
         "2026-05-12: Initial publication"
       ],
-      "detail_text_sha256": "ef193a3b7b940428994b6649bb2803729679574ecd1ae6b19752b9b26f649638"
+      "detail_text_sha256": "82a800b0284b34f3d101edd0cf547a4fe554345eeb028e553a4faec57509b6cd"
     },
     {
       "id": "d695acb6c7b803bdd2c59a08",
@@ -1585,7 +1585,7 @@
       "timeline": [
         "2026-05-12: Initial publication"
       ],
-      "detail_text_sha256": "58e1ad78464d0a5a5d8b36f76696401c52f84dbbb78e4705422080b8d43546e8"
+      "detail_text_sha256": "0dfe0313c173a788cc46bb9bfd3e87997fb15313c309dc5d358d967c230418e1"
     },
     {
       "id": "4fbbd08428995c5d5cdda9e0",
@@ -1641,7 +1641,7 @@
       "timeline": [
         "2026-05-12: Initial publication"
       ],
-      "detail_text_sha256": "4a50d094474049e0225c6d28abb9cd7567658e924f47c660ca6f24d78f56ad8b"
+      "detail_text_sha256": "568819a489b4817bd70e2deb729a3636c34be5cf3ad9e703ffbdcce0ecc75bbe"
     },
     {
       "id": "c7820a62b9d8c2ad817c796e",
@@ -1749,7 +1749,7 @@
       "timeline": [
         "2026-05-12: Initial publication"
       ],
-      "detail_text_sha256": "2ed7cf942aaeefefeab4caca6e22523586720e7f35543ca059c66ccd3ce2457c"
+      "detail_text_sha256": "dfd55d1ab1d009ac0a764771c969fdfe9cc23b9a6c83712ca1e25c11df38ec27"
     },
     {
       "id": "4e4ccd64d995181ac53350d8",
@@ -1826,7 +1826,7 @@
       "timeline": [
         "2026-05-12: Initial publication"
       ],
-      "detail_text_sha256": "225ce7428e1b2dd0c23a6335e4df07edffcbf92130421c37b086c07da94a8e30"
+      "detail_text_sha256": "afaafad1343a8cd9e8b31558181ee04887357aed96b6a905812b5a006088d3bd"
     },
     {
       "id": "b1eebd6e91a3ba52a6785c10",
@@ -1882,7 +1882,7 @@
       "timeline": [
         "2026-05-12: Initial publication"
       ],
-      "detail_text_sha256": "32439efb29914fb775d893b4782ecf45ca783a487cbf2e08db82368f18e09b74"
+      "detail_text_sha256": "d83d6f851ea9d2b47ea6139c8bdb53b94192b193a46a24c4ea8c3540713999cf"
     },
     {
       "id": "c25d40e2b5428e7f994e5dc0",
@@ -1958,7 +1958,7 @@
       "timeline": [
         "2026-05-12: Initial publication"
       ],
-      "detail_text_sha256": "251e3febdc3f2e1dc09dac10d42bf89bc8debdd4a8be82200d14b1d1161a9970"
+      "detail_text_sha256": "6de652dfe7e06a2eb8716b95f0695b75433a2341e6087ff5443114ee51fc30d1"
     },
     {
       "id": "e21cbe4cce7b539da3c6f69a",
@@ -2014,7 +2014,7 @@
       "timeline": [
         "2026-05-12: Initial publication"
       ],
-      "detail_text_sha256": "bac483a4ae466193fe753a38e947d748b79cd1ee5a6de5d637fe25888f43f98e"
+      "detail_text_sha256": "90ca1984b30db00a77dd2707296899294891d3c1268454eaf42cf5294e53060b"
     },
     {
       "id": "f8ea8a82c046c5cce89c7595",
@@ -2075,7 +2075,7 @@
       "timeline": [
         "2026-05-12: Initial publication"
       ],
-      "detail_text_sha256": "511e323e230491c8012369bb4bd3dd724fa685a7285d382259080903cfe11682"
+      "detail_text_sha256": "14e92e5dcd8dcf92fda5e9468dd033b835667e18eec6bde153d297337a8fe9aa"
     },
     {
       "id": "6a2ffba862f2ca7028e3b69a",
@@ -2136,7 +2136,7 @@
       "timeline": [
         "2026-04-15: Initial publication"
       ],
-      "detail_text_sha256": "5758e16dc734771f60f1ebd5cc583499f2a388988350f28b43e38a19e5c1060a"
+      "detail_text_sha256": "cd5786a8b54d8950d8aad90551a0e4e7f2a1cd30ca403da7fef9bd7311cfa600"
     },
     {
       "id": "b900b87034eae3bd76207491",
@@ -2213,7 +2213,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "67b9103756220c94c7ddcda7383004315079bb1db50158c05f9b01a6b3f82046"
+      "detail_text_sha256": "2834a3a109f740595959089a7d0a6f62dc5df81fcbf573829b3109cec1431fd1"
     },
     {
       "id": "373d67a10fe8e188096d6d3b",
@@ -2311,7 +2311,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "ef2d5ad7892664de235ef6ee8d960dd34f9c8fad4aabae1cfafbea29cf920f73"
+      "detail_text_sha256": "73fdd0b92804aeee577dd57606c7a8f43a7056a7ca121c190dbaad93ea7a54de"
     },
     {
       "id": "1c8c5d85fac2ee7f8ceb4f53",
@@ -2342,7 +2342,7 @@
         "References",
         "https://github.com/axios/axios/issues/10636"
       ],
-      "detail_text_sha256": "d5d90064ef24f7226cdce4da1fce750a2b90043496a6602395ce799da6934bde"
+      "detail_text_sha256": "96ab2af61af291b750db527d26b38f6a6d9a957afc697dd1f8a1cc96e4e9ea25"
     },
     {
       "id": "7e07abef22c920fcb200c041",
@@ -2419,7 +2419,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "f58387459265581f09bdfdb042b096d608726d643c402bbf195b0edc71c1fcbc"
+      "detail_text_sha256": "f1429c3779dd0e73cd153ab4ba88cb8f98a2987b7b03b9870a36ec74b99450ab"
     },
     {
       "id": "1c67ba1b311c4ec84b028987",
@@ -2496,7 +2496,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "310a3e42ccec8751a6a824f7e0da6b700de2135611ec36337f4dda02faf5433b"
+      "detail_text_sha256": "48e42b7f627feac915c248d6eb866aa15d5f60fa4ca3d3fb4fd7ef02c5fb6663"
     },
     {
       "id": "d950cbb2a4dc85ff477da2f0",
@@ -2574,7 +2574,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "ff8aed8ca0833682416a40f2b8abe744bc2123103c4fb9b831a9f35e81ce8142"
+      "detail_text_sha256": "c3da80130d36f7867885640bc1a00b17e448a3a7861c120881bd366d7575850d"
     },
     {
       "id": "7385aa5e63f21429b288ad02",
@@ -2626,7 +2626,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "9dd5d7040cc88c557d997d6cc8cde7c839740704532c94a2a0a70bb4d27c1de1"
+      "detail_text_sha256": "e063ba356c75d606591ae915730abaaf7038fdd0ccd536c963defb5b8f93bbc8"
     },
     {
       "id": "77340f517307825c8ec0c4bc",
@@ -2677,7 +2677,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "93d98bc872f3a8838b7ee73bbe0f127497dc739033cfe5ccf77104e8654aa95f"
+      "detail_text_sha256": "ffaa7d507188414b28cd20817cdd39d888c1b0af3a7d74b256a767a979c70bb3"
     },
     {
       "id": "2a85d61ab4e68be806cb84e9",
@@ -2724,7 +2724,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "cf1e4c64ee426c3f99027473cadf7f870b89d1bd897c23fbc0abc82795549166"
+      "detail_text_sha256": "a41f271cc0d9187f2cc413c7507b8a1f1995badde5d8a0175fba59ccf7778375"
     },
     {
       "id": "c744e8247c9e70f00bfef778",
@@ -2785,7 +2785,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "b3db1d58aff481d7acea6090864c952f2ec01b299f1fa3b25a00915c0830d62b"
+      "detail_text_sha256": "8e15d6e899da87d753852856aa2d74df16a0c1f6ea7fe923cea1cf391eb7f0df"
     },
     {
       "id": "e52a94ec80a486e3b54d1539",
@@ -2851,7 +2851,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "15b49f5ff40bfc903b827e43327d61465e74bb6d37160bde33e078071ee7d870"
+      "detail_text_sha256": "de7c6f206e83b28723d2bc0ddebe6c5f426ab5f88ef37ab03d071837cbe40214"
     },
     {
       "id": "c3289b39d5e876dc515edc6e",
@@ -2912,7 +2912,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "9ee0174d2ba666750d6d8a27b9fea45fc01b816312acc9538e2667a9005b31b2"
+      "detail_text_sha256": "18fe396728085fcfbc1255608d479b7d4a437a875ead898a83571640f6c1cbdc"
     },
     {
       "id": "6866a633d2551c534caeecf6",
@@ -2963,7 +2963,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "75c3b98bea5897fdb98d005e110b01a4607f9f34202b5706e15ed7465ec9ff00"
+      "detail_text_sha256": "b35db9e66bf3f5215e43149f350ec16aefeb522c11f5074a625b5d4191cf31d2"
     },
     {
       "id": "54cc8bd6be046f854e3295a1",
@@ -3030,7 +3030,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "06c076518be902b92a680fbbd689f59418e5833a9313107663f1e00c7120bb7a"
+      "detail_text_sha256": "333498e5909b6fcce0c66fa65eefcd693158e0b1c59680f894c6e9b5e5828a38"
     },
     {
       "id": "adcc7e86eed0bbc85b8298dc",
@@ -3076,7 +3076,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "1d4035c87f65293046c795424d7f267e3789c85731b9fa7928ca4b59f0130fd6"
+      "detail_text_sha256": "acee857411cbb09696e9b0026f841a76d1a26a622cb725a187f478109b23287a"
     },
     {
       "id": "f69e2e47792fac47cc0850cc",
@@ -3127,7 +3127,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "be837bcfba880543f6ee89908784bc1eed29ed59476def186dd468aaa5eedaa2"
+      "detail_text_sha256": "2bd682a5a5b9f9a74c74b49ce75bf38f49d0e50788bff9abada900476885a114"
     },
     {
       "id": "484e4fc263fe855295a54c6e",
@@ -3266,7 +3266,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "897d77edc7dfedab771e6bc50b78eb9b49fc65537b078b7bb4879caa7a89e62a"
+      "detail_text_sha256": "d6640975079197c64e4402bf88d33a2215931b1876e29294963df12eeeb66a8e"
     },
     {
       "id": "d98aa0b6b6ade232854c2003",
@@ -3393,7 +3393,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "ef9d48b98c3f91d7b6b05b0f2f679b67136e2293a5f56bd14f933b5f1959cd61"
+      "detail_text_sha256": "ef4c8fd9b456da517dcb55a7209940f2b63cc8ae1199037ad5c25273aae37e69"
     },
     {
       "id": "605ba67a328bb9f4dd7824cc",
@@ -3470,7 +3470,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "736e3ae32c44c6645facf0bf802eb615acee7ece4dd7b0ec5c3974138036bebb"
+      "detail_text_sha256": "4e6ee8ec077e2878e7d5981f07cc2e818e2cb548ec88ae193c0a1c8dbae95d66"
     },
     {
       "id": "a06cd44bb4a9166dbf3564d2",
@@ -3537,7 +3537,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "8faf6b8537ce77e6cc9da6a3c73784704bbd6c96d7ef6a77cb5f270295596902"
+      "detail_text_sha256": "4b47fbdc1d603526515f33c69b0e3167499bae78a20ab07d32cb5e3131383661"
     },
     {
       "id": "71faa2e63abf230bd6cfbe51",
@@ -3603,7 +3603,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "887d9179205d3695396a06c91e8892c555069c97eb1533cebcbdf45c474f43d3"
+      "detail_text_sha256": "d43186522c6f8db86ee09db4b0e721e67ae73cb973d0d1df46bb3ae088a291bb"
     },
     {
       "id": "96841cb1d0cef88d7b9b4c4e",
@@ -3742,7 +3742,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "89490a83fdeec75df3d393fa19908e1807eefbfe2b7470c6253fe66000b838b7"
+      "detail_text_sha256": "430e3cbe6c83dff4ff8cc7b33b6be8602454e75b7a3bd669d9bf62b08e91ab2e"
     },
     {
       "id": "33c2f6e0ed00a13923be46b7",
@@ -3829,7 +3829,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "b2a82d0c8eab606964443d4baf3cb1f5fab6321de1c7e3a2a5dad4592b082548"
+      "detail_text_sha256": "05d4eb66339ae9512e466a8e9715ea58966289a9c5d1aabf60fbf18f6696b4a8"
     },
     {
       "id": "5174fc6ae989d57d75d37bcc",
@@ -3906,7 +3906,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "471ab878d0f2394ef4676276c9cb921a67f5a7f197d0fbc33d8ee269394999eb"
+      "detail_text_sha256": "4fae4c4c190c3d2467828c3e06aac03527b905f4f3851ea22fc0b2c91a19ece3"
     },
     {
       "id": "189a27a6670b6f5df76371d3",
@@ -3957,7 +3957,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "0ccd4bc3fb13f28b94d25a07e7567c556f17de0fada62eaf1ec0f08283fa2f22"
+      "detail_text_sha256": "45f4e477bff9e78b5d1904f9043a387e4b114991266185b7b56d2c22e1d37afb"
     },
     {
       "id": "7bc2193b33c85d5298d0b8b4",
@@ -4039,7 +4039,7 @@
       "timeline": [
         "2026-04-14: Initial publication"
       ],
-      "detail_text_sha256": "887b1f5c78f8a4af4f3f0d81582483c78006660e2d67c51047ec79c777bafb7e"
+      "detail_text_sha256": "29421ecc9f533622091ae7b5462a0146b437e3f690c8f9c3a509aec955e7a7d5"
     },
     {
       "id": "b2b5812094d3211494534af8",
@@ -4090,7 +4090,7 @@
       "timeline": [
         "2026-04-04: Initial publication"
       ],
-      "detail_text_sha256": "27f4b230f3d73f30309a28f6de5b1f6214cc53fcd6f3ef91a28f759b06b81a1b"
+      "detail_text_sha256": "0544c8d31ec423280df7eec4c83168c6c4fd0580093496fe373fa0452dce423d"
     },
     {
       "id": "043618b3367967a3ebf5302a",
@@ -4153,7 +4153,7 @@
         "2026-03-10: Initial publication",
         "2026-03-26: PaaS added"
       ],
-      "detail_text_sha256": "f2b6563639b1b0c45a8fcdeafc84791956f0777cc007ee37d271fb4cd89a23a7"
+      "detail_text_sha256": "770ec0bd78ea3810b41b31c558a4f3672b0c8b0804f648528961c919cb24e002"
     },
     {
       "id": "f2e488903fd01dcd6aa67474",
@@ -4215,7 +4215,7 @@
         "2026-02-10: Initial publication",
         "2026-07-04: Added IPS package info"
       ],
-      "detail_text_sha256": "ed157565ed4c7b57f0d21768dfaba15234c378971cae2912a38d321b58975e9b"
+      "detail_text_sha256": "956cfbc53a01cf1f2983c12f8e429b081b003e50f5ab366255702a1ef3350bf9"
     },
     {
       "id": "94aa3bc020f3d79cfe6d64d6",
@@ -4359,7 +4359,7 @@
         "2025-11-18: Initial publication",
         "2026-05-27: Solution updated"
       ],
-      "detail_text_sha256": "ed7b3d0512f78bed4c6b8755a7f7e38317bdb6801973ecd60631f6a29b319b24"
+      "detail_text_sha256": "0c7a5acd2c2a734f2075bb5ed7eb3e866457762b5bf7d74719f47387371157d7"
     },
     {
       "id": "367c45bb26c6dc0c7a388682",
@@ -4442,7 +4442,7 @@
         "2025-10-14: Initial publication",
         "2026-06-08: FortiProxy 7.4 solution added"
       ],
-      "detail_text_sha256": "16ba4c2074d0eed0a7f9ce1a3913b9276fc1ba8383889d986c0ad12c31ea86e3"
+      "detail_text_sha256": "c1e4f6cb62895f0911c767303d5c526f1cecf6d083f93e1c2568c3c17acbc30a"
     },
     {
       "id": "2edbfc0ca9a6d137b2369994",
@@ -4540,7 +4540,7 @@
         "2025-06-10: Initial publication",
         "2026-06-15: Workaround added"
       ],
-      "detail_text_sha256": "cae636b7ac8ebc76cf2200ddd9181aa347bf0679dd2adacf64602a8897aa6fab"
+      "detail_text_sha256": "2ca8a53674c2e752114b4d966326fc66ef71b70c548beec40b6fc645fd66e908"
     },
     {
       "id": "3768ae6e6e62a0e90e3764f3",
@@ -4961,7 +4961,7 @@
         "https://nvd.nist.gov/vuln/detail/CVE-2025-26466",
         "https://www.qualys.com/2025/02/18/openssh-mitm-dos.txt"
       ],
-      "detail_text_sha256": "c8402cbbc0b86cca112582b94c48280a26174c1624ec60ec7b2b7a8763576176"
+      "detail_text_sha256": "242f5242598cfce4936b1095065f36e02f3311c58bd1f02fa802c66177fa9bef"
     }
   ]
 }
