@@ -44,6 +44,7 @@
 <button class="filter-btn" data-filter="gestion-vulnerabilidades" onclick="filterArticles('gestion-vulnerabilidades', this)">Gestión de Vulnerabilidades</button>
 <button class="filter-btn" data-filter="respuesta-incidentes" onclick="filterArticles('respuesta-incidentes', this)">Respuesta a Incidentes</button>
 <button class="filter-btn" data-filter="cifrado-identidad-digital" onclick="filterArticles('cifrado-identidad-digital', this)">Cifrado e Identidad Digital</button>
+<button class="filter-btn" data-filter="active-directory" onclick="filterArticles('active-directory', this)">Active Directory</button>
 <div style="width:100%; height:0; margin:0; padding:0;"></div>
 <div style="display:flex; gap:6px; align-items:center;">
 <span style="font-family:monospace; font-size:10px;">Más filtros:</span>
@@ -65,10 +66,10 @@
 </div>
 <script src="../js/menu.js"></script>
 <script src="../js/footer.js"></script>
-<script src="../js/articulos.js"></script>
+<script src="../js/articulos.js?v=20260802-7"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    initArticulos('../data/seguridad.json');
+    initArticulos('../data/seguridad.json?v=20260802-7');
 });
 </script>
 </body>

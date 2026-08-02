@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", function() {
             { num: '1.5', name: 'Almacenamiento y Datos', slug: 'almacenamiento-datos' },
             { num: '1.6', name: 'Virtualización y Contenedores', slug: 'virtualizacion-contenedores' },
             { num: '1.7', name: 'Capacidad y Rendimiento', slug: 'capacidad-rendimiento' },
-            { num: '1.8', name: 'Arquitectura de CPD', slug: 'arquitectura-cpd' }
+            { num: '1.8', name: 'Arquitectura de CPD', slug: 'arquitectura-cpd' },
+            { num: '1.9', name: 'Active Directory', slug: 'active-directory' }
         ],
         seguridad: [
             { num: '2.1', name: 'Zero Trust', slug: 'zero-trust' },
@@ -43,7 +44,8 @@ document.addEventListener("DOMContentLoaded", function() {
             { num: '2.5', name: 'SIEM y Detección', slug: 'siem-deteccion' },
             { num: '2.6', name: 'Gestión de Vulnerabilidades', slug: 'gestion-vulnerabilidades' },
             { num: '2.7', name: 'Respuesta a Incidentes', slug: 'respuesta-incidentes' },
-            { num: '2.8', name: 'Cifrado e Identidad Digital', slug: 'cifrado-identidad-digital' }
+            { num: '2.8', name: 'Cifrado e Identidad Digital', slug: 'cifrado-identidad-digital' },
+            { num: '2.9', name: 'Active Directory', slug: 'active-directory' }
         ],
         operaciones: [
             { num: '3.1', name: 'Automatización y Orquestación', slug: 'automatizacion-orquestacion' },
@@ -53,7 +55,8 @@ document.addEventListener("DOMContentLoaded", function() {
             { num: '3.5', name: 'Gestión de Cambios', slug: 'gestion-cambios' },
             { num: '3.6', name: 'Backup y Recuperación', slug: 'backup-recuperacion' },
             { num: '3.7', name: 'Patch Management', slug: 'patch-management' },
-            { num: '3.8', name: 'Gestión de Incidencias', slug: 'gestion-incidencias' }
+            { num: '3.8', name: 'Gestión de Incidencias', slug: 'gestion-incidencias' },
+            { num: '3.9', name: 'Active Directory', slug: 'active-directory' }
         ],
         gobernanza: [
             { num: '4.1', name: 'Riesgo Tecnológico', slug: 'riesgo-tecnologico' },
@@ -63,7 +66,8 @@ document.addEventListener("DOMContentLoaded", function() {
             { num: '4.5', name: 'Gestión de Terceros', slug: 'gestion-terceros' },
             { num: '4.6', name: 'Políticas y Normativa Interna', slug: 'politicas-normativa' },
             { num: '4.7', name: 'Auditoría y Control Interno', slug: 'auditoria-control-interno' },
-            { num: '4.8', name: 'Gobierno del Dato', slug: 'gobierno-dato' }
+            { num: '4.8', name: 'Gobierno del Dato', slug: 'gobierno-dato' },
+            { num: '4.9', name: 'Active Directory', slug: 'active-directory' }
         ]
     };
 

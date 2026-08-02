@@ -636,5 +636,60 @@
     "url": "seguridad/security-design/patrones-seguridad-arquitectura.html",
     "published": true,
     "nuevo": false
+  },
+  {
+    "id": 59,
+    "cat": "active-directory",
+    "meta": "Active Directory · Seguridad",
+    "title": "Cuentas de servicio, gMSA y Kerberoasting",
+    "date": "02 Agosto 2026",
+    "desc": "Deuda de cuentas de servicio, mecánica de Kerberoasting, migración hacia gMSA y controles de evidencias para reducir secretos estáticos y privilegios excesivos.",
+    "url": "seguridad/active-directory/ad-seguridad-cuentas-servicio-gmsa.html",
+    "published": true,
+    "nuevo": true
+  },
+  {
+    "id": 60,
+    "cat": "active-directory",
+    "meta": "Active Directory · Seguridad",
+    "title": "Modelo de tiers y privilegio mínimo en Active Directory",
+    "date": "01 Agosto 2026",
+    "desc": "Diseño e implantación de separación de privilegios, Protected Users, políticas de autenticación y controles que impidan que una sesión administrativa contamine equipos de menor confianza.",
+    "url": "seguridad/active-directory/ad-seguridad-tiers-privilegio.html",
+    "published": true,
+    "nuevo": true
+  },
+  {
+    "id": 61,
+    "cat": "active-directory",
+    "meta": "Active Directory · Seguridad",
+    "title": "Detección de ataques Kerberos y DCSync en Active Directory",
+    "date": "24 Julio 2026",
+    "desc": "Señales, eventos, correlaciones y controles para detectar Kerberoasting, AS-REP Roasting, tickets falsificados, abuso de delegación y replicación maliciosa.",
+    "url": "seguridad/active-directory/ad-seguridad-deteccion-kerberos.html",
+    "published": true,
+    "nuevo": false
+  },
+  {
+    "id": 62,
+    "cat": "active-directory",
+    "meta": "Active Directory · Seguridad",
+    "title": "Hardening real de Domain Controllers y reducción de superficie de ataque",
+    "date": "10 Julio 2026",
+    "desc": "Baselines, protocolos heredados, LDAP signing, channel binding, SMB, NTLM, EDR, administración remota y evidencia continua de cumplimiento.",
+    "url": "seguridad/active-directory/ad-seguridad-hardening-domain-controllers.html",
+    "published": true,
+    "nuevo": false
+  },
+  {
+    "id": 63,
+    "cat": "active-directory",
+    "meta": "Active Directory · Seguridad",
+    "title": "Delegaciones peligrosas, ACL y rutas de ataque en Active Directory",
+    "date": "18 Junio 2026",
+    "desc": "Análisis de permisos, AdminSDHolder, GPO, delegación Kerberos, trusts y relaciones explotables para priorizar la remediación por impacto real.",
+    "url": "seguridad/active-directory/ad-seguridad-acl-delegaciones-rutas-ataque.html",
+    "published": true,
+    "nuevo": false
   }
 ]

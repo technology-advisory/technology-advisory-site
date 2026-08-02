@@ -44,6 +44,7 @@
 <button class="filter-btn" data-filter="politicas-normativa" onclick="filterArticles('politicas-normativa', this)">Políticas y Normativa Interna</button>
 <button class="filter-btn" data-filter="auditoria-control-interno" onclick="filterArticles('auditoria-control-interno', this)">Auditoría y Control Interno</button>
 <button class="filter-btn" data-filter="gobierno-dato" onclick="filterArticles('gobierno-dato', this)">Gobierno del Dato</button>
+<button class="filter-btn" data-filter="active-directory" onclick="filterArticles('active-directory', this)">Active Directory</button>
 <div style="width:100%; height:0; margin:0; padding:0;"></div>
 <div style="display:flex; gap:6px; align-items:center;">
 <span style="font-family:monospace; font-size:10px;">Más filtros:</span>
@@ -65,10 +66,10 @@
 </div>
 <script src="../js/menu.js"></script>
 <script src="../js/footer.js"></script>
-<script src="../js/articulos.js"></script>
+<script src="../js/articulos.js?v=20260802-7"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    initArticulos('../data/gobernanza.json');
+    initArticulos('../data/gobernanza.json?v=20260802-7');
 });
 </script>
 </body>

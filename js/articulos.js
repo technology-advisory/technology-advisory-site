@@ -288,6 +288,34 @@ async function cargarArticulos(jsonPath) {
 
         articulosData = todos.filter(a => a.published === true);
 
+        // Validación estricta de parámetros. Una combinación inexistente se trata
+        // como recurso inexistente y se deriva a la página 404.
+        const requested = getStateFromURL();
+        const allowedParams = new Set(['cat', 'page', 'mes']);
+        const rawParams = new URLSearchParams(window.location.search);
+        const unknownParam = Array.from(rawParams.keys()).some(key => !allowedParams.has(key));
+        const categories = new Set(['all', ...articulosData.map(a => a.cat)]);
+        const validCategory = categories.has(requested.cat);
+        const validPageSyntax = Number.isInteger(requested.page) && requested.page >= 1;
+        const validMonthSyntax = requested.mes === 'all' || /^\d{4}-(0[1-9]|1[0-2])$/.test(requested.mes);
+        const categoryArticles = articulosData.filter(a => requested.cat === 'all' || a.cat === requested.cat);
+        const availableMonths = new Set(categoryArticles.map(a => {
+            const d = parseSpanishDate(a.date);
+            return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+        }));
+        const validMonth = requested.mes === 'all' || availableMonths.has(requested.mes);
+        const filteredForValidation = categoryArticles.filter(a => {
+            if (requested.mes === 'all') return true;
+            const d = parseSpanishDate(a.date);
+            return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}` === requested.mes;
+        });
+        const maxPage = Math.max(1, Math.ceil(filteredForValidation.length / PER_PAGE));
+        const validPage = requested.page <= maxPage;
+        if (unknownParam || !validCategory || !validPageSyntax || !validMonthSyntax || !validMonth || !validPage || filteredForValidation.length === 0) {
+            window.location.replace('/404.html');
+            return;
+        }
+
         console.info(
             '[ARTICULOS]',
             `JSON=${todos.length}`,
@@ -337,5 +365,36 @@ async function cargarArticulos(jsonPath) {
 // INICIO
 // ==============================
 function initArticulos(jsonPath) {
+    const params = new URLSearchParams(window.location.search);
+    const allowed = new Set(["cat", "page", "mes"]);
+    const keys = Array.from(params.keys());
+
+    const unknown = keys.some(k => !allowed.has(k));
+    const duplicated = keys.some((k, i) => keys.indexOf(k) !== i);
+
+    // Un parámetro presente sin valor representa un recurso inexistente:
+    // ?cat, ?cat=, ?page, ?page=, ?mes o ?mes= deben responder con 404.
+    const emptyKnown = ["cat", "page", "mes"].some(
+        k => params.has(k) && !String(params.get(k) || "").trim()
+    );
+
+    const page = params.get("page");
+    const mes = params.get("mes");
+
+    const badPage =
+        params.has("page") &&
+        !/^[1-9]\d*$/.test(page || "");
+
+    const badMonth =
+        params.has("mes") &&
+        !/^\d{4}-(0[1-9]|1[0-2])$/.test(mes || "");
+
+    // La categoría se valida después de cargar el JSON, usando las
+    // categorías realmente publicadas. No depende de los botones del HTML.
+    if (unknown || duplicated || emptyKnown || badPage || badMonth) {
+        window.location.replace("/404.html");
+        return;
+    }
+
     cargarArticulos(jsonPath);
 }

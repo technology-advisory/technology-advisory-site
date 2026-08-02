@@ -313,7 +313,7 @@
     "meta": "Automation Workflows · Operaciones",
     "title": "Automatización Avanzada: Orquestación y Flujos de Sistemas",
     "date": "07 Abril 2026",
-    "desc": "Análisis exhaustivo sobre optimización operativa y Site Reliability Engineering. Implementación de flujos corporativos con PowerShell, Python e integración en n8n.",
+    "desc": "Análisis exhaustivo sobre optimización operativa y Site Reliability Engineering. Implementación de flujos corporativos con PowerShell, automatización e integración en n8n.",
     "url": "operaciones/automation-workflows/automatizacion-avanzada.html",
     "published": true,
     "nuevo": false
@@ -426,7 +426,7 @@
     "desc": "On-prem, cloud y SaaS producen señales distintas. La capa común debe normalizar servicio, owner, entorno y criticidad sin perder atributos nativos.",
     "url": "operaciones/monitorizacion-observabilidad/observabilidad-infraestructura-hibrida.html",
     "published": true,
-    "nuevo": true
+    "nuevo": false
   },
   {
     "id": 44,
@@ -448,7 +448,7 @@
     "desc": "Un script que funciona en la consola del autor no es una automatización operable. Necesita parámetros, validación, logging, idempotencia y manejo de secretos.",
     "url": "operaciones/automatizacion-orquestacion/powershell-automatizacion-enterprise.html",
     "published": true,
-    "nuevo": true
+    "nuevo": false
   },
   {
     "id": 46,
@@ -548,5 +548,117 @@
     "url": "operaciones/gestion-cambios/cambios-emergencia.html",
     "published": true,
     "nuevo": false
+  },
+  {
+    "id": 55,
+    "cat": "active-directory",
+    "meta": "Active Directory · Operaciones",
+    "title": "Monitorización, salud y operaciones diarias de Domain Controllers",
+    "date": "02 Agosto 2026",
+    "desc": "Indicadores de salud, replicación, DNS, rendimiento, capacidad, parcheo y rutinas operativas para detectar degradación antes de que afecte a la autenticación.",
+    "url": "operaciones/active-directory/ad-operaciones-monitorizacion-dc.html",
+    "published": true,
+    "nuevo": true
+  },
+  {
+    "id": 56,
+    "cat": "active-directory",
+    "meta": "Active Directory · Operaciones",
+    "title": "Backup, recuperación y disaster recovery de Active Directory",
+    "date": "01 Agosto 2026",
+    "desc": "Respaldo de estado del sistema, restauración autoritativa y no autoritativa, forest recovery, aislamiento de copias y pruebas completas de recuperación.",
+    "url": "operaciones/active-directory/ad-operaciones-backup-recuperacion.html",
+    "published": true,
+    "nuevo": true,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 57,
+    "cat": "active-directory",
+    "meta": "Active Directory · Operaciones",
+    "title": "Ciclo de vida de cuentas privilegiadas y de servicio en Active Directory",
+    "date": "24 Julio 2026",
+    "desc": "Alta, modificación, revisión, rotación, suspensión y baja de cuentas con responsables, caducidades, evidencia y automatización segura.",
+    "url": "operaciones/active-directory/ad-operaciones-ciclo-vida-cuentas.html",
+    "published": true,
+    "nuevo": false
+  },
+  {
+    "id": 58,
+    "cat": "active-directory",
+    "meta": "Active Directory · Operaciones",
+    "title": "Gestión de cambios, parcheo y mantenimiento seguro de Domain Controllers",
+    "date": "10 Julio 2026",
+    "desc": "Ventanas, secuenciación, comprobaciones previas y posteriores, FSMO, replicación, rollback y evidencias para mantener DC sin improvisación.",
+    "url": "operaciones/active-directory/ad-operaciones-parcheo-cambios-dc.html",
+    "published": true,
+    "nuevo": false
+  },
+  {
+    "id": 59,
+    "cat": "active-directory",
+    "meta": "Active Directory · Operaciones",
+    "title": "Troubleshooting avanzado de replicación, DNS y autenticación",
+    "date": "18 Junio 2026",
+    "desc": "Método de diagnóstico con dcdiag, repadmin, eventos, SYSVOL, Netlogon, Kerberos, tiempo y DNS para resolver incidencias sin pruebas destructivas.",
+    "url": "operaciones/active-directory/ad-operaciones-troubleshooting-replicacion-dns.html",
+    "published": true,
+    "nuevo": false
+  },
+  {
+    "id": 60,
+    "cat": "patch-management",
+    "meta": "Patch Management · Operaciones",
+    "title": "Estrategia de parcheado empresarial basada en riesgo",
+    "date": "12 Junio 2026",
+    "desc": "Cómo priorizar actualizaciones según exposición, criticidad, explotabilidad, impacto y capacidad de recuperación, evitando tratar todos los parches como iguales.",
+    "url": "operaciones/patch-management/patch-management-estrategia-riesgo.html",
+    "published": true,
+    "nuevo": false
+  },
+  {
+    "id": 61,
+    "cat": "patch-management",
+    "meta": "Patch Management · Operaciones",
+    "title": "Anillos de despliegue, pilotos y oleadas de actualización",
+    "date": "03 Julio 2026",
+    "desc": "Diseño de anillos de parcheado, selección de pilotos, criterios de promoción, pausas automáticas y despliegue progresivo sin convertir producción en laboratorio.",
+    "url": "operaciones/patch-management/patch-management-anillos-pilotos-oleadas.html",
+    "published": true,
+    "nuevo": false
+  },
+  {
+    "id": 62,
+    "cat": "patch-management",
+    "meta": "Patch Management · Operaciones",
+    "title": "Parcheado de servidores críticos sin afectar la disponibilidad",
+    "date": "18 Julio 2026",
+    "desc": "Preparación, secuenciación, balanceo, clústeres, validación funcional y recuperación para actualizar servicios críticos con riesgo controlado.",
+    "url": "operaciones/patch-management/patch-management-servidores-criticos.html",
+    "published": true,
+    "nuevo": false
+  },
+  {
+    "id": 63,
+    "cat": "patch-management",
+    "meta": "Patch Management · Operaciones",
+    "title": "Gestión de vulnerabilidades frente a gestión de parches",
+    "date": "02 Agosto 2026",
+    "desc": "Cómo coordinar descubrimiento, priorización, remediación y verificación sin confundir una vulnerabilidad detectada con un parche disponible.",
+    "url": "operaciones/patch-management/patch-management-vulnerabilidades-vs-parches.html",
+    "published": true,
+    "nuevo": true,
+    "badge": "Nuevo"
+  },
+  {
+    "id": 64,
+    "cat": "patch-management",
+    "meta": "Patch Management · Operaciones",
+    "title": "Evidencias, métricas y cumplimiento del proceso de parcheado",
+    "date": "01 Agosto 2026",
+    "desc": "Qué evidencias conservar, cómo construir métricas fiables y cómo demostrar que el parcheado funciona más allá de un porcentaje mensual.",
+    "url": "operaciones/patch-management/patch-management-evidencias-metricas.html",
+    "published": true,
+    "nuevo": true
   }
 ]

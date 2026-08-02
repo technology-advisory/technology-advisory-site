@@ -427,5 +427,60 @@
     "url": "arquitectura/diseno-arquitectonico/hld-vs-lld-diferencias-diseno-infraestructura.html",
     "published": true,
     "nuevo": true
+  },
+  {
+    "id": 40,
+    "cat": "active-directory",
+    "meta": "Active Directory · Arquitectura",
+    "title": "Arquitectura de bosques, dominios y sitios en Active Directory",
+    "date": "02 Agosto 2026",
+    "desc": "Cómo decidir entre bosque único y múltiple, diseñar dominios y sitios, controlar trusts y evitar una topología que convierta la identidad en una dependencia frágil.",
+    "url": "arquitectura/active-directory/ad-arquitectura-bosques-dominios.html",
+    "published": true,
+    "nuevo": true
+  },
+  {
+    "id": 41,
+    "cat": "active-directory",
+    "meta": "Active Directory · Arquitectura",
+    "title": "Arquitectura híbrida Active Directory + Entra ID",
+    "date": "01 Agosto 2026",
+    "desc": "Diseño de identidad híbrida, sincronización, autenticación, resiliencia y control de las rutas de ataque que conectan el directorio local con el plano cloud.",
+    "url": "arquitectura/active-directory/ad-arquitectura-hibrida-entra.html",
+    "published": true,
+    "nuevo": true
+  },
+  {
+    "id": 42,
+    "cat": "active-directory",
+    "meta": "Active Directory · Arquitectura",
+    "title": "Arquitectura de tiering y Privileged Access Workstations",
+    "date": "24 Julio 2026",
+    "desc": "Separación de planos administrativos, estaciones privilegiadas, saltos controlados y límites técnicos para reducir el movimiento lateral de credenciales.",
+    "url": "arquitectura/active-directory/ad-arquitectura-tiering-paw.html",
+    "published": true,
+    "nuevo": false
+  },
+  {
+    "id": 43,
+    "cat": "active-directory",
+    "meta": "Active Directory · Arquitectura",
+    "title": "Diseño de Sites, subredes, DNS y replicación de Active Directory",
+    "date": "10 Julio 2026",
+    "desc": "Topología física, localización de servicios, site links, costes, DNS integrado y criterios para que la replicación sea predecible incluso en redes degradadas.",
+    "url": "arquitectura/active-directory/ad-arquitectura-sites-dns-replicacion.html",
+    "published": true,
+    "nuevo": false
+  },
+  {
+    "id": 44,
+    "cat": "active-directory",
+    "meta": "Active Directory · Arquitectura",
+    "title": "Modernización y migración de Active Directory sin interrumpir el negocio",
+    "date": "18 Junio 2026",
+    "desc": "Estrategia para renovar controladores, elevar niveles funcionales, consolidar dominios y retirar deuda histórica con coexistencia, pruebas y rollback.",
+    "url": "arquitectura/active-directory/ad-arquitectura-modernizacion-migracion.html",
+    "published": true,
+    "nuevo": false
   }
 ]

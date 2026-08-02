@@ -614,5 +614,60 @@
     "url": "gobernanza/gobierno-dato/gobierno-dato-para-ia.html",
     "published": true,
     "nuevo": false
+  },
+  {
+    "id": 57,
+    "cat": "active-directory",
+    "meta": "Active Directory · Gobernanza",
+    "title": "Gobierno de Active Directory: propietarios, responsabilidades y modelo de decisión",
+    "date": "02 Agosto 2026",
+    "desc": "Modelo de ownership, RACI, comités, segregación de funciones y autoridad para decidir sobre arquitectura, privilegios, excepciones y riesgo residual.",
+    "url": "gobernanza/active-directory/ad-gobernanza-modelo-gobierno-raci.html",
+    "published": true,
+    "nuevo": true
+  },
+  {
+    "id": 58,
+    "cat": "active-directory",
+    "meta": "Active Directory · Gobernanza",
+    "title": "Riesgo, auditoría y evidencias de control en Active Directory",
+    "date": "01 Agosto 2026",
+    "desc": "Inventario de riesgos, controles, pruebas, evidencias, hallazgos y planes de tratamiento para demostrar que el directorio se gobierna y no solo se administra.",
+    "url": "gobernanza/active-directory/ad-gobernanza-riesgo-auditoria-evidencias.html",
+    "published": true,
+    "nuevo": true
+  },
+  {
+    "id": 59,
+    "cat": "active-directory",
+    "meta": "Active Directory · Gobernanza",
+    "title": "Políticas, estándares y gestión de excepciones para Active Directory",
+    "date": "24 Julio 2026",
+    "desc": "Marco documental para cuentas, privilegios, GPO, protocolos, hardening, cambios y excepciones con caducidad, compensaciones y aprobación formal.",
+    "url": "gobernanza/active-directory/ad-gobernanza-politicas-estandares-excepciones.html",
+    "published": true,
+    "nuevo": false
+  },
+  {
+    "id": 60,
+    "cat": "active-directory",
+    "meta": "Active Directory · Gobernanza",
+    "title": "KPIs, KRIs y modelo de madurez de Active Directory",
+    "date": "10 Julio 2026",
+    "desc": "Indicadores útiles para medir exposición, deuda, disponibilidad, cumplimiento y capacidad de recuperación sin convertir el gobierno en una colección de métricas vacías.",
+    "url": "gobernanza/active-directory/ad-gobernanza-kpi-kri-madurez.html",
+    "published": true,
+    "nuevo": false
+  },
+  {
+    "id": 61,
+    "cat": "active-directory",
+    "meta": "Active Directory · Gobernanza",
+    "title": "Gobierno de terceros y dependencias cloud en Active Directory híbrido",
+    "date": "18 Junio 2026",
+    "desc": "Control de proveedores, cuentas externas, conectores, aplicaciones, soporte remoto y dependencias Entra ID mediante contratos, accesos limitados y evidencia revisable.",
+    "url": "gobernanza/active-directory/ad-gobernanza-terceros-cloud-hibrido.html",
+    "published": true,
+    "nuevo": false
   }
 ]

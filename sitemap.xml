@@ -7,6 +7,21 @@
     <loc>https://technology-advisory.es/arquitectura/</loc>
   </url>
   <url>
+    <loc>https://technology-advisory.es/arquitectura/active-directory/ad-arquitectura-bosques-dominios.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/arquitectura/active-directory/ad-arquitectura-hibrida-entra.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/arquitectura/active-directory/ad-arquitectura-modernizacion-migracion.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/arquitectura/active-directory/ad-arquitectura-sites-dns-replicacion.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/arquitectura/active-directory/ad-arquitectura-tiering-paw.html</loc>
+  </url>
+  <url>
     <loc>https://technology-advisory.es/arquitectura/almacenamiento-datos/almacenamiento-datos-controles-evidencias.html</loc>
   </url>
   <url>
@@ -125,6 +140,21 @@
   </url>
   <url>
     <loc>https://technology-advisory.es/gobernanza/</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/gobernanza/active-directory/ad-gobernanza-kpi-kri-madurez.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/gobernanza/active-directory/ad-gobernanza-modelo-gobierno-raci.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/gobernanza/active-directory/ad-gobernanza-politicas-estandares-excepciones.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/gobernanza/active-directory/ad-gobernanza-riesgo-auditoria-evidencias.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/gobernanza/active-directory/ad-gobernanza-terceros-cloud-hibrido.html</loc>
   </url>
   <url>
     <loc>https://technology-advisory.es/gobernanza/auditoria-control-interno/auditoria-control-interno-controles-evidencias.html</loc>
@@ -301,6 +331,21 @@
     <loc>https://technology-advisory.es/operaciones/</loc>
   </url>
   <url>
+    <loc>https://technology-advisory.es/operaciones/active-directory/ad-operaciones-backup-recuperacion.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/operaciones/active-directory/ad-operaciones-ciclo-vida-cuentas.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/operaciones/active-directory/ad-operaciones-monitorizacion-dc.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/operaciones/active-directory/ad-operaciones-parcheo-cambios-dc.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/operaciones/active-directory/ad-operaciones-troubleshooting-replicacion-dns.html</loc>
+  </url>
+  <url>
     <loc>https://technology-advisory.es/operaciones/automation-workflows/automatizacion-avanzada.html</loc>
   </url>
   <url>
@@ -451,10 +496,40 @@
     <loc>https://technology-advisory.es/operaciones/monitorizacion-observabilidad/observabilidad-infraestructura-hibrida.html</loc>
   </url>
   <url>
+    <loc>https://technology-advisory.es/operaciones/patch-management/patch-management-anillos-pilotos-oleadas.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/operaciones/patch-management/patch-management-estrategia-riesgo.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/operaciones/patch-management/patch-management-evidencias-metricas.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/operaciones/patch-management/patch-management-servidores-criticos.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/operaciones/patch-management/patch-management-vulnerabilidades-vs-parches.html</loc>
+  </url>
+  <url>
     <loc>https://technology-advisory.es/referencias/</loc>
   </url>
   <url>
     <loc>https://technology-advisory.es/seguridad/</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/seguridad/active-directory/ad-seguridad-acl-delegaciones-rutas-ataque.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/seguridad/active-directory/ad-seguridad-cuentas-servicio-gmsa.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/seguridad/active-directory/ad-seguridad-deteccion-kerberos.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/seguridad/active-directory/ad-seguridad-hardening-domain-controllers.html</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/seguridad/active-directory/ad-seguridad-tiers-privilegio.html</loc>
   </url>
   <url>
     <loc>https://technology-advisory.es/seguridad/cifrado-identidad-digital/cifrado-identidad-digital-controles-evidencias.html</loc>
@@ -640,6 +715,9 @@
     <loc>https://technology-advisory.es/tools/cisa-kev/</loc>
   </url>
   <url>
+    <loc>https://technology-advisory.es/tools/cloud-security/</loc>
+  </url>
+  <url>
     <loc>https://technology-advisory.es/tools/euvd/</loc>
   </url>
   <url>
@@ -651,8 +729,16 @@
   <url>
     <loc>https://technology-advisory.es/tools/sonicwall-psirt/</loc>
   </url>
-
-<url><loc>https://technology-advisory.es/tools/vendor-advisories/</loc></url>
-<url><loc>https://technology-advisory.es/tools/cloud-security/</loc></url>
-<url><loc>https://technology-advisory.es/tools/vulnerability-intelligence/</loc></url>
+  <url>
+    <loc>https://technology-advisory.es/tools/threat-intelligence/</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/tools/vendor-advisories/</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/tools/vulnerabilities/</loc>
+  </url>
+  <url>
+    <loc>https://technology-advisory.es/tools/vulnerability-intelligence/</loc>
+  </url>
 </urlset>
