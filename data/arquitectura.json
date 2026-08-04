@@ -107,7 +107,8 @@
     "desc": "Si aplicar el código de infraestructura depende de que alguien ejecute un comando a mano, tienes IaC de nombre, no de práctica.",
     "url": "arquitectura/infraestructura-codigo/infraestructura-codigo-modelo-operativo.html",
     "published": true,
-    "nuevo": true
+    "nuevo": false,
+    "hidden": false
   },
   {
     "id": 11,
@@ -217,7 +218,8 @@
     "desc": "Los 4 niveles reales de madurez de almacenamiento, del disco suelto al gobierno del dato como código.",
     "url": "arquitectura/almacenamiento-datos/almacenamiento-datos-madurez-roadmap.html",
     "published": true,
-    "nuevo": true
+    "nuevo": false,
+    "hidden": false
   },
   {
     "id": 21,
@@ -294,7 +296,8 @@
     "desc": "Un benchmark de hace dos años no es evidencia de la capacidad actual: caduca con cada cambio.",
     "url": "arquitectura/capacidad-rendimiento/capacidad-rendimiento-controles-evidencias.html",
     "published": true,
-    "nuevo": true
+    "nuevo": false,
+    "hidden": false
   },
   {
     "id": 28,
@@ -404,7 +407,8 @@
     "desc": "Estrategia de onboarding de recursos on-prem en Azure Arc. Landing Zones y compliance cross-cloud.",
     "url": "arquitectura/cloud-hibrido/azure-arc-landing-zones.html",
     "published": true,
-    "nuevo": true
+    "nuevo": false,
+    "hidden": false
   },
   {
     "id": 38,
@@ -426,7 +430,8 @@
     "desc": "Qué diferencia un High-Level Design de un Low-Level Design, cómo se relacionan y por qué su alineación define la calidad de una arquitectura.",
     "url": "arquitectura/diseno-arquitectonico/hld-vs-lld-diferencias-diseno-infraestructura.html",
     "published": true,
-    "nuevo": true
+    "nuevo": false,
+    "hidden": false
   },
   {
     "id": 40,

@@ -283,7 +283,8 @@
     "desc": "Auditar todo con la misma frecuencia desperdicia esfuerzo limitado en lo que menos importa.",
     "url": "gobernanza/auditoria-control-interno/auditoria-control-interno-modelo-operativo.html",
     "published": true,
-    "nuevo": true
+    "nuevo": false,
+    "hidden": false
   },
   {
     "id": 27,
@@ -305,7 +306,8 @@
     "desc": "Los 4 niveles de madurez: del cumplimiento anual de auditoría a la garantía continua integrada en la operación.",
     "url": "gobernanza/auditoria-control-interno/auditoria-control-interno-madurez-roadmap.html",
     "published": true,
-    "nuevo": true
+    "nuevo": false,
+    "hidden": false
   },
   {
     "id": 29,
@@ -426,7 +428,8 @@
     "desc": "El apetito debe traducirse a umbrales que permitan saber cuándo una exposición es aceptable, cuándo requiere tratamiento y cuándo debe escalarse.",
     "url": "gobernanza/riesgo-tecnologico/apetito-tolerancia-riesgo.html",
     "published": true,
-    "nuevo": true
+    "nuevo": false,
+    "hidden": false
   },
   {
     "id": 40,
@@ -514,7 +517,8 @@
     "desc": "La muestra solo es defendible si la población está completa y el criterio de selección es explícito. Elegir tickets 'bonitos' invalida la conclusión.",
     "url": "gobernanza/auditoria-control-interno/muestreo-evidencias-ti.html",
     "published": true,
-    "nuevo": true
+    "nuevo": false,
+    "hidden": false
   },
   {
     "id": 48,

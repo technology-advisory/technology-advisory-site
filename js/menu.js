@@ -100,34 +100,37 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 
-    function referencesItem() {
-        return `
-            <li class="has-sub">
-                <a href="${basePath}referencias/index.html" class="nav-link${A('referencias')}">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="6" rx="1"/><rect x="14" y="4" width="7" height="6" rx="1"/><rect x="8.5" y="14" width="7" height="6" rx="1"/><path d="M6.5 10v2h11v-2M12 12v2"/></svg>
-                    Referencias
-                    <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                </a>
-                <div class="sub-panel">
-                    <div class="sub-header">
-                        <span class="sub-area-label">Arquitecturas de referencia</span>
-                        <a href="${basePath}referencias/index.html" class="sub-see-all">Ver todas →</a>
-                    </div>
-                    <div class="sub-grid">
-                        <a class="sub-item" href="${basePath}referencias/index.html#segmentacion-red-corporativa"><span class="sub-num">R.1</span><span class="sub-name">Segmentación de red corporativa</span></a>
-                        <a class="sub-item" href="${basePath}referencias/index.html#dmz-doble-capa"><span class="sub-num">R.2</span><span class="sub-name">DMZ de doble capa</span></a>
-                        <a class="sub-item" href="${basePath}referencias/index.html#acceso-remoto-ztna"><span class="sub-num">R.3</span><span class="sub-name">Acceso remoto ZTNA</span></a>
-                        <a class="sub-item" href="${basePath}referencias/index.html#red-hibrida-hub-spoke"><span class="sub-num">R.4</span><span class="sub-name">Red híbrida hub-spoke</span></a>
-                        <a class="sub-item" href="${basePath}referencias/index.html#pipeline-devsecops"><span class="sub-num">R.5</span><span class="sub-name">Pipeline DevSecOps</span></a>
-                        <a class="sub-item" href="${basePath}referencias/index.html#service-mesh-mtls"><span class="sub-num">R.6</span><span class="sub-name">Service Mesh con mTLS</span></a>
-                        <a class="sub-item" href="${basePath}referencias/index.html#cluster-ngfw-ha"><span class="sub-num">R.7</span><span class="sub-name">Cluster NGFW en HA</span></a>
-                        <a class="sub-item" href="${basePath}referencias/index.html#inspeccion-ssl-tls"><span class="sub-num">R.8</span><span class="sub-name">Inspección SSL/TLS</span></a>
-                        <a class="sub-item" href="${basePath}referencias/index.html#core-l3-redundante"><span class="sub-num">R.9</span><span class="sub-name">Core L3 redundante</span></a>
-                        <a class="sub-item" href="${basePath}referencias/index.html#estrategia-multisitio-3dc"><span class="sub-num">R.10</span><span class="sub-name">Estrategia multisitio 3DC</span></a>
-                    </div>
-                </div>
-            </li>`;
-    }
+	function referencesItem() {
+			return `
+				<li class="has-sub">
+					<a href="${basePath}referencias/index.html" class="nav-link${A('referencias')}">
+						<svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="6" rx="1"/><rect x="14" y="4" width="7" height="6" rx="1"/><rect x="8.5" y="14" width="7" height="6" rx="1"/><path d="M6.5 10v2h11v-2M12 12v2"/></svg>
+						Referencias
+						<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+					</a>
+					<div class="sub-panel">
+						<div class="sub-header">
+							<span class="sub-area-label">Arquitecturas de referencia</span>
+							<a href="${basePath}referencias/index.html" class="sub-see-all">Ver todas →</a>
+						</div>
+						<div class="sub-grid">
+							<a class="sub-item" href="${basePath}referencias/index.html#microsegmentacion-zero-trust"><span class="sub-num">R.1</span><span class="sub-name">Microsegmentación Zero Trust</span></a>
+							<a class="sub-item" href="${basePath}referencias/index.html#acceso-privilegiado-pam-paw"><span class="sub-num">R.2</span><span class="sub-name">Acceso privilegiado PAM + PAW</span></a>
+							<a class="sub-item" href="${basePath}referencias/index.html#active-directory-tier-model"><span class="sub-num">R.3</span><span class="sub-name">Active Directory modelo de tiers</span></a>
+							<a class="sub-item" href="${basePath}referencias/index.html#segmentacion-red-corporativa"><span class="sub-num">R.4</span><span class="sub-name">Segmentación de red corporativa</span></a>
+							<a class="sub-item" href="${basePath}referencias/index.html#dmz-doble-capa"><span class="sub-num">R.5</span><span class="sub-name">DMZ de doble capa</span></a>
+							<a class="sub-item" href="${basePath}referencias/index.html#acceso-remoto-ztna"><span class="sub-num">R.6</span><span class="sub-name">Acceso remoto ZTNA</span></a>
+							<a class="sub-item" href="${basePath}referencias/index.html#red-hibrida-hub-spoke"><span class="sub-num">R.7</span><span class="sub-name">Red híbrida hub-spoke</span></a>
+							<a class="sub-item" href="${basePath}referencias/index.html#pipeline-devsecops"><span class="sub-num">R.8</span><span class="sub-name">Pipeline DevSecOps</span></a>
+							<a class="sub-item" href="${basePath}referencias/index.html#service-mesh-mtls"><span class="sub-num">R.9</span><span class="sub-name">Service Mesh con mTLS</span></a>
+							<a class="sub-item" href="${basePath}referencias/index.html#cluster-ngfw-ha"><span class="sub-num">R.10</span><span class="sub-name">Cluster NGFW en HA</span></a>
+							<a class="sub-item" href="${basePath}referencias/index.html#inspeccion-ssl-tls"><span class="sub-num">R.11</span><span class="sub-name">Inspección SSL/TLS</span></a>
+							<a class="sub-item" href="${basePath}referencias/index.html#core-l3-redundante"><span class="sub-num">R.12</span><span class="sub-name">Core L3 redundante</span></a>
+							<a class="sub-item" href="${basePath}referencias/index.html#estrategia-multisitio-3dc"><span class="sub-num">R.13</span><span class="sub-name">Estrategia multisitio 3DC</span></a>
+						</div>
+					</div>
+				</li>`;
+		}
 
     function toolsItem() {
         return `

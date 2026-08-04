@@ -5,7 +5,370 @@
 <link href="../css/global.css" rel="stylesheet"/><link href="../css/dossier-core.css" rel="stylesheet"/><link href="../css/articulo.css" rel="stylesheet"/><link href="../css/index.css" rel="stylesheet"/><link href="../css/articulo-diagramas.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
 .reference-wrap{padding:40px 4% 50px}.reference-lead{font-size:17px;line-height:1.75;color:#475569;max-width:980px}.reference-note{margin:22px 0 34px;padding:17px 20px;border-left:4px solid #059669;background:#f8fafc;color:#334155;line-height:1.7}.reference-card{border:1px solid #e2e8f0;border-radius:14px;background:#fff;margin:0 0 32px;overflow:hidden}.reference-head{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;padding:22px 24px 18px;border-bottom:1px solid #e2e8f0}.reference-series{font-family:monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#059669;font-weight:700}.reference-head h2{font-size:24px;line-height:1.2;color:#151915;margin:7px 0 0}.reference-code{font-family:monospace;font-size:11px;color:#64748b;white-space:nowrap}.reference-intro{padding:18px 24px;font-size:16px;line-height:1.75;color:#334155}.reference-diagram{position:relative;padding:16px 24px 24px;background:#fafaf8;cursor:zoom-in}.reference-diagram svg{display:block;width:100%;height:auto}.diagrama-desktop{display:block!important}.diagrama-mobile{display:none!important}.reference-analysis{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid #e2e8f0}.reference-analysis>div{padding:20px 24px}.reference-analysis>div+div{border-left:1px solid #e2e8f0}.reference-analysis span{font-family:monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#059669;font-weight:700}.reference-analysis p{margin:9px 0 0;line-height:1.7;color:#475569;font-size:14px}.reference-foot{padding:12px 24px;border-top:1px solid #e2e8f0;font-family:monospace;font-size:10px;color:#64748b;line-height:1.6}.references-pagination{display:flex;justify-content:center;gap:8px;align-items:center;margin:32px 0 0}.page-btn{min-width:38px;height:38px;padding:0 11px;border:1px solid #d8d4c8;background:#fff;color:#475569;border-radius:7px;cursor:pointer;font-family:monospace}.page-btn.active{background:#059669;color:#fff;border-color:#059669}.page-btn:disabled{opacity:.35;cursor:not-allowed}.reference-diagram.zoomed{position:fixed;z-index:1001;inset:4vh 3vw;background:#fff;padding:20px;overflow:auto;cursor:zoom-out;box-shadow:0 20px 70px rgba(0,0,0,.25)}.zoom-overlay{position:fixed;inset:0;background:rgba(15,23,42,.72);z-index:1000;display:none}.zoom-overlay.active{display:block}@media(max-width:700px){.reference-head{display:block}.reference-code{display:block;margin-top:10px}.reference-analysis{grid-template-columns:1fr}.reference-analysis>div+div{border-left:0;border-top:1px solid #e2e8f0}.diagrama-desktop{display:none!important}.diagrama-mobile{display:block!important}.reference-wrap{padding:30px 4% 42px}.reference-diagram{padding:12px}}
-</style><link rel="canonical" href="https://technology-advisory.es/referencias/"/></head><body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669"></div><div class="ds-meta"><span><span class="dot" style="background:#059669"></span>Technology Advisory // arquitecturas de referencia</span><span>colección: <strong>patrones comentados</strong></span></div><div style="padding:16px 4% 0"><a class="defensa-btn-back" href="../index.html" style="display:inline-block;background:#059669;color:#fff!important;font-weight:700;font-size:14px;padding:8px 20px;border-radius:30px;text-decoration:none">← Volver al inicio</a></div><header style="padding:40px 4% 24px;border-bottom:1px solid #ededea"><div style="font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.15em;font-weight:700;margin-bottom:8px"><span style="color:#059669">Referencias</span><span style="color:#151915"> · Arquitectura técnica</span></div><h1 style="font-size:clamp(32px,5vw,46px);font-weight:900;color:#151915;margin:0 0 12px;line-height:1.08;letter-spacing:-.02em">Arquitecturas de referencia: <span style="color:#059669">el diagrama importa menos que las decisiones que hay detrás</span></h1><p class="reference-lead">Diez patrones técnicos comentados para redes seguras, perímetro, cloud híbrido, DevSecOps, core redundante y continuidad. No son recetas universales: cada diseño se acompaña de la intención arquitectónica, lo que intenta resolver y los límites que deben validarse antes de llevarlo a producción.</p></header><main class="reference-wrap"><div class="reference-note"><strong>Criterio de uso:</strong> estas arquitecturas son puntos de partida para discusión y diseño. Direccionamiento, productos, latencias, capacidades, RTO/RPO y controles deben ajustarse al contexto real. Copiar un diagrama sin validar sus supuestos es otra forma de construir deuda técnica.</div><div id="referencesGrid"><article class="reference-card" data-ref-item="" id="segmentacion-red-corporativa">
+.badge-nuevo{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:999px;background:#059669;color:#fff;font-family:monospace;font-size:9px;font-weight:700;letter-spacing:.08em;vertical-align:middle;line-height:1.4}</style><link rel="canonical" href="https://technology-advisory.es/referencias/"/></head><body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669"></div><div class="ds-meta"><span><span class="dot" style="background:#059669"></span>Technology Advisory // arquitecturas de referencia</span><span>colección: <strong>patrones comentados</strong></span></div><div style="padding:16px 4% 0"><a class="defensa-btn-back" href="../index.html" style="display:inline-block;background:#059669;color:#fff!important;font-weight:700;font-size:14px;padding:8px 20px;border-radius:30px;text-decoration:none">← Volver al inicio</a></div><header style="padding:40px 4% 24px;border-bottom:1px solid #ededea"><div style="font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.15em;font-weight:700;margin-bottom:8px"><span style="color:#059669">Referencias</span><span style="color:#151915"> · Arquitectura técnica</span></div><h1 style="font-size:clamp(32px,5vw,46px);font-weight:900;color:#151915;margin:0 0 12px;line-height:1.08;letter-spacing:-.02em">Arquitecturas de referencia: <span style="color:#059669">el diagrama importa menos que las decisiones que hay detrás</span></h1><p class="reference-lead">Trece patrones técnicos comentados para redes seguras, perímetro, cloud híbrido, DevSecOps, core redundante, continuidad e identidad endurecida. No son recetas universales: cada diseño se acompaña de la intención arquitectónica, lo que intenta resolver y los límites que deben validarse antes de llevarlo a producción.</p></header><main class="reference-wrap"><div class="reference-note"><strong>Criterio de uso:</strong> estas arquitecturas son puntos de partida para discusión y diseño. Direccionamiento, productos, latencias, capacidades, RTO/RPO y controles deben ajustarse al contexto real. Copiar un diagrama sin validar sus supuestos es otra forma de construir deuda técnica.</div><div id="referencesGrid"><article class="reference-card" data-ref-item="" id="microsegmentacion-zero-trust">
+<div class="reference-head"><div><span class="reference-series">Redes seguras</span><h2>Microsegmentación Zero Trust host-based</h2></div><span class="reference-code">TA-NET-21 · Zero Trust</span></div>
+<div class="reference-intro"><strong>Segmentación hasta el workload.</strong> Sustituye la confianza implícita de la VLAN por políticas por identidad de carga de trabajo. Cada host o contenedor solo habla con los destinos autorizados; el movimiento lateral se bloquea aunque el atacante esté dentro del segmento de red.</div>
+<div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de microsegmentación Zero Trust host-based con agente, política central y denegación lateral" class="diagrama-desktop" role="img" viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#ffffff" height="70" stroke="#16150f" stroke-width="1.5" width="160" x="40" y="40"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="120" y="68">POLICY ENGINE</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="120" y="86">identidad + etiqueta + contexto</text>
+<rect fill="#e6f4ee" height="70" stroke="#059669" stroke-width="1.6" width="160" x="220" y="40"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="300" y="68">IdP / IAM</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="300" y="86">SPIFFE · certificados de host</text>
+<rect fill="#ffffff" height="70" stroke="#16150f" stroke-width="1.5" width="160" x="400" y="40"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="480" y="68">CMDB / TAGS</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="480" y="86">app · entorno · criticidad</text>
+<line stroke="#059669" stroke-width="1.4" x1="120" x2="120" y1="110" y2="150"></line>
+<line stroke="#059669" stroke-width="1.4" x1="300" x2="120" y1="110" y2="150"></line>
+<line stroke="#059669" stroke-width="1.4" x1="480" x2="120" y1="110" y2="150"></line>
+<!-- Hosts -->
+<rect fill="none" height="220" stroke="#5c584a" stroke-dasharray="6 4" stroke-width="1.2" width="200" x="40" y="160"></rect>
+<text fill="#5c584a" font-size="10" font-weight="700" x="50" y="178">HOST A · APP FRONT</text>
+<rect fill="#ffffff" height="50" stroke="#16150f" stroke-width="1.3" width="160" x="60" y="195"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="140" y="216">Proceso aplicación</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="140" y="232">sin reglas de red locales</text>
+<rect fill="#e6f4ee" height="50" stroke="#059669" stroke-width="1.5" width="160" x="60" y="260"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="140" y="281">Agente host / eBPF</text>
+<text fill="#059669" font-size="9" text-anchor="middle" x="140" y="297">enforce allow-list</text>
+<rect fill="none" height="220" stroke="#5c584a" stroke-dasharray="6 4" stroke-width="1.2" width="200" x="280" y="160"></rect>
+<text fill="#5c584a" font-size="10" font-weight="700" x="290" y="178">HOST B · API</text>
+<rect fill="#ffffff" height="50" stroke="#16150f" stroke-width="1.3" width="160" x="300" y="195"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="380" y="216">Proceso API</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="380" y="232">solo puertos declarados</text>
+<rect fill="#e6f4ee" height="50" stroke="#059669" stroke-width="1.5" width="160" x="300" y="260"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="380" y="281">Agente host / eBPF</text>
+<text fill="#059669" font-size="9" text-anchor="middle" x="380" y="297">identidad verificada</text>
+<rect fill="none" height="220" stroke="#5c584a" stroke-dasharray="6 4" stroke-width="1.2" width="200" x="520" y="160"></rect>
+<text fill="#5c584a" font-size="10" font-weight="700" x="530" y="178">HOST C · BBDD</text>
+<rect fill="#ffffff" height="50" stroke="#16150f" stroke-width="1.3" width="160" x="540" y="195"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="620" y="216">Motor de datos</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="620" y="232">sin exposición a usuarios</text>
+<rect fill="#e6f4ee" height="50" stroke="#059669" stroke-width="1.5" width="160" x="540" y="260"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="620" y="281">Agente host / eBPF</text>
+<text fill="#059669" font-size="9" text-anchor="middle" x="620" y="297">deny-all por defecto</text>
+<!-- Allowed path A->B->C -->
+<line stroke="#059669" stroke-width="2" x1="220" x2="280" y1="285" y2="285"></line>
+<polygon fill="#059669" points="272,280 280,285 272,290"></polygon>
+<line stroke="#059669" stroke-width="2" x1="460" x2="520" y1="285" y2="285"></line>
+<polygon fill="#059669" points="512,280 520,285 512,290"></polygon>
+<text fill="#059669" font-size="9" text-anchor="middle" x="370" y="272">allow app→api→db</text>
+<!-- Denied lateral A->C -->
+<path d="M 140 320 Q 380 400 620 320" fill="none" stroke="#b3402e" stroke-dasharray="4 4" stroke-width="1.4"></path>
+<line stroke="#b3402e" stroke-width="2" x1="372" x2="388" y1="358" y2="374"></line>
+<line stroke="#b3402e" stroke-width="2" x1="388" x2="372" y1="358" y2="374"></line>
+<text fill="#b3402e" font-size="10" text-anchor="middle" x="380" y="400">DENY front → BBDD (sin política explícita)</text>
+<!-- SIEM -->
+<rect fill="#ffffff" height="50" stroke="#16150f" stroke-width="1.3" width="140" x="740" y="200"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="810" y="222">SIEM / XDR</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="810" y="238">telemetría de denegaciones</text>
+<line stroke="#16150f" stroke-dasharray="4 3" stroke-width="1.2" x1="720" x2="740" y1="285" y2="225"></line>
+<line stroke="#d8d4c8" stroke-width="1" x1="40" x2="860" y1="430" y2="430"></line>
+<text fill="#5c584a" font-size="9.5" x="40" y="454">La red subyacente (VLAN/subnet) deja de ser frontera de confianza: la política se aplica en el host por identidad de workload, no por IP.</text>
+</svg>
+<svg aria-label="Diagrama vertical de microsegmentación Zero Trust" class="diagrama-mobile" role="img" viewBox="0 0 400 780" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#e6f4ee" height="56" stroke="#059669" stroke-width="1.6" width="300" x="50" y="16"></rect>
+<text fill="#16150f" font-size="13" font-weight="600" text-anchor="middle" x="200" y="40">POLICY ENGINE + IdP</text>
+<text fill="#5c584a" font-size="10.5" text-anchor="middle" x="200" y="58">identidad · tags · allow-list</text>
+<line stroke="#059669" stroke-width="1.5" x1="200" x2="200" y1="72" y2="100"></line>
+<rect fill="none" height="140" stroke="#5c584a" stroke-dasharray="5 4" stroke-width="1.2" width="320" x="40" y="100"></rect>
+<text fill="#5c584a" font-size="11" font-weight="700" x="52" y="122">HOST A · FRONT</text>
+<rect fill="#ffffff" height="40" stroke="#16150f" stroke-width="1.2" width="280" x="60" y="136"></rect>
+<text fill="#16150f" font-size="12" text-anchor="middle" x="200" y="162">App</text>
+<rect fill="#e6f4ee" height="40" stroke="#059669" stroke-width="1.4" width="280" x="60" y="186"></rect>
+<text fill="#16150f" font-size="12" font-weight="600" text-anchor="middle" x="200" y="212">Agente eBPF · enforce</text>
+<line stroke="#059669" stroke-width="2" x1="200" x2="200" y1="240" y2="270"></line>
+<polygon fill="#059669" points="195,270 200,280 205,270"></polygon>
+<rect fill="none" height="140" stroke="#5c584a" stroke-dasharray="5 4" stroke-width="1.2" width="320" x="40" y="280"></rect>
+<text fill="#5c584a" font-size="11" font-weight="700" x="52" y="302">HOST B · API</text>
+<rect fill="#ffffff" height="40" stroke="#16150f" stroke-width="1.2" width="280" x="60" y="316"></rect>
+<text fill="#16150f" font-size="12" text-anchor="middle" x="200" y="342">API</text>
+<rect fill="#e6f4ee" height="40" stroke="#059669" stroke-width="1.4" width="280" x="60" y="366"></rect>
+<text fill="#16150f" font-size="12" font-weight="600" text-anchor="middle" x="200" y="392">Agente eBPF · identidad</text>
+<line stroke="#059669" stroke-width="2" x1="200" x2="200" y1="420" y2="450"></line>
+<polygon fill="#059669" points="195,450 200,460 205,450"></polygon>
+<rect fill="none" height="140" stroke="#5c584a" stroke-dasharray="5 4" stroke-width="1.2" width="320" x="40" y="460"></rect>
+<text fill="#5c584a" font-size="11" font-weight="700" x="52" y="482">HOST C · BBDD</text>
+<rect fill="#ffffff" height="40" stroke="#16150f" stroke-width="1.2" width="280" x="60" y="496"></rect>
+<text fill="#16150f" font-size="12" text-anchor="middle" x="200" y="522">Datos</text>
+<rect fill="#e6f4ee" height="40" stroke="#059669" stroke-width="1.4" width="280" x="60" y="546"></rect>
+<text fill="#16150f" font-size="12" font-weight="600" text-anchor="middle" x="200" y="572">Agente eBPF · deny-all</text>
+<text fill="#b3402e" font-size="11" font-weight="600" text-anchor="middle" x="200" y="640">DENY cualquier flujo no declarado</text>
+<text fill="#5c584a" font-size="10.5" text-anchor="middle" x="200" y="668">La VLAN ya no es frontera de confianza</text>
+<text fill="#5c584a" font-size="10.5" text-anchor="middle" x="200" y="690">Política por identidad de workload</text>
+</svg>
+<span class="zoom-hint">🔍 Clic para ampliar</span></div>
+<div class="reference-analysis"><div><span>Qué resuelve</span><p>Elimina la confianza implícita de la segmentación por VLAN. Cada workload solo puede comunicar con destinos autorizados por identidad y etiqueta, limitando el movimiento lateral tras un compromiso inicial.</p></div><div><span>Límites y validación</span><p>Requiere inventario fiable de flujos, etiquetado consistente y un modelo operativo para excepciones. Un allow-list incompleto rompe aplicaciones; uno excesivo anula el control.</p></div></div>
+<div class="reference-foot">FIG. 21 — Microsegmentación host-based: el agente aplica allow-list por identidad de carga de trabajo. Tráfico no declarado se deniega y se registra en SIEM/XDR.</div>
+</article>
+<article class="reference-card" data-ref-item="" id="acceso-privilegiado-pam-paw">
+<div class="reference-head"><div><span class="reference-series">Identidad y privilegios</span><h2>Acceso privilegiado: PAM + PAW</h2></div><span class="reference-code">TA-SEC-22 · Privileged Access</span></div>
+<div class="reference-intro"><strong>Administración sin exposición de credenciales.</strong> Separa el puesto de usuario del puesto privilegiado (PAW), intermediando todo acceso admin a través de un vault y un bastión con grabación de sesión. Las cuentas privilegiadas no se usan desde endpoints de productividad.</div>
+<div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de acceso privilegiado con PAW, vault PAM y bastión con grabación" class="diagrama-desktop" role="img" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+<!-- User endpoint -->
+<rect fill="#ffffff" height="80" stroke="#16150f" stroke-width="1.5" width="150" x="30" y="40"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="105" y="68">ENDPOINT USUARIO</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="105" y="88">correo · web · ofimática</text>
+<text fill="#b3402e" font-size="9" text-anchor="middle" x="105" y="106">sin credenciales admin</text>
+<!-- Denied direct -->
+<!-- DENY: endpoint de productividad no alcanza targets privilegiados -->
+<path d="M 180 70 Q 470 5 760 100" fill="none" stroke="#b3402e" stroke-dasharray="5 4" stroke-width="1.4"></path>
+<circle cx="180" cy="70" r="3" fill="#b3402e"></circle>
+<circle cx="760" cy="100" r="3" fill="#b3402e"></circle>
+<line stroke="#b3402e" stroke-width="2.2" x1="462" x2="478" y1="22" y2="38"></line>
+<line stroke="#b3402e" stroke-width="2.2" x1="478" x2="462" y1="22" y2="38"></line>
+<text fill="#b3402e" font-size="9.5" font-weight="600" text-anchor="middle" x="470" y="16">DENY admin desde endpoint de productividad</text>
+<!-- PAW -->
+<rect fill="#e6f4ee" height="100" stroke="#059669" stroke-width="1.6" width="170" x="30" y="160"></rect>
+<rect fill="#059669" height="24" width="170" x="30" y="160"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="115" y="176">PAW (Privileged AW)</text>
+<text fill="#16150f" font-size="10" font-weight="600" text-anchor="middle" x="115" y="206">Puesto hardenizado</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="115" y="224">sin correo · sin web libre</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="115" y="242">MFA + certificado de dispositivo</text>
+<!-- Arrow to PAM -->
+<line stroke="#059669" stroke-width="1.6" x1="200" x2="280" y1="210" y2="210"></line>
+<polygon fill="#059669" points="272,205 280,210 272,215"></polygon>
+<!-- PAM Vault -->
+<rect fill="#e6f4ee" height="120" stroke="#059669" stroke-width="1.6" width="180" x="280" y="150"></rect>
+<rect fill="#059669" height="24" width="180" x="280" y="150"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="370" y="166">PAM / VAULT</text>
+<text fill="#16150f" font-size="10" font-weight="600" text-anchor="middle" x="370" y="196">Checkout de secretos</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="370" y="214">rotación automática</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="370" y="232">JIT / just-in-time</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="370" y="250">aprobación dual opcional</text>
+<!-- Arrow to Bastion -->
+<line stroke="#059669" stroke-width="1.6" x1="460" x2="540" y1="210" y2="210"></line>
+<polygon fill="#059669" points="532,205 540,210 532,215"></polygon>
+<!-- Bastion -->
+<rect fill="#ffffff" height="120" stroke="#16150f" stroke-width="1.5" width="180" x="540" y="150"></rect>
+<rect fill="#16150f" height="24" width="180" x="540" y="150"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="630" y="166">BASTIÓN / JUMP</text>
+<text fill="#16150f" font-size="10" font-weight="600" text-anchor="middle" x="630" y="196">Sesión intermediada</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="630" y="214">grabación de sesión</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="630" y="232">comando filtrado</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="630" y="250">sin IP pública a targets</text>
+<!-- Targets -->
+<rect fill="#ffffff" height="56" stroke="#16150f" stroke-width="1.3" width="130" x="760" y="80"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="825" y="106">AD Domain Controllers</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="825" y="122">tier 0</text>
+<rect fill="#ffffff" height="56" stroke="#16150f" stroke-width="1.3" width="130" x="760" y="150"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="825" y="176">Hipervisores / ESXi</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="825" y="192">tier 0</text>
+<rect fill="#ffffff" height="56" stroke="#16150f" stroke-width="1.3" width="130" x="760" y="220"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="825" y="246">Firewalls · Switches</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="825" y="262">gestión OOB</text>
+<line stroke="#16150f" stroke-width="1.3" x1="720" x2="760" y1="180" y2="108"></line>
+<line stroke="#16150f" stroke-width="1.3" x1="720" x2="760" y1="210" y2="178"></line>
+<line stroke="#16150f" stroke-width="1.3" x1="720" x2="760" y1="230" y2="248"></line>
+<!-- Audit -->
+<rect fill="#ffffff" height="60" stroke="#8a6d1f" stroke-width="1.4" width="200" x="350" y="320"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="450" y="346">SIEM · AUDITORÍA</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="450" y="364">sesiones · checkouts · comandos</text>
+<line stroke="#8a6d1f" stroke-dasharray="4 3" stroke-width="1.2" x1="370" x2="450" y1="270" y2="320"></line>
+<line stroke="#8a6d1f" stroke-dasharray="4 3" stroke-width="1.2" x1="630" x2="450" y1="270" y2="320"></line>
+<line stroke="#d8d4c8" stroke-width="1" x1="40" x2="860" y1="420" y2="420"></line>
+<text fill="#5c584a" font-size="9.5" x="40" y="444">Modelo de tiers: el PAW y el bastión forman el único camino hacia cuentas y sistemas de alto privilegio. Las credenciales nunca residen en el endpoint de usuario.</text>
+</svg>
+<svg aria-label="Diagrama vertical de PAM y PAW" class="diagrama-mobile" role="img" viewBox="0 0 400 820" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#ffffff" height="60" stroke="#16150f" stroke-width="1.4" width="280" x="60" y="16"></rect>
+<text fill="#16150f" font-size="12" font-weight="600" text-anchor="middle" x="200" y="42">ENDPOINT USUARIO</text>
+<text fill="#b3402e" font-size="10.5" text-anchor="middle" x="200" y="62">sin credenciales admin</text>
+<text fill="#b3402e" font-size="11" font-weight="600" text-anchor="middle" x="200" y="96">✕ acceso directo denegado</text>
+<line stroke="#059669" stroke-width="1.5" x1="200" x2="200" y1="110" y2="140"></line>
+<rect fill="#e6f4ee" height="80" stroke="#059669" stroke-width="1.6" width="300" x="50" y="140"></rect>
+<rect fill="#059669" height="24" width="300" x="50" y="140"></rect>
+<text fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle" x="200" y="156">PAW · Puesto privilegiado</text>
+<text fill="#16150f" font-size="11" text-anchor="middle" x="200" y="186">Hardenizado · sin correo libre</text>
+<text fill="#5c584a" font-size="10.5" text-anchor="middle" x="200" y="206">MFA + certificado de dispositivo</text>
+<line stroke="#059669" stroke-width="1.5" x1="200" x2="200" y1="220" y2="250"></line>
+<rect fill="#e6f4ee" height="90" stroke="#059669" stroke-width="1.6" width="300" x="50" y="250"></rect>
+<rect fill="#059669" height="24" width="300" x="50" y="250"></rect>
+<text fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle" x="200" y="266">PAM / VAULT</text>
+<text fill="#16150f" font-size="11" text-anchor="middle" x="200" y="296">Checkout JIT · rotación</text>
+<text fill="#5c584a" font-size="10.5" text-anchor="middle" x="200" y="316">Aprobación dual opcional</text>
+<line stroke="#059669" stroke-width="1.5" x1="200" x2="200" y1="340" y2="370"></line>
+<rect fill="#ffffff" height="90" stroke="#16150f" stroke-width="1.5" width="300" x="50" y="370"></rect>
+<rect fill="#16150f" height="24" width="300" x="50" y="370"></rect>
+<text fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle" x="200" y="386">BASTIÓN / JUMP</text>
+<text fill="#16150f" font-size="11" text-anchor="middle" x="200" y="416">Sesión grabada · filtrado</text>
+<text fill="#5c584a" font-size="10.5" text-anchor="middle" x="200" y="436">Sin IP pública a targets</text>
+<line stroke="#16150f" stroke-width="1.5" x1="200" x2="200" y1="460" y2="490"></line>
+<rect fill="#ffffff" height="120" stroke="#16150f" stroke-width="1.4" width="300" x="50" y="490"></rect>
+<rect fill="#16150f" height="24" width="300" x="50" y="490"></rect>
+<text fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle" x="200" y="506">TARGETS TIER 0</text>
+<text fill="#5c584a" font-size="11" x="66" y="540">AD Domain Controllers</text>
+<text fill="#5c584a" font-size="11" x="66" y="560">Hipervisores / ESXi</text>
+<text fill="#5c584a" font-size="11" x="66" y="580">Firewalls · gestión OOB</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="650">Credenciales nunca en el endpoint de usuario</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="672">Único camino: PAW → Vault → Bastión</text>
+</svg>
+<span class="zoom-hint">🔍 Clic para ampliar</span></div>
+<div class="reference-analysis"><div><span>Qué resuelve</span><p>Impide que credenciales privilegiadas residan en endpoints de productividad. Todo acceso admin pasa por PAW, vault con rotación/JIT y bastión con grabación, reduciendo robo de credenciales y uso indebido.</p></div><div><span>Límites y validación</span><p>Sin disciplina de tiers y sin bloquear rutas alternativas (RDP/SSH directo, cuentas locales estáticas) el modelo se debilita. La grabación y el vault se convierten en activos críticos a proteger.</p></div></div>
+<div class="reference-foot">FIG. 22 — Cadena de acceso privilegiado: PAW hardenizado, vault PAM con checkout JIT y bastión con sesión auditada. Ningún camino directo desde el puesto de usuario hacia sistemas tier 0.</div>
+</article>
+<article class="reference-card" data-ref-item="" id="active-directory-tier-model">
+<div class="reference-head"><div><span class="reference-series">Identidad y privilegios</span><h2>Active Directory endurecido: modelo de tiers</h2></div><span class="reference-code">TA-ID-23 · Identity Hardening</span></div>
+<div class="reference-intro"><strong>Infraestructura de identidad separada por criticidad.</strong> Los controladores de dominio y las cuentas privilegiadas viven en un segmento y un plano de administración propios. Los servidores de negocio y los puestos de usuario no comparten ruta de acceso admin ni credenciales de Tier 0.</div>
+<div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Topología de infraestructura Active Directory con tiers, DCs, servidores miembro, workstations y bastión de administración" class="diagrama-desktop" role="img" viewBox="0 0 900 540" xmlns="http://www.w3.org/2000/svg">
+<!-- Internet / nada expuesto -->
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="450" y="18">Sin exposición directa de DC a Internet · administración solo por canal privilegiado</text>
+
+<!-- ===== TIER 0 INFRA BLOCK ===== -->
+<rect fill="#e6f4ee" height="175" stroke="#059669" stroke-width="1.8" width="280" x="40" y="40"></rect>
+<rect fill="#059669" height="26" width="280" x="40" y="40"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="180" y="58">TIER 0 · SEGMENTO IDENTIDAD</text>
+
+<!-- DC stack visual -->
+<rect fill="#ffffff" height="52" stroke="#059669" stroke-width="1.4" width="110" x="55" y="80"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="110" y="100">DC-01</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="110" y="118">AD DS · DNS · GC</text>
+
+<rect fill="#ffffff" height="52" stroke="#059669" stroke-width="1.4" width="110" x="180" y="80"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="235" y="100">DC-02</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="235" y="118">réplica · sitio B</text>
+
+<!-- repl link -->
+<line stroke="#059669" stroke-width="1.5" x1="165" x2="180" y1="106" y2="106"></line>
+<text fill="#059669" font-size="8" text-anchor="middle" x="172" y="100">repl</text>
+
+<!-- T0 accounts + PKI under DCs -->
+<rect fill="#ffffff" height="40" stroke="#16150f" stroke-width="1.2" width="110" x="55" y="145"></rect>
+<text fill="#16150f" font-size="9.5" font-weight="600" text-anchor="middle" x="110" y="162">Cuentas T0</text>
+<text fill="#5c584a" font-size="8.5" text-anchor="middle" x="110" y="176">DA · EA · Protected</text>
+
+<rect fill="#ffffff" height="40" stroke="#16150f" stroke-width="1.2" width="110" x="180" y="145"></rect>
+<text fill="#16150f" font-size="9.5" font-weight="600" text-anchor="middle" x="235" y="162">PKI / CA</text>
+<text fill="#5c584a" font-size="8.5" text-anchor="middle" x="235" y="176">root offline · Issuing</text>
+
+<!-- ===== ADMIN PLANE (center) ===== -->
+<rect fill="#ffffff" height="175" stroke="#16150f" stroke-width="1.5" width="200" x="350" y="40"></rect>
+<rect fill="#16150f" height="26" width="200" x="350" y="40"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="450" y="58">PLANO DE ADMINISTRACIÓN</text>
+
+<rect fill="#e6f4ee" height="50" stroke="#059669" stroke-width="1.5" width="160" x="370" y="80"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="450" y="100">PAW Tier 0</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="450" y="118">hardenizado · MFA · sin correo</text>
+
+<rect fill="#ffffff" height="50" stroke="#16150f" stroke-width="1.3" width="160" x="370" y="145"></rect>
+<text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="450" y="165">Bastión + PAM</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="450" y="183">JIT · sesión grabada · vault</text>
+
+<!-- Arrow PAW to Bastion -->
+<line stroke="#059669" stroke-width="1.5" x1="450" x2="450" y1="130" y2="145"></line>
+<polygon fill="#059669" points="445,140 450,145 455,140"></polygon>
+
+<!-- Arrow Bastion to Tier 0 -->
+<line stroke="#059669" stroke-width="2" x1="350" x2="320" y1="170" y2="170"></line>
+<polygon fill="#059669" points="328,165 320,170 328,175"></polygon>
+<text fill="#059669" font-size="8.5" font-weight="600" text-anchor="middle" x="335" y="162">admin</text>
+
+<!-- ===== TIER 1 SERVERS (right) ===== -->
+<rect fill="#ffffff" height="175" stroke="#16150f" stroke-width="1.5" width="280" x="580" y="40"></rect>
+<rect fill="#16150f" height="26" width="280" x="580" y="40"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="720" y="58">TIER 1 · SERVIDORES MIEMBRO</text>
+
+<rect fill="#ffffff" height="48" stroke="#16150f" stroke-width="1.2" width="120" x="595" y="78"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="655" y="98">APP-01</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="655" y="114">IIS / API · gMSA</text>
+
+<rect fill="#ffffff" height="48" stroke="#16150f" stroke-width="1.2" width="120" x="730" y="78"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="790" y="98">SQL-01</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="790" y="114">BBDD · gMSA</text>
+
+<rect fill="#ffffff" height="48" stroke="#16150f" stroke-width="1.2" width="120" x="595" y="140"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="655" y="160">FILE-01</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="655" y="176">DFS · shares</text>
+
+<rect fill="#ffffff" height="48" stroke="#16150f" stroke-width="1.2" width="120" x="730" y="140"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="790" y="160">MAIL / M365</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="790" y="176">hybrid · svc acct</text>
+
+<!-- Auth de dominio: solo texto, fuera de cualquier caja -->
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="450" y="36">auth Kerberos / LDAP entre puestos y servidores miembro hacia DC · sin privilegios admin T0</text>
+
+<!-- DENY admin from T1 to T0 -->
+<path d="M 655 215 Q 450 250 180 215" fill="none" stroke="#b3402e" stroke-dasharray="5 4" stroke-width="1.4"></path>
+<line stroke="#b3402e" stroke-width="2.2" x1="442" x2="458" y1="238" y2="254"></line>
+<line stroke="#b3402e" stroke-width="2.2" x1="458" x2="442" y1="238" y2="254"></line>
+<text fill="#b3402e" font-size="9.5" font-weight="600" text-anchor="middle" x="450" y="272">DENY RDP/SSH/admin desde Tier 1 o Tier 2 hacia DC y cuentas T0</text>
+
+<!-- ===== TIER 2 WORKSTATIONS ===== -->
+<rect fill="#ffffff" height="110" stroke="#5c584a" stroke-width="1.4" width="400" x="40" y="300"></rect>
+<rect fill="#5c584a" height="24" width="400" x="40" y="300"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="240" y="317">TIER 2 · PUESTOS DE USUARIO</text>
+
+<rect fill="#ffffff" height="55" stroke="#16150f" stroke-width="1.2" width="110" x="55" y="338"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="110" y="360">WS-01</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="110" y="378">usuario estándar</text>
+
+<rect fill="#ffffff" height="55" stroke="#16150f" stroke-width="1.2" width="110" x="185" y="338"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="240" y="360">WS-02 / VDI</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="240" y="378">portátil · LAPS</text>
+
+<rect fill="#ffffff" height="55" stroke="#16150f" stroke-width="1.2" width="110" x="315" y="338"></rect>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="370" y="360">HELPDESK</text>
+<text fill="#5c584a" font-size="9" text-anchor="middle" x="370" y="378">privilegio limitado</text>
+
+<!-- PAW T1 for servers -->
+<rect fill="#e6f4ee" height="110" stroke="#059669" stroke-width="1.5" width="200" x="460" y="300"></rect>
+<rect fill="#059669" height="24" width="200" x="460" y="300"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="560" y="317">PAW TIER 1</text>
+<text fill="#16150f" font-size="10.5" font-weight="600" text-anchor="middle" x="560" y="350">Admin de servidores</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="560" y="370">solo APP / SQL / FILE</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="560" y="388">sin login en DC</text>
+
+<!-- SIEM -->
+<rect fill="#ffffff" height="110" stroke="#8a6d1f" stroke-width="1.4" width="180" x="680" y="300"></rect>
+<rect fill="#8a6d1f" height="24" width="180" x="680" y="300"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="770" y="317">SIEM / DETECCIÓN</text>
+<text fill="#16150f" font-size="10" font-weight="600" text-anchor="middle" x="770" y="350">Logs DC · auth</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="770" y="370">ATA / identity threat</text>
+<text fill="#5c584a" font-size="9.5" text-anchor="middle" x="770" y="388">alertas de escalada</text>
+
+<!-- Foot note -->
+<line stroke="#d8d4c8" stroke-width="1" x1="40" x2="860" y1="435" y2="435"></line>
+<text fill="#5c584a" font-size="9.5" x="40" y="458">Infra: segmento T0 con DC en HA, plano de admin dedicado (PAW + bastión/PAM) y servidores miembro sin privilegios de dominio.</text>
+<text fill="#5c584a" font-size="9.5" x="40" y="476">Los puestos de usuario autentican contra el dominio pero no tienen ruta administrativa hacia los controladores.</text>
+<text fill="#5c584a" font-size="9.5" x="40" y="494">Validar: no Domain Admin en workstations, no RDP libre a DC, gMSA en servicios, LAPS en Tier 2, auditoría de grupos privilegiados.</text>
+</svg>
+<svg aria-label="Diagrama vertical de infraestructura Active Directory por tiers" class="diagrama-mobile" role="img" viewBox="0 0 400 860" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#e6f4ee" height="150" stroke="#059669" stroke-width="1.6" width="320" x="40" y="16"></rect>
+<rect fill="#059669" height="26" width="320" x="40" y="16"></rect>
+<text fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle" x="200" y="34">TIER 0 · SEGMENTO IDENTIDAD</text>
+<text fill="#16150f" font-size="12" font-weight="600" text-anchor="middle" x="200" y="68">DC-01 · DC-02 (réplica)</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="90">AD DS · DNS · GC</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="112">Cuentas T0 · PKI / CA</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="134">sin Internet · hardening</text>
+<line stroke="#059669" stroke-width="1.5" x1="200" x2="200" y1="166" y2="196"></line>
+<polygon fill="#059669" points="195,196 200,206 205,196"></polygon>
+<rect fill="#ffffff" height="100" stroke="#16150f" stroke-width="1.5" width="320" x="40" y="206"></rect>
+<rect fill="#16150f" height="26" width="320" x="40" y="206"></rect>
+<text fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle" x="200" y="224">PLANO DE ADMINISTRACIÓN</text>
+<text fill="#16150f" font-size="12" font-weight="600" text-anchor="middle" x="200" y="258">PAW Tier 0</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="280">Bastión + PAM (JIT · auditado)</text>
+<text fill="#059669" font-size="11" font-weight="600" text-anchor="middle" x="200" y="300">única vía admin hacia DC</text>
+<text fill="#b3402e" font-size="11" font-weight="600" text-anchor="middle" x="200" y="340">✕ DENY admin desde T1/T2 → DC</text>
+<line stroke="#b3402e" stroke-dasharray="4 3" stroke-width="1.3" x1="200" x2="200" y1="350" y2="380"></line>
+<rect fill="#ffffff" height="130" stroke="#16150f" stroke-width="1.5" width="320" x="40" y="390"></rect>
+<rect fill="#16150f" height="26" width="320" x="40" y="390"></rect>
+<text fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle" x="200" y="408">TIER 1 · SERVIDORES MIEMBRO</text>
+<text fill="#16150f" font-size="12" text-anchor="middle" x="200" y="442">APP-01 · SQL-01</text>
+<text fill="#16150f" font-size="12" text-anchor="middle" x="200" y="464">FILE-01 · MAIL/M365</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="488">gMSA · PAW T1 · sin login en DC</text>
+<rect fill="#ffffff" height="120" stroke="#5c584a" stroke-width="1.4" width="320" x="40" y="540"></rect>
+<rect fill="#5c584a" height="26" width="320" x="40" y="540"></rect>
+<text fill="#ffffff" font-size="12" font-weight="600" text-anchor="middle" x="200" y="558">TIER 2 · PUESTOS</text>
+<text fill="#16150f" font-size="12" text-anchor="middle" x="200" y="592">WS-01 · WS-02/VDI · Helpdesk</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="616">LAPS · sin privilegios de dominio</text>
+<text fill="#5c584a" font-size="11" text-anchor="middle" x="200" y="638">Auth al dominio ≠ admin del dominio</text>
+<rect fill="#ffffff" height="50" stroke="#8a6d1f" stroke-width="1.3" width="320" x="40" y="680"></rect>
+<text fill="#16150f" font-size="12" font-weight="600" text-anchor="middle" x="200" y="702">SIEM · detección de escalada</text>
+<text fill="#5c584a" font-size="10.5" text-anchor="middle" x="200" y="720">logs DC · identity threat detection</text>
+</svg>
+<span class="zoom-hint">🔍 Clic para ampliar</span></div>
+<div class="reference-analysis"><div><span>Qué resuelve</span><p>Separa en infra real el segmento de identidad (DC, cuentas T0, PKI) del resto. La administración solo entra por PAW y bastión/PAM; servidores y puestos autentican al dominio pero no administran los controladores.</p></div><div><span>Límites y validación</span><p>Hay que eliminar excepciones operativas: Domain Admin en workstations, RDP libre a DC, cuentas de servicio con DA. Inventariar grupos privilegiados y probar que no existen caminos de escalada entre tiers.</p></div></div>
+<div class="reference-foot">FIG. 23 — Topología AD por tiers: segmento T0 (DC en HA + PKI), plano de administración (PAW + bastión/PAM), servidores miembro (T1) y puestos (T2). Auth de dominio permitida; admin hacia DC denegada fuera del plano privilegiado.</div>
+</article>
+<article class="reference-card" data-ref-item="" id="segmentacion-red-corporativa">
 <div class="reference-head"><div><span class="reference-series">Redes seguras</span><h2>Segmentación de red corporativa</h2></div><span class="reference-code">TA-NET-01 · LLD</span></div>
 <div class="reference-intro"><strong>Segmentación por función y sensibilidad.</strong> Separa usuarios, servidores, gestión e invitados para reducir movimiento lateral y limitar el alcance de un compromiso. El firewall interno y las reglas entre segmentos convierten la segmentación lógica en una frontera verificable.</div>
 <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de segmentación de red corporativa en tres capas con VLANs y firewall interno" class="diagrama-desktop" role="img" viewbox="0 0 900 560" xmlns="http://www.w3.org/2000/svg">
@@ -129,7 +492,8 @@
 </svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
 <div class="reference-analysis"><div><span>Qué resuelve</span><p>Separa usuarios, servidores, gestión e invitados para reducir movimiento lateral y limitar el alcance de un compromiso. El firewall interno y las reglas entre segmentos convierten la segmentación lógica en una frontera verificable.</p></div><div><span>Límites y validación</span><p>La topología es una referencia. Las VLAN, rangos, ACL y zonas deben adaptarse a los flujos autorizados, al modelo de identidad y a la criticidad de los activos.</p></div></div>
 <div class="reference-foot">FIG. 1 — Segmentación en tres capas con VLANs funcionales, gestión out-of-band y firewall interno para tráfico east-west. Política deny-all por defecto entre segmentos.</div>
-</article><article class="reference-card" data-ref-item="" id="dmz-doble-capa">
+</article>
+<article class="reference-card" data-ref-item="" id="dmz-doble-capa">
 <div class="reference-head"><div><span class="reference-series">Redes seguras</span><h2>DMZ moderna de doble capa</h2></div><span class="reference-code">TA-NET-02 · HLD</span></div>
 <div class="reference-intro"><strong>Publicación de servicios con doble frontera.</strong> Aísla la exposición pública mediante una DMZ de doble capa, separando los controles de entrada de los sistemas internos. WAF, reverse proxy y relays reducen la necesidad de publicar directamente servidores de negocio.</div>
 <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de DMZ con doble firewall, WAF, reverse proxy y relay de correo" class="diagrama-desktop" role="img" viewbox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
@@ -212,7 +576,8 @@
 </svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
 <div class="reference-analysis"><div><span>Qué resuelve</span><p>Aísla la exposición pública mediante una DMZ de doble capa, separando los controles de entrada de los sistemas internos. WAF, reverse proxy y relays reducen la necesidad de publicar directamente servidores de negocio.</p></div><div><span>Límites y validación</span><p>No sustituye un análisis de flujos. Doble firewall no significa doble seguridad si ambos comparten reglas permisivas, administración o un único dominio de fallo.</p></div></div>
 <div class="reference-foot">FIG. 2 — DMZ con doble firewall de fabricantes distintos. Los servicios expuestos no almacenan datos ni credenciales de dominio; el compromiso de la DMZ no otorga acceso a la LAN.</div>
-</article><article class="reference-card" data-ref-item="" id="acceso-remoto-ztna">
+</article>
+<article class="reference-card" data-ref-item="" id="acceso-remoto-ztna">
 <div class="reference-head"><div><span class="reference-series">Redes seguras</span><h2>Acceso remoto ZTNA</h2></div><span class="reference-code">TA-NET-03 · Zero Trust</span></div>
 <div class="reference-intro"><strong>Acceso remoto basado en identidad y contexto.</strong> Sustituye el acceso amplio de una VPN tradicional por autorización por aplicación. La identidad, la postura del dispositivo y la política determinan qué recurso puede alcanzar cada sesión.</div>
 <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de acceso remoto ZTNA con verificación de identidad y postura" class="diagrama-desktop" role="img" viewbox="0 0 900 440" xmlns="http://www.w3.org/2000/svg">
@@ -302,7 +667,8 @@
 </svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
 <div class="reference-analysis"><div><span>Qué resuelve</span><p>Sustituye el acceso amplio de una VPN tradicional por autorización por aplicación. La identidad, la postura del dispositivo y la política determinan qué recurso puede alcanzar cada sesión.</p></div><div><span>Límites y validación</span><p>ZTNA no elimina la necesidad de segmentación interna ni de proteger las identidades privilegiadas. El plano de control y el IdP se convierten en dependencias críticas.</p></div></div>
 <div class="reference-foot">FIG. 3 — Acceso remoto Zero Trust: el broker evalúa identidad, postura del dispositivo y contexto antes de cada acceso. El conector solo establece conexiones salientes: la red interna es invisible desde Internet.</div>
-</article><article class="reference-card" data-ref-item="" id="red-hibrida-hub-spoke">
+</article>
+<article class="reference-card" data-ref-item="" id="red-hibrida-hub-spoke">
 <div class="reference-head"><div><span class="reference-series">Redes seguras</span><h2>Red híbrida hub-spoke con inspección centralizada</h2></div><span class="reference-code">TA-NET-04 · Cloud</span></div>
 <div class="reference-intro"><strong>Conectividad híbrida con inspección central.</strong> Centraliza conectividad, rutas y controles de seguridad en un hub, reduciendo conexiones punto a punto entre redes cloud y on-premises. Permite aplicar inspección y gobierno de rutas de forma consistente.</div>
 <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de red híbrida hub-spoke con firewall centralizado en el hub" class="diagrama-desktop" role="img" viewbox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
@@ -405,7 +771,8 @@
 </svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
 <div class="reference-analysis"><div><span>Qué resuelve</span><p>Centraliza conectividad, rutas y controles de seguridad en un hub, reduciendo conexiones punto a punto entre redes cloud y on-premises. Permite aplicar inspección y gobierno de rutas de forma consistente.</p></div><div><span>Límites y validación</span><p>Un hub mal dimensionado puede convertirse en cuello de botella o punto único de fallo. Deben validarse throughput, tablas de rutas, latencia y comportamiento durante la pérdida de un enlace.</p></div></div>
 <div class="reference-foot">FIG. 4 — Topología hub-spoke: el hub concentra firewall, bastión y DNS. Los spokes se comunican únicamente a través del hub mediante UDR forzada, sin peering directo entre ellos.</div>
-</article><article class="reference-card" data-ref-item="" id="pipeline-devsecops">
+</article>
+<article class="reference-card" data-ref-item="" id="pipeline-devsecops">
 <div class="reference-head"><div><span class="reference-series">DevSecOps y cloud native</span><h2>Pipeline DevSecOps: Seguridad Shift-Left automatizada</h2></div><span class="reference-code">TA-DVO-15 · CI/CD</span></div>
 <div class="reference-intro"><strong>Seguridad integrada en el pipeline.</strong> Desplaza controles al ciclo de desarrollo: SAST, SCA y DAST aparecen en fases distintas y los gates automáticos impiden promover artefactos que incumplen criterios definidos.</div>
 <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama horizontal de pipeline DevSecOps con fases de seguridad integradas" class="diagrama-desktop" role="img" viewbox="0 0 900 440" xmlns="http://www.w3.org/2000/svg">
@@ -506,7 +873,8 @@
 </svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
 <div class="reference-analysis"><div><span>Qué resuelve</span><p>Desplaza controles al ciclo de desarrollo: SAST, SCA y DAST aparecen en fases distintas y los gates automáticos impiden promover artefactos que incumplen criterios definidos.</p></div><div><span>Límites y validación</span><p>El pipeline debe gestionar falsos positivos, excepciones y caducidad. Romper el build sin un modelo operativo termina creando bypass permanentes.</p></div></div>
 <div class="reference-foot">FIG. 15 — Integración orgánica de la seguridad en el ciclo de vida del software (DevSecOps). La validación automática de calidad frena el avance del código vulnerable hacia las ramas principales de producción.</div>
-</article><article class="reference-card" data-ref-item="" id="service-mesh-mtls">
+</article>
+<article class="reference-card" data-ref-item="" id="service-mesh-mtls">
 <div class="reference-head"><div><span class="reference-series">DevSecOps y cloud native</span><h2>Seguridad en Microservicios: Service Mesh con mTLS estricto</h2></div><span class="reference-code">TA-NET-16 · Cloud Native K8s</span></div>
 <div class="reference-intro"><strong>Identidad de servicio y cifrado este-oeste.</strong> Usa una service mesh para proporcionar mTLS, identidad de servicio y políticas de comunicación sin delegar toda la lógica criptográfica en cada aplicación.</div>
 <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama horizontal de Service Mesh en Kubernetes con mTLS entre sidecars" class="diagrama-desktop" role="img" viewbox="0 0 900 460" xmlns="http://www.w3.org/2000/svg">
@@ -598,7 +966,8 @@
 </svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
 <div class="reference-analysis"><div><span>Qué resuelve</span><p>Usa una service mesh para proporcionar mTLS, identidad de servicio y políticas de comunicación sin delegar toda la lógica criptográfica en cada aplicación.</p></div><div><span>Límites y validación</span><p>La malla añade complejidad operativa y una nueva capa crítica. La rotación de certificados, el control plane y la observabilidad deben diseñarse antes de desplegarla masivamente.</p></div></div>
 <div class="reference-foot">FIG. 16 — Arquitectura de malla de servicios (Service Mesh). Las aplicaciones quedan totalmente liberadas de implementar la lógica criptográfica de transporte; el proxy sidecar asume de manera transparente el cifrado mTLS.</div>
-</article><article class="reference-card" data-ref-item="" id="cluster-ngfw-ha">
+</article>
+<article class="reference-card" data-ref-item="" id="cluster-ngfw-ha">
 <div class="reference-head"><div><span class="reference-series">Perímetro y firewalls</span><h2>Clúster NGFW en Alta Disponibilidad (HA Activo/Pasivo)</h2></div><span class="reference-code">TA-FW-17 · LLD</span></div>
 <div class="reference-intro"><strong>Alta disponibilidad perimetral con estado.</strong> Representa un par de NGFW activo/pasivo con sincronización de sesiones y enlaces redundantes hacia WAN y core. El objetivo es evitar que el firewall se convierta en un único punto de fallo.</div>
 <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de clúster de firewalls en alta disponibilidad con enlaces redundantes y sincronización de estado" class="diagrama-desktop" role="img" viewbox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
@@ -689,7 +1058,8 @@
 </svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
 <div class="reference-analysis"><div><span>Qué resuelve</span><p>Representa un par de NGFW activo/pasivo con sincronización de sesiones y enlaces redundantes hacia WAN y core. El objetivo es evitar que el firewall se convierta en un único punto de fallo.</p></div><div><span>Límites y validación</span><p>La alta disponibilidad debe probarse con sesiones reales. Heartbeat disponible no demuestra que NAT, VPN, routing dinámico o inspección mantengan el servicio durante un failover.</p></div></div>
 <div class="reference-foot">FIG. 17 — Diseño de topología LLD para un clúster NGFW perimetral. La infraestructura se conecta mediante enlaces redundantes LACP cruzados hacia la electrónica de red interna, anulando cualquier punto único de fallo (SPOF).</div>
-</article><article class="reference-card" data-ref-item="" id="inspeccion-ssl-tls">
+</article>
+<article class="reference-card" data-ref-item="" id="inspeccion-ssl-tls">
 <div class="reference-head"><div><span class="reference-series">Perímetro y firewalls</span><h2>Inspección de Contenido SSL/TLS (Capa de Descifrado Segura)</h2></div><span class="reference-code">TA-SEC-18 · Deep Packet Inspection</span></div>
 <div class="reference-intro"><strong>Descifrado controlado para inspección.</strong> Introduce una capa de inspección TLS con criterios de exclusión, re-cifrado y trazabilidad. Permite analizar contenido cifrado sin convertir el descifrado en una excepción opaca.</div>
 <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de flujo de inspección SSL y descifrado de paquetes en un firewall de nueva generación" class="diagrama-desktop" role="img" viewbox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
@@ -784,7 +1154,8 @@
 </svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
 <div class="reference-analysis"><div><span>Qué resuelve</span><p>Introduce una capa de inspección TLS con criterios de exclusión, re-cifrado y trazabilidad. Permite analizar contenido cifrado sin convertir el descifrado en una excepción opaca.</p></div><div><span>Límites y validación</span><p>El descifrado tiene impacto legal, de privacidad y de capacidad. Deben excluirse categorías sensibles y proteger especialmente las claves y certificados de la CA de inspección.</p></div></div>
 <div class="reference-foot">FIG. 18 — Mecanismo de descifrado y descapsulado SSL/TLS (DPI-SSL). Permite al cortafuegos interceptar, limpiar virus o vectores maliciosos y recifrar la sesión de forma transparente antes de su salida a Internet.</div>
-</article><article class="reference-card" data-ref-item="" id="core-l3-redundante">
+</article>
+<article class="reference-card" data-ref-item="" id="core-l3-redundante">
 <div class="reference-head"><div><span class="reference-series">Core y campus</span><h2>Tolerancia a fallos en Core L3 (Agregación Multi-Chassis)</h2></div><span class="reference-code">TA-NET-19 · Core High Availability</span></div>
 <div class="reference-intro"><strong>Core redundante y agregación multi-chassis.</strong> Elimina dependencias de un único switch de core mediante agregación cruzada y un plano lógico coordinado. La pérdida de un enlace no debe provocar pérdida completa de conectividad.</div>
 <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de redundancia de red con stack de switches core L3 y conmutación por fallo de enlace LACP" class="diagrama-desktop" role="img" viewbox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
@@ -871,7 +1242,8 @@
 </svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
 <div class="reference-analysis"><div><span>Qué resuelve</span><p>Elimina dependencias de un único switch de core mediante agregación cruzada y un plano lógico coordinado. La pérdida de un enlace no debe provocar pérdida completa de conectividad.</p></div><div><span>Límites y validación</span><p>MLAG, vPC, VSS o stack virtual tienen límites distintos. Deben documentarse split-brain, peer-link, keepalive y comportamiento ante fallos parciales.</p></div></div>
 <div class="reference-foot">FIG. 19 — Mecanismo de Failover LAN en Capa de Distribución y Core. Al eliminar puertos bloqueados por STP mediante agregación lógica, los enlaces cruzados absorben instantáneamente toda la carga en caso de siniestro físico o avería del transceptor.</div>
-</article><article class="reference-card" data-ref-item="" id="estrategia-multisitio-3dc">
+</article>
+<article class="reference-card" data-ref-item="" id="estrategia-multisitio-3dc">
 <div class="reference-head"><div><span class="reference-series">Resiliencia y continuidad</span><h2>Estrategia Multi-Sitio 3DC (Malla Metropolitana + DR Remoto)</h2></div><span class="reference-code">TA-DRP-20 · High Availability &amp; DR</span></div>
 <div class="reference-intro"><strong>Resiliencia metropolitana y desastre geográfico.</strong> Combina dos centros activos de baja latencia con un tercer sitio remoto para contingencia. Separa alta disponibilidad local de recuperación ante desastre geográfico.</div>
 <div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama horizontal de arquitectura de tres datacenters (3DC) con balanceo metropolitano y sitio alternativo de contingencia asíncrono" class="diagrama-desktop" role="img" viewbox="0 0 900 540" xmlns="http://www.w3.org/2000/svg">
@@ -986,86 +1358,165 @@
 </svg><span class="zoom-hint">🔍 Clic para ampliar</span></div>
 <div class="reference-analysis"><div><span>Qué resuelve</span><p>Combina dos centros activos de baja latencia con un tercer sitio remoto para contingencia. Separa alta disponibilidad local de recuperación ante desastre geográfico.</p></div><div><span>Límites y validación</span><p>La replicación síncrona y la extensión de capa 2 tienen restricciones de latencia. El tercer centro debe probarse como entorno recuperable, no limitarse a recibir réplicas.</p></div></div>
 <div class="reference-foot">FIG. 20 — Estrategia de disponibilidad 3DC (Three Data Center): La réplica síncrona metropolitana garantiza cero pérdida de información ante incidentes locales, mientras que el tercer nodo remoto asegura la continuidad operativa frente a desastres de escala regional.</div>
-</article></div><div class="references-pagination" id="referencesPagination"></div></main><div id="footer-container"></div></div></div><script src="../js/menu.js"></script><script src="../js/footer.js"></script><script>
-const REF_PER_PAGE=7;
-let refPage=parseInt(new URLSearchParams(location.search).get('page')||'1',10);
-const refItems=[...document.querySelectorAll('[data-ref-item]')];
+</article>
+</div><div class="references-pagination" id="referencesPagination"></div></main><div id="footer-container"></div></div></div><script src="../js/menu.js"></script><script src="../js/footer.js"></script><script>
+const REF_PER_PAGE = 7;
+const META_URL = new URL('referencias-meta.json', window.location.href).href;
 
-function pageForHash(){
-    if(!location.hash || location.hash==='#referencesGrid') return null;
-    const target=document.querySelector(location.hash);
-    if(!target) return null;
-    const index=refItems.indexOf(target);
-    return index>=0 ? Math.floor(index/REF_PER_PAGE)+1 : null;
+let refPage = parseInt(new URLSearchParams(location.search).get('page') || '1', 10);
+let refItems = [];
+
+function getRefItems() {
+  return [...document.querySelectorAll('#referencesGrid [data-ref-item]')];
 }
 
-function syncPageFromHash(){
-    const hashPage=pageForHash();
-    if(hashPage!==null) refPage=hashPage;
+function pageForHash() {
+  if (!location.hash || location.hash === '#referencesGrid') return null;
+  const target = document.querySelector(location.hash);
+  if (!target) return null;
+  const index = refItems.indexOf(target);
+  return index >= 0 ? Math.floor(index / REF_PER_PAGE) + 1 : null;
 }
 
-function renderRefs(){
-    const total=Math.max(1,Math.ceil(refItems.length/REF_PER_PAGE));
-    refPage=Math.min(Math.max(refPage,1),total);
-    refItems.forEach((el,i)=>el.style.display=(i>=(refPage-1)*REF_PER_PAGE&&i<refPage*REF_PER_PAGE)?'block':'none');
-
-    let h=`<button class="page-btn" ${refPage===1?'disabled':''} onclick="goRef(${refPage-1})">←</button>`;
-    for(let i=1;i<=total;i++) h+=`<button class="page-btn${i===refPage?' active':''}" onclick="goRef(${i})">${i}</button>`;
-    h+=`<button class="page-btn" ${refPage===total?'disabled':''} onclick="goRef(${refPage+1})">→</button>`;
-    document.getElementById('referencesPagination').innerHTML=h;
+function syncPageFromHash() {
+  const hashPage = pageForHash();
+  if (hashPage !== null) refPage = hashPage;
 }
 
-function scrollToCurrentHash(){
-    if(!location.hash || location.hash==='#referencesGrid') return;
-    const target=document.querySelector(location.hash);
-    if(target) requestAnimationFrame(()=>target.scrollIntoView({behavior:'smooth',block:'start'}));
+function renderRefs() {
+  refItems = getRefItems();
+  const total = Math.max(1, Math.ceil(refItems.length / REF_PER_PAGE));
+  refPage = Math.min(Math.max(refPage, 1), total);
+  refItems.forEach((el, i) => {
+    el.style.display = (i >= (refPage - 1) * REF_PER_PAGE && i < refPage * REF_PER_PAGE) ? 'block' : 'none';
+  });
+
+  let h = `<button class="page-btn" ${refPage === 1 ? 'disabled' : ''} onclick="goRef(${refPage - 1})">←</button>`;
+  for (let i = 1; i <= total; i++) {
+    h += `<button class="page-btn${i === refPage ? ' active' : ''}" onclick="goRef(${i})">${i}</button>`;
+  }
+  h += `<button class="page-btn" ${refPage === total ? 'disabled' : ''} onclick="goRef(${refPage + 1})">→</button>`;
+  const pag = document.getElementById('referencesPagination');
+  if (pag) pag.innerHTML = h;
 }
 
-function goRef(n){
-    const total=Math.max(1,Math.ceil(refItems.length/REF_PER_PAGE));
-    if(n<1||n>total) return;
-    refPage=n;
-    const u=new URL(location.href);
-    n===1?u.searchParams.delete('page'):u.searchParams.set('page',n);
-    history.pushState({refPage:n},'',u.pathname+(u.searchParams.toString()?'?'+u.searchParams.toString():'')+'#referencesGrid');
-    renderRefs();
-    requestAnimationFrame(()=>document.getElementById('referencesGrid')?.scrollIntoView({behavior:'smooth',block:'start'}));
+function scrollToCurrentHash() {
+  if (!location.hash || location.hash === '#referencesGrid') return;
+  const target = document.querySelector(location.hash);
+  if (target) requestAnimationFrame(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }));
 }
 
-function toggleZoom(el){
-    if(el.classList.contains('zoomed')){
-        el.classList.remove('zoomed');
-        document.querySelector('.zoom-overlay')?.classList.remove('active');
-    }else{
-        document.querySelectorAll('.reference-diagram.zoomed').forEach(x=>x.classList.remove('zoomed'));
-        el.classList.add('zoomed');
-        let o=document.querySelector('.zoom-overlay');
-        if(!o){
-            o=document.createElement('div');
-            o.className='zoom-overlay';
-            o.onclick=()=>{
-                document.querySelectorAll('.reference-diagram.zoomed').forEach(x=>x.classList.remove('zoomed'));
-                o.classList.remove('active');
-            };
-            document.body.appendChild(o);
-        }
-        o.classList.add('active');
+function goRef(n) {
+  refItems = getRefItems();
+  const total = Math.max(1, Math.ceil(refItems.length / REF_PER_PAGE));
+  if (n < 1 || n > total) return;
+  refPage = n;
+  const u = new URL(location.href);
+  n === 1 ? u.searchParams.delete('page') : u.searchParams.set('page', n);
+  history.pushState({ refPage: n }, '', u.pathname + (u.searchParams.toString() ? '?' + u.searchParams.toString() : '') + '#referencesGrid');
+  renderRefs();
+  requestAnimationFrame(() => document.getElementById('referencesGrid')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+}
+
+function toggleZoom(el) {
+  if (el.classList.contains('zoomed')) {
+    el.classList.remove('zoomed');
+    document.querySelector('.zoom-overlay')?.classList.remove('active');
+  } else {
+    document.querySelectorAll('.reference-diagram.zoomed').forEach(x => x.classList.remove('zoomed'));
+    el.classList.add('zoomed');
+    let o = document.querySelector('.zoom-overlay');
+    if (!o) {
+      o = document.createElement('div');
+      o.className = 'zoom-overlay';
+      o.onclick = () => {
+        document.querySelectorAll('.reference-diagram.zoomed').forEach(x => x.classList.remove('zoomed'));
+        o.classList.remove('active');
+      };
+      document.body.appendChild(o);
     }
+    o.classList.add('active');
+  }
 }
 
-syncPageFromHash();
-renderRefs();
-scrollToCurrentHash();
+/** Aplica orden y etiqueta NUEVO desde referencias-meta.json */
+function applyMeta(meta) {
+  const grid = document.getElementById('referencesGrid');
+  if (!grid || !meta || !Array.isArray(meta.items)) return;
 
-window.addEventListener('popstate',()=>{
-    refPage=parseInt(new URLSearchParams(location.search).get('page')||'1',10);
-    syncPageFromHash();
-    renderRefs();
+  const byId = {};
+  getRefItems().forEach(el => {
+    if (el.id) byId[el.id] = el;
+  });
 
-    if(location.hash && location.hash!=='#referencesGrid'){
-        scrollToCurrentHash();
-    }else{
-        requestAnimationFrame(()=>document.getElementById('referencesGrid')?.scrollIntoView({behavior:'smooth',block:'start'}));
+  // Ordenar según JSON (order asc); ítems no listados al final
+  const sorted = [...meta.items].sort((a, b) => (a.order || 0) - (b.order || 0));
+  const orderedIds = [];
+  sorted.forEach(item => {
+    if (item.id && byId[item.id]) orderedIds.push(item.id);
+  });
+  Object.keys(byId).forEach(id => {
+    if (!orderedIds.includes(id)) orderedIds.push(id);
+  });
+
+  orderedIds.forEach(id => {
+    const el = byId[id];
+    if (el) grid.appendChild(el);
+  });
+
+  // Badges NUEVO
+  const nuevoSet = new Set(
+    meta.items.filter(i => i.nuevo === true).map(i => i.id)
+  );
+
+  getRefItems().forEach(el => {
+    const series = el.querySelector('.reference-series');
+    if (!series) return;
+
+    // Quitar badge previo
+    series.querySelectorAll('.badge-nuevo').forEach(b => b.remove());
+    el.removeAttribute('data-nuevo');
+
+    if (nuevoSet.has(el.id)) {
+      el.setAttribute('data-nuevo', 'true');
+      const badge = document.createElement('span');
+      badge.className = 'badge-nuevo';
+      badge.textContent = 'NUEVO';
+      series.appendChild(badge);
     }
+  });
+}
+
+async function initReferences() {
+  try {
+    const res = await fetch(META_URL, { cache: 'no-cache' });
+    if (res.ok) {
+      const meta = await res.json();
+      applyMeta(meta);
+    } else {
+      console.warn('referencias-meta.json no disponible:', res.status);
+    }
+  } catch (err) {
+    console.warn('No se pudo cargar referencias-meta.json (¿misma carpeta y servidor HTTP?):', err);
+  }
+
+  refItems = getRefItems();
+  syncPageFromHash();
+  renderRefs();
+  scrollToCurrentHash();
+}
+
+initReferences();
+
+window.addEventListener('popstate', () => {
+  refPage = parseInt(new URLSearchParams(location.search).get('page') || '1', 10);
+  refItems = getRefItems();
+  syncPageFromHash();
+  renderRefs();
+  if (location.hash && location.hash !== '#referencesGrid') {
+    scrollToCurrentHash();
+  } else {
+    requestAnimationFrame(() => document.getElementById('referencesGrid')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+  }
 });
 </script></body></html>

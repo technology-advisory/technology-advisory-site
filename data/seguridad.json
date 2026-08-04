@@ -261,7 +261,8 @@
     "desc": "Los 4 niveles de madurez: de saber que existe una vulnerabilidad a remediarla dentro de un SLA medido.",
     "url": "seguridad/gestion-vulnerabilidades/gestion-vulnerabilidades-madurez-roadmap.html",
     "published": true,
-    "nuevo": true
+    "nuevo": false,
+    "hidden": false
   },
   {
     "id": 25,
@@ -349,7 +350,8 @@
     "desc": "Los 4 niveles de madurez en cifrado: activar HTTPS es el mínimo de 2010, la madurez real está en la gestión de claves.",
     "url": "seguridad/cifrado-identidad-digital/cifrado-identidad-digital-madurez-roadmap.html",
     "published": true,
-    "nuevo": true
+    "nuevo": false,
+    "hidden": false
   },
   {
     "id": 33,

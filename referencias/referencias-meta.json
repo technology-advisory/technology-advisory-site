@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "description": "Metadatos de arquitecturas de referencia. Marca 'nuevo: true' para mostrar la etiqueta NUEVO y priorizar al principio del listado.",
+  "ref_per_page": 7,
+  "items": [
+    {
+      "id": "microsegmentacion-zero-trust",
+      "order": 1,
+      "title": "Microsegmentación Zero Trust host-based",
+      "series": "Redes seguras",
+      "code": "TA-NET-21 · Zero Trust",
+      "nuevo": true
+    },
+    {
+      "id": "acceso-privilegiado-pam-paw",
+      "order": 2,
+      "title": "Acceso privilegiado: PAM + PAW",
+      "series": "Identidad y privilegios",
+      "code": "TA-SEC-22 · Privileged Access",
+      "nuevo": true
+    },
+    {
+      "id": "active-directory-tier-model",
+      "order": 3,
+      "title": "Active Directory endurecido: modelo de tiers",
+      "series": "Identidad y privilegios",
+      "code": "TA-ID-23 · Identity Hardening",
+      "nuevo": true
+    },
+    {
+      "id": "segmentacion-red-corporativa",
+      "order": 4,
+      "title": "Segmentación de red corporativa",
+      "series": "Redes seguras",
+      "code": "TA-NET-01 · LLD",
+      "nuevo": false
+    },
+    {
+      "id": "dmz-doble-capa",
+      "order": 5,
+      "title": "DMZ moderna de doble capa",
+      "series": "Redes seguras",
+      "code": "TA-NET-02 · HLD",
+      "nuevo": false
+    },
+    {
+      "id": "acceso-remoto-ztna",
+      "order": 6,
+      "title": "Acceso remoto ZTNA",
+      "series": "Redes seguras",
+      "code": "TA-NET-03 · Zero Trust",
+      "nuevo": false
+    },
+    {
+      "id": "red-hibrida-hub-spoke",
+      "order": 7,
+      "title": "Red híbrida hub-spoke con inspección centralizada",
+      "series": "Redes seguras",
+      "code": "TA-NET-04 · Cloud",
+      "nuevo": false
+    },
+    {
+      "id": "pipeline-devsecops",
+      "order": 8,
+      "title": "Pipeline DevSecOps: Seguridad Shift-Left automatizada",
+      "series": "DevSecOps y cloud native",
+      "code": "TA-DVO-15 · CI/CD",
+      "nuevo": false
+    },
+    {
+      "id": "service-mesh-mtls",
+      "order": 9,
+      "title": "Seguridad en Microservicios: Service Mesh con mTLS estricto",
+      "series": "DevSecOps y cloud native",
+      "code": "TA-NET-16 · Cloud Native K8s",
+      "nuevo": false
+    },
+    {
+      "id": "cluster-ngfw-ha",
+      "order": 10,
+      "title": "Clúster NGFW en Alta Disponibilidad (HA Activo/Pasivo)",
+      "series": "Perímetro y firewalls",
+      "code": "TA-FW-17 · LLD",
+      "nuevo": false
+    },
+    {
+      "id": "inspeccion-ssl-tls",
+      "order": 11,
+      "title": "Inspección de Contenido SSL/TLS (Capa de Descifrado Segura)",
+      "series": "Perímetro y firewalls",
+      "code": "TA-SEC-18 · Deep Packet Inspection",
+      "nuevo": false
+    },
+    {
+      "id": "core-l3-redundante",
+      "order": 12,
+      "title": "Tolerancia a fallos en Core L3 (Agregación Multi-Chassis)",
+      "series": "Core y campus",
+      "code": "TA-NET-19 · Core High Availability",
+      "nuevo": false
+    },
+    {
+      "id": "estrategia-multisitio-3dc",
+      "order": 13,
+      "title": "Estrategia Multi-Sitio 3DC (Malla Metropolitana + DR Remoto)",
+      "series": "Resiliencia y continuidad",
+      "code": "TA-DRP-20 · High Availability &amp; DR",
+      "nuevo": false
+    }
+  ]
+}
