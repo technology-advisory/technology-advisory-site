@@ -1,16 +1,16 @@
 {
   "schema_version": 6,
   "title": "SonicWall PSIRT Intelligence",
-  "last_updated_at": "2026-07-15T05:41:10.947080Z",
+  "last_updated_at": "2026-08-23T18:51:20.540737Z",
   "source": "SonicWall Product Security Incident Response Team",
   "source_url": "https://psirt.global.sonicwall.com/",
   "feed_url": "https://psirtapi.global.sonicwall.com/api/v1/feed/rss.xml",
   "raw_xml_file": "data/raw/sonicwall-psirt/rss.xml",
-  "raw_xml_sha256": "5495d49c5c69fc02df6246ce54934e8895cad4516e87b51f6a4c0358f3b82e74",
-  "total_advisories": 213,
-  "total_critical": 2,
-  "total_high": 13,
-  "total_with_cve": 203,
+  "raw_xml_sha256": "99729f19ff15ca98da888fc377e82e07612e9d8400b923653b400c201e4628bb",
+  "total_advisories": 217,
+  "total_critical": 3,
+  "total_high": 14,
+  "total_with_cve": 207,
   "total_products": 114,
   "products": [
     "Capture Client",
@@ -214,6 +214,216 @@
     }
   ],
   "advisories": [
+    {
+      "id": "28383302c8589c1bfa7793c5",
+      "advisory_id": "SNWLID-2026-0009",
+      "title": "SonicOS Improper Neutralization of HTTP Headers Vulnerability",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0009",
+      "summary": "A improper neutralization of HTTP Headers for Scripting Syntax vulnerability in SonicOS could allow a remote attacker to manipulate the Host header and redirect firewall management users to arbitrary web domains.",
+      "published_at": "2026-08-05T11:37:33Z",
+      "updated_at": "2026-08-11T13:23:57Z",
+      "cves": [
+        "CVE-2026-0516"
+      ],
+      "findings": [],
+      "products": [
+        "SonicOS"
+      ],
+      "product_families": [],
+      "explicit_product_models": [],
+      "affected_products": [],
+      "affected_platforms": [],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "revision_history": "Version\n1.0\nDate\n05-Aug-2026\nDescription\nInitial Release.\n---------------------------------------\nVersion\n1.1\nDate\n05-Aug-2026\nDescription\nUpdated the Gen6 hardware affected versions table to correct the affected version - 6.5.5.2-28n and older versions.\n---------------------------------------\nVersion\n1.2\nDate\n11-Aug-2026\nDescription\nUpdated the affected and fixed products: Added GEN6 NSv to affected products, removed all GEN6 EOL products and added GEN8 NSv products.",
+      "max_cvss": null,
+      "severity": null,
+      "exploitation_status": "unknown",
+      "detail_text_sha256": "b3d90f5bd3c623eba531d8287b9034d31ed9a62ddd5d3acf3c8effaaddf70170",
+      "product_status": [],
+      "version_matrix": [],
+      "workaround": null,
+      "resolution": null
+    },
+    {
+      "id": "8146eeb88cfc49943d73a06c",
+      "advisory_id": "SNWLID-2026-0011",
+      "title": "SonicWall GMS Security Affected By Multiple Vulnerabilities",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0011",
+      "summary": "SonicWall GMS (Virtual Appliance, Windows) - 9.5.1 and earlier versions are vulnerable to the following security issues.\n1) CVE-2026-66145 -\nAn unauthenticated remote code execution vulnerability\nAn unauthenticated remote code execution vulnerability was identified in GMS 9.5.1 (Build 9510.1044) and earlier versions which allows remote attacker to read sensitive data and perform arbitrary file write via zipslip.\nCVSS Score: 9.1\nCVSS Vector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N\nCWE-94: Improper Control of Generation of Code ('Code Injection')\n2) CVE-2026-66146 - GMS Multiple Cross-Site Scripting (XSS) Vulnerabilities\nMultiple Cross-Site Scripting (XSS) vulnerabilities were identified in GMS 9.5.1 (Build 9510.1044) and earlier versions that allow a remote attacker to execute javascript script in a user's browser.\nCVSS Score: 5.5\nCVSS Vector: CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:L\nCWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')\n3) CVE-2026-66147 - GMS Unauthenticated Command Injection in Dispatcher Service\nAn unauthenticated command injection vulnerability was identified in the GMS Dispatcher Service in GMS 9.5.1 and earlier versions which allows remote attacker to perform remote code execution through specially crafted requests.\nCVSS Score: 9.4\nCVSS Vector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H\nCWE-94: Improper Control of Generation of Code ('Code Injection')\n4) CVE-2026-66148 - GMS Local Privilege Escalation via Authenticated Command Injection\nAn authenticated command injection vulnerability was identified in GMS Command-Line Interface (CLI) 9.5.1 (Build 9510.1044) and earlier versions which allows low-privileged local user to execute system commands with root privileges.\nCVSS Score: 6.3\nCVSS Vector: CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L\nCWE-94: Improper Control of Generation of Code ('Code Injection')\n5) CVE-2026-66154 - GMS Weak Certificate Verification to User Compromise via MiTM\nAn insufficient certificate validation in a privileged communication workflow, was identified in a GMS application 9.5.1 (Build 9510.1044) and earlier versions which, under a successful MitM attack and controlled network conditions, could permit unauthorized changes.\nCVSS Score: 8.3\nCVSS Vector: CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H\nCWE-295: Improper Certificate Validation\n6) CVE-2026-18634 - GMS Local Privilege Escalation via Deserialization\nAn insecure handling of serialized objects vulnerability was found in the one of the service of GMS application 9.5.1 (Build 9510.1044) and earlier versions. A local attacker with the ability to interact with the service could exploit this behavior to perform unauthorized actions through the affected component.\nCVSS Score: 8.4\nCVSS Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H\nCWE-502: Deserialization of Untrusted Data\nWhile it is crucial to highlight that SonicWall Analytics products remain unaffected by these vulnerabilities. Additionally, there is no substantiated evidence to suggest that these vulnerabilities are currently being actively exploited in real-world scenarios.\nSonicWall strongly recommends that organizations running older versions of GMS builds upgrade to newer fixed versions.",
+      "published_at": "2026-08-11T13:23:57Z",
+      "updated_at": "2026-08-11T13:23:57Z",
+      "cves": [
+        "CVE-2026-66145",
+        "CVE-2026-66146",
+        "CVE-2026-66147",
+        "CVE-2026-66148",
+        "CVE-2026-66154",
+        "CVE-2026-18634"
+      ],
+      "findings": [
+        {
+          "cve": "CVE-2026-66145",
+          "title": "An unauthenticated remote code execution vulnerability",
+          "description": "An unauthenticated remote code execution vulnerability was identified in GMS 9.5.1 (Build 9510.1044) and earlier versions which allows remote attacker to read sensitive data and perform arbitrary file write via zipslip.",
+          "cvss": 9.1,
+          "severity": "critical",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+          "cwe": "CWE-94",
+          "cwe_description": "Improper Control of Generation of Code ('Code Injection')"
+        },
+        {
+          "cve": "CVE-2026-66146",
+          "title": "GMS Multiple Cross-Site Scripting (XSS) Vulnerabilities",
+          "description": "Multiple Cross-Site Scripting (XSS) vulnerabilities were identified in GMS 9.5.1 (Build 9510.1044) and earlier versions that allow a remote attacker to execute javascript script in a user's browser.",
+          "cvss": 5.5,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:L",
+          "cwe": "CWE-79",
+          "cwe_description": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+        },
+        {
+          "cve": "CVE-2026-66147",
+          "title": "GMS Unauthenticated Command Injection in Dispatcher Service",
+          "description": "An unauthenticated command injection vulnerability was identified in the GMS Dispatcher Service in GMS 9.5.1 and earlier versions which allows remote attacker to perform remote code execution through specially crafted requests.",
+          "cvss": 9.4,
+          "severity": "critical",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H",
+          "cwe": "CWE-94",
+          "cwe_description": "Improper Control of Generation of Code ('Code Injection')"
+        },
+        {
+          "cve": "CVE-2026-66148",
+          "title": "GMS Local Privilege Escalation via Authenticated Command Injection",
+          "description": "An authenticated command injection vulnerability was identified in GMS Command-Line Interface (CLI) 9.5.1 (Build 9510.1044) and earlier versions which allows low-privileged local user to execute system commands with root privileges.",
+          "cvss": 6.3,
+          "severity": "medium",
+          "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+          "cwe": "CWE-94",
+          "cwe_description": "Improper Control of Generation of Code ('Code Injection')"
+        },
+        {
+          "cve": "CVE-2026-66154",
+          "title": "GMS Weak Certificate Verification to User Compromise via MiTM",
+          "description": "An insufficient certificate validation in a privileged communication workflow, was identified in a GMS application 9.5.1 (Build 9510.1044) and earlier versions which, under a successful MitM attack and controlled network conditions, could permit unauthorized changes.",
+          "cvss": 8.3,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+          "cwe": "CWE-295",
+          "cwe_description": "Improper Certificate Validation"
+        },
+        {
+          "cve": "CVE-2026-18634",
+          "title": "GMS Local Privilege Escalation via Deserialization",
+          "description": "An insecure handling of serialized objects vulnerability was found in the one of the service of GMS application 9.5.1 (Build 9510.1044) and earlier versions. A local attacker with the ability to interact with the service could exploit this behavior to perform unauthorized actions through the affected component.",
+          "cvss": 8.4,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "cwe": "CWE-502",
+          "cwe_description": "Deserialization of Untrusted Data"
+        }
+      ],
+      "products": [],
+      "product_families": [],
+      "explicit_product_models": [],
+      "affected_products": [],
+      "affected_platforms": [],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "revision_history": "Version\n1.0\nDate\n11-Aug-2026\nDescription\nInitial Release.",
+      "max_cvss": 9.4,
+      "severity": "critical",
+      "exploitation_status": "exploited",
+      "detail_text_sha256": "b3d90f5bd3c623eba531d8287b9034d31ed9a62ddd5d3acf3c8effaaddf70170",
+      "product_status": [],
+      "version_matrix": [],
+      "workaround": null,
+      "resolution": null
+    },
+    {
+      "id": "1d3882b005b878a9ffe38da2",
+      "advisory_id": "SNWLID-2026-0012",
+      "title": "SonicWall Email Security Affected By Multiple Vulnerabilities",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0012",
+      "summary": "1) CVE-2026-66149 - Improper Control of Generation of Code ('Code Injection') Vulnerability via netmask\nImproper Control of Generation of Code ('Code Injection') Vulnerability in the SonicWall Email Security appliance allows an authenticated attacker with access to the SonicWall Email Security restricted CLI can inject arbitrary OS commands that execute as root via netmask.\nCVSS Score: 7.8\nCVSS Vector: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H\nCWE-94: Improper Control of Generation of Code ('Code Injection')\n2) CVE-2026-66150 - Improper Control of Generation of Code ('Code Injection') Vulnerability via SNMP\nImproper Control of Generation of Code ('Code Injection') Vulnerability in the SonicWall Email Security appliance allows an authenticated attacker with access to the SonicWall Email Security restricted CLI can inject arbitrary OS commands that execute as root via SNMP.\nCVSS Score: 7.8\nCVSS Vector: CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H\nCWE-94: Improper Control of Generation of Code ('Code Injection')\nSonicWall strongly advises users of the Email Security products (ES Appliance 5000, 5050, 7000, 7050, 9000, VMWare and Hyper-V) to upgrade to the mentioned fixed release version to address these vulnerabilities.\nThere is currently no evidence any of the vulnerabilities addressed in this release are being exploited in the wild.",
+      "published_at": "2026-08-11T13:23:57Z",
+      "updated_at": "2026-08-11T13:23:57Z",
+      "cves": [
+        "CVE-2026-66149",
+        "CVE-2026-66150"
+      ],
+      "findings": [
+        {
+          "cve": "CVE-2026-66149",
+          "title": "Improper Control of Generation of Code ('Code Injection') Vulnerability via netmask",
+          "description": "Improper Control of Generation of Code ('Code Injection') Vulnerability in the SonicWall Email Security appliance allows an authenticated attacker with access to the SonicWall Email Security restricted CLI can inject arbitrary OS commands that execute as root via netmask.",
+          "cvss": 7.8,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "cwe": "CWE-94",
+          "cwe_description": "Improper Control of Generation of Code ('Code Injection')"
+        },
+        {
+          "cve": "CVE-2026-66150",
+          "title": "Improper Control of Generation of Code ('Code Injection') Vulnerability via SNMP",
+          "description": "Improper Control of Generation of Code ('Code Injection') Vulnerability in the SonicWall Email Security appliance allows an authenticated attacker with access to the SonicWall Email Security restricted CLI can inject arbitrary OS commands that execute as root via SNMP.",
+          "cvss": 7.8,
+          "severity": "high",
+          "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "cwe": "CWE-94",
+          "cwe_description": "Improper Control of Generation of Code ('Code Injection')"
+        }
+      ],
+      "products": [
+        "Email Security"
+      ],
+      "product_families": [],
+      "explicit_product_models": [],
+      "affected_products": [],
+      "affected_platforms": [],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "revision_history": "Version\n1.0\nDate\n11-Aug-2026\nDescription\nInitial Release.",
+      "max_cvss": 7.8,
+      "severity": "high",
+      "exploitation_status": "no_evidence",
+      "detail_text_sha256": "b3d90f5bd3c623eba531d8287b9034d31ed9a62ddd5d3acf3c8effaaddf70170",
+      "product_status": [],
+      "version_matrix": [],
+      "workaround": null,
+      "resolution": null
+    },
+    {
+      "id": "12a907f4af52d106da24af22",
+      "advisory_id": "SNWLID-2026-0010",
+      "title": "SonicWall Global VPN Client (GVC) Out-of-bounds kernel memory read vulnerability",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0010",
+      "summary": "SonicWall Global VPN Client version 4.10.8.1108 and earlier is vulnerable to an out-of-bounds kernel memory read in the SWIPsec.sys driver, which could allow a local attacker to cause a system crash.",
+      "published_at": "2026-08-06T19:51:21Z",
+      "updated_at": "2026-08-06T19:51:21Z",
+      "cves": [
+        "CVE-2026-66151"
+      ],
+      "findings": [],
+      "products": [
+        "Global VPN Client"
+      ],
+      "product_families": [],
+      "explicit_product_models": [],
+      "affected_products": [],
+      "affected_platforms": [],
+      "affected_versions": [],
+      "fixed_versions": [],
+      "revision_history": "Version\n1.0\nDate\n07-Aug-2026\nDescription\nInitial Release.",
+      "max_cvss": null,
+      "severity": null,
+      "exploitation_status": "unknown",
+      "detail_text_sha256": "b3d90f5bd3c623eba531d8287b9034d31ed9a62ddd5d3acf3c8effaaddf70170",
+      "product_status": [],
+      "version_matrix": [],
+      "workaround": null,
+      "resolution": null
+    },
     {
       "id": "ac156f56c5580c88ae13eaec",
       "advisory_id": "SNWLID-2026-0008",

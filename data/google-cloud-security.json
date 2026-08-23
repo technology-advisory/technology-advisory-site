@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "source_id": "google-cloud-security",
-  "generated_at": "2026-08-01T11:41:29.907376Z",
+  "generated_at": "2026-08-23T18:51:41.566035Z",
   "total": 30,
   "items": [
     {
@@ -42,7 +42,7 @@
           "title": "Developer Connect security bulletin"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.292455Z",
+      "last_checked_at": "2026-08-23T18:51:40.943552Z",
       "quality_score": 79,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -92,7 +92,7 @@
           "title": "CVE-2026-14934"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.293302Z",
+      "last_checked_at": "2026-08-23T18:51:40.944385Z",
       "quality_score": 93,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -137,7 +137,7 @@
           "title": "CVE-2026-53359"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.295978Z",
+      "last_checked_at": "2026-08-23T18:51:40.947711Z",
       "quality_score": 79,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -191,7 +191,7 @@
           "title": "GHSA-p7c7-7c47-pwch"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.296729Z",
+      "last_checked_at": "2026-08-23T18:51:40.948649Z",
       "quality_score": 65,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -246,7 +246,7 @@
           "title": "CVE-2025-0982"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.297379Z",
+      "last_checked_at": "2026-08-23T18:51:40.949286Z",
       "quality_score": 79,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -300,7 +300,7 @@
           "title": "CVE-2026-12715"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.298214Z",
+      "last_checked_at": "2026-08-23T18:51:40.950024Z",
       "quality_score": 93,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -347,7 +347,7 @@
           "title": "Cloud Build security bulletin"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.299146Z",
+      "last_checked_at": "2026-08-23T18:51:40.950764Z",
       "quality_score": 79,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -408,7 +408,7 @@
           "title": "CVE-2026-34477"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.300051Z",
+      "last_checked_at": "2026-08-23T18:51:40.951512Z",
       "quality_score": 93,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -528,7 +528,7 @@
           "title": "CVE-2026-48042"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.301005Z",
+      "last_checked_at": "2026-08-23T18:51:40.952312Z",
       "quality_score": 79,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -576,7 +576,7 @@
           "title": "Google Cloud Observability security bulletin"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.301985Z",
+      "last_checked_at": "2026-08-23T18:51:40.953119Z",
       "quality_score": 65,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -627,7 +627,7 @@
           "title": "CVE-2026-8934"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.302660Z",
+      "last_checked_at": "2026-08-23T18:51:40.953694Z",
       "quality_score": 93,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -700,7 +700,7 @@
           "title": "CVE-2026-47262"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.303923Z",
+      "last_checked_at": "2026-08-23T18:51:40.954892Z",
       "quality_score": 93,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -753,7 +753,7 @@
           "title": "CVE-2025-10263"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.305019Z",
+      "last_checked_at": "2026-08-23T18:51:40.955928Z",
       "quality_score": 79,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -809,7 +809,7 @@
           "title": "CVE-2026-47774"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.306068Z",
+      "last_checked_at": "2026-08-23T18:51:40.956880Z",
       "quality_score": 79,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -859,7 +859,7 @@
           "title": "CVE-2026-2264"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.307149Z",
+      "last_checked_at": "2026-08-23T18:51:40.957950Z",
       "quality_score": 79,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -937,7 +937,7 @@
           "title": "CVE-2026-46300"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.308619Z",
+      "last_checked_at": "2026-08-23T18:51:40.959358Z",
       "quality_score": 93,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -990,7 +990,7 @@
           "title": "CVE-2025-54518"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.309659Z",
+      "last_checked_at": "2026-08-23T18:51:40.960345Z",
       "quality_score": 93,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1055,7 +1055,7 @@
           "title": "CVE-2024-36315"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.310774Z",
+      "last_checked_at": "2026-08-23T18:51:40.961527Z",
       "quality_score": 79,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1134,7 +1134,7 @@
           "title": "CVE-2026-43284"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.313064Z",
+      "last_checked_at": "2026-08-23T18:51:40.963947Z",
       "quality_score": 93,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1181,7 +1181,7 @@
           "title": "Broadcom documentation"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.315632Z",
+      "last_checked_at": "2026-08-23T18:51:40.966222Z",
       "quality_score": 79,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -1227,7 +1227,7 @@
           "title": "CVE-2026-31431"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.316877Z",
+      "last_checked_at": "2026-08-23T18:51:40.967349Z",
       "quality_score": 65,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -1306,7 +1306,7 @@
           "title": "CVE-2026-23351"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.320081Z",
+      "last_checked_at": "2026-08-23T18:51:40.969150Z",
       "quality_score": 79,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1384,7 +1384,7 @@
           "title": "GDC software for bare metal security bulletin"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.321979Z",
+      "last_checked_at": "2026-08-23T18:51:40.970701Z",
       "quality_score": 93,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1461,7 +1461,7 @@
           "title": "CVE-2026-23274"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.323781Z",
+      "last_checked_at": "2026-08-23T18:51:40.972672Z",
       "quality_score": 79,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1539,7 +1539,7 @@
           "title": "CVE-2025-38248"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.325830Z",
+      "last_checked_at": "2026-08-23T18:51:40.974707Z",
       "quality_score": 79,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1617,7 +1617,7 @@
           "title": "CVE-2026-23074"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.328796Z",
+      "last_checked_at": "2026-08-23T18:51:40.977368Z",
       "quality_score": 79,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1695,7 +1695,7 @@
           "title": "CVE-2026-23209"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.331347Z",
+      "last_checked_at": "2026-08-23T18:51:40.979452Z",
       "quality_score": 79,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1745,7 +1745,7 @@
           "title": "CVE-2023-20585"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.332771Z",
+      "last_checked_at": "2026-08-23T18:51:40.980939Z",
       "quality_score": 65,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -1824,7 +1824,7 @@
           "title": "CVE-2026-23231"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.335248Z",
+      "last_checked_at": "2026-08-23T18:51:40.982877Z",
       "quality_score": 79,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1880,7 +1880,7 @@
           "title": "CVE-2025-54510"
         }
       ],
-      "last_checked_at": "2026-08-01T11:41:29.336346Z",
+      "last_checked_at": "2026-08-23T18:51:40.983865Z",
       "quality_score": 79,
       "enrichment_status": "complete",
       "missing_fields": [
