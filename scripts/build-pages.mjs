@@ -25,6 +25,7 @@ const INCLUDE = [
   'operaciones',
   'referencias',
   'seguridad',
+  'sobre-mi',
   'tools'
 ];
 
