@@ -90,23 +90,24 @@ function applyMeta(meta) {
   const grid = document.getElementById('referencesGrid');
   if (!grid || !meta || !Array.isArray(meta.items)) return;
 
-  const byId = {};
+  const byId = new Map();
   getRefItems().forEach(el => {
-    if (el.id) byId[el.id] = el;
+    if (el.id) byId.set(el.id, el);
   });
 
-  // Ordenar según JSON (order asc); ítems no listados al final
+  // Ordenar según JSON (order asc); ítems no listados al final.
+  // Map evita claves especiales como __proto__ en metadatos externos.
   const sorted = [...meta.items].sort((a, b) => (a.order || 0) - (b.order || 0));
   const orderedIds = [];
   sorted.forEach(item => {
-    if (item.id && byId[item.id]) orderedIds.push(item.id);
+    if (item.id && byId.has(item.id)) orderedIds.push(item.id);
   });
-  Object.keys(byId).forEach(id => {
+  byId.forEach((_, id) => {
     if (!orderedIds.includes(id)) orderedIds.push(id);
   });
 
   orderedIds.forEach(id => {
-    const el = byId[id];
+    const el = byId.get(id);
     if (el) grid.appendChild(el);
   });
 

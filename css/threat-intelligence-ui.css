@@ -80,3 +80,14 @@ body{background:#f2f1ec!important;color:var(--ti-ink)}
   color: #526273;
   font-size: 12px;
 }
+
+.ti-detail-degraded {
+    margin-bottom: 12px;
+    padding: 9px 10px;
+    border: 1px solid #e6c98f;
+    border-left: 3px solid #d99b28;
+    border-radius: 5px;
+    background: #fdf7ec;
+    color: #7a5a18;
+    font-size: 12px;
+}

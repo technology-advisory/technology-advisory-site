@@ -526,6 +526,11 @@
     })[key] || key;
   }
 
+  function safeSourceColor(value) {
+    const color = text(value).trim();
+    return /^#[0-9a-fA-F]{6}$/.test(color) ? color : '#07884a';
+  }
+
   function cell(item, key) {
     if (key === 'severity') {
       const severity = severityOf(item);
@@ -537,7 +542,7 @@
     }
 
     if (key === 'provider') {
-      return `<div class="ti-provider"><i class="ti-provider-mark" style="background:${esc(item._sourceColor)}"></i>${esc(providerOf(item))}</div>`;
+      return `<div class="ti-provider"><i class="ti-provider-mark" style="background:${safeSourceColor(item._sourceColor)}"></i>${esc(providerOf(item))}</div>`;
     }
 
     if (key === 'date') return esc(fmtDate(dateVal(item)));
@@ -696,7 +701,7 @@
     box.innerHTML = `<div class="ti-detail-head"><div class="ti-detail-top"><div><span class="ti-badge ${severity}">${severityLabel(severity)}</span>${score !== null ? ` <span class="ti-badge unknown">CVSS ${esc(score)}</span>` : ''}</div><button class="ti-close" aria-label="Cerrar">×</button></div><h2>${esc(cves[0] || idOf(item))}</h2><div class="ti-detail-sub">${esc(text(item.title || item.vulnerabilityName || idOf(item)))}</div></div>
     <div class="ti-detail-meta"><div class="ti-meta-cell"><small>Proveedor</small><b>${esc(providerOf(item))}</b></div><div class="ti-meta-cell"><small>Publicado</small><b>${esc(fmtDate(dateVal(item)))}</b></div><div class="ti-meta-cell"><small>Estado</small><b>Publicado</b></div><div class="ti-meta-cell"><small>Producto</small><b>${esc(products.slice(0, 2).join(', ') || 'No especificado')}</b></div></div>
     <div class="ti-detail-tabs"><button class="ti-detail-tab active" data-tab="summary">Resumen</button><button class="ti-detail-tab" data-tab="affected">Afectados (${products.length + versions.length})</button><button class="ti-detail-tab" data-tab="solution">Solución</button><button class="ti-detail-tab" data-tab="references">Referencias (${references.length})</button></div>
-    <div class="ti-detail-body"><section class="ti-pane active" data-pane="summary">${loadingDetail ? '<div class="ti-detail-loading">Cargando detalle completo…</div>' : (state.detailFailed ? '<div class="ti-detail-loading">No se pudo cargar el detalle ampliado; se muestra la información disponible del índice.</div>' : '')}<p>${esc(descriptionOf(item))}</p><div class="ti-data-grid"><div class="ti-data"><small>CVE</small><div class="ti-cve-stack">${cves.length ? cves.map(cve => `<span>${esc(cve)}</span>`).join('') : '<span>No indicado</span>'}</div></div><div class="ti-data"><small>CVSS</small><b>${esc(score ?? 'No disponible')}</b></div><div class="ti-data"><small>EPSS</small><b>${esc(num(item.epss) ?? 'No disponible')}</b></div><div class="ti-data"><small>Explotación</small><b>${(item.known_exploited === true || item._source === 'cisa-kev') ? 'Confirmada' : item.known_exploited === false ? 'No conocida' : 'Sin confirmar'}</b></div></div></section>
+    <div class="ti-detail-body"><section class="ti-pane active" data-pane="summary">${loadingDetail ? '<div class="ti-detail-loading">Cargando detalle completo…</div>' : (state.detailFailed ? '<div class="ti-detail-degraded" role="status">No se pudo cargar el detalle ampliado; se muestra la información disponible del índice.</div>' : '')}<p>${esc(descriptionOf(item))}</p><div class="ti-data-grid"><div class="ti-data"><small>CVE</small><div class="ti-cve-stack">${cves.length ? cves.map(cve => `<span>${esc(cve)}</span>`).join('') : '<span>No indicado</span>'}</div></div><div class="ti-data"><small>CVSS</small><b>${esc(score ?? 'No disponible')}</b></div><div class="ti-data"><small>EPSS</small><b>${esc(num(item.epss) ?? 'No disponible')}</b></div><div class="ti-data"><small>Explotación</small><b>${(item.known_exploited === true || item._source === 'cisa-kev') ? 'Confirmada' : item.known_exploited === false ? 'No conocida' : 'Sin confirmar'}</b></div></div></section>
     <section class="ti-pane" data-pane="affected"><h4>Productos afectados</h4>${listHtml(products)}<h4>Versiones afectadas</h4>${listHtml(versions)}<h4>Versiones corregidas</h4>${listHtml(fixed)}</section>
     <section class="ti-pane" data-pane="solution"><h4>Solución / remediación</h4><p>${esc(text(item.solution || item.required_action || item.requiredAction || 'Consulte el advisory oficial para conocer la actualización o remediación aplicable.'))}</p><h4>Workaround / mitigación</h4><p>${esc(text(item.workaround || item.mitigation || 'No se ha publicado una mitigación alternativa específica.'))}</p></section>
     <section class="ti-pane" data-pane="references">${listHtml(references.map(reference => reference.title || reference.url))}${officialUrl ? `<a class="ti-official" target="_blank" rel="noopener noreferrer" href="${esc(officialUrl)}">Abrir fuente oficial ↗</a>` : ''}</section></div>`;

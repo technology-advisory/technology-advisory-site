@@ -318,7 +318,7 @@ function renderArticles() {
     restoreListScroll();
     
     // Actualizar contadores de los botones de filtro
-    const counts = {};
+    const counts = Object.create(null);
     articulosData.forEach(articulo => {
         const cats = articulo.cat.split(' ');
         cats.forEach(cat => { counts[cat] = (counts[cat] || 0) + 1; });
@@ -434,7 +434,7 @@ async function cargarArticulos(jsonPath) {
         const maxPage = Math.max(1, Math.ceil(filteredForValidation.length / PER_PAGE));
         const validPage = requested.page <= maxPage;
         if (unknownParam || !validCategory || !validPageSyntax || !validMonthSyntax || !validMonth || !validPage || filteredForValidation.length === 0) {
-            window.location.replace('/404.html');
+            window.location.replace('/404-not-found');
             return;
         }
 
@@ -459,7 +459,7 @@ async function cargarArticulos(jsonPath) {
         poblarMeses(currentCategory);
 
         // Actualizar contadores
-        const counts = {};
+        const counts = Object.create(null);
         articulosData.forEach(articulo => {
             const cats = articulo.cat.split(' ');
             cats.forEach(cat => { counts[cat] = (counts[cat] || 0) + 1; });
@@ -471,10 +471,10 @@ async function cargarArticulos(jsonPath) {
             else if (counts[cat]) btn.textContent = `${label} (${counts[cat]})`;
         });
 
-        // Activar el botón de filtro correcto
-        document.querySelectorAll('#filters .filter-btn').forEach(b => b.classList.remove('active'));
-        const activeBtn = document.querySelector(`#filters .filter-btn[data-filter="${currentCategory}"]`);
-        if (activeBtn) activeBtn.classList.add('active');
+        // Activar el botón de filtro correcto sin construir selectores CSS desde la URL.
+        document.querySelectorAll('#filters .filter-btn').forEach(button => {
+            button.classList.toggle('active', button.dataset.filter === currentCategory);
+        });
 
         renderArticles();
     } catch (error) {
@@ -518,7 +518,7 @@ function initArticulos(jsonPath) {
     // La categoría se valida después de cargar el JSON, usando las
     // categorías realmente publicadas. No depende de los botones del HTML.
     if (unknown || duplicated || emptyKnown || badPage || badMonth) {
-        window.location.replace("/404.html");
+        window.location.replace("/404-not-found");
         return;
     }
 
@@ -539,8 +539,9 @@ window.addEventListener('pageshow', event => {
         currentCategory = state.cat;
         currentPage = state.page;
         poblarMeses(currentCategory);
-        document.querySelectorAll('#filters .filter-btn').forEach(b => b.classList.remove('active'));
-        document.querySelector(`#filters .filter-btn[data-filter="${currentCategory}"]`)?.classList.add('active');
+        document.querySelectorAll('#filters .filter-btn').forEach(button => {
+            button.classList.toggle('active', button.dataset.filter === currentCategory);
+        });
         renderArticles();
     } else if (currentJsonPath) {
         cargarArticulos(currentJsonPath);

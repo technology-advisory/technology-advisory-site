@@ -205,8 +205,15 @@ async function loadSource(source) {
   return compactItems;
 }
 
+function safeChunkId(value) {
+  const id = text(value).trim();
+  return /^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/.test(id) ? id : '';
+}
+
 function chunkUrl(source, chunkId) {
-  const file = `${chunkId}.json`;
+  const safeId = safeChunkId(chunkId);
+  if (!safeId) throw new Error('Identificador de chunk no válido');
+  const file = `${safeId}.json`;
   if (source.chunkBaseUrl) {
     return new URL(file, source.chunkBaseUrl.endsWith('/') ? source.chunkBaseUrl : `${source.chunkBaseUrl}/`).href;
   }
@@ -214,18 +221,19 @@ function chunkUrl(source, chunkId) {
 }
 
 async function loadChunk(sourceState, chunkId) {
-  if (!chunkId) return null;
+  const safeId = safeChunkId(chunkId);
+  if (!safeId) return null;
 
-  if (sourceState.chunks.has(chunkId)) {
-    sourceState.chunkOrder = sourceState.chunkOrder.filter(id => id !== chunkId);
-    sourceState.chunkOrder.push(chunkId);
-    return sourceState.chunks.get(chunkId);
+  if (sourceState.chunks.has(safeId)) {
+    sourceState.chunkOrder = sourceState.chunkOrder.filter(id => id !== safeId);
+    sourceState.chunkOrder.push(safeId);
+    return sourceState.chunks.get(safeId);
   }
 
-  const payload = await fetchJson(chunkUrl(sourceState.source, chunkId));
+  const payload = await fetchJson(chunkUrl(sourceState.source, safeId));
   const records = rootItems(payload);
-  sourceState.chunks.set(chunkId, records);
-  sourceState.chunkOrder.push(chunkId);
+  sourceState.chunks.set(safeId, records);
+  sourceState.chunkOrder.push(safeId);
 
   // Mantener solo unos pocos chunks visitados. Nunca precargar el catálogo completo.
   while (sourceState.chunkOrder.length > 3) {
@@ -244,7 +252,7 @@ async function detailItem(sourceId, recordIndex, reference = null) {
     return sourceState.full?.[recordIndex] || null;
   }
 
-  const chunkId = text(reference?.chunk);
+  const chunkId = safeChunkId(reference?.chunk);
   const wantedId = text(reference?.id);
   if (!chunkId || !wantedId) return null;
 
