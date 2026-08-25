@@ -82,6 +82,7 @@
 }
 
 </style>
+<link href="../../css/editorial-knowledge-hub.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="card-wrapper ds-page"><div class="card">
@@ -109,7 +110,7 @@
 <div class="defensa-layout" style="display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start;padding:0 48px 40px;">
 <div class="defensa-main" style="min-width:0;">
 
-<figure aria-label="Flujo entre requisitos HLD LLD implementación y operación" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Flujo entre requisitos HLD LLD implementación y operación" class="article-diagram" data-ta-action="toggle-zoom">
 <svg role="img" viewBox="0 0 900 285" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="285" rx="14" width="900"/>
 <text fill="#151915" font-size="19" font-weight="800" x="40" y="42">Del requisito a la operación</text>
@@ -527,8 +528,8 @@
 <div id="footer-container"></div>
 </div></div>
 <script src="../../js/menu.js"></script><script src="../../js/footer.js"></script>
-<script>
-function toggleZoom(element){if(element.classList.contains('zoomed')){element.classList.remove('zoomed');document.querySelector('.zoom-overlay')?.classList.remove('active')}else{document.querySelectorAll('.article-diagram.zoomed').forEach(el=>el.classList.remove('zoomed'));element.classList.add('zoomed');let overlay=document.querySelector('.zoom-overlay');if(!overlay){overlay=document.createElement('div');overlay.className='zoom-overlay';overlay.onclick=function(){document.querySelectorAll('.article-diagram.zoomed').forEach(el=>el.classList.remove('zoomed'));overlay.classList.remove('active')};document.body.appendChild(overlay)}overlay.classList.add('active')}}
-</script>
+<script src="../../js/inline/a34283918fdb5666.js"></script>
+<script src="../../js/editorial-ui.js"></script>
+<script src="../../js/csp-actions.js"></script>
 </body>
 </html>

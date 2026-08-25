@@ -14,6 +14,7 @@
 <link href="../css/dossier-core.css" rel="stylesheet"/>
 <link href="../css/index.css" rel="stylesheet"/>
 <link href="../css/articulos-index.css" rel="stylesheet"/>
+<link href="../css/editorial-knowledge-hub.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="card-wrapper ds-page">
@@ -22,7 +23,6 @@
 <div class="accent-bar" style="background: #059669;"></div>
 <div class="ds-meta">
 <span><span class="dot" style="background:#059669;"></span>Technology Advisory // gobernanza</span>
-<span>archivo: <strong id="total-articulos">Cargando...</strong></span>
 </div>
 <header class="header" style="padding: 40px 48px 20px; border-bottom: 1px solid #ededea;">
 <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.1em; font-weight:700; margin-bottom:8px;">Dimensión 04 · Gobernanza TI</div>
@@ -35,23 +35,23 @@
 </header>
 <div class="articulos-body">
 <div id="filters">
-<button class="filter-btn active" data-filter="all" onclick="filterArticles('all', this)">Todo</button>
-<button class="filter-btn" data-filter="riesgo-tecnologico" onclick="filterArticles('riesgo-tecnologico', this)">Riesgo Tecnológico</button>
-<button class="filter-btn" data-filter="gobierno-ti" onclick="filterArticles('gobierno-ti', this)">Gobierno TI</button>
-<button class="filter-btn" data-filter="gobierno-ia" onclick="filterArticles('gobierno-ia', this)">Gobierno de IA</button>
-<button class="filter-btn" data-filter="marcos-regulatorios" onclick="filterArticles('marcos-regulatorios', this)">Marcos Regulatorios</button>
-<button class="filter-btn" data-filter="gestion-terceros" onclick="filterArticles('gestion-terceros', this)">Gestión de Terceros</button>
-<button class="filter-btn" data-filter="politicas-normativa" onclick="filterArticles('politicas-normativa', this)">Políticas y Normativa Interna</button>
-<button class="filter-btn" data-filter="auditoria-control-interno" onclick="filterArticles('auditoria-control-interno', this)">Auditoría y Control Interno</button>
-<button class="filter-btn" data-filter="gobierno-dato" onclick="filterArticles('gobierno-dato', this)">Gobierno del Dato</button>
-<button class="filter-btn" data-filter="active-directory" onclick="filterArticles('active-directory', this)">Active Directory</button>
+<button class="filter-btn active" data-filter="all" data-ta-action="filter-articles" data-category="all">Todo</button>
+<button class="filter-btn" data-filter="riesgo-tecnologico" data-ta-action="filter-articles" data-category="riesgo-tecnologico">Riesgo Tecnológico</button>
+<button class="filter-btn" data-filter="gobierno-ti" data-ta-action="filter-articles" data-category="gobierno-ti">Gobierno TI</button>
+<button class="filter-btn" data-filter="gobierno-ia" data-ta-action="filter-articles" data-category="gobierno-ia">Gobierno de IA</button>
+<button class="filter-btn" data-filter="marcos-regulatorios" data-ta-action="filter-articles" data-category="marcos-regulatorios">Marcos Regulatorios</button>
+<button class="filter-btn" data-filter="gestion-terceros" data-ta-action="filter-articles" data-category="gestion-terceros">Gestión de Terceros</button>
+<button class="filter-btn" data-filter="politicas-normativa" data-ta-action="filter-articles" data-category="politicas-normativa">Políticas y Normativa Interna</button>
+<button class="filter-btn" data-filter="auditoria-control-interno" data-ta-action="filter-articles" data-category="auditoria-control-interno">Auditoría y Control Interno</button>
+<button class="filter-btn" data-filter="gobierno-dato" data-ta-action="filter-articles" data-category="gobierno-dato">Gobierno del Dato</button>
+<button class="filter-btn" data-filter="active-directory" data-ta-action="filter-articles" data-category="active-directory">Active Directory</button>
 <div style="width:100%; height:0; margin:0; padding:0;"></div>
 <div style="display:flex; gap:6px; align-items:center;">
 <span style="font-family:monospace; font-size:10px;">Más filtros:</span>
-<select class="ctrl-btn" id="monthFilter" onchange="applyFilters()">
+<select class="ctrl-btn" id="monthFilter" data-ta-action="apply-filters">
 <option value="all">Mes</option>
 </select>
-<button class="ctrl-btn" id="sortBtn" onclick="toggleSort()">↓ Nuevos</button>
+<button class="ctrl-btn" id="sortBtn" data-ta-action="toggle-sort">↓ Nuevos</button>
 </div>
 </div>
 <div class="articles-grid" id="articlesGrid">
@@ -66,11 +66,9 @@
 </div>
 <script src="../js/menu.js"></script>
 <script src="../js/footer.js"></script>
-<script src="../js/articulos.js?v=20260802-7"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    initArticulos('../data/gobernanza.json?v=20260802-7');
-});
-</script>
+<script src="../js/articulos.js?v=20260824-1"></script>
+<script src="../js/inline/dc354f5dcfcd266a.js"></script>
+<script src="../js/editorial-ui.js"></script>
+<script src="../js/csp-actions.js"></script>
 </body>
 </html>

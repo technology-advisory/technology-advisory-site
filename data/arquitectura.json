@@ -8,7 +8,8 @@
     "desc": "Dominios de fallo, quorum y split-brain: por qué duplicar un componente sin entender el quorum puede dejarte peor que sin redundancia.",
     "url": "arquitectura/alta-disponibilidad/alta-disponibilidad-diseno-principios.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/2094f8744c14.svg"
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "desc": "Quién puede iniciar un failover, cómo se prueba sin asustar a nadie, y por qué el runbook nunca ejecutado es papel mojado.",
     "url": "arquitectura/alta-disponibilidad/alta-disponibilidad-modelo-operativo.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/254da3a4ee8b.svg"
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "desc": "Qué evidencias reales debe mostrar un clúster HA ante una auditoría: por qué el diagrama de arquitectura no es una prueba.",
     "url": "arquitectura/alta-disponibilidad/alta-disponibilidad-controles-evidencias.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/6edac956d952.svg"
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "desc": "Los cuatro niveles reales de madurez en HA, de reinicio manual a chaos engineering, y por qué saltarse un nivel sale caro.",
     "url": "arquitectura/alta-disponibilidad/alta-disponibilidad-madurez-roadmap.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/3ac245217c9d.svg"
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "desc": "Por qué el cloud híbrido no es \"un poco de cada\" sino una decisión deliberada, carga por carga, de qué vive dónde.",
     "url": "arquitectura/cloud-hibrido/cloud-hibrido-diseno-principios.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/64efaa5388cf.svg"
   },
   {
     "id": 6,
@@ -63,7 +68,8 @@
     "desc": "Quién opera qué en un entorno híbrido: por qué el ownership difuso entre equipos es la causa nº1 de incidentes lentos.",
     "url": "arquitectura/cloud-hibrido/cloud-hibrido-modelo-operativo.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/9b54085a3d81.svg"
   },
   {
     "id": 7,
@@ -74,7 +80,8 @@
     "desc": "Qué evidencias exigir sobre conectividad, identidad y datos en la frontera entre tu CPD y el cloud.",
     "url": "arquitectura/cloud-hibrido/cloud-hibrido-controles-evidencias.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/ef12e602944c.svg"
   },
   {
     "id": 8,
@@ -85,7 +92,8 @@
     "desc": "Los 4 niveles reales de madurez híbrida, de la VPN improvisada al gobierno multinube con Landing Zones.",
     "url": "arquitectura/cloud-hibrido/cloud-hibrido-madurez-roadmap.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/cdb040df2619.svg"
   },
   {
     "id": 9,
@@ -96,7 +104,8 @@
     "desc": "Cada clic manual en una consola cloud es un cambio que nadie puede versionar, revisar ni reproducir con confianza.",
     "url": "arquitectura/infraestructura-codigo/infraestructura-codigo-diseno-principios.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/69d15d5607a6.svg"
   },
   {
     "id": 10,
@@ -108,7 +117,8 @@
     "url": "arquitectura/infraestructura-codigo/infraestructura-codigo-modelo-operativo.html",
     "published": true,
     "nuevo": false,
-    "hidden": false
+    "hidden": false,
+    "thumb": "img/article-thumbs/191a29826c61.svg"
   },
   {
     "id": 11,
@@ -119,7 +129,8 @@
     "desc": "El drift entre lo que el código dice y lo que realmente existe puede pasar meses sin detectarse.",
     "url": "arquitectura/infraestructura-codigo/infraestructura-codigo-controles-evidencias.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/6a89b9858de8.svg"
   },
   {
     "id": 12,
@@ -130,7 +141,8 @@
     "desc": "Los 4 niveles de madurez IaC: del script suelto sin versionar a las políticas como código automatizadas.",
     "url": "arquitectura/infraestructura-codigo/infraestructura-codigo-madurez-roadmap.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/94af214ec53e.svg"
   },
   {
     "id": 13,
@@ -141,7 +153,8 @@
     "desc": "La red plana es el paraíso del atacante: segmentación por capas desde el diseño, no como añadido posterior.",
     "url": "arquitectura/diseno-red/diseno-red-diseno-principios.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/6e9cd10ed2b2.svg"
   },
   {
     "id": 14,
@@ -152,7 +165,8 @@
     "desc": "Cada regla de firewall \"temporal\" que nunca se cierra es deuda técnica de seguridad acumulándose en silencio.",
     "url": "arquitectura/diseno-red/diseno-red-modelo-operativo.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/fa281281fc6a.svg"
   },
   {
     "id": 15,
@@ -163,7 +177,8 @@
     "desc": "Contar las reglas any-any activas es el test más rápido para saber si tu segmentación es real o de papel.",
     "url": "arquitectura/diseno-red/diseno-red-controles-evidencias.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/805bf5cb1692.svg"
   },
   {
     "id": 16,
@@ -174,7 +189,8 @@
     "desc": "Los 4 niveles de madurez de red, y por qué saltar a microsegmentación sin la base resuelta suele fracasar.",
     "url": "arquitectura/diseno-red/diseno-red-madurez-roadmap.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/fdf3d6d13098.svg"
   },
   {
     "id": 17,
@@ -185,7 +201,8 @@
     "desc": "El almacenamiento no se diseña por velocidad máxima, se diseña por perfil de acceso real de cada dato.",
     "url": "arquitectura/almacenamiento-datos/almacenamiento-datos-diseno-principios.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/0e55a9800790.svg"
   },
   {
     "id": 18,
@@ -196,7 +213,8 @@
     "desc": "El 90% de las crisis de almacenamiento son de planificación de capacidad, no técnicas.",
     "url": "arquitectura/almacenamiento-datos/almacenamiento-datos-modelo-operativo.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/571c27c878ff.svg"
   },
   {
     "id": 19,
@@ -207,7 +225,8 @@
     "desc": "Cifrado en reposo activado no es cifrado verificado: qué evidencias reunir de verdad.",
     "url": "arquitectura/almacenamiento-datos/almacenamiento-datos-controles-evidencias.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/a2de42d935c8.svg"
   },
   {
     "id": 20,
@@ -219,7 +238,8 @@
     "url": "arquitectura/almacenamiento-datos/almacenamiento-datos-madurez-roadmap.html",
     "published": true,
     "nuevo": false,
-    "hidden": false
+    "hidden": false,
+    "thumb": "img/article-thumbs/f621ac903da0.svg"
   },
   {
     "id": 21,
@@ -230,7 +250,8 @@
     "desc": "Un contenedor no es una VM ligera — comparten kernel con el host, el aislamiento es de proceso, no de hardware.",
     "url": "arquitectura/virtualizacion-contenedores/virtualizacion-contenedores-diseno-principios.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/565e05a02c0b.svg"
   },
   {
     "id": 22,
@@ -241,7 +262,8 @@
     "desc": "Una imagen construida hace un año acumula CVEs en silencio, aunque tu aplicación no haya cambiado una línea.",
     "url": "arquitectura/virtualizacion-contenedores/virtualizacion-contenedores-modelo-operativo.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/fb7182e51959.svg"
   },
   {
     "id": 23,
@@ -252,7 +274,8 @@
     "desc": "Tener una política de seguridad de contenedores escrita no significa que se aplique técnicamente.",
     "url": "arquitectura/virtualizacion-contenedores/virtualizacion-contenedores-controles-evidencias.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/4ed0daffe796.svg"
   },
   {
     "id": 24,
@@ -263,7 +286,8 @@
     "desc": "Los 4 niveles de madurez en contenedores: Kubernetes no da seguridad de fábrica, depende de las políticas encima.",
     "url": "arquitectura/virtualizacion-contenedores/virtualizacion-contenedores-madurez-roadmap.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/c1c0bccab086.svg"
   },
   {
     "id": 25,
@@ -274,7 +298,8 @@
     "desc": "Dimensionar por promedio garantiza el fallo justo en el pico. El percentil 95 es la métrica que importa.",
     "url": "arquitectura/capacidad-rendimiento/capacidad-rendimiento-diseno-principios.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/b36a32cd881b.svg"
   },
   {
     "id": 26,
@@ -285,7 +310,8 @@
     "desc": "Sin propietario explícito de la capacidad, la revisión de tendencias casi nunca llega a tiempo.",
     "url": "arquitectura/capacidad-rendimiento/capacidad-rendimiento-modelo-operativo.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/a9b620d97800.svg"
   },
   {
     "id": 27,
@@ -297,7 +323,8 @@
     "url": "arquitectura/capacidad-rendimiento/capacidad-rendimiento-controles-evidencias.html",
     "published": true,
     "nuevo": false,
-    "hidden": false
+    "hidden": false,
+    "thumb": "img/article-thumbs/b34b7cf86aab.svg"
   },
   {
     "id": 28,
@@ -308,7 +335,8 @@
     "desc": "Los 4 niveles de madurez en capacidad, de la percepción subjetiva al modelado predictivo con datos.",
     "url": "arquitectura/capacidad-rendimiento/capacidad-rendimiento-madurez-roadmap.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/21f4e43bbe99.svg"
   },
   {
     "id": 29,
@@ -319,7 +347,8 @@
     "desc": "Tier III no es un adjetivo de marketing, es una certificación del Uptime Institute con criterios específicos.",
     "url": "arquitectura/arquitectura-cpd/arquitectura-cpd-diseno-principios.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/9eec1c044afe.svg"
   },
   {
     "id": 30,
@@ -330,7 +359,8 @@
     "desc": "Un buen diseño físico no basta si el control de acceso es un Excel y nadie sabe quién decide a las 3 AM.",
     "url": "arquitectura/arquitectura-cpd/arquitectura-cpd-modelo-operativo.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/165c56fcd8b7.svg"
   },
   {
     "id": 31,
@@ -341,7 +371,8 @@
     "desc": "El generador que arranca pero nunca se probó bajo carga real es una evidencia incompleta.",
     "url": "arquitectura/arquitectura-cpd/arquitectura-cpd-controles-evidencias.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/c3daba91ba09.svg"
   },
   {
     "id": 32,
@@ -352,7 +383,8 @@
     "desc": "Los 4 niveles reales de madurez física: el hardware no define el nivel, la disciplina operativa sí.",
     "url": "arquitectura/arquitectura-cpd/arquitectura-cpd-madurez-roadmap.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/6b02ce981b41.svg"
   },
   {
     "id": 33,
@@ -363,7 +395,8 @@
     "desc": "Admission Control, reglas de afinidad y el heartbeat real de vSphere HA: diseño de clústeres VMware para producción.",
     "url": "arquitectura/alta-disponibilidad/vsphere-ha-drs.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/ec82d9249862.svg"
   },
   {
     "id": 34,
@@ -374,7 +407,8 @@
     "desc": "Configuración real de Failover Clustering en Windows Server: modelos de quorum, Cluster Shared Volumes y validación previa al despliegue.",
     "url": "arquitectura/alta-disponibilidad/windows-failover-clustering.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/d4632fea676a.svg"
   },
   {
     "id": 35,
@@ -385,7 +419,8 @@
     "desc": "Por qué Kubernetes no da HA gratis: PodDisruptionBudgets, anti-affinity, topology spread constraints y multi-zona real.",
     "url": "arquitectura/alta-disponibilidad/ha-kubernetes.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/8835f6d854bb.svg"
   },
   {
     "id": 36,
@@ -396,7 +431,8 @@
     "desc": "Comparativa práctica de alta disponibilidad multi-zona en los tres grandes clouds: qué es automático, qué hay que diseñar tú.",
     "url": "arquitectura/alta-disponibilidad/multi-az-cloud.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/a87272ebfbe6.svg"
   },
   {
     "id": 37,
@@ -408,7 +444,8 @@
     "url": "arquitectura/cloud-hibrido/azure-arc-landing-zones.html",
     "published": true,
     "nuevo": false,
-    "hidden": false
+    "hidden": false,
+    "thumb": "img/article-thumbs/4bedcdbdf90e.svg"
   },
   {
     "id": 38,
@@ -419,7 +456,8 @@
     "desc": "Comparativa técnica entre VPN site-to-site, ExpressRoute y Direct Connect: latencia, coste y resiliencia real.",
     "url": "arquitectura/cloud-hibrido/expressroute-vpn.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/642510460594.svg"
   },
   {
     "id": 39,
@@ -431,7 +469,8 @@
     "url": "arquitectura/diseno-arquitectonico/hld-vs-lld-diferencias-diseno-infraestructura.html",
     "published": true,
     "nuevo": false,
-    "hidden": false
+    "hidden": false,
+    "thumb": "img/article-thumbs/6d0371bf459e.svg"
   },
   {
     "id": 40,
@@ -442,7 +481,8 @@
     "desc": "Cómo decidir entre bosque único y múltiple, diseñar dominios y sitios, controlar trusts y evitar una topología que convierta la identidad en una dependencia frágil.",
     "url": "arquitectura/active-directory/ad-arquitectura-bosques-dominios.html",
     "published": true,
-    "nuevo": true
+    "nuevo": true,
+    "thumb": "img/article-thumbs/6ba73b6412bd.svg"
   },
   {
     "id": 41,
@@ -453,7 +493,8 @@
     "desc": "Diseño de identidad híbrida, sincronización, autenticación, resiliencia y control de las rutas de ataque que conectan el directorio local con el plano cloud.",
     "url": "arquitectura/active-directory/ad-arquitectura-hibrida-entra.html",
     "published": true,
-    "nuevo": true
+    "nuevo": true,
+    "thumb": "img/article-thumbs/95bd0b50df2e.svg"
   },
   {
     "id": 42,
@@ -464,7 +505,8 @@
     "desc": "Separación de planos administrativos, estaciones privilegiadas, saltos controlados y límites técnicos para reducir el movimiento lateral de credenciales.",
     "url": "arquitectura/active-directory/ad-arquitectura-tiering-paw.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/92f35dd76b2c.svg"
   },
   {
     "id": 43,
@@ -475,7 +517,8 @@
     "desc": "Topología física, localización de servicios, site links, costes, DNS integrado y criterios para que la replicación sea predecible incluso en redes degradadas.",
     "url": "arquitectura/active-directory/ad-arquitectura-sites-dns-replicacion.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/6988426e5721.svg"
   },
   {
     "id": 44,
@@ -486,6 +529,7 @@
     "desc": "Estrategia para renovar controladores, elevar niveles funcionales, consolidar dominios y retirar deuda histórica con coexistencia, pruebas y rollback.",
     "url": "arquitectura/active-directory/ad-arquitectura-modernizacion-migracion.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/19fa108f0cf0.svg"
   }
 ]

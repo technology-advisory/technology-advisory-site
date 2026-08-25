@@ -14,6 +14,7 @@
 <link href="../css/dossier-core.css" rel="stylesheet"/>
 <link href="../css/index.css" rel="stylesheet"/>
 <link href="../css/articulos-index.css" rel="stylesheet"/>
+<link href="../css/editorial-knowledge-hub.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="card-wrapper ds-page">
@@ -22,7 +23,6 @@
 <div class="accent-bar" style="background: #059669;"></div>
 <div class="ds-meta">
 <span><span class="dot" style="background:#059669;"></span>Technology Advisory // arquitectura</span>
-<span>archivo: <strong id="total-articulos">Cargando...</strong></span>
 </div>
 <header class="header" style="padding: 40px 48px 20px; border-bottom: 1px solid #ededea;">
 <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.1em; font-weight:700; margin-bottom:8px;">Dimensión 01 · Sistemas e Infraestructura</div>
@@ -35,24 +35,24 @@
 </header>
 <div class="articulos-body">
 <div id="filters">
-<button class="filter-btn active" data-filter="all" onclick="filterArticles('all', this)">Todo</button>
-<button class="filter-btn" data-filter="diseno-arquitectonico" onclick="filterArticles('diseno-arquitectonico', this)">Diseño Arquitectónico</button>
-<button class="filter-btn" data-filter="alta-disponibilidad" onclick="filterArticles('alta-disponibilidad', this)">Alta Disponibilidad</button>
-<button class="filter-btn" data-filter="cloud-hibrido" onclick="filterArticles('cloud-hibrido', this)">Cloud Híbrido</button>
-<button class="filter-btn" data-filter="infraestructura-codigo" onclick="filterArticles('infraestructura-codigo', this)">Infraestructura como Código</button>
-<button class="filter-btn" data-filter="diseno-red" onclick="filterArticles('diseno-red', this)">Diseño de Red</button>
-<button class="filter-btn" data-filter="almacenamiento-datos" onclick="filterArticles('almacenamiento-datos', this)">Almacenamiento y Datos</button>
-<button class="filter-btn" data-filter="virtualizacion-contenedores" onclick="filterArticles('virtualizacion-contenedores', this)">Virtualización y Contenedores</button>
-<button class="filter-btn" data-filter="capacidad-rendimiento" onclick="filterArticles('capacidad-rendimiento', this)">Capacidad y Rendimiento</button>
-<button class="filter-btn" data-filter="arquitectura-cpd" onclick="filterArticles('arquitectura-cpd', this)">Arquitectura de CPD</button>
-<button class="filter-btn" data-filter="active-directory" onclick="filterArticles('active-directory', this)">Active Directory</button>
+<button class="filter-btn active" data-filter="all" data-ta-action="filter-articles" data-category="all">Todo</button>
+<button class="filter-btn" data-filter="diseno-arquitectonico" data-ta-action="filter-articles" data-category="diseno-arquitectonico">Diseño Arquitectónico</button>
+<button class="filter-btn" data-filter="alta-disponibilidad" data-ta-action="filter-articles" data-category="alta-disponibilidad">Alta Disponibilidad</button>
+<button class="filter-btn" data-filter="cloud-hibrido" data-ta-action="filter-articles" data-category="cloud-hibrido">Cloud Híbrido</button>
+<button class="filter-btn" data-filter="infraestructura-codigo" data-ta-action="filter-articles" data-category="infraestructura-codigo">Infraestructura como Código</button>
+<button class="filter-btn" data-filter="diseno-red" data-ta-action="filter-articles" data-category="diseno-red">Diseño de Red</button>
+<button class="filter-btn" data-filter="almacenamiento-datos" data-ta-action="filter-articles" data-category="almacenamiento-datos">Almacenamiento y Datos</button>
+<button class="filter-btn" data-filter="virtualizacion-contenedores" data-ta-action="filter-articles" data-category="virtualizacion-contenedores">Virtualización y Contenedores</button>
+<button class="filter-btn" data-filter="capacidad-rendimiento" data-ta-action="filter-articles" data-category="capacidad-rendimiento">Capacidad y Rendimiento</button>
+<button class="filter-btn" data-filter="arquitectura-cpd" data-ta-action="filter-articles" data-category="arquitectura-cpd">Arquitectura de CPD</button>
+<button class="filter-btn" data-filter="active-directory" data-ta-action="filter-articles" data-category="active-directory">Active Directory</button>
 <div style="width:100%; height:0; margin:0; padding:0;"></div>
 <div style="display:flex; gap:6px; align-items:center;">
 <span style="font-family:monospace; font-size:10px;">Más filtros:</span>
-<select class="ctrl-btn" id="monthFilter" onchange="applyFilters()">
+<select class="ctrl-btn" id="monthFilter" data-ta-action="apply-filters">
 <option value="all">Mes</option>
 </select>
-<button class="ctrl-btn" id="sortBtn" onclick="toggleSort()">↓ Más recientes</button>
+<button class="ctrl-btn" id="sortBtn" data-ta-action="toggle-sort">↓ Más recientes</button>
 </div>
 </div>
 <div class="articles-grid" id="articlesGrid">
@@ -67,11 +67,9 @@
 </div>
 <script src="../js/menu.js"></script>
 <script src="../js/footer.js"></script>
-<script src="../js/articulos.js?v=20260802-7"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    initArticulos('../data/arquitectura.json?v=20260802-7');
-});
-</script>
+<script src="../js/articulos.js?v=20260824-1"></script>
+<script src="../js/inline/b801125cbe4aac7f.js"></script>
+<script src="../js/editorial-ui.js"></script>
+<script src="../js/csp-actions.js"></script>
 </body>
 </html>

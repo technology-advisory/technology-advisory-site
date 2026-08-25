@@ -1,0 +1,1 @@
+window.TI_CONFIG={"allLabel":"Fortinet PSIRT","initialSource":"fortinet-psirt","columns":["severity","id","date","cvss","product","exploitation","status"],"sources":[{"id":"fortinet-psirt","label":"Fortinet PSIRT","path":"../../data/fortinet/psirt.json","color":"#d63a3a"}]};

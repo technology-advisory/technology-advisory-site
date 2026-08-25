@@ -14,6 +14,7 @@
 <link href="../css/dossier-core.css" rel="stylesheet"/>
 <link href="../css/index.css" rel="stylesheet"/>
 <link href="../css/articulos-index.css" rel="stylesheet"/>
+<link href="../css/editorial-knowledge-hub.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="card-wrapper ds-page">
@@ -22,7 +23,6 @@
 <div class="accent-bar" style="background: #059669;"></div>
 <div class="ds-meta">
 <span><span class="dot" style="background:#059669;"></span>Technology Advisory // operaciones</span>
-<span>archivo: <strong id="total-articulos">Cargando...</strong></span>
 </div>
 <header class="header" style="padding: 40px 48px 20px; border-bottom: 1px solid #ededea;">
 <div style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#059669; letter-spacing:0.1em; font-weight:700; margin-bottom:8px;">Dimensión 03 · Operaciones TI</div>
@@ -35,23 +35,23 @@
 </header>
 <div class="articulos-body">
 <div id="filters">
-<button class="filter-btn active" data-filter="all" onclick="filterArticles('all', this)">Todo</button>
-<button class="filter-btn" data-filter="automatizacion-orquestacion" onclick="filterArticles('automatizacion-orquestacion', this)">Automatización y Orquestación</button>
-<button class="filter-btn" data-filter="continuidad-negocio" onclick="filterArticles('continuidad-negocio', this)">Continuidad de Negocio</button>
-<button class="filter-btn" data-filter="gobierno-identidades" onclick="filterArticles('gobierno-identidades', this)">Gobierno de Identidades</button>
-<button class="filter-btn" data-filter="monitorizacion-observabilidad" onclick="filterArticles('monitorizacion-observabilidad', this)">Monitorización y Observabilidad</button>
-<button class="filter-btn" data-filter="gestion-cambios" onclick="filterArticles('gestion-cambios', this)">Gestión de Cambios</button>
-<button class="filter-btn" data-filter="backup-recuperacion" onclick="filterArticles('backup-recuperacion', this)">Backup y Recuperación</button>
-<button class="filter-btn" data-filter="patch-management" onclick="filterArticles('patch-management', this)">Patch Management</button>
-<button class="filter-btn" data-filter="gestion-incidencias" onclick="filterArticles('gestion-incidencias', this)">Gestión de Incidencias</button>
-<button class="filter-btn" data-filter="active-directory" onclick="filterArticles('active-directory', this)">Active Directory</button>
+<button class="filter-btn active" data-filter="all" data-ta-action="filter-articles" data-category="all">Todo</button>
+<button class="filter-btn" data-filter="automatizacion-orquestacion" data-ta-action="filter-articles" data-category="automatizacion-orquestacion">Automatización y Orquestación</button>
+<button class="filter-btn" data-filter="continuidad-negocio" data-ta-action="filter-articles" data-category="continuidad-negocio">Continuidad de Negocio</button>
+<button class="filter-btn" data-filter="gobierno-identidades" data-ta-action="filter-articles" data-category="gobierno-identidades">Gobierno de Identidades</button>
+<button class="filter-btn" data-filter="monitorizacion-observabilidad" data-ta-action="filter-articles" data-category="monitorizacion-observabilidad">Monitorización y Observabilidad</button>
+<button class="filter-btn" data-filter="gestion-cambios" data-ta-action="filter-articles" data-category="gestion-cambios">Gestión de Cambios</button>
+<button class="filter-btn" data-filter="backup-recuperacion" data-ta-action="filter-articles" data-category="backup-recuperacion">Backup y Recuperación</button>
+<button class="filter-btn" data-filter="patch-management" data-ta-action="filter-articles" data-category="patch-management">Patch Management</button>
+<button class="filter-btn" data-filter="gestion-incidencias" data-ta-action="filter-articles" data-category="gestion-incidencias">Gestión de Incidencias</button>
+<button class="filter-btn" data-filter="active-directory" data-ta-action="filter-articles" data-category="active-directory">Active Directory</button>
 <div style="width:100%; height:0; margin:0; padding:0;"></div>
 <div style="display:flex; gap:6px; align-items:center;">
 <span style="font-family:monospace; font-size:10px;">Más filtros:</span>
-<select class="ctrl-btn" id="monthFilter" onchange="applyFilters()">
+<select class="ctrl-btn" id="monthFilter" data-ta-action="apply-filters">
 <option value="all">Mes</option>
 </select>
-<button class="ctrl-btn" id="sortBtn" onclick="toggleSort()">↓ Nuevos</button>
+<button class="ctrl-btn" id="sortBtn" data-ta-action="toggle-sort">↓ Nuevos</button>
 </div>
 </div>
 <div class="articles-grid" id="articlesGrid">
@@ -66,11 +66,9 @@
 </div>
 <script src="../js/menu.js"></script>
 <script src="../js/footer.js"></script>
-<script src="../js/articulos.js?v=20260802-7"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    initArticulos('../data/operaciones.json?v=20260802-7');
-});
-</script>
+<script src="../js/articulos.js?v=20260824-1"></script>
+<script src="../js/inline/b37a3d11e4433f4c.js"></script>
+<script src="../js/editorial-ui.js"></script>
+<script src="../js/csp-actions.js"></script>
 </body>
 </html>

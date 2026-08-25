@@ -1,0 +1,1 @@
+window.TI_CONFIG={"allLabel":"SonicWall PSIRT","initialSource":"sonicwall-psirt","columns":["severity","id","date","cvss","product","exploitation","status"],"sources":[{"id":"sonicwall-psirt","label":"SonicWall PSIRT","path":"../../data/sonicwall/psirt.json","color":"#e8512f"}]};

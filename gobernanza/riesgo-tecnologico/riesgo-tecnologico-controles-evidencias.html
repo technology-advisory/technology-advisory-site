@@ -14,7 +14,6 @@
 <link href="../../css/articulo.css" rel="stylesheet"/>
 <link href="../../css/index.css" rel="stylesheet"/>
 <link href="../../css/articulo-diagramas.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
         @media (max-width: 1024px) {
             .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
@@ -22,7 +21,8 @@
             div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding: 40px 4% 24px !important; }
         }
     </style>
-<link rel="canonical" href="https://technology-advisory.es/gobernanza/riesgo-tecnologico/riesgo-tecnologico-controles-evidencias.html"/></head>
+<link rel="canonical" href="https://technology-advisory.es/gobernanza/riesgo-tecnologico/riesgo-tecnologico-controles-evidencias.html"/><link href="../../css/editorial-knowledge-hub.css" rel="stylesheet"/>
+</head>
 <body>
 <div class="card-wrapper ds-page">
 <div class="card">
@@ -49,7 +49,7 @@
 <div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
 <div class="defensa-main" style="min-width:0;">
 <!-- GRÁFICO 1: LAS CINCO CATEGORÍAS DE EVIDENCIA -->
-<figure aria-label="Las cinco categorías de evidencia auditable en gestión de riesgo" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Las cinco categorías de evidencia auditable en gestión de riesgo" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 430" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="430" rx="14" width="900"></rect>
@@ -146,7 +146,7 @@
 </div>
 </div>
 <!-- GRÁFICO 3: LOS CUATRO ELEMENTOS DE LA POLÍTICA -->
-<figure aria-label="Los cuatro elementos mínimos que un auditor comprueba en la política" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Los cuatro elementos mínimos que un auditor comprueba en la política" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="260" rx="14" width="900"></rect>
@@ -205,7 +205,7 @@
 </div>
 </div>
 <!-- GRÁFICO 2: FLUJO DE EVIDENCIA -->
-<figure aria-label="Flujo desde la decisión de riesgo hasta la evidencia auditable" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Flujo desde la decisión de riesgo hasta la evidencia auditable" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 340" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="340" rx="14" width="900"></rect>
@@ -287,7 +287,7 @@
 </div>
 </div>
 <!-- GRÁFICO 4: ANEXO DE TRAZABILIDAD DE UN ALE -->
-<figure aria-label="Contenido mínimo del anexo de trazabilidad de un ALE cuantificado" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Contenido mínimo del anexo de trazabilidad de un ALE cuantificado" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 250" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="250" rx="14" width="900"></rect>
@@ -478,27 +478,8 @@
 </div>
 <script src="../../js/menu.js"></script>
 <script src="../../js/footer.js"></script>
-<script>
-        function toggleZoom(element) {
-            if (element.classList.contains('zoomed')) {
-                element.classList.remove('zoomed');
-                document.querySelector('.zoom-overlay')?.classList.remove('active');
-            } else {
-                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
-                element.classList.add('zoomed');
-                let overlay = document.querySelector('.zoom-overlay');
-                if (!overlay) {
-                    overlay = document.createElement('div');
-                    overlay.className = 'zoom-overlay';
-                    overlay.onclick = function() {
-                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
-                        overlay.classList.remove('active');
-                    };
-                    document.body.appendChild(overlay);
-                }
-                overlay.classList.add('active');
-            }
-        }
-    </script>
+<script src="../../js/inline/5354eb2664b4b261.js"></script>
+<script src="../../js/editorial-ui.js"></script>
+<script src="../../js/csp-actions.js"></script>
 </body>
 </html>

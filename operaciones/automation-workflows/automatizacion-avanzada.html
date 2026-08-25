@@ -14,7 +14,6 @@
 <link href="../../css/global.css" rel="stylesheet"/>
 <link href="../../css/dossier-core.css" rel="stylesheet"/>
 <link href="../../css/index.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
   .defensa-meta { border-top: none !important; border-bottom: none !important; padding: 10px 0 0 0 !important; margin: 5px 0 0 0 !important; }
   .defensa-layout { display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: start; padding: 0 48px 40px; }
@@ -80,7 +79,8 @@
     .defensa-foot { padding: 24px 24px 0; gap: 24px; }
   }
 </style>
-<link rel="canonical" href="https://technology-advisory.es/operaciones/automation-workflows/automatizacion-avanzada.html"/></head>
+<link rel="canonical" href="https://technology-advisory.es/operaciones/automation-workflows/automatizacion-avanzada.html"/><link href="../../css/editorial-knowledge-hub.css" rel="stylesheet"/>
+</head>
 <body>
 <div class="card-wrapper ds-page">
 <div class="card">
@@ -219,27 +219,8 @@
 <!-- Scripts de Carga Nativos (Subiendo DOS niveles a la raíz /js/) -->
 <script src="../../js/menu.js"></script>
 <script src="../../js/footer.js"></script>
-<script>
-  // Lógica de monitorización de lectura interactiva para la barra lateral
-  var tocLinks = Array.from(document.querySelectorAll('.defensa-toc-nav a'));
-  var sections = tocLinks.map(a => document.querySelector(a.getAttribute('href')));
-  if ('IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting) {
-          var id = '#' + entry.target.id;
-          tocLinks.forEach(a => {
-            if (a.getAttribute('href') === id) {
-              a.classList.add('active');
-            } else {
-              a.classList.remove('active');
-            }
-          });
-        }
-      });
-    }, { rootMargin: '-20% 0px -60% 0px' });
-    sections.forEach(function(s){ if (s) observer.observe(s); });
-  }
-</script>
+<script src="../../js/inline/f263adf6aeba2ff6.js"></script>
+<script src="../../js/editorial-ui.js"></script>
+<script src="../../js/csp-actions.js"></script>
 </body>
 </html>

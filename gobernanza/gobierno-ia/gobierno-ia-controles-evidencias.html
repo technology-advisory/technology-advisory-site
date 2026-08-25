@@ -14,7 +14,6 @@
 <link href="../../css/articulo.css" rel="stylesheet"/>
 <link href="../../css/index.css" rel="stylesheet"/>
 <link href="../../css/articulo-diagramas.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght=500;700&amp;family=IBM+Plex+Mono:wght=400;500&amp;family=Inter:wght=400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
         @media (max-width: 1024px) {
             .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
@@ -22,7 +21,8 @@
             div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding: 40px 4% 24px !important; }
         }
     </style>
-<link rel="canonical" href="https://technology-advisory.es/gobernanza/gobierno-ia/gobierno-ia-controles-evidencias.html"/></head>
+<link rel="canonical" href="https://technology-advisory.es/gobernanza/gobierno-ia/gobierno-ia-controles-evidencias.html"/><link href="../../css/editorial-knowledge-hub.css" rel="stylesheet"/>
+</head>
 <body>
 <div class="card-wrapper ds-page">
 <div class="card">
@@ -49,7 +49,7 @@
 <div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
 <div class="defensa-main" style="min-width:0;">
 <!-- GRÁFICO 1: EVIDENCIAS DE GOBIERNO DE IA AUDITABLE -->
-<figure aria-label="Evidencias de gobierno de IA auditable" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Evidencias de gobierno de IA auditable" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="420" rx="14" width="900"></rect>
@@ -113,7 +113,7 @@
 </div>
 </div>
 <!-- GRÁFICO 2: FLUJO DE DATA LINEAGE Y DRIFT -->
-<figure aria-label="Flujo técnico de control de datos e impacto" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Flujo técnico de control de datos e impacto" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="280" rx="14" width="900"></rect>
@@ -165,7 +165,7 @@
 </div>
 </div>
 <!-- GRÁFICO 3: ARQUITECTURA DE LOGS INMUTABLES -->
-<figure aria-label="Arquitectura del pipeline de logs inmutables" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Arquitectura del pipeline de logs inmutables" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="260" rx="14" width="900"></rect>
@@ -225,7 +225,7 @@
 </div>
 </div>
 <!-- GRÁFICO 4: MATRIZ DE CONTROL UNIFICADO ISO -->
-<figure aria-label="Convergencia de sistemas de gestión" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Convergencia de sistemas de gestión" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 240" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="240" rx="14" width="900"></rect>
@@ -334,27 +334,8 @@
 </div>
 <script src="../../js/menu.js"></script>
 <script src="../../js/footer.js"></script>
-<script>
-        function toggleZoom(element) {
-            if (element.classList.contains('zoomed')) {
-                element.classList.remove('zoomed');
-                document.querySelector('.zoom-overlay')?.classList.remove('active');
-            } else {
-                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
-                element.classList.add('zoomed');
-                let overlay = document.querySelector('.zoom-overlay');
-                if (!overlay) {
-                    overlay = document.createElement('div');
-                    overlay.className = 'zoom-overlay';
-                    overlay.onclick = function() {
-                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
-                        overlay.classList.remove('active');
-                    };
-                    document.body.appendChild(overlay);
-                }
-                overlay.classList.add('active');
-            }
-        }
-    </script>
+<script src="../../js/inline/5354eb2664b4b261.js"></script>
+<script src="../../js/editorial-ui.js"></script>
+<script src="../../js/csp-actions.js"></script>
 </body>
 </html>

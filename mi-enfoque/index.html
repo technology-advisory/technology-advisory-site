@@ -14,7 +14,6 @@
 <link href="../css/articulo.css" rel="stylesheet"/>
 <link href="../css/index.css" rel="stylesheet"/>
 <link href="../css/articulo-diagramas.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
         .defensa-main table, .defensa-main th, .defensa-main td { text-align:left !important; }
         .defensa-main th, .defensa-main td { vertical-align:top !important; }
@@ -41,7 +40,8 @@
             div[style*="padding: 40px 48px 24px"], div[style*="padding: 40px 48px 24px;"] { padding:40px 4% 24px !important; }
         }
     </style>
-<link rel="canonical" href="https://technology-advisory.es/mi-enfoque/"/></head>
+<link rel="canonical" href="https://technology-advisory.es/mi-enfoque/"/><link href="../css/editorial-knowledge-hub.css" rel="stylesheet"/>
+</head>
 <body>
 <div class="card-wrapper ds-page">
 <div class="card">
@@ -71,7 +71,7 @@
 </div>
 <div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
 <div class="defensa-main" style="min-width:0;">
-<figure aria-label="Modelo de análisis en cuatro ejes" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Modelo de análisis en cuatro ejes" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 430" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="430" rx="14" width="900"></rect>
@@ -154,7 +154,7 @@
 <p>En esta capa busco desmontar la comodidad del diagrama optimista. Me interesa la arquitectura real: qué dependencias no se han reconocido, qué supuestos no están probados, qué piezas son decorativas y qué criterio técnico permite distinguir una buena decisión de una moda con nombre elegante.</p>
 </div>
 </div>
-<figure aria-label="Qué aporta cada eje" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Qué aporta cada eje" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 340" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="340" rx="14" width="900"></rect>
@@ -252,7 +252,7 @@
 <p>Este eje también sirve para evitar dos errores comunes: creer que todo se arregla con un proyecto y creer que todo debe resolverse de golpe. El roadmap ordena, prioriza y da secuencia. Es el puente entre la situación actual y una capacidad más robusta, no un listado genérico de deseos.</p>
 </div>
 </div>
-<figure aria-label="Cómo usar la web" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Cómo usar la web" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 310" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="310" rx="14" width="900"></rect>
@@ -349,27 +349,8 @@
 </div>
 <script src="../js/menu.js"></script>
 <script src="../js/footer.js"></script>
-<script>
-        function toggleZoom(element) {
-            if (element.classList.contains('zoomed')) {
-                element.classList.remove('zoomed');
-                document.querySelector('.zoom-overlay')?.classList.remove('active');
-            } else {
-                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
-                element.classList.add('zoomed');
-                let overlay = document.querySelector('.zoom-overlay');
-                if (!overlay) {
-                    overlay = document.createElement('div');
-                    overlay.className = 'zoom-overlay';
-                    overlay.onclick = function () {
-                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
-                        overlay.classList.remove('active');
-                    };
-                    document.body.appendChild(overlay);
-                }
-                overlay.classList.add('active');
-            }
-        }
-    </script>
+<script src="../js/inline/1676ddd90b6d3609.js"></script>
+<script src="../js/editorial-ui.js"></script>
+<script src="../js/csp-actions.js"></script>
 </body>
 </html>

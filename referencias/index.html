@@ -2,13 +2,14 @@
 
 <html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1.0,maximum-scale=3.0" name="viewport"/>
 <title>Arquitecturas de referencia | Technology Advisory</title><meta content="Arquitecturas de referencia comentadas para redes seguras, perímetro, DevSecOps, alta disponibilidad y continuidad." name="description"/><meta content="Miguel Ángel Carriazo" name="author"/><meta content="index, follow" name="robots"/><meta content="#059669" name="theme-color"/>
-<link href="../css/global.css" rel="stylesheet"/><link href="../css/dossier-core.css" rel="stylesheet"/><link href="../css/articulo.css" rel="stylesheet"/><link href="../css/index.css" rel="stylesheet"/><link href="../css/articulo-diagramas.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/global.css" rel="stylesheet"/><link href="../css/dossier-core.css" rel="stylesheet"/><link href="../css/articulo.css" rel="stylesheet"/><link href="../css/index.css" rel="stylesheet"/><link href="../css/articulo-diagramas.css" rel="stylesheet"/>
 <style>
 .reference-wrap{padding:40px 4% 50px}.reference-lead{font-size:17px;line-height:1.75;color:#475569;max-width:980px}.reference-note{margin:22px 0 34px;padding:17px 20px;border-left:4px solid #059669;background:#f8fafc;color:#334155;line-height:1.7}.reference-card{border:1px solid #e2e8f0;border-radius:14px;background:#fff;margin:0 0 32px;overflow:hidden}.reference-head{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;padding:22px 24px 18px;border-bottom:1px solid #e2e8f0}.reference-series{font-family:monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#059669;font-weight:700}.reference-head h2{font-size:24px;line-height:1.2;color:#151915;margin:7px 0 0}.reference-code{font-family:monospace;font-size:11px;color:#64748b;white-space:nowrap}.reference-intro{padding:18px 24px;font-size:16px;line-height:1.75;color:#334155}.reference-diagram{position:relative;padding:16px 24px 24px;background:#fafaf8;cursor:zoom-in}.reference-diagram svg{display:block;width:100%;height:auto}.diagrama-desktop{display:block!important}.diagrama-mobile{display:none!important}.reference-analysis{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid #e2e8f0}.reference-analysis>div{padding:20px 24px}.reference-analysis>div+div{border-left:1px solid #e2e8f0}.reference-analysis span{font-family:monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#059669;font-weight:700}.reference-analysis p{margin:9px 0 0;line-height:1.7;color:#475569;font-size:14px}.reference-foot{padding:12px 24px;border-top:1px solid #e2e8f0;font-family:monospace;font-size:10px;color:#64748b;line-height:1.6}.references-pagination{display:flex;justify-content:center;gap:8px;align-items:center;margin:32px 0 0}.page-btn{min-width:38px;height:38px;padding:0 11px;border:1px solid #d8d4c8;background:#fff;color:#475569;border-radius:7px;cursor:pointer;font-family:monospace}.page-btn.active{background:#059669;color:#fff;border-color:#059669}.page-btn:disabled{opacity:.35;cursor:not-allowed}.reference-diagram.zoomed{position:fixed;z-index:1001;inset:4vh 3vw;background:#fff;padding:20px;overflow:auto;cursor:zoom-out;box-shadow:0 20px 70px rgba(0,0,0,.25)}.zoom-overlay{position:fixed;inset:0;background:rgba(15,23,42,.72);z-index:1000;display:none}.zoom-overlay.active{display:block}@media(max-width:700px){.reference-head{display:block}.reference-code{display:block;margin-top:10px}.reference-analysis{grid-template-columns:1fr}.reference-analysis>div+div{border-left:0;border-top:1px solid #e2e8f0}.diagrama-desktop{display:none!important}.diagrama-mobile{display:block!important}.reference-wrap{padding:30px 4% 42px}.reference-diagram{padding:12px}}
-.badge-nuevo{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:999px;background:#059669;color:#fff;font-family:monospace;font-size:9px;font-weight:700;letter-spacing:.08em;vertical-align:middle;line-height:1.4}</style><link rel="canonical" href="https://technology-advisory.es/referencias/"/></head><body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669"></div><div class="ds-meta"><span><span class="dot" style="background:#059669"></span>Technology Advisory // arquitecturas de referencia</span><span>colección: <strong>patrones comentados</strong></span></div><div style="padding:16px 4% 0"><a class="defensa-btn-back" href="../index.html" style="display:inline-block;background:#059669;color:#fff!important;font-weight:700;font-size:14px;padding:8px 20px;border-radius:30px;text-decoration:none">← Volver al inicio</a></div><header style="padding:40px 4% 24px;border-bottom:1px solid #ededea"><div style="font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.15em;font-weight:700;margin-bottom:8px"><span style="color:#059669">Referencias</span><span style="color:#151915"> · Arquitectura técnica</span></div><h1 style="font-size:clamp(32px,5vw,46px);font-weight:900;color:#151915;margin:0 0 12px;line-height:1.08;letter-spacing:-.02em">Arquitecturas de referencia: <span style="color:#059669">el diagrama importa menos que las decisiones que hay detrás</span></h1><p class="reference-lead">Trece patrones técnicos comentados para redes seguras, perímetro, cloud híbrido, DevSecOps, core redundante, continuidad e identidad endurecida. No son recetas universales: cada diseño se acompaña de la intención arquitectónica, lo que intenta resolver y los límites que deben validarse antes de llevarlo a producción.</p></header><main class="reference-wrap"><div class="reference-note"><strong>Criterio de uso:</strong> estas arquitecturas son puntos de partida para discusión y diseño. Direccionamiento, productos, latencias, capacidades, RTO/RPO y controles deben ajustarse al contexto real. Copiar un diagrama sin validar sus supuestos es otra forma de construir deuda técnica.</div><div id="referencesGrid"><article class="reference-card" data-ref-item="" id="microsegmentacion-zero-trust">
+.badge-nuevo{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:999px;background:#059669;color:#fff;font-family:monospace;font-size:9px;font-weight:700;letter-spacing:.08em;vertical-align:middle;line-height:1.4}</style><link rel="canonical" href="https://technology-advisory.es/referencias/"/><link href="../css/editorial-knowledge-hub.css" rel="stylesheet"/>
+</head><body><div class="card-wrapper ds-page"><div class="card"><div id="menu-container"></div><div class="accent-bar" style="background:#059669"></div><div class="ds-meta"><span><span class="dot" style="background:#059669"></span>Technology Advisory // arquitecturas de referencia</span><span>colección: <strong>patrones comentados</strong></span></div><div style="padding:16px 4% 0"><a class="defensa-btn-back" href="../index.html" style="display:inline-block;background:#059669;color:#fff!important;font-weight:700;font-size:14px;padding:8px 20px;border-radius:30px;text-decoration:none">← Volver al inicio</a></div><header style="padding:40px 4% 24px;border-bottom:1px solid #ededea"><div style="font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.15em;font-weight:700;margin-bottom:8px"><span style="color:#059669">Referencias</span><span style="color:#151915"> · Arquitectura técnica</span></div><h1 style="font-size:clamp(32px,5vw,46px);font-weight:900;color:#151915;margin:0 0 12px;line-height:1.08;letter-spacing:-.02em">Arquitecturas de referencia: <span style="color:#059669">el diagrama importa menos que las decisiones que hay detrás</span></h1><p class="reference-lead">Trece patrones técnicos comentados para redes seguras, perímetro, cloud híbrido, DevSecOps, core redundante, continuidad e identidad endurecida. No son recetas universales: cada diseño se acompaña de la intención arquitectónica, lo que intenta resolver y los límites que deben validarse antes de llevarlo a producción.</p></header><main class="reference-wrap"><div class="reference-note"><strong>Criterio de uso:</strong> estas arquitecturas son puntos de partida para discusión y diseño. Direccionamiento, productos, latencias, capacidades, RTO/RPO y controles deben ajustarse al contexto real. Copiar un diagrama sin validar sus supuestos es otra forma de construir deuda técnica.</div><div id="referencesGrid"><article class="reference-card" data-ref-item="" id="microsegmentacion-zero-trust">
 <div class="reference-head"><div><span class="reference-series">Redes seguras</span><h2>Microsegmentación Zero Trust host-based</h2></div><span class="reference-code">TA-NET-21 · Zero Trust</span></div>
 <div class="reference-intro"><strong>Segmentación hasta el workload.</strong> Sustituye la confianza implícita de la VLAN por políticas por identidad de carga de trabajo. Cada host o contenedor solo habla con los destinos autorizados; el movimiento lateral se bloquea aunque el atacante esté dentro del segmento de red.</div>
-<div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de microsegmentación Zero Trust host-based con agente, política central y denegación lateral" class="diagrama-desktop" role="img" viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
+<div class="reference-diagram" data-ta-action="toggle-zoom"><svg aria-label="Diagrama de microsegmentación Zero Trust host-based con agente, política central y denegación lateral" class="diagrama-desktop" role="img" viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#ffffff" height="70" stroke="#16150f" stroke-width="1.5" width="160" x="40" y="40"></rect>
 <text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="120" y="68">POLICY ENGINE</text>
 <text fill="#5c584a" font-size="9" text-anchor="middle" x="120" y="86">identidad + etiqueta + contexto</text>
@@ -103,7 +104,7 @@
 <article class="reference-card" data-ref-item="" id="acceso-privilegiado-pam-paw">
 <div class="reference-head"><div><span class="reference-series">Identidad y privilegios</span><h2>Acceso privilegiado: PAM + PAW</h2></div><span class="reference-code">TA-SEC-22 · Privileged Access</span></div>
 <div class="reference-intro"><strong>Administración sin exposición de credenciales.</strong> Separa el puesto de usuario del puesto privilegiado (PAW), intermediando todo acceso admin a través de un vault y un bastión con grabación de sesión. Las cuentas privilegiadas no se usan desde endpoints de productividad.</div>
-<div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de acceso privilegiado con PAW, vault PAM y bastión con grabación" class="diagrama-desktop" role="img" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+<div class="reference-diagram" data-ta-action="toggle-zoom"><svg aria-label="Diagrama de acceso privilegiado con PAW, vault PAM y bastión con grabación" class="diagrama-desktop" role="img" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
 <!-- User endpoint -->
 <rect fill="#ffffff" height="80" stroke="#16150f" stroke-width="1.5" width="150" x="30" y="40"></rect>
 <text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="105" y="68">ENDPOINT USUARIO</text>
@@ -208,7 +209,7 @@
 <article class="reference-card" data-ref-item="" id="active-directory-tier-model">
 <div class="reference-head"><div><span class="reference-series">Identidad y privilegios</span><h2>Active Directory endurecido: modelo de tiers</h2></div><span class="reference-code">TA-ID-23 · Identity Hardening</span></div>
 <div class="reference-intro"><strong>Infraestructura de identidad separada por criticidad.</strong> Los controladores de dominio y las cuentas privilegiadas viven en un segmento y un plano de administración propios. Los servidores de negocio y los puestos de usuario no comparten ruta de acceso admin ni credenciales de Tier 0.</div>
-<div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Topología de infraestructura Active Directory con tiers, DCs, servidores miembro, workstations y bastión de administración" class="diagrama-desktop" role="img" viewBox="0 0 900 540" xmlns="http://www.w3.org/2000/svg">
+<div class="reference-diagram" data-ta-action="toggle-zoom"><svg aria-label="Topología de infraestructura Active Directory con tiers, DCs, servidores miembro, workstations y bastión de administración" class="diagrama-desktop" role="img" viewBox="0 0 900 540" xmlns="http://www.w3.org/2000/svg">
 <!-- Internet / nada expuesto -->
 <text fill="#5c584a" font-size="9" text-anchor="middle" x="450" y="18">Sin exposición directa de DC a Internet · administración solo por canal privilegiado</text>
 
@@ -371,7 +372,7 @@
 <article class="reference-card" data-ref-item="" id="segmentacion-red-corporativa">
 <div class="reference-head"><div><span class="reference-series">Redes seguras</span><h2>Segmentación de red corporativa</h2></div><span class="reference-code">TA-NET-01 · LLD</span></div>
 <div class="reference-intro"><strong>Segmentación por función y sensibilidad.</strong> Separa usuarios, servidores, gestión e invitados para reducir movimiento lateral y limitar el alcance de un compromiso. El firewall interno y las reglas entre segmentos convierten la segmentación lógica en una frontera verificable.</div>
-<div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de segmentación de red corporativa en tres capas con VLANs y firewall interno" class="diagrama-desktop" role="img" viewbox="0 0 900 560" xmlns="http://www.w3.org/2000/svg">
+<div class="reference-diagram" data-ta-action="toggle-zoom"><svg aria-label="Diagrama de segmentación de red corporativa en tres capas con VLANs y firewall interno" class="diagrama-desktop" role="img" viewbox="0 0 900 560" xmlns="http://www.w3.org/2000/svg">
 <!-- Internet -->
 <ellipse cx="450" cy="42" fill="none" rx="90" ry="26" stroke="#16150f" stroke-width="1.5"></ellipse>
 <text fill="#16150f" font-size="13" font-weight="600" text-anchor="middle" x="450" y="47">INTERNET</text>
@@ -496,7 +497,7 @@
 <article class="reference-card" data-ref-item="" id="dmz-doble-capa">
 <div class="reference-head"><div><span class="reference-series">Redes seguras</span><h2>DMZ moderna de doble capa</h2></div><span class="reference-code">TA-NET-02 · HLD</span></div>
 <div class="reference-intro"><strong>Publicación de servicios con doble frontera.</strong> Aísla la exposición pública mediante una DMZ de doble capa, separando los controles de entrada de los sistemas internos. WAF, reverse proxy y relays reducen la necesidad de publicar directamente servidores de negocio.</div>
-<div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de DMZ con doble firewall, WAF, reverse proxy y relay de correo" class="diagrama-desktop" role="img" viewbox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
+<div class="reference-diagram" data-ta-action="toggle-zoom"><svg aria-label="Diagrama de DMZ con doble firewall, WAF, reverse proxy y relay de correo" class="diagrama-desktop" role="img" viewbox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
 <ellipse cx="90" cy="200" fill="none" rx="62" ry="26" stroke="#16150f" stroke-width="1.5"></ellipse>
 <text fill="#16150f" font-size="12.5" font-weight="600" text-anchor="middle" x="90" y="205">INTERNET</text>
 <line stroke="#16150f" stroke-width="1.5" x1="152" x2="196" y1="200" y2="200"></line>
@@ -580,7 +581,7 @@
 <article class="reference-card" data-ref-item="" id="acceso-remoto-ztna">
 <div class="reference-head"><div><span class="reference-series">Redes seguras</span><h2>Acceso remoto ZTNA</h2></div><span class="reference-code">TA-NET-03 · Zero Trust</span></div>
 <div class="reference-intro"><strong>Acceso remoto basado en identidad y contexto.</strong> Sustituye el acceso amplio de una VPN tradicional por autorización por aplicación. La identidad, la postura del dispositivo y la política determinan qué recurso puede alcanzar cada sesión.</div>
-<div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de acceso remoto ZTNA con verificación de identidad y postura" class="diagrama-desktop" role="img" viewbox="0 0 900 440" xmlns="http://www.w3.org/2000/svg">
+<div class="reference-diagram" data-ta-action="toggle-zoom"><svg aria-label="Diagrama de acceso remoto ZTNA con verificación de identidad y postura" class="diagrama-desktop" role="img" viewbox="0 0 900 440" xmlns="http://www.w3.org/2000/svg">
 <!-- Usuario -->
 <rect fill="#ffffff" height="80" stroke="#16150f" stroke-width="1.5" width="140" x="40" y="170"></rect>
 <text fill="#16150f" font-size="11.5" font-weight="600" text-anchor="middle" x="110" y="198">USUARIO REMOTO</text>
@@ -671,7 +672,7 @@
 <article class="reference-card" data-ref-item="" id="red-hibrida-hub-spoke">
 <div class="reference-head"><div><span class="reference-series">Redes seguras</span><h2>Red híbrida hub-spoke con inspección centralizada</h2></div><span class="reference-code">TA-NET-04 · Cloud</span></div>
 <div class="reference-intro"><strong>Conectividad híbrida con inspección central.</strong> Centraliza conectividad, rutas y controles de seguridad en un hub, reduciendo conexiones punto a punto entre redes cloud y on-premises. Permite aplicar inspección y gobierno de rutas de forma consistente.</div>
-<div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de red híbrida hub-spoke con firewall centralizado en el hub" class="diagrama-desktop" role="img" viewbox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
+<div class="reference-diagram" data-ta-action="toggle-zoom"><svg aria-label="Diagrama de red híbrida hub-spoke con firewall centralizado en el hub" class="diagrama-desktop" role="img" viewbox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
 <!-- On-prem -->
 <rect fill="#ffffff" height="180" stroke="#16150f" stroke-width="1.5" width="190" x="40" y="150"></rect>
 <rect fill="#16150f" height="28" width="190" x="40" y="150"></rect>
@@ -775,7 +776,7 @@
 <article class="reference-card" data-ref-item="" id="pipeline-devsecops">
 <div class="reference-head"><div><span class="reference-series">DevSecOps y cloud native</span><h2>Pipeline DevSecOps: Seguridad Shift-Left automatizada</h2></div><span class="reference-code">TA-DVO-15 · CI/CD</span></div>
 <div class="reference-intro"><strong>Seguridad integrada en el pipeline.</strong> Desplaza controles al ciclo de desarrollo: SAST, SCA y DAST aparecen en fases distintas y los gates automáticos impiden promover artefactos que incumplen criterios definidos.</div>
-<div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama horizontal de pipeline DevSecOps con fases de seguridad integradas" class="diagrama-desktop" role="img" viewbox="0 0 900 440" xmlns="http://www.w3.org/2000/svg">
+<div class="reference-diagram" data-ta-action="toggle-zoom"><svg aria-label="Diagrama horizontal de pipeline DevSecOps con fases de seguridad integradas" class="diagrama-desktop" role="img" viewbox="0 0 900 440" xmlns="http://www.w3.org/2000/svg">
 <!-- Fase 1: Code -->
 <rect fill="#ffffff" height="200" stroke="#16150f" stroke-width="1.5" width="170" x="40" y="100"></rect>
 <rect fill="#16150f" height="26" width="170" x="40" y="100"></rect>
@@ -877,7 +878,7 @@
 <article class="reference-card" data-ref-item="" id="service-mesh-mtls">
 <div class="reference-head"><div><span class="reference-series">DevSecOps y cloud native</span><h2>Seguridad en Microservicios: Service Mesh con mTLS estricto</h2></div><span class="reference-code">TA-NET-16 · Cloud Native K8s</span></div>
 <div class="reference-intro"><strong>Identidad de servicio y cifrado este-oeste.</strong> Usa una service mesh para proporcionar mTLS, identidad de servicio y políticas de comunicación sin delegar toda la lógica criptográfica en cada aplicación.</div>
-<div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama horizontal de Service Mesh en Kubernetes con mTLS entre sidecars" class="diagrama-desktop" role="img" viewbox="0 0 900 460" xmlns="http://www.w3.org/2000/svg">
+<div class="reference-diagram" data-ta-action="toggle-zoom"><svg aria-label="Diagrama horizontal de Service Mesh en Kubernetes con mTLS entre sidecars" class="diagrama-desktop" role="img" viewbox="0 0 900 460" xmlns="http://www.w3.org/2000/svg">
 <!-- Ingress Gateway -->
 <rect fill="#ffffff" height="90" stroke="#16150f" stroke-width="1.5" width="140" x="40" y="160"></rect>
 <rect fill="#16150f" height="24" width="140" x="40" y="160"></rect>
@@ -970,7 +971,7 @@
 <article class="reference-card" data-ref-item="" id="cluster-ngfw-ha">
 <div class="reference-head"><div><span class="reference-series">Perímetro y firewalls</span><h2>Clúster NGFW en Alta Disponibilidad (HA Activo/Pasivo)</h2></div><span class="reference-code">TA-FW-17 · LLD</span></div>
 <div class="reference-intro"><strong>Alta disponibilidad perimetral con estado.</strong> Representa un par de NGFW activo/pasivo con sincronización de sesiones y enlaces redundantes hacia WAN y core. El objetivo es evitar que el firewall se convierta en un único punto de fallo.</div>
-<div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de clúster de firewalls en alta disponibilidad con enlaces redundantes y sincronización de estado" class="diagrama-desktop" role="img" viewbox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
+<div class="reference-diagram" data-ta-action="toggle-zoom"><svg aria-label="Diagrama de clúster de firewalls en alta disponibilidad con enlaces redundantes y sincronización de estado" class="diagrama-desktop" role="img" viewbox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
 <!-- Switches Perimetrales / ISP -->
 <rect fill="#ffffff" height="40" stroke="#16150f" stroke-width="1.5" width="400" x="250" y="20"></rect>
 <text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="450" y="44">SWITCHES PERIMETRALES (WAN / ENLACES ISP)</text>
@@ -1062,7 +1063,7 @@
 <article class="reference-card" data-ref-item="" id="inspeccion-ssl-tls">
 <div class="reference-head"><div><span class="reference-series">Perímetro y firewalls</span><h2>Inspección de Contenido SSL/TLS (Capa de Descifrado Segura)</h2></div><span class="reference-code">TA-SEC-18 · Deep Packet Inspection</span></div>
 <div class="reference-intro"><strong>Descifrado controlado para inspección.</strong> Introduce una capa de inspección TLS con criterios de exclusión, re-cifrado y trazabilidad. Permite analizar contenido cifrado sin convertir el descifrado en una excepción opaca.</div>
-<div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de flujo de inspección SSL y descifrado de paquetes en un firewall de nueva generación" class="diagrama-desktop" role="img" viewbox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
+<div class="reference-diagram" data-ta-action="toggle-zoom"><svg aria-label="Diagrama de flujo de inspección SSL y descifrado de paquetes en un firewall de nueva generación" class="diagrama-desktop" role="img" viewbox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
 <!-- Cliente LAN -->
 <rect fill="#ffffff" height="80" stroke="#16150f" stroke-width="1.5" width="150" x="30" y="180"></rect>
 <text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="105" y="210">CLIENTE INTERNO</text>
@@ -1158,7 +1159,7 @@
 <article class="reference-card" data-ref-item="" id="core-l3-redundante">
 <div class="reference-head"><div><span class="reference-series">Core y campus</span><h2>Tolerancia a fallos en Core L3 (Agregación Multi-Chassis)</h2></div><span class="reference-code">TA-NET-19 · Core High Availability</span></div>
 <div class="reference-intro"><strong>Core redundante y agregación multi-chassis.</strong> Elimina dependencias de un único switch de core mediante agregación cruzada y un plano lógico coordinado. La pérdida de un enlace no debe provocar pérdida completa de conectividad.</div>
-<div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama de redundancia de red con stack de switches core L3 y conmutación por fallo de enlace LACP" class="diagrama-desktop" role="img" viewbox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
+<div class="reference-diagram" data-ta-action="toggle-zoom"><svg aria-label="Diagrama de redundancia de red con stack de switches core L3 y conmutación por fallo de enlace LACP" class="diagrama-desktop" role="img" viewbox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
 <!-- Contenedor del Stack Core -->
 <rect fill="none" height="170" stroke="#8a6d1f" stroke-dasharray="8 4" stroke-width="1.4" width="600" x="150" y="30"></rect>
 <text fill="#8a6d1f" font-size="11" font-weight="600" letter-spacing="1.5" text-anchor="middle" x="450" y="52">CAPA CORE L3 (SWITCHES EN STACK VIRTUAL / VSS / vPC)</text>
@@ -1246,7 +1247,7 @@
 <article class="reference-card" data-ref-item="" id="estrategia-multisitio-3dc">
 <div class="reference-head"><div><span class="reference-series">Resiliencia y continuidad</span><h2>Estrategia Multi-Sitio 3DC (Malla Metropolitana + DR Remoto)</h2></div><span class="reference-code">TA-DRP-20 · High Availability &amp; DR</span></div>
 <div class="reference-intro"><strong>Resiliencia metropolitana y desastre geográfico.</strong> Combina dos centros activos de baja latencia con un tercer sitio remoto para contingencia. Separa alta disponibilidad local de recuperación ante desastre geográfico.</div>
-<div class="reference-diagram" onclick="toggleZoom(this)"><svg aria-label="Diagrama horizontal de arquitectura de tres datacenters (3DC) con balanceo metropolitano y sitio alternativo de contingencia asíncrono" class="diagrama-desktop" role="img" viewbox="0 0 900 540" xmlns="http://www.w3.org/2000/svg">
+<div class="reference-diagram" data-ta-action="toggle-zoom"><svg aria-label="Diagrama horizontal de arquitectura de tres datacenters (3DC) con balanceo metropolitano y sitio alternativo de contingencia asíncrono" class="diagrama-desktop" role="img" viewbox="0 0 900 540" xmlns="http://www.w3.org/2000/svg">
 <!-- Balanceador Global GSLB -->
 <rect fill="#e6f4ee" height="46" stroke="#059669" stroke-width="1.6" width="180" x="360" y="20"></rect>
 <text fill="#16150f" font-size="11" font-weight="600" text-anchor="middle" x="450" y="40">DNS GLOBAL / GSLB</text>
@@ -1359,164 +1360,6 @@
 <div class="reference-analysis"><div><span>Qué resuelve</span><p>Combina dos centros activos de baja latencia con un tercer sitio remoto para contingencia. Separa alta disponibilidad local de recuperación ante desastre geográfico.</p></div><div><span>Límites y validación</span><p>La replicación síncrona y la extensión de capa 2 tienen restricciones de latencia. El tercer centro debe probarse como entorno recuperable, no limitarse a recibir réplicas.</p></div></div>
 <div class="reference-foot">FIG. 20 — Estrategia de disponibilidad 3DC (Three Data Center): La réplica síncrona metropolitana garantiza cero pérdida de información ante incidentes locales, mientras que el tercer nodo remoto asegura la continuidad operativa frente a desastres de escala regional.</div>
 </article>
-</div><div class="references-pagination" id="referencesPagination"></div></main><div id="footer-container"></div></div></div><script src="../js/menu.js"></script><script src="../js/footer.js"></script><script>
-const REF_PER_PAGE = 7;
-const META_URL = new URL('referencias-meta.json', window.location.href).href;
-
-let refPage = parseInt(new URLSearchParams(location.search).get('page') || '1', 10);
-let refItems = [];
-
-function getRefItems() {
-  return [...document.querySelectorAll('#referencesGrid [data-ref-item]')];
-}
-
-function pageForHash() {
-  if (!location.hash || location.hash === '#referencesGrid') return null;
-  const target = document.querySelector(location.hash);
-  if (!target) return null;
-  const index = refItems.indexOf(target);
-  return index >= 0 ? Math.floor(index / REF_PER_PAGE) + 1 : null;
-}
-
-function syncPageFromHash() {
-  const hashPage = pageForHash();
-  if (hashPage !== null) refPage = hashPage;
-}
-
-function renderRefs() {
-  refItems = getRefItems();
-  const total = Math.max(1, Math.ceil(refItems.length / REF_PER_PAGE));
-  refPage = Math.min(Math.max(refPage, 1), total);
-  refItems.forEach((el, i) => {
-    el.style.display = (i >= (refPage - 1) * REF_PER_PAGE && i < refPage * REF_PER_PAGE) ? 'block' : 'none';
-  });
-
-  let h = `<button class="page-btn" ${refPage === 1 ? 'disabled' : ''} onclick="goRef(${refPage - 1})">←</button>`;
-  for (let i = 1; i <= total; i++) {
-    h += `<button class="page-btn${i === refPage ? ' active' : ''}" onclick="goRef(${i})">${i}</button>`;
-  }
-  h += `<button class="page-btn" ${refPage === total ? 'disabled' : ''} onclick="goRef(${refPage + 1})">→</button>`;
-  const pag = document.getElementById('referencesPagination');
-  if (pag) pag.innerHTML = h;
-}
-
-function scrollToCurrentHash() {
-  if (!location.hash || location.hash === '#referencesGrid') return;
-  const target = document.querySelector(location.hash);
-  if (target) requestAnimationFrame(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }));
-}
-
-function goRef(n) {
-  refItems = getRefItems();
-  const total = Math.max(1, Math.ceil(refItems.length / REF_PER_PAGE));
-  if (n < 1 || n > total) return;
-  refPage = n;
-  const u = new URL(location.href);
-  n === 1 ? u.searchParams.delete('page') : u.searchParams.set('page', n);
-  history.pushState({ refPage: n }, '', u.pathname + (u.searchParams.toString() ? '?' + u.searchParams.toString() : '') + '#referencesGrid');
-  renderRefs();
-  requestAnimationFrame(() => document.getElementById('referencesGrid')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
-}
-
-function toggleZoom(el) {
-  if (el.classList.contains('zoomed')) {
-    el.classList.remove('zoomed');
-    document.querySelector('.zoom-overlay')?.classList.remove('active');
-  } else {
-    document.querySelectorAll('.reference-diagram.zoomed').forEach(x => x.classList.remove('zoomed'));
-    el.classList.add('zoomed');
-    let o = document.querySelector('.zoom-overlay');
-    if (!o) {
-      o = document.createElement('div');
-      o.className = 'zoom-overlay';
-      o.onclick = () => {
-        document.querySelectorAll('.reference-diagram.zoomed').forEach(x => x.classList.remove('zoomed'));
-        o.classList.remove('active');
-      };
-      document.body.appendChild(o);
-    }
-    o.classList.add('active');
-  }
-}
-
-/** Aplica orden y etiqueta NUEVO desde referencias-meta.json */
-function applyMeta(meta) {
-  const grid = document.getElementById('referencesGrid');
-  if (!grid || !meta || !Array.isArray(meta.items)) return;
-
-  const byId = {};
-  getRefItems().forEach(el => {
-    if (el.id) byId[el.id] = el;
-  });
-
-  // Ordenar según JSON (order asc); ítems no listados al final
-  const sorted = [...meta.items].sort((a, b) => (a.order || 0) - (b.order || 0));
-  const orderedIds = [];
-  sorted.forEach(item => {
-    if (item.id && byId[item.id]) orderedIds.push(item.id);
-  });
-  Object.keys(byId).forEach(id => {
-    if (!orderedIds.includes(id)) orderedIds.push(id);
-  });
-
-  orderedIds.forEach(id => {
-    const el = byId[id];
-    if (el) grid.appendChild(el);
-  });
-
-  // Badges NUEVO
-  const nuevoSet = new Set(
-    meta.items.filter(i => i.nuevo === true).map(i => i.id)
-  );
-
-  getRefItems().forEach(el => {
-    const series = el.querySelector('.reference-series');
-    if (!series) return;
-
-    // Quitar badge previo
-    series.querySelectorAll('.badge-nuevo').forEach(b => b.remove());
-    el.removeAttribute('data-nuevo');
-
-    if (nuevoSet.has(el.id)) {
-      el.setAttribute('data-nuevo', 'true');
-      const badge = document.createElement('span');
-      badge.className = 'badge-nuevo';
-      badge.textContent = 'NUEVO';
-      series.appendChild(badge);
-    }
-  });
-}
-
-async function initReferences() {
-  try {
-    const res = await fetch(META_URL, { cache: 'no-cache' });
-    if (res.ok) {
-      const meta = await res.json();
-      applyMeta(meta);
-    } else {
-      console.warn('referencias-meta.json no disponible:', res.status);
-    }
-  } catch (err) {
-    console.warn('No se pudo cargar referencias-meta.json (¿misma carpeta y servidor HTTP?):', err);
-  }
-
-  refItems = getRefItems();
-  syncPageFromHash();
-  renderRefs();
-  scrollToCurrentHash();
-}
-
-initReferences();
-
-window.addEventListener('popstate', () => {
-  refPage = parseInt(new URLSearchParams(location.search).get('page') || '1', 10);
-  refItems = getRefItems();
-  syncPageFromHash();
-  renderRefs();
-  if (location.hash && location.hash !== '#referencesGrid') {
-    scrollToCurrentHash();
-  } else {
-    requestAnimationFrame(() => document.getElementById('referencesGrid')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
-  }
-});
-</script></body></html>
+</div><div class="references-pagination" id="referencesPagination"></div></main><div id="footer-container"></div></div></div><script src="../js/menu.js"></script><script src="../js/footer.js"></script><script src="../js/inline/90d80b90d6d24b5d.js"></script><script src="../js/editorial-ui.js"></script>
+<script src="../js/csp-actions.js"></script>
+</body></html>

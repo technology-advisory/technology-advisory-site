@@ -1,0 +1,1 @@
+window.TI_CONFIG={"allLabel":"CISA KEV","initialSource":"cisa-kev","columns":["severity","id","provider","date","product","status"],"sources":[{"id":"cisa-kev","label":"CISA KEV","path":"../../data/cisa/kev.json","color":"#0f7d57"}]};

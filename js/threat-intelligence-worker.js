@@ -44,10 +44,6 @@ function versionsOf(item) {
   ].map(text).filter(Boolean))];
 }
 
-function fixedOf(item) {
-  return [...new Set(arr(item.fixed_versions).map(text).filter(Boolean))];
-}
-
 function scoreOf(item) {
   for (const key of [
     'cvss',
@@ -55,6 +51,7 @@ function scoreOf(item) {
     'baseScore',
     'base_score',
     'cvss_max',
+    'max_cvss',
     '_linkedCvss',
   ]) {
     const value = num(item[key]);
@@ -89,7 +86,9 @@ function idOf(item) {
 
 function providerOf(item, source) {
   return text(
-    item.vendor
+    arr(item.manufacturers)[0]
+    || arr(item.vendor)[0]
+    || item.vendor
     || item.vendorProject
     || item.provider
     || item.source
@@ -98,6 +97,13 @@ function providerOf(item, source) {
     || source.id
     || 'Fuente oficial'
   );
+}
+
+function exploitedOf(item, source) {
+  if (source?.id === 'cisa-kev') return true;
+  if (item.known_exploited === true || item.exploited === true || item.exploitation_status === 'exploited') return true;
+  if (item.known_exploited === false || item.exploited === false || item.exploitation_status === 'no_evidence') return false;
+  return null;
 }
 
 function descriptionOf(item) {
@@ -131,6 +137,7 @@ function compact(item, source, index) {
     _label: source.label,
     _sourceColor: source.color || '#07884a',
     _recordIndex: index,
+    _chunk: text(item.chunk),
     _searchText: [
       id,
       title,
@@ -143,41 +150,106 @@ function compact(item, source, index) {
     advisory_id: id,
     title,
     provider,
-    descriptionPreview: description.slice(0, 420),
+    descriptionPreview: description === 'Sin descripción disponible.' ? '' : description.slice(0, 420),
     cves,
     productsPreview: products.slice(0, 3),
     versionsPreview: versions.slice(0, 3),
     updated_at: dateOf(item),
     cvss: score,
     epss: num(item.epss),
-    severity: item.severity || item.risk || item.impact || item.importance || '',
-    known_exploited: item.known_exploited,
+    severity: (() => {
+      if (typeof item.importance === 'number') {
+        if (item.importance >= 5) return 'critical';
+        if (item.importance >= 4) return 'high';
+        if (item.importance >= 3) return 'medium';
+        return 'low';
+      }
+      return item.severity || item.risk || item.impact || item.importance || '';
+    })(),
+    known_exploited: exploitedOf(item, source),
     enrichment_status: item.enrichment_status,
     publishable: item.publishable,
     sources: arr(item.sources),
   };
 }
 
+async function fetchJson(url) {
+  const response = await fetch(url, { cache: 'default' });
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  return response.json();
+}
+
 async function loadSource(source) {
   if (sources.has(source.id)) {
-    return sources.get(source.id).compact;
+    const state = sources.get(source.id);
+    if (state.compact) return state.compact;
+    throw new Error(`La fuente ${source.id} ya está cargada`);
   }
 
-  const response = await fetch(source.url, { cache: 'default' });
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status}`);
-  }
-
-  const payload = await response.json();
+  const payload = await fetchJson(source.url);
   const full = rootItems(payload).filter(published);
   const compactItems = full.map((item, index) => compact(item, source, index));
+  const chunkedIndex = source.mode === 'index-chunks';
 
+  // En fuentes index+chunks no retenemos el índice original ni una segunda copia
+  // compacta en el Worker. El navegador conserva la copia que recibe por postMessage;
+  // para el detalle enviará id/chunk de vuelta y aquí solo cacheamos chunks visitados.
   sources.set(source.id, {
-    full,
-    compact: compactItems,
+    source,
+    full: chunkedIndex ? null : full,
+    compact: chunkedIndex ? null : compactItems,
+    chunks: new Map(),
+    chunkOrder: [],
   });
 
   return compactItems;
+}
+
+function chunkUrl(source, chunkId) {
+  const file = `${chunkId}.json`;
+  if (source.chunkBaseUrl) {
+    return new URL(file, source.chunkBaseUrl.endsWith('/') ? source.chunkBaseUrl : `${source.chunkBaseUrl}/`).href;
+  }
+  return new URL(`chunks/${file}`, source.url).href;
+}
+
+async function loadChunk(sourceState, chunkId) {
+  if (!chunkId) return null;
+
+  if (sourceState.chunks.has(chunkId)) {
+    sourceState.chunkOrder = sourceState.chunkOrder.filter(id => id !== chunkId);
+    sourceState.chunkOrder.push(chunkId);
+    return sourceState.chunks.get(chunkId);
+  }
+
+  const payload = await fetchJson(chunkUrl(sourceState.source, chunkId));
+  const records = rootItems(payload);
+  sourceState.chunks.set(chunkId, records);
+  sourceState.chunkOrder.push(chunkId);
+
+  // Mantener solo unos pocos chunks visitados. Nunca precargar el catálogo completo.
+  while (sourceState.chunkOrder.length > 3) {
+    const oldest = sourceState.chunkOrder.shift();
+    sourceState.chunks.delete(oldest);
+  }
+
+  return records;
+}
+
+async function detailItem(sourceId, recordIndex, reference = null) {
+  const sourceState = sources.get(sourceId);
+  if (!sourceState) return null;
+
+  if (sourceState.source.mode !== 'index-chunks') {
+    return sourceState.full?.[recordIndex] || null;
+  }
+
+  const chunkId = text(reference?.chunk);
+  const wantedId = text(reference?.id);
+  if (!chunkId || !wantedId) return null;
+
+  const records = await loadChunk(sourceState, chunkId);
+  return records?.find(record => idOf(record) === wantedId) || null;
 }
 
 self.onmessage = async event => {
@@ -203,8 +275,7 @@ self.onmessage = async event => {
     }
 
     if (message.type === 'detail') {
-      const source = sources.get(message.sourceId);
-      const item = source?.full?.[message.recordIndex] || null;
+      const item = await detailItem(message.sourceId, message.recordIndex, message.reference);
 
       self.postMessage({
         type: 'detail',
@@ -218,6 +289,7 @@ self.onmessage = async event => {
     self.postMessage({
       type: 'error',
       sourceId: message.source?.id || message.sourceId || '',
+      requestId: message.requestId,
       message: error?.message || String(error),
     });
   }

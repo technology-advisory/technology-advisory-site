@@ -1,380 +1,55 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>INCIBE-CERT Intelligence · Technology Advisory</title>
-<meta content="Explorador técnico de avisos de alerta temprana publicados por INCIBE-CERT." name="description"/>
-<meta content="#059669" name="theme-color"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="../../css/global.css" rel="stylesheet"/>
-<link href="../../css/dossier-core.css" rel="stylesheet"/>
-<style>
-:root{
-  --ink:#151915;
-  --muted:#64748b;
-  --line:#e2e8f0;
-  --paper:#fff;
-  --canvas:#f4f3ee;
-  --accent:#059669;
-  --accent-soft:#ecfdf5;
-  --amber:#b45309;
-  --amber-soft:#fffbeb;
-  --red:#b91c1c;
-  --red-soft:#fef2f2;
-  --blue:#0369a1;
-  --blue-soft:#eff6ff;
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--canvas);color:var(--ink);font-family:Inter,Arial,sans-serif}
-.wrap{width:100%;max-width:none;margin:0 auto;padding:24px 32px 32px}
-.incibe-card{width:100%;background:var(--paper);border:1px solid #d8d4c8}
-.top{padding:28px 32px;border-bottom:1px solid var(--line)}
-.eyebrow{font:700 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.14em;color:var(--accent)}
-h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,5vw,52px);line-height:1.05;margin:10px 0 12px}
-.accent{color:var(--accent)}
-.lead{font-size:17px;line-height:1.7;color:#475569;max-width:960px}
-.meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font:500 12px 'IBM Plex Mono',monospace;color:var(--muted)}
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:20px 32px;border-bottom:1px solid var(--line)}
-.stat{border:1px solid var(--line);padding:16px;background:#fafaf8}
-.stat b{display:block;font:700 28px 'Space Grotesk',sans-serif}
-.stat span{font-size:12px;color:var(--muted)}
-.filters{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:10px;padding:20px 32px;border-bottom:1px solid var(--line);background:#fafaf8}
-.filters input,.filters select{width:100%;padding:11px 12px;border:1px solid #cbd5e1;background:#fff;font:500 13px Inter;border-radius:6px}
-.filter-note{padding:10px 32px;border-bottom:1px solid var(--line);background:#fff;font:500 11px 'IBM Plex Mono',monospace;color:var(--muted)}
-.content{padding:24px 32px}
-.list{display:grid;gap:14px}
-.item{border:1px solid var(--line);border-left:4px solid var(--accent);background:#fff}
-.item.critical{border-left-color:var(--red)}
-.item.high{border-left-color:var(--amber)}
-.item.medium{border-left-color:var(--blue)}
-.item-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding:18px 18px 12px}
-.incibe-id{font:700 13px 'IBM Plex Mono',monospace;color:var(--accent)}
-.title{font:700 19px 'Space Grotesk',sans-serif;margin-top:8px}
-.title a{color:var(--ink);text-decoration:none}
-.title a:hover{color:var(--accent)}
-.refs{font:500 11px 'IBM Plex Mono',monospace;color:var(--muted);margin-top:6px}
-.badges{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
-.badge{font:700 10px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.04em;padding:6px 8px;border-radius:999px;border:1px solid var(--line);white-space:nowrap}
-.badge.red{background:var(--red-soft);color:var(--red);border-color:#fecaca}
-.badge.amber{background:var(--amber-soft);color:var(--amber);border-color:#fde68a}
-.badge.blue{background:var(--blue-soft);color:var(--blue);border-color:#bae6fd}
-.badge.green{background:var(--accent-soft);color:var(--accent);border-color:#a7f3d0}
-.body{padding:0 18px 18px}
-.summary{font-size:14px;line-height:1.65;color:#475569;margin:0 0 14px}
-.fact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.fact{padding:10px;background:#fafaf8;border:1px solid var(--line)}
-.fact small{display:block;color:var(--muted);font:500 10px 'IBM Plex Mono',monospace;text-transform:uppercase;margin-bottom:5px}
-.fact strong{font-size:13px;line-height:1.35;word-break:break-word}
-.pagination{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:28px 0 6px}
-.pagination button{border:1px solid #cbd5e1;background:#fff;padding:9px 12px;cursor:pointer;border-radius:5px}
-.pagination button.active{background:var(--ink);color:#fff}
-.pagination span{padding:9px 4px;color:var(--muted)}
-.source-note{margin-top:28px;padding:22px 0 4px;border-top:1px solid var(--line);font-size:13px;line-height:1.7;color:#475569}
-.error{padding:22px;border:1px solid #fecaca;background:var(--red-soft);color:var(--red)}
-.back{display:inline-block;margin-bottom:18px;padding:9px 14px;background:#059669;color:#fff;text-decoration:none;font:700 12px 'IBM Plex Mono',monospace;border-radius:6px;border:1px solid #047857;transition:.2s ease}.back:hover{background:#047857;transform:translateY(-1px)}
-@media(max-width:1050px){.filters{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}}
-@media(max-width:700px){
-  .wrap{padding:12px}.top,.stats,.filters,.content{padding-left:18px;padding-right:18px}
-  .filters,.stats,.fact-grid{grid-template-columns:1fr}
-  .item-head{display:block}.badges{justify-content:flex-start;margin-top:12px}
-}
+<meta name="description" content="Avisos técnicos de INCIBE-CERT normalizados para consulta rápida, filtrado, priorización y revisión de detalle.">
+<meta name="theme-color" content="#059669">
 
-/* TA-MOBILE-TOOLS-FIX-20260714 */
 
-@media(max-width:760px){
-  html,body{max-width:100%;overflow-x:hidden}
-  .wrap{width:100%!important;max-width:100%!important;padding:10px!important}
-  .vendor-card,.card,.card-wrapper,.ds-page{width:100%!important;max-width:100%!important;min-width:0!important}
-  .top,.stats,.filters,.content{padding-left:14px!important;padding-right:14px!important}
-  .stats,.filters,.quick-grid,.fact-grid{grid-template-columns:1fr!important}
-  .item-head{display:block!important}
-  .badges{justify-content:flex-start!important;margin-top:12px!important}
-  .scope-row{display:block!important}
-  .scope-row>div,.scope-row .family,.scope-row .status{border-right:0!important}
-  .scope-row .family,.scope-row .status{border-bottom:1px solid var(--line,#dce3e8)!important}
-  .matrix-wrap{width:100%!important;max-width:100%!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch}
-  .matrix{min-width:620px}
-  .summary,.lead,.title,.cves,.source-note{overflow-wrap:anywhere;word-break:break-word}
-  input,select,button{max-width:100%}
-  h1{font-size:clamp(30px,11vw,44px)!important}
-}
-
-</style>
-<link rel="canonical" href="https://technology-advisory.es/tools/incibe-cert/"/></head>
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/dossier-core.css">
+<link rel="stylesheet" href="../../css/threat-intelligence-ui.css">
+<link rel="stylesheet" href="../../css/editorial-knowledge-hub.css">
+</head>
 <body>
-<div class="card-wrapper ds-page"><div class="card">
+<div class="card-wrapper ds-page"><div class="card ti-shell">
 <div id="menu-container"></div>
-<div class="accent-bar" style="background:#059669;"></div>
-<div class="wrap"><div class="incibe-card">
-<section class="top">
-<a class="back" href="../index.html">← VOLVER A TOOLS</a>
-<div class="eyebrow">Tools · National Cybersecurity Intelligence</div>
-<h1>INCIBE-CERT <span class="accent">Intelligence</span></h1>
-<p class="lead">
-        Explorador técnico de avisos de alerta temprana publicados por INCIBE-CERT.
-        La vista normaliza severidad, identificadores CVE, explotación declarada y evolución temporal
-        sobre el histórico disponible en el JSON local.
-      </p>
-<div class="meta">
-<span id="scopeMeta">Ámbito local cargando…</span>
-<span id="sourceMeta">INCIBE-CERT cargando…</span>
-<span id="updatedMeta">Actualización cargando…</span>
-</div>
-</section>
-<section class="stats">
-<div class="stat"><b id="statTotal">—</b><span>Avisos en catálogo local</span></div>
-<div class="stat"><b id="statCritical">—</b><span>Importancia crítica</span></div>
-<div class="stat"><b id="statHigh">—</b><span>Importancia alta</span></div>
-<div class="stat"><b id="statExploited">—</b><span>Con explotación indicada</span></div>
-</section>
-<section class="filters">
-<input id="q" placeholder="Buscar aviso, CVE, fabricante o tecnología…" type="search"/>
-<select id="importance">
-<option value="">Importancia: todas</option>
-<option value="5">5 · Crítica</option>
-<option value="4">4 · Alta</option>
-<option value="3">3 · Media</option>
-<option value="2">2 · Baja</option>
-<option value="unknown">Sin clasificar</option>
-</select>
-<select id="exploited">
-<option value="">Explotación: todas</option>
-<option value="yes">Explotación indicada</option>
-<option value="no">No indicada</option>
-</select>
-<select id="month"><option value="">Mes: todos</option></select>
-<select id="order">
-<option value="desc">Publicación: más reciente primero</option>
-<option value="asc">Publicación: más antigua primero</option>
-</select>
-</section>
-<div class="filter-note" id="filterNote">Cargando catálogo…</div>
-<section class="content">
-<div class="list" id="list"></div>
-<div class="pagination" id="pagination"></div>
-<div class="source-note">
-<strong>Fuente oficial:</strong> INCIBE-CERT · Alerta temprana · Avisos.
-        Technology Advisory presenta una vista técnica normalizada para facilitar consulta y filtrado.
-        El contenido y la autoridad del aviso corresponden a INCIBE-CERT.
+<div class="accent-bar"></div>
+<main class="ti-main">
+  <div class="ti-breadcrumb"><a href="../index.html">Tools</a> / <a href="../threat-intelligence/index.html">Threat Intelligence</a> / INCIBE-CERT</div>
+  <header class="ti-heading">
+    <div class="ti-titlebox"><div class="ti-icon">INC</div><div><h1>INCIBE-CERT Intelligence</h1><p>Avisos técnicos de INCIBE-CERT normalizados para consulta rápida, filtrado, priorización y revisión de detalle.</p></div></div>
+    <div class="ti-updated">Fuente oficial · actualización automática</div>
+  </header>
+  <section id="tiKpis" class="ti-kpis"></section>
+  <section class="ti-toolbar">
+    <div class="ti-filters">
+      <input id="tiSearch" class="ti-input" placeholder="Buscar por CVE, advisory, producto o texto…">
+      <select id="tiSeverity" class="ti-select"><option value="">Todas las severidades</option><option value="critical">Crítica</option><option value="high">Alta</option><option value="medium">Media</option><option value="low">Baja / Info</option></select>
+      <select id="tiStatus" class="ti-select"><option value="">Todos los registros</option><option value="cve">Con CVE</option><option value="exploited">Explotación conocida</option></select>
+      <select id="tiTime" class="ti-select"><option value="">Todo el histórico</option><option value="30">Últimos 30 días</option><option value="90">Últimos 90 días</option><option value="365">Último año</option></select>
+    </div>
+    <div id="tiTabs" class="ti-tabs"></div>
+  </section>
+  <section class="ti-layout">
+    <div>
+      <div class="ti-tablebox">
+        <div class="ti-table-scroll"><table class="ti-table"><thead><tr id="tiTableHead"></tr></thead><tbody id="tiTableBody"></tbody></table></div>
+        <div class="ti-pager"><span id="tiCount"></span><div id="tiPageButtons" class="ti-page-buttons"></div></div>
       </div>
-</section>
-</div></div>
+      <div id="tiMobileCards" class="ti-mobile-cards"></div>
+    </div>
+    <aside id="tiDetail" class="ti-detail"><div class="ti-detail-empty">Selecciona un registro para consultar el detalle.</div></aside>
+  </section>
+</main>
 <div id="footer-container"></div>
 </div></div>
+<script src="../../js/inline/a1738144f2d4ee2a.js"></script>
+<script src="../../js/threat-intelligence-ui.js"></script>
 <script src="../../js/menu.js"></script>
 <script src="../../js/footer.js"></script>
-<script>
-const $=id=>document.getElementById(id);
-const PAGE_SIZE=7;
-let catalog=[],filtered=[],page=1,windowDays=180;
-
-function esc(v){
-  return String(v??'').replace(/[&<>"']/g,c=>({
-    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
-  }[c]));
-}
-function parseDate(v){
-  const d=v?new Date(v):null;
-  return !d||Number.isNaN(d.getTime())?null:d;
-}
-function fmtDate(v){
-  const d=parseDate(v);
-  return d?new Intl.DateTimeFormat('es-ES',{dateStyle:'medium',timeStyle:'short'}).format(d):'Sin fecha';
-}
-function monthKey(v){
-  const d=parseDate(v);
-  return d?`${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,'0')}`:'';
-}
-function monthLabel(k){
-  const [y,m]=k.split('-').map(Number);
-  return new Intl.DateTimeFormat('es-ES',{month:'long',year:'numeric'}).format(new Date(y,m-1,1));
-}
-function cves(v){
-  return [...new Set((`${v.title||''} ${v.summary||''}`.match(/CVE-\d{4}-\d{4,}/gi)||[]).map(x=>x.toUpperCase()))];
-}
-function incibeId(v){
-  const m=String(v.summary||'').match(/INCIBE-\d{4}-\d+/i);
-  return m?m[0].toUpperCase():'Aviso INCIBE-CERT';
-}
-function isExploited(v){
-  const s=String(v.summary||'');
-  return /Explotación\s+Si\b/i.test(s) ||
-         /se está explotando esta vulnerabilidad/i.test(s) ||
-         /explotación activa/i.test(s);
-}
-function manufacturer(v){
-  const s=String(v.summary||'');
-  const matches=[...s.matchAll(/Fabricante\s+([A-Za-z0-9 .&()_+\-]+?)(?=\s+CVE-\d{4}-\d+|$)/gi)];
-  if(!matches.length)return'No identificado';
-  const names=matches.map(m=>m[1].trim()).filter(Boolean);
-  return [...new Set(names)].slice(0,3).join(' · ')||'No identificado';
-}
-function severityClass(v){
-  if(v.importance===5)return'critical';
-  if(v.importance===4)return'high';
-  if(v.importance===3)return'medium';
-  return'';
-}
-function badgeClass(v){
-  if(v.importance===5)return'red';
-  if(v.importance===4)return'amber';
-  if(v.importance===3)return'blue';
-  return'green';
-}
-function importanceLabel(v){
-  return ({5:'5 · Crítica',4:'4 · Alta',3:'3 · Media',2:'2 · Baja'})[v.importance]||'Sin clasificar';
-}
-function shortSummary(v){
-  const raw=String(v.summary||'');
-  const start=raw.search(/\bDescripción\b/i);
-  const end=raw.search(/\bIdentificador\s+INCIBE-/i);
-  let text=(start>=0?raw.slice(start+'Descripción'.length):raw);
-  if(end>=0 && end>start) text=raw.slice(start>=0?start+'Descripción'.length:0,end);
-  text=text.replace(/\s+/g,' ').trim();
-  return text.length>620?text.slice(0,617).trim()+'…':text;
-}
-function populateMonths(){
-  const current=$('month').value;
-  const months=[...new Set(catalog.map(v=>monthKey(v.published_at)).filter(Boolean))].sort().reverse();
-  $('month').innerHTML='<option value="">Mes: todos</option>'+
-    months.map(k=>`<option value="${k}">${monthLabel(k)}</option>`).join('');
-  if(months.includes(current))$('month').value=current;
-}
-
-function apply(){
-  const term=$('q').value.trim().toLowerCase();
-  const importance=$('importance').value;
-  const exploited=$('exploited').value;
-  const month=$('month').value;
-  const order=$('order').value;
-
-  filtered=catalog.filter(v=>{
-    const text=[v.title,v.summary,...cves(v),manufacturer(v)].join(' ').toLowerCase();
-    if(term&&!text.includes(term))return false;
-    if(importance==='unknown'&&v.importance!=null)return false;
-    if(importance&&importance!=='unknown'&&String(v.importance)!==importance)return false;
-    if(exploited==='yes'&&!isExploited(v))return false;
-    if(exploited==='no'&&isExploited(v))return false;
-    if(month&&monthKey(v.published_at)!==month)return false;
-    return true;
-  });
-
-  filtered.sort((a,b)=>{
-    const da=parseDate(a.published_at)?.getTime()||0;
-    const db=parseDate(b.published_at)?.getTime()||0;
-    return order==='asc'?da-db:db-da;
-  });
-
-  page=1;
-  render();
-}
-
-function renderPagination(pages){
-  const el=$('pagination');
-  el.innerHTML='';
-  if(pages<=1)return;
-
-  const visible=new Set([1,pages]);
-  for(let i=page-2;i<=page+2;i++)if(i>=1&&i<=pages)visible.add(i);
-
-  const sorted=[...visible].sort((a,b)=>a-b);
-  let previous=0;
-
-  sorted.forEach(n=>{
-    if(previous&&n-previous>1){
-      const dots=document.createElement('span');
-      dots.textContent='···';
-      el.appendChild(dots);
-    }
-
-    const button=document.createElement('button');
-    button.textContent=n;
-    if(n===page)button.className='active';
-    button.addEventListener('click',()=>{
-      page=n;
-      render();
-      window.scrollTo({top:0,behavior:'smooth'});
-    });
-    el.appendChild(button);
-    previous=n;
-  });
-}
-
-function render(){
-  const pages=Math.max(1,Math.ceil(filtered.length/PAGE_SIZE));
-  if(page>pages)page=pages;
-
-  $('filterNote').textContent=
-    `${filtered.length} resultados · ${catalog.length} avisos cargados en el catálogo local · filtros acumulativos`;
-
-  const start=(page-1)*PAGE_SIZE;
-  const rows=filtered.slice(start,start+PAGE_SIZE);
-
-  $('list').innerHTML=rows.map(v=>{
-    const refs=cves(v);
-    const exploited=isExploited(v);
-    return `
-    <article class="item ${severityClass(v)}">
-      <div class="item-head">
-        <div>
-          <div class="incibe-id">${esc(incibeId(v))}</div>
-          <div class="title"><a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">${esc(v.title)}</a></div>
-          <div class="refs">${esc(refs.length?refs.join(' · '):'Sin CVE identificado en el aviso')}</div>
-        </div>
-        <div class="badges">
-          <span class="badge ${badgeClass(v)}">${esc(importanceLabel(v))}</span>
-          ${exploited?'<span class="badge red">Explotación indicada</span>':'<span class="badge green">Explotación no indicada</span>'}
-        </div>
-      </div>
-      <div class="body">
-        <p class="summary">${esc(shortSummary(v)||'Sin resumen disponible.')}</p>
-        <div class="fact-grid">
-          <div class="fact"><small>Publicado</small><strong>${esc(fmtDate(v.published_at))}</strong></div>
-          <div class="fact"><small>Fabricante</small><strong>${esc(manufacturer(v))}</strong></div>
-          <div class="fact"><small>Identificadores</small><strong>${esc(refs.length?refs.slice(0,5).join(' · '):'No identificados')}</strong></div>
-        </div>
-      </div>
-    </article>`;
-  }).join('');
-
-  renderPagination(pages);
-}
-
-async function load(){
-  try{
-    const response=await fetch('../../data/incibe-cert.json',{cache:'no-store'});
-    if(!response.ok)throw new Error(`HTTP ${response.status}`);
-
-    const data=await response.json();
-    catalog=data.alerts||[];
-    windowDays=Number(data.window_days||180);
-
-    $('statTotal').textContent=Number(data.total_alerts||catalog.length).toLocaleString('es-ES');
-    $('statCritical').textContent=Number(data.total_critical||0).toLocaleString('es-ES');
-    $('statHigh').textContent=Number(data.total_high||0).toLocaleString('es-ES');
-    $('statExploited').textContent=catalog.filter(isExploited).length.toLocaleString('es-ES');
-
-    $('scopeMeta').textContent=`Ámbito configurado: ${windowDays} días / 6 meses`;
-    $('sourceMeta').textContent='INCIBE-CERT · Alerta temprana · Avisos';
-    $('updatedMeta').textContent=`Actualizado ${fmtDate(data.last_updated_at)}`;
-
-    populateMonths();
-    apply();
-  }catch(error){
-    $('filterNote').textContent='Error de carga';
-    $('list').innerHTML=`<div class="error">No se pudo cargar INCIBE-CERT Intelligence: ${esc(error.message)}</div>`;
-  }
-}
-
-['q','importance','exploited','month','order'].forEach(id=>{
-  $(id).addEventListener(id==='q'?'input':'change',apply);
-});
-
-load();
-</script>
-</body>
-</html>
+<script src="../../js/editorial-ui.js"></script>
+<script src="../../js/csp-actions.js"></script>
+</body></html>

@@ -10,6 +10,7 @@
     pageSize: 10,
     selected: null,
     selectedFull: null,
+    detailFailed: false,
     detailTab: 'summary',
     loaded: new Set(),
     loading: new Set(),
@@ -29,6 +30,16 @@
       "'": '&#39;',
     })[character]
   );
+  function safeExternalUrl(value) {
+    if (!value) return null;
+    try {
+      const url = new URL(String(value), window.location.href);
+      return (url.protocol === 'https:' || url.protocol === 'http:') ? url.href : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
   const arr = value => Array.isArray(value) ? value.filter(Boolean) : (value ? [value] : []);
   const text = value => String(value ?? '').replace(/\s+/g, ' ').trim();
   const num = value => {
@@ -52,7 +63,11 @@
       id: source.id,
       label: source.label,
       color: source.color || '#07884a',
+      mode: source.mode || 'single',
       url: new URL(source.path, document.baseURI).href,
+      chunkBaseUrl: source.chunkBase
+        ? new URL(source.chunkBase, document.baseURI).href
+        : '',
     };
   }
 
@@ -157,19 +172,30 @@
         requestId,
         sourceId: compactItem._source,
         recordIndex: compactItem._recordIndex,
+        reference: {
+          id: compactItem.advisory_id,
+          chunk: compactItem._chunk,
+        },
       });
     });
   }
 
   worker.addEventListener('message', event => {
     const message = event.data || {};
-    if (message.type !== 'detail') return;
+    if (!['detail', 'error'].includes(message.type) || !message.requestId) return;
 
     const resolve = state.detailRequests.get(message.requestId);
     if (!resolve) return;
 
     state.detailRequests.delete(message.requestId);
     showBusy('');
+
+    if (message.type === 'error') {
+      console.warn('No se pudo cargar el detalle', message.message);
+      resolve(null);
+      return;
+    }
+
     resolve(message.item || null);
   });
 
@@ -256,6 +282,7 @@
       'baseScore',
       'base_score',
       'cvss_max',
+      'max_cvss',
       '_linkedCvss',
     ]) {
       const value = num(item[key]);
@@ -265,6 +292,12 @@
   };
 
   const severityOf = item => {
+    if (typeof item.importance === 'number') {
+      if (item.importance >= 5) return 'critical';
+      if (item.importance >= 4) return 'high';
+      if (item.importance >= 3) return 'medium';
+      return 'low';
+    }
     const severity = text(
       item.severity || item.risk || item.impact || item.importance
     ).toLowerCase();
@@ -296,7 +329,8 @@
   })[severity] || severity;
 
   const providerOf = item => text(
-    item.provider
+    arr(item.manufacturers)[0]
+    || item.provider
     || item.vendor
     || item.vendorProject
     || item.source
@@ -335,10 +369,12 @@
     const box = $('#tiTabs');
     if (!box) return;
 
-    const tabs = [
-      { id: 'all', label: C.allLabel || 'Todas' },
-      ...(C.sources || []),
-    ];
+    const tabs = (C.sources || []).length === 1
+      ? [...(C.sources || [])]
+      : [
+          { id: 'all', label: C.allLabel || 'Todas' },
+          ...(C.sources || []),
+        ];
 
     box.innerHTML = tabs.map(source => {
       let count = '';
@@ -366,6 +402,7 @@
       state.page = 1;
       state.selected = null;
       state.selectedFull = null;
+      state.detailFailed = false;
       buildTabs();
 
       if (state.source === 'all') {
@@ -431,6 +468,7 @@
     if (!state.filtered.includes(state.selected)) {
       state.selected = state.filtered[0] || null;
       state.selectedFull = null;
+      state.detailFailed = false;
     }
 
     render();
@@ -544,6 +582,7 @@
   async function selectItem(item, rerenderTable = true) {
     state.selected = item;
     state.selectedFull = null;
+    state.detailFailed = false;
 
     if (rerenderTable) renderTable();
     renderDetail();
@@ -552,6 +591,7 @@
     if (state.selected !== item) return;
 
     state.selectedFull = full;
+    state.detailFailed = !full;
     renderDetail();
   }
 
@@ -643,7 +683,7 @@
     }
 
     const item = state.selectedFull || compact;
-    const loadingDetail = !state.selectedFull;
+    const loadingDetail = !state.selectedFull && !state.detailFailed;
     const references = refsOf(item);
     const products = productsOf(item);
     const versions = versionsOf(item);
@@ -651,14 +691,15 @@
     const cves = cvesOf(item);
     const score = scoreOf(item);
     const severity = severityOf(item);
+    const officialUrl = safeExternalUrl(item.url || references[0]?.url);
 
     box.innerHTML = `<div class="ti-detail-head"><div class="ti-detail-top"><div><span class="ti-badge ${severity}">${severityLabel(severity)}</span>${score !== null ? ` <span class="ti-badge unknown">CVSS ${esc(score)}</span>` : ''}</div><button class="ti-close" aria-label="Cerrar">×</button></div><h2>${esc(cves[0] || idOf(item))}</h2><div class="ti-detail-sub">${esc(text(item.title || item.vulnerabilityName || idOf(item)))}</div></div>
     <div class="ti-detail-meta"><div class="ti-meta-cell"><small>Proveedor</small><b>${esc(providerOf(item))}</b></div><div class="ti-meta-cell"><small>Publicado</small><b>${esc(fmtDate(dateVal(item)))}</b></div><div class="ti-meta-cell"><small>Estado</small><b>Publicado</b></div><div class="ti-meta-cell"><small>Producto</small><b>${esc(products.slice(0, 2).join(', ') || 'No especificado')}</b></div></div>
     <div class="ti-detail-tabs"><button class="ti-detail-tab active" data-tab="summary">Resumen</button><button class="ti-detail-tab" data-tab="affected">Afectados (${products.length + versions.length})</button><button class="ti-detail-tab" data-tab="solution">Solución</button><button class="ti-detail-tab" data-tab="references">Referencias (${references.length})</button></div>
-    <div class="ti-detail-body"><section class="ti-pane active" data-pane="summary">${loadingDetail ? '<div class="ti-detail-loading">Cargando detalle completo…</div>' : ''}<p>${esc(descriptionOf(item))}</p><div class="ti-data-grid"><div class="ti-data"><small>CVE</small><div class="ti-cve-stack">${cves.length ? cves.map(cve => `<span>${esc(cve)}</span>`).join('') : '<span>No indicado</span>'}</div></div><div class="ti-data"><small>CVSS</small><b>${esc(score ?? 'No disponible')}</b></div><div class="ti-data"><small>EPSS</small><b>${esc(num(item.epss) ?? 'No disponible')}</b></div><div class="ti-data"><small>Explotación</small><b>${(item.known_exploited === true || item._source === 'cisa-kev') ? 'Confirmada' : item.known_exploited === false ? 'No conocida' : 'Sin confirmar'}</b></div></div></section>
+    <div class="ti-detail-body"><section class="ti-pane active" data-pane="summary">${loadingDetail ? '<div class="ti-detail-loading">Cargando detalle completo…</div>' : (state.detailFailed ? '<div class="ti-detail-loading">No se pudo cargar el detalle ampliado; se muestra la información disponible del índice.</div>' : '')}<p>${esc(descriptionOf(item))}</p><div class="ti-data-grid"><div class="ti-data"><small>CVE</small><div class="ti-cve-stack">${cves.length ? cves.map(cve => `<span>${esc(cve)}</span>`).join('') : '<span>No indicado</span>'}</div></div><div class="ti-data"><small>CVSS</small><b>${esc(score ?? 'No disponible')}</b></div><div class="ti-data"><small>EPSS</small><b>${esc(num(item.epss) ?? 'No disponible')}</b></div><div class="ti-data"><small>Explotación</small><b>${(item.known_exploited === true || item._source === 'cisa-kev') ? 'Confirmada' : item.known_exploited === false ? 'No conocida' : 'Sin confirmar'}</b></div></div></section>
     <section class="ti-pane" data-pane="affected"><h4>Productos afectados</h4>${listHtml(products)}<h4>Versiones afectadas</h4>${listHtml(versions)}<h4>Versiones corregidas</h4>${listHtml(fixed)}</section>
     <section class="ti-pane" data-pane="solution"><h4>Solución / remediación</h4><p>${esc(text(item.solution || item.required_action || item.requiredAction || 'Consulte el advisory oficial para conocer la actualización o remediación aplicable.'))}</p><h4>Workaround / mitigación</h4><p>${esc(text(item.workaround || item.mitigation || 'No se ha publicado una mitigación alternativa específica.'))}</p></section>
-    <section class="ti-pane" data-pane="references">${listHtml(references.map(reference => reference.title || reference.url))}${(item.url || references[0]?.url) ? `<a class="ti-official" target="_blank" rel="noopener" href="${esc(item.url || references[0].url)}">Abrir fuente oficial ↗</a>` : ''}</section></div>`;
+    <section class="ti-pane" data-pane="references">${listHtml(references.map(reference => reference.title || reference.url))}${officialUrl ? `<a class="ti-official" target="_blank" rel="noopener noreferrer" href="${esc(officialUrl)}">Abrir fuente oficial ↗</a>` : ''}</section></div>`;
 
     box.querySelector('.ti-close').onclick = () => box.classList.remove('open');
     box.querySelector('.ti-detail-tabs').onclick = event => {

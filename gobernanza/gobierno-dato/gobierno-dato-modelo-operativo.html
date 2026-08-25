@@ -14,7 +14,6 @@
 <link href="../../css/articulo.css" rel="stylesheet"/>
 <link href="../../css/index.css" rel="stylesheet"/>
 <link href="../../css/articulo-diagramas.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
         @media (max-width: 1024px) {
             .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
@@ -23,7 +22,8 @@
         }
         .article-diagram svg { max-width: 100%; height: auto; }
     </style>
-<link rel="canonical" href="https://technology-advisory.es/gobernanza/gobierno-dato/gobierno-dato-modelo-operativo.html"/></head>
+<link rel="canonical" href="https://technology-advisory.es/gobernanza/gobierno-dato/gobierno-dato-modelo-operativo.html"/><link href="../../css/editorial-knowledge-hub.css" rel="stylesheet"/>
+</head>
 <body>
 <div class="card-wrapper ds-page">
 <div class="card">
@@ -55,7 +55,7 @@
 <!-- GRÁFICO 3: REGISTRO DE COMPARTICIONES -->
 <!-- GRÁFICO 4: REVISIÓN PERIÓDICA -->
 <!-- PIE DE AUTOR -->
-<figure aria-label="Flujo de aprobación para compartir datos" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Flujo de aprobación para compartir datos" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 440" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="440" rx="14" width="900"></rect>
@@ -121,7 +121,7 @@
 <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 02 — Roles y autoridad</div>
 <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Quién decide, quién ejecuta y quién puede detener el uso</h2>
 <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p>El Data Owner decide finalidad, criticidad, nivel de calidad, compartición y riesgo residual. El Data Steward mantiene definiciones, reglas y seguimiento. El custodio técnico implanta controles. Seguridad, Privacidad y Arquitectura emiten requisitos y validan riesgos dentro de su ámbito.</p><p>La autoridad debe escalar por impacto, no por jerarquía ceremonial. Una compartición rutinaria de información interna no debe esperar al comité; una transferencia de datos sensibles a un nuevo tercero no puede aprobarla quien solicita el servicio.</p><p>Debe existir capacidad de suspensión. Si la calidad cae por debajo del umbral o aparece un uso no autorizado, alguien debe poder detener la canalización, retirar un conjunto o revocar un acceso sin esperar al siguiente ciclo de gobierno.</p><div class="defensa-box-info"><strong>Diseño sano:</strong> el solicitante propone, el propietario decide, el custodio ejecuta y una función independiente verifica cuando el riesgo lo exige.</div></div>
-</div><figure aria-label="Niveles de aprobación por sensibilidad" class="article-diagram" onclick="toggleZoom(this)">
+</div><figure aria-label="Niveles de aprobación por sensibilidad" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="300" rx="14" width="900"></rect>
@@ -193,7 +193,7 @@
 <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 03 — Flujos de decisión</div>
 <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">La clasificación determina el camino, pero el contexto determina la decisión</h2>
 <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p>La solicitud debe describir dato, finalidad, consumidores, duración, ubicación, controles y tercero. La clasificación orienta el nivel de aprobación, pero no reemplaza el análisis. Un dato interno agregado puede revelar más que cada campo por separado.</p><p>Los flujos de bajo riesgo pueden automatizarse con reglas preaprobadas. Los casos de mayor impacto requieren revisión humana y evidencia adicional. El objetivo no es añadir pasos, sino evitar que cada equipo invente su propio criterio.</p><p>Las decisiones deben ser reutilizables. Si un patrón ha sido aprobado y las condiciones no cambian, el modelo debe permitir aplicarlo sin repetir toda la evaluación. La gobernanza también debe eliminar fricción innecesaria.</p><div class="defensa-box-success"><strong>El proceso correcto no es el más largo.</strong> Es el que aplica el nivel de control adecuado y deja una decisión reconstruible.</div></div>
-</div><figure aria-label="Registro de comparticiones" class="article-diagram" onclick="toggleZoom(this)">
+</div><figure aria-label="Registro de comparticiones" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="280" rx="14" width="900"></rect>
@@ -257,7 +257,7 @@
 <div class="block-meta" style="font-family:monospace; font-size:11px; text-transform:uppercase; color:#64748b; margin-bottom:10px;">Módulo 05 — Excepciones y terceros</div>
 <h2 style="font-size:25px; font-weight:800; color:#0f172a; margin:0 0 18px; padding-bottom:10px; border-bottom:1px solid #ededea;">Toda excepción debe nacer con propietario y fecha de caducidad</h2>
 <div class="body-text" style="font-size:16px; line-height:1.85; color:#334155; text-align:justify;"><p>Las excepciones aparecen porque la plataforma, el contrato o el proyecto no pueden cumplir todavía el diseño objetivo. Eso es legítimo. Lo indefendible es convertir la temporalidad en permanencia silenciosa.</p><p>Cada excepción debe registrar alcance, riesgo, controles compensatorios, aprobador, responsable de remediación y fecha de expiración. La renovación exige una nueva decisión; no una prórroga automática.</p><p>En terceros, la aprobación debe vincularse a contrato, ubicación, subencargados, medidas técnicas, canal de transferencia y mecanismo de retirada. Cuando termina el servicio, el cierre debe incluir devolución o destrucción acreditada.</p><div class="defensa-box-warning"><strong>Una excepción sin caducidad no es una excepción.</strong> Es el diseño real, pero sin haberlo reconocido.</div></div>
-</div><figure aria-label="Revisión periódica de comparticiones" class="article-diagram" onclick="toggleZoom(this)">
+</div><figure aria-label="Revisión periódica de comparticiones" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="280" rx="14" width="900"></rect>
@@ -348,27 +348,8 @@
 </div>
 <script src="../../js/menu.js"></script>
 <script src="../../js/footer.js"></script>
-<script>
-        function toggleZoom(element) {
-            if (element.classList.contains('zoomed')) {
-                element.classList.remove('zoomed');
-                document.querySelector('.zoom-overlay')?.classList.remove('active');
-            } else {
-                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
-                element.classList.add('zoomed');
-                let overlay = document.querySelector('.zoom-overlay');
-                if (!overlay) {
-                    overlay = document.createElement('div');
-                    overlay.className = 'zoom-overlay';
-                    overlay.onclick = function() {
-                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
-                        overlay.classList.remove('active');
-                    };
-                    document.body.appendChild(overlay);
-                }
-                overlay.classList.add('active');
-            }
-        }
-    </script>
+<script src="../../js/inline/5354eb2664b4b261.js"></script>
+<script src="../../js/editorial-ui.js"></script>
+<script src="../../js/csp-actions.js"></script>
 </body>
 </html>

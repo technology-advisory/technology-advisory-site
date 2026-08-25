@@ -8,7 +8,8 @@
     "desc": "Una matriz de riesgo con colores no convence a ningún CFO. El riesgo cuantificado en euros es el idioma que dirección entiende.",
     "url": "gobernanza/riesgo-tecnologico/riesgo-tecnologico-diseno-principios.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/c50134d11f3c.svg"
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "desc": "Un registro de riesgos que se actualiza una vez al año no refleja una organización que cambia constantemente.",
     "url": "gobernanza/riesgo-tecnologico/riesgo-tecnologico-modelo-operativo.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/ef11b2b34507.svg"
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "desc": "Un riesgo aceptado sin aprobación formal documentada es indistinguible de simplemente ignorarlo.",
     "url": "gobernanza/riesgo-tecnologico/riesgo-tecnologico-controles-evidencias.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/b40eece9fbc7.svg"
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "desc": "Los 4 niveles de madurez: de la lista de miedos sin cuantificar a decisiones de inversión basadas en ALE.",
     "url": "gobernanza/riesgo-tecnologico/riesgo-tecnologico-madurez-roadmap.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/a5c19ecbaa31.svg"
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "desc": "La forma en que se gobierna IT revela si se percibe como coste a minimizar o como valor que potencia el negocio.",
     "url": "gobernanza/gobierno-ti/gobierno-ti-diseno-principios.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/4a1a9c5357fc.svg"
   },
   {
     "id": 6,
@@ -63,7 +68,8 @@
     "desc": "Un comité de gobierno que se reúne cada mes y no decide nada concreto es tiempo institucional invertido en apariencia de gestión.",
     "url": "gobernanza/gobierno-ti/gobierno-ti-modelo-operativo.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/120c4d274e4b.svg"
   },
   {
     "id": 7,
@@ -74,7 +80,8 @@
     "desc": "Reportar 99.9% de disponibilidad sin traducirlo a impacto de negocio es hablar un idioma que dirección no entiende.",
     "url": "gobernanza/gobierno-ti/gobierno-ti-controles-evidencias.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/9b233bd228ff.svg"
   },
   {
     "id": 8,
@@ -85,7 +92,8 @@
     "desc": "Los 4 niveles de madurez: de IT como soporte reactivo a IT participando en decisiones estratégicas de negocio.",
     "url": "gobernanza/gobierno-ti/gobierno-ti-madurez-roadmap.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/77d69cca345c.svg"
   },
   {
     "id": 9,
@@ -96,7 +104,8 @@
     "desc": "El algoritmo de scoring que lleva 5 años en producción también es IA regulada bajo el AI Act, aunque nadie lo llame así.",
     "url": "gobernanza/gobierno-ia/gobierno-ia-diseno-principios.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/5a5c6304389d.svg"
   },
   {
     "id": 10,
@@ -107,7 +116,8 @@
     "desc": "\"Hay un humano en el proceso\" no basta si ese humano aprueba el 99% sin revisar críticamente.",
     "url": "gobernanza/gobierno-ia/gobierno-ia-modelo-operativo.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/63082c312b53.svg"
   },
   {
     "id": 11,
@@ -118,7 +128,8 @@
     "desc": "Los sistemas de IA de alto riesgo deben registrarse en la base de datos pública de la UE — muchos no lo están.",
     "url": "gobernanza/gobierno-ia/gobierno-ia-controles-evidencias.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/db6b963ce8df.svg"
   },
   {
     "id": 12,
@@ -129,7 +140,8 @@
     "desc": "Los 4 niveles de madurez: de \"usamos IA en algún sitio\" al sistema de gestión certificado con ISO 42001.",
     "url": "gobernanza/gobierno-ia/gobierno-ia-madurez-roadmap.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/0ade95cd0c3a.svg"
   },
   {
     "id": 13,
@@ -140,7 +152,8 @@
     "desc": "NIS2 amplió su alcance drásticamente. Si tienes más de 50 empleados en un sector ampliado, probablemente estás dentro.",
     "url": "gobernanza/marcos-regulatorios/marcos-regulatorios-diseno-principios.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/f3c8c6329504.svg"
   },
   {
     "id": 14,
@@ -151,7 +164,8 @@
     "desc": "Sin criterio claro de notificación, las 24 horas que exige NIS2 se consumen decidiendo si hay que notificar.",
     "url": "gobernanza/marcos-regulatorios/marcos-regulatorios-modelo-operativo.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/8389be7399a4.svg"
   },
   {
     "id": 15,
@@ -162,7 +176,8 @@
     "desc": "Si ya certificas ISO 27001 con alcance amplio, probablemente ya cubres el 60-70% de NIS2 sin saberlo.",
     "url": "gobernanza/marcos-regulatorios/marcos-regulatorios-controles-evidencias.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/126962939041.svg"
   },
   {
     "id": 16,
@@ -173,7 +188,8 @@
     "desc": "Los 4 niveles de madurez regulatoria: de no saber si aplica al cumplimiento integrado en la operación diaria.",
     "url": "gobernanza/marcos-regulatorios/marcos-regulatorios-madurez-roadmap.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/4c02b67ab76c.svg"
   },
   {
     "id": 17,
@@ -184,7 +200,8 @@
     "desc": "SolarWinds, Kaseya, MOVEit: los ataques a la cadena de suministro son la norma. El riesgo de tu proveedor es tu riesgo.",
     "url": "gobernanza/gestion-terceros/gestion-terceros-diseno-principios.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/d7ff4eca2849.svg"
   },
   {
     "id": 18,
@@ -195,7 +212,8 @@
     "desc": "Un contrato con un proveedor crítico sin cláusulas de seguridad es una relación de confianza sin respaldo legal.",
     "url": "gobernanza/gestion-terceros/gestion-terceros-modelo-operativo.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/502a665cf1dc.svg"
   },
   {
     "id": 19,
@@ -206,7 +224,8 @@
     "desc": "SOC 2 Type I no es lo mismo que Type II, aunque algunos proveedores esperen que nadie note la diferencia.",
     "url": "gobernanza/gestion-terceros/gestion-terceros-controles-evidencias.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/994a574181d1.svg"
   },
   {
     "id": 20,
@@ -217,7 +236,8 @@
     "desc": "Los 4 niveles de madurez: de confiar en el proveedor sin verificar a la monitorización continua de su riesgo.",
     "url": "gobernanza/gestion-terceros/gestion-terceros-madurez-roadmap.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/3c8ba142b512.svg"
   },
   {
     "id": 21,
@@ -228,7 +248,8 @@
     "desc": "Una política que nadie ha leído nunca no protege nada — existe para pasar auditorías, no para cambiar comportamiento.",
     "url": "gobernanza/politicas-normativa/politicas-normativa-diseno-principios.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/758b79ebed95.svg"
   },
   {
     "id": 22,
@@ -239,7 +260,8 @@
     "desc": "Sin propietario ni fecha de revisión, una política se convierte en un artefacto histórico que nadie se atreve a tocar.",
     "url": "gobernanza/politicas-normativa/politicas-normativa-modelo-operativo.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/e1f39e067d91.svg"
   },
   {
     "id": 23,
@@ -250,7 +272,8 @@
     "desc": "Una política que exige 14 caracteres mientras el sistema solo obliga a 8 es la discrepancia que cualquier auditor detecta.",
     "url": "gobernanza/politicas-normativa/politicas-normativa-controles-evidencias.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/a0e030429d3f.svg"
   },
   {
     "id": 24,
@@ -261,7 +284,8 @@
     "desc": "Los 4 niveles de madurez: del documento legal que nadie lee a la política convertida en cultura operativa real.",
     "url": "gobernanza/politicas-normativa/politicas-normativa-madurez-roadmap.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/5e2b2ca5ab80.svg"
   },
   {
     "id": 25,
@@ -272,7 +296,8 @@
     "desc": "Una auditoría interna que siempre concluye \"todo correcto\" no está auditando con rigor, está confirmando lo esperado.",
     "url": "gobernanza/auditoria-control-interno/auditoria-control-interno-diseno-principios.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/b91705a03728.svg"
   },
   {
     "id": 26,
@@ -284,7 +309,8 @@
     "url": "gobernanza/auditoria-control-interno/auditoria-control-interno-modelo-operativo.html",
     "published": true,
     "nuevo": false,
-    "hidden": false
+    "hidden": false,
+    "thumb": "img/article-thumbs/062a74560b99.svg"
   },
   {
     "id": 27,
@@ -295,7 +321,8 @@
     "desc": "Un hallazgo marcado como \"cerrado\" sin verificación real puede ser exactamente el mismo problema, solo invisible.",
     "url": "gobernanza/auditoria-control-interno/auditoria-control-interno-controles-evidencias.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/ae8c6253e68c.svg"
   },
   {
     "id": 28,
@@ -307,7 +334,8 @@
     "url": "gobernanza/auditoria-control-interno/auditoria-control-interno-madurez-roadmap.html",
     "published": true,
     "nuevo": false,
-    "hidden": false
+    "hidden": false,
+    "thumb": "img/article-thumbs/f175369b3032.svg"
   },
   {
     "id": 29,
@@ -318,7 +346,8 @@
     "desc": "Sin propietario claro del dato, la responsabilidad de todos se convierte, en la práctica, en responsabilidad de nadie.",
     "url": "gobernanza/gobierno-dato/gobierno-dato-diseno-principios.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/7ada335bd11b.svg"
   },
   {
     "id": 30,
@@ -329,7 +358,8 @@
     "desc": "Compartir datos con un tercero sin proceso de aprobación explícito es cómo los datos confidenciales acaban donde nadie planeó.",
     "url": "gobernanza/gobierno-dato/gobierno-dato-modelo-operativo.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/c39cbad53a3d.svg"
   },
   {
     "id": 31,
@@ -340,7 +370,8 @@
     "desc": "Un mapa de flujo de datos de hace tres años da una falsa sensación de control sobre datos que ya no fluyen así.",
     "url": "gobernanza/gobierno-dato/gobierno-dato-controles-evidencias.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/fdc0269cd459.svg"
   },
   {
     "id": 32,
@@ -351,7 +382,8 @@
     "desc": "Los 4 niveles de madurez: de datos dispersos sin dueño al gobierno del dato como ventaja competitiva real.",
     "url": "gobernanza/gobierno-dato/gobierno-dato-madurez-roadmap.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/b383e95be6cd.svg"
   },
   {
     "id": 33,
@@ -362,7 +394,8 @@
     "desc": "El inventario debe identificar propósito, proveedor, modelo, datos, usuarios, integración, propietario y decisiones afectadas. Una lista de licencias no es gobierno.",
     "url": "gobernanza/gobierno-ia/inventario-sistemas-ia.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/b09081b76460.svg"
   },
   {
     "id": 34,
@@ -373,7 +406,8 @@
     "desc": "La clasificación exige entender finalidad prevista, contexto de uso, operador y efecto sobre personas. Etiquetar 'copilot' o 'chatbot' no determina el régimen.",
     "url": "gobernanza/gobierno-ia/clasificacion-riesgo-ai-act.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/21928e4e651f.svg"
   },
   {
     "id": 35,
@@ -384,7 +418,8 @@
     "desc": "La política no basta. Los controles deben actuar en acceso, prompt, recuperación de contexto, herramientas, logging y tratamiento del output.",
     "url": "gobernanza/gobierno-ia/controles-ia-generativa-corporativa.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/b58f1580bb38.svg"
   },
   {
     "id": 36,
@@ -395,7 +430,8 @@
     "desc": "Bloquear dominios no elimina Shadow AI. Hay que entender necesidad, ofrecer alternativas, descubrir uso y aplicar controles proporcionales al dato y al caso.",
     "url": "gobernanza/gobierno-ia/shadow-ai.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/4c7b2264c4aa.svg"
   },
   {
     "id": 37,
@@ -406,7 +442,8 @@
     "desc": "Un riesgo útil declara activo o capacidad, amenaza, condición, impacto y contexto. 'Riesgo de ciberataque' no permite decidir ni medir.",
     "url": "gobernanza/riesgo-tecnologico/registro-riesgos-tecnologicos.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/80364940183e.svg"
   },
   {
     "id": 38,
@@ -417,7 +454,8 @@
     "desc": "El riesgo residual no es el inherente menos un porcentaje arbitrario. Debe reflejar cómo los controles modifican probabilidad, exposición o impacto.",
     "url": "gobernanza/riesgo-tecnologico/riesgo-inherente-residual.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/c3451bc28154.svg"
   },
   {
     "id": 39,
@@ -429,7 +467,8 @@
     "url": "gobernanza/riesgo-tecnologico/apetito-tolerancia-riesgo.html",
     "published": true,
     "nuevo": false,
-    "hidden": false
+    "hidden": false,
+    "thumb": "img/article-thumbs/33b8671f8a29.svg"
   },
   {
     "id": 40,
@@ -440,7 +479,8 @@
     "desc": "Un KRI debe tener relación causal razonable con el riesgo, fuente fiable, umbral, frecuencia y decisión asociada.",
     "url": "gobernanza/riesgo-tecnologico/kris-riesgo-tecnologico.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/1a21e881724d.svg"
   },
   {
     "id": 41,
@@ -451,7 +491,8 @@
     "desc": "La evaluación debe centrarse en alcance, datos, integración, dependencia y criticidad del servicio concreto. Un cuestionario corporativo genérico puede ocultar el riesgo real.",
     "url": "gobernanza/gestion-terceros/due-diligence-proveedores-ti.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/9f74f8f0fec7.svg"
   },
   {
     "id": 42,
@@ -462,7 +503,8 @@
     "desc": "Software, firmware, componentes, repositorios y servicios gestionados introducen confianza transitiva que debe visualizarse y monitorizarse.",
     "url": "gobernanza/gestion-terceros/riesgo-cadena-suministro.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/eb0b7d715b7e.svg"
   },
   {
     "id": 43,
@@ -473,7 +515,8 @@
     "desc": "Una cláusula útil define tiempo, evidencia, alcance y derecho de actuación. 'Mantener medidas adecuadas' rara vez permite gestionar un incidente real.",
     "url": "gobernanza/gestion-terceros/clausulas-ciberseguridad-proveedores.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/c1cc85d1e1d9.svg"
   },
   {
     "id": 44,
@@ -484,7 +527,8 @@
     "desc": "La evaluación inicial envejece. Cambios de servicio, adquisiciones, incidentes, subprocesadores y vulnerabilidades pueden alterar el riesgo durante el contrato.",
     "url": "gobernanza/gestion-terceros/monitorizacion-continua-terceros.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/3dcde3deb6de.svg"
   },
   {
     "id": 45,
@@ -495,7 +539,8 @@
     "desc": "La evidencia debe ser pertinente, íntegra, fechada, reproducible y vinculada al periodo revisado. Una screenshot aislada rara vez demuestra operación sostenida.",
     "url": "gobernanza/auditoria-control-interno/evidencia-tecnica-auditoria.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/d78792790926.svg"
   },
   {
     "id": 46,
@@ -506,7 +551,8 @@
     "desc": "Un control puede estar bien diseñado y no operar, o ejecutarse de forma constante y no mitigar el riesgo que pretende cubrir.",
     "url": "gobernanza/auditoria-control-interno/diseno-control-vs-eficacia-operativa.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/f1da15894633.svg"
   },
   {
     "id": 47,
@@ -518,7 +564,8 @@
     "url": "gobernanza/auditoria-control-interno/muestreo-evidencias-ti.html",
     "published": true,
     "nuevo": false,
-    "hidden": false
+    "hidden": false,
+    "thumb": "img/article-thumbs/e58d7238f9c6.svg"
   },
   {
     "id": 48,
@@ -529,7 +576,8 @@
     "desc": "Un plan debe tratar causa raíz, definir entregable verificable, owner y fecha. Cambiar el texto del procedimiento no corrige un control técnico fallido.",
     "url": "gobernanza/auditoria-control-interno/hallazgos-planes-remediacion.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/a3937eb82ff2.svg"
   },
   {
     "id": 49,
@@ -540,7 +588,8 @@
     "desc": "NIS2 exige medidas de gestión de riesgos de ciberseguridad y notificación; el reto técnico es traducirlas a servicios, controles, responsables y pruebas sostenidas.",
     "url": "gobernanza/marcos-regulatorios/nis2-aplicacion-tecnica.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/5867f244c639.svg"
   },
   {
     "id": 50,
@@ -551,7 +600,8 @@
     "desc": "DORA articula gestión de riesgo TIC, incidentes, pruebas de resiliencia y riesgo de terceros; la evidencia debe conectar función crítica con tecnología y prueba.",
     "url": "gobernanza/marcos-regulatorios/dora-resiliencia-operativa.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/141a93420653.svg"
   },
   {
     "id": 51,
@@ -562,7 +612,8 @@
     "desc": "El gobierno del AI Act requiere conocer sistemas y roles, clasificar casos de uso, mantener documentación y revaluar cuando cambia la finalidad o el sistema.",
     "url": "gobernanza/marcos-regulatorios/ai-act-gobierno-tecnico.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/395bd2a9d49f.svg"
   },
   {
     "id": 52,
@@ -573,7 +624,8 @@
     "desc": "Un control puede apoyar varios marcos, pero alcance, obligación, sujeto y evidencia no son idénticos. El mapping debe reutilizar pruebas sin borrar diferencias.",
     "url": "gobernanza/marcos-regulatorios/iso27001-nis2-dora-mapeo.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/534ab908a1cf.svg"
   },
   {
     "id": 53,
@@ -584,7 +636,8 @@
     "desc": "Una taxonomía solo aporta valor cuando modifica acceso, cifrado, compartición, retención y monitorización de forma consistente.",
     "url": "gobernanza/gobierno-dato/clasificacion-datos.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/0f14c3f47543.svg"
   },
   {
     "id": 54,
@@ -595,7 +648,8 @@
     "desc": "El lineage conecta origen, transformación, almacenamiento y consumo. Sin él, un KPI puede ser correcto hoy y cambiar mañana sin explicación.",
     "url": "gobernanza/gobierno-dato/data-lineage.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/30d6426f2c23.svg"
   },
   {
     "id": 55,
@@ -606,7 +660,8 @@
     "desc": "Copias, réplicas, logs, snapshots y data lakes prolongan la vida del dato. La política debe traducirse a rutas técnicas de eliminación verificable.",
     "url": "gobernanza/gobierno-dato/retencion-eliminacion-datos.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/adcba3572bed.svg"
   },
   {
     "id": 56,
@@ -617,7 +672,8 @@
     "desc": "La calidad del modelo no compensa datos sin permiso, procedencia o contexto. RAG y entrenamiento amplifican defectos de gobierno existentes.",
     "url": "gobernanza/gobierno-dato/gobierno-dato-para-ia.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/70fb983be150.svg"
   },
   {
     "id": 57,
@@ -628,7 +684,8 @@
     "desc": "Modelo de ownership, RACI, comités, segregación de funciones y autoridad para decidir sobre arquitectura, privilegios, excepciones y riesgo residual.",
     "url": "gobernanza/active-directory/ad-gobernanza-modelo-gobierno-raci.html",
     "published": true,
-    "nuevo": true
+    "nuevo": true,
+    "thumb": "img/article-thumbs/de67cbc0ca06.svg"
   },
   {
     "id": 58,
@@ -639,7 +696,8 @@
     "desc": "Inventario de riesgos, controles, pruebas, evidencias, hallazgos y planes de tratamiento para demostrar que el directorio se gobierna y no solo se administra.",
     "url": "gobernanza/active-directory/ad-gobernanza-riesgo-auditoria-evidencias.html",
     "published": true,
-    "nuevo": true
+    "nuevo": true,
+    "thumb": "img/article-thumbs/5be3eb81f2d9.svg"
   },
   {
     "id": 59,
@@ -650,7 +708,8 @@
     "desc": "Marco documental para cuentas, privilegios, GPO, protocolos, hardening, cambios y excepciones con caducidad, compensaciones y aprobación formal.",
     "url": "gobernanza/active-directory/ad-gobernanza-politicas-estandares-excepciones.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/f32eb2c74ef8.svg"
   },
   {
     "id": 60,
@@ -661,7 +720,8 @@
     "desc": "Indicadores útiles para medir exposición, deuda, disponibilidad, cumplimiento y capacidad de recuperación sin convertir el gobierno en una colección de métricas vacías.",
     "url": "gobernanza/active-directory/ad-gobernanza-kpi-kri-madurez.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/5603d9ad340a.svg"
   },
   {
     "id": 61,
@@ -672,6 +732,7 @@
     "desc": "Control de proveedores, cuentas externas, conectores, aplicaciones, soporte remoto y dependencias Entra ID mediante contratos, accesos limitados y evidencia revisable.",
     "url": "gobernanza/active-directory/ad-gobernanza-terceros-cloud-hibrido.html",
     "published": true,
-    "nuevo": false
+    "nuevo": false,
+    "thumb": "img/article-thumbs/7d890d9c9963.svg"
   }
 ]

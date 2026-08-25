@@ -1,0 +1,1 @@
+window.TI_CONFIG={"allLabel":"EUVD","initialSource":"euvd","columns":["severity","id","provider","date","cvss","epss","product","exploitation"],"sources":[{"id":"euvd","label":"EUVD","path":"../../data/euvd/index.json","mode":"index-chunks","chunkBase":"../../data/euvd/chunks/","color":"#2968c8"}]};

@@ -31,7 +31,8 @@
             }
         }
     </style>
-<link rel="canonical" href="https://technology-advisory.es/arquitectura/alta-disponibilidad/windows-failover-clustering.html"/></head>
+<link rel="canonical" href="https://technology-advisory.es/arquitectura/alta-disponibilidad/windows-failover-clustering.html"/><link href="../../css/editorial-knowledge-hub.css" rel="stylesheet"/>
+</head>
 <body>
 <div class="card-wrapper ds-page">
 <div class="card">
@@ -58,7 +59,7 @@
 <div class="defensa-layout" style="display:grid; grid-template-columns:1fr 340px; gap:48px; align-items:start; padding:0 48px 40px;">
 <div class="defensa-main" style="min-width:0;">
 <!-- GRÁFICO 1: MODELOS DE QUORUM -->
-<figure aria-label="Modelos de quorum en Windows" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Modelos de quorum en Windows" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 430" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="430" rx="14" width="900"></rect>
@@ -135,7 +136,7 @@
 <span class="zoom-hint">🔍 Clic para ampliar</span>
 </figure>
 <!-- GRÁFICO 2: TOPOLOGÍA DE RED -->
-<figure aria-label="Topología de red" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Topología de red" class="article-diagram" data-ta-action="toggle-zoom">
 <svg role="img" viewbox="0 0 820 320" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="320" rx="14" width="820"></rect>
 <text fill="#151915" font-size="16" font-weight="800" x="40" y="36">Topología de red recomendada</text>
@@ -164,7 +165,7 @@
 <span class="zoom-hint">🔍 Clic para ampliar</span>
 </figure>
 <!-- GRÁFICO 3: MATRIZ DE DECISIÓN -->
-<figure aria-label="Matriz de decisión" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Matriz de decisión" class="article-diagram" data-ta-action="toggle-zoom">
 <svg role="img" viewbox="0 0 820 260" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="260" rx="14" width="820"></rect>
 <text fill="#151915" font-size="16" font-weight="800" x="40" y="36">Matriz de decisión: ¿qué quorum elegir?</text>
@@ -190,7 +191,7 @@
 <span class="zoom-hint">🔍 Clic para ampliar</span>
 </figure>
 <!-- GRÁFICO 4: ARQUITECTURA CSV -->
-<figure aria-label="Cluster Shared Volumes" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Cluster Shared Volumes" class="article-diagram" data-ta-action="toggle-zoom">
 <svg role="img" viewbox="0 0 820 310" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="310" rx="14" width="820"></rect>
 <text fill="#151915" font-size="16" font-weight="800" x="40" y="36">Cluster Shared Volumes: flujo de I/O</text>
@@ -214,7 +215,7 @@
 <span class="zoom-hint">🔍 Clic para ampliar</span>
 </figure>
 <!-- GRÁFICO 5: FLUJO DE FAILOVER -->
-<figure aria-label="Flujo de failover" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Flujo de failover" class="article-diagram" data-ta-action="toggle-zoom">
 <svg role="img" viewbox="0 0 820 310" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="310" rx="14" width="820"></rect>
 <text fill="#151915" font-size="16" font-weight="800" x="40" y="36">Flujo de failover en Windows Clustering</text>
@@ -347,27 +348,8 @@
 </div>
 <script src="../../js/menu.js"></script>
 <script src="../../js/footer.js"></script>
-<script>
-function toggleZoom(element) {
-    if (element.classList.contains('zoomed')) {
-        element.classList.remove('zoomed');
-        document.querySelector('.zoom-overlay')?.classList.remove('active');
-    } else {
-        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
-        element.classList.add('zoomed');
-        let overlay = document.querySelector('.zoom-overlay');
-        if (!overlay) {
-            overlay = document.createElement('div');
-            overlay.className = 'zoom-overlay';
-            overlay.onclick = function() {
-                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
-                overlay.classList.remove('active');
-            };
-            document.body.appendChild(overlay);
-        }
-        overlay.classList.add('active');
-    }
-}
-</script>
+<script src="../../js/inline/336062d5479fde4b.js"></script>
+<script src="../../js/editorial-ui.js"></script>
+<script src="../../js/csp-actions.js"></script>
 </body>
 </html>

@@ -1,0 +1,1 @@
+window.TI_CONFIG={"allLabel":"Todos los proveedores","columns":["severity","id","provider","date","cvss","product","status"],"sources":[{"id":"aws-security","label":"AWS","path":"../../data/aws/security.json","color":"#ff9900"},{"id":"google-cloud-security","label":"Google Cloud","path":"../../data/google-cloud/security.json","color":"#4285f4"}]};

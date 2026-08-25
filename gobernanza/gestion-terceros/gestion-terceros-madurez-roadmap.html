@@ -14,7 +14,6 @@
 <link href="../../css/articulo.css" rel="stylesheet"/>
 <link href="../../css/index.css" rel="stylesheet"/>
 <link href="../../css/articulo-diagramas.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
         @media (max-width: 1024px) {
             .defensa-layout { display: block !important; padding: 0 4% 40px !important; }
@@ -23,7 +22,8 @@
         }
         .article-diagram svg { max-width: 100%; height: auto; }
     </style>
-<link rel="canonical" href="https://technology-advisory.es/gobernanza/gestion-terceros/gestion-terceros-madurez-roadmap.html"/></head>
+<link rel="canonical" href="https://technology-advisory.es/gobernanza/gestion-terceros/gestion-terceros-madurez-roadmap.html"/><link href="../../css/editorial-knowledge-hub.css" rel="stylesheet"/>
+</head>
 <body>
 <div class="card-wrapper ds-page">
 <div class="card">
@@ -50,7 +50,7 @@
 <div class="defensa-layout" style="align-items:start; padding:0 4% 40px;">
 <div class="defensa-main" style="min-width:0;">
 <!-- GRÁFICO 1: LA MADUREZ SE MIDE ENTRE CONTRATOS -->
-<figure aria-label="La madurez se mide entre contratos" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="La madurez se mide entre contratos" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 340" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="340" rx="14" width="900"></rect>
@@ -137,7 +137,7 @@
 </div>
 <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 02</span></div>
 <!-- GRÁFICO 2: LOS CUATRO NIVELES -->
-<figure aria-label="Cuatro niveles de madurez" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="Cuatro niveles de madurez" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 460" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="460" rx="14" width="900"></rect>
@@ -233,7 +233,7 @@
 </div>
 <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 03</span></div>
 <!-- GRÁFICO 3: EL SALTO CLAVE -->
-<figure aria-label="El salto de madurez clave" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="El salto de madurez clave" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 360" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="360" rx="14" width="900"></rect>
@@ -312,7 +312,7 @@
 </div>
 <div class="defensa-divider" style="display:flex; align-items:center; justify-content:center; gap:16px; margin:45px 0; color:#94a3b8;"><span class="label" style="font-family:monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#475569; background:#ffffff; padding:0 16px; white-space:nowrap; font-weight:700;"><span style="color:#059669;">⚙</span> Módulo 04</span></div>
 <!-- GRÁFICO 4: KPIS POR NIVEL -->
-<figure aria-label="KPIs por nivel de madurez" class="article-diagram" onclick="toggleZoom(this)">
+<figure aria-label="KPIs por nivel de madurez" class="article-diagram" data-ta-action="toggle-zoom">
 <div class="diagram-desktop">
 <svg role="img" viewbox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#fafaf8" height="320" rx="14" width="900"></rect>
@@ -450,27 +450,8 @@
 </div>
 <script src="../../js/menu.js"></script>
 <script src="../../js/footer.js"></script>
-<script>
-        function toggleZoom(element) {
-            if (element.classList.contains('zoomed')) {
-                element.classList.remove('zoomed');
-                document.querySelector('.zoom-overlay')?.classList.remove('active');
-            } else {
-                document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
-                element.classList.add('zoomed');
-                let overlay = document.querySelector('.zoom-overlay');
-                if (!overlay) {
-                    overlay = document.createElement('div');
-                    overlay.className = 'zoom-overlay';
-                    overlay.onclick = function() {
-                        document.querySelectorAll('.article-diagram.zoomed').forEach(el => el.classList.remove('zoomed'));
-                        overlay.classList.remove('active');
-                    };
-                    document.body.appendChild(overlay);
-                }
-                overlay.classList.add('active');
-            }
-        }
-    </script>
+<script src="../../js/inline/5354eb2664b4b261.js"></script>
+<script src="../../js/editorial-ui.js"></script>
+<script src="../../js/csp-actions.js"></script>
 </body>
 </html>

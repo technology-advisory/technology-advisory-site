@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
 
-Disallow: /desarrollo.html
 
 Sitemap: https://technology-advisory.es/sitemap.xml

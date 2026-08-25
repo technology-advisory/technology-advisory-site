@@ -1,0 +1,1 @@
+window.TI_CONFIG={"allLabel":"INCIBE-CERT","initialSource":"incibe-cert","columns":["severity","id","provider","date","product","status"],"sources":[{"id":"incibe-cert","label":"INCIBE-CERT","path":"../../data/incibe/cert.json","color":"#0a8f65"}]};

@@ -20,6 +20,43 @@ let currentCategory = "all";
 let currentPage = 1;
 let sortMode = "newest";
 const PER_PAGE = 7;
+let currentJsonPath = null;
+let articlesLoading = false;
+const TA_LIST_STATE_KEY = `ta:list:${window.location.pathname}`;
+
+// Controlamos la restauración nosotros para que el BFCache no deje el listado a medio pintar.
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+function saveListState() {
+    try {
+        sessionStorage.setItem(TA_LIST_STATE_KEY, JSON.stringify({
+            url: window.location.href,
+            scrollY: window.scrollY || 0,
+            ts: Date.now()
+        }));
+    } catch (_) {}
+}
+
+function restoreListScroll() {
+    try {
+        const raw = sessionStorage.getItem(TA_LIST_STATE_KEY);
+        if (!raw) return;
+        const state = JSON.parse(raw);
+        if (!state || state.url !== window.location.href) return;
+        // Esperar a que DOM, imágenes y rejilla hayan recuperado su altura real.
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+            window.scrollTo(0, Number(state.scrollY) || 0);
+        }));
+    } catch (_) {}
+}
+
+function goToArticle(url) {
+    saveListState();
+    window.location.href = url;
+}
+
 
 // ==============================
 // PARSEAR FECHA EN ESPAÑOL
@@ -189,17 +226,96 @@ function renderArticles() {
     }
 
     if (noResults) noResults.classList.remove('show');
-    grid.innerHTML = pageItems.map(articulo => `
-        <div class="article-card" data-cat="${articulo.cat}" onclick="location.href='/${String(articulo.url || '').replace(/^\/+/, '')}'">
-            <div class="article-meta">${articulo.meta}</div>
-            <div class="article-title">${articulo.title}${(articulo.nuevo === true || articulo.badge === 'Nuevo') ? `<span class="article-badge">Nuevo</span>` : ''}</div>
-            <div class="article-date">${articulo.date}</div>
-            <div class="article-desc">${articulo.desc}</div>
-            <a href="/${String(articulo.url || '').replace(/^\/+/, '')}" class="article-link">Leer artículo →</a>
-        </div>
-    `).join('');
+    grid.replaceChildren();
+
+    pageItems.forEach(articulo => {
+        const articleUrl = `/${String(articulo.url || '').replace(/^\/+/, '')}`;
+        const thumbUrl = articulo.thumb ? `/${String(articulo.thumb).replace(/^\/+/, '')}` : '';
+        const isNew = articulo.nuevo === true || articulo.badge === 'Nuevo';
+
+        const card = document.createElement('article');
+        card.className = 'article-card';
+        card.dataset.cat = String(articulo.cat || '');
+        card.dataset.articleUrl = articleUrl;
+
+        const thumbLink = document.createElement('a');
+        thumbLink.className = 'article-thumb';
+        thumbLink.href = articleUrl;
+        thumbLink.tabIndex = -1;
+        thumbLink.setAttribute('aria-hidden', 'true');
+        thumbLink.addEventListener('click', saveListState);
+
+        if (thumbUrl) {
+            const image = document.createElement('img');
+            image.src = thumbUrl;
+            image.alt = '';
+            image.loading = 'lazy';
+            thumbLink.appendChild(image);
+        } else {
+            const fallback = document.createElement('span');
+            fallback.className = 'article-thumb-fallback';
+            fallback.textContent = 'TA';
+            thumbLink.appendChild(fallback);
+        }
+
+        const content = document.createElement('div');
+        content.className = 'article-card-content';
+
+        const meta = document.createElement('div');
+        meta.className = 'article-meta';
+        meta.textContent = String(articulo.meta || '');
+
+        const title = document.createElement('div');
+        title.className = 'article-title';
+        title.appendChild(document.createTextNode(String(articulo.title || '')));
+        if (isNew) {
+            const badge = document.createElement('span');
+            badge.className = 'article-badge';
+            badge.textContent = 'Nuevo';
+            title.appendChild(badge);
+        }
+
+        const desc = document.createElement('div');
+        desc.className = 'article-desc';
+        desc.textContent = String(articulo.desc || '');
+
+        const footer = document.createElement('div');
+        footer.className = 'article-card-footer';
+
+        const date = document.createElement('span');
+        date.className = 'article-date';
+        date.textContent = String(articulo.date || '');
+
+        const readLink = document.createElement('a');
+        readLink.href = articleUrl;
+        readLink.className = 'article-link';
+        readLink.textContent = 'Leer artículo';
+        readLink.addEventListener('click', saveListState);
+
+        footer.append(date, readLink);
+        content.append(meta, title, desc, footer);
+
+        const saveButton = document.createElement('button');
+        saveButton.className = 'article-save';
+        saveButton.type = 'button';
+        saveButton.setAttribute('aria-label', 'Guardar para leer después');
+        saveButton.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>';
+        saveButton.addEventListener('click', event => {
+            event.stopPropagation();
+            saveButton.classList.toggle('saved');
+        });
+
+        card.append(thumbLink, content, saveButton);
+        card.addEventListener('click', event => {
+            if (event.target.closest('a,button,select,input,label')) return;
+            goToArticle(card.dataset.articleUrl);
+        });
+
+        grid.appendChild(card);
+    });
 
     renderPagination(totalPages);
+    restoreListScroll();
     
     // Actualizar contadores de los botones de filtro
     const counts = {};
@@ -220,11 +336,11 @@ function renderPagination(totalPages) {
     if (!pag) return;
 
     let html = '';
-    html += `<button class="page-btn page-arrow" ${currentPage === 1 ? 'disabled' : ''} onclick="goToPage(${currentPage - 1})">←</button>`;
+    html += `<button class="page-btn page-arrow" ${currentPage === 1 ? 'disabled' : ''} data-ta-action="go-article-page" data-page="${currentPage - 1}">←</button>`;
     for (let i = 1; i <= totalPages; i++) {
-        html += `<button class="page-btn${i === currentPage ? ' active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+        html += `<button class="page-btn${i === currentPage ? ' active' : ''}" data-ta-action="go-article-page" data-page="${i}">${i}</button>`;
     }
-    html += `<button class="page-btn page-arrow" ${currentPage === totalPages ? 'disabled' : ''} onclick="goToPage(${currentPage + 1})">→</button>`;
+    html += `<button class="page-btn page-arrow" ${currentPage === totalPages ? 'disabled' : ''} data-ta-action="go-article-page" data-page="${currentPage + 1}">→</button>`;
     pag.innerHTML = html;
 }
 
@@ -276,6 +392,9 @@ function applyFilters() {
 // CARGAR DATOS DESDE JSON
 // ==============================
 async function cargarArticulos(jsonPath) {
+    if (articlesLoading) return;
+    articlesLoading = true;
+    currentJsonPath = jsonPath;
     try {
         const jsonUrl = `${jsonPath}${jsonPath.includes('?') ? '&' : '?'}_=${Date.now()}`;
         const response = await fetch(jsonUrl, { cache: 'no-store' });
@@ -287,6 +406,9 @@ async function cargarArticulos(jsonPath) {
         const todos = await response.json();
 
         articulosData = todos.filter(a => a.published === true);
+
+        const totalNode = document.getElementById('total-articulos');
+        if (totalNode) totalNode.textContent = `${articulosData.length} artículos`;
 
         // Validación estricta de parámetros. Una combinación inexistente se trata
         // como recurso inexistente y se deriva a la página 404.
@@ -357,7 +479,10 @@ async function cargarArticulos(jsonPath) {
         renderArticles();
     } catch (error) {
         console.error('Error cargando artículos:', error);
-        document.getElementById("articlesGrid").innerHTML = '<div class="no-results show">Error al cargar los artículos</div>';
+        const grid = document.getElementById("articlesGrid");
+        if (grid) grid.innerHTML = '<div class="no-results show">Error al cargar los artículos</div>';
+    } finally {
+        articlesLoading = false;
     }
 }
 
@@ -365,6 +490,7 @@ async function cargarArticulos(jsonPath) {
 // INICIO
 // ==============================
 function initArticulos(jsonPath) {
+    currentJsonPath = jsonPath;
     const params = new URLSearchParams(window.location.search);
     const allowed = new Set(["cat", "page", "mes"]);
     const keys = Array.from(params.keys());
@@ -398,3 +524,25 @@ function initArticulos(jsonPath) {
 
     cargarArticulos(jsonPath);
 }
+
+
+// Cuando se vuelve desde un artículo, Safari/Chromium/Firefox pueden restaurar la página
+// desde BFCache sin disparar DOMContentLoaded de nuevo. Revalidamos el estado visual.
+window.addEventListener('pageshow', event => {
+    if (!event.persisted) return;
+
+    const grid = document.getElementById('articlesGrid');
+    if (!grid) return;
+
+    if (articulosData.length) {
+        const state = getStateFromURL();
+        currentCategory = state.cat;
+        currentPage = state.page;
+        poblarMeses(currentCategory);
+        document.querySelectorAll('#filters .filter-btn').forEach(b => b.classList.remove('active'));
+        document.querySelector(`#filters .filter-btn[data-filter="${currentCategory}"]`)?.classList.add('active');
+        renderArticles();
+    } else if (currentJsonPath) {
+        cargarArticulos(currentJsonPath);
+    }
+});
