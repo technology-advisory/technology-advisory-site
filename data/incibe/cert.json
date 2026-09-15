@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "title": "INCIBE-CERT Intelligence (Dual Feed)",
-  "last_updated_at": "2026-09-15T15:52:40.599175Z",
+  "last_updated_at": "2026-09-15T17:05:26.916108Z",
   "window_days": 180,
   "sync_state": {
     "aviso": {
@@ -10,16 +10,16 @@
     },
     "vulnerabilidad": {
       "bootstrap_complete": false,
-      "bootstrap_next_page": 334
+      "bootstrap_next_page": 340
     }
   },
-  "total_alerts": 3068,
+  "total_alerts": 3140,
   "total_avisos": 182,
-  "total_vulnerabilidades": 2876,
+  "total_vulnerabilidades": 2948,
   "total_critical": 142,
   "total_high": 29,
   "total_exploited": 8,
-  "total_with_cve": 3050,
+  "total_with_cve": 3122,
   "importance_counts": {
     "1": 0,
     "2": 0,
@@ -7090,6 +7090,32 @@
       "manufacturers": []
     },
     {
+      "id": "3ce9b7a0acdccf86d870d8f2",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-48932",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-48932",
+      "summary": "*** Pendiente de traducción *** A flaw in Node.js HTTP client can cause a request desynchronization for Node.js-based forwarding proxies that rebuild outbound headers from the visible `IncomingMessage` headers while piping the original body to a reused backend connection.<br /> <br /> Node.js can omit headers beyond `maxHeadersCount` / `maxHeaderPairs` from `req.headers`, `req.rawHeaders`, and `req.headersDistinct`, while still using those omitted headers internally for HTTP message framing. In particular, `Content-Length` can be hidden from userland while the request body is still delivered.<br /> <br /> This vulnerability affects all supported release lines: **Node.js 22**, **Node.js 24**, and **Node.js 26**. Impacto Vector 3.x CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 3.70 BAJA Vector: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Alto Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Ninguno Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 3.70 Gravedad 3.x BAJA Referencias a soluciones, herramientas e información https://hackerone.com/reports/3564941",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-09-01T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-48932"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-48932",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
       "id": "ae8e3069573505c9f4909e90",
       "incibe_id": null,
       "source_type": "vulnerabilidad",
@@ -7212,6 +7238,32 @@
       "cve_details": [
         {
           "cve": "CVE-2026-19914",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "f7c4023c6b7745dd5edd01e9",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-19820",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-19820",
+      "summary": "*** Pendiente de traducción *** A vulnerability in the Backblaze Client allows a local user to make the system not bootable by creating a link from Backblaze&amp;#39;s folder to Windows OS system files during a backup. Successful exploitation requires an administrator-level system change that results in the absence of specific Windows OS security controls. This vulnerability is due to improper link resolution. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:L/SA:L CVSS v4.0 Severidad y Métricas: Puntuación base: 7.80 ALTA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:L/SA:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Confidentiality (VC): Ninguno Integrity (VI): Ninguno Availability (VA): Ninguno Confidentiality (SC): Alto Integrity (SI): Bajo Availability (SA): Bajo Puntuación base 4.0 7.80 Gravedad 4.0 ALTA Referencias a soluciones, herramientas e información https://www.backblaze.com/computer-backup/docs/backup-client-release-notes-windows https://www.backblaze.com/status/update",
+      "affected_resources": "",
+      "solution": "de una ruta antes de aceder a un fichero (Seguimiento de enlaces) Fecha de publicación: 01/09/2026 Última modificación: 03/09/2026 Descripción *** Pendiente de traducción *** A vulnerability in the Backblaze Client allows a local user to make the system not bootable by creating a link from Backblaze&amp;#39;s folder to Windows OS system files during a backup. Successful exploitation requires an administrator-level system change that results in the absence of specific Windows OS security controls. This vulnerability is due to improper link resolution. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:L/SA:L CVSS v4.0 Severidad y Métricas: Puntuación base: 7.80 ALTA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:L/SA:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Confidentiality (VC): Ninguno Integrity (VI): Ninguno Availability (VA): Ninguno Confidentiality (SC): Alto Integrity (SI): Bajo Availability (SA): Bajo Puntuación base 4.0 7.80 Gravedad 4.0 ALTA Referencias a soluciones, herramientas e información https://www.backblaze.com/computer-backup/docs/backup-client-release-notes-windows https://www.backblaze.com/status/update",
+      "detail": "",
+      "published_at": "2026-09-01T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-19820"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-19820",
           "cvss": null,
           "cvss_version": null
         }
@@ -7654,6 +7706,32 @@
       "cve_details": [
         {
           "cve": "CVE-2026-18752",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "a93701d1159e8f28257935eb",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-18743",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-18743",
+      "summary": "*** Pendiente de traducción *** A flaw was found in popt. This vulnerability allows an attacker to provide specially crafted configuration content to a host, which, when loaded, can lead to a small memory corruption issue. This occurs because of an error in how the `poptConfigFileToString` function reallocates memory for buffers. Successful exploitation could result in heap metadata corruption, potentially causing the affected process to become unavailable (denial of service). Impacto Vector 3.x CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 2.50 BAJA Vector: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L Vector de acceso (AV): Local Complejidad de acceso (AC): Alto Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Ninguno Impacto a la integridad (I): Ninguno Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 2.50 Gravedad 3.x BAJA Referencias a soluciones, herramientas e información https://access.redhat.com/errata/RHSA-2026:56984 https://access.redhat.com/security/cve/CVE-2026-18743 https://bugzilla.redhat.com/show_bug.cgi?id=2510809",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-09-01T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-18743"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-18743",
           "cvss": null,
           "cvss_version": null
         }
@@ -8389,6 +8467,1806 @@
         {
           "cve": "CVE-2016-2183",
           "cvss": 4.0,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "b1b95dc2eb253cfeb1d4f868",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-83596",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-83596",
+      "summary": "*** Pendiente de traducción *** A flaw was found in WebKitGTK. Processing malicious web content can cause memory corruption due to improper memory handling. Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H CVSS v3.1 Severidad y Métricas: Puntuación base: 8.80 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Obligatorio Alcance (S): Sin modificar Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Alto Puntuación base 3.x 8.80 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://access.redhat.com/security/cve/CVE-2026-83596 https://bugs.webkit.org/show_bug.cgi?id=322969 https://bugzilla.redhat.com/show_bug.cgi?id=2526490",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-83596"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-83596",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "696dc5c8d3efc31c4e5f2ee2",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-83524",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-83524",
+      "summary": "*** Pendiente de traducción *** A security vulnerability has been detected in RedPort Optimizer wXa-203, Optimizer wXa-213 and Optimizer wXa-223 up to 20260704. This impacts the function exec of the file /xgatev1/system/datetime.php of the component System Clock. The manipulation leads to command injection. The attack may be initiated remotely. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure but did not respond in any way. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:P CVSS v4.0 Severidad y Métricas: Puntuación base: 8.60 ALTA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:P Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Confidentiality (VC): Alto Integrity (VI): Alto Availability (VA): Alto Confidentiality (SC): Alto Integrity (SI): Alto Availability (SA): Alto Exploit Maturity (E): POC Puntuación base 4.0 8.60 Gravedad 4.0 ALTA Vector 3.x CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H CVSS v3.1 Severidad y Métricas: Puntuación base: 9.90 CRÍTICA Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Alcance (S): Modificado Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Alto Puntuación base 3.x 9.90 Gravedad 3.x CRÍTICA Vector 2.0 AV:N/AC:L/Au:S/C:C/I:C/A:C CVSS v2.0 Severidad y Métricas: Puntuación base: 9.00 ALTA Vector: AV:N/AC:L/Au:S/C:C/I:C/A:C Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Autenticación (Au): Simple Impacto a la confidencialidad (C): Completo Impacto a la integridad (I): Completo Impacto a la disponibilidad (A): Completo Puntuación base 2.0 9.00 Gravedad 2.0 ALTA Referencias a soluciones, herramientas e información https://uvxbywu62qm.feishu.cn/wiki/EA4TwFTx0ih9IhkJX5QcnCmlnSd?from=from_copylink https://vuldb.com/cve/CVE-2026-83524 https://vuldb.com/submit/880051 https://vuldb.com/vuln/397374 https://vuldb.com/vuln/397374/cti https://vuldb.com/submit/880051",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-83524"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-83524",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "7e2a7589891858eb74d38c4f",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82971",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82971",
+      "summary": "*** Pendiente de traducción *** A vulnerability was determined in QVidium Opera11 3.3.2a26-Ax4x-opera11. This affects an unknown part of the file /cgi-bin/net_tr.cgi of the component CGI Script. This manipulation of the argument ipaddr causes command injection. The attack may be initiated remotely. The exploit has been publicly disclosed and may be utilized. The vendor explains: \"QVidium has now closed its doors and no longer will be able to sell products or provide support.\" This vulnerability only affects products that are no longer supported by the maintainer. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:P CVSS v4.0 Severidad y Métricas: Puntuación base: 9.30 CRÍTICA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:P Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Confidentiality (VC): Alto Integrity (VI): Alto Availability (VA): Alto Confidentiality (SC): Alto Integrity (SI): Alto Availability (SA): Alto Exploit Maturity (E): POC Puntuación base 4.0 9.30 Gravedad 4.0 CRÍTICA Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H CVSS v3.1 Severidad y Métricas: Puntuación base: 10.00 CRÍTICA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Modificado Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Alto Puntuación base 3.x 10.00 Gravedad 3.x CRÍTICA Vector 2.0 AV:N/AC:L/Au:N/C:C/I:C/A:C CVSS v2.0 Severidad y Métricas: Puntuación base: 10.00 ALTA Vector: AV:N/AC:L/Au:N/C:C/I:C/A:C Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Autenticación (Au): Ninguno Impacto a la confidencialidad (C): Completo Impacto a la integridad (I): Completo Impacto a la disponibilidad (A): Completo Puntuación base 2.0 10.00 Gravedad 2.0 ALTA Referencias a soluciones, herramientas e información https://uvxbywu62qm.feishu.cn/wiki/Tn2ewwaafigfabkMWJJcc3rhnud?from=from_copylink https://vuldb.com/cve/CVE-2026-82971 https://vuldb.com/submit/880050 https://vuldb.com/vuln/397334 https://vuldb.com/vuln/397334/cti",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82971"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82971",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "d5a66c8d565e831bda970309",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82957",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82957",
+      "summary": "*** Pendiente de traducción *** A vulnerability was found in hyperledger-firefly firefly up to 1.4.0. The impacted element is the function ValidateOptions of the file internal/events/webhooks/webhooks.go of the component Webhook Subscription. Performing a manipulation of the argument url results in server-side request forgery. Remote exploitation of the attack is possible. The exploit has been made public and could be used. The vendor was contacted early about this disclosure but did not respond in any way. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P CVSS v4.0 Severidad y Métricas: Puntuación base: 5.50 MEDIA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Confidentiality (VC): Bajo Integrity (VI): Bajo Availability (VA): Bajo Confidentiality (SC): Ninguno Integrity (SI): Ninguno Availability (SA): Ninguno Exploit Maturity (E): POC Puntuación base 4.0 5.50 Gravedad 4.0 MEDIA Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 7.30 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 7.30 Gravedad 3.x ALTA Vector 2.0 AV:N/AC:L/Au:N/C:P/I:P/A:P CVSS v2.0 Severidad y Métricas: Puntuación base: 7.50 ALTA Vector: AV:N/AC:L/Au:N/C:P/I:P/A:P Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Autenticación (Au): Ninguno Impacto a la confidencialidad (C): Físico Impacto a la integridad (I): Físico Impacto a la disponibilidad (A): Físico Puntuación base 2.0 7.50 Gravedad 2.0 ALTA Referencias a soluciones, herramientas e información https://vuldb.com/cve/CVE-2026-82957 https://vuldb.com/submit/879847 https://vuldb.com/vuln/397306 https://vuldb.com/vuln/397306/cti",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82957"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82957",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "dc2fa87a96de14b7f7fa28ef",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82954",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82954",
+      "summary": "*** Pendiente de traducción *** A vulnerability was detected in Dokploy up to 0.29.7. This issue affects the function writeTraefikConfigInPath of the file packages/server/src/utils/traefik/application.ts of the component Settings. The manipulation of the argument path results in path traversal. The attack can be launched remotely. The exploit is now public and may be used. The vendor was contacted early about this disclosure but did not respond in any way. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:P CVSS v4.0 Severidad y Métricas: Puntuación base: 8.60 ALTA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:P Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Confidentiality (VC): Alto Integrity (VI): Alto Availability (VA): Alto Confidentiality (SC): Alto Integrity (SI): Alto Availability (SA): Alto Exploit Maturity (E): POC Puntuación base 4.0 8.60 Gravedad 4.0 ALTA Vector 3.x CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H CVSS v3.1 Severidad y Métricas: Puntuación base: 9.90 CRÍTICA Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Alcance (S): Modificado Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Alto Puntuación base 3.x 9.90 Gravedad 3.x CRÍTICA Vector 2.0 AV:N/AC:L/Au:S/C:C/I:C/A:C CVSS v2.0 Severidad y Métricas: Puntuación base: 9.00 ALTA Vector: AV:N/AC:L/Au:S/C:C/I:C/A:C Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Autenticación (Au): Simple Impacto a la confidencialidad (C): Completo Impacto a la integridad (I): Completo Impacto a la disponibilidad (A): Completo Puntuación base 2.0 9.00 Gravedad 2.0 ALTA Referencias a soluciones, herramientas e información https://vuldb.com/cve/CVE-2026-82954 https://vuldb.com/submit/879844 https://vuldb.com/vuln/397303 https://vuldb.com/vuln/397303/cti",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82954"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82954",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "26e62f5737dcc7db1e902150",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82922",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82922",
+      "summary": "*** Pendiente de traducción *** A security vulnerability has been detected in ShopEx ECShop up to 2.5.1. This vulnerability affects the function flow_update_cart of the file /flow.php?step=update_cart. The manipulation of the argument rec_id leads to sql injection. The attack can be initiated remotely. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure but did not respond in any way. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P CVSS v4.0 Severidad y Métricas: Puntuación base: 5.50 MEDIA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Confidentiality (VC): Bajo Integrity (VI): Bajo Availability (VA): Bajo Confidentiality (SC): Ninguno Integrity (SI): Ninguno Availability (SA): Ninguno Exploit Maturity (E): POC Puntuación base 4.0 5.50 Gravedad 4.0 MEDIA Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 7.30 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 7.30 Gravedad 3.x ALTA Vector 2.0 AV:N/AC:L/Au:N/C:P/I:P/A:P CVSS v2.0 Severidad y Métricas: Puntuación base: 7.50 ALTA Vector: AV:N/AC:L/Au:N/C:P/I:P/A:P Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Autenticación (Au): Ninguno Impacto a la confidencialidad (C): Físico Impacto a la integridad (I): Físico Impacto a la disponibilidad (A): Físico Puntuación base 2.0 7.50 Gravedad 2.0 ALTA Referencias a soluciones, herramientas e información https://uvxbywu62qm.feishu.cn/wiki/NWyrwRgmgi9DxDk5Hy1cARKfnsc?from=from_copylink https://vuldb.com/cve/CVE-2026-82922 https://vuldb.com/submit/879242 https://vuldb.com/vuln/397302 https://vuldb.com/vuln/397302/cti",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82922"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82922",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "6d526223c30cacdd710a65c8",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82921",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82921",
+      "summary": "*** Pendiente de traducción *** A weakness has been identified in ShopEx ECShop up to 2.5.1. This affects the function check_img_type of the file admin/pack.php. Executing a manipulation of the argument pack_img can lead to unrestricted upload. It is possible to launch the attack remotely. The exploit has been made available to the public and could be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P CVSS v4.0 Severidad y Métricas: Puntuación base: 5.50 MEDIA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Confidentiality (VC): Bajo Integrity (VI): Bajo Availability (VA): Bajo Confidentiality (SC): Ninguno Integrity (SI): Ninguno Availability (SA): Ninguno Exploit Maturity (E): POC Puntuación base 4.0 5.50 Gravedad 4.0 MEDIA Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 7.30 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 7.30 Gravedad 3.x ALTA Vector 2.0 AV:N/AC:L/Au:N/C:P/I:P/A:P CVSS v2.0 Severidad y Métricas: Puntuación base: 7.50 ALTA Vector: AV:N/AC:L/Au:N/C:P/I:P/A:P Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Autenticación (Au): Ninguno Impacto a la confidencialidad (C): Físico Impacto a la integridad (I): Físico Impacto a la disponibilidad (A): Físico Puntuación base 2.0 7.50 Gravedad 2.0 ALTA Referencias a soluciones, herramientas e información https://uvxbywu62qm.feishu.cn/wiki/TNENwNItlitygtk2uABcj02lndc?from=from_copylink https://vuldb.com/cve/CVE-2026-82921 https://vuldb.com/submit/879229 https://vuldb.com/vuln/397301 https://vuldb.com/vuln/397301/cti",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82921"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82921",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "c96b6796dde9e2aee28a72c9",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82919",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82919",
+      "summary": "*** Pendiente de traducción *** A vulnerability was identified in cu silicon up to 0.1.5. Affected by this vulnerability is the function create_app of the file views.py of the component edit Endpoint. Such manipulation leads to missing authentication. The attack may be performed from remote. The exploit is publicly available and might be used. The vendor was contacted early about this disclosure but did not respond in any way. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P CVSS v4.0 Severidad y Métricas: Puntuación base: 5.50 MEDIA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Confidentiality (VC): Bajo Integrity (VI): Bajo Availability (VA): Bajo Confidentiality (SC): Ninguno Integrity (SI): Ninguno Availability (SA): Ninguno Exploit Maturity (E): POC Puntuación base 4.0 5.50 Gravedad 4.0 MEDIA Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 7.30 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 7.30 Gravedad 3.x ALTA Vector 2.0 AV:N/AC:L/Au:N/C:P/I:P/A:P CVSS v2.0 Severidad y Métricas: Puntuación base: 7.50 ALTA Vector: AV:N/AC:L/Au:N/C:P/I:P/A:P Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Autenticación (Au): Ninguno Impacto a la confidencialidad (C): Físico Impacto a la integridad (I): Físico Impacto a la disponibilidad (A): Físico Puntuación base 2.0 7.50 Gravedad 2.0 ALTA Referencias a soluciones, herramientas e información https://vuldb.com/cve/CVE-2026-82919 https://vuldb.com/submit/879029 https://vuldb.com/vuln/397299 https://vuldb.com/vuln/397299/cti",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82919"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82919",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "d6c95fac20442646367d073f",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82914",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82914",
+      "summary": "*** Pendiente de traducción *** A security flaw has been discovered in kishan0725 Hospital-Management-System 1.0. This vulnerability affects unknown code of the file /search.php. The manipulation of the argument Contact results in sql injection. It is possible to launch the attack remotely. The exploit has been released to the public and may be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P CVSS v4.0 Severidad y Métricas: Puntuación base: 5.50 MEDIA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Confidentiality (VC): Bajo Integrity (VI): Bajo Availability (VA): Bajo Confidentiality (SC): Ninguno Integrity (SI): Ninguno Availability (SA): Ninguno Exploit Maturity (E): POC Puntuación base 4.0 5.50 Gravedad 4.0 MEDIA Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 7.30 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 7.30 Gravedad 3.x ALTA Vector 2.0 AV:N/AC:L/Au:N/C:P/I:P/A:P CVSS v2.0 Severidad y Métricas: Puntuación base: 7.50 ALTA Vector: AV:N/AC:L/Au:N/C:P/I:P/A:P Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Autenticación (Au): Ninguno Impacto a la confidencialidad (C): Físico Impacto a la integridad (I): Físico Impacto a la disponibilidad (A): Físico Puntuación base 2.0 7.50 Gravedad 2.0 ALTA Referencias a soluciones, herramientas e información https://uvxbywu62qm.feishu.cn/wiki/NKztwPKs3i07urk5hARcG6venZ7?from=from_copylink https://vuldb.com/cve/CVE-2026-82914 https://vuldb.com/submit/878520 https://vuldb.com/vuln/397291 https://vuldb.com/vuln/397291/cti",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82914"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82914",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "8333c712858b9e7fa4f77dc6",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82909",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82909",
+      "summary": "*** Pendiente de traducción *** A vulnerability was determined in QuantumNous new-api up to 1.0.0-rc.15. Affected by this issue is some unknown functionality of the file /api/usage/token/ of the component Revoked API Token Handler. Executing a manipulation can lead to session expiration. The attack may be performed from remote. The exploit has been publicly disclosed and may be utilized. Upgrading to version 1.0.0-rc.17 can resolve this issue. This patch is called 0d5995eb63f8801d32eb32fbe74b75b68752bfa9. The affected component should be upgraded. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N/E:P CVSS v4.0 Severidad y Métricas: Puntuación base: 2.10 BAJA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N/E:P Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Confidentiality (VC): Bajo Integrity (VI): Ninguno Availability (VA): Ninguno Confidentiality (SC): Ninguno Integrity (SI): Ninguno Availability (SA): Ninguno Exploit Maturity (E): POC Puntuación base 4.0 2.10 Gravedad 4.0 BAJA Vector 3.x CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 4.30 MEDIA Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Ninguno Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 4.30 Gravedad 3.x MEDIA Vector 2.0 AV:N/AC:L/Au:S/C:P/I:N/A:N CVSS v2.0 Severidad y Métricas: Puntuación base: 4.00 MEDIA Vector: AV:N/AC:L/Au:S/C:P/I:N/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Autenticación (Au): Simple Impacto a la confidencialidad (C): Físico Impacto a la integridad (I): Ninguno Impacto a la disponibilidad (A): Ninguno Puntuación base 2.0 4.00 Gravedad 2.0 MEDIA Referencias a soluciones, herramientas e información https://github.com/QuantumNous/new-api/ https://github.com/QuantumNous/new-api/commit/0d5995eb63f8801d32eb32fbe74b75b68752bfa9 https://github.com/QuantumNous/new-api/releases/tag/v1.0.0-rc.17 https://github.com/yaowenxiao721/Poc/blob/main/New-API/new-api-poc1.md https://vuldb.com/cve/CVE-2026-82909 https://vuldb.com/submit/877769 https://vuldb.com/vuln/397289 https://vuldb.com/vuln/397289/cti",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82909"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82909",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "3386cd123d6ca2d29c2fa4e6",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82908",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82908",
+      "summary": "*** Pendiente de traducción *** A vulnerability was found in MSI Dragon Center up to 2.0.155.0. Affected by this vulnerability is the function MmioWritePath in the library NTIOLib_X64.sys of the component MMIO Write Path Handler. Performing a manipulation of the argument count/elementSize results in integer overflow. The attack requires a local approach. The exploit has been made public and could be used. The vendor was contacted early about this disclosure but did not respond in any way. Impacto Vector 4.0 CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:P CVSS v4.0 Severidad y Métricas: Puntuación base: 8.50 ALTA Vector: CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:P Vector de acceso (AV): Local Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Confidentiality (VC): Alto Integrity (VI): Alto Availability (VA): Alto Confidentiality (SC): Alto Integrity (SI): Alto Availability (SA): Alto Exploit Maturity (E): POC Puntuación base 4.0 8.50 Gravedad 4.0 ALTA Vector 3.x CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H CVSS v3.1 Severidad y Métricas: Puntuación base: 8.80 ALTA Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H Vector de acceso (AV): Local Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Alcance (S): Modificado Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Alto Puntuación base 3.x 8.80 Gravedad 3.x ALTA Vector 2.0 AV:L/AC:L/Au:S/C:C/I:C/A:C CVSS v2.0 Severidad y Métricas: Puntuación base: 6.80 MEDIA Vector: AV:L/AC:L/Au:S/C:C/I:C/A:C Vector de acceso (AV): Local Complejidad de acceso (AC): Bajo Autenticación (Au): Simple Impacto a la confidencialidad (C): Completo Impacto a la integridad (I): Completo Impacto a la disponibilidad (A): Completo Puntuación base 2.0 6.80 Gravedad 2.0 MEDIA Referencias a soluciones, herramientas e información https://drive.google.com/file/d/10o_-3GOMAvl3tDqQIWYw45rv7MpxYitk/view https://vuldb.com/cve/CVE-2026-82908 https://vuldb.com/submit/877502 https://vuldb.com/vuln/397288 https://vuldb.com/vuln/397288/cti",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82908"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82908",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "c6feb5c004cc1dd63bda2581",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82906",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82906",
+      "summary": "*** Pendiente de traducción *** A flaw has been found in sdcb chats up to 1.12.0. This impacts the function DownloadPublic of the file src/BE/web/Controllers/Chats/Files/FileController.cs of the component Signed File Download Endpoint. This manipulation causes missing authentication. Remote exploitation of the attack is possible. The attack&amp;#39;s complexity is rated as high. The exploitability is said to be difficult. The exploit has been published and may be used. The vendor was contacted early about this disclosure but did not respond in any way. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N/E:P CVSS v4.0 Severidad y Métricas: Puntuación base: 2.90 BAJA Vector: CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N/E:P Vector de acceso (AV): A través de red Complejidad de acceso (AC): Alto Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Confidentiality (VC): Bajo Integrity (VI): Ninguno Availability (VA): Ninguno Confidentiality (SC): Ninguno Integrity (SI): Ninguno Availability (SA): Ninguno Exploit Maturity (E): POC Puntuación base 4.0 2.90 Gravedad 4.0 BAJA Vector 3.x CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 3.70 BAJA Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Alto Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Ninguno Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 3.70 Gravedad 3.x BAJA Vector 2.0 AV:N/AC:H/Au:N/C:P/I:N/A:N CVSS v2.0 Severidad y Métricas: Puntuación base: 2.60 BAJA Vector: AV:N/AC:H/Au:N/C:P/I:N/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Alto Autenticación (Au): Ninguno Impacto a la confidencialidad (C): Físico Impacto a la integridad (I): Ninguno Impacto a la disponibilidad (A): Ninguno Puntuación base 2.0 2.60 Gravedad 2.0 BAJA Referencias a soluciones, herramientas e información https://github.com/yaowenxiao721/Poc/blob/main/sdcb-chats/chats-poc-2.md https://vuldb.com/cve/CVE-2026-82906 https://vuldb.com/submit/877767 https://vuldb.com/vuln/397286 https://vuldb.com/vuln/397286/cti",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82906"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82906",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "a9e00550ab16022cf562d8ab",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82882",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82882",
+      "summary": "*** Pendiente de traducción *** Devtron through 2.2.0 fails to enforce authorization checks on the GET /orchestrator/api-token/webhook endpoint, allowing authenticated users to retrieve admin API tokens. Attackers with any authenticated account can query the endpoint with arbitrary project, environment, and application parameters to retrieve plaintext super-admin JWT tokens for full platform control. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N CVSS v4.0 Severidad y Métricas: Puntuación base: 8.70 ALTA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Confidentiality (VC): Alto Integrity (VI): Alto Availability (VA): Alto Confidentiality (SC): Ninguno Integrity (SI): Ninguno Availability (SA): Ninguno Puntuación base 4.0 8.70 Gravedad 4.0 ALTA Vector 3.x CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H CVSS v3.1 Severidad y Métricas: Puntuación base: 8.80 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Alto Puntuación base 3.x 8.80 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://github.com/devtron-labs/devtron https://github.com/devtron-labs/devtron/blob/v2.2.0/api/apiToken/ApiTokenRestHandler.go https://github.com/devtron-labs/devtron/blob/v2.2.0/pkg/apiToken/ApiTokenService.go https://github.com/devtron-labs/devtron/issues/7013 https://www.vulncheck.com/advisories/devtron-through-2.2.0-missing-authorization-via-webhook-api-token-endpoint https://github.com/devtron-labs/devtron/issues/7013",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82882"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82882",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "f8bd03727d4c28b9b72d86b2",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82852",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82852",
+      "summary": "*** Pendiente de traducción *** Unauthenticated Server Side Request Forgery (SSRF) in MapSVG Impacto Vector 3.x CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 5.40 MEDIA Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Alto Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Modificado Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 5.40 Gravedad 3.x MEDIA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/mapsvg-lite-interactive-vector-maps/vulnerability/wordpress-mapsvg-plugin-8-15-0-server-side-request-forgery-ssrf-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82852"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82852",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "3eb04f9dba2b0a541d92e985",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82398",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82398",
+      "summary": "*** Pendiente de traducción *** pypdf is a free and open-source pure-python PDF library. Prior to 6.15.0, an attacker can craft a PDF that causes long runtimes when the pypdf/_utils.py function read_until_whitespace reads a stream containing a long run of bytes without whitespace. The function repeatedly performs immutable bytes concatenation in a one-byte loop, causing quadratic processing cost for the long non-whitespace input. This issue is fixed in version 6.15.0. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N CVSS v4.0 Severidad y Métricas: Puntuación base: 6.90 MEDIA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Confidentiality (VC): Ninguno Integrity (VI): Ninguno Availability (VA): Bajo Confidentiality (SC): Ninguno Integrity (SI): Ninguno Availability (SA): Ninguno Puntuación base 4.0 6.90 Gravedad 4.0 MEDIA Referencias a soluciones, herramientas e información https://github.com/py-pdf/pypdf/commit/4959848e057e37c218dccad7465259210923faaa https://github.com/py-pdf/pypdf/pull/3947 https://github.com/py-pdf/pypdf/releases/tag/6.15.0 https://github.com/py-pdf/pypdf/security/advisories/GHSA-fc8x-2rww-xw9m",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82398"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82398",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "9877f0d8924f4096b89830cf",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82397",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82397",
+      "summary": "*** Pendiente de traducción *** Tornado is a Python web framework and asynchronous networking library. Prior to 6.5.8, Tornado parses application/x-www-form-urlencoded request bodies with urllib.parse.parse_qs in tornado/escape.py without passing max_num_fields. RequestHandler._execute in tornado/web.py parses the body before handler dispatch through HTTPServerRequest._parse_body and parse_body_arguments in tornado/httputil.py, so an unauthenticated request body containing millions of separator-delimited fields can synchronously stall the single-threaded event loop and delay every connection. The body is bounded only by max_buffer_size, which defaults to 104857600 bytes. This issue is fixed in version 6.5.8. Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H CVSS v3.1 Severidad y Métricas: Puntuación base: 7.50 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Ninguno Impacto a la integridad (I): Ninguno Impacto a la disponibilidad (A): Alto Puntuación base 3.x 7.50 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://github.com/tornadoweb/tornado/commit/8d6363ed7b69d5f0da806efe34d256627a2191de https://github.com/tornadoweb/tornado/pull/3704 https://github.com/tornadoweb/tornado/releases/tag/v6.5.8 https://github.com/tornadoweb/tornado/security/advisories/GHSA-mpf4-983q-p7j4",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82397"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82397",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "c52ff60a40cbd61e7cfbdea0",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82396",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82396",
+      "summary": "*** Pendiente de traducción *** Sulu is an open-source PHP content management system based on the Symfony framework. Prior to versions 2.6.25 and 3.0.8, src/Sulu/Bundle/MediaBundle/Controller/MediaStreamController.php allows the /media/{id}/download/{slug} route and its administration variant to honor the inline query parameter for scriptable MIME types. The vulnerable stored Content-Type values include text/html, application/xhtml+xml, text/xml, and application/xml. An attacker with media upload permission can store an HTML, XHTML, or XML document and create a link using inline=1, causing the application to return the file on the Sulu origin instead of forcing Content-Disposition attachment. When an authenticated victim opens the link, attacker-controlled JavaScript can execute with the victim&amp;#39;s Sulu-origin session and can read data or perform actions as that victim. This issue is fixed in versions 2.6.25 and 3.0.8. Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 5.40 MEDIA Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Obligatorio Alcance (S): Modificado Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 5.40 Gravedad 3.x MEDIA Referencias a soluciones, herramientas e información https://github.com/sulu/sulu/commit/d061094f5b7bb1d5e974544fce30bede9c7adf8e https://github.com/sulu/sulu/releases/tag/2.6.25 https://github.com/sulu/sulu/releases/tag/3.0.8 https://github.com/sulu/sulu/security/advisories/GHSA-pp4x-ccxq-6r33",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82396"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82396",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "dd4bf3c621210925883ea6e5",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82395",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82395",
+      "summary": "*** Pendiente de traducción *** Sulu is an open-source PHP content management system based on the Symfony framework. Prior to versions 2.6.25 and 3.0.8, the media move endpoint derives its permission check from the client-supplied collection value instead of the media item&amp;#39;s actual source collection, and src/Sulu/Bundle/MediaBundle/Media/Manager/MediaManager.php allows MediaManager::move() to reassign the item without checking that source. An authenticated backend user with edit permission on one collection and knowledge of a target media identifier can name the allowed collection in the request, move an item out of a restricted collection, and then view or download content the user was not permitted to access. This issue is fixed in versions 2.6.25 and 3.0.8. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N CVSS v4.0 Severidad y Métricas: Puntuación base: 5.30 MEDIA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Confidentiality (VC): Bajo Integrity (VI): Bajo Availability (VA): Ninguno Confidentiality (SC): Ninguno Integrity (SI): Ninguno Availability (SA): Ninguno Puntuación base 4.0 5.30 Gravedad 4.0 MEDIA Referencias a soluciones, herramientas e información https://github.com/sulu/sulu/commit/2b959de75d61b98433e42db462c246ed9e4ce793 https://github.com/sulu/sulu/releases/tag/2.6.25 https://github.com/sulu/sulu/releases/tag/3.0.8 https://github.com/sulu/sulu/security/advisories/GHSA-h6cx-gjxx-v25c",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82395"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82395",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "3d27f90bd21c13a59f84df4e",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82394",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82394",
+      "summary": "*** Pendiente de traducción *** Sulu is an open-source PHP content management system based on the Symfony framework. Prior to versions 2.6.25 and 3.0.8, the preview-link endpoint and src/Sulu/Bundle/PreviewBundle/Application/Manager/PreviewLinkManager.php do not enforce VIEW permission for the target resource in PreviewLinkManager::generate() or PreviewLinkManager::revoke(). An authenticated administration user who knows a target resource identifier can create or revoke a preview link for any page, article, or snippet, including content in a webspace or area the user cannot view. A generated preview URL is public and resolves content by an opaque token, allowing the user or anyone receiving the link to read restricted content without authentication. This issue is fixed in versions 2.6.25 and 3.0.8. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N CVSS v4.0 Severidad y Métricas: Puntuación base: 5.30 MEDIA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Confidentiality (VC): Bajo Integrity (VI): Ninguno Availability (VA): Ninguno Confidentiality (SC): Ninguno Integrity (SI): Ninguno Availability (SA): Ninguno Puntuación base 4.0 5.30 Gravedad 4.0 MEDIA Referencias a soluciones, herramientas e información https://github.com/sulu/sulu/commit/44d8844c3514a70b769ab791b9530df806240fab https://github.com/sulu/sulu/releases/tag/2.6.25 https://github.com/sulu/sulu/releases/tag/3.0.8 https://github.com/sulu/sulu/security/advisories/GHSA-65cv-w493-7vhq",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82394"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82394",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "3c0ae30d7523325c0a0eff3c",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82393",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82393",
+      "summary": "*** Pendiente de traducción *** pnpm is a package manager. Prior to 10.34.5 and 11.11.0, pnpm accepts a scoped path traversal in a tarball dependency&amp;#39;s package.json manifest name because pnpm11/resolving/npm-resolver/src/pickPackage.ts rejects slash characters only for unscoped names. During pnpm install, the unvalidated name reaches raw path joins in pnpm11/installing/deps-resolver/src/resolvePeers.ts, pnpm11/installing/deps-resolver/src/index.ts, and pnpm11/deps/graph-builder/src/lockfileToDepGraph.ts, causing package extraction outside node_modules and allowing attacker-controlled files to overwrite arbitrary filesystem paths even when --ignore-scripts is used. The overwrite can replace shell startup files, Git hooks, or installed package code and lead to code execution. This issue is fixed in versions 10.34.5, and 11.11.0. Impacto Vector 3.x CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H CVSS v3.1 Severidad y Métricas: Puntuación base: 7.50 ALTA Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H Vector de acceso (AV): A través de red Complejidad de acceso (AC): Alto Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Obligatorio Alcance (S): Sin modificar Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Alto Puntuación base 3.x 7.50 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://github.com/pnpm/pnpm/commit/51300fd41c5e4c8f47635108e373cc3d1f324fa7 https://github.com/pnpm/pnpm/commit/78e29fe5583a1e5d69ea05e414eff310f78d5ed9 https://github.com/pnpm/pnpm/pull/12872 https://github.com/pnpm/pnpm/pull/12890 https://github.com/pnpm/pnpm/releases/tag/v10.34.5 https://github.com/pnpm/pnpm/releases/tag/v11.11.0 https://github.com/pnpm/pnpm/security/advisories/GHSA-vq4v-j7r6-jq4m https://github.com/pnpm/pnpm/security/advisories/GHSA-vq4v-j7r6-jq4m",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82393"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82393",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "fe6e34ff5f35efc1e24f6435",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82392",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82392",
+      "summary": "*** Pendiente de traducción *** pnpm is a package manager. Prior to 10.34.5 and from 11.0.0 until 11.11.0, pnpm parses the package name from attacker-controlled pnpm-lock.yaml packages keys with dp.parse(depPath).name and uses it without validation in deps/graph-builder/src/lockfileToDepGraph.ts and pnpm11/deps/graph-builder/src/lockfileToDepGraph.ts. The name reaches path.join(modules, pkgName), storeController.importPackage, and pnpm11/lockfile/to-pnp/src/index.ts, allowing package contents to be written outside node_modules when a user runs pnpm install. When dangerouslyAllowAllBuilds or a matching allowBuilds entry permits lifecycle scripts, the escaped package can execute code with the user&amp;#39;s privileges. This issue is fixed in versions 10.34.5 and 11.11.0. Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 7.10 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Obligatorio Alcance (S): Sin modificar Impacto a la confidencialidad (C): Ninguno Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 7.10 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://github.com/pnpm/pnpm/commit/51300fd41c5e4c8f47635108e373cc3d1f324fa7 https://github.com/pnpm/pnpm/commit/78e29fe5583a1e5d69ea05e414eff310f78d5ed9 https://github.com/pnpm/pnpm/pull/12872 https://github.com/pnpm/pnpm/pull/12890 https://github.com/pnpm/pnpm/releases/tag/v10.34.5 https://github.com/pnpm/pnpm/releases/tag/v11.11.0 https://github.com/pnpm/pnpm/security/advisories/GHSA-c59q-g84q-2gj5",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82392"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82392",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "f71ab06a1373345768cbae24",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82346",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82346",
+      "summary": "*** Pendiente de traducción *** A potential security vulnerability has been identified in the HP ImageDiags for versions prior to 5.0.0.36. The vulnerability could potentially allow a local attacker to escalate privileges due to insufficient access controls. Impacto Vector 4.0 CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N CVSS v4.0 Severidad y Métricas: Puntuación base: 7.00 ALTA Vector: CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N Vector de acceso (AV): Local Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Activo Confidentiality (VC): Alto Integrity (VI): Alto Availability (VA): Alto Confidentiality (SC): Ninguno Integrity (SI): Ninguno Availability (SA): Ninguno Puntuación base 4.0 7.00 Gravedad 4.0 ALTA Referencias a soluciones, herramientas e información https://support.hp.com/us-en/document/ish_15572821-15572929-16/hpsbgn04143",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82346"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82346",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "946d7b80b3f2bab5d8c2cd0c",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82229",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82229",
+      "summary": "*** Pendiente de traducción *** Unauthenticated Cross Site Scripting (XSS) in WordPress Social Login and Register Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 7.10 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Obligatorio Alcance (S): Modificado Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 7.10 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/miniorange-login-openid/vulnerability/wordpress-wordpress-social-login-and-register-plugin-7-8-2-cross-site-scripting-xss-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82229"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82229",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "ca1885e902de0db252b96133",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82228",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82228",
+      "summary": "*** Pendiente de traducción *** Unauthenticated Bypass Vulnerability in SiteGround Security Impacto Vector 3.x CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H CVSS v3.1 Severidad y Métricas: Puntuación base: 8.10 ALTA Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H Vector de acceso (AV): A través de red Complejidad de acceso (AC): Alto Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Alto Puntuación base 3.x 8.10 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/sg-security/vulnerability/wordpress-siteground-security-plugin-1-6-6-2fa-bypass-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82228"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82228",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "47091cc68137c76a5abb8bb6",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82226",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82226",
+      "summary": "*** Pendiente de traducción *** Unauthenticated PHP Object Injection in Tickera Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H CVSS v3.1 Severidad y Métricas: Puntuación base: 9.80 CRÍTICA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Alto Puntuación base 3.x 9.80 Gravedad 3.x CRÍTICA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/tickera-event-ticketing-system/vulnerability/wordpress-tickera-plugin-3-6-0-2-php-object-injection-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82226"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82226",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "002331236d84eac2de7234df",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82225",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82225",
+      "summary": "*** Pendiente de traducción *** Unauthenticated Broken Authentication in RegistrationMagic Impacto Vector 3.x CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 7.40 ALTA Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Alto Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 7.40 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/custom-registration-form-builder-with-submission-manager/vulnerability/wordpress-registrationmagic-plugin-6-0-9-8-broken-authentication-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82225"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82225",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "37497087336b2c343218b68c",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82224",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82224",
+      "summary": "*** Pendiente de traducción *** Unauthenticated Cross Site Scripting (XSS) in SliceWP Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 7.10 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Obligatorio Alcance (S): Modificado Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 7.10 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/slicewp/vulnerability/wordpress-slicewp-plugin-1-2-10-cross-site-scripting-xss-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82224"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82224",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "f23b1a9825da0d66c40e2a0b",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-82221",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-82221",
+      "summary": "*** Pendiente de traducción *** Unauthenticated Cross Site Scripting (XSS) in RegistrationMagic Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 7.10 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Obligatorio Alcance (S): Modificado Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 7.10 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/custom-registration-form-builder-with-submission-manager/vulnerability/wordpress-registrationmagic-plugin-6-0-9-8-cross-site-scripting-xss-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-82221"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-82221",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "1fc5a3623d6c8d75c878ec03",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81892",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81892",
+      "summary": "*** Pendiente de traducción *** EasyAdmin is a fast and modern admin generator for Symfony applications. From 4.0.0 until 4.29.16 and 5.5.1, EasyAdmin serves all backend requests through a single dashboard route and, for custom actions (Action::linkToRoute() and MenuItem::linkToRoute()), swaps the executed controller based on the routeName query parameter on the kernel.controller event. The swap happens after Symfony&amp;#39;s security firewall has already evaluated access_control against the original dashboard URL, and the routeName value was not validated. As a result, a path-based access_control rule protecting the target route was never evaluated, so a low-privilege backend user who can reach a single EasyAdmin URL and knows a target route&amp;#39;s name can execute that route&amp;#39;s controller, bypassing the path-based rule. Only path-based protections are bypassed. Routes whose controller enforces its own authorization with #[IsGranted] or denyAccessUnlessGranted() remain protected because those checks are recomputed against the swapped-in controller. This issue is fixed in versions 4.29.16 and 5.5.1. Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 8.10 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 8.10 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://github.com/EasyCorp/EasyAdminBundle/commit/03be45c6b7213c4c984a1d0542b7ec60359329f8 https://github.com/EasyCorp/EasyAdminBundle/commit/6228dfef598d81eeb0baa35625e50812f3c77699 https://github.com/EasyCorp/EasyAdminBundle/releases/tag/v4.29.16 https://github.com/EasyCorp/EasyAdminBundle/releases/tag/v5.5.1 https://github.com/EasyCorp/EasyAdminBundle/security/advisories/GHSA-g2fm-8hr4-j82h",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81892"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81892",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "76b214158fe3fc5b6945971a",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81891",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81891",
+      "summary": "*** Pendiente de traducción *** elFinder is an open-source file manager for web, written in JavaScript using jQuery UI. Prior to 2.1.70, checkExtractItems() in php/elFinderVolumeDriver.class.php calls mimetypeInternalDetect() without passing the result through mimeTypeNormalize(). Because the .phtml, .phar, .php5, and .php3 extensions are absent from mime.types, the staticMimeMap entries that map them to text/x-php are not applied, and allowPutMime() permits extraction even when uploadDeny blocks text/x-php. An attacker with ZIP upload permission can extract PHP-executable files into a web-accessible files/ directory and achieve remote code execution when the server executes those extensions. This issue is fixed in version 2.1.70. Impacto Vector 3.x CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H CVSS v3.1 Severidad y Métricas: Puntuación base: 8.10 ALTA Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H Vector de acceso (AV): A través de red Complejidad de acceso (AC): Alto Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Alto Puntuación base 3.x 8.10 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://github.com/Studio-42/elFinder/commit/191372c1bbebbd36fb55af79a84b9984861390ff https://github.com/Studio-42/elFinder/commit/dd73e702820c146a192969800ee674ecdb208365 https://github.com/Studio-42/elFinder/releases/tag/2.1.70 https://github.com/Studio-42/elFinder/security/advisories/GHSA-gxmj-r5rf-ggwq",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81891"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81891",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "2f026296231f7db5db4b2ef8",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81890",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81890",
+      "summary": "*** Pendiente de traducción *** elFinder is an open-source file manager for web, written in JavaScript using jQuery UI. Prior to 2.1.70, the netmount command is omitted from elFinderConnector::$csrfProtectedCmds in php/elFinderConnector.class.php, so validateCsrfToken() is not called for this state-changing operation. In the shipped php/connector.minimal.php-dist configuration, FTP network mounts are enabled by default, and attacker-controlled protocol, host, path, port, user, pass, alias, and options arguments flow through elFinder::netmount() in php/elFinder.class.php to php/elFinderVolumeFTP.class.php. A cross-site request can therefore persist an attacker-chosen FTP mount in the victim&amp;#39;s session, cause the PHP server to connect to an attacker-chosen FTP host and port, and send supplied credentials without an X-elFinder-CSRF token. This issue is fixed in version 2.1.70. Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 5.40 MEDIA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Obligatorio Alcance (S): Sin modificar Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 5.40 Gravedad 3.x MEDIA Referencias a soluciones, herramientas e información https://github.com/Studio-42/elFinder/commit/31284facd033e081b2b69c08873b39c8a413b762 https://github.com/Studio-42/elFinder/commit/36d40fff12222ad4c229d8889d8ed3fd3dbf0415 https://github.com/Studio-42/elFinder/releases/tag/2.1.70 https://github.com/Studio-42/elFinder/security/advisories/GHSA-9hjf-w35w-6vx2 https://github.com/Studio-42/elFinder/security/advisories/GHSA-9hjf-w35w-6vx2",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81890"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81890",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "9bf533cd8c9b6ea37a40a7b7",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81889",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81889",
+      "summary": "*** Pendiente de traducción *** elFinder is an open-source file manager for web, written in JavaScript using jQuery UI. Prior to 2.1.70, elFinder URL uploads in php/elFinder.class.php can bypass server-side request forgery protections when PHP cURL is unavailable because validate_address() validates $info[&amp;#39;ip&amp;#39;], but get_remote_contents() selects fsock_get_contents(), which connects to $arr[&amp;#39;host&amp;#39;] and performs a second DNS resolution. An attacker able to submit a URL upload can use DNS rebinding to have the first resolution return a public address and the connection resolution return a loopback or private address, causing the internal HTTP response body to be stored as an uploaded file and made readable through elFinder. After a successful fetch, get_headers($url, true) separately requests the original hostname without reusing the validated and pinned connection, creating an additional blind server-side request forgery path even when curl_get_contents() is selected. This issue is fixed in version 2.1.70. Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 8.60 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Modificado Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Ninguno Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 8.60 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://github.com/Studio-42/elFinder/commit/191372c1bbebbd36fb55af79a84b9984861390ff https://github.com/Studio-42/elFinder/commit/6d997386cd0f1abab4706c220b46b0aea0ecff51 https://github.com/Studio-42/elFinder/releases/tag/2.1.70 https://github.com/Studio-42/elFinder/security/advisories/GHSA-8x3q-jpjh-qh5c https://github.com/Studio-42/elFinder/security/advisories/GHSA-8x3q-jpjh-qh5c",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81889"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81889",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "1ec124674f0abc31fb39cdd7",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81888",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81888",
+      "summary": "*** Pendiente de traducción *** @hono/oauth-providers is Authentication middleware for Hono. Prior to version 0.8.6, the built-in social login providers accept an OAuth callback even when the `state` value is absent on both sides, so the anti-CSRF check passes for a callback that never came from a genuine login attempt. This defeats the `state`-based CSRF protection under default usage. Version 0.8.6 has a patch. Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 5.40 MEDIA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Obligatorio Alcance (S): Sin modificar Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 5.40 Gravedad 3.x MEDIA Referencias a soluciones, herramientas e información https://github.com/honojs/middleware/commit/b37765f40b7bddb1d8fce39573b085222dea58c1 https://github.com/honojs/middleware/pull/2040 https://github.com/honojs/middleware/releases/tag/%40hono%2Foauth-providers%400.8.6 https://github.com/honojs/middleware/security/advisories/GHSA-fm3f-ch8h-qw8q",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81888"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81888",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "5ece34798c5c7939d27fa62d",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81887",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81887",
+      "summary": "*** Pendiente de traducción *** Livewire is a full-stack framework for Laravel. From 3.0.0-beta.1 until 3.8.3 and 4.3.4, the dot-notated query-string parser in js/plugins/history/index.js, including fromQueryString() and insertDotNotatedValueIntoData(), accepts the __proto__, constructor, and prototype path segments and creates inherited objects. Client-side state handlers then access effects.html, effects.js, effects.xjs, and effects.scripts without Object.prototype.hasOwnProperty.call(), allowing inherited attacker-controlled state to be treated as trusted effects. An unauthenticated attacker can craft a URL that, when opened by a user, executes arbitrary JavaScript in the affected application&amp;#39;s origin. Exploitation requires user interaction and does not bypass server-side authorization or grant privileges beyond the affected user. This issue is fixed in versions 3.8.3 and 4.3.4. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N CVSS v4.0 Severidad y Métricas: Puntuación base: 5.10 MEDIA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Activo Confidentiality (VC): Ninguno Integrity (VI): Ninguno Availability (VA): Ninguno Confidentiality (SC): Bajo Integrity (SI): Bajo Availability (SA): Ninguno Puntuación base 4.0 5.10 Gravedad 4.0 MEDIA Referencias a soluciones, herramientas e información https://github.com/livewire/livewire/commit/11ebe646f7e81dde2d714815da8b3019d058561e https://github.com/livewire/livewire/pull/10467 https://github.com/livewire/livewire/releases/tag/v3.8.3 https://github.com/livewire/livewire/releases/tag/v4.3.4 https://github.com/livewire/livewire/security/advisories/GHSA-g3hc-697w-wm82",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81887"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81887",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "8135fd22d1801e6ee157c489",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81780",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81780",
+      "summary": "*** Pendiente de traducción *** Unauthenticated Arbitrary File Upload in Hash Form Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H CVSS v3.1 Severidad y Métricas: Puntuación base: 10.00 CRÍTICA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Modificado Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Alto Puntuación base 3.x 10.00 Gravedad 3.x CRÍTICA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/hash-form/vulnerability/wordpress-hash-form-plugin-1-4-2-arbitrary-file-upload-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81780"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81780",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "cd273d857103267c59c0ec04",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81779",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81779",
+      "summary": "*** Pendiente de traducción *** Improper Validation of Specified Quantity in Input vulnerability in Silk Themes Newspapers X allows Malicious Software Implanted.<br /> <br /> This issue affects Newspapers X: from 1.0.46 through 1.0.48. Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H CVSS v3.1 Severidad y Métricas: Puntuación base: 10.00 CRÍTICA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Modificado Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Alto Puntuación base 3.x 10.00 Gravedad 3.x CRÍTICA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/theme/newspapers-x/vulnerability/wordpress-newspapers-x-theme-1-0-46-1-0-48-backdoor-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81779"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81779",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "4b2c5ea55727e5a857744add",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81778",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81778",
+      "summary": "*** Pendiente de traducción *** Subscriber Cross Site Scripting (XSS) in Kalles Addons Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 6.50 MEDIA Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Obligatorio Alcance (S): Modificado Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 6.50 Gravedad 3.x MEDIA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/kalles-addons/vulnerability/wordpress-kalles-addons-plugin-1-0-6-cross-site-scripting-xss-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81778"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81778",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "41b7c8285b47c6f5f50db001",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81768",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81768",
+      "summary": "*** Pendiente de traducción *** Unauthenticated Cross Site Scripting (XSS) in Super Store Finder Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 7.10 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Obligatorio Alcance (S): Modificado Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 7.10 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/superstorefinder-wp/vulnerability/wordpress-super-store-finder-plugin-7-10-cross-site-scripting-xss-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81768"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81768",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "d12671fda021cafcbbb49cb5",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81765",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81765",
+      "summary": "*** Pendiente de traducción *** Unauthenticated Cross Site Scripting (XSS) in Tailored Tools Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 7.10 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Obligatorio Alcance (S): Modificado Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 7.10 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/tailored-tools/vulnerability/wordpress-tailored-tools-plugin-3-0-2-cross-site-scripting-xss-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81765"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81765",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "76c9b7742cbf941f9018dca0",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81764",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81764",
+      "summary": "*** Pendiente de traducción *** Unauthenticated Cross Site Scripting (XSS) in Email Essentials Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 7.10 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Obligatorio Alcance (S): Modificado Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 7.10 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/email-essentials/vulnerability/wordpress-email-essentials-plugin-6-0-6-cross-site-scripting-xss-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81764"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81764",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "85cb28f2c75859caeee922c4",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81763",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81763",
+      "summary": "*** Pendiente de traducción *** Unauthenticated SQL Injection in Throws SPAM Away Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 9.30 CRÍTICA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Modificado Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Ninguno Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 9.30 Gravedad 3.x CRÍTICA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/throws-spam-away/vulnerability/wordpress-throws-spam-away-plugin-3-8-2-sql-injection-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81763"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81763",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "54c97dced6218c44f86758f2",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81762",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81762",
+      "summary": "*** Pendiente de traducción *** Subscriber Broken Access Control in Booking and Rental Manager Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 6.50 MEDIA Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Ninguno Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 6.50 Gravedad 3.x MEDIA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/booking-and-rental-manager-for-woocommerce/vulnerability/wordpress-booking-and-rental-manager-plugin-2-7-6-broken-access-control-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81762"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81762",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "c19092c6a81dab503b14c6a2",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81758",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81758",
+      "summary": "*** Pendiente de traducción *** Subscriber Broken Access Control in OwnerRez API Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 6.30 MEDIA Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 6.30 Gravedad 3.x MEDIA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/ownerrez/vulnerability/wordpress-ownerrez-api-plugin-1-2-6-broken-access-control-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81758"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81758",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "1dc10f6a9cd985a23441738f",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81756",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81756",
+      "summary": "*** Pendiente de traducción *** Unauthenticated SQL Injection in Smart Marketing SMS and Newsletters Forms Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 9.30 CRÍTICA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Modificado Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Ninguno Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 9.30 Gravedad 3.x CRÍTICA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/smart-marketing-for-wp/vulnerability/wordpress-smart-marketing-sms-and-newsletters-forms-plugin-5-1-24-sql-injection-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81756"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81756",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "f79dc06c76671abde4f96477",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81298",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81298",
+      "summary": "*** Pendiente de traducción *** Unauthenticated Cross Site Scripting (XSS) in LeadConnector Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 7.10 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Obligatorio Alcance (S): Modificado Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 7.10 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/leadconnector/vulnerability/wordpress-leadconnector-plugin-4-0-5-cross-site-scripting-xss-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81298"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81298",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "029011166328b8b2978a1341",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81297",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81297",
+      "summary": "*** Pendiente de traducción *** Subscriber Privilege Escalation in Fluent Forms Pro Add On Pack Impacto Vector 3.x CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H CVSS v3.1 Severidad y Métricas: Puntuación base: 7.50 ALTA Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H Vector de acceso (AV): A través de red Complejidad de acceso (AC): Alto Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Alto Puntuación base 3.x 7.50 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/fluentformpro/vulnerability/wordpress-fluent-forms-pro-add-on-pack-plugin-6-2-12-privilege-escalation-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81297"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81297",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "f1a9acb1f310db2205044727",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81296",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81296",
+      "summary": "*** Pendiente de traducción *** Unauthenticated Broken Access Control in Fluent Forms Pro Add On Pack Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 7.50 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Ninguno Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 7.50 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/fluentformpro/vulnerability/wordpress-fluent-forms-pro-add-on-pack-plugin-6-2-12-broken-access-control-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81296"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81296",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "ed95b9e3cb0de5ffa1fc0e6c",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81293",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81293",
+      "summary": "*** Pendiente de traducción *** Unauthenticated SQL Injection in WP Data Access Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 9.30 CRÍTICA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Modificado Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Ninguno Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 9.30 Gravedad 3.x CRÍTICA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/wp-data-access/vulnerability/wordpress-wp-data-access-plugin-5-5-81-sql-injection-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81293"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81293",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "5679b7629a9bb92fc9ca3118",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81291",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81291",
+      "summary": "*** Pendiente de traducción *** Unauthenticated Cross Site Scripting (XSS) in Uncode Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 7.10 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Obligatorio Alcance (S): Modificado Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 7.10 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/theme/uncode/vulnerability/wordpress-uncode-theme-2-12-7-cross-site-scripting-xss-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81291"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81291",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "bc5c53dee1cc14277c35da8b",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81290",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81290",
+      "summary": "*** Pendiente de traducción *** Unauthenticated Cross Site Scripting (XSS) in Email Subscribers &amp; Newsletters Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 7.10 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Obligatorio Alcance (S): Modificado Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 7.10 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/email-subscribers/vulnerability/wordpress-email-subscribers-newsletters-plugin-5-9-33-cross-site-scripting-xss-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81290"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81290",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "abe75027229f928b6f48e4ab",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81287",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81287",
+      "summary": "*** Pendiente de traducción *** Subscriber SQL Injection in Charitable Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 8.50 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Alcance (S): Modificado Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Ninguno Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 8.50 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/charitable/vulnerability/wordpress-charitable-plugin-1-8-12-1-sql-injection-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81287"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81287",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "dd64abac3ac29b8eb41d7963",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81280",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81280",
+      "summary": "*** Pendiente de traducción *** Subscriber Sensitive Data Exposure in Print Barcode Labels for your WooCommerce products/orders Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 6.50 MEDIA Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Ninguno Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 6.50 Gravedad 3.x MEDIA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/a4-barcode-generator/vulnerability/wordpress-print-barcode-labels-for-your-woocommerce-products-orders-plugin-4-0-0-sensitive-data-exposure-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81280"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81280",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "ca7b80b64aa4f98791badfe0",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-81278",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-81278",
+      "summary": "*** Pendiente de traducción *** Missing Authorization vulnerability in WPExperts Post SMTP allows Exploiting Incorrectly Configured Access Control Security Levels.<br /> <br /> This issue affects Post SMTP: from 4.0.0 through beta.1. Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:L CVSS v3.1 Severidad y Métricas: Puntuación base: 5.40 MEDIA Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:L Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Ninguno Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Bajo Puntuación base 3.x 5.40 Gravedad 3.x MEDIA Referencias a soluciones, herramientas e información https://patchstack.com/database/wordpress/plugin/post-smtp/vulnerability/wordpress-post-smtp-plugin-4-0-0-beta-1-settings-change-vulnerability?_s_id=cve",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-81278"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-81278",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "7746a6cff0a7a50f9ea68d32",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-79483",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-79483",
+      "summary": "*** Pendiente de traducción *** FastGPT Community Edition 4.10.0 through 4.14.0 are vulnerable to a NoSQL injection in the POST /api/core/chat/getHistories endpoint. An unauthenticated attacker can inject malicious NoSQL operators via crafted JSON payloads to bypass authorization checks, resulting in unauthorized access to chat history titles of all users across the platform. Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 5.30 MEDIA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Ninguno Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 5.30 Gravedad 3.x MEDIA Referencias a soluciones, herramientas e información https://github.com/ExploreIO/CVE-2026-79483-FastGPT-NoSQL-Injection https://github.com/labring/FastGPT https://github.com/ExploreIO/CVE-2026-79483-FastGPT-NoSQL-Injection",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-79483"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-79483",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "8c117a92d5aff144de16dd97",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-79408",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-79408",
+      "summary": "*** Pendiente de traducción *** An OS command injection vulnerability in MetaGPT 0.8.1 allows an attacker to execute arbitrary commands via the path argument of RepoParser.rebuild_class_views() in metagpt/repo_parser.py. Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H CVSS v3.1 Severidad y Métricas: Puntuación base: 9.80 CRÍTICA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Alto Puntuación base 3.x 9.80 Gravedad 3.x CRÍTICA Referencias a soluciones, herramientas e información https://github.com/REYu6/Metagpt-vul/blob/main/CVE-1-MetaGPT-command-injection.md https://github.com/REYu6/Metagpt-vul/blob/main/CVE-1-MetaGPT-command-injection.md",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-79408"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-79408",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "0e1d619d238270eefea50e86",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-79407",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-79407",
+      "summary": "*** Pendiente de traducción *** A path traversal vulnerability in the SPO extension of MetaGPT 0.8.1 allows an attacker to read arbitrary files via the FILE_NAME value used by set_file_name() and load_meta_data() in metagpt/ext/spo/utils/load.py. The vulnerable code joins the attacker-controlled FILE_NAME value with the settings directory and opens the resulting path without validating that the resolved path remains within the intended directory. Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 7.50 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Ninguno Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 7.50 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://github.com/REYu6/Metagpt-vul/blob/main/CVE-2-MetaGPT-path-traversal.md https://github.com/REYu6/Metagpt-vul/blob/main/CVE-2-MetaGPT-path-traversal.md",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-79407"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-79407",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "4034937b1afde150a934ca7b",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-77353",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-77353",
+      "summary": "*** Pendiente de traducción *** Wallos is an open-source, self-hostable personal subscription tracker. Prior to version 5.0.0, Wallos allows authenticated users to inject arbitrary iCalendar properties and events into their exported .ics feed by embedding raw CRLF sequences in subscription names or notes. Because the input validation layer only encodes HTML metacharacters but never strips newlines, and the export layer decodes those entities back before writing iCal output, an attacker with any valid account can craft a subscription whose name breaks out of the current VEVENT block and inserts fully attacker-controlled calendar events — including spoofed organizers, arbitrary email addresses in ATTENDEE properties, and misleading event content — into any calendar application subscribed to that feed. This issue has been patched in version 5.0.0. Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 4.60 MEDIA Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Obligatorio Alcance (S): Sin modificar Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 4.60 Gravedad 3.x MEDIA Referencias a soluciones, herramientas e información https://github.com/ellite/Wallos/commit/11eaf402e841a628c68a805694227ce66c45f6f3 https://github.com/ellite/Wallos/releases/tag/v5.0.0 https://github.com/ellite/Wallos/security/advisories/GHSA-q2r8-m9wm-5547 https://github.com/ellite/Wallos/security/advisories/GHSA-q2r8-m9wm-5547",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-77353"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-77353",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "39a75ec49a00562113af0a8b",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-77352",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-77352",
+      "summary": "*** Pendiente de traducción *** Wallos is an open-source, self-hostable personal subscription tracker. From version 2.0.0 to before version 5.0.0, any authenticated Wallos user (no admin rights required) can make the server open arbitrary outbound SMTP connections to internal/link-local addresses, by setting the SMTP host of their personal email notifications to an internal IP. The per-user notification settings endpoint (endpoints/notifications/saveemailnotifications.php) performs no SSRF validation, and the notification cron (endpoints/cronjobs/sendnotifications.php) feeds that user-controlled host straight into PHPMailer ($mail-&gt;Host = $email[&amp;#39;smtpAddress&amp;#39;]). When the user&amp;#39;s subscription notification fires, the server connects to the chosen host:port. This issue has been patched in version 5.0.0. Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 4.30 MEDIA Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Ninguno Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 4.30 Gravedad 3.x MEDIA Referencias a soluciones, herramientas e información https://github.com/ellite/Wallos/commit/11eaf402e841a628c68a805694227ce66c45f6f3 https://github.com/ellite/Wallos/releases/tag/v5.0.0 https://github.com/ellite/Wallos/security/advisories/GHSA-c75x-9vj6-57qj",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-77352"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-77352",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "c00b51fd3c1b9aadba86f44c",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-77351",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-77351",
+      "summary": "*** Pendiente de traducción *** Wallos is an open-source, self-hostable personal subscription tracker. Prior to version 5.0.0, Wallos lets any authenticated user store an arbitrary SMTP host — including private and cloud-metadata IP addresses — in their personal email notification settings, with no server-side SSRF validation. When the scheduled notification cron job runs, it passes the stored host directly to PHPMailer, causing the Wallos server to open an outbound TCP connection to whatever address the attacker specified. This gives a low-privileged attacker a reliable mechanism to probe internal network services from the server&amp;#39;s perspective. This issue has been patched in version 5.0.0. Impacto Vector 3.x CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:N/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 3.50 BAJA Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:N/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Alto Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Alcance (S): Modificado Impacto a la confidencialidad (C): Bajo Impacto a la integridad (I): Ninguno Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 3.50 Gravedad 3.x BAJA Referencias a soluciones, herramientas e información https://github.com/ellite/Wallos/commit/11eaf402e841a628c68a805694227ce66c45f6f3 https://github.com/ellite/Wallos/releases/tag/v5.0.0 https://github.com/ellite/Wallos/security/advisories/GHSA-mwqv-gv8x-9jcp",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-77351"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-77351",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "25a3f7cb3f22513714d0a249",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-77348",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-77348",
+      "summary": "*** Pendiente de traducción *** Wallos is an open-source, self-hostable personal subscription tracker. Prior to version 5.0.0, the fix for CVE-2026-33407 (GHSA-hhjq-82f8-m6rc, \"SSRF via HTTP Proxy Environment Variable\") hardened endpoints/logos/search.php by disabling cURL proxying (CURLOPT_PROXY = &amp;#39;&amp;#39; + CURLOPT_NOPROXY = &amp;#39;*&amp;#39;). However, Wallos ships a second, near-identical, unauthenticated logo-image search endpoint — endpoints/payments/search.php — that was not given the same hardening. It still passes the HTTP_PROXY/HTTPS_PROXY environment variable straight into CURLOPT_PROXY. This issue has been patched in version 5.0.0. Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 8.20 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Bajo Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 8.20 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://github.com/ellite/Wallos/commit/11eaf402e841a628c68a805694227ce66c45f6f3 https://github.com/ellite/Wallos/releases/tag/v5.0.0 https://github.com/ellite/Wallos/security/advisories/GHSA-f8j2-qm83-r2w4 https://github.com/ellite/Wallos/security/advisories/GHSA-hhjq-82f8-m6rc https://github.com/ellite/Wallos/security/advisories/GHSA-f8j2-qm83-r2w4 https://github.com/ellite/Wallos/security/advisories/GHSA-hhjq-82f8-m6rc",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-77348",
+        "CVE-2026-33407"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-77348",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-33407",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "4df158ff0be974dcf34e6b25",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-75594",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-75594",
+      "summary": "*** Pendiente de traducción *** Kirby is an open-source content management system. Prior to 4.9.5 and 5.5.2, depending on the release line, Kirby&amp;#39;s media handler in src/Cms/Media.php allowed Kirby\\Cms\\Media::thumb() to append a path-bearing filename to a validated parent media directory. On nginx, PHP&amp;#39;s built-in server, or Apache with AllowEncodedSlashes enabled, a remote attacker could submit encoded slash characters such as %2f in the filename and traverse outside the parent&amp;#39;s media directory. Differences between responses for existing and nonexistent thumbnail configurations disclosed whether an arbitrary .json file existed, and a .json file containing a valid filename key could cause the referenced image to be returned and the job file to be deleted. The related file::version path in src/Filesystem/Asset.php also accepted ../ sequences outside the intended index root. This issue is fixed in versions 4.9.5 and 5.5.2. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N CVSS v4.0 Severidad y Métricas: Puntuación base: 8.20 ALTA Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Present Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Confidentiality (VC): Alto Integrity (VI): Ninguno Availability (VA): Ninguno Confidentiality (SC): Ninguno Integrity (SI): Ninguno Availability (SA): Ninguno Puntuación base 4.0 8.20 Gravedad 4.0 ALTA Referencias a soluciones, herramientas e información https://github.com/getkirby/kirby/commit/22fbaedb7e6dd61f5def10829ba7bd7e73e0dcc9 https://github.com/getkirby/kirby/commit/a40808f5c2ee5d42bb597fb6ffbe0de0ce8e4d20 https://github.com/getkirby/kirby/commit/cd7abb68d298f3443eafd43fa2d0c7ad0f933d0e https://github.com/getkirby/kirby/commit/e0dca5f709adc21b36f5549df2c0619bc59da56c https://github.com/getkirby/kirby/releases/tag/4.9.5 https://github.com/getkirby/kirby/releases/tag/5.5.2 https://github.com/getkirby/kirby/security/advisories/GHSA-9vx2-j98c-p72w",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-75594"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-75594",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "841291559b065e210e715a5b",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-75592",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-75592",
+      "summary": "*** Pendiente de traducción *** Kirby is an open-source content management system. Prior to 4.9.5 and 5.5.2, depending on the release line, Kirby&amp;#39;s media handler used incomplete filesystem containment checks in src/Filesystem/Dir.php and src/Filesystem/F.php through Kirby\\Filesystem\\Dir::realpath() and Kirby\\Filesystem\\F::realpath(). The checks accepted a sibling directory whose path shared the intended root&amp;#39;s string prefix, such as /var/www/site2 next to /var/www/site, because they did not require an exact match or a DIRECTORY_SEPARATOR boundary. A remote attacker could use Kirby\\Cms\\Media::thumb() to create and access thumbnails from image files in a PHP-readable sibling directory when that directory contained a valid .json thumbnail job file, potentially exposing staging sites, backups, or other internal sites and deleting the job file during processing. This issue is fixed in versions 4.9.5 and 5.5.2. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:N/SA:N CVSS v4.0 Severidad y Métricas: Puntuación base: 6.90 MEDIA Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:N/SA:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Present Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Confidentiality (VC): Ninguno Integrity (VI): Ninguno Availability (VA): Ninguno Confidentiality (SC): Alto Integrity (SI): Ninguno Availability (SA): Ninguno Puntuación base 4.0 6.90 Gravedad 4.0 MEDIA Referencias a soluciones, herramientas e información https://github.com/getkirby/kirby/commit/2b6fab950bc89d505ea89576bf71c8de614cc3b2 https://github.com/getkirby/kirby/commit/e0dca5f709adc21b36f5549df2c0619bc59da56c https://github.com/getkirby/kirby/releases/tag/4.9.5 https://github.com/getkirby/kirby/releases/tag/5.5.2 https://github.com/getkirby/kirby/security/advisories/GHSA-6j4c-mgqr-qv76",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-75592"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-75592",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "1d1310ed9932baae4a19fc89",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-75460",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-75460",
+      "summary": "*** Pendiente de traducción *** XueZhiSi Open Source Exam System Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N CVSS v3.1 Severidad y Métricas: Puntuación base: 6.50 MEDIA Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Alto Impacto a la integridad (I): Ninguno Impacto a la disponibilidad (A): Ninguno Puntuación base 3.x 6.50 Gravedad 3.x MEDIA Referencias a soluciones, herramientas e información https://github.com/mindskip/xzs/compare/master...1258129581:xzs:patch-1 https://github.com/mindskip/xzs/compare/master...1258129581:xzs:patch-1",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-75460"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-75460",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "7c892ed29360d0a0af9491f6",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-75458",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-75458",
+      "summary": "*** Pendiente de traducción *** The teacher-end interface POST /api/teacher/user/delete/{id} in XueZhiSi Open Source Exam System Impacto Vector 3.x CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H CVSS v3.1 Severidad y Métricas: Puntuación base: 8.10 ALTA Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Alcance (S): Sin modificar Impacto a la confidencialidad (C): Ninguno Impacto a la integridad (I): Alto Impacto a la disponibilidad (A): Alto Puntuación base 3.x 8.10 Gravedad 3.x ALTA Referencias a soluciones, herramientas e información https://github.com/mindskip/xzs/compare/master...1258129581:xzs:patch-2 https://github.com/mindskip/xzs/compare/master...1258129581:xzs:patch-2",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-75458"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-75458",
+          "cvss": 3.1,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "8edc41a470743ff941990763",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-71415",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-71415",
+      "summary": "*** Pendiente de traducción *** Kirby is an open-source content management system. From 5.0.0 until 5.5.2, Kirby&amp;#39;s REST API chunk upload handler in src/Api/Upload.php did not run the relevant upload authorization preflight in Kirby\\Api\\Upload::process() before Kirby\\Api\\Upload::processChunk() persisted chunk data. An authenticated user with the access.panel permission enabled but with files.create, files.replace, and user/users.update permissions disabled could submit requests with an Upload-Length header and leave unfinished chunks in site/cache/.uploads for 24 hours. Repeating this process could consume attacker-controlled temporary storage, prevent other users from uploading files, or prevent site logic from storing data, although final permission checks still prevented unauthorized files from reaching the content or site/accounts directories. This issue is fixed in version 5.5.2. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N CVSS v4.0 Severidad y Métricas: Puntuación base: 7.10 ALTA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Bajo Interacción del usuario (UI): Ninguno Confidentiality (VC): Ninguno Integrity (VI): Ninguno Availability (VA): Alto Confidentiality (SC): Ninguno Integrity (SI): Ninguno Availability (SA): Ninguno Puntuación base 4.0 7.10 Gravedad 4.0 ALTA Referencias a soluciones, herramientas e información https://github.com/getkirby/kirby/commit/37e206f3ed40ad3fab2e47e055ccb19e9c207dab https://github.com/getkirby/kirby/pull/8296 https://github.com/getkirby/kirby/releases/tag/5.5.2 https://github.com/getkirby/kirby/security/advisories/GHSA-67mx-6wf2-92xp",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-71415"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-71415",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "912f10a0aff9a840a98a0ca4",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-62993",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-62993",
+      "summary": "*** Pendiente de traducción *** Smarty is a template engine for PHP, facilitating the separation of presentation (HTML/CSS) from application logic. Prior to 4.5.7 and 5.8.2, depending on the release line, Smarty&amp;#39;s {fetch} handling in libs/plugins/function.fetch.php and src/FunctionHandler/Fetch.php used Security::isTrustedUri() to validate only the initial remote URL against trusted_uri when a security policy was active. For resources handled by file_get_contents(), including HTTPS URLs, PHP followed HTTP redirects by default. An attacker who could supply or influence a fetch target and had an open redirect on a trusted host could redirect the request to an attacker-chosen internal endpoint, bypass the trusted_uri allowlist, and perform server-side request forgery. This issue is fixed in versions 4.5.7 and 5.8.2. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:N/SA:N CVSS v4.0 Severidad y Métricas: Puntuación base: 6.90 MEDIA Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:N/SA:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Present Privilegios Requeridos (PR): Ninguno Interacción del usuario (UI): Ninguno Confidentiality (VC): Ninguno Integrity (VI): Ninguno Availability (VA): Ninguno Confidentiality (SC): Alto Integrity (SI): Ninguno Availability (SA): Ninguno Puntuación base 4.0 6.90 Gravedad 4.0 MEDIA Referencias a soluciones, herramientas e información https://github.com/smarty-php/smarty/commit/31e06fc087a8b5a9b236c1e5dacc1c2850a2c115 https://github.com/smarty-php/smarty/commit/a1ccdb0518021a559b4066c37b76a42c86bbce90 https://github.com/smarty-php/smarty/pull/1194 https://github.com/smarty-php/smarty/releases/tag/v4.5.7 https://github.com/smarty-php/smarty/releases/tag/v5.8.2 https://github.com/smarty-php/smarty/security/advisories/GHSA-cq55-c7wv-pxmq",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-62993"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-62993",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "761db8818fc5951913390e36",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-61640",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-61640",
+      "summary": "*** Pendiente de traducción *** Wallos is an open-source, self-hostable personal subscription tracker. Prior to version 4.9.6, Admin-configured OIDC token_url and user_info_url in includes/oidc/handle_oidc_callback.php:18-49 are used directly in curl_init() with zero SSRF filtering. Unlike logo/webhook URLs which have validate_webhook_url_for_ssrf(), OIDC URLs bypass all protections. Admin sets URL to http://169.254.169.254/latest/meta-data/ for cloud metadata access or internal network pivoting. This issue has been patched in version 4.9.6. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N CVSS v4.0 Severidad y Métricas: Puntuación base: 8.50 ALTA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Alto Interacción del usuario (UI): Ninguno Confidentiality (VC): Alto Integrity (VI): Alto Availability (VA): Ninguno Confidentiality (SC): Ninguno Integrity (SI): Ninguno Availability (SA): Ninguno Puntuación base 4.0 8.50 Gravedad 4.0 ALTA Referencias a soluciones, herramientas e información https://github.com/ellite/Wallos/commit/b75f13d0ffa3ed7e77e8e79e4b9fd3fc528c98d3 https://github.com/ellite/Wallos/pull/1092 https://github.com/ellite/Wallos/releases/tag/v4.9.6 https://github.com/ellite/Wallos/security/advisories/GHSA-x9x5-gh69-q7cm",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-61640"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-61640",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "a52a1eadb5ff6f0a38954df8",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-61639",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-61639",
+      "summary": "*** Pendiente de traducción *** Wallos is an open-source, self-hostable personal subscription tracker. Prior to version 4.9.6, POST /endpoints/db/restore.php calls ZipArchive::extractTo() without validating entry names for ../ sequences. Admin uploads crafted zip with entry logos/../../endpoints/shell.php to write webshell to webroot. Extension filter only applies to post-extraction logo copy step. This issue has been patched in version 4.9.6. Impacto Vector 4.0 CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N CVSS v4.0 Severidad y Métricas: Puntuación base: 8.50 ALTA Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N Vector de acceso (AV): A través de red Complejidad de acceso (AC): Bajo Attack Requirements (AT): Ninguno Privilegios Requeridos (PR): Alto Interacción del usuario (UI): Ninguno Confidentiality (VC): Alto Integrity (VI): Alto Availability (VA): Ninguno Confidentiality (SC): Ninguno Integrity (SI): Ninguno Availability (SA): Ninguno Puntuación base 4.0 8.50 Gravedad 4.0 ALTA Referencias a soluciones, herramientas e información https://github.com/ellite/Wallos/commit/b75f13d0ffa3ed7e77e8e79e4b9fd3fc528c98d3 https://github.com/ellite/Wallos/pull/1092 https://github.com/ellite/Wallos/releases/tag/v4.9.6 https://github.com/ellite/Wallos/security/advisories/GHSA-3vg2-cxpg-m43g",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-61639"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-61639",
+          "cvss": null,
+          "cvss_version": null
+        }
+      ],
+      "exploited": false,
+      "manufacturers": []
+    },
+    {
+      "id": "cc0840eb916250377a0303cb",
+      "incibe_id": null,
+      "source_type": "vulnerabilidad",
+      "title": "CVE-2026-4560",
+      "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2026-4560",
+      "summary": "*** Pendiente de traducción *** Rejected reason: ** REJECT ** DO NOT USE THIS CANDIDATE NUMBER. Reason: This candidate was issued in error. Notes: All references and descriptions in this candidate have been removed to prevent accidental usage. Impacto Referencias a soluciones, herramientas e información",
+      "affected_resources": "",
+      "solution": "",
+      "detail": "",
+      "published_at": "2026-08-31T00:00:00Z",
+      "importance": null,
+      "tags": [],
+      "cves": [
+        "CVE-2026-4560"
+      ],
+      "cve_details": [
+        {
+          "cve": "CVE-2026-4560",
+          "cvss": null,
           "cvss_version": null
         }
       ],
@@ -78245,7 +80123,7 @@
       "source_type": "vulnerabilidad",
       "title": "CVE coordinados",
       "url": "https://www.incibe.es/index.php/incibe-cert/alerta-temprana/vulnerabilidades/cve-coordinados",
-      "summary": "Fecha de publicación CNA Asignador CVE-2026-27870 *** Pendiente de traducción *** An attacker with access via network to the Regesta Smart HD-PLC of the provider Teldat (in this case, registration action IS required) who has the vulnerable software could, introduce arbitrary JavaScript by injecting a Cross-site Scripting (XSS) payload into the &#39;Hostname&#39; field of the configuration file resulting in a XSS in the path /upgrade/query.php?cmd=p+3%3Bversion. This issue affects Regesta Smart HD-PLC - TLDPH16D2: 11.02.05.10.02. 17/06/2026 HackRTU CVE-2026-27868 *** Pendiente de traducción *** An attacker with access via network to the Regesta Smart HD-PLC of the provider Teldat (in this case, NO registration action is required) who has the vulnerable software could obtain privilege information by using the command Version via the path: /upgrade/query.php?cmd=p+3&3Bversion resulting in a information disclosure. This issue affects Regesta Smart HD-PLC - TLDPH16D2: 11.02.05.10.02. 17/06/2026 HackRTU CVE-2026-27869 *** Pendiente de traducción *** An attacker with access via network to the Regesta Smart HD-PLC of the provider Teldat (in this case, NO registration action is required) who has the vulnerable software could, with a Slow Loris attack, cause Denial of Service (DoS) on the web interface of the device. This issue affects Regesta Smart HD-PLC - TLDPH16D2: 11.02.05.10.02. 17/06/2026 HackRTU CVE-2026-30810 *** Pendiente de traducción *** Server-Side Request Forgery vulnerability allows Privilege Escalation via API Checker extension. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-30807 *** Pendiente de traducción *** Cross-Site Request Forgery vulnerability allows an attacker to perform unauthorized actions via crafted web page. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-34187 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an SQL Command vulnerability allows SQL Injection via graph container parameter. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-30808 *** Pendiente de traducción *** Session Fixation vulnerability allows Session Hijacking via crafted session ID. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-30805 *** Pendiente de traducción *** Insecure Default Initialization of Resource vulnerability allows Authentication Bypass via API access. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-34186 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an SQL Command vulnerability allows SQL Injection via custom fields. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30812 *** Pendiente de traducción *** Improper Neutralization of Input During Web Page Generation vulnerability allows Stored Cross-Site Scripting via event comments. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30809 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an OS Command vulnerability allows OS Command Injection via WebServerModuleDebug. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30804 *** Pendiente de traducción *** Unrestricted Upload of File with Dangerous Type vulnerability allows Remote Code Execution via file upload. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-34188 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an OS Command vulnerability allows OS Command Injection via Event Response execution. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30813 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an SQL Command vulnerability allows SQL Injection via module search. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30811 *** Pendiente de traducción *** Missing Authorization vulnerability allows Exposure of Sensitive Information via configuration endpoint. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30806 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an OS Command vulnerability allows OS Command Injection via Network Report. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-3206 Vulnerabilidad de cierre o liberación inadecuada de recursos en KrakenD, SLU KrakenD-CE (módulos CircuitBreaker), KrakenD, SLU KrakenD-EE (módulos CircuitBreaker). Este problema afecta a KrakenD-CE: versiones anteriores a 2.13.1; KrakenD-EE: versiones anteriores a 2.12.5. 25/02/2026 KrakenD CVE-2025-13649 Un atacante con acceso a la aplicación web ZeusWeb del proveedor Microcom (en este caso, no es necesario registrarse, pero la acción debe realizarse) que tenga el software vulnerable podría introducir JavaScript arbitrario inyectando una carga útil XSS en los parámetros &#39;Email&#39; dentro de la sección &#39;Recuperar contraseña&#39; en la URL: https://zeus.microcom.es:4040/index.html?zeus6=true. Este problema afecta a ZeusWeb: 6.1.31. 11/02/2026 HackRTU CVE-2025-13650 Un atacante con acceso a la aplicación web ZeusWeb del proveedor Microcom (en este caso, el registro no es necesario, pero la acción debe realizarse) que tiene el software vulnerable podría introducir JavaScript arbitrario inyectando una carga útil XSS en el parámetro &#39;Surname&#39; de la operación &#39;Create Account&#39; en la URL: https://zeus.microcom.es:4040/index.html?zeus6=true . Este problema afecta a ZeusWeb: 6.1.31. 11/02/2026 HackRTU CVE-2025-13648 Un atacante con acceso a la aplicación web ZeusWeb del proveedor Microcom (en este caso, se requiere registro) que tiene el software vulnerable podría introducir JavaScript arbitrario inyectando una carga útil de XSS en los parámetros &#39;Name&#39; y &#39;Surname&#39; dentro de la sección &#39;My Account&#39; en la URL: https://zeus.microcom.es:4040/administracion-estaciones.html lo que resultaría en un XSS almacenado. Este problema afecta a ZeusWeb: 6.1.31. 11/02/2026 HackRTU Paginación … 1 2 3 4 5 6 … Siguiente página › Última página Última",
+      "summary": "Fecha de publicación CNA Asignador CVE-2026-27870 *** Pendiente de traducción *** An attacker with access via network to the Regesta Smart HD-PLC of the provider Teldat (in this case, registration action IS required) who has the vulnerable software could, introduce arbitrary JavaScript by injecting a Cross-site Scripting (XSS) payload into the &#39;Hostname&#39; field of the configuration file resulting in a XSS in the path /upgrade/query.php?cmd=p+3%3Bversion. This issue affects Regesta Smart HD-PLC - TLDPH16D2: 11.02.05.10.02. 17/06/2026 HackRTU CVE-2026-27868 *** Pendiente de traducción *** An attacker with access via network to the Regesta Smart HD-PLC of the provider Teldat (in this case, NO registration action is required) who has the vulnerable software could obtain privilege information by using the command Version via the path: /upgrade/query.php?cmd=p+3&3Bversion resulting in a information disclosure. This issue affects Regesta Smart HD-PLC - TLDPH16D2: 11.02.05.10.02. 17/06/2026 HackRTU CVE-2026-27869 *** Pendiente de traducción *** An attacker with access via network to the Regesta Smart HD-PLC of the provider Teldat (in this case, NO registration action is required) who has the vulnerable software could, with a Slow Loris attack, cause Denial of Service (DoS) on the web interface of the device. This issue affects Regesta Smart HD-PLC - TLDPH16D2: 11.02.05.10.02. 17/06/2026 HackRTU CVE-2026-30810 *** Pendiente de traducción *** Server-Side Request Forgery vulnerability allows Privilege Escalation via API Checker extension. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-30807 *** Pendiente de traducción *** Cross-Site Request Forgery vulnerability allows an attacker to perform unauthorized actions via crafted web page. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-34187 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an SQL Command vulnerability allows SQL Injection via graph container parameter. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-30808 *** Pendiente de traducción *** Session Fixation vulnerability allows Session Hijacking via crafted session ID. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-30805 *** Pendiente de traducción *** Insecure Default Initialization of Resource vulnerability allows Authentication Bypass via API access. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-34186 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an SQL Command vulnerability allows SQL Injection via custom fields. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30812 *** Pendiente de traducción *** Improper Neutralization of Input During Web Page Generation vulnerability allows Stored Cross-Site Scripting via event comments. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30809 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an OS Command vulnerability allows OS Command Injection via WebServerModuleDebug. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30804 *** Pendiente de traducción *** Unrestricted Upload of File with Dangerous Type vulnerability allows Remote Code Execution via file upload. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-34188 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an OS Command vulnerability allows OS Command Injection via Event Response execution. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30813 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an SQL Command vulnerability allows SQL Injection via module search. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30811 *** Pendiente de traducción *** Missing Authorization vulnerability allows Exposure of Sensitive Information via configuration endpoint. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30806 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an OS Command vulnerability allows OS Command Injection via Network Report. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-3206 Vulnerabilidad de cierre o liberación inadecuada de recursos en KrakenD, SLU KrakenD-CE (módulos CircuitBreaker), KrakenD, SLU KrakenD-EE (módulos CircuitBreaker). Este problema afecta a KrakenD-CE: versiones anteriores a 2.13.1; KrakenD-EE: versiones anteriores a 2.12.5. 25/02/2026 KrakenD CVE-2025-13651 Exposición de Información Sensible del Sistema a un Actor No Autorizado vulnerabilidad en Microcom ZeusWeb permite la Huella Digital de Aplicación Web de datos sensibles. Este problema afecta a ZeusWeb: 6.1.31. 11/02/2026 HackRTU CVE-2025-13649 Un atacante con acceso a la aplicación web ZeusWeb del proveedor Microcom (en este caso, no es necesario registrarse, pero la acción debe realizarse) que tenga el software vulnerable podría introducir JavaScript arbitrario inyectando una carga útil XSS en los parámetros &#39;Email&#39; dentro de la sección &#39;Recuperar contraseña&#39; en la URL: https://zeus.microcom.es:4040/index.html?zeus6=true. Este problema afecta a ZeusWeb: 6.1.31. 11/02/2026 HackRTU CVE-2025-13650 Un atacante con acceso a la aplicación web ZeusWeb del proveedor Microcom (en este caso, el registro no es necesario, pero la acción debe realizarse) que tiene el software vulnerable podría introducir JavaScript arbitrario inyectando una carga útil XSS en el parámetro &#39;Surname&#39; de la operación &#39;Create Account&#39; en la URL: https://zeus.microcom.es:4040/index.html?zeus6=true . Este problema afecta a ZeusWeb: 6.1.31. 11/02/2026 HackRTU Paginación … 1 2 3 4 5 6 … Siguiente página › Última página Última",
       "affected_resources": "",
       "solution": "",
       "detail": "",
@@ -78270,9 +80148,9 @@
         "CVE-2026-30811",
         "CVE-2026-30806",
         "CVE-2026-3206",
+        "CVE-2025-13651",
         "CVE-2025-13649",
-        "CVE-2025-13650",
-        "CVE-2025-13648"
+        "CVE-2025-13650"
       ],
       "cve_details": [
         {
@@ -78361,17 +80239,17 @@
           "cvss_version": null
         },
         {
+          "cve": "CVE-2025-13651",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
           "cve": "CVE-2025-13649",
           "cvss": null,
           "cvss_version": null
         },
         {
           "cve": "CVE-2025-13650",
-          "cvss": null,
-          "cvss_version": null
-        },
-        {
-          "cve": "CVE-2025-13648",
           "cvss": null,
           "cvss_version": null
         }
@@ -78385,7 +80263,7 @@
       "source_type": "vulnerabilidad",
       "title": "CVE coordinados",
       "url": "https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-coordinados",
-      "summary": "Fecha de publicación CNA Asignador CVE-2026-27869 *** Pendiente de traducción *** An attacker with access via network to the Regesta Smart HD-PLC of the provider Teldat (in this case, NO registration action is required) who has the vulnerable software could, with a Slow Loris attack, cause Denial of Service (DoS) on the web interface of the device. This issue affects Regesta Smart HD-PLC - TLDPH16D2: 11.02.05.10.02. 17/06/2026 HackRTU CVE-2026-27870 *** Pendiente de traducción *** An attacker with access via network to the Regesta Smart HD-PLC of the provider Teldat (in this case, registration action IS required) who has the vulnerable software could, introduce arbitrary JavaScript by injecting a Cross-site Scripting (XSS) payload into the &#39;Hostname&#39; field of the configuration file resulting in a XSS in the path /upgrade/query.php?cmd=p+3%3Bversion. This issue affects Regesta Smart HD-PLC - TLDPH16D2: 11.02.05.10.02. 17/06/2026 HackRTU CVE-2026-27868 *** Pendiente de traducción *** An attacker with access via network to the Regesta Smart HD-PLC of the provider Teldat (in this case, NO registration action is required) who has the vulnerable software could obtain privilege information by using the command Version via the path: /upgrade/query.php?cmd=p+3&3Bversion resulting in a information disclosure. This issue affects Regesta Smart HD-PLC - TLDPH16D2: 11.02.05.10.02. 17/06/2026 HackRTU CVE-2026-34187 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an SQL Command vulnerability allows SQL Injection via graph container parameter. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-30808 *** Pendiente de traducción *** Session Fixation vulnerability allows Session Hijacking via crafted session ID. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-30805 *** Pendiente de traducción *** Insecure Default Initialization of Resource vulnerability allows Authentication Bypass via API access. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-30810 *** Pendiente de traducción *** Server-Side Request Forgery vulnerability allows Privilege Escalation via API Checker extension. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-30807 *** Pendiente de traducción *** Cross-Site Request Forgery vulnerability allows an attacker to perform unauthorized actions via crafted web page. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-30813 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an SQL Command vulnerability allows SQL Injection via module search. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30811 *** Pendiente de traducción *** Missing Authorization vulnerability allows Exposure of Sensitive Information via configuration endpoint. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30806 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an OS Command vulnerability allows OS Command Injection via Network Report. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-34186 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an SQL Command vulnerability allows SQL Injection via custom fields. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30812 *** Pendiente de traducción *** Improper Neutralization of Input During Web Page Generation vulnerability allows Stored Cross-Site Scripting via event comments. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30809 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an OS Command vulnerability allows OS Command Injection via WebServerModuleDebug. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30804 *** Pendiente de traducción *** Unrestricted Upload of File with Dangerous Type vulnerability allows Remote Code Execution via file upload. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-34188 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an OS Command vulnerability allows OS Command Injection via Event Response execution. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-3206 Vulnerabilidad de cierre o liberación inadecuada de recursos en KrakenD, SLU KrakenD-CE (módulos CircuitBreaker), KrakenD, SLU KrakenD-EE (módulos CircuitBreaker). Este problema afecta a KrakenD-CE: versiones anteriores a 2.13.1; KrakenD-EE: versiones anteriores a 2.12.5. 25/02/2026 KrakenD CVE-2025-13650 Un atacante con acceso a la aplicación web ZeusWeb del proveedor Microcom (en este caso, el registro no es necesario, pero la acción debe realizarse) que tiene el software vulnerable podría introducir JavaScript arbitrario inyectando una carga útil XSS en el parámetro &#39;Surname&#39; de la operación &#39;Create Account&#39; en la URL: https://zeus.microcom.es:4040/index.html?zeus6=true . Este problema afecta a ZeusWeb: 6.1.31. 11/02/2026 HackRTU CVE-2025-13648 Un atacante con acceso a la aplicación web ZeusWeb del proveedor Microcom (en este caso, se requiere registro) que tiene el software vulnerable podría introducir JavaScript arbitrario inyectando una carga útil de XSS en los parámetros &#39;Name&#39; y &#39;Surname&#39; dentro de la sección &#39;My Account&#39; en la URL: https://zeus.microcom.es:4040/administracion-estaciones.html lo que resultaría en un XSS almacenado. Este problema afecta a ZeusWeb: 6.1.31. 11/02/2026 HackRTU CVE-2025-13651 Exposición de Información Sensible del Sistema a un Actor No Autorizado vulnerabilidad en Microcom ZeusWeb permite la Huella Digital de Aplicación Web de datos sensibles. Este problema afecta a ZeusWeb: 6.1.31. 11/02/2026 HackRTU Paginación … 1 2 3 4 5 6 … Siguiente página › Última página Última",
+      "summary": "Fecha de publicación CNA Asignador CVE-2026-27870 *** Pendiente de traducción *** An attacker with access via network to the Regesta Smart HD-PLC of the provider Teldat (in this case, registration action IS required) who has the vulnerable software could, introduce arbitrary JavaScript by injecting a Cross-site Scripting (XSS) payload into the &#39;Hostname&#39; field of the configuration file resulting in a XSS in the path /upgrade/query.php?cmd=p+3%3Bversion. This issue affects Regesta Smart HD-PLC - TLDPH16D2: 11.02.05.10.02. 17/06/2026 HackRTU CVE-2026-27868 *** Pendiente de traducción *** An attacker with access via network to the Regesta Smart HD-PLC of the provider Teldat (in this case, NO registration action is required) who has the vulnerable software could obtain privilege information by using the command Version via the path: /upgrade/query.php?cmd=p+3&3Bversion resulting in a information disclosure. This issue affects Regesta Smart HD-PLC - TLDPH16D2: 11.02.05.10.02. 17/06/2026 HackRTU CVE-2026-27869 *** Pendiente de traducción *** An attacker with access via network to the Regesta Smart HD-PLC of the provider Teldat (in this case, NO registration action is required) who has the vulnerable software could, with a Slow Loris attack, cause Denial of Service (DoS) on the web interface of the device. This issue affects Regesta Smart HD-PLC - TLDPH16D2: 11.02.05.10.02. 17/06/2026 HackRTU CVE-2026-30810 *** Pendiente de traducción *** Server-Side Request Forgery vulnerability allows Privilege Escalation via API Checker extension. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-30807 *** Pendiente de traducción *** Cross-Site Request Forgery vulnerability allows an attacker to perform unauthorized actions via crafted web page. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-34187 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an SQL Command vulnerability allows SQL Injection via graph container parameter. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-30808 *** Pendiente de traducción *** Session Fixation vulnerability allows Session Hijacking via crafted session ID. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-30805 *** Pendiente de traducción *** Insecure Default Initialization of Resource vulnerability allows Authentication Bypass via API access. This issue affects Pandora FMS: from 777 through 800 12/05/2026 Pandora FMS CVE-2026-34186 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an SQL Command vulnerability allows SQL Injection via custom fields. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30812 *** Pendiente de traducción *** Improper Neutralization of Input During Web Page Generation vulnerability allows Stored Cross-Site Scripting via event comments. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30809 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an OS Command vulnerability allows OS Command Injection via WebServerModuleDebug. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30804 *** Pendiente de traducción *** Unrestricted Upload of File with Dangerous Type vulnerability allows Remote Code Execution via file upload. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-34188 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an OS Command vulnerability allows OS Command Injection via Event Response execution. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30813 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an SQL Command vulnerability allows SQL Injection via module search. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30811 *** Pendiente de traducción *** Missing Authorization vulnerability allows Exposure of Sensitive Information via configuration endpoint. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-30806 *** Pendiente de traducción *** Improper Neutralization of Special Elements used in an OS Command vulnerability allows OS Command Injection via Network Report. This issue affects Pandora FMS: from 777 through 800 13/04/2026 Pandora FMS CVE-2026-3206 Vulnerabilidad de cierre o liberación inadecuada de recursos en KrakenD, SLU KrakenD-CE (módulos CircuitBreaker), KrakenD, SLU KrakenD-EE (módulos CircuitBreaker). Este problema afecta a KrakenD-CE: versiones anteriores a 2.13.1; KrakenD-EE: versiones anteriores a 2.12.5. 25/02/2026 KrakenD CVE-2025-13651 Exposición de Información Sensible del Sistema a un Actor No Autorizado vulnerabilidad en Microcom ZeusWeb permite la Huella Digital de Aplicación Web de datos sensibles. Este problema afecta a ZeusWeb: 6.1.31. 11/02/2026 HackRTU CVE-2025-13649 Un atacante con acceso a la aplicación web ZeusWeb del proveedor Microcom (en este caso, no es necesario registrarse, pero la acción debe realizarse) que tenga el software vulnerable podría introducir JavaScript arbitrario inyectando una carga útil XSS en los parámetros &#39;Email&#39; dentro de la sección &#39;Recuperar contraseña&#39; en la URL: https://zeus.microcom.es:4040/index.html?zeus6=true. Este problema afecta a ZeusWeb: 6.1.31. 11/02/2026 HackRTU CVE-2025-13650 Un atacante con acceso a la aplicación web ZeusWeb del proveedor Microcom (en este caso, el registro no es necesario, pero la acción debe realizarse) que tiene el software vulnerable podría introducir JavaScript arbitrario inyectando una carga útil XSS en el parámetro &#39;Surname&#39; de la operación &#39;Create Account&#39; en la URL: https://zeus.microcom.es:4040/index.html?zeus6=true . Este problema afecta a ZeusWeb: 6.1.31. 11/02/2026 HackRTU Paginación … 1 2 3 4 5 6 … Siguiente página › Última página Última",
       "affected_resources": "",
       "solution": "",
       "detail": "",
@@ -78393,33 +80271,28 @@
       "importance": null,
       "tags": [],
       "cves": [
-        "CVE-2026-27869",
         "CVE-2026-27870",
         "CVE-2026-27868",
+        "CVE-2026-27869",
+        "CVE-2026-30810",
+        "CVE-2026-30807",
         "CVE-2026-34187",
         "CVE-2026-30808",
         "CVE-2026-30805",
-        "CVE-2026-30810",
-        "CVE-2026-30807",
-        "CVE-2026-30813",
-        "CVE-2026-30811",
-        "CVE-2026-30806",
         "CVE-2026-34186",
         "CVE-2026-30812",
         "CVE-2026-30809",
         "CVE-2026-30804",
         "CVE-2026-34188",
+        "CVE-2026-30813",
+        "CVE-2026-30811",
+        "CVE-2026-30806",
         "CVE-2026-3206",
-        "CVE-2025-13650",
-        "CVE-2025-13648",
-        "CVE-2025-13651"
+        "CVE-2025-13651",
+        "CVE-2025-13649",
+        "CVE-2025-13650"
       ],
       "cve_details": [
-        {
-          "cve": "CVE-2026-27869",
-          "cvss": null,
-          "cvss_version": null
-        },
         {
           "cve": "CVE-2026-27870",
           "cvss": null,
@@ -78427,6 +80300,21 @@
         },
         {
           "cve": "CVE-2026-27868",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-27869",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-30810",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-30807",
           "cvss": null,
           "cvss_version": null
         },
@@ -78442,31 +80330,6 @@
         },
         {
           "cve": "CVE-2026-30805",
-          "cvss": null,
-          "cvss_version": null
-        },
-        {
-          "cve": "CVE-2026-30810",
-          "cvss": null,
-          "cvss_version": null
-        },
-        {
-          "cve": "CVE-2026-30807",
-          "cvss": null,
-          "cvss_version": null
-        },
-        {
-          "cve": "CVE-2026-30813",
-          "cvss": null,
-          "cvss_version": null
-        },
-        {
-          "cve": "CVE-2026-30811",
-          "cvss": null,
-          "cvss_version": null
-        },
-        {
-          "cve": "CVE-2026-30806",
           "cvss": null,
           "cvss_version": null
         },
@@ -78496,22 +80359,37 @@
           "cvss_version": null
         },
         {
+          "cve": "CVE-2026-30813",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-30811",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2026-30806",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
           "cve": "CVE-2026-3206",
           "cvss": null,
           "cvss_version": null
         },
         {
-          "cve": "CVE-2025-13650",
-          "cvss": null,
-          "cvss_version": null
-        },
-        {
-          "cve": "CVE-2025-13648",
-          "cvss": null,
-          "cvss_version": null
-        },
-        {
           "cve": "CVE-2025-13651",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2025-13649",
+          "cvss": null,
+          "cvss_version": null
+        },
+        {
+          "cve": "CVE-2025-13650",
           "cvss": null,
           "cvss_version": null
         }
