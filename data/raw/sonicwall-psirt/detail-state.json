@@ -1,0 +1,1071 @@
+{
+  "schema_version": 1,
+  "last_run_at": "2026-07-21T17:51:37.656399Z",
+  "items": {
+    "SNWLID-2025-0001": {
+      "fingerprint": "1c992dd27a7ed87a63adc9689e8047d18ad2e1ec1d1aad2ccb43425b2b9f76d1",
+      "checked_at": "2026-07-21T17:49:47.941285Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0001"
+    },
+    "SNWLID-2026-0004": {
+      "fingerprint": "0517f937a3cd16145d8a1db01d13086fec9dc8f43fb8e3befc52b399f81fde0d",
+      "checked_at": "2026-07-21T17:49:48.454432Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0004"
+    },
+    "SNWLID-2026-0003": {
+      "fingerprint": "4f1866a8726934a2ce4a53613ed3633cdb749b75ff40e77159a148e6a6241c21",
+      "checked_at": "2026-07-21T17:49:48.967851Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0003"
+    },
+    "SNWLID-2026-0002": {
+      "fingerprint": "d685f952a01430840142157b2466a7d96150990cd89635a0ae19d3fe51b1a2d2",
+      "checked_at": "2026-07-21T17:49:49.482373Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0002"
+    },
+    "SNWLID-2026-0001": {
+      "fingerprint": "05b16a516e3f7a80fea8c65ee59fd70a6fd3390f647c33c7b2af217b45a64ff7",
+      "checked_at": "2026-07-21T17:49:49.995378Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0001"
+    },
+    "SNWLID-2025-0019": {
+      "fingerprint": "dcdee11a72b8dcd5843f233ef5356483566d8c994a6a3fc1292b7f499b38fea1",
+      "checked_at": "2026-07-21T17:49:50.508813Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0019"
+    },
+    "SNWLID-2025-0016": {
+      "fingerprint": "ecb64365b5df54fee0d7cd99e8433066b3bc66c2921b46ce80e8a469ce013cd8",
+      "checked_at": "2026-07-21T17:49:51.022635Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0016"
+    },
+    "SNWLID-2025-0018": {
+      "fingerprint": "52fbb262fdd85a38cd856b074da994deeeccf5c63f611284402ffd8beaccb2bc",
+      "checked_at": "2026-07-21T17:49:51.536400Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0018"
+    },
+    "SNWLID-2025-0017": {
+      "fingerprint": "72b2107bb13c4e6a8250545fd943f8c1dd83fa432c7cc5e279b69112ade0892b",
+      "checked_at": "2026-07-21T17:49:52.049965Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0017"
+    },
+    "SNWLID-2016-0003": {
+      "fingerprint": "5f6007a02fb4b199e8a79d87c2f79028654b8a0010cffcd2746ebafc66b82541",
+      "checked_at": "2026-07-21T17:49:52.563125Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2016-0003"
+    },
+    "SNWLID-2025-0015": {
+      "fingerprint": "2d58f4391df5123c0331fcc26d4c53bd4d8bac8d9de53bb0c5d38cefc0d733d9",
+      "checked_at": "2026-07-21T17:49:53.076930Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0015"
+    },
+    "SNWLID-2025-0014": {
+      "fingerprint": "2f32e7cc9ff99d2ef4a8924a64fb2dcda0d63fc909a2fb28da39eaf658cec2a4",
+      "checked_at": "2026-07-21T17:49:53.590373Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0014"
+    },
+    "SNWLID-2025-0013": {
+      "fingerprint": "71b7b60fdbcba6e30f5af0b73d8ebb885cd11e24ab3f352821939768aa8b4e4e",
+      "checked_at": "2026-07-21T17:49:54.103705Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0013"
+    },
+    "SNWLID-2024-0018": {
+      "fingerprint": "6e5613321dc5908bbd6eb2ee4899fdf7d6c214e80c89e1df190292d79a72536b",
+      "checked_at": "2026-07-21T17:49:54.616845Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0018"
+    },
+    "SNWLID-2025-0012": {
+      "fingerprint": "2aec00cd32e4815cdeaf2014e462b491c2be0463d490c1a0070ccad92c501677",
+      "checked_at": "2026-07-21T17:49:55.130679Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0012"
+    },
+    "SNWLID-2025-0011": {
+      "fingerprint": "1c4c3309c5b9bbc7ab051b28c1fc63b7267bb580e3dde1cf3f729da990bb5498",
+      "checked_at": "2026-07-21T17:49:55.644551Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0011"
+    },
+    "SNWLID-2025-0010": {
+      "fingerprint": "fe839967a9232d0159dd6d95632620aa733f34217ee02ed58d3561472b892603",
+      "checked_at": "2026-07-21T17:49:56.157801Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0010"
+    },
+    "SNWLID-2025-0008": {
+      "fingerprint": "f3bd73c957921018129a9702a56c411885025ce995164e7c9e0721b12b5b50d7",
+      "checked_at": "2026-07-21T17:49:56.672154Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0008"
+    },
+    "SNWLID-2023-0018": {
+      "fingerprint": "0c15d0bb238549e5abcf126c577c2216c875bf7bb310fa5cb7795e2b3e2d80d5",
+      "checked_at": "2026-07-21T17:49:57.185410Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0018"
+    },
+    "SNWLID-2025-0003": {
+      "fingerprint": "805bf15df54e28e447d70fd8a1dca93fc72abcb0ea14b89e4c775fd1be422ea1",
+      "checked_at": "2026-07-21T17:49:57.700078Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0003"
+    },
+    "SNWLID-2025-0009": {
+      "fingerprint": "5a13e612e4846d6ae7591f83b4fadf58cd97ed61401e1c5b16bc9d823b8646bf",
+      "checked_at": "2026-07-21T17:49:58.213091Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0009"
+    },
+    "SNWLID-2025-0007": {
+      "fingerprint": "ef9b3fa16edaee6dcb5ed275af95537aa497d709db1b482fdb1f309a6e834e7c",
+      "checked_at": "2026-07-21T17:49:58.727658Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0007"
+    },
+    "SNWLID-2021-0022": {
+      "fingerprint": "53e21cf7b850c6b513d563cb75edd93618d435f7362e86264e7ea395f154fa70",
+      "checked_at": "2026-07-21T17:49:59.242292Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0022"
+    },
+    "SNWLID-2025-0006": {
+      "fingerprint": "a127609da34dc61bbbaed1fcdc9482677a2a730aba8139664378f1cd46c66015",
+      "checked_at": "2026-07-21T17:49:59.755672Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0006"
+    },
+    "SNWLID-2025-0005": {
+      "fingerprint": "ae859f1ea4c1e4fb00b680a011d0166aadcdf2f03b65f09cc91487a9d09ffa0b",
+      "checked_at": "2026-07-21T17:50:00.269797Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0005"
+    },
+    "SNWLID-2025-0002": {
+      "fingerprint": "e010804dbcdeb061ab82d8000837a758ad0b0d33a85af0f0a28cba84640e29eb",
+      "checked_at": "2026-07-21T17:50:00.783117Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0002"
+    },
+    "SNWLID-2024-0013": {
+      "fingerprint": "7bcf9305f570c11f103896e85cf26953e13aa6af948015d159b0a796338f5e98",
+      "checked_at": "2026-07-21T17:50:01.296744Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0013"
+    },
+    "SNWLID-2025-0004": {
+      "fingerprint": "c6a3b2bd8f9da2f906b2a32c99ce846ab02d2778250dcbc3429ae153fc09c49d",
+      "checked_at": "2026-07-21T17:50:01.810564Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0004"
+    },
+    "SNWLID-2024-0015": {
+      "fingerprint": "a6e88045a0db4cfc4c55fda150c431731f39f894f32734ad4faae5d96477a740",
+      "checked_at": "2026-07-21T17:50:02.323884Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0015"
+    },
+    "SNWLID-2024-0017": {
+      "fingerprint": "bfdaf8748c151bc62a63d6f954b907e18d1232cec06bb80faecc47260f15278b",
+      "checked_at": "2026-07-21T17:50:02.839100Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0017"
+    },
+    "SNWLID-2024-0010": {
+      "fingerprint": "3ad6d2788889def1246b380c660689ae8a9cc7e591d1baf52b10d3650b9e0be1",
+      "checked_at": "2026-07-21T17:50:03.352530Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0010"
+    },
+    "SNWLID-2024-0016": {
+      "fingerprint": "670f3824b526b439a65b732d1ed3c248d59ac6f83b313244bb663daa4455f8cc",
+      "checked_at": "2026-07-21T17:50:04.112580Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0016"
+    },
+    "SNWLID-2024-0012": {
+      "fingerprint": "c357df3d13fbc38e5bc908c37c176c8ebc9c69271a796f19bf2ca1bb523422c3",
+      "checked_at": "2026-07-21T17:50:04.626335Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0012"
+    },
+    "SNWLID-2024-0008": {
+      "fingerprint": "506a24d57d834f59b4ed9552774532aa628c7994f5986267aacba9c3454d65b6",
+      "checked_at": "2026-07-21T17:50:05.139600Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0008"
+    },
+    "SNWLID-2024-0009": {
+      "fingerprint": "96151131b7c7de518f6cf246d88f860f4063eb77414fcf349d21a95d490fe257",
+      "checked_at": "2026-07-21T17:50:05.654055Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0009"
+    },
+    "SNWLID-2024-0014": {
+      "fingerprint": "9ac31db953878192ee5783c1946508e57454d49be7487a76fe1a2945ec3bdb90",
+      "checked_at": "2026-07-21T17:50:06.168455Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0014"
+    },
+    "SNWLID-2024-0011": {
+      "fingerprint": "9b133d22a5e9238bf34f58453a6be60f3b19a87b83829041f5d74200ee8065ef",
+      "checked_at": "2026-07-21T17:50:06.682730Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0011"
+    },
+    "SNWLID-2024-0002": {
+      "fingerprint": "5be23d93a39e96fb40b5f4f9c8dd6a0585eb236e539bbdfcb9d1dd8e47566536",
+      "checked_at": "2026-07-21T17:50:07.195788Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0002"
+    },
+    "SNWLID-2024-0007": {
+      "fingerprint": "69a51ccd68f3ef6f7cc5c4dedc2658ceacd1800774c2acecc23006cd6a22e2e9",
+      "checked_at": "2026-07-21T17:50:07.709181Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0007"
+    },
+    "SNWLID-2024-0006": {
+      "fingerprint": "b8c6a79f4f79dcc6828815ce3b7d07342da5a5b6767a6714e7a9ad7cd4f12e11",
+      "checked_at": "2026-07-21T17:50:08.221795Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0006"
+    },
+    "SNWLID-2024-0005": {
+      "fingerprint": "88ad82b675ca8fbb39197ece172896a0bb416152defb8d8899e00e2a0e658332",
+      "checked_at": "2026-07-21T17:50:08.746159Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0005"
+    },
+    "SNWLID-2024-0004": {
+      "fingerprint": "adb270bd1b6cc7e343e4ac18173c20bc6c20d2e289477e17b2b96deb23df2b88",
+      "checked_at": "2026-07-21T17:50:09.259385Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0004"
+    },
+    "SNWLID-2021-0019": {
+      "fingerprint": "9f1817b49c617659efc37c439dfabd6c868e451bfa3a537b557f384d17364321",
+      "checked_at": "2026-07-21T17:50:09.772656Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0019"
+    },
+    "SNWLID-2024-0001": {
+      "fingerprint": "87cb99f9047a16abf322f52d2df1ea48efd9665ba1a7a4c543ba83ca8ef8f161",
+      "checked_at": "2026-07-21T17:50:10.286071Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0001"
+    },
+    "SNWLID-2024-0003": {
+      "fingerprint": "441632116481558576c17092a8210e963a149dd4fd44d9624183990b8b3836b2",
+      "checked_at": "2026-07-21T17:50:10.799761Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0003"
+    },
+    "SNWLID-2023-0019": {
+      "fingerprint": "e2a0c59c33d9b621681244a3316b3a9e6102352cb3eee26a221e02c3af6fe450",
+      "checked_at": "2026-07-21T17:50:11.313568Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0019"
+    },
+    "SNWLID-2023-0015": {
+      "fingerprint": "fdb4fd1f2eb31f9a3117f93cb6a8b7690b177ff2494bde8758ede90de55d5e14",
+      "checked_at": "2026-07-21T17:50:11.827040Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0015"
+    },
+    "SNWLID-2023-0016": {
+      "fingerprint": "afb55aa731827ca2d8157accf0741294a29e88defe55ec3aee6a6fcd91e3c700",
+      "checked_at": "2026-07-21T17:50:12.340939Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0016"
+    },
+    "SNWLID-2023-0017": {
+      "fingerprint": "44ec9410061f882d1e5e38924a7debda265de8f73294e056ba982f2a72de8350",
+      "checked_at": "2026-07-21T17:50:12.855937Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0017"
+    },
+    "SNWLID-2023-0012": {
+      "fingerprint": "19c8f1f8fbdf10ab621f0a6d29dcb354e479bc507a8c612fd366130d3945b976",
+      "checked_at": "2026-07-21T17:50:13.369660Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0012"
+    },
+    "SNWLID-2023-0014": {
+      "fingerprint": "7cf84617e3b20979e7cf90f36571ed0e64d39eaf90d7e7bb5ed2d908aeb7230a",
+      "checked_at": "2026-07-21T17:50:13.882631Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0014"
+    },
+    "SNWLID-2023-0013": {
+      "fingerprint": "e77540f9f3e21ec2106801f2050b3047673a88e65df7780096149fc370fd835c",
+      "checked_at": "2026-07-21T17:50:14.396400Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0013"
+    },
+    "SNWLID-2023-0010": {
+      "fingerprint": "364d9f4b77b9693364804aacba54d0d3fc437404b95783f7cc26857f9e270fa3",
+      "checked_at": "2026-07-21T17:50:14.910774Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0010"
+    },
+    "SNWLID-2023-0009": {
+      "fingerprint": "98ffd55ac6252b2af523fc7a74a46cc4a2feadbae85b42fe2ce51eb395e2f070",
+      "checked_at": "2026-07-21T17:50:15.425403Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0009"
+    },
+    "SNWLID-2023-0003": {
+      "fingerprint": "19b8bcfc6ee2dbec1a95208d58faaf051d2d251500d004a39ba2015d08e7f273",
+      "checked_at": "2026-07-21T17:50:15.938995Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0003"
+    },
+    "SNWLID-2023-0006": {
+      "fingerprint": "c14c09299596a19afa94fbd55745c9919c08a038ba050403f740a9bc87bfe4e6",
+      "checked_at": "2026-07-21T17:50:16.452260Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0006"
+    },
+    "SNWLID-2023-0005": {
+      "fingerprint": "a5e355085f9e45bca39d4a26a367c4aca0571969095aac23c9f9b16a42a3b0b0",
+      "checked_at": "2026-07-21T17:50:16.966366Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0005"
+    },
+    "SNWLID-2023-0004": {
+      "fingerprint": "8b72045587a01ee5554cbb7df9b104bf045b7ce9b78a5220eef8db6955c6de73",
+      "checked_at": "2026-07-21T17:50:17.479834Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0004"
+    },
+    "SNWLID-2023-0002": {
+      "fingerprint": "5ceece9ad098e7dedabc75ecda51cba46762786c230e4a9e0a21739bc0c5a565",
+      "checked_at": "2026-07-21T17:50:17.992972Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0002"
+    },
+    "SNWLID-2023-0001": {
+      "fingerprint": "c608c345b7be18a6df1a2c0a2d1fe8146ddaf17a7de43f42d4313d6aca98923e",
+      "checked_at": "2026-07-21T17:50:18.507800Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2023-0001"
+    },
+    "SNWLID-2022-0025": {
+      "fingerprint": "012fae8a8fe229f119069b42ed6ad4190788835bad1c73c5627d9e769bed2a8d",
+      "checked_at": "2026-07-21T17:50:19.020895Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0025"
+    },
+    "SNWLID-2022-0023": {
+      "fingerprint": "e57c45f97593bfa6b31bc410d7bf99b57b69e60e46066094613761cc1c1cfec4",
+      "checked_at": "2026-07-21T17:50:19.533862Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0023"
+    },
+    "SNWLID-2022-0022": {
+      "fingerprint": "211b8c73228a8681d3d45e674fd3d0418f4f6122429f294b2aaa9d393abea602",
+      "checked_at": "2026-07-21T17:50:20.047540Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0022"
+    },
+    "SNWLID-2022-0011": {
+      "fingerprint": "f332aa7a351618ea506a6e7d0e9fe393c3721a109623e70e9e9761671c0ab0fb",
+      "checked_at": "2026-07-21T17:50:20.560635Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0011"
+    },
+    "SNWLID-2022-0002": {
+      "fingerprint": "f95422b5bdf225d33e73ae09e6ac05d7b60703f1f4fea2971383a7772ece8ac4",
+      "checked_at": "2026-07-21T17:50:21.073897Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0002"
+    },
+    "SNWLID-2022-0007": {
+      "fingerprint": "6eb5d0e67c749a872f676420b569b3a51849ed2307a91e51f2382135c1e0f3e6",
+      "checked_at": "2026-07-21T17:50:21.587061Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0007"
+    },
+    "SNWLID-2022-0021": {
+      "fingerprint": "eb085a53fc4e5fbcf952060a1ddef52246d5e4ddde72d0fb349eb6be316b567a",
+      "checked_at": "2026-07-21T17:50:22.101429Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0021"
+    },
+    "SNWLID-2022-0020": {
+      "fingerprint": "8ccbe3e5eb34c7a6690146ae8af183faf502286d936d38c742228decefd8efd1",
+      "checked_at": "2026-07-21T17:50:22.614753Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0020"
+    },
+    "SNWLID-2022-0019": {
+      "fingerprint": "88ada1bf69b5de6af43b60401cba99e5abe52c05ecebc772a336b63c2eab25f4",
+      "checked_at": "2026-07-21T17:50:23.127449Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0019"
+    },
+    "SNWLID-2022-0015": {
+      "fingerprint": "c1d3f2dec369c1f95c579f3d1b3a427e57c853131c47aff6c58c8f7536abce41",
+      "checked_at": "2026-07-21T17:50:23.641533Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0015"
+    },
+    "SNWLID-2022-0009": {
+      "fingerprint": "a51297dc43727c083a5b936a837e3dc3100a6e73cd24b24e4143af906464d95f",
+      "checked_at": "2026-07-21T17:50:24.155476Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0009"
+    },
+    "SNWLID-2022-0013": {
+      "fingerprint": "c995f4f19ced1f51c0cdd4b3861f5b6b8f9827dfa9604e247fc0d05db19d0eed",
+      "checked_at": "2026-07-21T17:50:24.669754Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0013"
+    },
+    "SNWLID-2022-0014": {
+      "fingerprint": "eabbc45366da19a0671738b3795858bef334bd83b4b3f75c36805c7dc266b92d",
+      "checked_at": "2026-07-21T17:50:25.182761Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0014"
+    },
+    "SNWLID-2022-0010": {
+      "fingerprint": "5e38cf6d581a3fc4d30dd2e8055bdc56d70c1bc182031f3005df86e34a69e738",
+      "checked_at": "2026-07-21T17:50:25.697804Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0010"
+    },
+    "SNWLID-2022-0008": {
+      "fingerprint": "c59e31bf81802f3aa677833b921b5785ab2c7cf33a75ad3b0b4205725b7af5bc",
+      "checked_at": "2026-07-21T17:50:26.211287Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0008"
+    },
+    "SNWLID-2021-0026": {
+      "fingerprint": "c42f2c9dfcd4f549ec58ac67b99eb7b2668cdbaecc60e4a67a1438494a0161cd",
+      "checked_at": "2026-07-21T17:50:26.725850Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0026"
+    },
+    "SNWLID-2021-0036": {
+      "fingerprint": "5cbcd36ce01b551228feaa902dc3a00a544bccdcd6cc686ee64c762a69a72183",
+      "checked_at": "2026-07-21T17:50:27.239574Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0036"
+    },
+    "SNWLID-2022-0004": {
+      "fingerprint": "cac132fb76ee3271fca3ed13c5f1422fdd96570d2735d980f5a0578e52f89018",
+      "checked_at": "2026-07-21T17:50:27.754454Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0004"
+    },
+    "SNWLID-2022-0006": {
+      "fingerprint": "9c68f699443cba70f1e6dec4aa1230f06b064e580898ae9fb5752adf54d6b82e",
+      "checked_at": "2026-07-21T17:50:28.268068Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0006"
+    },
+    "SNWLID-2022-0005": {
+      "fingerprint": "dd94af87d751f6cae6696d4db5ef0050eed28cb7cb9c06a94eb2786ece276bff",
+      "checked_at": "2026-07-21T17:50:28.781580Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0005"
+    },
+    "SNWLID-2022-0003": {
+      "fingerprint": "73ed18d68c4af01fdd69074c59961088b21379fc66648279914ab2475c65ee82",
+      "checked_at": "2026-07-21T17:50:29.295934Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0003"
+    },
+    "SNWLID-2022-0001": {
+      "fingerprint": "b92b84d6539bd983db209621ba0f1aecd2437c0402c689a9c7d0721805bb015c",
+      "checked_at": "2026-07-21T17:50:29.809483Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0001"
+    },
+    "SNWLID-2021-0029": {
+      "fingerprint": "cfde8f5500efb95e5b5bfe04e9d8ab9299d49e178b76da3f614268fb01687c38",
+      "checked_at": "2026-07-21T17:50:30.322208Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0029"
+    },
+    "SNWLID-2021-0033": {
+      "fingerprint": "6ee0ededa1d6dbe8bce0d58a4981066b05c993d888baff11de1cb9dfe9c54728",
+      "checked_at": "2026-07-21T17:50:30.834737Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0033"
+    },
+    "SNWLID-2021-0015": {
+      "fingerprint": "207b208ea0ceb360f6daf3e832155e0762c76f885947118733afe6cb50b3fea7",
+      "checked_at": "2026-07-21T17:50:31.349948Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0015"
+    },
+    "SNWLID-2021-0032": {
+      "fingerprint": "9a29479afc86dbcb78f577c3b87bbce519bf651cb9de1f967fad81e12e8dd744",
+      "checked_at": "2026-07-21T17:50:31.862701Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0032"
+    },
+    "SNWLID-2021-0028": {
+      "fingerprint": "6da732d446fe487cb9fe3aecae9b3e8fe76f4db9f62630633625bfb519d812ec",
+      "checked_at": "2026-07-21T17:50:32.375364Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0028"
+    },
+    "SNWLID-2021-0027": {
+      "fingerprint": "4efacba44b9a019c1ef1827e2859be031fb4d33003a5ce8a80084b501ab0bee4",
+      "checked_at": "2026-07-21T17:50:32.888268Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0027"
+    },
+    "SNWLID-2021-0031": {
+      "fingerprint": "1415be8edc9358466fd70089b9166779cceb15c2ae4c6327675752b727606c8a",
+      "checked_at": "2026-07-21T17:50:33.401881Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0031"
+    },
+    "SNWLID-2021-0030": {
+      "fingerprint": "31186cda47681943200e75c45397fb90f34d41b38025a9eafb53e0362d42c0f4",
+      "checked_at": "2026-07-21T17:50:34.188863Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0030"
+    },
+    "SNWLID-2021-0025": {
+      "fingerprint": "936cbf3a4d81caf9e5c22ebe9fdfffbf75a989e381accd1d5bbb274b4ad0f94b",
+      "checked_at": "2026-07-21T17:50:34.703155Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0025"
+    },
+    "SNWLID-2021-0013": {
+      "fingerprint": "e89fd688e1129bd725246eb36417ab9af0380625cbb46fc614fc191abecb128f",
+      "checked_at": "2026-07-21T17:50:35.216609Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0013"
+    },
+    "SNWLID-2021-0021": {
+      "fingerprint": "bf3d6f228f1c960b38d6690f60753a0afa8d2d36cc3c06428d8c12abab5ecbbe",
+      "checked_at": "2026-07-21T17:50:35.730186Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0021"
+    },
+    "SNWLID-2021-0020": {
+      "fingerprint": "44bb8002746b2a4ac02a4b9c8d7a3da1add5989d8af3bf10d04b03c2787d2631",
+      "checked_at": "2026-07-21T17:50:36.243428Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0020"
+    },
+    "SNWLID-2021-0024": {
+      "fingerprint": "4f83f378efbc2a3d61b61853be7b7ff2f59b98923a960117e93e145cc3e3ff32",
+      "checked_at": "2026-07-21T17:50:36.756473Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0024"
+    },
+    "SNWLID-2021-0006": {
+      "fingerprint": "15d1654dc2adf22756c6c3c33f3cb2b4a6aa224108444bfdd0f86400eeca8be3",
+      "checked_at": "2026-07-21T17:50:37.269897Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0006"
+    },
+    "SNWLID-2021-0018": {
+      "fingerprint": "28b9e8edea49d4331f0d7659b85192c775897fc3fee30a2759fc1b9a7301298c",
+      "checked_at": "2026-07-21T17:50:37.783331Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0018"
+    },
+    "SNWLID-2021-0017": {
+      "fingerprint": "59f3e68475399c180b6317d3e0d7c5b06789094b6227bd96c6388abb60972d0f",
+      "checked_at": "2026-07-21T17:50:38.298245Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0017"
+    },
+    "SNWLID-2021-0011": {
+      "fingerprint": "3cf9b123dbba5430b6cb1226dd51c696a021d15b76030fcae455ff88b077bd91",
+      "checked_at": "2026-07-21T17:50:38.811840Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0011"
+    },
+    "SNWLID-2021-0016": {
+      "fingerprint": "5a11807bf88dd59d1f516518c55d8706026ad35743dd32a07fb897ff6972d6b5",
+      "checked_at": "2026-07-21T17:50:39.325759Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0016"
+    },
+    "SNWLID-2021-0014": {
+      "fingerprint": "3845f99efe3b510622865a5c149351f6fb84dc8127700ff2e056529aeed37276",
+      "checked_at": "2026-07-21T17:50:39.840623Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0014"
+    },
+    "SNWLID-2021-0012": {
+      "fingerprint": "79810a8e5eb49be5d032c6659d4599ea3544950dd557c2659267981ae19f3e89",
+      "checked_at": "2026-07-21T17:50:40.392243Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0012"
+    },
+    "SNWLID-2021-0010": {
+      "fingerprint": "fdd7bb6a4ddf3b2823198d59a3dedee8e397a3766a73440a8e9cd02b3884ec1d",
+      "checked_at": "2026-07-21T17:50:40.905383Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0010"
+    },
+    "SNWLID-2021-0009": {
+      "fingerprint": "cc3123dc6a240194379a0ff9cefd8e89aee72dc05f45ae4a3ec7b89b7020c6e5",
+      "checked_at": "2026-07-21T17:50:41.419078Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0009"
+    },
+    "SNWLID-2021-0008": {
+      "fingerprint": "324f99ba8d6aa85812c614e24da25ba9ce842119d8b59a63822b584185b276ec",
+      "checked_at": "2026-07-21T17:50:41.941635Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0008"
+    },
+    "SNWLID-2021-0007": {
+      "fingerprint": "f86867dd78d85c0b46f494e27d4bf8657d445f2e50441ee9021037bfe79a5c5f",
+      "checked_at": "2026-07-21T17:50:42.458066Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0007"
+    },
+    "SNWLID-2021-0005": {
+      "fingerprint": "6faa4863da3465421c356db077fd9849d634c672786db14b03272fb673e0c13d",
+      "checked_at": "2026-07-21T17:50:42.971474Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0005"
+    },
+    "SNWLID-2021-0004": {
+      "fingerprint": "b58da868c3e2b0ad3c49372f829cec2a11859c251a1af4d07a9f7efd8c70c4cd",
+      "checked_at": "2026-07-21T17:50:43.485156Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0004"
+    },
+    "SNWLID-2021-0003": {
+      "fingerprint": "d3c5112768b4a636393921a20a847fae00d3f74aef2219c9cfa1cf8e151a8c08",
+      "checked_at": "2026-07-21T17:50:43.997673Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0003"
+    },
+    "SNWLID-2021-0001": {
+      "fingerprint": "82254daac78d206867e9b858070b22ccc103feaab02b811acfd897e041a68215",
+      "checked_at": "2026-07-21T17:50:44.514384Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0001"
+    },
+    "SNWLID-2020-0022": {
+      "fingerprint": "dd23dcc77c1c35df3ad90b4c02ec5ab71bfb8a49549ae4c333a4b2fc46fcfd7b",
+      "checked_at": "2026-07-21T17:50:45.029120Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0022"
+    },
+    "SNWLID-2020-0023": {
+      "fingerprint": "c198819355fbb8c7eb934e7baca9ab7fe081dc2f6986f7f61f23fb27ecc35ad7",
+      "checked_at": "2026-07-21T17:50:45.542112Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0023"
+    },
+    "SNWLID-2020-0025": {
+      "fingerprint": "0478b7383bddcc2012bfcefd9f021da9e5f3f135e8f060a268bd2f84cf1134f0",
+      "checked_at": "2026-07-21T17:50:46.058189Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0025"
+    },
+    "SNWLID-2020-0024": {
+      "fingerprint": "753aa6f3ce6fb3ea63a24e5fe387eec07bf42b05c89cd1f2e812384aaa45b447",
+      "checked_at": "2026-07-21T17:50:46.571525Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0024"
+    },
+    "SNWLID-2020-0021": {
+      "fingerprint": "1363438906b66dc0372b95a36d87b19b76a50cca78ff718f4ddfe00f12060be8",
+      "checked_at": "2026-07-21T17:50:47.084397Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0021"
+    },
+    "SNWLID-2020-0020": {
+      "fingerprint": "e3e9178c5d7bb67dbce3a54817926c5186ca039c561d2b0dfe84fbdbb98e9bad",
+      "checked_at": "2026-07-21T17:50:47.598625Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0020"
+    },
+    "SNWLID-2020-0019": {
+      "fingerprint": "18f81bf3a2ea50568ca1f3404c8e338e0a821f295d263be38a936b256153c0bd",
+      "checked_at": "2026-07-21T17:50:48.112535Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0019"
+    },
+    "SNWLID-2020-0018": {
+      "fingerprint": "2244b3c2f69b6cf32c3e76c4687797f868e9da6d024b11782f35d82113100bbb",
+      "checked_at": "2026-07-21T17:50:48.627448Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0018"
+    },
+    "SNWLID-2020-0017": {
+      "fingerprint": "3e4eda1db541d6b01d476228df1a18311de1ffba5d39faa5f4fcbb044619e056",
+      "checked_at": "2026-07-21T17:50:49.143729Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0017"
+    },
+    "SNWLID-2020-0016": {
+      "fingerprint": "4cbdc88481566e5281255ae501f7c50a26758013f60134a928d7beca16cfb839",
+      "checked_at": "2026-07-21T17:50:49.658351Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0016"
+    },
+    "SNWLID-2020-0015": {
+      "fingerprint": "c4f410f21b50cf532ab9ee15c872c7b653fe4c1e287c083132b3ad6ce69029c9",
+      "checked_at": "2026-07-21T17:50:50.173259Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0015"
+    },
+    "SNWLID-2020-0014": {
+      "fingerprint": "dab3a17db423141a101bf5c01cee697f33a73a2343c674ca2f0bf7fd29a550b3",
+      "checked_at": "2026-07-21T17:50:50.686898Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0014"
+    },
+    "SNWLID-2020-0013": {
+      "fingerprint": "0620d0dadba8527e9fa64c8c01142bff5305c04fbc8ccf3d5be65a5b93d7bf3b",
+      "checked_at": "2026-07-21T17:50:51.200780Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0013"
+    },
+    "SNWLID-2020-0012": {
+      "fingerprint": "68ccc8aa9eaa00507d899f54fc688d2ddc04ef8daa9922fce41b5c53468240f8",
+      "checked_at": "2026-07-21T17:50:51.714055Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0012"
+    },
+    "SNWLID-2020-0011": {
+      "fingerprint": "debd70daf07f10211df34552077116f722a07be0a698a9282e6e157d69068563",
+      "checked_at": "2026-07-21T17:50:52.230881Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0011"
+    },
+    "SNWLID-2020-0010": {
+      "fingerprint": "7bc5afd838114c21ebd03e05387ecabef12944355a857b31b51c99b46508c7ab",
+      "checked_at": "2026-07-21T17:50:52.744411Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0010"
+    },
+    "SNWLID-2020-0009": {
+      "fingerprint": "efa4978fc5aa05c695518168e64c56c18c177290056923febcc580d8a14c6356",
+      "checked_at": "2026-07-21T17:50:53.256683Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0009"
+    },
+    "SNWLID-2020-0008": {
+      "fingerprint": "f58c9f09513c397052fd35bd5a027da3698f3028194db46cd6071c9cba1b52d1",
+      "checked_at": "2026-07-21T17:50:53.771423Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0008"
+    },
+    "SNWLID-2020-0007": {
+      "fingerprint": "f55a725c9fac1331c45bae4375cbe13e5d1147c760c33ad7c261a4ef0af5f44e",
+      "checked_at": "2026-07-21T17:50:54.284181Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0007"
+    },
+    "SNWLID-2020-0006": {
+      "fingerprint": "c17919c5e569793325d6f19378a8ab5c47088af00f00030cb91e6647aa05fd6b",
+      "checked_at": "2026-07-21T17:50:54.797132Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0006"
+    },
+    "SNWLID-2020-0005": {
+      "fingerprint": "f3b27ce65d45f257d8cb95aefb37829edffdbb1cdefd1212931392b11442431c",
+      "checked_at": "2026-07-21T17:50:55.310851Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0005"
+    },
+    "SNWLID-2020-0003": {
+      "fingerprint": "d193e17731622408f3afe5fa2bfff4c9a6a3edce55385e07778971a7e8e3ee46",
+      "checked_at": "2026-07-21T17:50:55.824178Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0003"
+    },
+    "SNWLID-2020-0004": {
+      "fingerprint": "a017f32a1f473b4980a903ae5f37cd12a634d56bfe1f2df6aa0f881c0427cf12",
+      "checked_at": "2026-07-21T17:50:56.337134Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0004"
+    },
+    "SNWLID-2020-0002": {
+      "fingerprint": "85201a7228ea85e5a1306ead011db970729a45ac288dc7841c2364837587d280",
+      "checked_at": "2026-07-21T17:50:56.850806Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0002"
+    },
+    "SNWLID-2019-0021": {
+      "fingerprint": "022613e8d1b573b30292b32bfbe6d2a83f1c10ffcb36c42fb2d63f4cfc370fc3",
+      "checked_at": "2026-07-21T17:50:57.364059Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0021"
+    },
+    "SNWLID-2019-0016": {
+      "fingerprint": "e889ce5e88b8e7b6e60b52ca79a03b4e276d736ccf7a55920b2cbbfef393fb89",
+      "checked_at": "2026-07-21T17:50:57.876820Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0016"
+    },
+    "SNWLID-2019-0017": {
+      "fingerprint": "7ac6ae3ac1ce9c895d6f10549cd77af5d0519dae89cd1484ebdb62d79368572c",
+      "checked_at": "2026-07-21T17:50:58.390687Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0017"
+    },
+    "SNWLID-2019-0018": {
+      "fingerprint": "52fa50f3efdbdb4bd3ea25f1d95bf05c6444cd0d13fa2124da2b63ef782eebf4",
+      "checked_at": "2026-07-21T17:50:58.903554Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0018"
+    },
+    "SNWLID-2019-0019": {
+      "fingerprint": "895e273112421d55b4a4b4a66c36cfffe70e91bbcab875b8764ebb3efb18b29b",
+      "checked_at": "2026-07-21T17:50:59.416491Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0019"
+    },
+    "SNWLID-2019-0020": {
+      "fingerprint": "bc753583a93651625f1bf11182bdfa4695604ecf3f96d720da1873dc49424779",
+      "checked_at": "2026-07-21T17:50:59.928758Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0020"
+    },
+    "SNWLID-2020-0001": {
+      "fingerprint": "2f6280fef62519c77edf3f6096d6da5a1a6bd46e945e8da02d57550012813bca",
+      "checked_at": "2026-07-21T17:51:00.442133Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0001"
+    },
+    "SNWLID-2019-0011": {
+      "fingerprint": "f0a1b7b74fab3b14221be772fe2e63300f821bec30926e70981fa2300463cbca",
+      "checked_at": "2026-07-21T17:51:00.954648Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0011"
+    },
+    "SNWLID-2019-0012": {
+      "fingerprint": "c56d2057726631121e5bfd8e1baa39ab08c15472261bee7e41305b441bb50d7b",
+      "checked_at": "2026-07-21T17:51:01.469219Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0012"
+    },
+    "SNWLID-2019-0014": {
+      "fingerprint": "8cc03ea22805a9f9bbf83b839558bad23787ab966f08fe683a293c86e04fca2b",
+      "checked_at": "2026-07-21T17:51:01.982863Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0014"
+    },
+    "SNWLID-2019-0023": {
+      "fingerprint": "e7c8068a4f329356e15b6e797d3318f70849728e05ef3163247307e764d52d11",
+      "checked_at": "2026-07-21T17:51:02.495841Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0023"
+    },
+    "SNWLID-2019-0022": {
+      "fingerprint": "b5041502c89930584db7c7043254e8d7a3483956ba6612dca65fee35dbbc7fc9",
+      "checked_at": "2026-07-21T17:51:03.009418Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0022"
+    },
+    "SNWLID-2019-0010": {
+      "fingerprint": "281bacb397659d533f0d08b28b0cdbf08e571938bca438cc3680e6995fa0619b",
+      "checked_at": "2026-07-21T17:51:03.522729Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0010"
+    },
+    "SNWLID-2019-0009": {
+      "fingerprint": "ae4296de04d745a1fb7eebe4377a8591912d9e165c1014dbdf6dba6936a7f134",
+      "checked_at": "2026-07-21T17:51:04.187170Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0009"
+    },
+    "SNWLID-2019-0006": {
+      "fingerprint": "e1604fe81633533d4e24575c5c10f0fbd32f296d16b40042287435df8559963d",
+      "checked_at": "2026-07-21T17:51:04.699931Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0006"
+    },
+    "SNWLID-2019-0007": {
+      "fingerprint": "43c7751d2a9c0969fd04289af6796ca6b4832857da13e863b1101df335da7abd",
+      "checked_at": "2026-07-21T17:51:05.212902Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0007"
+    },
+    "SNWLID-2019-0008": {
+      "fingerprint": "d6ecf2d9c469436d39035efb5d74b5597f82c3bc8757eff4075892b05faf6530",
+      "checked_at": "2026-07-21T17:51:05.729470Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0008"
+    },
+    "SNWLID-2019-0004": {
+      "fingerprint": "5e1ed036ef62efb1fa4904deefca9eddc66bbbc6765e014e9a76895a69cef48b",
+      "checked_at": "2026-07-21T17:51:06.242661Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0004"
+    },
+    "SNWLID-2019-0005": {
+      "fingerprint": "1ba686e3ccfca52f96a87a1d67b3b987ea5e9542aa8a3ce48f2eaa1d2210c039",
+      "checked_at": "2026-07-21T17:51:06.756229Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0005"
+    },
+    "SNWLID-2018-0017": {
+      "fingerprint": "a994555d26d3c3730cc8248acce87308e40314769e9fbc0c75eb23d7c59be255",
+      "checked_at": "2026-07-21T17:51:07.269251Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2018-0017"
+    },
+    "SNWLID-2019-0002": {
+      "fingerprint": "c93eb6c63caf81e36ab1c4de2b7d43fcf912bec3a93ba9c429bd7f5624e3579c",
+      "checked_at": "2026-07-21T17:51:07.782268Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0002"
+    },
+    "SNWLID-2019-0003": {
+      "fingerprint": "c6f2b2b3921060cea34d29dd6b536cb4ef31af5cca200b8268a4390ba832f077",
+      "checked_at": "2026-07-21T17:51:08.296412Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0003"
+    },
+    "SNWLID-2019-0001": {
+      "fingerprint": "b6a396e133a016acf6cd1eae26cef44532d606cfc95258925c508013f2ad7ae7",
+      "checked_at": "2026-07-21T17:51:08.809651Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2019-0001"
+    },
+    "SNWLID-2018-0016": {
+      "fingerprint": "f3d42a9ae132a6640057da814251812b2b6ecc94a8a1ace0b13df2dace4caf1a",
+      "checked_at": "2026-07-21T17:51:09.324498Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2018-0016"
+    },
+    "SNWLID-2018-0014": {
+      "fingerprint": "164e3ac4c2d190bd7f57a7bda1391afb28eda05c6c990f0eaa1d6f2e3d9fc30f",
+      "checked_at": "2026-07-21T17:51:09.839492Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2018-0014"
+    },
+    "SNWLID-2018-0013": {
+      "fingerprint": "78f7f3e1907e16b7e7b67c6407635fe2f61d086456f014f6dd7e7fd66644141c",
+      "checked_at": "2026-07-21T17:51:10.352260Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2018-0013"
+    },
+    "SNWLID-2018-0012": {
+      "fingerprint": "92b1e7aedf6378996017d1a546f9eadd58470b198006784aaaa691e06d7a3cb7",
+      "checked_at": "2026-07-21T17:51:10.865633Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2018-0012"
+    },
+    "SNWLID-2018-0011": {
+      "fingerprint": "b338c7649d92ab955c7130dfe460c8cb64b1ee4b3ebe04bbffe0c2b3b841d1f7",
+      "checked_at": "2026-07-21T17:51:11.378673Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2018-0011"
+    },
+    "SNWLID-2018-0009": {
+      "fingerprint": "f5e2ee8d85814f0d2a1ccfd732172426137be6366d42c2d65aed6f26745f486a",
+      "checked_at": "2026-07-21T17:51:11.891548Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2018-0009"
+    },
+    "SNWLID-2018-0010": {
+      "fingerprint": "bb4ed6c214f80ec5fb2d90c00460ba1d8386ea73c78ba0487e67fd204b4297ef",
+      "checked_at": "2026-07-21T17:51:12.404172Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2018-0010"
+    },
+    "SNWLID-2018-0008": {
+      "fingerprint": "c6c519b257a5e9ec0fa8ca9b1cdd2369da8afe50fb061733720d2370e9fe3ed3",
+      "checked_at": "2026-07-21T17:51:12.917989Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2018-0008"
+    },
+    "SNWLID-2018-0007": {
+      "fingerprint": "e44df31854cfef1d07705773af9b6f05a1f9c961d4353c4bbb58109e671f2a4f",
+      "checked_at": "2026-07-21T17:51:13.432648Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2018-0007"
+    },
+    "SNWLID-2018-0006": {
+      "fingerprint": "e3e01160b4278c7806ec0eeee896f536c941c219e0fcab6aab07a82189853776",
+      "checked_at": "2026-07-21T17:51:13.945806Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2018-0006"
+    },
+    "SNWLID-2018-0004": {
+      "fingerprint": "40aafc8f0243bae6840d3163998c594cf229ed5d7c95f0debdac4b868ddd5c31",
+      "checked_at": "2026-07-21T17:51:14.458803Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2018-0004"
+    },
+    "SNWLID-2018-0005": {
+      "fingerprint": "b15daf53c6cdae0ac535a810496da6464c6dda9e450f47d577d6f3c0f0bdfc07",
+      "checked_at": "2026-07-21T17:51:14.971567Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2018-0005"
+    },
+    "SNWLID-2015-0003": {
+      "fingerprint": "0d17296b059caa92020f548d733b19d68385c009c08f436bd680a0d15c5d7cfc",
+      "checked_at": "2026-07-21T17:51:15.484748Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2015-0003"
+    },
+    "SNWLID-2016-0002": {
+      "fingerprint": "6e716f1332cbad2819f4253bbce3193e5452ea5884dd1c4b703a3ffcffdda30c",
+      "checked_at": "2026-07-21T17:51:15.997443Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2016-0002"
+    },
+    "SNWLID-2018-0003": {
+      "fingerprint": "61d4af3c6eb74471d861470e3dfd3ee3bfa0a9b34717e6c5d4a5c00d2b539996",
+      "checked_at": "2026-07-21T17:51:16.510083Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2018-0003"
+    },
+    "SNWLID-2015-0004": {
+      "fingerprint": "5a2cc19defc64e153f60acaee2459aa5094fc0572032ecacbcc396071831b4a0",
+      "checked_at": "2026-07-21T17:51:17.022992Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2015-0004"
+    },
+    "SNWLID-2016-0001": {
+      "fingerprint": "1ab401a7f54dff5e3b2c6d4c182e67dd77cc8ca438014c80ffd7990e477583d8",
+      "checked_at": "2026-07-21T17:51:17.538290Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2016-0001"
+    },
+    "SNWLID-2014-0007": {
+      "fingerprint": "9087cca8e11e46af8759d33ee42baf5f2f94757ecefe7995d7058e992125b234",
+      "checked_at": "2026-07-21T17:51:18.052704Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2014-0007"
+    },
+    "SNWLID-2014-0006": {
+      "fingerprint": "cc55b6da9f48fd3433b6b7cb0040d59b21f0d96797429c7d6a17aa48126ad4b4",
+      "checked_at": "2026-07-21T17:51:18.565992Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2014-0006"
+    },
+    "SNWLID-2014-0001": {
+      "fingerprint": "637f5fd78d02286d16580b0deca91026ccd0d01af0a61e8a795915120c686fc1",
+      "checked_at": "2026-07-21T17:51:19.079304Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2014-0001"
+    },
+    "SNWLID-2014-0004": {
+      "fingerprint": "0ec10f7fe4c30444746ce5e4464acc64886750e3529a5872f2be979dc2ea32c1",
+      "checked_at": "2026-07-21T17:51:19.592817Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2014-0004"
+    },
+    "SNWLID-2014-0005": {
+      "fingerprint": "76b67c05e0a4f2915196c3709aee478f00952e5e4e01cee4bf555794e3f98149",
+      "checked_at": "2026-07-21T17:51:20.106371Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2014-0005"
+    },
+    "SNWLID-2012-0002": {
+      "fingerprint": "8c1bbc569777b56c50c693fd9cd384d17d314274560debd6b0627d39ba658b66",
+      "checked_at": "2026-07-21T17:51:20.619361Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2012-0002"
+    },
+    "SNWLID-2012-0003": {
+      "fingerprint": "36fe541ff13970c351f1bf25c76e3f20ebad73de4bd8711a6cc81ae57dcaccf5",
+      "checked_at": "2026-07-21T17:51:21.133701Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2012-0003"
+    },
+    "SNWLID-2012-0005": {
+      "fingerprint": "d661a6478be51fd6768d8e5c95f0c695b709e3033ad20dab8d9034949ed9bf4b",
+      "checked_at": "2026-07-21T17:51:21.646990Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2012-0005"
+    },
+    "SNWLID-2015-0001": {
+      "fingerprint": "9745c3ddb9da5320aec7f6cd8ed76124fe5d59614ae2c9475d28d9edd7d71c3b",
+      "checked_at": "2026-07-21T17:51:22.160388Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2015-0001"
+    },
+    "SNWLID-2014-0002": {
+      "fingerprint": "3d2bbcab94876469168a97a9bef773f5dec8fe2d46dd7c48a92776b6ece80939",
+      "checked_at": "2026-07-21T17:51:22.673538Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2014-0002"
+    },
+    "SNWLID-2014-0003": {
+      "fingerprint": "3029250ff353ded9e812d1f0b18d816691eede0f9ba34c60a056933cbc12b7cf",
+      "checked_at": "2026-07-21T17:51:23.186304Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2014-0003"
+    },
+    "SNWLID-2015-0002": {
+      "fingerprint": "b3b7d9f7df6e4cd5d355d1e7ff8a930949c3854d955ce1d808a208363dacbd44",
+      "checked_at": "2026-07-21T17:51:23.698957Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2015-0002"
+    },
+    "SNWLID-2012-0001": {
+      "fingerprint": "96e4b9e3a97d65354edffa1d8d43da908a136f185dfa09933a874a22613d86d6",
+      "checked_at": "2026-07-21T17:51:24.211877Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2012-0001"
+    },
+    "SNWLID-2012-0004": {
+      "fingerprint": "a1c2ca357d8f15fcfe9f498729413e99c4727763e119bd818dd86fbabea74175",
+      "checked_at": "2026-07-21T17:51:24.724805Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2012-0004"
+    },
+    "SNWLID-2018-0002": {
+      "fingerprint": "527ec81baecac72295c42034e25f73eaf94727b3eb46149d6d3e7fff7d750888",
+      "checked_at": "2026-07-21T17:51:25.237824Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2018-0002"
+    },
+    "SNWLID-2018-0001": {
+      "fingerprint": "061daffda79e5e8d376c7b7ea82718403e0b76ab55d515dcdfaadcb0f9e01257",
+      "checked_at": "2026-07-21T17:51:25.751953Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2018-0001"
+    },
+    "SNWLID-2001-0001": {
+      "fingerprint": "54259e5fd5e410653e3a8968999eea5ed92340228ebbb3eec825d722c416c4c0",
+      "checked_at": "2026-07-21T17:51:26.265754Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2001-0001"
+    },
+    "SNWLID-2000-0001": {
+      "fingerprint": "009a90e6ff2bb4b1536ae4cb22ebdc1910f42c32257dfb7adc7f992b058a6aa2",
+      "checked_at": "2026-07-21T17:51:26.779075Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2000-0001"
+    },
+    "SNWLID-2007-0001": {
+      "fingerprint": "8c8f1153ee56dc6089eba341b0986f6a6835d1f01a66495d0b3ad33d3c66ca9a",
+      "checked_at": "2026-07-21T17:51:27.292624Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2007-0001"
+    },
+    "SNWLID-2010-0001": {
+      "fingerprint": "a333767e4ada7c7601f9705194748cbe0d2e6c75b9b183bedb68a8b5678dd5c5",
+      "checked_at": "2026-07-21T17:51:27.805738Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2010-0001"
+    },
+    "SNWLID-2009-0001": {
+      "fingerprint": "a5bc1a00c8e5d6d5c411ab7ba05b3c8a41eab73871b114c5765a8822b71cd179",
+      "checked_at": "2026-07-21T17:51:28.318920Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2009-0001"
+    },
+    "SNWLID-2008-0002": {
+      "fingerprint": "eebd3a15fe3ad81caf31824d82fb49d58c28b49bd9a4befc6eb5949160fd0467",
+      "checked_at": "2026-07-21T17:51:28.832306Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2008-0002"
+    },
+    "SNWLID-2008-0001": {
+      "fingerprint": "1b49b4981487f2d23b8f1a7b76e078ca78d4901c09fd11ad9eb75c4085707b64",
+      "checked_at": "2026-07-21T17:51:29.346897Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2008-0001"
+    },
+    "SNWLID-2007-0002": {
+      "fingerprint": "a4e0c69894c9a588d0feb85ea67fc02c00676c4ef2c818bff7eebe33ad528e30",
+      "checked_at": "2026-07-21T17:51:29.859925Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2007-0002"
+    },
+    "SNWLID-2007-0003": {
+      "fingerprint": "80c9e406df6b02712a615d318f5b0b698dc3ffe597e32853ac9489b6dacdc351",
+      "checked_at": "2026-07-21T17:51:30.372627Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2007-0003"
+    },
+    "SNWLID-2003-0002": {
+      "fingerprint": "522069d77c263e56f8a17174772c891f4e1d576300afae961d846ef886807177",
+      "checked_at": "2026-07-21T17:51:30.886390Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2003-0002"
+    },
+    "SNWLID-2005-0001": {
+      "fingerprint": "787e862e47db99e284092b361049f5a837678a48472815fe1c77f11453a7929e",
+      "checked_at": "2026-07-21T17:51:31.399466Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2005-0001"
+    },
+    "SNWLID-2016-0004": {
+      "fingerprint": "8f62b2c82081c8af32d0cec41e8acbce361d25fb954752acec6085aa06dd7f33",
+      "checked_at": "2026-07-21T17:51:31.914733Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2016-0004"
+    },
+    "SNWLID-2016-0005": {
+      "fingerprint": "ecd59482eb414a91be50ec0b16b50c90869bfa66b520e5b42a48cd5da56bced5",
+      "checked_at": "2026-07-21T17:51:32.473574Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2016-0005"
+    },
+    "SNWLID-2015-0005": {
+      "fingerprint": "cc43e169795cacf023fd6a0fd940e1ec071c61a19ada9f7429a9f257eef60039",
+      "checked_at": "2026-07-21T17:51:32.986715Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2015-0005"
+    },
+    "SNWLID-2011-0002": {
+      "fingerprint": "76100cede0460f8a8a9d80b96e86f58a573d45b31ee890c4b22459bf96be92e6",
+      "checked_at": "2026-07-21T17:51:33.500059Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2011-0002"
+    },
+    "SNWLID-2011-0001": {
+      "fingerprint": "1faacaa96994a8a60afb1d68561cd1ffe0b2b6e90c98bf40e8d97445fa601227",
+      "checked_at": "2026-07-21T17:51:34.064510Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2011-0001"
+    },
+    "SNWLID-2007-0004": {
+      "fingerprint": "258824f4032947423bbe6aa4d42e69a2a5061dcd03d1b1e2a34f062c97e5ba43",
+      "checked_at": "2026-07-21T17:51:34.577607Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2007-0004"
+    },
+    "SNWLID-2003-0001": {
+      "fingerprint": "30734fd658e10e881c54ecde2d607c8fe273baf4f5a1245bdc4dde67abfb81ef",
+      "checked_at": "2026-07-21T17:51:35.090853Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2003-0001"
+    },
+    "SNWLID-2002-0001": {
+      "fingerprint": "f98d7de0d8ad646726868d9b6ccb7b4f37a6a919b933ff3f57728d75f1069d45",
+      "checked_at": "2026-07-21T17:51:35.604222Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2002-0001"
+    },
+    "SNWLID-2002-0002": {
+      "fingerprint": "dd80c34f8d454271e37a6c27c0646ad1efeeef818efe510f50d9506e7b1d35a6",
+      "checked_at": "2026-07-21T17:51:36.117436Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2002-0002"
+    },
+    "SNWLID-2001-0002": {
+      "fingerprint": "046cce5aee8551c9a4b93b50bad2e975efcf8852593f14157c27f447f5b150fd",
+      "checked_at": "2026-07-21T17:51:36.630693Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2001-0002"
+    },
+    "SNWLID-2000-0002": {
+      "fingerprint": "f484b23fae1ba52ab928e3b11e5d980f0e971b8dbabdfbf045a03a44f961e025",
+      "checked_at": "2026-07-21T17:51:37.144658Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2000-0002"
+    },
+    "SNWLID-2026-0008": {
+      "fingerprint": "eb53bf1df5f31ec2b850dce06479225fcff267b6abcf09c0594d279abf022a15",
+      "checked_at": "2026-07-21T06:46:00.766446Z",
+      "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008"
+    }
+  }
+}
