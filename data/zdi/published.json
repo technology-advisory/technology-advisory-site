@@ -33,7 +33,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.197125Z",
+      "last_checked_at": "2026-09-16T15:36:25.679640Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -198,7 +198,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.213752Z",
+      "last_checked_at": "2026-09-16T15:36:25.693516Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -650,7 +650,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.260333Z",
+      "last_checked_at": "2026-09-16T15:36:25.706922Z",
       "quality_score": 58,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -1770,7 +1770,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.278312Z",
+      "last_checked_at": "2026-09-16T15:36:25.720178Z",
       "quality_score": 58,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -1810,7 +1810,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.291939Z",
+      "last_checked_at": "2026-09-16T15:36:25.733363Z",
       "quality_score": 58,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -2026,7 +2026,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.305551Z",
+      "last_checked_at": "2026-09-16T15:36:25.747259Z",
       "quality_score": 58,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -3263,14 +3263,16 @@
     },
     {
       "advisory_id": "ZDI-26-363",
-      "content_hash": "061b0715e5f6c5311536ce2845cc8ba12458db1ba410b04e9c7fc965db709abe",
+      "content_hash": "49d6b15e929fb9452af8857ab55d73a644fe5dc2cd3687a5e77e7eba37884710",
       "cves": [
         "CVE-2026-55887"
       ],
       "description": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Docker MCP Plugin. User interaction is required to exploit this vulnerability in that the target must reference a malicious Docker image via a docker URI scheme. The ZDI has assigned a CVSS rating of 8.6. The following CVEs are assigned: CVE-2026-55887.",
       "due_date": "",
       "known_exploited": null,
-      "products": [],
+      "products": [
+        "mcp-gateway · 0.21.0, < 0.42.2"
+      ],
       "published_at": "2026-06-24T05:00:00Z",
       "record_id": "ZDI-CAN-29539",
       "references": [
@@ -3289,17 +3291,19 @@
       "vendor": "Zero Day Initiative",
       "cvss": 8.6,
       "cwes": [],
-      "affected_products": [],
+      "affected_products": [
+        "mcp-gateway · 0.21.0, < 0.42.2"
+      ],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.318915Z",
-      "quality_score": 58,
-      "enrichment_status": "partial",
+      "last_checked_at": "2026-09-16T15:36:25.766241Z",
+      "quality_score": 73,
+      "enrichment_status": "complete",
       "missing_fields": [
-        "products",
         "solution"
       ],
-      "publishable": true
+      "publishable": true,
+      "epss": 0.0
     },
     {
       "advisory_id": "ZDI-26-364",
@@ -4346,7 +4350,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.338253Z",
+      "last_checked_at": "2026-09-16T15:36:25.779593Z",
       "quality_score": 58,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -6042,7 +6046,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.350984Z",
+      "last_checked_at": "2026-09-16T15:36:25.792071Z",
       "quality_score": 58,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -7296,7 +7300,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.386150Z",
+      "last_checked_at": "2026-09-16T15:36:25.804791Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -7797,7 +7801,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.417266Z",
+      "last_checked_at": "2026-09-16T15:36:25.817659Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -7836,7 +7840,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.432182Z",
+      "last_checked_at": "2026-09-16T15:36:25.831153Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -7919,7 +7923,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.444650Z",
+      "last_checked_at": "2026-09-16T15:36:25.843864Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -8180,7 +8184,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.490597Z",
+      "last_checked_at": "2026-09-16T15:36:25.856148Z",
       "quality_score": 58,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -9274,7 +9278,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.506538Z",
+      "last_checked_at": "2026-09-16T15:36:25.868998Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -9401,7 +9405,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.520539Z",
+      "last_checked_at": "2026-09-16T15:36:25.883123Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -9440,7 +9444,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.533526Z",
+      "last_checked_at": "2026-09-16T15:36:25.897644Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -9479,7 +9483,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.575489Z",
+      "last_checked_at": "2026-09-16T15:36:25.911713Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -9518,7 +9522,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.595633Z",
+      "last_checked_at": "2026-09-16T15:36:25.924894Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -9557,7 +9561,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.609138Z",
+      "last_checked_at": "2026-09-16T15:36:25.937963Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -9596,7 +9600,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.622797Z",
+      "last_checked_at": "2026-09-16T15:36:25.957743Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -9635,7 +9639,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-15T17:06:05.635279Z",
+      "last_checked_at": "2026-09-16T15:36:25.970454Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -10202,11 +10206,11 @@
   ],
   "enrichment": {
     "schema_version": 1,
-    "updated_at": "2026-09-15T17:06:05.635397Z",
+    "updated_at": "2026-09-16T15:36:25.970572Z",
     "source_id": "zdi-published",
     "records": 200,
-    "complete": 178,
-    "partial": 22,
+    "complete": 179,
+    "partial": 21,
     "discovery_only": 0,
     "errors": 0
   }
