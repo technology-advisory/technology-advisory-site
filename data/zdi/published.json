@@ -33,7 +33,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.679640Z",
+      "last_checked_at": "2026-09-18T15:05:14.992561Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -198,7 +198,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.693516Z",
+      "last_checked_at": "2026-09-18T15:05:15.008017Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -650,7 +650,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.706922Z",
+      "last_checked_at": "2026-09-18T15:05:15.024867Z",
       "quality_score": 58,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -1770,7 +1770,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.720178Z",
+      "last_checked_at": "2026-09-18T15:05:15.038549Z",
       "quality_score": 58,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -1810,7 +1810,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.733363Z",
+      "last_checked_at": "2026-09-18T15:05:15.060241Z",
       "quality_score": 58,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -2026,7 +2026,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.747259Z",
+      "last_checked_at": "2026-09-18T15:05:15.074724Z",
       "quality_score": 58,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -4350,7 +4350,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.779593Z",
+      "last_checked_at": "2026-09-18T15:05:15.089956Z",
       "quality_score": 58,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -6046,7 +6046,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.792071Z",
+      "last_checked_at": "2026-09-18T15:05:15.105380Z",
       "quality_score": 58,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -7300,7 +7300,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.804791Z",
+      "last_checked_at": "2026-09-18T15:05:15.120167Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -7801,7 +7801,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.817659Z",
+      "last_checked_at": "2026-09-18T15:05:15.133808Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -7840,7 +7840,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.831153Z",
+      "last_checked_at": "2026-09-18T15:05:15.148388Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -7923,7 +7923,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.843864Z",
+      "last_checked_at": "2026-09-18T15:05:15.162035Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -8184,7 +8184,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.856148Z",
+      "last_checked_at": "2026-09-18T15:05:15.176118Z",
       "quality_score": 58,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -9278,7 +9278,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.868998Z",
+      "last_checked_at": "2026-09-18T15:05:15.190212Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -9405,7 +9405,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.883123Z",
+      "last_checked_at": "2026-09-18T15:05:15.204956Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -9444,7 +9444,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.897644Z",
+      "last_checked_at": "2026-09-18T15:05:15.217382Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -9483,7 +9483,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.911713Z",
+      "last_checked_at": "2026-09-18T15:05:15.231913Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -9522,7 +9522,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.924894Z",
+      "last_checked_at": "2026-09-18T15:05:15.244014Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -9561,7 +9561,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.937963Z",
+      "last_checked_at": "2026-09-18T15:05:15.257665Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -9600,7 +9600,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.957743Z",
+      "last_checked_at": "2026-09-18T15:05:15.276691Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -9639,7 +9639,7 @@
       "affected_products": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-16T15:36:25.970454Z",
+      "last_checked_at": "2026-09-18T15:05:15.288641Z",
       "quality_score": 43,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -10206,7 +10206,7 @@
   ],
   "enrichment": {
     "schema_version": 1,
-    "updated_at": "2026-09-16T15:36:25.970572Z",
+    "updated_at": "2026-09-18T15:05:15.288750Z",
     "source_id": "zdi-published",
     "records": 200,
     "complete": 179,
