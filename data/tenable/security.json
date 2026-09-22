@@ -1350,7 +1350,7 @@
   ],
   "enrichment": {
     "schema_version": 1,
-    "updated_at": "2026-09-18T15:05:17.172592Z",
+    "updated_at": "2026-09-22T08:45:46.758766Z",
     "source_id": "tenable-security",
     "records": 10,
     "complete": 10,

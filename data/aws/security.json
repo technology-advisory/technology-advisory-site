@@ -40,7 +40,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.070961Z",
+      "last_checked_at": "2026-09-22T08:45:19.873425Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -84,7 +84,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.097788Z",
+      "last_checked_at": "2026-09-22T08:45:19.945912Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -128,7 +128,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.123915Z",
+      "last_checked_at": "2026-09-22T08:45:20.014991Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -174,7 +174,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.154134Z",
+      "last_checked_at": "2026-09-22T08:45:20.119740Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -218,7 +218,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.178102Z",
+      "last_checked_at": "2026-09-22T08:45:20.200077Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -262,7 +262,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.202889Z",
+      "last_checked_at": "2026-09-22T08:45:20.273787Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -306,7 +306,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.228380Z",
+      "last_checked_at": "2026-09-22T08:45:20.341003Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -356,7 +356,7 @@
         "2026.06"
       ],
       "affected_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.252479Z",
+      "last_checked_at": "2026-09-22T08:45:20.411843Z",
       "quality_score": 88,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -398,7 +398,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.281807Z",
+      "last_checked_at": "2026-09-22T08:45:20.476574Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -442,7 +442,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.306367Z",
+      "last_checked_at": "2026-09-22T08:45:20.547258Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -486,7 +486,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.330291Z",
+      "last_checked_at": "2026-09-22T08:45:20.613876Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -532,7 +532,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.355480Z",
+      "last_checked_at": "2026-09-22T08:45:20.728922Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -579,7 +579,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.381250Z",
+      "last_checked_at": "2026-09-22T08:45:20.893771Z",
       "quality_score": 88,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -625,7 +625,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.414738Z",
+      "last_checked_at": "2026-09-22T08:45:21.032939Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -683,7 +683,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.441996Z",
+      "last_checked_at": "2026-09-22T08:45:21.146058Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -727,7 +727,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.467118Z",
+      "last_checked_at": "2026-09-22T08:45:21.243194Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -771,7 +771,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.491594Z",
+      "last_checked_at": "2026-09-22T08:45:21.319687Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -815,7 +815,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.517605Z",
+      "last_checked_at": "2026-09-22T08:45:21.392363Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -859,7 +859,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.542534Z",
+      "last_checked_at": "2026-09-22T08:45:21.463985Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -906,7 +906,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.565972Z",
+      "last_checked_at": "2026-09-22T08:45:21.557223Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -952,7 +952,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.592340Z",
+      "last_checked_at": "2026-09-22T08:45:21.674166Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1000,7 +1000,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.617627Z",
+      "last_checked_at": "2026-09-22T08:45:21.838453Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1048,7 +1048,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.657727Z",
+      "last_checked_at": "2026-09-22T08:45:21.962054Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1093,7 +1093,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.683133Z",
+      "last_checked_at": "2026-09-22T08:45:22.065850Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1275,7 +1275,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.711966Z",
+      "last_checked_at": "2026-09-22T08:45:22.180852Z",
       "quality_score": 77,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1319,7 +1319,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.735682Z",
+      "last_checked_at": "2026-09-22T08:45:22.312202Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1366,7 +1366,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.762143Z",
+      "last_checked_at": "2026-09-22T08:45:22.417017Z",
       "quality_score": 88,
       "enrichment_status": "complete",
       "missing_fields": [],
@@ -1408,7 +1408,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.785911Z",
+      "last_checked_at": "2026-09-22T08:45:22.525495Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1452,7 +1452,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.812751Z",
+      "last_checked_at": "2026-09-22T08:45:22.626399Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1499,7 +1499,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.836925Z",
+      "last_checked_at": "2026-09-22T08:45:22.696962Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1543,7 +1543,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.860721Z",
+      "last_checked_at": "2026-09-22T08:45:22.770950Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1587,7 +1587,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.884436Z",
+      "last_checked_at": "2026-09-22T08:45:22.840918Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1636,7 +1636,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.919622Z",
+      "last_checked_at": "2026-09-22T08:45:22.921243Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1680,7 +1680,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.942903Z",
+      "last_checked_at": "2026-09-22T08:45:23.010375Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1724,7 +1724,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:05.989553Z",
+      "last_checked_at": "2026-09-22T08:45:23.082639Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1768,7 +1768,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.015948Z",
+      "last_checked_at": "2026-09-22T08:45:23.151259Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1812,7 +1812,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.040673Z",
+      "last_checked_at": "2026-09-22T08:45:23.234638Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1856,7 +1856,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.067218Z",
+      "last_checked_at": "2026-09-22T08:45:23.303143Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1916,7 +1916,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.092901Z",
+      "last_checked_at": "2026-09-22T08:45:23.376995Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -1963,7 +1963,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.117407Z",
+      "last_checked_at": "2026-09-22T08:45:23.448126Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -2013,7 +2013,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.141112Z",
+      "last_checked_at": "2026-09-22T08:45:23.532590Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -2061,7 +2061,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.179253Z",
+      "last_checked_at": "2026-09-22T08:45:23.619744Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -2105,7 +2105,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.212177Z",
+      "last_checked_at": "2026-09-22T08:45:23.739634Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -2151,7 +2151,7 @@
       ],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.255477Z",
+      "last_checked_at": "2026-09-22T08:45:23.832558Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -2333,7 +2333,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.307275Z",
+      "last_checked_at": "2026-09-22T08:45:23.932768Z",
       "quality_score": 77,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -2376,7 +2376,7 @@
       "affected_versions": [],
       "fixed_versions": [],
       "cvss": null,
-      "last_checked_at": "2026-09-18T15:05:06.350852Z",
+      "last_checked_at": "2026-09-22T08:45:24.027419Z",
       "quality_score": 63,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -2444,7 +2444,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.387194Z",
+      "last_checked_at": "2026-09-22T08:45:24.146725Z",
       "quality_score": 77,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -2503,7 +2503,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.425232Z",
+      "last_checked_at": "2026-09-22T08:45:24.268631Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -2547,7 +2547,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.452087Z",
+      "last_checked_at": "2026-09-22T08:45:24.397542Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -2599,7 +2599,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.487700Z",
+      "last_checked_at": "2026-09-22T08:45:24.474436Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -2643,7 +2643,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.528371Z",
+      "last_checked_at": "2026-09-22T08:45:24.564545Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -2684,7 +2684,7 @@
       "affected_versions": [],
       "fixed_versions": [],
       "cvss": null,
-      "last_checked_at": "2026-09-18T15:05:06.586040Z",
+      "last_checked_at": "2026-09-22T08:45:24.665792Z",
       "quality_score": 48,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -2730,7 +2730,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.635741Z",
+      "last_checked_at": "2026-09-22T08:45:24.819494Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -2774,7 +2774,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.666062Z",
+      "last_checked_at": "2026-09-22T08:45:24.935208Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -2818,7 +2818,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.707817Z",
+      "last_checked_at": "2026-09-22T08:45:25.027158Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -2868,7 +2868,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.735637Z",
+      "last_checked_at": "2026-09-22T08:45:25.132495Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -2909,7 +2909,7 @@
       "affected_versions": [],
       "fixed_versions": [],
       "cvss": null,
-      "last_checked_at": "2026-09-18T15:05:06.768895Z",
+      "last_checked_at": "2026-09-22T08:45:25.185943Z",
       "quality_score": 48,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -2961,7 +2961,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.813423Z",
+      "last_checked_at": "2026-09-22T08:45:25.251747Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -3007,7 +3007,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.846293Z",
+      "last_checked_at": "2026-09-22T08:45:25.320381Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -3051,7 +3051,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.880647Z",
+      "last_checked_at": "2026-09-22T08:45:25.385182Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -3095,7 +3095,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:06.934803Z",
+      "last_checked_at": "2026-09-22T08:45:25.479833Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -3299,7 +3299,7 @@
       "affected_versions": [],
       "fixed_versions": [],
       "cvss": 8.8,
-      "last_checked_at": "2026-09-18T15:05:07.087055Z",
+      "last_checked_at": "2026-09-22T08:45:25.617213Z",
       "quality_score": 77,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -3344,7 +3344,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:07.122335Z",
+      "last_checked_at": "2026-09-22T08:45:25.904366Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -3388,7 +3388,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:07.158582Z",
+      "last_checked_at": "2026-09-22T08:45:26.051933Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -3437,7 +3437,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:07.213828Z",
+      "last_checked_at": "2026-09-22T08:45:26.098642Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -3483,7 +3483,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:07.261205Z",
+      "last_checked_at": "2026-09-22T08:45:26.139188Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -3527,7 +3527,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:07.310391Z",
+      "last_checked_at": "2026-09-22T08:45:26.180876Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -3730,7 +3730,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:07.368928Z",
+      "last_checked_at": "2026-09-22T08:45:26.243012Z",
       "quality_score": 77,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -3774,7 +3774,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:07.407050Z",
+      "last_checked_at": "2026-09-22T08:45:26.423638Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -3815,7 +3815,7 @@
       "affected_versions": [],
       "fixed_versions": [],
       "cvss": null,
-      "last_checked_at": "2026-09-18T15:05:07.443129Z",
+      "last_checked_at": "2026-09-22T08:45:26.512571Z",
       "quality_score": 48,
       "enrichment_status": "partial",
       "missing_fields": [
@@ -3863,7 +3863,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:07.483218Z",
+      "last_checked_at": "2026-09-22T08:45:26.636899Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -3907,7 +3907,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:07.532729Z",
+      "last_checked_at": "2026-09-22T08:45:26.826190Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -3951,7 +3951,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:07.567671Z",
+      "last_checked_at": "2026-09-22T08:45:26.930283Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -3999,7 +3999,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:07.604220Z",
+      "last_checked_at": "2026-09-22T08:45:27.028903Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -4045,7 +4045,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:07.640994Z",
+      "last_checked_at": "2026-09-22T08:45:27.119518Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -4093,7 +4093,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:07.679092Z",
+      "last_checked_at": "2026-09-22T08:45:27.225789Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -4140,7 +4140,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:07.713860Z",
+      "last_checked_at": "2026-09-22T08:45:27.294853Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -4189,7 +4189,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:07.742715Z",
+      "last_checked_at": "2026-09-22T08:45:27.360758Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -4233,7 +4233,7 @@
       "cwes": [],
       "affected_versions": [],
       "fixed_versions": [],
-      "last_checked_at": "2026-09-18T15:05:07.773829Z",
+      "last_checked_at": "2026-09-22T08:45:27.426212Z",
       "quality_score": 73,
       "enrichment_status": "complete",
       "missing_fields": [
@@ -4244,7 +4244,7 @@
   ],
   "enrichment": {
     "schema_version": 1,
-    "updated_at": "2026-09-18T15:05:07.774031Z",
+    "updated_at": "2026-09-22T08:45:27.426652Z",
     "source_id": "aws-security",
     "records": 79,
     "complete": 75,

@@ -1,19 +1,37 @@
 {
   "schema_version": 4,
   "title": "Fortinet PSIRT Intelligence",
-  "last_updated_at": "2026-09-18T15:04:34.222200Z",
+  "last_updated_at": "2026-09-22T08:44:31.644231Z",
   "source": "Fortinet Product Security Incident Response Team",
   "source_url": "https://www.fortiguard.com/psirt",
   "feed_url": "https://filestore.fortinet.com/fortiguard/rss/ir.xml",
   "raw_xml_file": "runtime/raw/fortinet-psirt/rss.xml",
-  "raw_xml_sha256": "a9f867c4ea5a562d8c7f86c3a5acb3eaafaa07ab10fe472314636715214b5e7a",
+  "raw_xml_sha256": "b81173fdb55f7fed4a879b4d1c90445ad61114245d0e719291a1257bd92efc67",
   "total_advisories": 81,
-  "total_critical": 0,
-  "total_high": 0,
-  "total_with_cve": 0,
+  "total_critical": 2,
+  "total_high": 5,
+  "total_with_cve": 19,
   "total_known_exploited": 0,
-  "total_products": 0,
-  "products": [],
+  "total_products": 17,
+  "products": [
+    "FortiAnalyzer",
+    "FortiClientWindows",
+    "FortiManager",
+    "FortiManager Cloud",
+    "FortiMonitorOnSight",
+    "FortiOS",
+    "FortiPAM",
+    "FortiPAM Chrome Extension",
+    "FortiProxy",
+    "FortiSandbox",
+    "FortiSandbox Cloud",
+    "FortiSandbox PaaS",
+    "FortiSIEM",
+    "FortiSOAR on-premise",
+    "FortiSOAR PaaS",
+    "FortiSwitchManager",
+    "FortiWeb"
+  ],
   "advisories": [
     {
       "id": "97501c3437a8583ed77f5ca0",
@@ -22,25 +40,49 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-165",
       "published_at": "2026-09-08T07:00:00Z",
       "updated_at": "2026-09-08T07:00:00Z",
-      "summary": "CVSSv3 Score:\n4.7\nAn Unverified Ownership Vulnerability [CWE-283] in FortiClient Windows fortimon3 driver may allow an authenticated attacker to terminate arbitrary processes via an exposed minifilter communication port.\nRevised on 2026-09-08 00:00:00",
-      "cves": [],
+      "summary": "An Unverified Ownership Vulnerability [CWE-283] in FortiClient Windows fortimon3 driver may allow an authenticated attacker to terminate arbitrary processes via an exposed minifilter communication port.",
+      "cves": [
+        "CVE-2026-84386"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
+      "ir_number": "FG-IR-26-165",
+      "summary_detail": "An Unverified Ownership Vulnerability [CWE-283] in FortiClient Windows fortimon3 driver may allow an authenticated attacker to terminate arbitrary processes via an exposed minifilter communication port.",
+      "component": "OTHERS",
+      "severity": "medium",
+      "cvss": 4.7,
+      "attack_type": "Authenticated",
+      "known_exploited": false,
+      "impact": "Improper access control",
+      "discovered": "External",
+      "cwes": [
+        "CWE-283"
+      ],
+      "products": [
+        "FortiClientWindows"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiClientWindows 8.0",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiClientWindows 7.4",
+          "Affected": "7.4.0 through 7.4.7",
+          "Solution": "Upgrade to 7.4.8 or above"
+        },
+        {
+          "Version": "FortiClientWindows 7.2",
+          "Affected": "7.2 all versions",
+          "Solution": "Migrate to a fixed release"
+        }
+      ],
       "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "2d3334244660ea613a03f95361727366f2b7947e86545e4aea406b6a0fc5e150"
+      "acknowledgement": "Fortinet is pleased to thank Robel Campbell from Halcyon and Mirae Yim for reporting this vulnerability under responsible disclosure.",
+      "timeline": [
+        "2026-09-08: Initial publication"
+      ],
+      "detail_text_sha256": "86f2303347ef469ec9db0be76eb0d15f47ba24041dd01bd80d66088278a7d309"
     },
     {
       "id": "61b55c116dc8cd606885f4e9",
@@ -49,25 +91,85 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-164",
       "published_at": "2026-09-08T07:00:00Z",
       "updated_at": "2026-09-08T07:00:00Z",
-      "summary": "CVSSv3 Score:\n4.9\nAn Improper Access control vulnerability [CWE-284] in FortiSOAR may allow an authenticated attacker with zero permissions to subscribe to websocket streams and topics and to inject broadcast messages to the stream via crafted websocket requests\nRevised on 2026-09-08 00:00:00",
-      "cves": [],
+      "summary": "An Improper Access control vulnerability [CWE-284] in FortiSOAR may allow an authenticated attacker with zero permissions to subscribe to websocket streams and topics and to inject broadcast messages to the stream via crafted websocket requests",
+      "cves": [
+        "CVE-2026-84385"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
+      "ir_number": "FG-IR-26-164",
+      "summary_detail": "An Improper Access control vulnerability [CWE-284] in FortiSOAR may allow an authenticated attacker with zero permissions to subscribe to websocket streams and topics and to inject broadcast messages to the stream via crafted websocket requests",
+      "component": "OTHERS",
+      "severity": "medium",
+      "cvss": 4.9,
+      "attack_type": "Authenticated",
+      "known_exploited": false,
+      "impact": "Escalation of privilege",
+      "discovered": "External",
+      "cwes": [
+        "CWE-284"
+      ],
+      "products": [
+        "FortiSOAR PaaS",
+        "FortiSOAR on-premise"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiSOAR PaaS 8.0",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiSOAR PaaS 7.6",
+          "Affected": "7.6.0 through 7.6.6",
+          "Solution": "Upgrade to 7.6.7 or above"
+        },
+        {
+          "Version": "FortiSOAR PaaS 7.5",
+          "Affected": "7.5.0 through 7.5.3",
+          "Solution": "Upgrade to 7.5.4 or above"
+        },
+        {
+          "Version": "FortiSOAR PaaS 7.4",
+          "Affected": "7.4 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiSOAR PaaS 7.3",
+          "Affected": "7.3 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiSOAR on-premise 8.0",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiSOAR on-premise 7.6",
+          "Affected": "7.6.0 through 7.6.6",
+          "Solution": "Upgrade to 7.6.7 or above"
+        },
+        {
+          "Version": "FortiSOAR on-premise 7.5",
+          "Affected": "7.5.0 through 7.5.3",
+          "Solution": "Upgrade to 7.5.4 or above"
+        },
+        {
+          "Version": "FortiSOAR on-premise 7.4",
+          "Affected": "7.4 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiSOAR on-premise 7.3",
+          "Affected": "7.3 all versions",
+          "Solution": "Migrate to a fixed release"
+        }
+      ],
       "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "2a5765b56a19a544f3d6633f5a9ebcb760f510f96eccf05a5a37ed8c68676c4d"
+      "acknowledgement": "Fortinet is pleased to thank Thomas Sautier for reporting this vulnerability under responsible disclosure.",
+      "timeline": [
+        "2026-09-08: Initial publication"
+      ],
+      "detail_text_sha256": "0dcb1b504ec21fb7df5187b0f6cd4417e257d799ff7763a8ddeb3abb95325d1b"
     },
     {
       "id": "35fac613e59e2f47718d2c10",
@@ -76,25 +178,49 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-167",
       "published_at": "2026-09-08T07:00:00Z",
       "updated_at": "2026-09-08T07:00:00Z",
-      "summary": "CVSSv3 Score:\n6.7\nAn Improper Neutralization of Special Elements used in a Command ('Command Injection') vulnerability [CWE-77] in FortiSandbox may allow a privileged attacker to execute unauthorized code or commands via crafted HTTP requests.\nRevised on 2026-09-08 00:00:00",
-      "cves": [],
+      "summary": "An Improper Neutralization of Special Elements used in a Command ('Command Injection') vulnerability [CWE-77] in FortiSandbox may allow a privileged attacker to execute unauthorized code or commands via crafted HTTP requests.",
+      "cves": [
+        "CVE-2026-84387"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
+      "ir_number": "FG-IR-26-167",
+      "summary_detail": "An Improper Neutralization of Special Elements used in a Command ('Command Injection') vulnerability [CWE-77] in FortiSandbox may allow a privileged attacker to execute unauthorized code or commands via crafted HTTP requests.",
+      "component": "GUI",
+      "severity": "medium",
+      "cvss": 6.7,
+      "attack_type": "Authenticated",
+      "known_exploited": false,
+      "impact": "Execute unauthorized code or commands",
+      "discovered": "External",
+      "cwes": [
+        "CWE-77"
+      ],
+      "products": [
+        "FortiSandbox"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiSandbox 5.2",
+          "Affected": "5.2.0",
+          "Solution": "Upgrade to 5.2.1 or above"
+        },
+        {
+          "Version": "FortiSandbox 5.0",
+          "Affected": "5.0.0 through 5.0.6",
+          "Solution": "Upgrade to 5.0.7 or above"
+        },
+        {
+          "Version": "FortiSandbox 4.4",
+          "Affected": "4.4.0 through 4.4.9",
+          "Solution": "Upgrade to 4.4.10 or above"
+        }
+      ],
       "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "63b06f021f0ee7938a069a5c13abb9d8ba0083279865b77c7b50a8fd91d02bae"
+      "acknowledgement": "Fortinet is pleased to thank Jason McFadyen from TrendAI Security Research of Trend Micro for reporting this vulnerability under responsible disclosure.",
+      "timeline": [
+        "2026-09-08: Initial publication"
+      ],
+      "detail_text_sha256": "a5e530ee164bea051a47ead5f2cad9c30ae8fba4bb130defb6bc6c9ea3fed6a5"
     },
     {
       "id": "b5c6e4ae05bbaf0e3efc4c0e",
@@ -103,25 +229,44 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-168",
       "published_at": "2026-09-08T07:00:00Z",
       "updated_at": "2026-09-08T07:00:00Z",
-      "summary": "CVSSv3 Score:\n9.1\nAn improper authentication vulnerability [CWE-287] in the Fortinet Privileged Access Agent Chrome Extension may allow a remote unauthenticated attacker to proxy a user's browser traffic through attacker controlled servers if the user visits a malicious website.\nRevised on 2026-09-08 00:00:00",
-      "cves": [],
+      "summary": "An improper authentication vulnerability [CWE-287] in the Fortinet Privileged Access Agent Chrome Extension may allow a remote unauthenticated attacker to proxy a user's browser traffic through attacker controlled servers if the user visits a malicious website.",
+      "cves": [
+        "CVE-2026-84388"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
+      "ir_number": "FG-IR-26-168",
+      "summary_detail": "An improper authentication vulnerability [CWE-287] in the Fortinet Privileged Access Agent Chrome Extension may allow a remote unauthenticated attacker to proxy a user's browser traffic through attacker controlled servers if the user visits a malicious website.",
+      "component": "GUI",
+      "severity": "critical",
+      "cvss": 9.1,
+      "attack_type": "Unauthenticated",
+      "known_exploited": false,
+      "impact": "Information disclosure",
+      "discovered": "External",
+      "cwes": [
+        "CWE-287"
+      ],
+      "products": [
+        "FortiPAM Chrome Extension"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiPAM Chrome Extension 8.0",
+          "Affected": "8.0 all versions",
+          "Solution": "Upgrade to 8.0.1.123 or above"
+        },
+        {
+          "Version": "FortiPAM Chrome Extension 7.4",
+          "Affected": "7.4 all versions",
+          "Solution": "Migrate to a fixed release"
+        }
+      ],
       "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "dc485b062dc50fc81508ea095be0a7bfa2d8254af8b4465f6edc31d3400afadd"
+      "acknowledgement": "Fortinet is pleased to thank Kevin Joensen from Baldur Security, Eric Brandel from Target, Dan Rosenqvist from Shelltrail, and James Arnott from Bay Area Labs (\nhttps://amibeingpwned.com/)\nfor reporting this vulnerability under responsible disclosure.\nVirtual Patch\nNo",
+      "timeline": [
+        "2026-09-08: Initial publication"
+      ],
+      "detail_text_sha256": "4c2208d286ac11846c81ca02dd1d03b555c742fcfa2ecba7c4bfece871ee854d"
     },
     {
       "id": "605bf6a7959bdff7b652a24a",
@@ -130,25 +275,44 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-170",
       "published_at": "2026-09-08T07:00:00Z",
       "updated_at": "2026-09-08T07:00:00Z",
-      "summary": "CVSSv3 Score:\n9.6\nAn Inclusion of Sensitive Information in Source Code vulnerability [CWE-540] in FortiMonitorOnSight web portal may allow a remote unauthenticated attacker to bypass authentication via forged or reused JWT\nRevised on 2026-09-08 00:00:00",
-      "cves": [],
+      "summary": "An Inclusion of Sensitive Information in Source Code vulnerability [CWE-540] in FortiMonitorOnSight web portal may allow a remote unauthenticated attacker to bypass authentication via forged or reused JWT",
+      "cves": [
+        "CVE-2026-84390"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
+      "ir_number": "FG-IR-26-170",
+      "summary_detail": "An Inclusion of Sensitive Information in Source Code vulnerability [CWE-540] in FortiMonitorOnSight web portal may allow a remote unauthenticated attacker to bypass authentication via forged or reused JWT",
+      "component": "GUI",
+      "severity": "critical",
+      "cvss": 9.6,
+      "attack_type": "Unauthenticated",
+      "known_exploited": false,
+      "impact": "Improper access control",
+      "discovered": "Internal",
+      "cwes": [
+        "CWE-540"
+      ],
+      "products": [
+        "FortiMonitorOnSight"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiMonitorOnSight 7.2",
+          "Affected": "7.2.4 through 7.2.7",
+          "Solution": "Upgrade to 7.2.8 or above"
+        },
+        {
+          "Version": "FortiMonitorOnSight 7.2",
+          "Affected": "7.2.0 through 7.2.2",
+          "Solution": "Upgrade to 7.2.8 or above"
+        }
+      ],
       "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "19b34696400ff6574bd76b27311bb3805bd67b2a6700fa8767e53f8ab65c7ac4"
+      "acknowledgement": "Internally discovered by Cameron Milstead of Fortinet TAC",
+      "timeline": [
+        "2026-09-08: Initial publication"
+      ],
+      "detail_text_sha256": "77611a8ea1f30ae7ccfec94dde1cc327fc005cce792873653264cd22999ab665"
     },
     {
       "id": "66ac85de646ca9b4e51a86c7",
@@ -157,25 +321,121 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-173",
       "published_at": "2026-09-08T07:00:00Z",
       "updated_at": "2026-09-08T07:00:00Z",
-      "summary": "CVSSv3 Score:\n2.5\nA NULL Pointer Dereference vulnerability [CWE-476] in FortiOS, FortiProxy and FortiPAM may allow an authenticated attacker to crash the httpsd daemon via crafted HTTP requests.\nRevised on 2026-09-08 00:00:00",
-      "cves": [],
+      "summary": "A NULL Pointer Dereference vulnerability [CWE-476] in FortiOS, FortiProxy and FortiPAM may allow an authenticated attacker to crash the httpsd daemon via crafted HTTP requests.",
+      "cves": [
+        "CVE-2026-84392"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
+      "ir_number": "FG-IR-26-173",
+      "summary_detail": "A NULL Pointer Dereference vulnerability [CWE-476] in FortiOS, FortiProxy and FortiPAM may allow an authenticated attacker to crash the httpsd daemon via crafted HTTP requests.",
+      "component": "GUI",
+      "severity": "low",
+      "cvss": 2.5,
+      "attack_type": "Authenticated",
+      "known_exploited": false,
+      "impact": "Denial of service",
+      "discovered": "External",
+      "cwes": [
+        "CWE-476"
+      ],
+      "products": [
+        "FortiOS",
+        "FortiPAM",
+        "FortiProxy"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiOS 8.0",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiOS 7.6",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiOS 7.4",
+          "Affected": "7.4 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiOS 7.2",
+          "Affected": "7.2 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiPAM 1.9",
+          "Affected": "1.9.0",
+          "Solution": "Upgrade to 1.9.1 or above"
+        },
+        {
+          "Version": "FortiPAM 1.8",
+          "Affected": "1.8 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiPAM 1.7",
+          "Affected": "1.7 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiPAM 1.6",
+          "Affected": "1.6 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiPAM 1.5",
+          "Affected": "1.5 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiPAM 1.4",
+          "Affected": "1.4 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiPAM 1.3",
+          "Affected": "1.3 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiPAM 1.2",
+          "Affected": "1.2 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiPAM 1.1",
+          "Affected": "1.1 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiPAM 1.0",
+          "Affected": "1.0 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiProxy 7.6",
+          "Affected": "7.6.0 through 7.6.6",
+          "Solution": "Upgrade to 7.6.7 or above"
+        },
+        {
+          "Version": "FortiProxy 7.4",
+          "Affected": "7.4 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiProxy 7.2",
+          "Affected": "7.2 all versions",
+          "Solution": "Migrate to a fixed release"
+        }
+      ],
       "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "4738168fc0dff1dd247fac5dedf4e76e9c383d908ac4f770f93a2155867d3429"
+      "acknowledgement": "Fortinet is pleased to thank Vang3lis and Cyth from VARAS@IIE for reporting this vulnerability under responsible disclosure.",
+      "timeline": [
+        "2026-09-08: Initial publication"
+      ],
+      "detail_text_sha256": "6f429d18edfd4d01029416b4942680110b204dd8efc24d22373dcc07362ff7ef"
     },
     {
       "id": "5adb19285a113e3ac66b9aea",
@@ -184,25 +444,84 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-169",
       "published_at": "2026-09-08T07:00:00Z",
       "updated_at": "2026-09-08T07:00:00Z",
-      "summary": "CVSSv3 Score:\n2.8\nAn URL redirection to untrusted site ('open redirect') [CWE-601] vulnerability in FortiSIEM may allow an authenticated attacker to cause a redirection to any website via specially crafted HTTP requests\nRevised on 2026-09-08 00:00:00",
-      "cves": [],
+      "summary": "An URL redirection to untrusted site ('open redirect') [CWE-601] vulnerability in FortiSIEM may allow an authenticated attacker to cause a redirection to any website via specially crafted HTTP requests",
+      "cves": [
+        "CVE-2026-84389"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
+      "ir_number": "FG-IR-26-169",
+      "summary_detail": "An URL redirection to untrusted site ('open redirect') [CWE-601] vulnerability in FortiSIEM may allow an authenticated attacker to cause a redirection to any website via specially crafted HTTP requests",
+      "component": "GUI",
+      "severity": "low",
+      "cvss": 2.8,
+      "attack_type": "Unauthenticated",
+      "known_exploited": false,
+      "impact": "Execute unauthorized code or commands",
+      "discovered": "External",
+      "cwes": [
+        "CWE-601"
+      ],
+      "products": [
+        "FortiSIEM"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiSIEM 7.6",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiSIEM 7.5",
+          "Affected": "7.5.0 through 7.5.1",
+          "Solution": "Upgrade to upcoming 7.5.2 or above"
+        },
+        {
+          "Version": "FortiSIEM 7.4",
+          "Affected": "7.4.1 through 7.4.2",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiSIEM 7.3",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiSIEM 7.2",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiSIEM 7.1",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiSIEM 7.0",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiSIEM 6.7",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiSIEM 6.6",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiSIEM 6.5",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        }
+      ],
       "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "402d7a60b7d12811a9a63471bcd9592d46bca700bfe33b79aba3711b0cdc2eb8"
+      "acknowledgement": "Fortinet is pleased to thank khalooda0x - Khaled ibn Al-Walid for reporting this vulnerability under responsible disclosure.",
+      "timeline": [
+        "2026-09-08: Initial publication"
+      ],
+      "detail_text_sha256": "86542c3fef987da7765e1fdbb4f41c38f2628005f4faede668f76d4b5252366d"
     },
     {
       "id": "a1696ebb1c46d071b35a5dfc",
@@ -211,25 +530,71 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-166",
       "published_at": "2026-09-08T07:00:00Z",
       "updated_at": "2026-09-08T07:00:00Z",
-      "summary": "CVSSv3 Score:\n8.9\nAn improper access control vulnerability [CWE-284] in FortiSandbox, FortiSandbox Cloud and FortiSandbox PaaS WEB UI may allow an unauthenticated attacker to access sensitive information via crafted HTTP requests.\nRevised on 2026-09-08 00:00:00",
-      "cves": [],
+      "summary": "An improper access control vulnerability [CWE-284] in FortiSandbox, FortiSandbox Cloud and FortiSandbox PaaS WEB UI may allow an unauthenticated attacker to access sensitive information via crafted HTTP requests.",
+      "cves": [
+        "CVE-2026-26084"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
+      "ir_number": "FG-IR-26-166",
+      "summary_detail": "An improper access control vulnerability [CWE-284] in FortiSandbox, FortiSandbox Cloud and FortiSandbox PaaS WEB UI may allow an unauthenticated attacker to access sensitive information via crafted HTTP requests.",
+      "component": "GUI",
+      "severity": "high",
+      "cvss": 8.9,
+      "attack_type": "Unauthenticated",
+      "known_exploited": false,
+      "impact": "Improper access control",
+      "discovered": "Internal",
+      "cwes": [
+        "CWE-284"
+      ],
+      "products": [
+        "FortiSandbox",
+        "FortiSandbox Cloud",
+        "FortiSandbox PaaS"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiSandbox 5.2",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiSandbox 5.0",
+          "Affected": "5.0.0 through 5.0.5",
+          "Solution": "Upgrade to 5.0.6 or above"
+        },
+        {
+          "Version": "FortiSandbox 4.4",
+          "Affected": "4.4.0 through 4.4.8",
+          "Solution": "Upgrade to 4.4.9 or above"
+        },
+        {
+          "Version": "FortiSandbox Cloud 5.0",
+          "Affected": "5.0.4 through 5.0.5",
+          "Solution": "Upgrade to 5.0.6 or above"
+        },
+        {
+          "Version": "FortiSandbox Cloud 4.4",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiSandbox PaaS 5.2",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiSandbox PaaS 5.0",
+          "Affected": "5.0.4 through 5.0.5",
+          "Solution": "Upgrade to 5.0.6 or above"
+        }
+      ],
       "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "9909f14e3050781f4758bf127ef6fe781b83b4bdf79114d12e1fe417fb9113b7"
+      "acknowledgement": "Internally discovered and reported by Adham El karn of Fortinet Product Security team.",
+      "timeline": [
+        "2026-09-08: Initial publication"
+      ],
+      "detail_text_sha256": "644ceea1381c60f497d9f2ab43f221dbf3fdde9c18c1798a30327d2a665264d5"
     },
     {
       "id": "a6e2588f68f7b9728a43c900",
@@ -238,25 +603,57 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-172",
       "published_at": "2026-09-08T07:00:00Z",
       "updated_at": "2026-09-08T07:00:00Z",
-      "summary": "CVSSv3 Score:\n5.9\nA Use of Uninitialized Variable [CWE-457] vulnerability in Fortinet FortiAnalyzer SNMP daemon may allow a remote authenticated attacker with user permission to cause a denial of service via SNMP GETBULK requests.\nRevised on 2026-09-08 00:00:00",
-      "cves": [],
+      "summary": "A Use of Uninitialized Variable [CWE-457]  vulnerability in Fortinet FortiAnalyzer SNMP daemon may allow a remote authenticated attacker with user permission to cause a denial of service via  SNMP GETBULK requests.",
+      "cves": [
+        "CVE-2026-84391"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
-      "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "87a24f589d4f72966e23917ebe7453fa1475d11dc22015166752adba29265dfe"
+      "ir_number": "FG-IR-26-172",
+      "summary_detail": "A Use of Uninitialized Variable [CWE-457]  vulnerability in Fortinet FortiAnalyzer SNMP daemon may allow a remote authenticated attacker with user permission to cause a denial of service via  SNMP GETBULK requests.",
+      "component": "OTHERS",
+      "severity": "medium",
+      "cvss": 5.9,
+      "attack_type": "Authenticated",
+      "known_exploited": false,
+      "impact": "Denial of service",
+      "discovered": "External",
+      "cwes": [
+        "CWE-457"
+      ],
+      "products": [
+        "FortiAnalyzer"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiAnalyzer 8.0",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiAnalyzer 7.6",
+          "Affected": "7.6.3 through 7.6.6",
+          "Solution": "Upgrade to 7.6.7 or above"
+        },
+        {
+          "Version": "FortiAnalyzer 7.4",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiAnalyzer 7.2",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        }
+      ],
+      "workaround": "Disable SNMP entirely if it is not actively used\nIn the GUI: Navigate to System Settings>Network> Disable SNMP Agent>Apply\nIn the CLI:\nconfig system snmp sysinfo\nset status disable\nend\nFortiAnalyzer Cloud is not affected by this vulnerability.",
+      "acknowledgement": "Fortinet is pleased to thank Stefan Grosser from Zebbra AG and Ralph Grossenbacher from BIT for reporting this vulnerability under responsible disclosure",
+      "timeline": [
+        "2026-09-08: Initial publication",
+        "References",
+        "https://docs.fortinet.com/document/fortianalyzer/8.0.0/administration-guide/818553/snmp",
+        "https://docs.fortinet.com/document/fortianalyzer/8.0.0/cli-reference/260178/snmp"
+      ],
+      "detail_text_sha256": "34f9e914e86c8938ea5d6c6aad97fd7b91112f08416785691b1b427417d3e220"
     },
     {
       "id": "a75bc34a00ec8bb8b3362051",
@@ -265,25 +662,70 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-171",
       "published_at": "2026-09-08T07:00:00Z",
       "updated_at": "2026-09-08T07:00:00Z",
-      "summary": "CVSSv3 Score:\n4.7\nAn improper access control vulnerability [CWE-284] in FortiManager may allow an administrator to bypass the approval process for workflow sessions via crafted HTTP or HTTPs requests.\nRevised on 2026-09-08 00:00:00",
-      "cves": [],
+      "summary": "An improper access control vulnerability [CWE-284] in FortiManager may allow an administrator to bypass the approval process for workflow sessions via crafted HTTP or HTTPs requests.",
+      "cves": [
+        "CVE-2026-22575"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
+      "ir_number": "FG-IR-26-171",
+      "summary_detail": "An improper access control vulnerability [CWE-284] in FortiManager may allow an administrator to bypass the approval process for workflow sessions via crafted HTTP or HTTPs requests.",
+      "component": "GUI",
+      "severity": "medium",
+      "cvss": 4.7,
+      "attack_type": "Authenticated",
+      "known_exploited": false,
+      "impact": "Improper access control",
+      "discovered": "External",
+      "cwes": [
+        "CWE-284"
+      ],
+      "products": [
+        "FortiManager",
+        "FortiManager Cloud"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiManager 8.0",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiManager 7.6",
+          "Affected": "7.6.0 through 7.6.4",
+          "Solution": "Upgrade to 7.6.5 or above"
+        },
+        {
+          "Version": "FortiManager 7.4",
+          "Affected": "7.4.0 through 7.4.10",
+          "Solution": "Upgrade to 7.4.11 or above"
+        },
+        {
+          "Version": "FortiManager 7.2",
+          "Affected": "7.2 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiManager Cloud 7.6",
+          "Affected": "7.6.2 through 7.6.4",
+          "Solution": "Upgrade to 7.6.5 or above"
+        },
+        {
+          "Version": "FortiManager Cloud 7.4",
+          "Affected": "7.4.1 through 7.4.10",
+          "Solution": "Upgrade to upcoming 7.4.11 or above"
+        },
+        {
+          "Version": "FortiManager Cloud 7.2",
+          "Affected": "7.2 all versions",
+          "Solution": "Migrate to a fixed release"
+        }
+      ],
       "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "15689d14713ac5c7f7f582ca499eb3973800ec7d7a8aaa7de123c6a481b171f0"
+      "acknowledgement": "Fortinet is pleased to thank Martin Cechvala for reporting this vulnerability under responsible disclosure.",
+      "timeline": [
+        "2026-09-08: Initial publication"
+      ],
+      "detail_text_sha256": "10fd3d28716abecca5eca5ee1023b318cecb540286e2617150520680dbea56dc"
     },
     {
       "id": "39f7d31633fce7a3f8038453",
@@ -292,25 +734,75 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-174",
       "published_at": "2026-09-08T07:00:00Z",
       "updated_at": "2026-09-08T07:00:00Z",
-      "summary": "CVSSv3 Score:\n7.3\nAn improper certificate validation vulnerability [CWE-295] in FortiOS and FortiProxy Agentless ZTNA portal may allow a remote and unauthenticated attacker to perform a Man-in-the-Middle attack on the communication channel between the ZTNA portal and the backend destination website.\nRevised on 2026-09-08 00:00:00",
-      "cves": [],
+      "summary": "An improper certificate validation vulnerability [CWE-295] in FortiOS and FortiProxy Agentless ZTNA portal may allow a remote and unauthenticated attacker to perform a Man-in-the-Middle attack on the communication channel between the ZTNA portal and the backend destination website.",
+      "cves": [
+        "CVE-2026-84393"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
+      "ir_number": "FG-IR-26-174",
+      "summary_detail": "An improper certificate validation vulnerability [CWE-295] in FortiOS and FortiProxy Agentless ZTNA portal may allow a remote and unauthenticated attacker to perform a Man-in-the-Middle attack on the communication channel between the ZTNA portal and the backend destination website.",
+      "component": "SSL-VPN",
+      "severity": "high",
+      "cvss": 7.3,
+      "attack_type": "Unauthenticated",
+      "known_exploited": false,
+      "impact": "Information disclosure",
+      "discovered": "Internal",
+      "cwes": [
+        "CWE-295"
+      ],
+      "products": [
+        "FortiOS",
+        "FortiProxy"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiOS 8.0",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiOS 7.6",
+          "Affected": "7.6.1 through 7.6.6",
+          "Solution": "Upgrade to 7.6.7 or above"
+        },
+        {
+          "Version": "FortiOS 7.4",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiOS 7.2",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiProxy 8.0",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiProxy 7.6",
+          "Affected": "7.6.2 through 7.6.6",
+          "Solution": "Upgrade to 7.6.7 or above"
+        },
+        {
+          "Version": "FortiProxy 7.4",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiProxy 7.2",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        }
+      ],
       "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "1a2b416e58153610754b583cd1533c0301e519b7851182b68c54e0bcb59b05db"
+      "acknowledgement": "Internally discovered and reported by John Headley of the Fortinet System Engineering team.",
+      "timeline": [
+        "2026-09-08: Initial publication"
+      ],
+      "detail_text_sha256": "f599cc30191e1b71772868d4c1f883f2a2518a1c3f055f370114c425ff7f6025"
     },
     {
       "id": "74280577e8c88dc6b587a24f",
@@ -319,25 +811,122 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-163",
       "published_at": "2026-08-12T07:00:00Z",
       "updated_at": "2026-08-12T07:00:00Z",
-      "summary": "CVSSv3 Score:\n5.8\nCVE-2026-49975Memory Allocation with Excessive Size Value vulnerability in Apache HTTP Server's mod_http leads to denial of service via malicious HTTP requests. This issue affects Apache HTTP Server: from 2.4.17 through 2.4.67.\nRevised on 2026-08-19 00:00:00",
-      "cves": [],
+      "summary": "CVE-2026-49975\nMemory Allocation with Excessive Size Value vulnerability in Apache HTTP Server's mod_http leads to denial of service via malicious HTTP requests.\nThis issue affects Apache HTTP Server: from 2.4.17 through 2.4.67.",
+      "cves": [
+        "CVE-2026-49975"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
+      "ir_number": "FG-IR-26-163",
+      "summary_detail": "CVE-2026-49975\nMemory Allocation with Excessive Size Value vulnerability in Apache HTTP Server's mod_http leads to denial of service via malicious HTTP requests.\nThis issue affects Apache HTTP Server: from 2.4.17 through 2.4.67.",
+      "component": "OTHERS",
+      "severity": "medium",
+      "cvss": 5.8,
+      "attack_type": "Unauthenticated",
+      "known_exploited": false,
+      "impact": "Denial of service",
+      "discovered": "Third-Party Library",
       "cwes": [],
-      "products": [],
-      "version_matrix": [],
+      "products": [
+        "FortiPAM",
+        "FortiProxy",
+        "FortiSwitchManager"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiPAM 1.9",
+          "Affected": "1.9.0 through 1.9.1",
+          "Solution": "Upgrade to 1.9.2 or above"
+        },
+        {
+          "Version": "FortiPAM 1.8",
+          "Affected": "1.8 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiPAM 1.7",
+          "Affected": "1.7 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiPAM 1.6",
+          "Affected": "1.6 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiPAM 1.5",
+          "Affected": "1.5 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiPAM 1.4",
+          "Affected": "1.4 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiPAM 1.3",
+          "Affected": "1.3 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiPAM 1.2",
+          "Affected": "1.2 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiPAM 1.1",
+          "Affected": "1.1 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiPAM 1.0",
+          "Affected": "1.0 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiProxy 7.6",
+          "Affected": "7.6.0 through 7.6.6",
+          "Solution": "Upgrade to 7.6.7 or above"
+        },
+        {
+          "Version": "FortiProxy 7.4",
+          "Affected": "7.4.0 through 7.4.14",
+          "Solution": "Upgrade to upcoming 7.4.15 or above"
+        },
+        {
+          "Version": "FortiProxy 7.2",
+          "Affected": "7.2 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiProxy 7.0",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiProxy 2.0",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiSwitchManager 7.2",
+          "Affected": "7.2.0 through 7.2.9",
+          "Solution": "Upgrade to upcoming 7.2.10 or above"
+        },
+        {
+          "Version": "FortiSwitchManager 7.0",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        }
+      ],
       "workaround": null,
       "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "c5636ed0f2609a2195b19ad1c4977b6d4902314b4fb27f3b70e77351aa4a17fa"
+      "timeline": [
+        "2026-08-12: Initial publication",
+        "2026-08-19: Added IPS package info",
+        "References",
+        "https://www.cve.org/CVERecord?id=CVE-2026-49975"
+      ],
+      "detail_text_sha256": "f81a06cc965e1b8d9aafc2d01ac7f35f9443d4e7dd601e99db0811745cc9b6a8"
     },
     {
       "id": "20851e6ff64a8a2074f52b4a",
@@ -346,25 +935,57 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-158",
       "published_at": "2026-08-12T07:00:00Z",
       "updated_at": "2026-08-12T07:00:00Z",
-      "summary": "CVSSv3 Score:\n8.8\nAn Improper Authentication vulnerability [CWE-287] in the FortiWeb Remote Radius Type Admin Authentication configured with specific, non-default settings may allow a remote unauthenticated attacker to login into the Fortiweb GUI/CLI with a random username and password\nRevised on 2026-08-12 00:00:00",
-      "cves": [],
+      "summary": "An Improper Authentication vulnerability  [CWE-287] in the FortiWeb Remote Radius Type Admin Authentication configured with specific, non-default settings may allow a remote unauthenticated attacker to login into the Fortiweb GUI/CLI with a random username and password",
+      "cves": [
+        "CVE-2026-26035"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
-      "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "dd28db95b484da1322540e456f2b8598f321cf3046dba361461d1f67c12ef49d"
+      "ir_number": "FG-IR-26-158",
+      "summary_detail": "An Improper Authentication vulnerability  [CWE-287] in the FortiWeb Remote Radius Type Admin Authentication configured with specific, non-default settings may allow a remote unauthenticated attacker to login into the Fortiweb GUI/CLI with a random username and password",
+      "component": "CLI",
+      "severity": "high",
+      "cvss": 8.8,
+      "attack_type": "Unauthenticated",
+      "known_exploited": false,
+      "impact": "Improper access control",
+      "discovered": "Internal",
+      "cwes": [
+        "CWE-287"
+      ],
+      "products": [
+        "FortiWeb"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiWeb 8.0",
+          "Affected": "8.0.0 through 8.0.2",
+          "Solution": "Upgrade to 8.0.3 or above"
+        },
+        {
+          "Version": "FortiWeb 7.6",
+          "Affected": "7.6.0 through 7.6.6",
+          "Solution": "Upgrade to 7.6.7 or above"
+        },
+        {
+          "Version": "FortiWeb 7.4",
+          "Affected": "7.4.0 through 7.4.11",
+          "Solution": "Upgrade to 7.4.12 or above"
+        },
+        {
+          "Version": "FortiWeb 7.2",
+          "Affected": "7.2.0 through 7.2.12",
+          "Solution": "Upgrade to 7.2.13 or above"
+        }
+      ],
+      "workaround": "If enabled (non default), disable the Wildcard setting for the Administrators\nIn the GUI:\nGo to System > Administrators, edit the Remote Type administrator account that has the Wildcard option enabled, and disable the Wildcard option.\nIn the CLI:\nconfig system admin\nedit < Remote type administrator account >\nset wildcard disable\nnext\nend",
+      "acknowledgement": "Internally discovered as part of a Fortinet audit.",
+      "timeline": [
+        "2026-08-12: Initial publication",
+        "References",
+        "https://docs.fortinet.com/document/fortiweb/8.0.2/cli-reference/810797/system-admin",
+        "https://docs.fortinet.com/document/fortiweb/8.0.3/administration-guide/286471/administrators"
+      ],
+      "detail_text_sha256": "8b113455e637353994c65fafdb878af1ef66608e3d5a80573f17d1db3baf112a"
     },
     {
       "id": "e6a18dfa2ccca8321b50dfaf",
@@ -373,25 +994,59 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-157",
       "published_at": "2026-08-12T07:00:00Z",
       "updated_at": "2026-08-12T07:00:00Z",
-      "summary": "CVSSv3 Score:\n4.8\nAn incomplete list of disallowed inputs [CWE-184] in FortiWeb WAF may allow an unauthenticated attacker to bypass policies via specifically crafted requests.\nRevised on 2026-08-12 00:00:00",
-      "cves": [],
+      "summary": "An incomplete list of disallowed inputs [CWE-184] in FortiWeb WAF may allow an unauthenticated attacker to bypass policies via specifically crafted requests.",
+      "cves": [
+        "CVE-2026-70466"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
+      "ir_number": "FG-IR-26-157",
+      "summary_detail": "An incomplete list of disallowed inputs [CWE-184] in FortiWeb WAF may allow an unauthenticated attacker to bypass policies via specifically crafted requests.",
+      "component": "GUI",
+      "severity": "medium",
+      "cvss": 4.8,
+      "attack_type": "Unauthenticated",
+      "known_exploited": false,
+      "impact": "Improper access control",
+      "discovered": "External",
+      "cwes": [
+        "CWE-184"
+      ],
+      "products": [
+        "FortiWeb"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiWeb 8.0",
+          "Affected": "8.0.0 through 8.0.2",
+          "Solution": "Upgrade to 8.0.3 or above"
+        },
+        {
+          "Version": "FortiWeb 7.6",
+          "Affected": "7.6.0 through 7.6.5",
+          "Solution": "Upgrade to 7.6.6 or above"
+        },
+        {
+          "Version": "FortiWeb 7.4",
+          "Affected": "7.4 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiWeb 7.2",
+          "Affected": "7.2 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiWeb 7.0",
+          "Affected": "7.0 all versions",
+          "Solution": "Migrate to a fixed release"
+        }
+      ],
       "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "e863c68b383a4878b53f3d1fc527e7ddbebaf8a6bf709f5e02583b753a0a9ac0"
+      "acknowledgement": "Fortinet is pleased to thank Rui Xi (@Cycloctane) from Beijing University of Posts and Telecommunications for reporting this vulnerability under responsible disclosure.",
+      "timeline": [
+        "2026-08-12: Initial publication"
+      ],
+      "detail_text_sha256": "ac5b693799281b7fd864c4660a5c0d0549168545587b554f8e24f5e9cd422d1e"
     },
     {
       "id": "2dfcd871ce63bb5945d0c617",
@@ -400,25 +1055,70 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-160",
       "published_at": "2026-08-12T07:00:00Z",
       "updated_at": "2026-08-12T07:00:00Z",
-      "summary": "CVSSv3 Score:\n7.3\nAn Authentication Bypass Using an Alternate Path or Channel [CWE-288] vulnerability in FortiManager and FortiManager Cloud may allow a remote unauthenticated attacker to impersonate any FortiGate managed by the FortiManager with a specific CLI option set via crafted FGFM requests if the attacker has a valid certificate.\nRevised on 2026-08-12 00:00:00",
-      "cves": [],
+      "summary": "An Authentication Bypass Using an Alternate Path or Channel [CWE-288] vulnerability in FortiManager and FortiManager Cloud may allow a remote unauthenticated attacker to impersonate any FortiGate managed by the FortiManager with a specific CLI option set via crafted FGFM requests if the attacker has a valid certificate.",
+      "cves": [
+        "CVE-2026-70468"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
+      "ir_number": "FG-IR-26-160",
+      "summary_detail": "An Authentication Bypass Using an Alternate Path or Channel [CWE-288] vulnerability in FortiManager and FortiManager Cloud may allow a remote unauthenticated attacker to impersonate any FortiGate managed by the FortiManager with a specific CLI option set via crafted FGFM requests if the attacker has a valid certificate.",
+      "component": "OTHERS",
+      "severity": "high",
+      "cvss": 7.3,
+      "attack_type": "Unauthenticated",
+      "known_exploited": false,
+      "impact": "Improper access control",
+      "discovered": "Internal",
+      "cwes": [
+        "CWE-288"
+      ],
+      "products": [
+        "FortiManager",
+        "FortiManager Cloud"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiManager 8.0",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiManager 7.6",
+          "Affected": "7.6.1",
+          "Solution": "Upgrade to 7.6.2 or above"
+        },
+        {
+          "Version": "FortiManager 7.4",
+          "Affected": "7.4.3 through 7.4.5",
+          "Solution": "Upgrade to 7.4.6 or above"
+        },
+        {
+          "Version": "FortiManager 7.2",
+          "Affected": "7.2.5 through 7.2.9",
+          "Solution": "Upgrade to 7.2.10 or above"
+        },
+        {
+          "Version": "FortiManager Cloud 7.6",
+          "Affected": "7.6.1",
+          "Solution": "Upgrade to 7.6.2 or above"
+        },
+        {
+          "Version": "FortiManager Cloud 7.4",
+          "Affected": "7.4.3 through 7.4.5",
+          "Solution": "Upgrade to 7.4.6 or above"
+        },
+        {
+          "Version": "FortiManager Cloud 7.2",
+          "Affected": "7.2.5 through 7.2.9",
+          "Solution": "Upgrade to 7.2.10 or above"
+        }
+      ],
       "workaround": null,
       "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "56a5562cbad67cfb23019c864a6f292416b30e693c53e53b5ada4954a1a9aa0d"
+      "timeline": [
+        "2026-08-12: Initial publication"
+      ],
+      "detail_text_sha256": "8f5126290885f2ec2a7f381765502b8e4e917b7cf7ab1398583c1eb123737335"
     },
     {
       "id": "613cef9b959bf0403f12fe11",
@@ -427,25 +1127,49 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-156",
       "published_at": "2026-08-12T07:00:00Z",
       "updated_at": "2026-08-12T07:00:00Z",
-      "summary": "CVSSv3 Score:\n7.3\nA buffer copy without checking size of input vulnerability [CWE-120] in FortiClient Windows may allow an unauthenticated attacker in a position to alter or craft DNS responses to the targeted host to execute arbitrary code via malicious packets.\nRevised on 2026-08-12 00:00:00",
-      "cves": [],
+      "summary": "A buffer copy without checking size of input vulnerability [CWE-120] in FortiClient Windows may allow an unauthenticated attacker in a position to alter or craft DNS responses to the targeted host to execute arbitrary code via malicious packets.",
+      "cves": [
+        "CVE-2026-70465"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
-      "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "e3c2cdeb4f1a1b5f59cd211c1d041e637de72b91b422c16126bed1fbb7de7235"
+      "ir_number": "FG-IR-26-156",
+      "summary_detail": "A buffer copy without checking size of input vulnerability [CWE-120] in FortiClient Windows may allow an unauthenticated attacker in a position to alter or craft DNS responses to the targeted host to execute arbitrary code via malicious packets.",
+      "component": "OTHERS",
+      "severity": "high",
+      "cvss": 7.3,
+      "attack_type": "Unauthenticated",
+      "known_exploited": false,
+      "impact": "Escalation of privilege",
+      "discovered": "External",
+      "cwes": [
+        "CWE-120"
+      ],
+      "products": [
+        "FortiClientWindows"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiClientWindows 8.0",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiClientWindows 7.4",
+          "Affected": "7.4.0 through 7.4.3",
+          "Solution": "Upgrade to 7.4.4 or above"
+        },
+        {
+          "Version": "FortiClientWindows 7.2",
+          "Affected": "7.2.0 through 7.2.11",
+          "Solution": "Upgrade to 7.2.12 or above"
+        }
+      ],
+      "workaround": "Disable application based filtering in FortiClient EMS VPN configuration:\nFortiClient EMS > Remote Access Profile > VPN Tunnel > \"Toggle\" Application Based",
+      "acknowledgement": "Fortinet is pleased to thank Nir Chako from Pentera for reporting this vulnerability under responsible disclosure.",
+      "timeline": [
+        "2026-08-12: Initial publication"
+      ],
+      "detail_text_sha256": "8978d4335dd174a5644b4850868e5f04b5ab587b10459bf45878fceb2fe056b3"
     },
     {
       "id": "c5d53869f07ad661c4123612",
@@ -454,25 +1178,79 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-159",
       "published_at": "2026-08-12T07:00:00Z",
       "updated_at": "2026-08-12T07:00:00Z",
-      "summary": "CVSSv3 Score:\n3.4\nA Server-Side request forgery (SSRF) [CWE-918] vulnerability in FortiSIEM GUI may allow an authenticated attacker to send HTTP requests originating from the targeted device via specially crafted HTTP requests\nRevised on 2026-08-12 00:00:00",
-      "cves": [],
+      "summary": "A Server-Side request forgery (SSRF) [CWE-918] vulnerability in FortiSIEM GUI may allow an authenticated attacker to send HTTP requests originating from the targeted device via specially crafted HTTP requests",
+      "cves": [
+        "CVE-2026-70467"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
+      "ir_number": "FG-IR-26-159",
+      "summary_detail": "A Server-Side request forgery (SSRF) [CWE-918] vulnerability in FortiSIEM GUI may allow an authenticated attacker to send HTTP requests originating from the targeted device via specially crafted HTTP requests",
+      "component": "GUI",
+      "severity": "low",
+      "cvss": 3.4,
+      "attack_type": "Authenticated",
+      "known_exploited": false,
+      "impact": "Execute unauthorized code or commands",
+      "discovered": "External",
+      "cwes": [
+        "CWE-918"
+      ],
+      "products": [
+        "FortiSIEM"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiSIEM 7.5",
+          "Affected": "7.5.0",
+          "Solution": "Upgrade to 7.5.1 or above"
+        },
+        {
+          "Version": "FortiSIEM 7.4",
+          "Affected": "7.4.0 through 7.4.2",
+          "Solution": "Upgrade to upcoming 7.4.3 or above"
+        },
+        {
+          "Version": "FortiSIEM 7.3",
+          "Affected": "7.3.0 through 7.3.5",
+          "Solution": "Upgrade to upcoming 7.3.6 or above"
+        },
+        {
+          "Version": "FortiSIEM 7.2",
+          "Affected": "7.2 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiSIEM 7.1",
+          "Affected": "7.1 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiSIEM 7.0",
+          "Affected": "7.0 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiSIEM 6.7",
+          "Affected": "6.7 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiSIEM 6.6",
+          "Affected": "6.6 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiSIEM 6.5",
+          "Affected": "6.5 all versions",
+          "Solution": "Migrate to a fixed release"
+        }
+      ],
       "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "3966db6d79725ebfbada6284e9272762440c022d180f8c13866a18bd8962ec88"
+      "acknowledgement": "Discovered and Responsibly reported by external researcher khalooda0x - Khaled ibn Al-Walid.",
+      "timeline": [
+        "2026-08-12: Initial publication"
+      ],
+      "detail_text_sha256": "4d2b669878af89ea06d311d59a844e618bb6279b91c03302a4108ed6af2600fb"
     },
     {
       "id": "f52145f64f0dfcad8bf9b4a4",
@@ -481,25 +1259,54 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-161",
       "published_at": "2026-08-12T07:00:00Z",
       "updated_at": "2026-08-12T07:00:00Z",
-      "summary": "CVSSv3 Score:\n5.1\nA Stack-based Buffer Overflow vulnerability [CWE-121] in FortiOS explicit proxy may allow an unauthenticated attacker who can bypass stack protection and ASLR to execute arbitrary code or commands in the context of the WAD daemon via crafted sockets, only if the explicit proxy is configured with Kerberos authentication and SOCKS enabled.\nRevised on 2026-08-12 00:00:00",
-      "cves": [],
+      "summary": "A Stack-based Buffer Overflow vulnerability [CWE-121] in FortiOS explicit proxy may allow an unauthenticated attacker who can bypass stack protection and ASLR to execute arbitrary code or commands in the context of the WAD daemon via crafted sockets, only if the explicit proxy is configured with Kerberos authentication and SOCKS enabled.",
+      "cves": [
+        "CVE-2026-71407"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
+      "ir_number": "FG-IR-26-161",
+      "summary_detail": "A Stack-based Buffer Overflow vulnerability [CWE-121] in FortiOS explicit proxy may allow an unauthenticated attacker who can bypass stack protection and ASLR to execute arbitrary code or commands in the context of the WAD daemon via crafted sockets, only if the explicit proxy is configured with Kerberos authentication and SOCKS enabled.",
+      "component": "OTHERS",
+      "severity": "medium",
+      "cvss": 5.1,
+      "attack_type": "Unauthenticated",
+      "known_exploited": false,
+      "impact": "Execute unauthorized code or commands",
+      "discovered": "External",
+      "cwes": [
+        "CWE-121"
+      ],
+      "products": [
+        "FortiOS"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiOS 8.0",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiOS 7.6",
+          "Affected": "7.6.1 through 7.6.6",
+          "Solution": "Upgrade to 7.6.7 or above"
+        },
+        {
+          "Version": "FortiOS 7.4",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiOS 7.2",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        }
+      ],
       "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "6f727fc1e94381d1154eeb534378467496749fe3211a22602a5efab9e0a30c72"
+      "acknowledgement": "Fortinet is pleased to thank The UK's National Cyber Security Centre (NCSC) for reporting this vulnerability under responsible disclosure.\nVirtual Patch\nYes",
+      "timeline": [
+        "2026-08-12: Initial publication"
+      ],
+      "detail_text_sha256": "de684e56cf63ebf45e0dee8657874bb9c2715edffaef5d923e89028ded030038"
     },
     {
       "id": "f39b146da679a7a142cdf410",
@@ -508,25 +1315,56 @@
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-162",
       "published_at": "2026-08-12T07:00:00Z",
       "updated_at": "2026-08-12T07:00:00Z",
-      "summary": "CVSSv3 Score:\n5.0\nAn Allocation of Resources Without Limits or Throttling vulnerability [CWE-770] in FortiOS may allow an unauthenticated attacker to perform a slow HTTP DoS attack on the web interface via crafted HTTP requests.\nRevised on 2026-08-12 00:00:00",
-      "cves": [],
+      "summary": "An Allocation of Resources Without Limits or Throttling vulnerability [CWE-770] in FortiOS may allow an unauthenticated attacker to perform a slow HTTP DoS attack on the web interface via crafted HTTP requests.",
+      "cves": [
+        "CVE-2026-71408"
+      ],
       "categories": [],
-      "ir_number": null,
-      "summary_detail": null,
-      "component": null,
-      "severity": null,
-      "cvss": null,
-      "attack_type": null,
-      "known_exploited": null,
-      "impact": null,
-      "discovered": null,
-      "cwes": [],
-      "products": [],
-      "version_matrix": [],
-      "workaround": null,
-      "acknowledgement": null,
-      "timeline": [],
-      "detail_text_sha256": "a0add56fe131b65e534888d9c73c5b75a4273c457395e1df74730a9b51a3d811"
+      "ir_number": "FG-IR-26-162",
+      "summary_detail": "An Allocation of Resources Without Limits or Throttling vulnerability [CWE-770] in FortiOS may allow an unauthenticated attacker to perform a slow HTTP DoS attack on the web interface via crafted HTTP requests.",
+      "component": "GUI",
+      "severity": "medium",
+      "cvss": 5.0,
+      "attack_type": "Unauthenticated",
+      "known_exploited": false,
+      "impact": "Denial of service",
+      "discovered": "External",
+      "cwes": [
+        "CWE-770"
+      ],
+      "products": [
+        "FortiOS"
+      ],
+      "version_matrix": [
+        {
+          "Version": "FortiOS 8.0",
+          "Affected": "Not affected",
+          "Solution": "Not Applicable"
+        },
+        {
+          "Version": "FortiOS 7.6",
+          "Affected": "7.6.0 through 7.6.6",
+          "Solution": "Upgrade to 7.6.7 or above"
+        },
+        {
+          "Version": "FortiOS 7.4",
+          "Affected": "7.4 all versions",
+          "Solution": "Migrate to a fixed release"
+        },
+        {
+          "Version": "FortiOS 7.2",
+          "Affected": "7.2 all versions",
+          "Solution": "Migrate to a fixed release"
+        }
+      ],
+      "workaround": "As a mitigation measure, restrict administrator logins to trusted hosts only, limiting the hosts that can initiate an attack.\nAdditionally, it is recommended to disable GUI access on Internet-facing interfaces.\nThis incident is a regression from\nhttps://fortiguard.fortinet.com/psirt/FG-IR-19-013.",
+      "acknowledgement": "Fortinet is pleased to thank Iván Domínguez from Zerolynx for reporting this vulnerability under responsible disclosure.",
+      "timeline": [
+        "2026-08-12: Initial publication",
+        "References",
+        "https://docs.fortinet.com/document/fortigate/8.0.0/administration-guide/637888/dos-protection"
+      ],
+      "detail_text_sha256": "ac8eb0e300558c5540734f3f5b503e255919d2c883d09806c9ba61cab63082a2"
     },
     {
       "id": "c26a46b482d42a93996465d9",
